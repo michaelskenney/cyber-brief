@@ -13,6 +13,7 @@ Run via CI:   triggered automatically by .github/workflows/refresh_brief.yml
 import anthropic
 import json
 import os
+import re
 import sys
 from datetime import datetime, timezone
 
@@ -147,51 +148,56 @@ def generate():
     messages = [{"role": "user", "content": USER_PROMPT}]
     final_text = ""
 
-    # The web_search_20250305 tool is executed server-side by the API.
-    # We loop to handle any intermediate tool_use stops gracefully.
-    for attempt in range(20):
+    # Web search is a server-side tool — the API executes searches internally.
+    # When the server-side loop hits its iteration limit, stop_reason is
+    # "pause_turn". We re-send the conversation to let it continue.
+    # No tool_result messages needed — the API handles everything.
+    max_continuations = 5
+    for attempt in range(max_continuations):
+        print(f"  API call {attempt + 1}/{max_continuations}...")
         response = client.messages.create(
-            model="claude-sonnet-4-20250514",
-            max_tokens=8000,
+            model="claude-sonnet-4-6",
+            max_tokens=16000,
             system=SYSTEM_PROMPT,
             tools=[{"type": "web_search_20250305", "name": "web_search"}],
             messages=messages,
         )
 
+        print(f"  stop_reason: {response.stop_reason}")
+
+        # Collect all text blocks from this response
+        text_parts = [b.text for b in response.content if hasattr(b, "text") and b.text]
+        if text_parts:
+            print(f"  Got {len(text_parts)} text block(s), {sum(len(t) for t in text_parts)} chars")
+
         if response.stop_reason == "end_turn":
-            final_text = " ".join(
-                b.text for b in response.content if hasattr(b, "text")
-            )
+            final_text = " ".join(text_parts)
             break
 
-        if response.stop_reason == "tool_use":
-            # Append assistant turn and return empty tool results to continue
-            messages.append({"role": "assistant", "content": response.content})
-            tool_results = [
-                {
-                    "type": "tool_result",
-                    "tool_use_id": b.id,
-                    "content": [],
-                }
-                for b in response.content
-                if b.type == "tool_use"
+        if response.stop_reason == "pause_turn":
+            # Server-side tool loop hit its iteration limit.
+            # Re-send user message + assistant response to continue.
+            messages = [
+                {"role": "user", "content": USER_PROMPT},
+                {"role": "assistant", "content": response.content},
             ]
-            messages.append({"role": "user", "content": tool_results})
-            print(f"  Search pass {attempt + 1}...")
+            print("  Continuing (pause_turn)...")
             continue
 
         # Any other stop reason — take whatever text is available
-        final_text = " ".join(
-            b.text for b in response.content if hasattr(b, "text")
-        )
+        final_text = " ".join(text_parts)
+        print(f"  Unexpected stop_reason: {response.stop_reason}")
         break
 
     if not final_text:
         print("ERROR: No text content returned from API.", file=sys.stderr)
+        print(f"Last stop_reason: {response.stop_reason}", file=sys.stderr)
+        # Dump content block types for debugging
+        for i, b in enumerate(response.content):
+            print(f"  Block {i}: type={b.type}", file=sys.stderr)
         sys.exit(1)
 
     # Extract JSON from <BRIEF> tags
-    import re
     match = re.search(r"<BRIEF>([\s\S]*?)</BRIEF>", final_text)
     if not match:
         # Try bare JSON fallback
