@@ -36,4 +36,5 @@ jobs:
           git config user.email "actions@github.com"
           git add docs/data/brief.json
           git diff --staged --quiet || git commit -m "chore: refresh cyber brief $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git pull --rebase
           git push
