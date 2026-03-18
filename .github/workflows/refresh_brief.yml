@@ -32,11 +32,15 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python generate_brief.py
 
-      - name: Commit updated brief
+      - name: Commit and push updated brief
         run: |
           git config user.name  "Cyber Brief Bot"
           git config user.email "actions@github.com"
           git add docs/data/brief.json
-          git diff --staged --quiet || git commit -m "chore: refresh cyber brief $(date -u '+%Y-%m-%d %H:%M UTC')"
-          git pull --rebase
-          git push
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "chore: refresh cyber brief $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git pull --rebase origin main
+          git push origin main
