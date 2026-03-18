@@ -1,75 +1,92 @@
 {
-  "generated_at": "2026-03-18T02:46:15.804420+00:00",
-  "period_searched": "March 4–18, 2026 (priority: March 16–18, 2026)",
-  "incident_count": 10,
+  "generated_at": "2026-03-18T07:01:14.882908+00:00",
+  "period_searched": "March 4–18, 2026 (primary: March 16–18; expanded to 14 days to reach 6+ incidents)",
+  "incident_count": 8,
   "incidents": [
     {
-      "id": "1",
+      "id": "4",
       "date": "2026-03-17",
       "date_sort": "2026-03-17",
-      "victim": "University of Mississippi Medical Center (UMMC) & Passaic County, New Jersey",
-      "industry": "Healthcare / Government",
-      "attacker": "Criminal gang — ransomware (Russia-based operation)",
+      "victim": "Passaic County, New Jersey (county government)",
+      "industry": "Government / Public Sector",
+      "attacker": "Criminal gang — ransomware",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Exploitation of a public-facing application, followed by lateral movement, credential theft, and deployment of ransomware that encrypted the EHR platform and communications infrastructure.",
-      "impact": "UMMC's 35 clinics were forced offline for nine days (Feb 19–Mar 2), disrupting cancer infusions, trauma care, and elective procedures at Mississippi's only Level I trauma center; attackers demanded an $800,000 ransom and threatened to leak stolen patient data by March 20. Passaic County, NJ simultaneously had phone lines and IT systems taken down by the same group, which also demanded $800,000.",
+      "vector": "Medusa ransomware-as-a-service deployment; initial access vector not yet publicly confirmed.",
+      "impact": "A malware attack took down phone lines and IT systems used across county government offices approximately two weeks ago; Medusa formally claimed the attack on March 17 and demanded an $800,000 ransom. Scope of data exfiltration is under investigation.",
       "ongoing": "Y",
-      "severity": "critical",
+      "severity": "high",
       "sources": [
-        "therecord.media",
-        "comparitech.com"
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "8",
+      "date": "2026-03-13",
+      "date_sort": "2026-03-13",
+      "victim": "LexisNexis Legal & Professional",
+      "industry": "Legal / Data Analytics",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Threat actor gained unauthorised access to a limited number of legacy servers; method of initial access not yet confirmed.",
+      "impact": "Approximately 2 GB of data — including customer names, user IDs, .gov email addresses, account records for government agencies and law firms, passwords, and IT support tickets — posted to a criminal forum and confirmed as authentic by LexisNexis. The company states the breach is contained and does not include Social Security numbers or financial data; law enforcement notified and impacted customers being contacted.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "therecord.media"
       ]
     },
     {
       "id": "2",
-      "date": "2026-03-11",
-      "date_sort": "2026-03-11",
-      "victim": "TELUS Digital (BPO and digital services arm of Telus Corporation)",
-      "industry": "Telecommunications / Business Process Outsourcing",
+      "date": "2026-03-12",
+      "date_sort": "2026-03-12",
+      "victim": "TELUS Digital (Canadian BPO / telecom outsourcing)",
+      "industry": "Technology / Business Process Outsourcing",
       "attacker": "Criminal gang — data extortion",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Attackers leveraged Google Cloud Platform credentials stolen during an earlier supply-chain breach of the Salesloft Drift platform in 2025, then moved laterally through Telus Digital's cloud environment — including a large BigQuery instance — to exfiltrate data at scale.",
-      "impact": "Criminals claimed theft of approximately 1 petabyte of data, including BPO customer PII, FBI background checks, source code, financial records, call-center voice recordings, and Salesforce data for dozens of enterprise customers; the company rejected a reported $65 million ransom demand and the investigation into affected customers remains ongoing.",
+      "vector": "Attackers leveraged Google Cloud Platform credentials found inside data previously stolen in the Salesloft Drift supply-chain breach, then moved laterally through Telus Digital's cloud environment — including a large BigQuery instance — using the trufflehog credential-scanning tool to escalate access.",
+      "impact": "Claimed theft of approximately 1 petabyte of data spanning customer support records, source code, FBI employee background-check files, call recordings, and Salesforce data belonging to Telus's BPO clients. Attackers demanded a $65 million ransom; Telus Digital declined to negotiate. Investigation and customer notifications ongoing.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
         "therecord.media",
         "cyberscoop.com",
-        "cybersecuritydive.com"
+        "darkreading.com"
       ]
     },
     {
-      "id": "3",
+      "id": "1",
       "date": "2026-03-11",
       "date_sort": "2026-03-11",
-      "victim": "Stryker Corporation (medical device manufacturer)",
-      "industry": "Healthcare / Medical Devices",
-      "attacker": "Iran — state-directed hacktivist proxies",
+      "victim": "Stryker Corporation (medical technology)",
+      "industry": "Healthcare / Medical Technology",
+      "attacker": "Iran — Ministry of Intelligence (MOIS) — state-directed hacktivist proxies",
       "attacker_origin": "iran",
-      "motivation": "Disruption / Political",
-      "vector": "Attackers compromised Stryker's Microsoft Intune mobile device management environment and weaponised its native device-wipe capability to remotely erase more than 200,000 servers, mobile devices, and endpoints across 79 countries — no traditional ransomware or malware binary was deployed.",
-      "impact": "Order processing, manufacturing, and shipping operations were severely disrupted; Stryker filed an SEC 8-K disclosing the incident and stated a full restoration timeline was unknown; approximately 50 TB of critical data was reportedly destroyed, raising supply-chain concerns for healthcare providers globally.",
+      "motivation": "Disruption",
+      "vector": "Attackers likely obtained administrator-level credentials via phishing or infostealer malware, then abused Stryker's Microsoft Intune device-management console to issue remote-wipe commands across the company's global Windows estate.",
+      "impact": "Claimed wipe of over 200,000 servers, laptops, and mobile devices across offices in 79 countries; digital ordering and shipping systems remained offline as of March 17; Stryker's Lifenet cardiac-data transmission system was reported non-functional across Maryland, affecting emergency-medical-services communications. Stryker filed an 8-K with the SEC and confirmed an unknown recovery timeline.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
-        "therecord.media",
+        "krebsonsecurity.com",
         "unit42.paloaltonetworks.com",
-        "scworld.com"
+        "therecord.media",
+        "securityweek.com"
       ]
     },
     {
-      "id": "4",
+      "id": "6",
       "date": "2026-03-11",
       "date_sort": "2026-03-11",
-      "victim": "Wisconsin ambulance services provider (largest in state, unnamed)",
+      "victim": "Bell Ambulance — Wisconsin's largest ambulance provider",
       "industry": "Healthcare / Emergency Services",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Details of the initial intrusion vector have not been publicly disclosed; the attack compromised systems used to manage patient and operational data.",
-      "impact": "Over 235,000 individuals were confirmed affected by the cyberattack on the state's largest ambulance provider; incident details and the full scope of data exposure remain under investigation.",
+      "vector": "Ransomware intrusion; specific initial-access vector not yet publicly disclosed.",
+      "impact": "Personal and health data of approximately 235,000 individuals compromised; breach notification process underway. Operational impact on emergency medical services in Wisconsin is under assessment.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -78,109 +95,59 @@
     },
     {
       "id": "5",
-      "date": "2026-03-10",
-      "date_sort": "2026-03-10",
-      "victim": "Ivanti Endpoint Manager, SolarWinds Web Help Desk, VMware Aria Operations (enterprise infrastructure — multiple victim organisations globally)",
-      "industry": "Cross-sector (enterprise IT infrastructure)",
-      "attacker": "Unknown (multiple threat actors — nation-state and criminal involvement suspected)",
-      "attacker_origin": "unknown",
-      "motivation": "Espionage / Financial",
-      "vector": "Active exploitation of three critical vulnerabilities: an authentication bypass in Ivanti EPM (CVE-2026-1603, CVSS 8.6), a remote-code-execution deserialization flaw in SolarWinds Web Help Desk (CVE-2025-26399, CVSS 9.8), and a command-injection flaw in VMware Aria Operations (CVE-2026-22719, CVSS 8.1); CISA added all three to its Known Exploited Vulnerabilities catalog and issued emergency patch deadlines.",
-      "impact": "Federal civilian agencies were ordered to remediate by March 23–24, 2026; exploitation was confirmed in the wild across enterprise and government networks globally, with VMware Aria's broad visibility into server, network, and cloud infrastructure making it a particularly high-value target for persistent access.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "cisa.gov",
-        "therecord.media",
-        "cyberscoop.com"
-      ]
-    },
-    {
-      "id": "6",
-      "date": "2026-03-10",
-      "date_sort": "2026-03-10",
-      "victim": "Cisco Catalyst SD-WAN users (government and critical infrastructure globally, including EU European Commission, Dutch and Finnish governments)",
-      "industry": "Government / Critical Infrastructure / Telecommunications",
-      "attacker": "Unknown (nation-state involvement assessed by Five Eyes agencies)",
-      "attacker_origin": "unknown",
+      "date": "2026-03-04",
+      "date_sort": "2026-03-04",
+      "victim": "Ukrainian government entities (multiple)",
+      "industry": "Government / Defense",
+      "attacker": "Russia — GRU military intelligence",
+      "attacker_origin": "russia",
       "motivation": "Espionage",
-      "vector": "Exploitation of authentication bypass and path-traversal vulnerabilities (CVE-2026-20127, CVE-2022-20775) in Cisco Catalyst SD-WAN Controller and Manager products, enabling unauthenticated remote attackers to obtain administrative privileges and establish long-term persistence, including root access and disabled logging.",
-      "impact": "CISA issued Emergency Directive 26-03; UK NCSC and multiple Five Eyes allies simultaneously warned that global organisations were compromised; attackers established persistent footholds in government and private-sector networks, with the NCSC urging organisations to actively hunt for signs of compromise.",
+      "vector": "Phishing emails — including messages sent via the Signal encrypted-messaging app — delivered malicious Word documents containing macros; opening the document deployed the BadPaw loader, which installed the MeowMeow backdoor, alongside the previously identified BeardShell implant and legitimate Covenant offensive framework.",
+      "impact": "Backdoor access to Ukrainian government systems enabled file read/write/delete operations and credential harvesting; at least one confirmed Ukrainian government email account compromised. Campaign assessed with high confidence as Russia-GRU linked, attributed by CERT-UA to the same unit responsible for prior large-scale espionage operations against Ukrainian state authorities.",
       "ongoing": "Y",
-      "severity": "critical",
+      "severity": "high",
       "sources": [
-        "cisa.gov",
         "therecord.media",
-        "ncsc.gov.uk"
+        "darkreading.com"
       ]
     },
     {
       "id": "7",
-      "date": "2026-03-04",
-      "date_sort": "2026-03-04",
-      "victim": "Ukraine — energy grid and critical infrastructure",
-      "industry": "Energy / Critical Infrastructure",
-      "attacker": "Russia — GRU military intelligence (state cyber units)",
-      "attacker_origin": "russia",
-      "motivation": "Espionage / Disruption",
-      "vector": "Persistent intrusions into energy infrastructure networks, with attackers focused on mapping facilities and tracking repair activities to provide targeting intelligence for kinetic missile and drone strikes rather than immediately causing disruption.",
-      "impact": "Ukrainian cybersecurity officials confirmed that Russian cyber operations are now primarily intelligence-collection missions inside energy networks — monitoring damage from physical strikes, tracking recovery progress, and identifying where replacement components are sourced — representing a strategic shift that compounds the physical bombardment campaign.",
+      "date": "2026-02-25",
+      "date_sort": "2026-02-25",
+      "victim": "Federal civilian agencies and critical-infrastructure organisations globally (Cisco SD-WAN exploitation)",
+      "industry": "Multi-sector / Critical Infrastructure",
+      "attacker": "Unknown — highly sophisticated threat actor (tracked as UAT-8616)",
+      "attacker_origin": "unknown",
+      "motivation": "Espionage",
+      "vector": "Unauthenticated remote exploitation of a CVSS 10.0 authentication-bypass zero-day (CVE-2026-20127) in Cisco Catalyst SD-WAN Controller and Manager; attackers then downgraded firmware to chain a second privilege-escalation flaw (CVE-2022-20775), achieving root-level persistence — a technique active in the wild since at least 2023.",
+      "impact": "CISA issued Emergency Directive 26-03 requiring all US federal civilian agencies to inventory, patch, collect forensic artifacts, and report status by March 23. High-value and critical-infrastructure sectors confirmed targeted globally; specific victim organisations not yet publicly named. The Australian Signals Directorate, UK NCSC, NSA, and Canadian Cyber Centre issued a joint advisory.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
-        "therecord.media"
+        "cisa.gov/news-events/cybersecurity-advisories",
+        "blog.talosintelligence.com",
+        "ncsc.gov.uk/news",
+        "cyber.gov.au/about-us/news"
       ]
     },
     {
-      "id": "8",
-      "date": "2026-03-04",
-      "date_sort": "2026-03-04",
-      "victim": "Ukrainian military and government entities",
-      "industry": "Government / Defence",
-      "attacker": "Russia — state-linked espionage group",
-      "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "Spear-phishing campaigns using judicial and charity-themed lures to deploy a JavaScript-based backdoor (DRILLAPP) running through the Microsoft Edge browser, capable of file upload/download, microphone access, and webcam capture; campaign overlaps with prior GRU-linked operations against Ukrainian defence forces.",
-      "impact": "The campaign, active from at least early February 2026, enabled ongoing covert surveillance of Ukrainian military and government personnel; two campaign variants were identified, with the malware providing persistent remote access to targeted endpoints.",
+      "id": "3",
+      "date": "2026-02-19",
+      "date_sort": "2026-02-19",
+      "victim": "University of Mississippi Medical Center (UMMC)",
+      "industry": "Healthcare",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Attackers exploited a public-facing application to gain initial access, escalated privileges by obtaining administrative credentials, disabled security tools, and deployed Medusa ransomware-as-a-service, taking the Epic electronic health record system offline.",
+      "impact": "All 35 statewide clinics closed for nine days (February 19 – March 2); cancer infusion centre rescheduled patients; staff operated with paper-and-pen records. The Medusa gang claimed the attack on March 12 and demanded an $800,000 ransom, threatening to publish stolen data by March 20. UMMC is Mississippi's only Level I trauma centre and only children's hospital.",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "critical",
       "sources": [
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "10",
-      "date": "2026-03-04",
-      "date_sort": "2026-03-04",
-      "victim": "Tycoon 2FA phishing-as-a-service platform (law enforcement action — downstream victims: ~100,000 organisations globally)",
-      "industry": "Cross-sector (MFA bypass infrastructure targeting all verticals)",
-      "attacker": "Criminal gang — phishing-as-a-service (platform dismantled)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Tycoon 2FA operated as an adversary-in-the-middle platform sold via Telegram since 2023; it harvested Microsoft 365 and Gmail session cookies through a transparent proxy, bypassing MFA entirely to achieve full account takeover at scale — with over 3 million malicious messages observed in February 2026 alone.",
-      "impact": "A coordinated public-private takedown by Proofpoint, Microsoft, Europol, Cloudflare, and international law enforcement seized 330 Tycoon 2FA control-panel domains; the platform had provided criminal access to approximately 100,000 organisations including schools, hospitals, and government bodies — disruption is significant but replication risk remains high given the RaaS proliferation trend.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "cyberscoop.com",
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "9",
-      "date": "2026-03-03",
-      "date_sort": "2026-03-03",
-      "victim": "LexisNexis Legal & Professional",
-      "industry": "Legal / Data Analytics",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "A threat actor gained unauthorised access to a limited number of servers hosting legacy data, subsequently exfiltrating approximately 2 GB of records and advertising the stolen data on a cybercriminal forum.",
-      "impact": "Exposed data included customer names, user IDs, business contact information (including .gov email addresses), account records for government agencies and law firms, passwords, IT incident tickets, and customer survey data; LexisNexis engaged external forensic experts and notified affected current and former customers across its 150-country footprint.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "therecord.media"
+        "therecord.media",
+        "darkreading.com",
+        "cyberscoop.com"
       ]
     }
   ]
