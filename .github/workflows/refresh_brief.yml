@@ -1,0 +1,39 @@
+name: Refresh Cyber Threat Brief
+
+on:
+  schedule:
+    # Runs at 06:00 and 18:00 UTC every day
+    - cron: '0 6,18 * * *'
+  workflow_dispatch:
+    # Allows manual trigger from the GitHub Actions UI
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to commit the updated JSON back to the repo
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install anthropic
+
+      - name: Generate brief
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python generate_brief.py
+
+      - name: Commit updated brief
+        run: |
+          git config user.name  "Cyber Brief Bot"
+          git config user.email "actions@github.com"
+          git add docs/data/brief.json
+          git diff --staged --quiet || git commit -m "chore: refresh cyber brief $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push

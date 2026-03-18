@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Threat Daily Brief</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{height:100%}
+body{background:#0f172a;color:#f1f5f9;font-family:system-ui,-apple-system,sans-serif;font-size:12px;min-height:100%}
+
+/* ── Header ──────────────────────────────────── */
+.hdr{background:#1e293b;border-bottom:1px solid #1e3a5f;padding:12px 16px;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.hdr-left{}
+.ht{font-weight:700;font-size:16px;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.hs{font-size:10px;color:#475569;line-height:1.6}
+.refresh-info{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0}
+.refresh-status{display:flex;align-items:center;gap:6px;font-size:11px}
+.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.dot-live{background:#22c55e}
+.dot-stale{background:#eab308}
+.dot-loading{background:#3b82f6;animation:blink 1s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.refresh-ts{font-size:10px;color:#475569;text-align:right}
+.refresh-btn{padding:5px 12px;font-size:11px;font-weight:600;background:#1d4ed8;color:#fff;border:none;border-radius:6px;cursor:pointer;font-family:inherit}
+.refresh-btn:hover{background:#2563eb}
+.refresh-btn:disabled{background:#1e3a5f;color:#475569;cursor:not-allowed}
+
+/* ── Source key ───────────────────────────────── */
+.key{display:flex;gap:14px;flex-wrap:wrap;padding:7px 16px;border-bottom:1px solid #1e3a5f;font-size:10px;align-items:center}
+.key-label{color:#475569;font-weight:700}
+.kd{display:flex;align-items:center;gap:5px;color:#64748b}
+.ks{width:9px;height:9px;border-radius:50%;flex-shrink:0;display:inline-block}
+
+/* ── Filter bar ───────────────────────────────── */
+.fw{padding:8px 16px;border-bottom:1px solid #1e3a5f;display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.fw-label{font-size:10px;color:#475569}
+.fb{padding:3px 11px;font-size:10px;font-weight:600;border-radius:5px;border:1px solid transparent;background:transparent;color:#475569;cursor:pointer;font-family:inherit;transition:all .15s}
+.fb.active-all   {border-color:#475569;   color:#94a3b8;background:rgba(30,41,59,.8)}
+.fb.active-c     {border-color:rgba(239,68,68,.5);  color:#fca5a5;background:rgba(30,41,59,.8)}
+.fb.active-h     {border-color:rgba(249,115,22,.5); color:#fdba74;background:rgba(30,41,59,.8)}
+.fb.active-m     {border-color:rgba(245,158,11,.5); color:#fde68a;background:rgba(30,41,59,.8)}
+
+/* ── Table ────────────────────────────────────── */
+.w{overflow-x:auto;padding:12px 16px 16px}
+table{width:100%;border-collapse:collapse;min-width:960px}
+th{background:#1e293b;color:#475569;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:8px 9px;text-align:left;border-bottom:2px solid #1e3a5f;white-space:nowrap;position:sticky;top:0;z-index:1}
+td{padding:8px 9px;vertical-align:top;border-bottom:1px solid rgba(30,41,59,.8);line-height:1.55}
+tr:nth-child(even) td{background:rgba(255,255,255,.025)}
+tr:hover td{background:rgba(255,255,255,.04)}
+.vc{font-weight:700}
+.src{font-size:9px;color:#475569;margin-top:2px}
+.g{color:#94a3b8}
+.att{font-weight:500}
+.att-russia   {color:#f87171}
+.att-iran     {color:#fb923c}
+.att-china    {color:#facc15}
+.att-nkorea   {color:#c084fc}
+.att-criminal {color:#94a3b8}
+.att-unknown  {color:#64748b}
+.chip{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;line-height:18px;white-space:nowrap}
+.mot-fin{background:rgba(6,78,59,.35);  color:#6ee7b7}
+.mot-esp{background:rgba(185,28,28,.35);color:#fca5a5}
+.mot-dis{background:rgba(154,52,18,.35);color:#fdba74}
+.mot-ip {background:rgba(107,33,168,.35);color:#d8b4fe}
+.mot-pol{background:rgba(30,58,138,.35);color:#93c5fd}
+.mot-unc{background:rgba(71,85,105,.35);color:#94a3b8}
+.oy{display:inline-block;font-weight:700;font-size:10px;padding:2px 9px;border-radius:4px;background:rgba(127,29,29,.4);color:#fca5a5}
+.on{display:inline-block;font-weight:700;font-size:10px;padding:2px 9px;border-radius:4px;background:rgba(6,78,59,.35);color:#6ee7b7}
+.ft{margin-top:8px;font-size:10px;color:#334155;display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px}
+
+/* ── States ───────────────────────────────────── */
+.state{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:72px 0;text-align:center}
+.state-icon{font-size:40px;margin-bottom:14px}
+.state-title{font-size:15px;font-weight:700;margin-bottom:8px}
+.state-sub{font-size:12px;color:#475569;max-width:380px;line-height:1.7}
+.spinner{width:32px;height:32px;border:3px solid #1d4ed8;border-top-color:transparent;border-radius:50%;animation:spin 1s linear infinite;margin-bottom:16px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.err-box{background:rgba(127,29,29,.2);border:1px solid rgba(185,28,28,.4);border-radius:12px;padding:20px;max-width:480px;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- ── Header ──────────────────────────────────── -->
+<div class="hdr">
+  <div class="hdr-left">
+    <div class="ht">🛡️ Cyber Threat Daily Brief</div>
+    <div class="hs">
+      Automated · refreshed every 12 hours · sources: The Record · Krebs on Security · CyberScoop ·
+      Unit 42 · Cisco Talos · Microsoft Security Blog · CISA · DOJ · NCSC · Reuters · Bloomberg · Dark Reading
+    </div>
+  </div>
+  <div class="refresh-info">
+    <div class="refresh-status">
+      <div class="dot dot-loading" id="status-dot"></div>
+      <span id="status-text">Loading…</span>
+    </div>
+    <div class="refresh-ts" id="ts-display"></div>
+    <div class="refresh-ts" id="next-display"></div>
+  </div>
+</div>
+
+<!-- ── Attacker color key ──────────────────────── -->
+<div class="key">
+  <span class="key-label">Attacker:</span>
+  <div class="kd"><div class="ks" style="background:#f87171"></div>Russia</div>
+  <div class="kd"><div class="ks" style="background:#fb923c"></div>Iran</div>
+  <div class="kd"><div class="ks" style="background:#facc15"></div>China</div>
+  <div class="kd"><div class="ks" style="background:#c084fc"></div>North Korea</div>
+  <div class="kd"><div class="ks" style="background:#94a3b8"></div>Criminal gang</div>
+  <div class="kd"><div class="ks" style="background:#64748b"></div>Unknown</div>
+</div>
+
+<!-- ── Filter bar ──────────────────────────────── -->
+<div class="fw">
+  <span class="fw-label">Filter:</span>
+  <button class="fb active-all" onclick="applyFilter('all',this)">All</button>
+  <button class="fb" onclick="applyFilter('c',this)">Critical</button>
+  <button class="fb" onclick="applyFilter('h',this)">High</button>
+  <button class="fb" onclick="applyFilter('m',this)">Medium</button>
+  <button class="fb" onclick="applyFilter('low',this)">Low</button>
+  <div style="flex:1"></div>
+  <span class="fw-label" id="period-label"></span>
+</div>
+
+<!-- ── Table ───────────────────────────────────── -->
+<div class="w" id="table-wrap">
+  <div class="state" id="loading-state">
+    <div class="spinner"></div>
+    <div class="state-title">Loading threat intelligence…</div>
+    <div class="state-sub">Fetching the latest brief.</div>
+  </div>
+</div>
+
+<script>
+// ---------------------------------------------------------------------------
+// State
+// ---------------------------------------------------------------------------
+let ALL_INCIDENTS = [];
+let activeFilter  = 'all';
+
+// ---------------------------------------------------------------------------
+// Severity helpers
+// ---------------------------------------------------------------------------
+const SEV_VICTIM_CLR = { critical:'#fca5a5', high:'#fdba74', medium:'#fde68a', low:'#93c5fd' };
+
+const MOTIVATION_CLASS = {
+  'Financial':  'mot-fin',
+  'Espionage':  'mot-esp',
+  'Disruption': 'mot-dis',
+  'IP theft':   'mot-ip',
+  'Political':  'mot-pol',
+  'Unclear':    'mot-unc',
+};
+
+// Map attacker_origin field to CSS class
+const ORIGIN_CLASS = {
+  russia:     'att-russia',
+  iran:       'att-iran',
+  china:      'att-china',
+  north_korea:'att-nkorea',
+  criminal:   'att-criminal',
+  unknown:    'att-unknown',
+};
+
+// ---------------------------------------------------------------------------
+// Render
+// ---------------------------------------------------------------------------
+function renderTable(incidents) {
+  const wrap = document.getElementById('table-wrap');
+
+  if (!incidents || incidents.length === 0) {
+    wrap.innerHTML = `
+      <div class="state">
+        <div class="state-icon">🔍</div>
+        <div class="state-title">No incidents found</div>
+        <div class="state-sub">The last automated run did not return any incidents matching the current filter. Check back after the next refresh.</div>
+      </div>`;
+    return;
+  }
+
+  // Count for filter labels
+  const counts = { all:0, c:0, h:0, m:0, low:0 };
+  ALL_INCIDENTS.forEach(r => {
+    counts.all++;
+    if (r.severity === 'critical') counts.c++;
+    else if (r.severity === 'high') counts.h++;
+    else if (r.severity === 'medium') counts.m++;
+    else if (r.severity === 'low') counts.low++;
+  });
+
+  // Update filter button labels
+  document.querySelectorAll('.fb').forEach(btn => {
+    const map = { all:'All', c:'Critical', h:'High', m:'Medium', low:'Low' };
+    const k = btn.getAttribute('onclick').match(/'([^']+)'/)[1];
+    if (map[k]) btn.textContent = `${map[k]} (${counts[k]||0})`;
+  });
+
+  // Build rows
+  const rows = incidents.map((r, i) => {
+    const vc  = SEV_VICTIM_CLR[r.severity] || '#94a3b8';
+    const mc  = MOTIVATION_CLASS[r.motivation] || 'mot-unc';
+    const ac  = ORIGIN_CLASS[r.attacker_origin] || 'att-unknown';
+    const srcs = Array.isArray(r.sources) ? r.sources.join(' · ') : (r.sources || '');
+    return `
+      <tr data-sev="${r.severity}">
+        <td><span style="color:#64748b;white-space:nowrap;font-size:10px">${esc(r.date)}</span></td>
+        <td>
+          <div class="vc" style="color:${vc}">${esc(r.victim)}</div>
+          <div class="src">${esc(srcs)}</div>
+        </td>
+        <td><span class="g">${esc(r.industry)}</span></td>
+        <td><span class="att ${ac}">${esc(r.attacker)}</span></td>
+        <td><span class="chip ${mc}">${esc(r.motivation)}</span></td>
+        <td><span class="g">${esc(r.vector)}</span></td>
+        <td><span class="g">${esc(r.impact)}</span></td>
+        <td style="text-align:center">
+          <span class="${r.ongoing === 'Y' ? 'oy' : 'on'}">${r.ongoing === 'Y' ? 'Yes' : 'No'}</span>
+        </td>
+      </tr>`;
+  }).join('');
+
+  wrap.innerHTML = `
+    <table>
+      <thead><tr>
+        <th>Date</th>
+        <th>Victim</th>
+        <th>Industry</th>
+        <th>Attacker</th>
+        <th>Motivation</th>
+        <th>Attack vector</th>
+        <th>Impact</th>
+        <th style="text-align:center">Ongoing</th>
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+    <div class="ft">
+      <span>${incidents.length} of ${ALL_INCIDENTS.length} incident${ALL_INCIDENTS.length !== 1 ? 's' : ''} · sorted most recent first</span>
+      <span>Victim color: red = critical · orange = high · yellow = medium · blue = low</span>
+    </div>`;
+}
+
+// ---------------------------------------------------------------------------
+// Filter
+// ---------------------------------------------------------------------------
+function applyFilter(f, btn) {
+  activeFilter = f;
+  document.querySelectorAll('.fb').forEach(b => {
+    b.className = 'fb';
+  });
+  btn.className = `fb active-${f}`;
+
+  const filtered = f === 'all'
+    ? ALL_INCIDENTS
+    : ALL_INCIDENTS.filter(r => {
+        if (f === 'c')   return r.severity === 'critical';
+        if (f === 'h')   return r.severity === 'high';
+        if (f === 'm')   return r.severity === 'medium';
+        if (f === 'low') return r.severity === 'low';
+        return true;
+      });
+  renderTable(filtered);
+}
+
+// ---------------------------------------------------------------------------
+// Load data
+// ---------------------------------------------------------------------------
+async function loadBrief() {
+  const dot  = document.getElementById('status-dot');
+  const text = document.getElementById('status-text');
+
+  try {
+    // Cache-bust so the browser always fetches the latest JSON
+    const res = await fetch(`data/brief.json?t=${Date.now()}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+
+    ALL_INCIDENTS = data.incidents || [];
+
+    // Timestamps
+    if (data.generated_at) {
+      const ts = new Date(data.generated_at);
+      const now = new Date();
+      const ageMs = now - ts;
+      const ageH  = ageMs / 3_600_000;
+      const stale = ageH > 13; // slightly beyond 12-hour window
+
+      dot.className  = `dot ${stale ? 'dot-stale' : 'dot-live'}`;
+      text.textContent = stale ? 'Data may be stale' : 'Live';
+
+      document.getElementById('ts-display').textContent =
+        `Last refreshed: ${ts.toLocaleString(undefined, { dateStyle:'medium', timeStyle:'short' })}`;
+
+      // Estimate next refresh (12-hour cadence from last run)
+      const next = new Date(ts.getTime() + 12 * 3_600_000);
+      document.getElementById('next-display').textContent =
+        `Next refresh: ~${next.toLocaleString(undefined, { dateStyle:'medium', timeStyle:'short' })}`;
+
+    } else {
+      dot.className  = 'dot dot-stale';
+      text.textContent = 'Awaiting first run';
+      document.getElementById('ts-display').textContent = 'No data yet — trigger the GitHub Action manually to run the first refresh.';
+    }
+
+    // Period label
+    if (data.period_searched) {
+      document.getElementById('period-label').textContent = `Period: ${data.period_searched}`;
+    }
+
+    renderTable(ALL_INCIDENTS);
+
+  } catch (err) {
+    dot.className  = 'dot dot-stale';
+    text.textContent = 'Load error';
+    document.getElementById('table-wrap').innerHTML = `
+      <div class="state">
+        <div class="err-box">
+          <div style="font-size:18px;margin-bottom:8px">⚠️</div>
+          <div style="color:#fca5a5;font-weight:700;margin-bottom:6px">Failed to load brief</div>
+          <div style="color:#f87171;font-size:11px;line-height:1.6">${esc(err.message)}</div>
+        </div>
+      </div>`;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Utilities
+// ---------------------------------------------------------------------------
+function esc(s) {
+  if (!s) return '';
+  return String(s)
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;');
+}
+
+// ---------------------------------------------------------------------------
+// Init — load immediately, then poll every 60 s to pick up new JSON
+// ---------------------------------------------------------------------------
+loadBrief();
+setInterval(loadBrief, 60_000);
+</script>
+</body>
+</html>
