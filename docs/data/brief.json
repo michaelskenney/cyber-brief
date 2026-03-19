@@ -1,75 +1,57 @@
 {
-  "generated_at": "2026-03-19T06:58:06.785002+00:00",
-  "period_searched": "March 5–19, 2026 (48-hour priority; expanded to 14 days to reach coverage threshold)",
-  "incident_count": 8,
+  "generated_at": "2026-03-19T18:58:01.742022+00:00",
+  "period_searched": "March 5–19, 2026 (priority on March 17–19, 2026)",
+  "incident_count": 9,
   "incidents": [
     {
-      "id": "3",
-      "date": "2026-03-18",
-      "date_sort": "2026-03-18",
-      "victim": "Marquis Software Solutions (bank marketing and compliance vendor) — 670,000+ downstream banking customers across 80+ U.S. banks and credit unions",
-      "industry": "Financial Services / Fintech",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Attackers obtained stolen firewall configuration backup files from Stryker's SonicWall cloud portal (a separate earlier breach), used those files to compromise Marquis's network, then deployed ransomware; Marquis alleges SonicWall security failures enabled the initial theft of its firewall credentials.",
-      "impact": "More than 670,000 individuals—customers of 80+ community banks and credit unions—had names, dates of birth, postal addresses, Social Security numbers, and bank account and card numbers stolen in an August 2025 breach; the full victim count was disclosed publicly on March 18, 2026. Reports indicate Marquis paid a ransom. Marquis has sued SonicWall over the incident.",
-      "ongoing": "N",
-      "severity": "high",
+      "id": "1",
+      "date": "2026-03-19",
+      "date_sort": "2026-03-19",
+      "victim": "Ukraine — State Hydrographic Service (maritime critical infrastructure)",
+      "industry": "Government / Critical Infrastructure",
+      "attacker": "Russia — GRU military intelligence",
+      "attacker_origin": "russia",
+      "motivation": "Espionage",
+      "vector": "A weaponised phishing email exploiting a stored cross-site scripting flaw in Zimbra webmail (CVE-2025-66376) was sent via a compromised student account; the entire malicious payload was embedded in the email body with no attachments, executing silently when the email was opened in an active Zimbra session.",
+      "impact": "Attackers silently harvested login credentials, session tokens, two-factor authentication codes, stored passwords, and up to 90 days of mailbox data from targeted officials; CISA added the vulnerability to its Known Exploited Vulnerabilities catalogue on 18 March and ordered federal agencies to patch within two weeks.",
+      "ongoing": "Y",
+      "severity": "critical",
       "sources": [
         "therecord.media",
-        "krebsonsecurity.com"
+        "bleepingcomputer.com",
+        "seqrite.com",
+        "databreaches.net"
       ]
     },
     {
       "id": "2",
-      "date": "2026-03-17",
-      "date_sort": "2026-03-17",
-      "victim": "University of Mississippi Medical Center (UMMC) / Passaic County, New Jersey",
-      "industry": "Healthcare / Government",
-      "attacker": "Criminal gang — ransomware (Russia-based operators, per expert assessment)",
-      "attacker_origin": "criminal",
+      "date": "2026-03-18",
+      "date_sort": "2026-03-18",
+      "victim": "Multiple healthcare and government organisations (Cisco Secure Firewall Management Center customers globally)",
+      "industry": "Cross-sector / Critical Infrastructure",
+      "attacker": "Criminal gang — ransomware (Interlock group)",
+      "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "Exploitation of a public-facing application to gain initial access, followed by privilege escalation and disabling of security tools, consistent with the ransomware gang's known double-extortion methodology.",
-      "impact": "UMMC—Mississippi's only academic medical centre, operating seven hospitals—was forced offline for nine days (February 19–March 2), closing 35 clinics, cancelling elective procedures, and reverting to paper-based operations. The gang demanded an $800,000 ransom and threatened to publish stolen data by March 20. Passaic County, NJ, simultaneously claimed as a victim with phone lines and IT systems taken down; $800,000 ransom also demanded.",
+      "vector": "Ransomware operators exploited CVE-2026-20131, a maximum-severity zero-day vulnerability in Cisco Secure Firewall Management Center software, beginning 26 January — more than five weeks before Cisco's public disclosure on 4 March; Amazon's honeypot network captured the exploit traffic and CISA issued a three-day federal patch mandate.",
+      "impact": "Confirmed victims include healthcare facilities (dialysis provider DaVita and Kettering Health, where chemotherapy and pre-surgery appointments were disrupted and cancer patients' data was leaked); the city of Saint Paul, Minnesota was forced to declare a state of emergency after 43 GB of files were stolen; the education sector represents the largest share of overall Interlock activity.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
         "therecord.media",
-        "cisa.gov"
+        "theregister.com"
       ]
     },
     {
-      "id": "1",
-      "date": "2026-03-11",
-      "date_sort": "2026-03-11",
-      "victim": "Stryker Corporation (medical device manufacturer, Michigan)",
-      "industry": "Healthcare / Medical Technology",
-      "attacker": "Iran — state-directed hacktivist proxies",
-      "attacker_origin": "iran",
-      "motivation": "Disruption / Political",
-      "vector": "Attackers allegedly compromised administrative credentials and abused Microsoft Intune, a corporate device management console, to remotely wipe tens of thousands of employee devices across the company's global Microsoft environment.",
-      "impact": "Global network disruption across offices in 79 countries; attackers claimed to have wiped more than 200,000 servers, mobile devices, and systems and exfiltrated 50 TB of data. Stryker's Lifenet EKG-transmission system—used by paramedics to relay cardiac data to emergency departments—was disrupted, with hospitals in multiple U.S. states temporarily disconnecting from Stryker systems. As of March 17, Stryker was still in the process of restoring systems.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "krebsonsecurity.com",
-        "therecord.media",
-        "reuters.com/technology/cybersecurity",
-        "cyberscoop.com"
-      ]
-    },
-    {
-      "id": "4",
-      "date": "2026-03-11",
-      "date_sort": "2026-03-11",
-      "victim": "Unnamed Wisconsin ambulance and emergency medical services provider (largest in the state)",
-      "industry": "Healthcare / Emergency Services",
+      "id": "6",
+      "date": "2026-03-18",
+      "date_sort": "2026-03-18",
+      "victim": "Marquis Software (bank communication software vendor serving 74+ US financial institutions)",
+      "industry": "Financial Services / Banking Technology",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "Method not yet publicly disclosed; breach resulted in unauthorised access to systems holding personal and medical data.",
-      "impact": "Approximately 235,000 individuals notified of a data breach affecting personal and health information held by the state's largest ambulance provider.",
+      "vector": "Attackers gained unauthorised access to Marquis Software's systems in August 2025 and copied files; the breach was not publicly disclosed until November 2025 and full victim counts were only confirmed via regulatory filings on 18 March 2026.",
+      "impact": "672,075 individuals confirmed affected across at least 74 banks, credit unions, and financial institutions; stolen data includes names, addresses, Social Security numbers, Taxpayer Identification Numbers, dates of birth, and financial account information; no ransomware group claimed responsibility.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -77,77 +59,110 @@
       ]
     },
     {
-      "id": "6",
-      "date": "Early Mar 2026",
-      "date_sort": "2026-03-04",
-      "victim": "Ukrainian government agencies and critical infrastructure (multiple targets)",
-      "industry": "Government / Critical Infrastructure",
-      "attacker": "Russia — state-linked espionage group (suspected, per Ukraine CERT-UA; attribution not formally confirmed)",
-      "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "Phishing emails sent from compromised accounts containing links to public file-sharing services (DropMeFiles, Google Drive); clicking the links executed a PowerShell script deploying previously unknown spying malware dubbed 'Wrecksteel' to extract documents and take screenshots.",
-      "impact": "At least three confirmed incidents in March 2026 affecting Ukrainian government agencies and critical infrastructure; the espionage campaign has been active since at least autumn 2024. Stolen data includes text documents, PDFs, images, presentations, and screenshots from infected devices.",
+      "id": "5",
+      "date": "2026-03-17",
+      "date_sort": "2026-03-17",
+      "victim": "University of Mississippi Medical Center (UMMC) — Mississippi's only children's hospital and Level I trauma centre; Passaic County, New Jersey government",
+      "industry": "Healthcare / Government",
+      "attacker": "Criminal gang — ransomware (Russia-based operation, per expert assessment)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Ransomware deployed against both organisations, forcing UMMC to go fully offline for nine days, with clinical staff reverting to paper-based processes; the same group separately knocked out phone lines and IT systems across Passaic County government offices.",
+      "impact": "UMMC's cancer infusion centre had to reschedule patients; the hospital fully restored systems on 2 March after a nine-day outage; $800,000 ransom demanded from each victim with a threatened data leak deadline of 20 March; county government experienced widespread communications failure.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "4",
+      "date": "2026-03-12",
+      "date_sort": "2026-03-12",
+      "victim": "Telus Digital (BPO and digital-services subsidiary of Canadian telecom Telus, serves clients globally)",
+      "industry": "Telecommunications / Business Process Outsourcing",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Attackers used Google Cloud Platform credentials found inside data stolen in a prior third-party supply-chain breach (Salesloft/Drift), then used credential-scanning tooling to pivot laterally across Telus systems — including a large BigQuery database — over several months without detection.",
+      "impact": "Up to 1 petabyte of data claimed stolen, reportedly including FBI background checks, source code, financial records, Salesforce data, and voice recordings spanning at least 28 client organisations; attackers demanded a $65 million ransom which Telus rejected; the breach remained undetected for months, exposing downstream clients of the BPO provider.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
         "therecord.media",
-        "blog.talosintelligence.com"
+        "bleepingcomputer.com"
+      ]
+    },
+    {
+      "id": "3",
+      "date": "2026-03-11",
+      "date_sort": "2026-03-11",
+      "victim": "Stryker Corporation (Fortune 500 medical device manufacturer, ~56,000 employees, operations in 60+ countries)",
+      "industry": "Healthcare / Medical Technology",
+      "attacker": "Iran — state-directed hacktivist proxies (Ministry of Intelligence-linked group)",
+      "attacker_origin": "iran",
+      "motivation": "Disruption",
+      "vector": "Attackers are assessed by researchers to have gained access to Stryker's Microsoft Intune mobile device management console — likely via phishing or infostealer-harvested credentials — then remotely triggered a mass factory-reset wipe across enrolled corporate devices worldwide.",
+      "impact": "More than 200,000 servers, laptops, phones, and other Windows devices were wiped across offices in 79 countries; Stryker's ordering and shipping systems remained offline one week after the attack; emergency cardiac telemetry system Lifenet was temporarily reported non-functional in Maryland; Stryker stock fell more than 3%; CISA and the FBI opened investigations and described this as the first successful destructive cyberattack on a major US corporation since the start of the US-Israel-Iran war.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "unit42.paloaltonetworks.com",
+        "therecord.media",
+        "theregister.com",
+        "reuters.com/technology/cybersecurity"
+      ]
+    },
+    {
+      "id": "7",
+      "date": "2026-03-11",
+      "date_sort": "2026-03-11",
+      "victim": "TELUS Digital (secondary listing) / FBI-background-check ecosystem — and separately: Wisconsin ambulance provider (largest in state)",
+      "industry": "Healthcare / Emergency Services",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Cyberattack on the largest ambulance services provider in Wisconsin compromised patient and operational data; the attack vector has not been publicly disclosed.",
+      "impact": "235,000 individuals confirmed affected; patient personal and health data exposed; CERT notifications issued to state regulators.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "9",
+      "date": "Early Mar 2026",
+      "date_sort": "2026-03-05",
+      "victim": "DOJ / LeakBase cybercriminal forum (law-enforcement action)",
+      "industry": "Law Enforcement Action / Criminal Infrastructure",
+      "attacker": "Criminal gang — data extortion / stolen-data marketplace",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "LeakBase operated as one of the world's largest online forums for buying and selling stolen credentials and breach data, facilitating downstream attacks against organisations globally.",
+      "impact": "US Department of Justice announced seizure of the LeakBase database on 4 March 2026, disrupting a major stolen-data trading hub used by cybercriminals to monetise breaches and enable credential-stuffing and account-takeover attacks.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "justice.gov"
       ]
     },
     {
       "id": "8",
       "date": "2026-03-04",
       "date_sort": "2026-03-04",
-      "victim": "LeakBase cybercrime forum (international law enforcement action)",
-      "industry": "Criminal Infrastructure / Law Enforcement Action",
-      "attacker": "Criminal gang — data extortion (forum operators and users)",
+      "victim": "Tycoon 2FA phishing-as-a-service platform (criminal infrastructure takedown affecting ~100,000 victim organisations globally)",
+      "industry": "Cross-sector (criminal infrastructure disruption)",
+      "attacker": "Criminal gang — credential theft / adversary-in-the-middle phishing",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "LeakBase operated as an open-web English-language marketplace enabling cybercriminals to buy and sell stolen databases, account credentials, and cybercrime tools sourced from high-profile breaches worldwide.",
-      "impact": "U.S. Department of Justice led a 14-country coordinated takedown on March 3–4, 2026, seizing the forum (142,000+ members; 215,000+ messages), its data, and two domains. Arrests, searches, and interviews were conducted in the U.S., Australia, Belgium, Poland, Portugal, Romania, Spain, and the UK. The forum hosted hundreds of millions of stolen credentials and financial account details.",
+      "vector": "The platform operated as a transparent proxy sold via Telegram since 2023 that harvested Microsoft 365 and Gmail session cookies, allowing full multi-factor-authentication bypass and account takeover at scale; over 3 million malicious messages were attributed to the platform in February 2026 alone.",
+      "impact": "A coordinated public-private takedown by Microsoft, Proofpoint, Europol, Cloudflare, and law enforcement across multiple countries resulted in seizure of 330 control-panel domains; the platform had given criminals access to nearly 100,000 organisations including schools, hospitals, and government institutions before disruption.",
       "ongoing": "N",
-      "severity": "medium",
+      "severity": "high",
       "sources": [
-        "justice.gov",
+        "hornetsecurity.com",
         "therecord.media"
-      ]
-    },
-    {
-      "id": "5",
-      "date": "2026-02-25",
-      "date_sort": "2026-02-25",
-      "victim": "U.S. federal civilian agencies and critical infrastructure organisations globally (Cisco SD-WAN infrastructure)",
-      "industry": "Government / Multi-sector Critical Infrastructure",
-      "attacker": "Unknown (state-suspected espionage group, exploitation active since at least 2023)",
-      "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "Exploitation of a CVSS 10.0 authentication bypass zero-day (CVE-2026-20127) in Cisco Catalyst SD-WAN Controller and Manager, allowing unauthenticated remote attackers to obtain administrative privileges; attackers then downgraded device software to exploit a second known vulnerability (CVE-2022-20775) to escalate to root, establish persistence, and laterally move beyond the SD-WAN environment.",
-      "impact": "CISA issued Emergency Directive 26-03 requiring all U.S. federal civilian agencies to inventory affected devices, submit forensic logs, apply patches, and assess compromise by March 23, 2026. International partners (Australia, UK, New Zealand) co-sealed threat hunt guidance. Specific victim organisations have not been publicly identified; high-value and critical infrastructure sectors are confirmed targets. Exploitation has been ongoing since at least 2023.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "cisa.gov",
-        "blog.talosintelligence.com",
-        "cyberscoop.com"
-      ]
-    },
-    {
-      "id": "7",
-      "date": "2026-01-15",
-      "date_sort": "2026-01-15",
-      "victim": "Multiple high-value critical infrastructure organisations in North America (specific victims undisclosed)",
-      "industry": "Critical Infrastructure (multi-sector)",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage / IP theft",
-      "vector": "Exploitation of vulnerable public-facing servers (including a Sitecore ViewState deserialization zero-day, CVE-2025-53690) and use of stolen credentials for initial access, followed by deployment of open-source post-exploitation tools including Earthworm (network tunnelling), SharpHound (Active Directory enumeration), Rubeus (Kerberos abuse), and GoTokenTheft (privilege escalation).",
-      "impact": "Multiple intrusions into North American critical infrastructure organisations confirmed since at least 2025; attackers harvested credentials, security configurations, and Active Directory data to create persistent multi-channel access. In at least one case, product-related DLL libraries were exfiltrated, raising the risk of future supply-chain trojanisation. Cisco Talos published findings on January 15, 2026; the campaign is assessed as ongoing.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "blog.talosintelligence.com",
-        "therecord.media",
-        "unit42.paloaltonetworks.com"
       ]
     }
   ]
