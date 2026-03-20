@@ -148,6 +148,11 @@ def generate():
     messages = [{"role": "user", "content": USER_PROMPT}]
     final_text = ""
 
+    # Usage tracking — accumulate token counts across all API calls
+    usage_log = []  # per-call records
+    total_input_tokens = 0
+    total_output_tokens = 0
+
     # Web search is a server-side tool — the API executes searches internally.
     # When the server-side loop hits its iteration limit, stop_reason is
     # "pause_turn". We re-send the conversation to let it continue.
@@ -163,7 +168,25 @@ def generate():
             messages=messages,
         )
 
+        # Track token usage for this call
+        call_usage = {
+            "call": attempt + 1,
+            "input_tokens": response.usage.input_tokens,
+            "output_tokens": response.usage.output_tokens,
+            "stop_reason": response.stop_reason,
+        }
+        # Capture any additional usage fields the API provides
+        # (e.g. cache_creation_input_tokens, cache_read_input_tokens)
+        for attr in ("cache_creation_input_tokens", "cache_read_input_tokens"):
+            val = getattr(response.usage, attr, None)
+            if val:
+                call_usage[attr] = val
+        usage_log.append(call_usage)
+        total_input_tokens += response.usage.input_tokens
+        total_output_tokens += response.usage.output_tokens
+
         print(f"  stop_reason: {response.stop_reason}")
+        print(f"  tokens: {response.usage.input_tokens:,} in / {response.usage.output_tokens:,} out")
 
         # Collect all text blocks from this response
         text_parts = [b.text for b in response.content if hasattr(b, "text") and b.text]
@@ -188,6 +211,14 @@ def generate():
         final_text = " ".join(text_parts)
         print(f"  Unexpected stop_reason: {response.stop_reason}")
         break
+
+    # Print usage summary
+    print(f"\n--- API Usage Summary ---")
+    print(f"  API calls made: {len(usage_log)}")
+    print(f"  Total input tokens:  {total_input_tokens:,}")
+    print(f"  Total output tokens: {total_output_tokens:,}")
+    print(f"  Total tokens:        {total_input_tokens + total_output_tokens:,}")
+    print(f"-------------------------\n")
 
     if not final_text:
         print("ERROR: No text content returned from API.", file=sys.stderr)
@@ -227,6 +258,22 @@ def generate():
     print(f"Period: {data.get('period_searched', 'unknown')}")
     for inc in data["incidents"]:
         print(f"  [{inc['severity'].upper():8}] {inc['date']:12} {inc['victim']}")
+
+    # Append usage record to JSONL log for historical tracking
+    usage_record = {
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "model": "claude-sonnet-4-6",
+        "api_calls": len(usage_log),
+        "total_input_tokens": total_input_tokens,
+        "total_output_tokens": total_output_tokens,
+        "total_tokens": total_input_tokens + total_output_tokens,
+        "incident_count": len(data["incidents"]),
+        "calls": usage_log,
+    }
+    usage_log_path = os.path.join(os.path.dirname(__file__), "docs", "data", "usage_log.jsonl")
+    with open(usage_log_path, "a", encoding="utf-8") as f:
+        f.write(json.dumps(usage_record) + "\n")
+    print(f"Usage logged to {usage_log_path}")
 
 
 if __name__ == "__main__":
