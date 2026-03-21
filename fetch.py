@@ -118,3 +118,106 @@ def fetch_source(source, date, api_key):
         "article_count": len(articles),
         "articles": articles,
     }
+
+
+def fetch_all(sources, date, api_key, output_dir):
+    """Fetch articles from all sources, write output files, return summary."""
+    os.makedirs(output_dir, exist_ok=True)
+
+    results = []
+    failures = []
+    total_words = 0
+
+    for source in sources:
+        try:
+            print(f"  Fetching {source['id']}...")
+            result = fetch_source(source, date, api_key)
+
+            # Enforce total word budget
+            source_words = sum(len(a["content"].split()) for a in result["articles"])
+            if total_words + source_words > MAX_TOTAL_WORDS:
+                remaining = MAX_TOTAL_WORDS - total_words
+                trimmed_articles = []
+                for article in result["articles"]:
+                    article_words = len(article["content"].split())
+                    if remaining <= 0:
+                        break
+                    if article_words > remaining:
+                        article["content"] = truncate_text(article["content"], remaining)
+                        article_words = remaining
+                    trimmed_articles.append(article)
+                    remaining -= article_words
+                result["articles"] = trimmed_articles
+                result["article_count"] = len(trimmed_articles)
+                source_words = sum(len(a["content"].split()) for a in trimmed_articles)
+
+            total_words += source_words
+
+            # Write source file
+            output_path = os.path.join(output_dir, f"{source['id']}.json")
+            with open(output_path, "w", encoding="utf-8") as f:
+                json.dump(result, f, indent=2, ensure_ascii=False)
+
+            results.append(result)
+            print(f"    {result['article_count']} articles, {source_words:,} words")
+
+        except Exception as e:
+            print(f"    FAILED: {e}")
+            failures.append({"source_id": source["id"], "error": str(e)})
+
+    total_articles = sum(r["article_count"] for r in results)
+
+    summary = {
+        "date": date,
+        "fetched_at": datetime.now(timezone.utc).isoformat(),
+        "total_sources": len(sources),
+        "succeeded": len(results),
+        "failed": len(failures),
+        "total_articles": total_articles,
+        "total_words": total_words,
+        "failures": failures,
+    }
+
+    summary_path = os.path.join(output_dir, "_fetch_summary.json")
+    with open(summary_path, "w", encoding="utf-8") as f:
+        json.dump(summary, f, indent=2, ensure_ascii=False)
+
+    return summary
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Fetch cyber threat content via Exa API")
+    parser.add_argument("--date", default=datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+                        help="Date for this fetch run (YYYY-MM-DD, default: today UTC)")
+    args = parser.parse_args()
+
+    api_key = os.environ.get("EXA_API_KEY")
+    if not api_key:
+        print("ERROR: EXA_API_KEY not set. Add it to .env or environment.", file=sys.stderr)
+        sys.exit(1)
+
+    sources_path = os.path.join(os.path.dirname(__file__), "sources.json")
+    with open(sources_path, "r") as f:
+        sources = json.load(f)
+
+    output_dir = os.path.join(os.path.dirname(__file__), "data", "raw", args.date)
+
+    print(f"Fetching {len(sources)} sources for {args.date}...")
+    summary = fetch_all(sources, args.date, api_key, output_dir)
+
+    print(f"\nFetch complete: {summary['succeeded']}/{summary['total_sources']} sources, "
+          f"{summary['total_articles']} articles, {summary['total_words']:,} words")
+
+    if summary["failures"]:
+        print("Failures:")
+        for fail in summary["failures"]:
+            print(f"  - {fail['source_id']}: {fail['error']}")
+
+    min_required = len(sources) // 2
+    if summary["succeeded"] < min_required:
+        print(f"ERROR: Only {summary['succeeded']}/{len(sources)} sources succeeded (need {min_required}+)")
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

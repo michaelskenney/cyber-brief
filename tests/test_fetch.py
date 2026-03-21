@@ -148,3 +148,96 @@ class TestFetchSingleSource:
 
         word_count = len(result["articles"][0]["content"].split())
         assert word_count <= MAX_WORDS_PER_ARTICLE
+
+
+class TestFetchAll:
+    """Test fetching from all sources and writing output files."""
+
+    @patch("fetch.fetch_source")
+    def test_fetch_all_writes_files(self, mock_fetch, tmp_path):
+        from fetch import fetch_all
+
+        mock_fetch.return_value = {
+            "source_id": "crowdstrike",
+            "domain": "crowdstrike.com/blog",
+            "fetched_at": "2026-03-20T06:00:00+00:00",
+            "article_count": 1,
+            "articles": [{"title": "Test", "url": "https://x.com", "published_date": "", "content": "text"}],
+        }
+
+        sources = [
+            {"id": "crowdstrike", "domain": "crowdstrike.com/blog", "category": "Industry"},
+            {"id": "cisa", "domain": "cisa.gov", "category": "Government"},
+        ]
+
+        summary = fetch_all(sources, date="2026-03-20", api_key="test", output_dir=str(tmp_path))
+
+        # Check source files were written
+        assert (tmp_path / "crowdstrike.json").exists()
+        assert (tmp_path / "cisa.json").exists()
+
+        # Check summary
+        assert summary["total_sources"] == 2
+        assert summary["succeeded"] == 2
+        assert (tmp_path / "_fetch_summary.json").exists()
+
+    @patch("fetch.fetch_source")
+    def test_fetch_all_handles_source_failure(self, mock_fetch, tmp_path):
+        from fetch import fetch_all
+
+        def side_effect(source, date, api_key):
+            if source["id"] == "broken":
+                raise Exception("Exa API error")
+            return {
+                "source_id": source["id"],
+                "domain": source["domain"],
+                "fetched_at": "2026-03-20T06:00:00+00:00",
+                "article_count": 1,
+                "articles": [{"title": "Test", "url": "https://x.com", "published_date": "", "content": "text"}],
+            }
+
+        mock_fetch.side_effect = side_effect
+
+        sources = [
+            {"id": "good", "domain": "good.com", "category": "Test"},
+            {"id": "broken", "domain": "broken.com", "category": "Test"},
+        ]
+
+        summary = fetch_all(sources, date="2026-03-20", api_key="test", output_dir=str(tmp_path))
+
+        assert summary["succeeded"] == 1
+        assert summary["failed"] == 1
+        assert len(summary["failures"]) == 1
+        assert summary["failures"][0]["source_id"] == "broken"
+
+    @patch("fetch.fetch_source")
+    def test_fetch_all_enforces_total_word_budget(self, mock_fetch, tmp_path):
+        from fetch import fetch_all, MAX_TOTAL_WORDS
+
+        def side_effect(source, date, api_key):
+            # Each source returns a huge article
+            big_text = " ".join(["word"] * 50000)
+            return {
+                "source_id": source["id"],
+                "domain": source["domain"],
+                "fetched_at": "2026-03-20T06:00:00+00:00",
+                "article_count": 1,
+                "articles": [{"title": "Big", "url": "https://x.com", "published_date": "2026-03-20", "content": big_text}],
+            }
+
+        mock_fetch.side_effect = side_effect
+
+        sources = [{"id": f"s{i}", "domain": f"s{i}.com", "category": "Test"} for i in range(5)]
+
+        summary = fetch_all(sources, date="2026-03-20", api_key="test", output_dir=str(tmp_path))
+
+        # Count total words across all written source files
+        total_words = 0
+        for f in tmp_path.glob("*.json"):
+            if f.name == "_fetch_summary.json":
+                continue
+            data = json.loads(f.read_text())
+            for article in data["articles"]:
+                total_words += len(article["content"].split())
+
+        assert total_words <= MAX_TOTAL_WORDS
