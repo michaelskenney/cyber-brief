@@ -287,7 +287,7 @@ async function loadBrief() {
       dot.className  = `dot ${stale ? 'dot-stale' : 'dot-live'}`;
       text.textContent = stale ? 'Data may be stale' : 'Live';
 
-      const fmtOpts = { dateStyle:'medium', timeStyle:'short', timeZoneName:'short' };
+      const fmtOpts = { year:'numeric', month:'short', day:'numeric', hour:'numeric', minute:'2-digit', timeZoneName:'short' };
       document.getElementById('ts-display').textContent =
         `Last refreshed: ${ts.toLocaleString(undefined, fmtOpts)}`;
 
