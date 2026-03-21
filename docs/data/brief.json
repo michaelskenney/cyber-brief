@@ -1,169 +1,127 @@
 {
-  "generated_at": "2026-03-19T18:58:01.742022+00:00",
-  "period_searched": "March 5–19, 2026 (priority on March 17–19, 2026)",
-  "incident_count": 9,
+  "generated_at": "2026-03-21T19:30:00.000000+00:00",
+  "period_searched": "March 9–21, 2026",
+  "incident_count": 8,
   "incidents": [
     {
       "id": "1",
-      "date": "2026-03-19",
+      "date": "Mar 19",
       "date_sort": "2026-03-19",
-      "victim": "Ukraine — State Hydrographic Service (maritime critical infrastructure)",
-      "industry": "Government / Critical Infrastructure",
-      "attacker": "Russia — GRU military intelligence",
-      "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "A weaponised phishing email exploiting a stored cross-site scripting flaw in Zimbra webmail (CVE-2025-66376) was sent via a compromised student account; the entire malicious payload was embedded in the email body with no attachments, executing silently when the email was opened in an active Zimbra session.",
-      "impact": "Attackers silently harvested login credentials, session tokens, two-factor authentication codes, stored passwords, and up to 90 days of mailbox data from targeted officials; CISA added the vulnerability to its Known Exploited Vulnerabilities catalogue on 18 March and ordered federal agencies to patch within two weeks.",
+      "victim": "Stryker Corporation (Fortune 500 medical device manufacturer)",
+      "industry": "Healthcare / Medical Technology",
+      "attacker": "Iran — state-directed hacktivist proxies",
+      "attacker_origin": "iran",
+      "motivation": "Disruption",
+      "vector": "Attackers compromised Stryker's Microsoft Intune device management console and remotely triggered mass factory-reset wipes across enrolled corporate devices worldwide, without deploying malware.",
+      "impact": "Over 200,000 devices wiped across factories in the US, Ireland, India, and other countries; employees locked out of critical systems for over a week. FBI and CISA released joint Intune hardening advisory. FBI seized the group's website under a seizure warrant citing coordination with a foreign state actor.",
       "ongoing": "Y",
       "severity": "critical",
-      "sources": [
-        "therecord.media",
-        "bleepingcomputer.com",
-        "seqrite.com",
-        "databreaches.net"
-      ]
+      "sources": ["therecord.media", "cisa.gov"]
     },
     {
       "id": "2",
-      "date": "2026-03-18",
-      "date_sort": "2026-03-18",
-      "victim": "Multiple healthcare and government organisations (Cisco Secure Firewall Management Center customers globally)",
+      "date": "Mar 19",
+      "date_sort": "2026-03-19",
+      "victim": "Multiple organizations (government, healthcare, education — Cisco Firewall Management Center customers)",
       "industry": "Cross-sector / Critical Infrastructure",
-      "attacker": "Criminal gang — ransomware (Interlock group)",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Ransomware operators exploited CVE-2026-20131, a maximum-severity zero-day vulnerability in Cisco Secure Firewall Management Center software, beginning 26 January — more than five weeks before Cisco's public disclosure on 4 March; Amazon's honeypot network captured the exploit traffic and CISA issued a three-day federal patch mandate.",
-      "impact": "Confirmed victims include healthcare facilities (dialysis provider DaVita and Kettering Health, where chemotherapy and pre-surgery appointments were disrupted and cancer patients' data was leaked); the city of Saint Paul, Minnesota was forced to declare a state of emergency after 43 GB of files were stolen; the education sector represents the largest share of overall Interlock activity.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "therecord.media",
-        "theregister.com"
-      ]
-    },
-    {
-      "id": "6",
-      "date": "2026-03-18",
-      "date_sort": "2026-03-18",
-      "victim": "Marquis Software (bank communication software vendor serving 74+ US financial institutions)",
-      "industry": "Financial Services / Banking Technology",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Attackers gained unauthorised access to Marquis Software's systems in August 2025 and copied files; the breach was not publicly disclosed until November 2025 and full victim counts were only confirmed via regulatory filings on 18 March 2026.",
-      "impact": "672,075 individuals confirmed affected across at least 74 banks, credit unions, and financial institutions; stolen data includes names, addresses, Social Security numbers, Taxpayer Identification Numbers, dates of birth, and financial account information; no ransomware group claimed responsibility.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "5",
-      "date": "2026-03-17",
-      "date_sort": "2026-03-17",
-      "victim": "University of Mississippi Medical Center (UMMC) — Mississippi's only children's hospital and Level I trauma centre; Passaic County, New Jersey government",
-      "industry": "Healthcare / Government",
-      "attacker": "Criminal gang — ransomware (Russia-based operation, per expert assessment)",
+      "attacker": "Criminal gang — ransomware (Interlock group, possible ties to Rhysida operation)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Ransomware deployed against both organisations, forcing UMMC to go fully offline for nine days, with clinical staff reverting to paper-based processes; the same group separately knocked out phone lines and IT systems across Passaic County government offices.",
-      "impact": "UMMC's cancer infusion centre had to reschedule patients; the hospital fully restored systems on 2 March after a nine-day outage; $800,000 ransom demanded from each victim with a threatened data leak deadline of 20 March; county government experienced widespread communications failure.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "4",
-      "date": "2026-03-12",
-      "date_sort": "2026-03-12",
-      "victim": "Telus Digital (BPO and digital-services subsidiary of Canadian telecom Telus, serves clients globally)",
-      "industry": "Telecommunications / Business Process Outsourcing",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Attackers used Google Cloud Platform credentials found inside data stolen in a prior third-party supply-chain breach (Salesloft/Drift), then used credential-scanning tooling to pivot laterally across Telus systems — including a large BigQuery database — over several months without detection.",
-      "impact": "Up to 1 petabyte of data claimed stolen, reportedly including FBI background checks, source code, financial records, Salesforce data, and voice recordings spanning at least 28 client organisations; attackers demanded a $65 million ransom which Telus rejected; the breach remained undetected for months, exposing downstream clients of the BPO provider.",
+      "vector": "Exploitation of Cisco Secure Firewall Management Center zero-day (CVE-2026-20131) beginning January 26, over five weeks before public disclosure on March 4; Amazon CISO published findings from a misconfigured Interlock staging server.",
+      "impact": "Confirmed victims include DaVita (dialysis), a major Ohio healthcare system, the city of St. Paul MN (National Guard called in for recovery), and multiple K-12 schools. Operators use regulatory exposure threats for extortion. CISA added CVE to KEV catalog with emergency patch mandate.",
       "ongoing": "Y",
       "severity": "critical",
-      "sources": [
-        "therecord.media",
-        "bleepingcomputer.com"
-      ]
+      "sources": ["therecord.media", "cisa.gov"]
     },
     {
       "id": "3",
-      "date": "2026-03-11",
-      "date_sort": "2026-03-11",
-      "victim": "Stryker Corporation (Fortune 500 medical device manufacturer, ~56,000 employees, operations in 60+ countries)",
-      "industry": "Healthcare / Medical Technology",
-      "attacker": "Iran — state-directed hacktivist proxies (Ministry of Intelligence-linked group)",
-      "attacker_origin": "iran",
-      "motivation": "Disruption",
-      "vector": "Attackers are assessed by researchers to have gained access to Stryker's Microsoft Intune mobile device management console — likely via phishing or infostealer-harvested credentials — then remotely triggered a mass factory-reset wipe across enrolled corporate devices worldwide.",
-      "impact": "More than 200,000 servers, laptops, phones, and other Windows devices were wiped across offices in 79 countries; Stryker's ordering and shipping systems remained offline one week after the attack; emergency cardiac telemetry system Lifenet was temporarily reported non-functional in Maryland; Stryker stock fell more than 3%; CISA and the FBI opened investigations and described this as the first successful destructive cyberattack on a major US corporation since the start of the US-Israel-Iran war.",
+      "date": "Mar 19",
+      "date_sort": "2026-03-19",
+      "victim": "State Hydrographic Service of Ukraine (maritime navigation agency)",
+      "industry": "Government / Maritime Critical Infrastructure",
+      "attacker": "Russia — GRU military intelligence",
+      "attacker_origin": "russia",
+      "motivation": "Espionage",
+      "vector": "Phishing email exploiting a cross-site scripting flaw in Zimbra webmail (CVE-2025-66376); the entire attack payload was embedded in the email HTML body with no attachments or links, sent from a compromised student account in January.",
+      "impact": "Attackers silently harvested login credentials, session tokens, two-factor authentication backup codes, browser-stored passwords, and up to 90 days of mailbox data from the maritime navigation agency.",
       "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "unit42.paloaltonetworks.com",
-        "therecord.media",
-        "theregister.com",
-        "reuters.com/technology/cybersecurity"
-      ]
+      "severity": "high",
+      "sources": ["therecord.media"]
+    },
+    {
+      "id": "4",
+      "date": "Mar 13",
+      "date_sort": "2026-03-13",
+      "victim": "Google Chrome and Chromium-based browser users worldwide",
+      "industry": "Technology / Cross-sector",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Exploitation of two zero-day vulnerabilities in Google Chrome: a V8 engine flaw (CVE-2026-3910) and a Skia graphics library out-of-bounds write (CVE-2026-3909).",
+      "impact": "CISA added both vulnerabilities to KEV catalog based on active exploitation; could allow remote code execution through crafted web content. Federal agencies ordered to patch.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": ["cisa.gov"]
+    },
+    {
+      "id": "5",
+      "date": "Mar 9",
+      "date_sort": "2026-03-09",
+      "victim": "Organizations using Ivanti Endpoint Manager (EPM)",
+      "industry": "Multiple sectors",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Exploitation of an authentication bypass vulnerability in Ivanti Endpoint Manager (CVE-2026-1603), allowing unauthorized access to endpoint management infrastructure.",
+      "impact": "CISA added to KEV catalog based on active exploitation; enables attackers to bypass authentication and potentially gain control of managed endpoints across an organization.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": ["cisa.gov"]
+    },
+    {
+      "id": "6",
+      "date": "Mar 16",
+      "date_sort": "2026-03-16",
+      "victim": "Organizations using Wing FTP Server",
+      "industry": "Multiple sectors",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Exploitation of an information disclosure vulnerability in Wing FTP Server (CVE-2025-47813).",
+      "impact": "CISA added to KEV catalog based on active exploitation; allows attackers to access sensitive information from affected FTP servers.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": ["cisa.gov"]
     },
     {
       "id": "7",
-      "date": "2026-03-11",
+      "date": "Mar 11",
       "date_sort": "2026-03-11",
-      "victim": "TELUS Digital (secondary listing) / FBI-background-check ecosystem — and separately: Wisconsin ambulance provider (largest in state)",
-      "industry": "Healthcare / Emergency Services",
+      "victim": "Organizations using n8n workflow automation platform",
+      "industry": "Technology",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Cyberattack on the largest ambulance services provider in Wisconsin compromised patient and operational data; the attack vector has not been publicly disclosed.",
-      "impact": "235,000 individuals confirmed affected; patient personal and health data exposed; CERT notifications issued to state regulators.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "9",
-      "date": "Early Mar 2026",
-      "date_sort": "2026-03-05",
-      "victim": "DOJ / LeakBase cybercriminal forum (law-enforcement action)",
-      "industry": "Law Enforcement Action / Criminal Infrastructure",
-      "attacker": "Criminal gang — data extortion / stolen-data marketplace",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "LeakBase operated as one of the world's largest online forums for buying and selling stolen credentials and breach data, facilitating downstream attacks against organisations globally.",
-      "impact": "US Department of Justice announced seizure of the LeakBase database on 4 March 2026, disrupting a major stolen-data trading hub used by cybercriminals to monetise breaches and enable credential-stuffing and account-takeover attacks.",
-      "ongoing": "N",
+      "motivation": "Unclear",
+      "vector": "Exploitation of improper control of dynamically-managed code resources in n8n (CVE-2025-68613), enabling remote code execution.",
+      "impact": "CISA added to KEV catalog based on active exploitation; allows attackers to execute arbitrary code on n8n instances used for workflow automation.",
+      "ongoing": "Y",
       "severity": "medium",
-      "sources": [
-        "justice.gov"
-      ]
+      "sources": ["cisa.gov"]
     },
     {
       "id": "8",
-      "date": "2026-03-04",
-      "date_sort": "2026-03-04",
-      "victim": "Tycoon 2FA phishing-as-a-service platform (criminal infrastructure takedown affecting ~100,000 victim organisations globally)",
-      "industry": "Cross-sector (criminal infrastructure disruption)",
-      "attacker": "Criminal gang — credential theft / adversary-in-the-middle phishing",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "The platform operated as a transparent proxy sold via Telegram since 2023 that harvested Microsoft 365 and Gmail session cookies, allowing full multi-factor-authentication bypass and account takeover at scale; over 3 million malicious messages were attributed to the platform in February 2026 alone.",
-      "impact": "A coordinated public-private takedown by Microsoft, Proofpoint, Europol, Cloudflare, and law enforcement across multiple countries resulted in seizure of 330 control-panel domains; the platform had given criminals access to nearly 100,000 organisations including schools, hospitals, and government institutions before disruption.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "hornetsecurity.com",
-        "therecord.media"
-      ]
+      "date": "Mar 9",
+      "date_sort": "2026-03-09",
+      "victim": "Organizations using SolarWinds Web Help Desk and Omnissa Workspace ONE",
+      "industry": "Technology / IT Management",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Active exploitation of a deserialization of untrusted data vulnerability in SolarWinds Web Help Desk (CVE-2025-26399) and a server-side request forgery in Omnissa Workspace ONE (CVE-2021-22054).",
+      "impact": "CISA added both to KEV catalog; SolarWinds flaw enables remote code execution on help desk servers, Omnissa flaw allows server-side request forgery on enterprise mobility management systems.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": ["cisa.gov"]
     }
   ]
 }
