@@ -1,11 +1,8 @@
 name: Refresh Cyber Threat Brief
 
 on:
-  schedule:
-    # Runs at 06:00 and 18:00 UTC every day
-    - cron: '0 6,18 * * *'
   workflow_dispatch:
-    # Allows manual trigger from the GitHub Actions UI
+    # Manual trigger only — primary pipeline runs locally via launchd
 
 jobs:
   generate:
