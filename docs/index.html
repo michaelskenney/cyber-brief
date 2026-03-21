@@ -85,9 +85,8 @@ tr:hover td{background:rgba(255,255,255,.04)}
 <div class="hdr">
   <div class="hdr-left">
     <div class="ht">🛡️ Cyber Threat Daily Brief</div>
-    <div class="hs">
-      Automated · refreshed every 12 hours · sources: The Record · Krebs on Security · CyberScoop ·
-      Unit 42 · Cisco Talos · Microsoft Security Blog · CISA · DOJ · NCSC · Reuters · Bloomberg · Dark Reading
+    <div class="hs" id="source-list">
+      Automated · refreshed every 12 hours
     </div>
   </div>
   <div class="refresh-info">
@@ -288,13 +287,14 @@ async function loadBrief() {
       dot.className  = `dot ${stale ? 'dot-stale' : 'dot-live'}`;
       text.textContent = stale ? 'Data may be stale' : 'Live';
 
+      const fmtOpts = { dateStyle:'medium', timeStyle:'short', timeZoneName:'short' };
       document.getElementById('ts-display').textContent =
-        `Last refreshed: ${ts.toLocaleString(undefined, { dateStyle:'medium', timeStyle:'short' })}`;
+        `Last refreshed: ${ts.toLocaleString(undefined, fmtOpts)}`;
 
       // Estimate next refresh (12-hour cadence from last run)
       const next = new Date(ts.getTime() + 12 * 3_600_000);
       document.getElementById('next-display').textContent =
-        `Next refresh: ~${next.toLocaleString(undefined, { dateStyle:'medium', timeStyle:'short' })}`;
+        `Next refresh: ~${next.toLocaleString(undefined, fmtOpts)}`;
 
     } else {
       dot.className  = 'dot dot-stale';
@@ -305,6 +305,16 @@ async function loadBrief() {
     // Period label
     if (data.period_searched) {
       document.getElementById('period-label').textContent = `Period: ${data.period_searched}`;
+    }
+
+    // Build source list from incident data
+    const allSources = new Set();
+    ALL_INCIDENTS.forEach(r => {
+      if (Array.isArray(r.sources)) r.sources.forEach(s => allSources.add(s));
+    });
+    if (allSources.size > 0) {
+      document.getElementById('source-list').textContent =
+        `Automated · refreshed every 12 hours · sources: ${[...allSources].sort().join(' · ')}`;
     }
 
     renderTable(ALL_INCIDENTS);
