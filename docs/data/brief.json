@@ -1,25 +1,10 @@
 {
-  "generated_at": "2026-03-21T21:15:00.000000+00:00",
+  "generated_at": "2026-03-21T14:20:30.030725+00:00",
   "period_searched": "March 9–21, 2026",
-  "incident_count": 7,
+  "incident_count": 14,
   "incidents": [
     {
       "id": "1",
-      "date": "Mar 11–19",
-      "date_sort": "2026-03-19",
-      "victim": "Stryker Corporation",
-      "industry": "Healthcare / Medical Technology",
-      "attacker": "Iran — Ministry of Intelligence (MOIS)",
-      "attacker_origin": "iran",
-      "motivation": "Disruption",
-      "vector": "Compromised Microsoft Intune endpoint management console and remotely triggered mass device wipes across the company's global network — no malware deployed.",
-      "impact": "Over 200,000 devices wiped across factories in the US, Ireland, India, and other countries; 5,000+ workers sent home in Ireland; employees locked out of critical systems for over a week. DOJ seized four MOIS-linked domains; FBI and CISA issued joint Intune hardening advisory.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": ["krebsonsecurity.com", "therecord.media", "cyberscoop.com", "justice.gov"]
-    },
-    {
-      "id": "2",
       "date": "Mar 20",
       "date_sort": "2026-03-20",
       "victim": "IoT device owners and DDoS targets worldwide",
@@ -27,44 +12,56 @@
       "attacker": "Criminal gang — botnet operators",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Exploited vulnerable IoT devices (routers, cameras, DVRs, TV boxes) and abused residential proxy networks to build four botnets — Aisuru, Kimwolf, JackSkid, and Mossad.",
-      "impact": "Three million devices hijacked; over 300,000 DDoS attacks launched including a record 29.7 Tbps attack. DOJ seized command-and-control infrastructure with support from law enforcement in Canada, Germany, the Netherlands, and Europol.",
+      "vector": "Exploited vulnerable IoT devices (routers, cameras, DVRs, Android TV boxes) and abused residential proxy networks to build four botnets — Aisuru, Kimwolf, JackSkid, and Mossad.",
+      "impact": "Three million devices hijacked; over 300,000 DDoS attacks launched including a record 29.7 Tbps attack targeting U.S. Department of Defense networks. DOJ seized infrastructure with support from Canada, Germany, the Netherlands, and Europol.",
       "ongoing": "N",
       "severity": "high",
-      "sources": ["cyberscoop.com", "krebsonsecurity.com"]
+      "sources": [
+        "cyberscoop.com",
+        "krebsonsecurity.com"
+      ]
+    },
+    {
+      "id": "2",
+      "date": "Mar 20",
+      "date_sort": "2026-03-20",
+      "victim": "Unnamed D.C.-based international technology company",
+      "industry": "Technology",
+      "attacker": "Insider — data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Data analyst contractor used company laptop access to exfiltrate corporate data including employee PII and compensation records, then sent 60+ extortion emails demanding ransom after his contract ended.",
+      "impact": "Company paid approximately $2.5 million in ransom. Attacker convicted on six counts of extortion and faces up to 12 years in prison.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "cyberscoop.com"
+      ]
     },
     {
       "id": "3",
-      "date": "Jan 26–Mar 19",
+      "date": "Mar 19",
       "date_sort": "2026-03-19",
-      "victim": "Government, education, and healthcare organizations",
-      "industry": "Government / Education / Healthcare",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Interlock ransomware gang exploited a zero-day in Cisco Secure Firewall Management Center (CVE-2026-20131) weeks before public disclosure to gain initial access.",
-      "impact": "Multiple critical infrastructure organizations compromised; the same gang previously crippled St. Paul, MN city government (requiring National Guard assistance), DaVita dialysis, and a major Ohio healthcare system. Amazon discovered the exploitation through a misconfigured Interlock staging server.",
+      "victim": "Stryker Corporation",
+      "industry": "Healthcare / Medical Technology",
+      "attacker": "Iran — Ministry of Intelligence (MOIS)",
+      "attacker_origin": "iran",
+      "motivation": "Disruption",
+      "vector": "Compromised Microsoft Intune endpoint management console and remotely triggered mass device wipes across the company's global network — no malware deployed.",
+      "impact": "Over 200,000 devices wiped across 79 countries; 5,000+ workers sent home in Ireland; personal employee devices with Intune also wiped. DOJ seized four MOIS-linked domains; FBI and CISA issued joint Intune hardening advisory. Restoration underway but incomplete.",
       "ongoing": "Y",
-      "severity": "high",
-      "sources": ["therecord.media", "cisa.gov"]
+      "severity": "critical",
+      "sources": [
+        "krebsonsecurity.com",
+        "therecord.media",
+        "cyberscoop.com",
+        "justice.gov",
+        "blog.talosintelligence.com",
+        "news.risky.biz"
+      ]
     },
     {
       "id": "4",
-      "date": "Mar 18",
-      "date_sort": "2026-03-18",
-      "victim": "Ukrainian website visitors and iPhone users globally",
-      "industry": "Cross-sector",
-      "attacker": "Unknown — multiple state and commercial spyware operators",
-      "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "Watering hole attack embedding the 'Darksword' iOS exploit kit on dozens of Ukrainian websites, targeting iPhones running iOS 18.4 through 18.6.2.",
-      "impact": "Second iOS exploit kit discovered this month; capable of stealing data and crypto wallet information. An estimated 220–270 million iPhones remain on vulnerable iOS versions. Google confirmed separate campaigns by multiple state-linked and commercial actors targeting Saudi Arabia, Turkey, Malaysia, and Ukraine.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": ["reuters.com"]
-    },
-    {
-      "id": "5",
       "date": "Mar 19",
       "date_sort": "2026-03-19",
       "victim": "State Hydrographic Service of Ukraine",
@@ -75,26 +72,30 @@
       "vector": "Phishing email exploiting a cross-site scripting flaw in Zimbra webmail (CVE-2025-66376) — entire attack payload embedded in the HTML body of a single email with no attachments or links.",
       "impact": "Attackers harvested login credentials, session tokens, two-factor authentication backup codes, browser-stored passwords, and up to 90 days of mailbox data from the maritime navigation agency.",
       "ongoing": "Y",
-      "severity": "medium",
-      "sources": ["therecord.media"]
+      "severity": "high",
+      "sources": [
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "5",
+      "date": "Mar 19",
+      "date_sort": "2026-03-19",
+      "victim": "European organizations across six EU member states",
+      "industry": "Cross-sector",
+      "attacker": "China — state-linked cyber contractors; Iran — MOIS",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "EU sanctioned three entities: Integrity Technology Group compromised 65,000 devices; i-SOON conducted hack-for-hire operations for Chinese military/intelligence; Emennet Pasargad hacked Swedish SMS service and ran Paris Olympics disinformation.",
+      "impact": "Sanctions freeze EU assets and impose travel bans. Reveals scale of state-sponsored operations against European targets. All three entities were previously sanctioned by the US and UK.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "darkreading.com"
+      ]
     },
     {
       "id": "6",
-      "date": "Mar 20",
-      "date_sort": "2026-03-20",
-      "victim": "Unnamed D.C.-based international technology company",
-      "industry": "Technology",
-      "attacker": "Insider — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Data analyst contractor used company laptop access to exfiltrate corporate data including employee PII and compensation records, then sent 60+ extortion emails demanding ransom after his contract ended.",
-      "impact": "Company paid approximately $2.5 million in ransom. Attacker convicted on six counts of extortion and faces up to 12 years in prison. Case highlights insider threat risk from contractor access.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": ["cyberscoop.com"]
-    },
-    {
-      "id": "7",
       "date": "Mar 19",
       "date_sort": "2026-03-19",
       "victim": "Mazda Motor Corporation",
@@ -106,7 +107,147 @@
       "impact": "Employee PII from Mazda group companies and suppliers potentially leaked externally. No customer data was affected. Mazda warned of potential phishing using the stolen email addresses.",
       "ongoing": "N",
       "severity": "low",
-      "sources": ["reuters.com"]
+      "sources": [
+        "reuters.com"
+      ]
+    },
+    {
+      "id": "7",
+      "date": "Mar 18",
+      "date_sort": "2026-03-18",
+      "victim": "Ukrainian website visitors and iPhone users globally",
+      "industry": "Cross-sector",
+      "attacker": "Unknown — multiple state and commercial spyware operators",
+      "attacker_origin": "unknown",
+      "motivation": "Espionage",
+      "vector": "Watering hole attack embedding the 'DarkSword' iOS exploit kit on dozens of Ukrainian websites, targeting iPhones running iOS 18.4 through 18.6.2.",
+      "impact": "Second iOS exploit kit discovered this month. Capable of stealing data and crypto wallet information. An estimated 220–270 million iPhones remain on vulnerable iOS versions. Separate campaigns confirmed by Google across Saudi Arabia, Turkey, Malaysia, and Ukraine.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "reuters.com"
+      ]
+    },
+    {
+      "id": "8",
+      "date": "Mar 18",
+      "date_sort": "2026-03-18",
+      "victim": "Bitrefill (crypto gift card and SIM platform)",
+      "industry": "Financial Services / Cryptocurrency",
+      "attacker": "North Korea — state-sponsored, financially motivated",
+      "attacker_origin": "north_korea",
+      "motivation": "Financial",
+      "vector": "Compromised an employee laptop to gain initial access, then moved laterally through internal systems.",
+      "impact": "Cryptocurrency assets stolen, customer records exfiltrated, and gift card inventory tampering attempted. Company attributed the breach to North Korean state-sponsored operators.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "news.risky.biz"
+      ]
+    },
+    {
+      "id": "9",
+      "date": "Mar 17",
+      "date_sort": "2026-03-17",
+      "victim": "P3 Global Intel / Navigate360 (law enforcement tip platform)",
+      "industry": "Law Enforcement / Government",
+      "attacker": "Unknown — hacktivist",
+      "attacker_origin": "unknown",
+      "motivation": "Political",
+      "vector": "Exploited a vulnerability in the P3 Global Intel tip submission platform used by police departments across the United States.",
+      "impact": "93 GB of confidential law enforcement tips leaked to journalists and DDoSecrets. Unencrypted data could deanonymize anonymous tipsters, posing safety risks to informants.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "news.risky.biz"
+      ]
+    },
+    {
+      "id": "10",
+      "date": "Mar 17",
+      "date_sort": "2026-03-17",
+      "victim": "Intoxalock (car breathalyzer / ignition interlock company)",
+      "industry": "Transportation / IoT",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Cyberattack crippled the company's IT network and cloud connectivity for ignition interlock devices.",
+      "impact": "DUI-convicted drivers unable to start their vehicles for over two days as breathalyzer devices could not connect to company servers for verification.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "news.risky.biz"
+      ]
+    },
+    {
+      "id": "11",
+      "date": "Mar 16",
+      "date_sort": "2026-03-16",
+      "victim": "Venus Protocol (DeFi lending platform)",
+      "industry": "Financial Services / Cryptocurrency",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Flash loan exploit manipulating protocol logic to drain funds — the platform's second major hack after a $27 million theft in September.",
+      "impact": "$3.6 million in cryptocurrency stolen. Highlights persistent smart contract vulnerabilities in DeFi protocols.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "news.risky.biz"
+      ]
+    },
+    {
+      "id": "12",
+      "date": "Mar 15",
+      "date_sort": "2026-03-15",
+      "victim": "Sears customers",
+      "industry": "Retail",
+      "attacker": "N/A — data exposure",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Three unprotected databases containing AI chatbot interaction data left publicly accessible on the internet without authentication.",
+      "impact": "3.7 million customer chat logs, audio recordings, and text transcripts from 2024–2026 exposed. Data included customer support interactions with personal details.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "blog.talosintelligence.com"
+      ]
+    },
+    {
+      "id": "13",
+      "date": "Mar 15",
+      "date_sort": "2026-03-15",
+      "victim": "Trust Wallet users and other cryptocurrency holders",
+      "industry": "Financial Services / Cryptocurrency",
+      "attacker": "China — state-suspected criminal group",
+      "attacker_origin": "china",
+      "motivation": "Financial",
+      "vector": "Supply chain intrusions via compromised Electron apps and browser plugins that collected private keys and seed phrases. Operated through a shell security firm (Wuhan Anshun) exposed by a disgruntled employee.",
+      "impact": "Trust Wallet users lost $7 million in December alone. Additional victims across multiple cryptocurrency platforms. Operation linked to a Chinese entity conducting systematic crypto theft at scale.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "news.risky.biz"
+      ]
+    },
+    {
+      "id": "14",
+      "date": "Jan 26–ongoing",
+      "date_sort": "2026-03-19",
+      "victim": "Government, education, and healthcare organizations",
+      "industry": "Government / Education / Healthcare",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Interlock ransomware gang exploited a zero-day deserialization flaw in Cisco Secure Firewall Management Center (CVE-2026-20131, CVSS 10) weeks before public disclosure to gain initial access.",
+      "impact": "Multiple critical infrastructure organizations compromised via double-extortion (encryption plus data theft). Past victims include St. Paul, MN city government (National Guard deployed), DaVita dialysis, Ohio healthcare system, and K-12 schools. Amazon discovered the full operational toolkit via a misconfigured Interlock staging server.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "darkreading.com",
+        "therecord.media",
+        "cisa.gov"
+      ]
     }
   ]
 }
