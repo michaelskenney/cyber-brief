@@ -1,56 +1,89 @@
 {
-  "generated_at": "2026-03-23T07:00:58.837113+00:00",
-  "period_searched": "March 9–23, 2026",
-  "incident_count": 16,
+  "generated_at": "2026-03-23T19:09:12.554304+00:00",
+  "period_searched": "March 10-23, 2026",
+  "incident_count": 13,
   "incidents": [
     {
       "id": "1",
-      "date": "Mar 20",
-      "date_sort": "2026-03-20",
-      "victim": "Cisco firewall customers (education, healthcare, government)",
-      "industry": "Technology / Multiple sectors",
-      "attacker": "Criminal gang — ransomware (Interlock)",
+      "date": "Mar 22",
+      "date_sort": "2026-03-22",
+      "victim": "Iranian organizations and infrastructure",
+      "industry": "Multiple sectors",
+      "attacker": "Criminal gang — data extortion (TeamPCP)",
       "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Exploited CVE-2026-20131, a critical zero-day in Cisco Secure Firewall Management Center, weeks before Cisco's March 4 disclosure.",
-      "impact": "Interlock deployed custom RATs, JavaScript backdoors, and memory-resident implants across victim networks. Past victims include St. Paul, MN government and DaVita dialysis centers.",
+      "motivation": "Disruption",
+      "vector": "Self-propagating worm (CanisterWorm) targeting exposed Docker APIs, Kubernetes clusters, and Redis servers, with wiper payload triggered by Iran timezone or Farsi locale",
+      "impact": "Wiper destroys data on all Kubernetes cluster nodes or local machines matching Iranian locale. Leverages same infrastructure used in Trivy supply chain attack.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "darkreading.com",
-        "therecord.media",
-        "cyberscoop.com",
-        "cisa.gov"
+        "krebsonsecurity.com"
       ]
     },
     {
       "id": "2",
       "date": "Mar 20",
       "date_sort": "2026-03-20",
-      "victim": "Ubiquiti UniFi Network Application users",
-      "industry": "Technology / Networking",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "CVE-2026-22557, a CVSS 10 unauthenticated path-traversal vulnerability in Ubiquiti UniFi Network Application, disclosed with 88,000 hosts publicly exposed.",
-      "impact": "No exploitation confirmed yet, but trivial to automate once endpoints identified. Roughly 33% of exposed instances are in the United States.",
-      "ongoing": "N",
+      "victim": "Organizations globally (phishing targets)",
+      "industry": "Multiple sectors",
+      "attacker": "Criminal gang — phishing-as-a-service",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Tycoon2FA adversary-in-the-middle phishing platform intercepts live authentication sessions to bypass MFA and steal session cookies",
+      "impact": "Despite Europol seizing 330 domains on March 4, CrowdStrike confirms activity has resumed to pre-takedown levels. Platform previously responsible for 62% of phishing attempts blocked by Microsoft.",
+      "ongoing": "Y",
       "severity": "medium",
       "sources": [
-        "cyberscoop.com"
+        "crowdstrike.com"
       ]
     },
     {
       "id": "3",
       "date": "Mar 19",
       "date_sort": "2026-03-19",
-      "victim": "State Hydrographic Service of Ukraine",
-      "industry": "Government / Maritime",
-      "attacker": "Russia — GRU military intelligence",
-      "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "Phishing email exploiting CVE-2025-66376 (XSS in Zimbra webmail), with malicious code embedded directly in the email HTML body — no attachments or links required.",
-      "impact": "Attackers harvested login credentials, session tokens, backup 2FA codes, browser-stored passwords, and up to 90 days of mailbox data from the maritime navigation agency.",
+      "victim": "Aqua Security Trivy vulnerability scanner users",
+      "industry": "Technology",
+      "attacker": "Criminal gang — data extortion (TeamPCP)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Supply chain attack injecting credential-stealing malware into official Trivy GitHub Actions releases",
+      "impact": "Malicious versions exfiltrated SSH keys, cloud credentials, Kubernetes tokens, and cryptocurrency wallets from users before Aqua Security removed the compromised files.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "krebsonsecurity.com",
+        "crowdstrike.com"
+      ]
+    },
+    {
+      "id": "4",
+      "date": "Mar 19",
+      "date_sort": "2026-03-19",
+      "victim": "Iranian dissidents, journalists, Israeli individuals",
+      "industry": "Government / Civil society",
+      "attacker": "Iran — Ministry of Intelligence (MOIS)",
+      "attacker_origin": "iran",
+      "motivation": "Political",
+      "vector": "DOJ seized four MOIS-controlled domains used for psychological operations, transnational repression, death threats via email, and doxing of targeted individuals",
+      "impact": "Domains used to claim credit for hacks, post stolen PII of ~190 IDF-associated individuals, issue $250K bounty death threats against dissidents, and solicit cartel violence against targets in the US.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "justice.gov",
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "5",
+      "date": "Mar 17",
+      "date_sort": "2026-03-17",
+      "victim": "Passaic County, New Jersey",
+      "industry": "Government",
+      "attacker": "Criminal gang — ransomware (Medusa, believed Russia-based)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Ransomware deployment disrupting county government IT systems",
+      "impact": "Phone lines and IT systems taken down across government offices serving nearly 600,000 residents. Medusa demanded $800,000 ransom.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -58,16 +91,33 @@
       ]
     },
     {
-      "id": "4",
-      "date": "Mar 19",
-      "date_sort": "2026-03-19",
-      "victim": "IoT device owners (3 million routers and cameras compromised)",
+      "id": "6",
+      "date": "Mar 12",
+      "date_sort": "2026-03-12",
+      "victim": "SocksEscort residential proxy network (369,000 infected IPs)",
       "industry": "Multiple sectors",
-      "attacker": "Criminal gang — DDoS extortion",
+      "attacker": "Criminal gang — proxy service operators",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Four botnets (Aisuru, Kimwolf, JackSkid, Mossad) compromised over 3 million IoT devices and launched 300,000+ DDoS attack commands demanding extortion payments.",
-      "impact": "DOJ with Canadian and German authorities dismantled botnet infrastructure. Victims reported tens of thousands in losses; some U.S. Department of Defense systems were targeted.",
+      "vector": "Malware infected home and small business routers; access sold to cybercriminals who used it to mask fraud including bank account takeovers and unemployment insurance fraud",
+      "impact": "International law enforcement dismantled the network. Victims include a NY crypto exchange customer ($1M loss), PA manufacturer ($700K), and US service members ($100K). Servers seized across Austria, France, and the Netherlands.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "justice.gov"
+      ]
+    },
+    {
+      "id": "7",
+      "date": "Mar 12",
+      "date_sort": "2026-03-12",
+      "victim": "IoT device owners and DDoS targets globally",
+      "industry": "Multiple sectors",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Four botnets (Aisuru, Kimwolf, JackSkid, Mossad) compromised 3M+ IoT devices including routers and webcams to launch DDoS attacks and extort victims",
+      "impact": "DOJ and international partners dismantled infrastructure. Aisuru alone issued 200,000+ attack commands. Victims reported tens of thousands of dollars in losses. Domains and servers seized.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -76,50 +126,73 @@
       ]
     },
     {
-      "id": "5",
-      "date": "Mar 18",
-      "date_sort": "2026-03-18",
-      "victim": "Cisco SD-WAN and firewall customers",
-      "industry": "Technology / Networking",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Nine vulnerabilities disclosed across Cisco SD-WAN and firewall products over three weeks, with five already exploited in the wild — two SD-WAN zero-days exploited for over three years before discovery.",
-      "impact": "Compromise of network management and control planes gives attackers control over policy, routing, segmentation, and administrative trust across entire environments.",
+      "id": "8",
+      "date": "Mar 11",
+      "date_sort": "2026-03-11",
+      "victim": "Stryker Corporation",
+      "industry": "Healthcare / Medical technology",
+      "attacker": "Iran — state-directed hacktivist proxies (Handala, linked to MOIS)",
+      "attacker_origin": "iran",
+      "motivation": "Disruption",
+      "vector": "Compromised Microsoft Intune endpoint management system to issue mass remote wipe commands across Stryker's global network",
+      "impact": "Over 200,000 devices, servers, and mobile phones wiped across 79 countries. 5,000+ workers sent home in Ireland. Personal devices with Intune also wiped. CISA issued hardening advisory. DOJ seized Handala domains. FBI and CISA conducting enhanced response.",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "critical",
+      "sources": [
+        "krebsonsecurity.com",
+        "cisa.gov",
+        "justice.gov",
+        "therecord.media",
+        "unit42.paloaltonetworks.com",
+        "cyberscoop.com"
+      ]
+    },
+    {
+      "id": "9",
+      "date": "Mar 4",
+      "date_sort": "2026-03-04",
+      "victim": "Organizations using Cisco Secure Firewall Management Center",
+      "industry": "Multiple sectors",
+      "attacker": "Criminal gang — ransomware (Interlock)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Zero-day exploitation of CVE-2026-20131 in Cisco Secure Firewall Management Center, exploited since January 26 before public disclosure on March 4",
+      "impact": "Ransomware deployment with double extortion (data encryption plus regulatory threat). Interlock historically targets education, healthcare, government, and manufacturing. Previously attacked St. Paul MN, DaVita, and Ohio healthcare systems.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "therecord.media",
+        "cyberscoop.com"
+      ]
+    },
+    {
+      "id": "10",
+      "date": "Late Feb",
+      "date_sort": "2026-02-28",
+      "victim": "Cisco SD-WAN customers",
+      "industry": "Multiple sectors",
+      "attacker": "Unknown — state-suspected",
+      "attacker_origin": "unknown",
+      "motivation": "Espionage",
+      "vector": "Exploitation of multiple zero-day and known vulnerabilities in Cisco SD-WAN systems (7 CVEs), with two zero-days exploited for at least three years before discovery",
+      "impact": "Five of nine disclosed vulnerabilities confirmed actively exploited. Compromising SD-WAN gives attackers access to policy, routing, segmentation, and administrative trust over enterprise networks. CISA issued emergency directive.",
+      "ongoing": "Y",
+      "severity": "critical",
       "sources": [
         "cyberscoop.com"
       ]
     },
     {
-      "id": "6",
-      "date": "Mar 18",
-      "date_sort": "2026-03-18",
-      "victim": "Mobile device users in Saudi Arabia, Turkey, and Malaysia",
-      "industry": "Government / Civil society",
-      "attacker": "Unknown — multiple state-linked espionage groups and commercial surveillance vendors",
-      "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "DarkSword, a full-chain iOS exploit leveraging six zero-day vulnerabilities in iOS 18.4–18.7, deployed via Snapchat-themed phishing sites and watering hole attacks.",
-      "impact": "Post-compromise malware exfiltrates accounts, messages, browser data, location history, and recordings. Deployed by at least three distinct groups including a Turkish surveillance vendor and a Russian espionage unit. Patched in iOS 26.3.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "cloud.google.com/blog/topics/threat-intelligence"
-      ]
-    },
-    {
-      "id": "7",
-      "date": "Mar 17",
-      "date_sort": "2026-03-17",
-      "victim": "University of Mississippi Medical Center",
+      "id": "11",
+      "date": "Late Feb",
+      "date_sort": "2026-02-24",
+      "victim": "University of Mississippi Medical Center (UMMC)",
       "industry": "Healthcare",
-      "attacker": "Criminal gang — ransomware (Medusa)",
+      "attacker": "Criminal gang — ransomware (Medusa, believed Russia-based)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Medusa ransomware encrypted hospital systems, forcing Mississippi's only children's hospital, Level I trauma center, and organ transplant program to operate with analog tools for nine days.",
-      "impact": "Cancer infusion patients rescheduled, FBI and DHS deployed to assist recovery. Ransom demand of $800,000 with threat to leak stolen data. Hospital fully reopened March 2.",
+      "vector": "Ransomware deployment shutting down hospital IT systems",
+      "impact": "Hospital dark for 9 days. All 35 clinic locations closed. Cancer infusion patients rescheduled. Mississippi's only Level I trauma center, children's hospital, and organ transplant programs disrupted. Medusa demanded $800,000 ransom and threatened data leak.",
       "ongoing": "N",
       "severity": "critical",
       "sources": [
@@ -127,67 +200,16 @@
       ]
     },
     {
-      "id": "8",
-      "date": "Mar 17",
-      "date_sort": "2026-03-17",
-      "victim": "Passaic County, New Jersey",
-      "industry": "Government / Local",
-      "attacker": "Criminal gang — ransomware (Medusa)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Medusa ransomware deployed across county government systems serving nearly 600,000 residents.",
-      "impact": "Phone lines and IT systems taken down across government offices, disrupting public services.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "9",
-      "date": "Mar 16",
-      "date_sort": "2026-03-16",
-      "victim": "Corporate VPN users",
-      "industry": "Multiple sectors",
-      "attacker": "Criminal gang — credential theft (Storm-2561)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "SEO poisoning redirected users searching for legitimate VPN software (Pulse, Fortinet, Ivanti) to spoofed download sites hosting fake MSI installers that side-loaded the Hyrax infostealer.",
-      "impact": "Stolen VPN credentials and configuration data exfiltrated to attacker C2, granting access to corporate networks with zero user indication of compromise.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "microsoft.com/en-us/security/blog"
-      ]
-    },
-    {
-      "id": "10",
-      "date": "Mar 16",
-      "date_sort": "2026-03-16",
-      "victim": "Unnamed enterprise (Microsoft DART engagement)",
-      "industry": "Multiple sectors",
-      "attacker": "Criminal gang — social engineering",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Attacker impersonated IT support on Microsoft Teams, tricked employee into granting remote access via Quick Assist, then deployed malicious MSI package with DLL side-loading.",
-      "impact": "C2 established, credential harvesting and session hijacking tools deployed. DART contained the intrusion before persistence was established.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "microsoft.com/en-us/security/blog"
-      ]
-    },
-    {
-      "id": "11",
-      "date": "Mar 12",
+      "id": "12",
+      "date": "Ongoing",
       "date_sort": "2026-03-12",
-      "victim": "Military targets in Southeast Asia",
+      "victim": "Southeast Asian military organizations",
       "industry": "Defense / Military",
       "attacker": "China — state-suspected espionage group",
       "attacker_origin": "china",
       "motivation": "Espionage",
-      "vector": "Suspected China-based espionage operation targeting military organizations in Southeast Asia, under active investigation by Unit 42.",
-      "impact": "Details limited due to ongoing investigation. Campaign targets defense and military infrastructure in the region.",
+      "vector": "Custom backdoors (AppleChris, MemFun), PowerShell reverse shells to C2 servers, credential harvesting via Getpass and Mimikatz, WMI lateral movement through unmanaged endpoints",
+      "impact": "Selective intelligence collection targeting military capability files, joint military activities, organizational structures, and C4I systems. Campaign active since at least 2020 with renewed activity in 2026.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -195,93 +217,20 @@
       ]
     },
     {
-      "id": "12",
-      "date": "Mar 12",
-      "date_sort": "2026-03-12",
-      "victim": "SocksEscort residential proxy customers and victims",
-      "industry": "Financial services / Multiple",
-      "attacker": "Criminal gang — fraud infrastructure",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "SocksEscort infected 369,000 home and small-business routers with malware, selling unauthorized IP access to criminals who used it to mask bank account takeovers and cryptocurrency theft.",
-      "impact": "DOJ-led international takedown. Specific losses include $1M cryptocurrency theft (NY), $700K wire fraud (PA), and $100K military credit card fraud.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "justice.gov"
-      ]
-    },
-    {
       "id": "13",
-      "date": "Mar 11",
-      "date_sort": "2026-03-11",
-      "victim": "Stryker Corporation",
-      "industry": "Healthcare / Medical devices",
-      "attacker": "Iran — Ministry of Intelligence (MOIS)",
-      "attacker_origin": "iran",
-      "motivation": "Disruption",
-      "vector": "Compromised Stryker's Microsoft Intune deployment and used legitimate remote-wipe commands to erase 200,000+ devices across 79 countries — no traditional malware deployed.",
-      "impact": "Global operations shut down for 9+ days; 5,000 Ireland workers sent home; personal devices wiped. DOJ seized four Handala domains; State Department offered $10M reward. Broader MOIS campaign included threats against IDF personnel and Jewish communities.",
-      "ongoing": "N",
-      "severity": "critical",
-      "sources": [
-        "krebsonsecurity.com",
-        "therecord.media",
-        "unit42.paloaltonetworks.com",
-        "justice.gov",
-        "cisa.gov"
-      ]
-    },
-    {
-      "id": "14",
-      "date": "Mar 11",
-      "date_sort": "2026-03-11",
-      "victim": "Salesforce Experience Cloud customers (~100 companies)",
-      "industry": "Technology / Cloud services",
-      "attacker": "Criminal gang — data extortion (ShinyHunters)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Used modified Mandiant AuraInspector tool to scan for public-facing Salesforce Experience Cloud sites with overly permissive guest user configurations, querying CRM objects without authentication.",
-      "impact": "Third widespread attack spree against Salesforce customers in six months. Prior campaigns compromised 200+ instances via Gainsight integrations and 700+ via Salesloft Drift AI agents.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "cyberscoop.com"
-      ]
-    },
-    {
-      "id": "15",
-      "date": "Mar 10",
-      "date_sort": "2026-03-10",
-      "victim": "Organizations using Ivanti Endpoint Manager",
-      "industry": "Multiple sectors",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Exploited CVE-2026-1603, an authentication bypass in Ivanti Endpoint Manager, reportedly since mid-February 2026.",
-      "impact": "CISA issued emergency patching directive to federal agencies. Ivanti products have been repeatedly targeted by Chinese state actors, following a pattern of edge-device exploitation.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "therecord.media",
-        "cisa.gov"
-      ]
-    },
-    {
-      "id": "16",
-      "date": "Mar 10",
-      "date_sort": "2026-03-10",
-      "victim": "Applications using pac4j Java authentication library",
-      "industry": "Technology / Software supply chain",
-      "attacker": "Unknown",
+      "date": "Mar 18",
+      "date_sort": "2026-03-18",
+      "victim": "Marquis Software and 74+ banks and financial institutions",
+      "industry": "Financial services",
+      "attacker": "Unknown — criminal likely",
       "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "CVE-2026-29000, a CVSS 10 logic flaw in pac4j's JWT/JWE handling, allows authentication bypass using only the server's public RSA key — no secrets needed.",
-      "impact": "Downstream impact to Spring Security, Play Framework, Vert.x, and hundreds of other packages. Public proof-of-concept published; many organizations unaware of transitive dependency on pac4j-jwt.",
-      "ongoing": "Y",
-      "severity": "medium",
+      "motivation": "Financial",
+      "vector": "Breach of bank software vendor that provides customer relationship management tools to financial institutions",
+      "impact": "672,075 people confirmed affected; researchers estimate up to 1.35 million. Stolen data includes SSNs, financial account info, dates of birth, and addresses. Marquis reportedly paid a ransom. Multiple banks issued breach notifications.",
+      "ongoing": "N",
+      "severity": "high",
       "sources": [
-        "cyberscoop.com"
+        "therecord.media"
       ]
     }
   ]
