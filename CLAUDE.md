@@ -1,22 +1,20 @@
 # CLAUDE.md — Cyber Threat Daily Brief
 ## Context handoff for Claude Code
 
-This file captures the full history of decisions, constraints, and design choices
-made during the development of this project in a Claude.ai conversation. Read this
-before making any changes.
+This file captures decisions, constraints, and design choices for this project.
+Read this before making any changes.
 
 ---
 
 ## What this project is
 
 An automated cyber threat intelligence dashboard that:
-- Runs a Python script every 12 hours via GitHub Actions
-- The script calls the Anthropic API (with web search) to search 26 agreed sources
-- Structures findings as JSON and commits them back to the repo
+- Runs a 3-stage pipeline every 12 hours via macOS launchd
+- Stage 1: `fetch.py` pulls raw content from 26 approved sources via the Exa REST API
+- Stage 2: Claude Code CLI analyzes the raw content and writes structured JSON
+- Stage 3: `publish.sh` commits and pushes to GitHub
 - A static GitHub Pages frontend reads the JSON and renders a filterable table
 - No server, no database, no manual intervention after setup
-
-Live URL (once deployed): `https://YOUR_ORG.github.io/cyber-brief/`
 
 ---
 
@@ -26,21 +24,78 @@ Live URL (once deployed): `https://YOUR_ORG.github.io/cyber-brief/`
 cyber-brief/
 ├── CLAUDE.md                              ← this file
 ├── README.md                              ← user-facing setup instructions
-├── generate_brief.py                      ← the agent script (runs in CI)
-├── .github/
-│   └── workflows/
-│       └── refresh_brief.yml             ← GitHub Actions cron schedule
-└── docs/                                  ← GitHub Pages root
-    ├── index.html                         ← frontend (reads brief.json)
-    └── data/
-        └── brief.json                     ← auto-generated output, committed by CI
+├── fetch.py                               ← Stage 1: Exa content retrieval
+├── analyze_prompt.md                      ← Stage 2: Claude Code analysis prompt
+├── publish.sh                             ← Stage 3: git commit + push
+├── run_pipeline.sh                        ← Pipeline wrapper (chains all stages)
+├── sources.json                           ← Approved source list (single source of truth)
+├── requirements.txt                       ← Python dependencies (requests, python-dotenv, pytest)
+├── .env.example                           ← API key template
+├── com.cyberbrief.refresh.plist           ← macOS launchd schedule (noon + midnight)
+├── generate_brief.py                      ← Legacy: Anthropic API fallback (manual GH Actions)
+├── tests/
+│   └── test_fetch.py                      ← Unit tests for fetch.py
+├── data/
+│   ├── raw/{date}/                        ← Raw fetched content (local only, gitignored)
+│   └── logs/                              ← Pipeline logs (local only, gitignored)
+├── docs/
+│   ├── index.html                         ← Dashboard frontend (GitHub Pages)
+│   └── data/
+│       ├── brief.json                     ← Generated incident data
+│       └── usage_log.jsonl                ← Per-run usage tracking
+└── .github/workflows/
+    └── refresh_brief.yml                  ← Manual-trigger fallback only (not scheduled)
 ```
+
+---
+
+## Pipeline architecture
+
+### Stage 1: Fetch (`fetch.py`)
+- Uses the **Exa REST API** to search each approved source domain
+- Searches last 48 hours first; expands to 14 days if fewer than 2 results
+- Caps at 5 articles per source, 1500 words per article, 120K total words
+- Writes one JSON file per source to `data/raw/{date}/`
+- Writes `_fetch_summary.json` with success/failure counts
+- Requires `EXA_API_KEY` in `.env` (also `GMAIL_USER`, `GMAIL_APP_PASSWORD`, `NOTIFY_EMAIL` for notifications)
+- Retries once on transient HTTP errors (429, 5xx)
+- Fails the pipeline if fewer than half the sources succeed
+
+### Stage 2: Analyze (Claude Code CLI)
+- `run_pipeline.sh` invokes: `claude -p "$(sed "s/{{DATE}}/$DATE/g" analyze_prompt.md)" --allowedTools Read,Write,Edit,Glob`
+- Claude Code reads the raw content from `data/raw/{date}/`, applies attacker naming rules, deduplicates, and writes `docs/data/brief.json`
+- Also appends a usage record to `docs/data/usage_log.jsonl`
+- After Claude Code finishes, the pipeline stamps an accurate `generated_at` timestamp
+
+### Stage 3: Publish (`publish.sh`)
+- Stages `docs/data/brief.json` and `docs/data/usage_log.jsonl`
+- Commits with message `chore: refresh cyber brief {date}`
+- Pulls with rebase, then pushes to `origin main`
+- Aborts rebase on conflict and exits with error
+
+### Orchestration (`run_pipeline.sh`)
+- Chains all three stages sequentially
+- Loads `.env` for API keys and email credentials
+- Logs all output to `data/logs/pipeline-{date}.log`
+- Sends email notification on success (incident count + dashboard link) or failure (log path)
+- Cleans up raw data older than 30 days
+
+### Email notifications
+- Uses Gmail SMTP (SSL on port 465) with an app password
+- Credentials stored in `.env`: `GMAIL_USER`, `GMAIL_APP_PASSWORD`, `NOTIFY_EMAIL`
+- Success email: subject includes incident count and date
+- Failure email: triggered via ERR trap, includes log file path
+
+### Scheduling
+- **Primary:** macOS launchd via `com.cyberbrief.refresh.plist` — runs at noon and midnight local time
+- **Important:** Use `launchctl bootstrap gui/$(id -u)` to register the job (not the deprecated `launchctl load`)
+- **Fallback:** GitHub Actions workflow (`refresh_brief.yml`) — manual trigger only, uses the legacy `generate_brief.py` with the Anthropic API + web search tool. Requires `ANTHROPIC_API_KEY` GitHub secret.
 
 ---
 
 ## The 26 agreed intelligence sources
 
-These are fixed. The generator must search ONLY these sources. Do not add or remove
+Defined in `sources.json` (single source of truth). Do not add or remove
 without explicit user approval.
 
 ### Industry / Threat Intelligence
@@ -102,8 +157,7 @@ The frontend table has exactly these 8 columns in this order:
 
 ## Attacker naming rules — CRITICAL
 
-The user explicitly requested that all proprietary vendor threat-actor codenames
-be removed. The attacker field must use plain executive language only.
+The attacker field must use plain executive language only.
 
 ### NEVER use:
 Fancy Bear, Cozy Bear, Sandworm, Lazarus Group, Kimsuky, APT28, APT29, APT41,
@@ -192,44 +246,6 @@ Victim name color by severity:
 
 ---
 
-## GitHub Actions schedule
-
-Runs at 06:00 and 18:00 UTC daily (cron: `0 6,18 * * *`).
-Can be triggered manually from the Actions tab for the first run.
-
-The workflow:
-1. Checks out the repo
-2. Installs `anthropic` Python package
-3. Runs `generate_brief.py`
-4. Commits updated `docs/data/brief.json` back to main
-5. Pushes
-
-Required GitHub secret: `ANTHROPIC_API_KEY`
-
----
-
-## generate_brief.py — how it works
-
-- Uses the `anthropic` Python SDK
-- Model: `claude-sonnet-4-20250514`
-- Tool: `web_search_20250305` (server-side web search — works correctly in CI)
-- Loops up to 20 iterations handling `tool_use` stop reasons
-- Parses JSON from `<BRIEF>...</BRIEF>` tags in the response
-- Falls back to bare JSON regex if tags are missing
-- Sorts incidents by `date_sort` descending before writing
-- Exits with code 1 on any error (causes the GitHub Action to fail visibly)
-
-### Key discovery from development:
-The `web_search_20250305` tool ONLY works server-side (in the Python script running
-in CI). It does NOT work when called from inside a browser artifact/widget because:
-1. The artifact sandbox blocks the CORS preflight triggered by additional headers
-2. The tool-use loop requires the client to return `tool_result` messages, which
-   the browser cannot do correctly in the artifact environment
-
-This is why the architecture uses GitHub Actions rather than a client-side API call.
-
----
-
 ## Frontend (docs/index.html) — key behaviours
 
 - Fetches `data/brief.json?t={timestamp}` on load (cache-busted)
@@ -241,25 +257,9 @@ This is why the architecture uses GitHub Actions rather than a client-side API c
 
 ---
 
-## What was discussed but NOT yet built
-
-These are natural next enhancements the user may ask for:
-
-1. **Email / Slack alerting** — notify when a Critical incident is detected
-2. **Historical archive** — keep past briefs rather than overwriting brief.json
-3. **Deduplication tracking** — prevent the same incident appearing across multiple runs
-4. **SEC EDGAR integration** — direct polling of EDGAR for 8-K Item 1.05 filings
-   (these are already on the agreed source list but could have dedicated parsing)
-5. **NYDFS enforcement portal** — noted as a lagging but high-detail signal;
-   consent orders are detailed post-mortems, not real-time alerts
-6. **Severity threshold alerting** — e.g. send a push notification if a Critical
-   incident involves the financial sector
-
----
-
 ## Important context: SEC vs NYDFS reporting regimes
 
-This was discussed at length. Key facts for any future work:
+Key facts for any future work involving these sources:
 
 **SEC (EDGAR Item 1.05 on Form 8-K):**
 - Public companies must disclose material cyber incidents within 4 business days
@@ -274,16 +274,6 @@ This was discussed at length. Key facts for any future work:
 - What IS public: enforcement actions (consent orders, penalties) at dfs.ny.gov/enforcement
 - These are lagging (months to years after the incident) but technically detailed
 - This is on the agreed source list for that reason
-
----
-
-## Source document
-
-This project was developed in a Claude.ai conversation that also produced:
-- `cyber_threat_sources.docx` — a Word document listing and describing all 26 sources,
-  including a comparison table of SEC vs NYDFS disclosure regimes
-- `cyber_brief_march17.html` — a static one-off brief from March 17, 2026 used
-  to validate the table format and attacker naming conventions before automating
 
 ---
 
