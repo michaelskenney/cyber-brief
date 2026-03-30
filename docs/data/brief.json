@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-03-29T20:39:33.984727+00:00",
-  "period_searched": "March 18-29, 2026",
+  "generated_at": "2026-03-30T08:46:25.379801+00:00",
+  "period_searched": "March 18-30, 2026",
   "incident_count": 20,
   "incidents": [
     {
@@ -13,7 +13,7 @@
       "attacker_origin": "criminal",
       "motivation": "Financial",
       "vector": "Compromised GitHub Actions and PyPI packages via stolen maintainer credentials, deploying credential-harvesting malware through trusted open-source tooling including Trivy, KICS, LiteLLM, and Telnyx SDK.",
-      "impact": "Estimated 300 GB of credentials stolen from hundreds of CI/CD pipelines; 100+ million monthly downloads of affected packages exposed; CISA added CVE-2026-33634 to KEV catalog with April 8 remediation deadline. Group partnered with Vect ransomware-as-a-service operation and distributed affiliate keys to ~300,000 BreachForums users.",
+      "impact": "Estimated 300 GB of credentials stolen from hundreds of CI/CD pipelines; 100+ million monthly downloads of affected packages exposed. CISA added CVE-2026-33634 to KEV catalog with April 8 remediation deadline. Group partnered with Vect ransomware-as-a-service and distributed affiliate keys to ~300,000 BreachForums users.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
@@ -21,12 +21,98 @@
         "isc.sans.edu",
         "darkreading.com",
         "cyberscoop.com",
-        "blog.talosintelligence.com",
         "cisa.gov"
       ]
     },
     {
       "id": "2",
+      "date": "Mar 28",
+      "date_sort": "2026-03-28",
+      "victim": "iOS device users (Saudi Arabia, Turkey, Malaysia, Ukraine)",
+      "industry": "Technology / Mobile",
+      "attacker": "Multiple state-linked espionage groups and commercial surveillance vendors",
+      "attacker_origin": "unknown",
+      "motivation": "Espionage",
+      "vector": "Full-chain iOS exploit (DarkSword) leveraging six zero-day vulnerabilities across iOS 18.4-18.7 to deploy GHOSTBLADE, GHOSTKNIFE, and GHOSTSABER surveillance malware families.",
+      "impact": "Victims in at least four countries subjected to full device compromise including message interception, location tracking, and microphone/camera access. Apple patched in iOS 26.3. Multiple state actors including suspected Russian espionage operators adopted the exploit chain.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "cloud.google.com/blog/topics/threat-intelligence"
+      ]
+    },
+    {
+      "id": "3",
+      "date": "Feb-Mar 26",
+      "date_sort": "2026-03-28",
+      "victim": "Enterprise organizations using Cisco SD-WAN",
+      "industry": "Technology / Networking",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Exploitation of multiple zero-day vulnerabilities in Cisco SD-WAN systems that went undetected for over three years; five of nine disclosed vulnerabilities confirmed actively exploited in the wild.",
+      "impact": "Network management and control-plane infrastructure compromised at enterprise scale. CISA added two vulnerabilities to KEV catalog. Attackers maintained persistent access to network edge infrastructure across multiple sectors.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "cyberscoop.com"
+      ]
+    },
+    {
+      "id": "4",
+      "date": "Jan 26-Mar",
+      "date_sort": "2026-03-28",
+      "victim": "Organizations in education, healthcare, engineering, and government",
+      "industry": "Multiple sectors",
+      "attacker": "Criminal gang — ransomware (Interlock)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Exploited critical zero-day in Cisco Secure Firewall Management Center (CVE-2026-20131, CVSS 10) for arbitrary Java code execution weeks before public disclosure on March 4.",
+      "impact": "Attackers had zero-day access from January 26, deploying custom malware, reconnaissance scripts, and webshells across multiple victim networks. Previous Interlock targets include St. Paul, Minnesota government and DaVita dialysis company.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "darkreading.com",
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "5",
+      "date": "Mar 28",
+      "date_sort": "2026-03-28",
+      "victim": "Southeast Asian military organizations",
+      "industry": "Defense / Military",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "Years-long cyber espionage campaign (tracked as CL-STA-1087) using novel backdoors and credential-stealing tools, with initial access via suspicious PowerShell activity and persistent footholds maintained across military networks.",
+      "impact": "Strategic military intelligence collected over multiple years from Southeast Asian defense organizations. Additional overlapping campaigns (CL-STA-1048, CL-STA-1049) deployed multiple RAT families against the same government targets.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "unit42.paloaltonetworks.com",
+        "darkreading.com"
+      ]
+    },
+    {
+      "id": "6",
+      "date": "Early Mar",
+      "date_sort": "2026-03-28",
+      "victim": "Hundreds of organizations (construction, law, nonprofits, real estate, manufacturing, healthcare)",
+      "industry": "Multiple sectors",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "AI-generated phishing emails exploiting Microsoft device authentication OAuth flow via Railway platform infrastructure; unique lures bypass email security filters at scale.",
+      "impact": "344+ confirmed victims with 50+ new compromises per day. Attackers obtain 90-day OAuth tokens bypassing MFA entirely. Thousands likely affected enterprise-wide across multiple sectors.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "cyberscoop.com"
+      ]
+    },
+    {
+      "id": "7",
       "date": "Mar 27",
       "date_sort": "2026-03-27",
       "victim": "FBI Director Kash Patel (personal email)",
@@ -35,7 +121,7 @@
       "attacker_origin": "iran",
       "motivation": "Political",
       "vector": "Compromised personal email account of FBI Director; leaked personal photographs, emails from 2010-2019, and documents via newly created websites after FBI seized four prior domains.",
-      "impact": "Historical personal email data exposed; FBI confirmed no government information compromised. US government offered $10 million bounty on group members; four domains seized. Group claimed retaliation for FBI domain seizures and the sinking of Iranian Navy frigate IRIS Dena.",
+      "impact": "Historical personal email data exposed; FBI confirmed no government information compromised. US government offered $10 million bounty on group members. Group claimed retaliation for FBI domain seizures and the sinking of Iranian Navy frigate IRIS Dena.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -45,27 +131,81 @@
       ]
     },
     {
-      "id": "3",
-      "date": "Mar 25",
+      "id": "8",
+      "date": "Mar 25-28",
+      "date_sort": "2026-03-28",
+      "victim": "Signal users (government officials, military, journalists)",
+      "industry": "Government / Defense / Media",
+      "attacker": "Russia — state-linked espionage group",
+      "attacker_origin": "russia",
+      "motivation": "Espionage",
+      "vector": "Coordinated phishing campaign using fake automated Signal support notices to trick victims into providing verification codes and account PINs, enabling attacker device linking or full account takeover.",
+      "impact": "Thousands of accounts compromised globally including US government officials, military personnel, and journalists. FBI, French, and Dutch intelligence agencies issued security alerts.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "therecord.media",
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "9",
+      "date": "Mar 11-25",
       "date_sort": "2026-03-25",
       "victim": "Stryker Corporation",
       "industry": "Healthcare / Medical Devices",
       "attacker": "Iran — Ministry of Intelligence (MOIS)",
       "attacker_origin": "iran",
       "motivation": "Disruption",
-      "vector": "Targeted Microsoft environment endpoint management systems at the medical device manufacturer; assessed as opportunistic compromise rather than systematic healthcare sector targeting.",
-      "impact": "Network disruption affecting medical device manufacturing infrastructure. Company began restoring IT systems as of March 25. CISA issued advisory on March 18.",
-      "ongoing": "Y",
-      "severity": "high",
+      "vector": "Compromised Microsoft Intune administrative account and used the device management system's native wipe functionality to remotely wipe over 200,000 company devices globally.",
+      "impact": "Hospital operations disrupted in Maryland and nationwide; some surgeries cancelled due to unavailable implants. Production lines offline for approximately two weeks. Operations affected across US, Ireland, and India. FBI/CISA issued joint advisory on March 18.",
+      "ongoing": "N",
+      "severity": "critical",
       "sources": [
         "cisa.gov",
-        "cyberscoop.com",
         "therecord.media",
+        "recordedfuture.com",
+        "cyberscoop.com",
         "risky.biz"
       ]
     },
     {
-      "id": "4",
+      "id": "10",
+      "date": "Mar 28",
+      "date_sort": "2026-03-28",
+      "victim": "Diplomatic organizations and critical infrastructure (energy, maritime, finance) in the Middle East",
+      "industry": "Government / Energy / Finance",
+      "attacker": "Iran — Ministry of Intelligence (MOIS)",
+      "attacker_origin": "iran",
+      "motivation": "Espionage",
+      "vector": "Expanded cyberespionage campaign using new Rust-based malware (LampoRAT, BlackBeard) with UDP-based backdoors and AI-assisted development techniques targeting energy, maritime, and finance sectors.",
+      "impact": "Critical infrastructure across the Middle East under active surveillance. Campaign represents a significant capability upgrade with new tooling and expanded targeting scope amid ongoing Iran military conflict.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "recordedfuture.com"
+      ]
+    },
+    {
+      "id": "11",
+      "date": "Mar 25-27",
+      "date_sort": "2026-03-27",
+      "victim": "Langflow platform users",
+      "industry": "Technology / AI Infrastructure",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Active exploitation of CVE-2026-33017 (CVSS 9.8) — unauthenticated code injection in Langflow API endpoint allowing arbitrary Python execution via exec() without sandboxing.",
+      "impact": "1,000+ exploitation attempts across multiple regions within 24 hours of disclosure; attackers deploying info stealers, reverse shells, and cryptominers. API keys for OpenAI, Anthropic, and AWS extracted. CISA added to KEV catalog March 25; remediated in Langflow 1.9.0.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "darkreading.com",
+        "cisa.gov"
+      ]
+    },
+    {
+      "id": "12",
       "date": "Mar 27",
       "date_sort": "2026-03-27",
       "victim": "Telnyx Python SDK users",
@@ -83,7 +223,7 @@
       ]
     },
     {
-      "id": "5",
+      "id": "13",
       "date": "Mar 26-27",
       "date_sort": "2026-03-27",
       "victim": "AstraZeneca (unconfirmed)",
@@ -101,7 +241,41 @@
       ]
     },
     {
-      "id": "6",
+      "id": "14",
+      "date": "Mar 28",
+      "date_sort": "2026-03-28",
+      "victim": "Ubiquiti UniFi Networking Application users (88,000+ exposed instances)",
+      "industry": "Technology / Networking",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Maximum-severity path-traversal vulnerability (CVE-2026-22557, CVSS 10) in UniFi Network Application allowing unauthenticated account takeover and privilege escalation.",
+      "impact": "88,000+ instances publicly exposed on the internet, one-third in the United States. Exploitation is trivial to automate. No confirmed active exploitation yet but expected imminently given severity and exposure.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "cyberscoop.com"
+      ]
+    },
+    {
+      "id": "15",
+      "date": "Late Feb",
+      "date_sort": "2026-02-28",
+      "victim": "Unnamed US healthcare organization",
+      "industry": "Healthcare",
+      "attacker": "Iran — IRGC-linked criminal proxies (Pay2Key)",
+      "attacker_origin": "iran",
+      "motivation": "Disruption",
+      "vector": "Ransomware deployed via compromised administrative account with device wiper functionality rather than traditional encryption; attackers cleared logs and traces.",
+      "impact": "Healthcare operations disrupted; no data exfiltration detected. Unusual destructive approach suggests strategic motivations beyond financial gain amid Iran military conflict escalation. Pay2Key has accumulated 170 victims and $8M in ransoms since summer 2025.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "16",
       "date": "Mar 20-22",
       "date_sort": "2026-03-22",
       "victim": "Organizations in Iran (Kubernetes clusters)",
@@ -119,242 +293,74 @@
       ]
     },
     {
-      "id": "7",
-      "date": "Mar 26-27",
-      "date_sort": "2026-03-27",
-      "victim": "Langflow platform users",
-      "industry": "Technology / AI Infrastructure",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Active exploitation of CVE-2026-33017 (CVSS 9.8) — unauthenticated code injection in Langflow API endpoint allowing arbitrary Python execution via exec() without sandboxing.",
-      "impact": "1,000+ exploitation attempts across multiple regions within 24 hours of disclosure; attackers deploying info stealers, reverse shells, and cryptominers. API keys for OpenAI, Anthropic, and AWS extracted. CISA added to KEV catalog March 25; remediated in Langflow 1.9.0.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "darkreading.com",
-        "cisa.gov"
-      ]
-    },
-    {
-      "id": "8",
-      "date": "Mar 25-27",
-      "date_sort": "2026-03-27",
-      "victim": "Signal and secure messaging users (government officials, military, journalists)",
-      "industry": "Government / Defense / Media",
-      "attacker": "Russia — state-linked espionage group",
-      "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "Operatives posed as technical support staff, tricked victims into sharing security codes used to link attacker-controlled devices to victim Signal accounts for real-time message interception.",
-      "impact": "Thousands of accounts compromised; FBI and French authorities issued security alerts. Dutch intelligence agencies had issued similar warnings earlier in March. Ongoing campaign targeting high-value individuals.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "9",
-      "date": "Mar 18-22",
-      "date_sort": "2026-03-22",
-      "victim": "Foster City, California",
-      "industry": "Government / Municipal Services",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Ransomware attack shut down all public municipal services except emergency systems in the city of 30,000 residents.",
-      "impact": "Complete municipal service outage; officials considering declaring state of emergency to receive state and federal assistance.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "10",
-      "date": "Mar 18-22",
-      "date_sort": "2026-03-22",
-      "victim": "Los Angeles Metro",
-      "industry": "Transportation",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Cyberattack limiting access to internal systems; likely ransomware but not officially confirmed.",
-      "impact": "Limited access to internal IT systems affecting metro operations.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "11",
-      "date": "Mar 26",
-      "date_sort": "2026-03-26",
-      "victim": "P3 Global Intel (law enforcement tip platform)",
-      "industry": "Law Enforcement / Public Safety",
-      "attacker": "Unknown — hacktivist",
-      "attacker_origin": "unknown",
-      "motivation": "Political",
-      "vector": "Exploited vulnerability in the P3 Global Intel crime tip management platform used by thousands of law enforcement agencies.",
-      "impact": "93+ GB of confidential law enforcement tip data exfiltrated, including inadequately encrypted informant information. Data shared with journalists and DDoSecrets. Dubbed 'BlueLeaks 2.0.'",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "12",
-      "date": "Mar 26",
-      "date_sort": "2026-03-26",
-      "victim": "Navia (employee benefits platform)",
-      "industry": "Financial Services / Benefits Administration",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Security breach of employee benefits and retirement funds management platform; breach traced to December 2025 but reported in March 2026.",
-      "impact": "Social Security numbers and health plan information of approximately 2.7 million Americans stolen.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "13",
-      "date": "Mar 26",
-      "date_sort": "2026-03-26",
-      "victim": "Bitrefill (cryptocurrency gift card platform)",
-      "industry": "Cryptocurrency / Financial Services",
-      "attacker": "North Korea — state-sponsored, financially motivated",
-      "attacker_origin": "north_korea",
-      "motivation": "Financial",
-      "vector": "Initial access via compromised employee laptop; lateral movement to company cryptocurrency wallets, customer records, and gift card inventory systems.",
-      "impact": "Cryptocurrency stolen from company wallets, customer data exfiltrated, and attempted manipulation of gift card inventory.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "14",
-      "date": "Mar 26",
-      "date_sort": "2026-03-26",
-      "victim": "Trust Wallet users",
-      "industry": "Cryptocurrency",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Supply chain intrusion compromising Electron apps and browser plugins to collect private keys and seed phrases from cryptocurrency wallets.",
-      "impact": "$7 million in cryptocurrency stolen from affected wallet users.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "15",
-      "date": "Mar 18-22",
-      "date_sort": "2026-03-22",
-      "victim": "Intoxalock (car breathalyzer company)",
-      "industry": "Technology / Automotive Safety",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Cyberattack crippled IT network; breathalyzer devices installed in vehicles unable to connect to servers to confirm test results.",
-      "impact": "Drivers under court DUI orders unable to start their vehicles for at least two days due to failed server connectivity for breath test confirmation.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "16",
-      "date": "Mar 25",
-      "date_sort": "2026-03-25",
-      "victim": "Puerto Rico government (driver's license division)",
-      "industry": "Government",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Cyberattack forced cancellation of driver's license appointments across the territory.",
-      "impact": "Government service disruption affecting driver's license processing for Puerto Rico residents.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "therecord.media"
-      ]
-    },
-    {
       "id": "17",
-      "date": "Mar 25",
-      "date_sort": "2026-03-25",
-      "victim": "Major Spanish fishing port",
-      "industry": "Maritime / Logistics",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Ransomware attack targeting port operational technology and IT systems.",
-      "impact": "Disruption to port operations at a major Spanish fishing infrastructure facility.",
+      "date": "Mar 24",
+      "date_sort": "2026-03-24",
+      "victim": "Iranian dissidents and journalists in the United States and abroad",
+      "industry": "Civil Society / Media",
+      "attacker": "Iran — Ministry of Intelligence (MOIS)",
+      "attacker_origin": "iran",
+      "motivation": "Espionage",
+      "vector": "Custom malware masquerading as legitimate applications (Pictory, KeePass, Telegram) delivered via social engineering on social media platforms; uses Telegram as C2 infrastructure.",
+      "impact": "Full remote access to victim devices including screen capture, audio recording, file exfiltration, and location tracking. FBI issued alert on March 24. Death threats and $250,000 bounty offers sent to targets via associated email accounts.",
       "ongoing": "Y",
-      "severity": "medium",
+      "severity": "high",
       "sources": [
-        "therecord.media"
+        "therecord.media",
+        "recordedfuture.com",
+        "justice.gov"
       ]
     },
     {
       "id": "18",
-      "date": "Mar 24",
-      "date_sort": "2026-03-24",
-      "victim": "Dutch Finance Ministry",
-      "industry": "Government / Finance",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "Cyber breach affecting internal ministry systems; details of intrusion method not publicly disclosed.",
-      "impact": "Internal systems compromised at the Netherlands Ministry of Finance.",
-      "ongoing": "Y",
+      "date": "Mar 23",
+      "date_sort": "2026-03-23",
+      "victim": "Ransomware victims across multiple US companies",
+      "industry": "Multiple sectors",
+      "attacker": "Russia — criminal initial access broker",
+      "attacker_origin": "russia",
+      "motivation": "Financial",
+      "vector": "Aleksei Volkov (26, St. Petersburg) operated as an initial access broker — identified vulnerabilities, gained unauthorized access to corporate networks, and sold access to ransomware groups including Yanluowang.",
+      "impact": "Volkov sentenced to 81 months in federal prison on March 23. Facilitated dozens of ransomware attacks causing $9 million in actual losses and $24 million in intended losses.",
+      "ongoing": "N",
       "severity": "medium",
       "sources": [
-        "therecord.media"
+        "justice.gov"
       ]
     },
     {
       "id": "19",
-      "date": "Mar 26",
-      "date_sort": "2026-03-26",
-      "victim": "Lockheed Martin officials",
-      "industry": "Defense / Aerospace",
+      "date": "Mar 19",
+      "date_sort": "2026-03-19",
+      "victim": "Israeli Defense Force personnel, Sanzer Hasidic Jewish community",
+      "industry": "Government / Defense / Civil Society",
       "attacker": "Iran — Ministry of Intelligence (MOIS)",
       "attacker_origin": "iran",
       "motivation": "Political",
-      "vector": "Same Iran-linked group that breached FBI Director Patel's email leaked alleged personal information of Lockheed Martin defense company officials.",
-      "impact": "Personal information of defense contractor employees exposed publicly.",
+      "vector": "Stole PII and sensitive data on ~190 IDF-associated individuals and 851 GB of confidential data from Sanzer community members; posted data with threatening messages on Handala Hack domains.",
+      "impact": "Personal information, financial documents, and private correspondence exposed with explicit threats including location/residence details. FBI seized both primary domains on March 19; group declared plans to continue operations from new infrastructure.",
       "ongoing": "N",
-      "severity": "medium",
+      "severity": "high",
       "sources": [
-        "therecord.media"
+        "justice.gov",
+        "recordedfuture.com"
       ]
     },
     {
       "id": "20",
-      "date": "Mar 26",
-      "date_sort": "2026-03-26",
-      "victim": "Venus Protocol (DeFi platform)",
-      "industry": "Cryptocurrency / DeFi",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Exploited flash loan mechanism to extract funds from the decentralized finance protocol.",
-      "impact": "$3.6 million in crypto-assets stolen; this is the platform's second hack following a $27 million loss in September.",
-      "ongoing": "N",
-      "severity": "low",
+      "date": "Mar 28",
+      "date_sort": "2026-03-28",
+      "victim": "European Commission",
+      "industry": "Government / International",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Espionage",
+      "vector": "Breach of European Commission AWS cloud account; method of initial access not publicly disclosed.",
+      "impact": "Data stolen from European Commission cloud infrastructure. Investigation ongoing with limited details publicly available.",
+      "ongoing": "Y",
+      "severity": "high",
       "sources": [
-        "risky.biz"
+        "cyberscoop.com"
       ]
     }
   ]
