@@ -2,7 +2,7 @@
 set -eo pipefail
 cd "$(dirname "$0")"
 
-DATE=$(date -u '+%Y-%m-%d')
+export DATE=$(date -u '+%Y-%m-%d')
 LOG_DIR="data/logs"
 mkdir -p "$LOG_DIR"
 LOG_FILE="$LOG_DIR/pipeline-$DATE.log"
@@ -11,6 +11,13 @@ LOG_FILE="$LOG_DIR/pipeline-$DATE.log"
 set -a
 source .env
 set +a
+
+# Ensure we're on the main branch — the pipeline must commit and push to main
+CURRENT_BRANCH=$(git branch --show-current)
+if [ "$CURRENT_BRANCH" != "main" ]; then
+    echo "WARNING: Not on main branch (on '$CURRENT_BRANCH'). Switching to main."
+    git checkout main
+fi
 
 # Send email notification via Gmail SMTP
 send_email() {
@@ -64,6 +71,10 @@ echo "=== Cleanup: remove raw data older than 30 days ==="
 find data/raw -maxdepth 1 -type d -mtime +30 -exec rm -rf {} + 2>/dev/null || true
 
 echo "=== Pipeline complete ==="
+
+# Clear the ERR trap — publish succeeded, email failures should not trigger a
+# misleading "pipeline failed" notification.
+trap - ERR
 
 # Build success email with incident summary
 INCIDENT_COUNT=$(python3 -c "import json; print(json.load(open('docs/data/brief.json'))['incident_count'])" 2>/dev/null || echo "?")
