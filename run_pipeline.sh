@@ -93,7 +93,7 @@ for i, inc in enumerate(incidents, 1):
     lines.append(f"  {i}. [{sev}] {victim}")
 lines.append("")
 lines.append("View full dashboard:")
-lines.append("https://michaelskenney.github.io/cyber-brief/")
+lines.append("https://cyber-brief.pages.dev/")
 print("\n".join(lines))
 PYEOF
 )
