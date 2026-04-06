@@ -14,9 +14,7 @@ import time
 from datetime import datetime, timezone, timedelta
 
 import requests
-from dotenv import load_dotenv
-
-load_dotenv()
+from keychain import get_secret_with_fallback
 
 EXA_API_URL = "https://api.exa.ai/search"
 MAX_ARTICLES_PER_SOURCE = 5
@@ -191,9 +189,10 @@ def main():
                         help="Date for this fetch run (YYYY-MM-DD, default: today UTC)")
     args = parser.parse_args()
 
-    api_key = os.environ.get("EXA_API_KEY")
-    if not api_key:
-        print("ERROR: EXA_API_KEY not set. Add it to .env or environment.", file=sys.stderr)
+    try:
+        api_key = get_secret_with_fallback("cyber-brief", "EXA_API_KEY")
+    except RuntimeError as e:
+        print(f"ERROR: {e}", file=sys.stderr)
         sys.exit(1)
 
     sources_path = os.path.join(os.path.dirname(__file__), "sources.json")

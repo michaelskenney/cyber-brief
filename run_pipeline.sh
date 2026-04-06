@@ -7,10 +7,10 @@ LOG_DIR="data/logs"
 mkdir -p "$LOG_DIR"
 LOG_FILE="$LOG_DIR/pipeline-$DATE.log"
 
-# Load .env for email credentials
-set -a
-source .env
-set +a
+# Load secrets from macOS Keychain
+export GMAIL_USER=$(security find-generic-password -s cyber-brief -a GMAIL_USER -w)
+export GMAIL_APP_PASSWORD=$(security find-generic-password -s cyber-brief -a GMAIL_APP_PASSWORD -w)
+export NOTIFY_EMAIL=$(security find-generic-password -s cyber-brief -a NOTIFY_EMAIL -w)
 
 # Ensure we're on the main branch — the pipeline must commit and push to main
 CURRENT_BRANCH=$(git branch --show-current)
