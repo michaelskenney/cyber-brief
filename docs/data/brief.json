@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-08T20:05:13.903287+00:00",
-  "period_searched": "March 25 – April 8, 2026",
+  "generated_at": "2026-04-09T08:06:50.762228+00:00",
+  "period_searched": "March 26 – April 9, 2026",
   "incident_count": 20,
   "incidents": [
     {
@@ -12,108 +12,18 @@
       "attacker": "Russia — GRU military intelligence",
       "attacker_origin": "russia",
       "motivation": "Espionage",
-      "vector": "DNS hijacking of 18,000+ SOHO routers (Mikrotik, TP-Link) to intercept Microsoft Office OAuth tokens without deploying malware.",
-      "impact": "Authentication tokens stolen from 5,000+ devices across 200+ organizations, bypassing multi-factor authentication. Attackers gained direct access to victim email accounts and sensitive communications.",
+      "vector": "Exploited known vulnerabilities in 18,000+ end-of-life SOHO routers (Mikrotik, TP-Link) to hijack DNS settings and intercept Microsoft Office OAuth tokens via adversary-in-the-middle attacks.",
+      "impact": "Authentication tokens harvested from 5,000+ devices across 200+ organizations, bypassing MFA and granting direct access to victim accounts without deploying malware.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
         "krebsonsecurity.com",
-        "nsa.gov",
-        "ncsc.gov.uk",
-        "microsoft.com"
+        "microsoft.com",
+        "ncsc.gov.uk"
       ]
     },
     {
       "id": "2",
-      "date": "Apr 7",
-      "date_sort": "2026-04-07",
-      "victim": "U.S. water, energy, and municipal government systems",
-      "industry": "Critical Infrastructure",
-      "attacker": "Iran — IRGC (Islamic Revolutionary Guard Corps)",
-      "attacker_origin": "iran",
-      "motivation": "Disruption",
-      "vector": "Exploitation of internet-facing operational technology (OT) devices, specifically Rockwell Automation PLCs, using CVE-2021-22681.",
-      "impact": "Operational disruptions and financial losses across multiple U.S. critical infrastructure sectors. Attackers manipulated PLC project files, HMI and SCADA displays. Activity escalated in response to the U.S.-Iran military conflict.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "therecord.media",
-        "cyberscoop.com",
-        "reuters.com"
-      ]
-    },
-    {
-      "id": "3",
-      "date": "Apr 8",
-      "date_sort": "2026-04-08",
-      "victim": "Taiwanese NGOs and universities",
-      "industry": "Government",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Spear-phishing emails with malicious archives delivering LucidRook, a Lua-based stager with Rust-compiled components, via DLL sideloading and living-off-the-land techniques.",
-      "impact": "Sophisticated malware deployed to target organizations involved in Taiwan's government and academic sectors. LucidRook provides persistent access with C2 via compromised FTP servers, enabling long-term intelligence collection.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "blog.talosintelligence.com"
-      ]
-    },
-    {
-      "id": "4",
-      "date": "Apr 6",
-      "date_sort": "2026-04-06",
-      "victim": "Fortinet FortiClient EMS customers (~2,000 exposed instances)",
-      "industry": "Technology",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Exploitation of zero-day vulnerability CVE-2026-35616 (CVSS 9.8) in FortiClient EMS, allowing unauthenticated remote code execution.",
-      "impact": "Active exploitation observed since March 31, with attacks ramping up after April 6 hotfix disclosure. This is the 10th Fortinet vulnerability added to CISA's KEV catalog since early 2025. Full patch not yet available.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "cyberscoop.com",
-        "isc.sans.edu"
-      ]
-    },
-    {
-      "id": "5",
-      "date": "Early Apr",
-      "date_sort": "2026-04-05",
-      "victim": "300+ organizations across Israel, UAE, US, UK, Europe, Saudi Arabia",
-      "industry": "Critical Infrastructure",
-      "attacker": "Iran — state-linked espionage group",
-      "attacker_origin": "iran",
-      "motivation": "Espionage",
-      "vector": "Large-scale password-spraying campaign targeting Microsoft 365 environments. Targeting correlated with cities struck by Iranian missiles, suggesting coordination with kinetic operations.",
-      "impact": "Credential compromise attempts across critical infrastructure sectors in multiple allied nations. Campaign appears designed to support bombing damage assessment and kinetic military operations.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "recordedfuture.com"
-      ]
-    },
-    {
-      "id": "6",
-      "date": "Apr 6",
-      "date_sort": "2026-04-06",
-      "victim": "Jones Day (law firm)",
-      "industry": "Legal",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Phishing attack that compromised access to a limited number of client files. Data posted online by Silent Ransom Group on March 30.",
-      "impact": "Client materials for 10 clients accessed and leaked. Jones Day is a major U.S. firm known for representing President Trump and large corporations. Federal Circuit IP cases may be among exposed files.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "reuters.com",
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "7",
       "date": "Mar 31",
       "date_sort": "2026-03-31",
       "victim": "Axios NPM package (100M+ weekly downloads)",
@@ -121,221 +31,278 @@
       "attacker": "North Korea — state-sponsored, financially motivated",
       "attacker_origin": "north_korea",
       "motivation": "Financial",
-      "vector": "Social engineering of lead maintainer via fake company with cloned identities, fake Slack workspace, and malicious file during a Microsoft Teams call. Malware gave full remote access, bypassing 2FA.",
-      "impact": "Two malicious Axios versions published to NPM with embedded RAT, estimated ~600,000 downloads in ~3 hours. Credentials scraped from infected systems. Google attributed the attack to North Korean group UNC1069.",
+      "vector": "Social-engineered the lead Axios developer via a fake company video call to install malware, then compromised the NPM package to inject a malicious dependency (plain-crypto-js) deploying the WAVESHAPER.V2 backdoor.",
+      "impact": "Malicious versions were live for approximately three hours, deploying platform-specific RATs on Windows, macOS, and Linux. Credentials on affected systems should be considered compromised.",
       "ongoing": "N",
       "severity": "critical",
       "sources": [
+        "cloud.google.com",
+        "microsoft.com",
         "blog.talosintelligence.com",
-        "darkreading.com",
-        "cyberscoop.com",
+        "isc.sans.edu",
         "risky.biz"
       ]
     },
     {
-      "id": "8",
-      "date": "Mar 19–ongoing",
-      "date_sort": "2026-04-06",
-      "victim": "Multiple organizations (Trivy, Checkmarx, LiteLLM, Telnyx, and downstream victims)",
+      "id": "3",
+      "date": "Mar 19",
+      "date_sort": "2026-03-19",
+      "victim": "European Commission (Europa.eu platform on AWS)",
+      "industry": "Government",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Exploited the Trivy supply chain compromise (CVE-2026-33634) to steal an AWS API key, then exfiltrated 92 GB of compressed data including 52,000 email-related files from 42 internal clients across 29 EU entities.",
+      "impact": "Stolen data appeared on ShinyHunters dark web site on March 28. Names, email addresses, and some email content of EU staff exposed. CERT-EU attributed the breach to TeamPCP with high confidence.",
+      "ongoing": "N",
+      "severity": "critical",
+      "sources": [
+        "therecord.media",
+        "bloomberg.com"
+      ]
+    },
+    {
+      "id": "4",
+      "date": "Mar 19–27",
+      "date_sort": "2026-03-27",
+      "victim": "Multiple organizations (Trivy, Checkmarx KICS, LiteLLM, Telnyx, VS Code plugins, 66+ NPM packages)",
       "industry": "Technology",
       "attacker": "Criminal gang — data extortion",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Supply chain attack originating from Trivy vulnerability scanner compromise (CVE-2026-33634), spreading via CanisterWorm across GitHub Actions, PyPI, npm, Docker Hub, and OpenVSX.",
-      "impact": "Approximately 300 GB of credentials stolen from CI/CD pipelines. Now in monetization phase with dual ransomware tracks (CipherForce and Vect). Databricks investigating alleged downstream compromise. CISA KEV remediation deadline is April 8.",
+      "vector": "TeamPCP executed a multi-phase supply chain campaign starting with Trivy (Mar 19), spreading via CanisterWorm to NPM/Docker/GitHub Actions, then compromising Checkmarx KICS, LiteLLM, and Telnyx packages to harvest credentials at scale.",
+      "impact": "Estimated 300 GB credential trove stolen. Group now operating dual ransomware tracks (CipherForce and Vect). Downstream victims include Databricks (investigating) and AstraZeneca (3 GB data leaked by LAPSUS$). CISA issued KEV entry with April 8 deadline.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
+        "darkreading.com",
         "isc.sans.edu",
-        "krebsonsecurity.com"
+        "cisa.gov",
+        "cyberscoop.com"
       ]
     },
     {
-      "id": "9",
-      "date": "Early Apr",
-      "date_sort": "2026-04-05",
-      "victim": "Iranian organizations and infrastructure",
-      "industry": "Multiple",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Disruption",
-      "vector": "TeamPCP deployed a wiper payload via their existing CanisterWorm infrastructure, targeting systems with Iran's timezone or Farsi locale settings.",
-      "impact": "If the wiper detects an Iranian system with Kubernetes cluster access, it destroys data on every node. Otherwise it wipes the local machine. Represents an unusual pivot from financial crime to politically motivated destruction.",
-      "ongoing": "Y",
+      "id": "5",
+      "date": "Mar 11",
+      "date_sort": "2026-03-11",
+      "victim": "Stryker (medical technology company)",
+      "industry": "Healthcare",
+      "attacker": "Iran — state-directed hacktivist proxies",
+      "attacker_origin": "iran",
+      "motivation": "Political",
+      "vector": "Wiper attack by Iranian government-connected group Handala, claimed as retaliation for the US-Israel conflict with Iran.",
+      "impact": "Order processing, manufacturing, and shipping disrupted for three weeks. Company declared fully operational on April 2. Patient care support was the stated top priority during recovery.",
+      "ongoing": "N",
       "severity": "high",
       "sources": [
-        "krebsonsecurity.com"
+        "cyberscoop.com"
       ]
     },
     {
-      "id": "10",
-      "date": "Mar 2026",
-      "date_sort": "2026-03-30",
-      "victim": "Drift cryptocurrency platform ($280M stolen)",
-      "industry": "Financial Services",
-      "attacker": "North Korea — state-sponsored, financially motivated",
-      "attacker_origin": "north_korea",
-      "motivation": "Financial",
-      "vector": "Months-long social engineering campaign culminating in malicious Apple TestFlight app and VS Code extensions deployed on employee devices after building trust through in-person conference meetings.",
-      "impact": "Attackers multi-signed transactions that emptied Drift's treasury of $280 million. Investigation linked the attack to a North Korean group known for cryptocurrency theft.",
-      "ongoing": "N",
-      "severity": "critical",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "11",
-      "date": "Late Mar",
-      "date_sort": "2026-03-28",
-      "victim": "Stryker (medical device manufacturer, 200,000 devices)",
-      "industry": "Healthcare",
-      "attacker": "Iran — state-linked cyber actors",
-      "attacker_origin": "iran",
-      "motivation": "Disruption",
-      "vector": "Wiper attack attributed to Iran-linked threat actors in the context of the U.S.-Iran military conflict.",
-      "impact": "200,000 company devices wiped in one of the most disruptive Iranian cyber operations against a U.S. company. Stryker has since reported it is back up and operational.",
-      "ongoing": "N",
-      "severity": "critical",
-      "sources": [
-        "cyberscoop.com",
-        "recordedfuture.com"
-      ]
-    },
-    {
-      "id": "12",
-      "date": "Late Mar",
+      "id": "6",
+      "date": "Mar 27",
       "date_sort": "2026-03-27",
       "victim": "FBI Director Kash Patel (personal email)",
       "industry": "Government",
       "attacker": "Iran — state-directed hacktivist proxies",
       "attacker_origin": "iran",
       "motivation": "Political",
-      "vector": "Claimed breach of personal email account, framed as retaliation for FBI domain seizure targeting the group.",
-      "impact": "Travel details, correspondence, Global Entry and loyalty account numbers published online. Claim not independently verified but represents escalation of Iranian hack-and-leak operations targeting senior U.S. law enforcement.",
+      "vector": "Iranian group Handala claimed to breach Patel's personal email inbox and posted contents online, including travel details, correspondence, and loyalty account numbers.",
+      "impact": "Personal data including Global Entry numbers and travel itineraries published online. FBI stated no government information was taken. State Department offered reward for information on Handala.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
-        "recordedfuture.com",
         "bloomberg.com",
-        "cyberscoop.com"
+        "cyberscoop.com",
+        "recordedfuture.com"
+      ]
+    },
+    {
+      "id": "7",
+      "date": "Early Mar",
+      "date_sort": "2026-03-15",
+      "victim": "300+ organizations across critical infrastructure (Israel, UAE, US, UK, Europe, Saudi Arabia)",
+      "industry": "Government",
+      "attacker": "Iran — IRGC (Islamic Revolutionary Guard Corps)",
+      "attacker_origin": "iran",
+      "motivation": "Espionage",
+      "vector": "Password-spraying campaign against Microsoft 365 environments targeting municipalities, satellite, aviation, energy, and maritime sectors. Targeting correlated with cities struck by Iranian missiles.",
+      "impact": "Campaign designed to support kinetic operations and bombing damage assessment. Targeted municipal governments handling emergency response to missile strikes. Activity ongoing in three waves across March.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "recordedfuture.com",
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "8",
+      "date": "Apr 1",
+      "date_sort": "2026-04-01",
+      "victim": "Amazon Web Services Bahrain datacenter",
+      "industry": "Technology",
+      "attacker": "Iran — IRGC (Islamic Revolutionary Guard Corps)",
+      "attacker_origin": "iran",
+      "motivation": "Disruption",
+      "vector": "IRGC-affiliated forces conducted kinetic missile/drone strike on Amazon's cloud computing facility in Bahrain as part of broader escalation targeting civilian and industrial infrastructure in the Gulf.",
+      "impact": "AWS Bahrain taken offline. IRGC-affiliated media announced further waves of strikes targeting steel industries in Abu Dhabi and Bahrain, and threatened major bridges across Kuwait, Saudi Arabia, UAE, and Jordan.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "recordedfuture.com"
+      ]
+    },
+    {
+      "id": "9",
+      "date": "Apr 6",
+      "date_sort": "2026-04-06",
+      "victim": "Organizations using Medusa ransomware targets (healthcare, education, professional services, finance — US, UK, Australia)",
+      "industry": "Healthcare",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Storm-1175 exploits N-day and zero-day vulnerabilities in web-facing systems (SmarterMail CVE-2026-23760, GoAnywhere CVE-2025-10035) to deploy Medusa ransomware, often within 24 hours of initial access.",
+      "impact": "Recent victims include University of Mississippi Medical Center (fully reopened Mar 2) and Passaic County, NJ. North Korean Lazarus group also observed deploying Medusa ransomware.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "therecord.media",
+        "microsoft.com"
+      ]
+    },
+    {
+      "id": "10",
+      "date": "Apr 6",
+      "date_sort": "2026-04-06",
+      "victim": "Organizations using FortiClient EMS (nearly 2,000 publicly exposed instances)",
+      "industry": "Cross-sector",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Active exploitation of zero-day CVE-2026-35616 (CVSS 9.8) in FortiClient EMS allowing unauthenticated remote code execution. Exploitation began March 31, ramping up after Fortinet issued a hotfix on April 5.",
+      "impact": "Second FortiClient EMS vulnerability exploited in three weeks. CISA added to KEV catalog. Full patch still pending; only hotfix available. Attackers deliberately timed exploitation over Easter weekend.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "cyberscoop.com",
+        "therecord.media",
+        "isc.sans.edu"
+      ]
+    },
+    {
+      "id": "11",
+      "date": "Mar 30",
+      "date_sort": "2026-03-30",
+      "victim": "Organizations using Citrix NetScaler ADC and Gateway",
+      "industry": "Cross-sector",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Exploitation of CVE-2026-3055 (CVSS 9.3) in Citrix NetScaler ADC allowing unauthenticated attackers to leak sensitive memory from deployments, similar to previous CitrixBleed vulnerabilities.",
+      "impact": "CISA ordered federal agencies to patch by Thursday. Vulnerability has hallmarks of CitrixBleed and Citrix Bleed Two, which previously enabled ransomware gangs and nation-state hackers to attack government organizations and major companies.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "therecord.media",
+        "cisa.gov"
+      ]
+    },
+    {
+      "id": "12",
+      "date": "Early 2026",
+      "date_sort": "2026-03-28",
+      "victim": "Southeast Asian government entities (dozens of agencies via TrueConf server)",
+      "industry": "Government",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "Exploited CVE-2026-3502 in TrueConf video conferencing software to distribute weaponized updates via a compromised government-operated on-premises server, deploying Havoc penetration tool and ShadowPad malware.",
+      "impact": "Dozens of government entities across the country received malicious updates through their trusted video conferencing platform. CISA gave federal agencies until April 16 to patch.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "therecord.media"
       ]
     },
     {
       "id": "13",
-      "date": "Mar 27",
-      "date_sort": "2026-03-27",
-      "victim": "European Commission (AWS account)",
-      "industry": "Government",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "Breach of the European Commission's Amazon Web Services account on March 24, detected and blocked by security teams.",
-      "impact": "Internal data may have been stolen before the breach was contained. An internal investigation is ongoing to determine the full extent. The threat actor indicated plans to leak stolen data online.",
-      "ongoing": "N",
+      "date": "Apr 7",
+      "date_sort": "2026-04-07",
+      "victim": "Iran-based organizations and infrastructure",
+      "industry": "Cross-sector",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "Disruption",
+      "vector": "TeamPCP deployed CanisterWorm variant with a wiper payload that detects Iranian timezone and Farsi language settings, then destroys data on local machines and Kubernetes clusters.",
+      "impact": "If the wiper detects access to a Kubernetes cluster in an Iranian environment, it destroys data on every node. Otherwise it wipes the local machine. Represents a cybercriminal group injecting itself into the Iran conflict.",
+      "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "bloomberg.com"
+        "krebsonsecurity.com"
       ]
     },
     {
       "id": "14",
-      "date": "Early Apr",
-      "date_sort": "2026-04-04",
-      "victim": "U.S. healthcare organization",
-      "industry": "Healthcare",
-      "attacker": "Iran — state-directed hacktivist proxies",
-      "attacker_origin": "iran",
-      "motivation": "Disruption",
-      "vector": "Pay2Key ransomware deployed using compromised administrative credentials and living-off-the-land techniques.",
-      "impact": "Assessed as state-aligned disruption rather than financially motivated — deliberate targeting of U.S. healthcare during the Iran conflict. Represents revival of the Pay2Key ransomware operation.",
+      "date": "Apr 7",
+      "date_sort": "2026-04-07",
+      "victim": "Russia providing cyber support to Iran",
+      "industry": "Government",
+      "attacker": "Russia — state intelligence services",
+      "attacker_origin": "russia",
+      "motivation": "Political",
+      "vector": "Russian satellites conducted at least 24 imagery surveys of military facilities across 11 Middle Eastern countries covering 46 targets; Russian and Iranian hackers collaborated in the cyber domain.",
+      "impact": "Ukrainian intelligence assessment found military bases and headquarters were targeted by Iranian strikes within days of being surveyed by Russian satellites. Represents most detailed account of Russian secret support to Iran.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "recordedfuture.com"
+        "reuters.com"
       ]
     },
     {
       "id": "15",
       "date": "Mar 30",
       "date_sort": "2026-03-30",
-      "victim": "AstraZeneca (pharmaceutical company)",
-      "industry": "Healthcare",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Data theft and extortion attempt by LAPSUS$ group. After failing to find buyers, the 3 GB archive was released for free.",
-      "impact": "Partially verified dump contains GitHub user information for internal developers, employee data across clinical research subsidiaries, and internal source code structures. AstraZeneca has not issued a public statement after 96+ hours.",
-      "ongoing": "N",
+      "victim": "Organizations using F5 BIG-IP Access Policy Manager",
+      "industry": "Cross-sector",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Active exploitation of CVE-2025-53521, an unauthenticated remote code execution vulnerability in F5 BIG-IP APM, a common component in large enterprises.",
+      "impact": "F5 confirmed active exploitation. NCSC urged UK organizations to take immediate action, recommending isolation of affected systems and investigation for compromise. Indicators of compromise published.",
+      "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "isc.sans.edu"
+        "ncsc.gov.uk"
       ]
     },
     {
       "id": "16",
-      "date": "Apr 2",
-      "date_sort": "2026-04-02",
-      "victim": "Open source GitHub repositories (450+ targeted)",
-      "industry": "Technology",
+      "date": "Late Feb",
+      "date_sort": "2026-02-28",
+      "victim": "Organizations worldwide via WhatsApp",
+      "industry": "Cross-sector",
       "attacker": "Unknown — criminal likely",
       "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "AI-assisted automation to exploit GitHub pull_request_target workflow misconfiguration, opening 475+ malicious pull requests in 26 hours to steal credentials.",
-      "impact": "Fewer than 10% of attempts succeeded, but at least two NPM packages were compromised. Demonstrates how AI has lowered the barrier for large-scale supply chain attacks.",
+      "vector": "WhatsApp messages deliver malicious VBScript files that initiate a multi-stage infection chain using renamed Windows utilities, retrieving payloads from AWS, Tencent Cloud, and Backblaze B2, and installing MSI backdoors.",
+      "impact": "Campaign combines social engineering with living-off-the-land techniques, using cloud-hosted payloads and legitimate tools to establish persistence and remote access while evading detection.",
       "ongoing": "Y",
       "severity": "medium",
       "sources": [
-        "darkreading.com"
+        "microsoft.com"
       ]
     },
     {
       "id": "17",
-      "date": "Mar 30",
-      "date_sort": "2026-03-30",
-      "victim": "F5 BIG-IP APM users (enterprise networks)",
-      "industry": "Technology",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Active exploitation of CVE-2025-53521, an unauthenticated remote code execution vulnerability in F5 BIG-IP Access Policy Manager.",
-      "impact": "Critical vulnerability being exploited in the wild across enterprise networks. CISA added to KEV catalog; NCSC issued urgent advisory recommending isolation and rebuild of affected systems.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "ncsc.gov.uk",
-        "cisa.gov",
-        "blog.talosintelligence.com"
-      ]
-    },
-    {
-      "id": "18",
-      "date": "Late Mar",
-      "date_sort": "2026-03-28",
-      "victim": "Die Linke (German political party)",
-      "industry": "Government",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Qilin ransomware deployed against the party's IT infrastructure, forcing a full network shutdown.",
-      "impact": "Employee records stolen; the party says no member data was compromised. Qilin is the most prolific ransomware group worldwide in 2025-2026 with 200+ victims per month.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "19",
       "date": "Mar 31",
       "date_sort": "2026-03-31",
-      "victim": "Government officials and high-risk individuals globally",
+      "victim": "High-risk individuals (government officials, diplomats)",
       "industry": "Government",
       "attacker": "Russia — FSB intelligence service",
       "attacker_origin": "russia",
       "motivation": "Espionage",
-      "vector": "Targeted attacks against messaging app accounts (WhatsApp, Signal, Messenger) using social engineering, phishing links, QR codes, and device-linking abuse.",
-      "impact": "NCSC and international partners issued joint advisory warning of growing Russian exploitation of messaging apps to compromise accounts of government officials and individuals with access to sensitive information.",
+      "vector": "Russian-based actors targeting messaging apps (WhatsApp, Signal, Messenger) to trick high-risk individuals into sharing login codes, adding attacker devices to accounts, or clicking phishing links and QR codes.",
+      "impact": "NCSC and international partners issued joint advisory warning of growing malicious activity. Attackers impersonate known contacts to access sensitive information and join group chats undetected.",
       "ongoing": "Y",
       "severity": "medium",
       "sources": [
@@ -343,20 +310,55 @@
       ]
     },
     {
-      "id": "20",
-      "date": "Ongoing",
-      "date_sort": "2026-04-03",
-      "victim": "Next.js application operators worldwide",
-      "industry": "Technology",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
+      "id": "18",
+      "date": "Apr 2",
+      "date_sort": "2026-04-02",
+      "victim": "Hundreds of organizations (manufacturing, education, IT, healthcare, finance, agriculture)",
+      "industry": "Cross-sector",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Large-scale automated credential harvesting exploiting React2Shell (CVE-2025-55182) in Next.js applications using the NEXUS Listener framework.",
-      "impact": "Attackers automatically extract cloud tokens, database credentials, and SSH keys from hundreds of compromised hosts. Creates significant risk for lateral movement and supply chain integrity.",
+      "vector": "Akira ransomware group uses zero-day vulnerabilities, purchased exploits, and VPNs lacking MFA for initial access, employing intermittent encryption to move from breach to full encryption in under one hour.",
+      "impact": "At least $245 million in ransom payments collected through September 2025. Group offers functional decryptors to incentivize payment. FBI and CISA flagged Akira as a top global ransomware group.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "blog.talosintelligence.com"
+        "cyberscoop.com"
+      ]
+    },
+    {
+      "id": "19",
+      "date": "Mar 30",
+      "date_sort": "2026-03-30",
+      "victim": "Jonathan Spalletta charged (Uranium Finance crypto exchange — $53M stolen)",
+      "industry": "Financial Services",
+      "attacker": "Criminal individual",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Exploited smart contract vulnerabilities in the Uranium Finance decentralized cryptocurrency exchange across 26 liquidity pools, then laundered proceeds through Tornado Cash mixer.",
+      "impact": "DOJ unsealed indictment; $31M in cryptocurrency seized. Defendant spent stolen funds on a $500K Black Lotus Magic card, $1.5M in sealed Alpha Booster packs, rare Pokemon cards, and an antique Roman coin commemorating Caesar's assassination.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "justice.gov"
+      ]
+    },
+    {
+      "id": "20",
+      "date": "Apr 7",
+      "date_sort": "2026-04-07",
+      "victim": "Aisuru, Kimwolf, JackSkid, Mossad botnets dismantled (3M+ compromised IoT devices)",
+      "industry": "Cross-sector",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Four botnets comprising 3 million+ compromised IoT devices (routers, web cameras) used for record-setting DDoS attacks, including against Department of Defense infrastructure.",
+      "impact": "DOJ and authorities in Canada and Germany seized domains and infrastructure. Botnets launched hundreds of thousands of DDoS attacks with extortion demands against victims.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "krebsonsecurity.com",
+        "justice.gov"
       ]
     }
   ]
