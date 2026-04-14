@@ -1,10 +1,27 @@
 {
-  "generated_at": "2026-04-14T08:09:21.985606+00:00",
-  "period_searched": "March 31 – April 13, 2026",
-  "incident_count": 19,
+  "generated_at": "2026-04-14T20:05:58.227833+00:00",
+  "period_searched": "March 31 – April 14, 2026",
+  "incident_count": 20,
   "incidents": [
     {
       "id": "1",
+      "date": "Apr 13",
+      "date_sort": "2026-04-13",
+      "victim": "Cloud workloads on AWS, GCP, Azure, and Alibaba Cloud environments",
+      "industry": "Technology / Cloud Infrastructure",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "Deployed an undetectable ELF backdoor on Linux cloud instances using SMTP port 25 as a covert command-and-control channel, with typosquatted domains mimicking Alibaba Cloud services to obscure C2 traffic.",
+      "impact": "Backdoor harvests temporary cloud credentials from AWS instance metadata service and equivalent endpoints for GCP, Azure, and Alibaba Cloud. Zero detections on VirusTotal at time of analysis. Represents six years of investment in cloud-native tooling by this group.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "darkreading.com"
+      ]
+    },
+    {
+      "id": "2",
       "date": "Apr 13",
       "date_sort": "2026-04-13",
       "victim": "Adobe Acrobat and Reader users worldwide",
@@ -13,15 +30,16 @@
       "attacker_origin": "unknown",
       "motivation": "Unclear",
       "vector": "Exploitation of zero-day CVE-2026-34621 (CVSS 8.6) in Adobe Acrobat and Reader via malicious PDF files requiring no user interaction beyond opening the document.",
-      "impact": "Actively exploited since at least November 2025 — over four months before Adobe patched it. Exploit silently fingerprints victims before optionally delivering remote code execution and sandbox escape payloads.",
+      "impact": "Actively exploited since at least November 2025 — over four months before Adobe patched it. Exploit silently fingerprints victims before optionally delivering remote code execution and sandbox escape payloads. CISA added to KEV catalog.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "darkreading.com"
+        "darkreading.com",
+        "cisa.gov"
       ]
     },
     {
-      "id": "2",
+      "id": "3",
       "date": "Apr 7–8",
       "date_sort": "2026-04-08",
       "victim": "Government agencies, military, critical infrastructure worldwide (200+ organizations)",
@@ -30,7 +48,7 @@
       "attacker_origin": "russia",
       "motivation": "Espionage",
       "vector": "Exploited known vulnerabilities in 18,000+ end-of-life SOHO routers (TP-Link, Mikrotik) to hijack DNS settings and intercept OAuth authentication tokens via adversary-in-the-middle attacks on Microsoft 365.",
-      "impact": "Harvested credentials, emails, and authentication tokens from 200+ organizations and 5,000 consumer devices across 120+ countries without deploying malware. FBI conducted court-authorized 'Operation Masquerade' to remediate compromised U.S. routers.",
+      "impact": "Harvested credentials, emails, and authentication tokens from 200+ organizations and 5,000 consumer devices across 120+ countries without deploying malware. FBI conducted court-authorized 'Operation Masquerade' to remediate compromised U.S. routers in 23+ states.",
       "ongoing": "N",
       "severity": "critical",
       "sources": [
@@ -41,7 +59,7 @@
       ]
     },
     {
-      "id": "3",
+      "id": "4",
       "date": "Apr 6",
       "date_sort": "2026-04-06",
       "victim": "Fortinet FortiClient EMS customers worldwide",
@@ -49,8 +67,8 @@
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "Exploitation of zero-day CVE-2026-35616 (CVSS 9.1) in Fortinet FortiClient EMS allowing improper access control and unauthenticated remote code execution.",
-      "impact": "CISA added to KEV catalog and ordered federal agencies to patch immediately. Second FortiClient EMS vulnerability in three weeks. Exploitation ramped up over Easter weekend when security teams were at reduced staffing.",
+      "vector": "Exploitation of zero-day CVE-2026-35616 (CVSS 9.1) in Fortinet FortiClient EMS allowing unauthenticated remote code execution. CISA also added CVE-2026-21643, a separate Fortinet SQL injection vulnerability, to the KEV catalog.",
+      "impact": "CISA ordered federal agencies to patch immediately. Second FortiClient EMS vulnerability in three weeks. Exploitation ramped up over Easter weekend when security teams were at reduced staffing.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
@@ -59,7 +77,7 @@
       ]
     },
     {
-      "id": "4",
+      "id": "5",
       "date": "Apr 6",
       "date_sort": "2026-04-06",
       "victim": "University of Mississippi Medical Center; Passaic County, New Jersey",
@@ -77,7 +95,7 @@
       ]
     },
     {
-      "id": "5",
+      "id": "6",
       "date": "Apr 6",
       "date_sort": "2026-04-06",
       "victim": "Jones Day (major U.S. law firm, 2,400 lawyers)",
@@ -94,7 +112,7 @@
       ]
     },
     {
-      "id": "6",
+      "id": "7",
       "date": "Early Apr",
       "date_sort": "2026-04-04",
       "victim": "Minot, North Dakota water treatment plant",
@@ -111,7 +129,7 @@
       ]
     },
     {
-      "id": "7",
+      "id": "8",
       "date": "Apr 3",
       "date_sort": "2026-04-03",
       "victim": "Southeast Asian government entities (dozens of agencies)",
@@ -128,7 +146,7 @@
       ]
     },
     {
-      "id": "8",
+      "id": "9",
       "date": "Mar 19–28",
       "date_sort": "2026-04-03",
       "victim": "European Commission (Europa.eu platform on AWS)",
@@ -146,7 +164,7 @@
       ]
     },
     {
-      "id": "9",
+      "id": "10",
       "date": "Apr 2",
       "date_sort": "2026-04-02",
       "victim": "Hundreds of organizations running Next.js applications",
@@ -155,7 +173,7 @@
       "attacker_origin": "unknown",
       "motivation": "Financial",
       "vector": "Large-scale automated campaign exploiting React2Shell RCE vulnerability (CVE-2025-55182) in Next.js applications using a custom framework called 'NEXUS Listener' to extract credentials from compromised hosts.",
-      "impact": "Attackers automatically harvested cloud tokens, database credentials, and SSH keys from hundreds of compromised hosts to facilitate further malicious activity. Creates significant risks for lateral movement and supply chain integrity.",
+      "impact": "Attackers automatically harvested cloud tokens, database credentials, and SSH keys from hundreds of compromised hosts. React2Shell became the most targeted vulnerability of 2025 despite being disclosed only in December.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -163,7 +181,7 @@
       ]
     },
     {
-      "id": "10",
+      "id": "11",
       "date": "Mar 11",
       "date_sort": "2026-04-02",
       "victim": "Stryker (medical technology company, Michigan)",
@@ -171,8 +189,8 @@
       "attacker": "Iran — state-directed hacktivist proxies",
       "attacker_origin": "iran",
       "motivation": "Disruption",
-      "vector": "Wiper attack launched by Iranian government-connected group Handala in retaliation over the US-Israel conflict, targeting the company's core business systems.",
-      "impact": "Order processing, manufacturing, and shipping disrupted for three weeks. Company reported being 'fully operational' by early April. FBI seized Handala-associated websites and State Department offered a reward for information on the group.",
+      "vector": "Wiper attack launched by Iranian government-connected group in retaliation over the US-Israel conflict, targeting the company's core business systems.",
+      "impact": "Order processing, manufacturing, and shipping disrupted for three weeks. Company reported being 'fully operational' by early April. FBI seized associated websites and State Department offered a reward for information on the group.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -180,7 +198,7 @@
       ]
     },
     {
-      "id": "11",
+      "id": "12",
       "date": "Early Apr",
       "date_sort": "2026-04-02",
       "victim": "Statistics South Africa (government statistics agency)",
@@ -197,7 +215,7 @@
       ]
     },
     {
-      "id": "12",
+      "id": "13",
       "date": "Early Apr",
       "date_sort": "2026-04-02",
       "victim": "Ashby, Dunstable, Pepperell, and Townsend, Massachusetts (police and fire departments)",
@@ -214,7 +232,7 @@
       ]
     },
     {
-      "id": "13",
+      "id": "14",
       "date": "Apr 1",
       "date_sort": "2026-04-01",
       "victim": "Drift decentralized finance platform",
@@ -231,7 +249,7 @@
       ]
     },
     {
-      "id": "14",
+      "id": "15",
       "date": "Apr 1",
       "date_sort": "2026-04-01",
       "victim": "Hasbro (toymaker)",
@@ -248,7 +266,7 @@
       ]
     },
     {
-      "id": "15",
+      "id": "16",
       "date": "Mar–Apr",
       "date_sort": "2026-04-01",
       "victim": "Critical infrastructure organizations in Israel, UAE, and broader Middle East (300+ organizations)",
@@ -265,7 +283,7 @@
       ]
     },
     {
-      "id": "16",
+      "id": "17",
       "date": "Apr 1",
       "date_sort": "2026-04-01",
       "victim": "Google Chrome users worldwide",
@@ -283,7 +301,7 @@
       ]
     },
     {
-      "id": "17",
+      "id": "18",
       "date": "Mar 31",
       "date_sort": "2026-03-31",
       "victim": "Axios JavaScript library users (estimated 600,000 downloads of compromised versions)",
@@ -304,7 +322,7 @@
       ]
     },
     {
-      "id": "18",
+      "id": "19",
       "date": "Mar 19–31",
       "date_sort": "2026-03-31",
       "victim": "Aqua Security Trivy, Checkmarx KICS, BerriAI LiteLLM, Telnyx SDK, European Commission, Mercor, 500,000+ machines",
@@ -319,11 +337,12 @@
       "sources": [
         "unit42.paloaltonetworks.com",
         "therecord.media",
-        "darkreading.com"
+        "darkreading.com",
+        "blog.talosintelligence.com"
       ]
     },
     {
-      "id": "19",
+      "id": "20",
       "date": "Mar 31",
       "date_sort": "2026-03-31",
       "victim": "Citrix NetScaler ADC customers worldwide",
