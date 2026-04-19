@@ -1,43 +1,43 @@
 {
-  "generated_at": "2026-04-19T08:08:10.724314+00:00",
-  "period_searched": "April 1-18, 2026",
-  "incident_count": 20,
+  "generated_at": "2026-04-19T20:08:14.426250+00:00",
+  "period_searched": "April 5-17, 2026",
+  "incident_count": 23,
   "incidents": [
     {
       "id": "1",
-      "date": "Apr 16",
-      "date_sort": "2026-04-16",
-      "victim": "Grinex (Russian crypto exchange)",
-      "industry": "Cryptocurrency",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Wallet compromise emptied approximately $13 million (1 billion rubles) in crypto assets; Grinex publicly blamed \"Western intelligence agencies.\"",
-      "impact": "Grinex shut down operations. TRM Labs previously identified Grinex as a rebrand of sanctioned exchange Garantex, long associated with laundering ransomware proceeds.",
+      "date": "Apr 15",
+      "date_sort": "2026-04-15",
+      "victim": "Ukrainian prosecutors and NATO-country military officials",
+      "industry": "Government / Military",
+      "attacker": "Russia — GRU military intelligence",
+      "attacker_origin": "russia",
+      "motivation": "Espionage",
+      "vector": "Russian hackers compromised email inboxes of Ukrainian prosecutors and allied government/military staff, inadvertently leaving the collection server exposed to researchers.",
+      "impact": "At least 284 mailboxes breached between Sept 2024 and Mar 2026, including senior Ukrainian anti-corruption prosecutors, 67 Romanian Air Force accounts, 27 Greek Hellenic National Defense General Staff accounts, and local Bulgarian and Serbian officials.",
       "ongoing": "N",
-      "severity": "medium",
+      "severity": "high",
       "sources": [
+        "reuters.com",
         "risky.biz",
-        "TRM Labs"
+        "ctrlaltintel.com"
       ]
     },
     {
       "id": "2",
       "date": "Apr 15",
       "date_sort": "2026-04-15",
-      "victim": "Ukrainian prosecutors plus Romanian, Greek, Bulgarian, and Serbian military/government officials",
-      "industry": "Government / Military / Law Enforcement",
-      "attacker": "Russia — GRU military intelligence",
+      "victim": "Swedish thermal power plant (western Sweden)",
+      "industry": "Energy",
+      "attacker": "Russia — state-linked hacktivist proxies",
       "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "Credential theft and mailbox takeover campaign; researchers discovered an exposed attacker server containing logs of 284 compromised inboxes and thousands of stolen emails dating back to September 2024.",
-      "impact": "Over 170 Ukrainian prosecutor and investigator accounts compromised, including Ukraine's Specialized Anti-Corruption Prosecutor's Office, Asset Recovery and Management Agency, and Prosecutor's Training Center. Romanian Air Force (67 inboxes), Hellenic National Defense General Staff (27 inboxes), Bulgarian and Serbian officials also hit.",
-      "ongoing": "Y",
-      "severity": "high",
+      "motivation": "Disruption",
+      "vector": "Pro-Russian group attempted to manipulate operational technology (OT/ICS) systems at a thermal power plant.",
+      "impact": "Intrusion attempt in spring 2025 blocked by built-in facility safeguards; no operational impact. Swedish officials cite similar destructive-minded attempts in Norway, Denmark, and Poland.",
+      "ongoing": "N",
+      "severity": "medium",
       "sources": [
-        "reuters.com",
-        "risky.biz",
-        "Ctrl-Alt-Intel"
+        "therecord.media",
+        "risky.biz"
       ]
     },
     {
@@ -45,12 +45,12 @@
       "date": "Apr 15",
       "date_sort": "2026-04-15",
       "victim": "Standard Bank (South Africa)",
-      "industry": "Financial Services",
+      "industry": "Financial services",
       "attacker": "Unknown — criminal likely",
       "attacker_origin": "unknown",
-      "motivation": "Unclear",
+      "motivation": "Financial",
       "vector": "Hackers breached an internal network storing customer data.",
-      "impact": "Third South African bank breach disclosed this year; customer data exposure under investigation.",
+      "impact": "South Africa's largest bank disclosed the breach; it is the third hack of a South African bank this year. Scope of customer data exposure still under investigation.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -60,15 +60,50 @@
     },
     {
       "id": "4",
-      "date": "Apr 15",
-      "date_sort": "2026-04-15",
-      "victim": "McGraw Hill (~13.5 million users)",
-      "industry": "Education / Publishing",
-      "attacker": "Criminal gang — data extortion (ShinyHunters)",
+      "date": "Apr 14",
+      "date_sort": "2026-04-14",
+      "victim": "Danske Bank",
+      "industry": "Financial services",
+      "attacker": "Unknown — internal error",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Human error during a planned system update caused protected client addresses to be visible inside domestic payment detail screens.",
+      "impact": "Inadvertently exposed the addresses of roughly 20,600 Danske Bank clients — many with addresses under legal protection orders — during 2025.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "bloomberg.com"
+      ]
+    },
+    {
+      "id": "5",
+      "date": "Apr 13",
+      "date_sort": "2026-04-13",
+      "victim": "Kraken (crypto exchange)",
+      "industry": "Cryptocurrency",
+      "attacker": "Criminal gang — data extortion",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Data was taken from the company's Salesforce environment in the 2024–2025 Salesforce extortion campaign; leaked after a failed ransom attempt.",
-      "impact": "Real names, home addresses, email addresses, and phone numbers for 13.5 million McGraw Hill users published online.",
+      "vector": "Two former Kraken employees recorded videos of customer data in the company's backend; a criminal group used the footage to attempt extortion.",
+      "impact": "Kraken refused to pay, terminated the employees, and notified affected users and law enforcement. Some customer data was reportedly viewed.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "bloomberg.com",
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "6",
+      "date": "Apr 13",
+      "date_sort": "2026-04-13",
+      "victim": "McGraw Hill (educational publisher)",
+      "industry": "Education / Publishing",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Data stolen from McGraw Hill's Salesforce tenant during the 2025 wave of Salesforce-targeted thefts and leaked after extortion failed.",
+      "impact": "Personal details of about 13.5 million users — names, home addresses, emails, and phone numbers — published publicly.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -77,53 +112,16 @@
       ]
     },
     {
-      "id": "5",
-      "date": "Apr 15",
-      "date_sort": "2026-04-15",
-      "victim": "LiteLLM, Checkmarx, Aqua Trivy and thousands of downstream users",
-      "industry": "Software Supply Chain",
-      "attacker": "Criminal gang — data extortion (TeamPCP)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Stolen maintainer credentials granted write access to trusted repositories; attackers injected credential-harvesting malware into LiteLLM (~97M monthly downloads), poisoned Checkmarx GitHub Actions workflows, and compromised Trivy releases. Attack cascaded across five ecosystems in five days.",
-      "impact": "Roughly one million stolen credentials including AI API keys, cloud credentials, SSH keys, and Kubernetes tokens. TeamPCP claims to hold 300 GB of stolen data and has tied activity to ransomware affiliation and Lapsus$ extortion. A follow-on CanisterWorm variant wiped systems in Iran.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "recordedfuture.com",
-        "krebsonsecurity.com",
-        "isc.sans.edu"
-      ]
-    },
-    {
-      "id": "6",
-      "date": "Apr 14",
-      "date_sort": "2026-04-14",
-      "victim": "Autovista (automotive data analytics)",
-      "industry": "Automotive / Data Analytics",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Ransomware intrusion disrupting corporate systems.",
-      "impact": "Services affected across Europe and Australia; Autovista posted a service update confirming the incident.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "risky.biz",
-        "autovista.com"
-      ]
-    },
-    {
       "id": "7",
-      "date": "Apr 14",
-      "date_sort": "2026-04-14",
-      "victim": "Hallmark (~1.7 million customers)",
-      "industry": "Retail / Consumer Goods",
-      "attacker": "Criminal gang — data extortion (ShinyHunters)",
+      "date": "Apr 13",
+      "date_sort": "2026-04-13",
+      "victim": "Hallmark Cards customers",
+      "industry": "Retail",
+      "attacker": "Criminal gang — data extortion",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Data exfiltrated from Hallmark's Salesforce tenant in the broader 2024–2025 Salesforce extortion wave.",
-      "impact": "1.7 million customer records published after Hallmark declined to pay a ransom.",
+      "vector": "Attackers stole data from Hallmark's Salesforce accounts during the 2025 Salesforce-wave intrusions and leaked it after Hallmark refused to pay.",
+      "impact": "Personal data of 1.7 million Hallmark customers leaked publicly.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
@@ -140,8 +138,8 @@
       "attacker": "Unknown — criminal likely",
       "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "Security breach disclosed to affected customers.",
-      "impact": "Booking details, names, email addresses, home addresses, and phone numbers exposed; no financial data affected. Booking.com reset PINs on compromised reservations.",
+      "vector": "Breach exposed customer personal data; no financial data reported compromised.",
+      "impact": "Customer names, emails, home addresses, phone numbers, and reservation details exposed. Booking.com reset reservation PINs for affected customers.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
@@ -151,186 +149,123 @@
     },
     {
       "id": "9",
-      "date": "Apr 13",
-      "date_sort": "2026-04-13",
-      "victim": "Kraken (cryptocurrency exchange)",
-      "industry": "Cryptocurrency",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Former Kraken employees allegedly filmed internal backend screens showing customer details; extortion group used videos as leverage against Kraken.",
-      "impact": "Kraken refused to pay ransom, terminated the employees, and notified affected users and law enforcement; criminal group continued publicizing alleged access.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "bloomberg.com",
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "10",
-      "date": "Apr 13",
-      "date_sort": "2026-04-13",
-      "victim": "50+ cryptocurrency users globally (including musician Garrett Dutton)",
-      "industry": "Consumer / Cryptocurrency",
-      "attacker": "Criminal gang — financially motivated",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "A malicious fake Ledger crypto-wallet app reached the official Mac App Store and was live for almost two weeks before removal.",
-      "impact": "Approximately $9.5 million stolen from 50+ victims; funds laundered through KuCoin and an underground mixer called AudiA6. One victim reportedly lost $440,000 in retirement savings.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz",
-        "thestreet.com"
-      ]
-    },
-    {
-      "id": "11",
       "date": "Apr 9",
       "date_sort": "2026-04-09",
-      "victim": "Canadian employees across multiple organizations",
-      "industry": "Cross-sector",
+      "victim": "Canadian employees (payroll-pirate campaign)",
+      "industry": "Workforce / Finance",
       "attacker": "Criminal gang — financially motivated",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Malvertising and SEO poisoning drove victims to a spoofed Microsoft 365 sign-in page; adversary-in-the-middle framework using the Axios HTTP client captured session tokens to bypass non-phishing-resistant MFA.",
-      "impact": "Attackers maintained 30-day token persistence, created hidden inbox rules for \"direct deposit\" or \"bank\" emails, and manipulated payroll platforms such as Workday to redirect salary payments; at least one confirmed direct financial loss.",
+      "vector": "SEO poisoning and malvertising drove targets to an adversary-in-the-middle Microsoft 365 login page; stolen tokens were replayed every ~30 minutes via the Axios HTTP client to bypass MFA, after which attackers emailed HR from the victim's account to change direct-deposit details or manipulated Workday directly.",
+      "impact": "Multiple Canadian worker accounts compromised; at least one confirmed payroll redirect to an attacker-controlled bank account. Microsoft DART issued guidance and began tenant takedowns.",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "medium",
       "sources": [
         "microsoft.com"
       ]
     },
     {
-      "id": "12",
-      "date": "Early Apr",
-      "date_sort": "2026-04-09",
-      "victim": "Nippon Yusen Kaisha (NYK) — Japanese shipping company",
-      "industry": "Shipping / Logistics",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Unauthorized access to NYK's marine bunker fuel procurement system at the end of March.",
-      "impact": "NYK suspended use of the platform; some employee data was accessed and likely stolen. NYK is part of Ocean Network Express, the world's sixth-largest container shipping line.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz",
-        "nyk.com",
-        "shipandbunker.com"
-      ]
-    },
-    {
-      "id": "13",
+      "id": "10",
       "date": "Apr 7",
       "date_sort": "2026-04-07",
-      "victim": "Government agencies and critical-infrastructure operators across 120+ countries (200+ organizations, ~5,000 consumer devices)",
-      "industry": "Government / Critical Infrastructure",
+      "victim": "SOHO router owners and 200+ government / telecom / energy organizations worldwide",
+      "industry": "Government / Critical infrastructure / Telecom",
       "attacker": "Russia — GRU military intelligence",
       "attacker_origin": "russia",
       "motivation": "Espionage",
-      "vector": "Exploited known vulnerabilities to compromise ~18,000 SOHO routers (primarily TP-Link and MikroTik) and hijack DNS settings, enabling adversary-in-the-middle attacks on Outlook Web Access to harvest Microsoft OAuth tokens, credentials, and emails.",
-      "impact": "Victims included foreign-affairs ministries, law enforcement, and energy/telecom companies. FBI Operation Masquerade, with Lumen Black Lotus Labs and Microsoft, issued court-authorized commands to reset DNS settings on compromised US routers in 23+ states. Microsoft says the campaign has ceased.",
+      "vector": "GRU operators exploited known vulnerabilities to hijack ~18,000 TP-Link and Mikrotik SOHO routers in 120+ countries, changed DNS settings to attacker-controlled resolvers, and used adversary-in-the-middle attacks on Outlook on the web to steal Microsoft OAuth tokens and credentials.",
+      "impact": "Espionage campaign affected 200+ organizations and 5,000+ consumer devices, including Afghan government agencies, a European national identity platform, and foreign affairs and law-enforcement bodies in North Africa, Central America, and Southeast Asia. FBI-led Operation Masquerade remediated US-based routers; campaign activity has since ceased.",
       "ongoing": "N",
       "severity": "critical",
       "sources": [
         "justice.gov",
         "microsoft.com",
         "krebsonsecurity.com",
-        "lumen.com",
-        "ncsc.gov.uk",
         "cyberscoop.com"
+      ]
+    },
+    {
+      "id": "11",
+      "date": "Apr 7",
+      "date_sort": "2026-04-07",
+      "victim": "US water, wastewater, energy, and government facility operators",
+      "industry": "Critical infrastructure",
+      "attacker": "Iran — state-directed hacktivist proxies",
+      "attacker_origin": "iran",
+      "motivation": "Disruption",
+      "vector": "Iran-linked actors targeted publicly exposed programmable logic controllers (PLCs) and SCADA displays, expanding from Unitronics devices to Rockwell Automation FactoryTalk and Allen-Bradley PLCs as the Iran war intensified.",
+      "impact": "FBI/NSA/CISA/EPA/DOE joint advisory confirmed interaction with device data, project-file exfiltration, and in some cases operational disruption and financial loss. Unit 42 estimates ~5,600 Rockwell/Allen-Bradley devices globally exposed; Iranian targeting of US critical infrastructure escalated following the Feb 28 US-Israel strikes on Iran.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "ic3.gov advisory",
+        "reuters.com",
+        "cyberscoop.com",
+        "unit42.paloaltonetworks.com"
+      ]
+    },
+    {
+      "id": "12",
+      "date": "Apr 7",
+      "date_sort": "2026-04-07",
+      "victim": "Dutch hospitals (via ChipSoft EHR vendor)",
+      "industry": "Healthcare",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Ransomware attack on Dutch healthcare software vendor ChipSoft forced the company to take down its Zorgportaal, HiX Mobile, and Zorgplatform systems.",
+      "impact": "HiX is used by ~70% of Dutch hospitals; at least 11 hospitals disconnected ChipSoft from their networks and several patient portals went offline. ChipSoft said it cannot rule out that patient data was accessed; no critical care processes stopped, but rollout of new EHR systems (e.g. Leiden UMC) has been postponed.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "13",
+      "date": "Apr 7",
+      "date_sort": "2026-04-07",
+      "victim": "Northern Ireland Education Authority (C2K school network)",
+      "industry": "Education / Government",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Cyberattack on the centralized C2K IT network that serves almost all schools in Northern Ireland; EA and provider Capita shut the system down to contain the incident.",
+      "impact": "Disrupted access to teaching materials, assignments, and exam-revision tools for roughly 300,000 pupils and 20,000 teachers. Recovery ongoing, prioritized for students sitting examinations; EA says no evidence yet that personal data left the system.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "therecord.media"
       ]
     },
     {
       "id": "14",
       "date": "Apr 7",
       "date_sort": "2026-04-07",
-      "victim": "US water/wastewater utilities, energy operators, and local governments (incl. Minot, ND water plant and an Indiana county)",
-      "industry": "Water / Energy / Government",
-      "attacker": "Iran — IRGC (Islamic Revolutionary Guard Corps)",
-      "attacker_origin": "iran",
-      "motivation": "Disruption",
-      "vector": "Targeted internet-exposed Rockwell Automation, Allen-Bradley, and Siemens programmable logic controllers and SCADA/HMI interfaces, including exploitation of CVE-2021-22681. Unit 42 and CISA track the cluster as CL-STA-1128 (Cyber Av3ngers).",
-      "impact": "Joint FBI/NSA/DoD/CISA/EPA/DoE advisory warned of \"operational disruption and financial loss\" at multiple US critical-infrastructure organizations as Iran-linked attacks escalated during the US-Iran conflict; Minot water plant and an Indiana county government under active FBI investigation.",
+      "victim": "US, Israeli, and Gulf military / energy targets",
+      "industry": "Military / Energy",
+      "attacker": "Russia — GRU military intelligence (in cooperation with Iranian state actors)",
+      "attacker_origin": "russia",
+      "motivation": "Espionage",
+      "vector": "Russian satellites conducted at least 24 imagery surveys of 46 military and infrastructure objects across 11 Middle East countries; Russian and Iranian hacker groups coordinated via Telegram, with Iranian groups using Russian VPS infrastructure and techniques.",
+      "impact": "Imagery preceded Iranian missile/drone strikes, including a March 27 hit on Prince Sultan Air Base in Saudi Arabia that damaged a US E-3 Sentry AWACS. Iranian groups simultaneously published access credentials to Israeli energy-sector control systems.",
       "ongoing": "Y",
-      "severity": "critical",
+      "severity": "high",
       "sources": [
-        "ic3.gov",
-        "unit42.paloaltonetworks.com",
-        "reuters.com",
-        "therecord.media",
-        "cyberscoop.com"
+        "reuters.com"
       ]
     },
     {
       "id": "15",
-      "date": "Apr 7",
-      "date_sort": "2026-04-07",
-      "victim": "ChipSoft (Dutch EHR vendor) and ~11 connected hospitals",
-      "industry": "Healthcare Software",
-      "attacker": "Criminal gang — ransomware",
+      "date": "Apr 6",
+      "date_sort": "2026-04-06",
+      "victim": "Healthcare, education, professional-services, and finance organizations (US, UK, Australia)",
+      "industry": "Healthcare / Multi-sector",
+      "attacker": "Criminal gang — ransomware (Russia-based)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Ransomware attack against ChipSoft; company disabled connections to its Zorgportaal, HiX Mobile, and Zorgplatform platforms and advised customers to cut VPN links.",
-      "impact": "ChipSoft serves ~70% of Dutch hospitals via its HiX EHR. Patient-portal services went offline at Sint Jans Gasthuis, Laurentius, VieCuri, and Flevo hospitals. Possible unauthorized access to patient data; LUMC postponed an EHR rollout. No critical care disruption reported.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "therecord.media",
-        "z-cert.nl",
-        "nos.nl"
-      ]
-    },
-    {
-      "id": "16",
-      "date": "Apr 6",
-      "date_sort": "2026-04-06",
-      "victim": "Fortinet FortiClient EMS customers (widely used by governments)",
-      "industry": "Cross-sector (Enterprise Security)",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Active in-the-wild exploitation of CVE-2026-35616, an improper-access-control flaw (CVSS 9.1) in FortiClient Enterprise Management Server, first observed by Defused/watchTowr on March 31.",
-      "impact": "CISA added the bug to the Known Exploited Vulnerabilities catalog with a Thursday patching deadline for US federal agencies; Singapore CSA also issued an urgent advisory. Second FortiClient EMS zero-day disclosed in three weeks.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "cisa.gov",
-        "therecord.media",
-        "cyberscoop.com"
-      ]
-    },
-    {
-      "id": "17",
-      "date": "Apr 6",
-      "date_sort": "2026-04-06",
-      "victim": "Jones Day (major US law firm, 2,400+ lawyers)",
-      "industry": "Legal Services",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Successful phishing attack against the firm's environment.",
-      "impact": "Attackers accessed client files and posted sample materials online; scope of the data exposure is still under investigation.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "reuters.com",
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "18",
-      "date": "Apr 6",
-      "date_sort": "2026-04-06",
-      "victim": "Healthcare, education, finance, and professional-services organizations (incl. University of Mississippi Medical Center and Passaic County, NJ)",
-      "industry": "Multi-sector (Healthcare / Government)",
-      "attacker": "Criminal gang — ransomware (Medusa/Storm-1175)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "High-velocity weaponization of N-day vulnerabilities in web-facing systems, including SmarterMail (CVE-2026-23760) and GoAnywhere MFT (CVE-2025-10035) exploited a week before public disclosure. Moves from initial access to data exfiltration and ransomware deployment in as little as 24 hours.",
-      "impact": "Recent victims span Australia, the UK, and the US. UMMC hospital operations were disrupted earlier this year; Passaic County, NJ phone systems taken offline. Symantec separately observed DPRK Lazarus operators deploying Medusa ransomware.",
+      "vector": "Medusa ransomware operators rapidly weaponize newly disclosed N-day and occasional zero-day vulnerabilities in web-facing software (e.g. SmarterMail CVE-2026-23760 and GoAnywhere MFT CVE-2025-10035, both exploited a week before public disclosure), moving from initial access to encryption in as little as 24 hours via RMM tools like ScreenConnect, AnyDesk, and SimpleHelp.",
+      "impact": "Recent victims include the University of Mississippi Medical Center (fully reopened Mar 2) and New Jersey's Passaic County; healthcare disproportionately affected. Campaign continues to accelerate with ransomware deployment within hours of perimeter compromise.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
@@ -339,40 +274,146 @@
       ]
     },
     {
-      "id": "19",
-      "date": "Late Mar",
-      "date_sort": "2026-03-31",
-      "victim": "Die Linke (German political party)",
-      "industry": "Political / Government",
-      "attacker": "Criminal gang — ransomware (Qilin)",
-      "attacker_origin": "criminal",
+      "id": "16",
+      "date": "Apr 6",
+      "date_sort": "2026-04-06",
+      "victim": "Jones Day (US law firm)",
+      "industry": "Legal services",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "Ransomware intrusion against the party's IT infrastructure, claimed by the Qilin group.",
-      "impact": "Die Linke shut down its IT network; the party confirmed employee records were stolen but said member data was not compromised. Fits Qilin's sharpened focus on German victims (13+ new German posts in early 2026).",
+      "vector": "Successful phishing attack gave attackers access to client files, later posted online.",
+      "impact": "One of the largest US corporate law firms — 2,400+ lawyers and historical counsel to major clients including the Trump 2016 and 2020 campaigns — confirmed hackers accessed client materials.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "reuters.com",
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "17",
+      "date": "Apr 6",
+      "date_sort": "2026-04-06",
+      "victim": "Trivy (Aqua Security) users and Iran-based systems",
+      "industry": "Software supply chain / Multi-sector",
+      "attacker": "Criminal gang — financially motivated",
+      "attacker_origin": "criminal",
+      "motivation": "Disruption",
+      "vector": "On Mar 19 the group injected credential-stealing malware into official Trivy releases via GitHub Actions; the same infrastructure then distributed a wiper payload that executes only if the victim's timezone and locale match Iran/Farsi.",
+      "impact": "Trivy users had SSH keys, cloud credentials, Kubernetes tokens, and crypto-wallet data stolen before Aqua removed the malicious releases. A follow-on wiper campaign is destroying data on matched Iranian systems, broadening a financially motivated group into quasi-geopolitical action.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "krebsonsecurity.com",
+        "unit42.paloaltonetworks.com"
+      ]
+    },
+    {
+      "id": "18",
+      "date": "Apr 4",
+      "date_sort": "2026-04-04",
+      "victim": "Rogers, Freedom Mobile, Fido (Canadian telecom customers)",
+      "industry": "Telecommunications",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Breach traced back to Canadian business outsourcing provider Telus Digital.",
+      "impact": "Three Canadian telecom brands notified customers of data exposure through a third-party provider; scope still being determined.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
         "risky.biz",
-        "die-linke.de"
+        "theglobeandmail.com"
+      ]
+    },
+    {
+      "id": "19",
+      "date": "Apr 2",
+      "date_sort": "2026-04-02",
+      "victim": "BuddyBoss e-learning platform and ~250 customer websites (mostly US universities in the Middle East)",
+      "industry": "Education / Software supply chain",
+      "attacker": "Criminal gang — supply chain (French-linked actor)",
+      "attacker_origin": "criminal",
+      "motivation": "Unclear",
+      "vector": "Attacker directed an Anthropic Claude agent, using stolen credentials, to bypass BuddyBoss's security controls and publish a backdoored update package.",
+      "impact": "Nearly 250 customer websites compromised through the poisoned update, the majority American universities operating campuses in the Middle East. Researchers cite this as an early, documented example of AI-agent-directed supply-chain compromise.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz",
+        "ctrlaltintel.com"
       ]
     },
     {
       "id": "20",
       "date": "Late Mar",
       "date_sort": "2026-03-30",
-      "victim": "Drift Protocol (Solana DeFi platform)",
-      "industry": "Cryptocurrency / DeFi",
+      "victim": "Drift (decentralized crypto exchange)",
+      "industry": "Cryptocurrency / Finance",
       "attacker": "North Korea — state-sponsored, financially motivated",
       "attacker_origin": "north_korea",
       "motivation": "Financial",
-      "vector": "Months-long social-engineering operation in which DPRK operators (tracked as Citrine Sleet / UNC4736 / AppleJeus) built a fake trading company and met Drift employees at conferences before compromising their devices via a malicious Apple TestFlight app and backdoored VS Code extensions.",
-      "impact": "$280 million drained from Drift's treasury through multi-signed transactions on compromised employee devices; one of the largest crypto heists of the year.",
+      "vector": "Operators built a fake trading company and met Drift employees at industry conferences to build trust over months, then deployed malware via an Apple TestFlight app and malicious VS Code extensions; compromised devices were used to multi-sign treasury transactions.",
+      "impact": "$280 million drained from Drift's treasury. Investigators linked the attack to the DPRK group also tracked as AppleJeus.",
       "ongoing": "N",
-      "severity": "critical",
+      "severity": "high",
       "sources": [
         "risky.biz",
-        "cointelegraph.com",
-        "Drift post-mortem"
+        "cointelegraph.com"
+      ]
+    },
+    {
+      "id": "21",
+      "date": "Late Mar",
+      "date_sort": "2026-03-30",
+      "victim": "NYK (Japanese global shipping)",
+      "industry": "Shipping / Logistics",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Attackers gained access to NYK's marine fuel procurement platform.",
+      "impact": "NYK took the compromised platform offline and acknowledged some employee data was likely stolen. NYK is part of Ocean Network Express, the world's sixth-largest container shipper.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz",
+        "shipandbunker.com"
+      ]
+    },
+    {
+      "id": "22",
+      "date": "Late Mar",
+      "date_sort": "2026-03-30",
+      "victim": "Die Linke (German political party)",
+      "industry": "Political / Government",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Ransomware group encrypted the party's IT network at the end of March.",
+      "impact": "Die Linke shut down its IT network; employee records stolen, but the party states no member data was compromised.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "23",
+      "date": "Early Feb",
+      "date_sort": "2026-02-15",
+      "victim": "Uffizi Galleries (Florence, Italy)",
+      "industry": "Museums / Cultural heritage",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Cyberattack targeted the museum's IT systems in February.",
+      "impact": "Italy's top art museum relocated its House of Medici collection — including Leonardo da Vinci, Raphael, and Botticelli works — into secure bank vaults. Museum says no passwords or security-layout data were stolen.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz",
+        "politico.eu"
       ]
     }
   ]
