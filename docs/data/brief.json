@@ -1,261 +1,215 @@
 {
-  "generated_at": "2026-04-22T20:05:31.450405+00:00",
+  "generated_at": "2026-04-23T08:05:03.771155+00:00",
   "period_searched": "April 7-22, 2026",
-  "incident_count": 14,
+  "incident_count": 12,
   "incidents": [
     {
       "id": "1",
-      "date": "Apr 21",
-      "date_sort": "2026-04-21",
-      "victim": "Dutch hosting and internet service providers",
-      "industry": "Telecommunications / hosting",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Chinese cyber-espionage campaign, publicly linked by allies to three Chinese technology firms working for Beijing, compromised routers at smaller Dutch hosting and ISP providers throughout 2025, per the Dutch military intelligence service (MIVD).",
-      "impact": "MIVD assesses only a limited proportion of Chinese operations against Dutch interests are detected; attackers accessed routers at smaller providers but were not observed moving deeper into internal networks. PLA cyber reorganization is credited for the uptick.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "therecord.media",
-        "mivd.nl"
-      ]
-    },
-    {
-      "id": "2",
-      "date": "Apr 21",
-      "date_sort": "2026-04-21",
-      "victim": "Organizations using Workday career portals",
-      "industry": "Cross-sector / HR SaaS",
-      "attacker": "North Korea — state-sponsored, financially motivated",
-      "attacker_origin": "north_korea",
-      "motivation": "Financial",
-      "vector": "North Korean IT-worker operators use known actor infrastructure and AI-generated personas to query Workday Recruiting APIs, submit tailored job applications, and then configure payroll records after hire to draw wages from unwitting employers.",
-      "impact": "Microsoft Threat Intelligence reports repeated anomalous API access patterns to /hrrecruiting endpoints, fraudulent applications that pass screening, and impossible-travel alerts on newly hired accounts in the first two months on the job — creating insider access risk and revenue for DPRK.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "microsoft.com"
-      ]
-    },
-    {
-      "id": "3",
       "date": "Apr 20",
       "date_sort": "2026-04-20",
       "victim": "Vercel",
-      "industry": "Cloud / Developer platforms",
+      "industry": "Cloud / developer platform",
       "attacker": "Criminal gang — data extortion",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Attacker used OAuth tokens stolen from a Context.ai employee infected with Lumma Stealer (via Roblox cheat malware) to hijack a Vercel employee's Google Workspace account and reach Vercel environments.",
-      "impact": "Vercel environments, environment variables, and a limited subset of customer credentials were accessed; affected customers were told to rotate credentials. A party claiming to be ShinyHunters demanded a $2 million ransom and offered stolen data for sale; Mandiant and law enforcement are engaged.",
+      "vector": "Attackers compromised a third-party AI tool (Context.ai) via an infostealer on a vendor employee's device, then used stolen OAuth tokens to seize a Vercel employee's Google Workspace account and pivot into Vercel environments.",
+      "impact": "A limited subset of Vercel customers had credentials and non-sensitive environment variables exposed; Mandiant and law enforcement are investigating, and attackers linked to the ShinyHunters brand demanded a $2 million ransom. Customers across the global developer ecosystem have been told to rotate every key.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "darkreading.com",
         "therecord.media",
         "cyberscoop.com",
         "risky.biz"
       ]
     },
     {
-      "id": "4",
-      "date": "Apr 20",
-      "date_sort": "2026-04-20",
-      "victim": "French Education Ministry (ÉduConnect)",
-      "industry": "Government — education",
+      "id": "2",
+      "date": "Apr 19",
+      "date_sort": "2026-04-19",
+      "victim": "Kelp DAO (DeFi protocol)",
+      "industry": "Cryptocurrency / DeFi",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Attackers impersonated an authorized staff account in late 2025 to access a service connected to the ÉduConnect student account management platform.",
-      "impact": "Personal data on an undisclosed number of students was leaked. The ministry disclosed the incident in mid-April 2026 as part of a wider wave of breaches affecting French public institutions.",
-      "ongoing": "N",
-      "severity": "medium",
+      "motivation": "Financial",
+      "vector": "Attackers exploited a flaw in Kelp DAO's rsETH LayerZero cross-chain bridge to mint and withdraw restaked Ether tokens without backing collateral.",
+      "impact": "Roughly $292-300 million in crypto assets were stolen, making it the largest crypto heist of 2026 so far; about $175 million has already been routed through THORChain, Umbra and BitTorrent to launder the proceeds.",
+      "ongoing": "Y",
+      "severity": "critical",
       "sources": [
-        "therecord.media",
-        "education.gouv.fr"
+        "bloomberg.com",
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "3",
+      "date": "Apr 15",
+      "date_sort": "2026-04-15",
+      "victim": "Rhea Finance (DeFi protocol)",
+      "industry": "Cryptocurrency / DeFi",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Attackers pre-positioned fake token pools for days, then exploited a vulnerability in the protocol's margin trading feature to drain funds through the rigged pools.",
+      "impact": "$18.4 million in crypto assets stolen from the DeFi platform.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "4",
+      "date": "Q1 2026",
+      "date_sort": "2026-04-22",
+      "victim": "Web3 developers and cryptocurrency holders worldwide",
+      "industry": "Cryptocurrency / software development",
+      "attacker": "North Korea — state-sponsored, financially motivated",
+      "attacker_origin": "north_korea",
+      "motivation": "Financial",
+      "vector": "DPRK operators posed as recruiters on LinkedIn using AI-generated fake companies (including a Mexico-registered shell), then tricked Web3 developers into running trojanized coding-assessment tools that deployed BeaverTail, OtterCookie and InvisibleFerret malware.",
+      "impact": "Expel researchers documented theft of over $12 million in crypto from 26,584 wallets on 2,726 infected developer machines in the first three months of 2026, run by a 31-person DPRK team across six sub-teams; campaign continues as unemployed developers remain a prime target.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "therecord.media"
       ]
     },
     {
       "id": "5",
-      "date": "Apr 20",
-      "date_sort": "2026-04-20",
-      "victim": "Israeli water treatment and desalination operators (attempted)",
-      "industry": "Critical infrastructure — water/OT",
-      "attacker": "Iran — state-directed hacktivist proxies",
-      "attacker_origin": "iran",
-      "motivation": "Disruption",
-      "vector": "Custom OT malware (ZionSiphon) designed to run only on Israeli IP ranges and to locate hardcoded paths for OT software used by named Israeli water and desalination companies; once matched, it would adjust pump pressure and chlorine levels to maximum.",
-      "impact": "Darktrace's analysis found the sabotage logic did not trigger in the wild due to an XOR encoding bug in the IP geolocation check, causing the malware to self-delete. Unclear whether the sample was deployed operationally or was pre-release; political strings reference support for Iran, Palestine, and Yemen.",
-      "ongoing": "N",
-      "severity": "high",
+      "date": "Apr 3-15",
+      "date_sort": "2026-04-15",
+      "victim": "Managed service providers, dental software vendor, and dozens of downstream customers",
+      "industry": "IT services / supply chain",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Attackers mass-exploited unpatched BeyondTrust Bomgar Remote Support instances via CVE-2026-1731, a critical unauthenticated remote code execution flaw, then pushed secondary RMM tools (AnyDesk, Atera) onto domain controllers for persistence.",
+      "impact": "Huntress observed five confirmed intrusions in two weeks, including an April 15 MSP breach that forced mass isolation of 78 businesses with follow-on compromise of four downstream customers, and multiple LockBit 3.0 ransomware deployments.",
+      "ongoing": "Y",
+      "severity": "critical",
       "sources": [
-        "risky.biz",
-        "darktrace.com"
+        "darkreading.com"
       ]
     },
     {
       "id": "6",
-      "date": "Apr 19",
-      "date_sort": "2026-04-19",
-      "victim": "Rhea Finance",
-      "industry": "Cryptocurrency / DeFi",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
+      "date": "Mar-Apr",
+      "date_sort": "2026-04-15",
+      "victim": "LiteLLM, Checkmarx, Trivy (security and AI dev tools) and downstream users",
+      "industry": "Software supply chain / security tooling",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Attackers spent days pre-positioning fake token pools on Rhea Finance and then exploited vulnerabilities in the platform's margin trading feature to route trades through the fake pools.",
-      "impact": "Approximately $18.4 million in crypto assets drained from the Rhea Finance DeFi protocol.",
-      "ongoing": "N",
-      "severity": "medium",
+      "vector": "Group known as TeamPCP used stolen developer credentials (likely sourced from infostealer logs) to push credential-harvesting payloads into LiteLLM (≈97M monthly downloads), Checkmarx GitHub Actions, and Aqua Security's Trivy, chaining compromises across five software distribution ecosystems in five days.",
+      "impact": "Malware silently exfiltrated access keys, cloud credentials, secrets and AI API keys from every organization installing the compromised packages; TeamPCP claims to hold 300+ GB of stolen data and is extorting victims, with spillover expected to fuel payroll-redirect and logistics fraud campaigns.",
+      "ongoing": "Y",
+      "severity": "critical",
       "sources": [
-        "risky.biz",
-        "x.com/rhea_finance"
+        "recordedfuture.com"
       ]
     },
     {
       "id": "7",
-      "date": "Apr 18",
-      "date_sort": "2026-04-18",
-      "victim": "Kelp DAO",
-      "industry": "Cryptocurrency / DeFi",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Exploitation of a vulnerability in Kelp DAO's rsETH bridge built on LayerZero allowed attackers to withdraw restaked Ether tokens.",
-      "impact": "Roughly $292-300 million in crypto was stolen — the largest single crypto heist of 2026 so far. About $175 million has been moved into laundering channels via THORChain, Umbra, and BitTorrent as parts of the industry try to block the funds.",
+      "date": "Apr 15",
+      "date_sort": "2026-04-15",
+      "victim": "Ukrainian prosecutors and militaries of Greece, Romania, and Serbia",
+      "industry": "Government / defense",
+      "attacker": "Russia — GRU military intelligence",
+      "attacker_origin": "russia",
+      "motivation": "Espionage",
+      "vector": "Spear-phishing and credential theft against government email accounts, attributed to a GRU-linked cyber unit.",
+      "impact": "Attackers compromised email accounts of more than 170 Ukrainian prosecutors to harvest investigative material, with parallel intrusions into NATO-allied militaries in Greece, Romania and Serbia.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "bloomberg.com",
-        "risky.biz",
-        "theblock.co"
+        "risky.biz"
       ]
     },
     {
       "id": "8",
+      "date": "Early Apr",
+      "date_sort": "2026-04-07",
+      "victim": "Government agencies and enterprises using SOHO routers worldwide",
+      "industry": "Government / telecommunications",
+      "attacker": "Russia — GRU military intelligence",
+      "attacker_origin": "russia",
+      "motivation": "Espionage",
+      "vector": "Russian GRU operators exploited known vulnerabilities in end-of-life Mikrotik and TP-Link small-office routers to reconfigure DNS settings, redirecting users through attacker-controlled DNS servers to silently intercept Microsoft Office OAuth authentication tokens without deploying any malware.",
+      "impact": "At its December 2025 peak, the campaign ensnared more than 18,000 routers across 200+ organizations and 5,000 consumer devices, including foreign ministries, law enforcement and email providers; Microsoft, Lumen's Black Lotus Labs, and the UK NCSC published concurrent advisories.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "krebsonsecurity.com",
+        "ncsc.gov.uk"
+      ]
+    },
+    {
+      "id": "9",
       "date": "Apr 17",
       "date_sort": "2026-04-17",
       "victim": "City of Tallahassee, Florida",
       "industry": "State & local government",
       "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Cyberattack on the city's network prompted an emergency shutdown; neighboring Leon County disconnected its network to contain spread, language consistent with ransomware response.",
-      "impact": "City IT systems taken offline, multiple public websites and services unavailable, and Leon County severed its connection to the city network as a precaution. Attack type and threat actor not yet disclosed.",
+      "attacker_origin": "criminal",
+      "motivation": "Disruption",
+      "vector": "Unspecified cyberattack prompted the city to take its IT network offline; surrounding Leon County severed links to prevent contamination, a pattern typical of ransomware incidents.",
+      "impact": "Multiple Tallahassee city websites and public services remain unavailable, and the county has disconnected from city systems as a precaution.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "risky.biz",
-        "dysruptionhub.com"
-      ]
-    },
-    {
-      "id": "9",
-      "date": "Apr 15-16",
-      "date_sort": "2026-04-16",
-      "victim": "Bluesky",
-      "industry": "Social media",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Disruption",
-      "vector": "Sustained, sophisticated Distributed Denial-of-Service (DDoS) attack against Bluesky infrastructure, with follow-on DDoS attempts throughout the week.",
-      "impact": "Bluesky operated intermittently for nearly a day on April 15-16, with users experiencing prolonged outages. Follow-on DDoS attempts the same week were mitigated without another full outage.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz",
-        "bsky.app"
+        "risky.biz"
       ]
     },
     {
       "id": "10",
-      "date": "Apr 3-15",
-      "date_sort": "2026-04-15",
-      "victim": "Managed service providers and downstream customers (incl. a dental software firm)",
-      "industry": "MSP / IT services",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Unauthenticated remote code execution in BeyondTrust (Bomgar) Remote Support appliances (CVE-2026-1731) used to take over upstream RMM servers and pivot into downstream customer networks.",
-      "impact": "One April 15 intrusion at an MSP forced isolation of 78 businesses and exploitation of four downstream customers; at least one incident deployed LockBit 3.0 ransomware. Other compromises pushed AnyDesk/Atera for persistence and added rogue admin accounts.",
+      "date": "Early Apr",
+      "date_sort": "2026-04-09",
+      "victim": "Los Angeles City Attorney's Office",
+      "industry": "State & local government",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Attackers breached the City Attorney's Office; initial access vector has not been disclosed publicly.",
+      "impact": "7.7 TB of sensitive material was published online, including LAPD officer personal data, witness names, medical records, case files and internal affairs investigations.",
       "ongoing": "Y",
-      "severity": "critical",
+      "severity": "high",
       "sources": [
-        "darkreading.com",
-        "huntress.com"
+        "risky.biz"
       ]
     },
     {
       "id": "11",
-      "date": "Apr 15",
-      "date_sort": "2026-04-15",
-      "victim": "French National Agency for Secure Documents (ANTS)",
-      "industry": "Government — national identity services",
+      "date": "Mar-Apr",
+      "date_sort": "2026-04-08",
+      "victim": "China National Supercomputing Center (NSCC)",
+      "industry": "Government / research",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "A security incident on the ants.gouv.fr portal, which handles passport, ID card, residence permit, and driver's license applications, was detected on April 15 and is still under investigation.",
-      "impact": "Potential exposure of login credentials, names, email addresses, dates of birth, unique account identifiers, and in some cases postal addresses, places of birth, and phone numbers of individual and professional users. Uploaded application attachments are reported as unaffected.",
-      "ongoing": "Y",
-      "severity": "high",
+      "motivation": "Espionage",
+      "vector": "Attack attributed to a group calling itself FlamingChina that first emerged in February 2026; exact intrusion method undisclosed.",
+      "impact": "Petabytes of data, including files marked 'secret' and containing Chinese military and government material, were leaked online; investigators took weeks to verify authenticity due to the sheer volume of data.",
+      "ongoing": "N",
+      "severity": "critical",
       "sources": [
-        "therecord.media",
-        "interieur.gouv.fr"
+        "risky.biz"
       ]
     },
     {
       "id": "12",
-      "date": "Apr 7",
-      "date_sort": "2026-04-07",
-      "victim": "Government agencies and foreign-ministry/law-enforcement organizations (200+ orgs, 18,000+ SOHO routers)",
-      "industry": "Government / critical infrastructure",
-      "attacker": "Russia — GRU military intelligence",
-      "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "Exploitation of known flaws in older, mostly end-of-life Mikrotik and TP-Link SOHO routers to modify DNS settings and redirect victim traffic through attacker-controlled servers, enabling theft of Microsoft Office OAuth tokens without deploying malware.",
-      "impact": "Stealthy, malware-free harvesting of Microsoft 365 authentication tokens from more than 18,000 networks at peak (Dec 2025), with at least 200 organizations — primarily foreign ministries, law enforcement, and email providers — caught in the campaign. FBI, NSA, and NCSC issued advisories and the FBI has moved to dismantle key infrastructure.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "nsa.gov",
-        "krebsonsecurity.com",
-        "cyberscoop.com",
-        "ncsc.gov.uk"
-      ]
-    },
-    {
-      "id": "13",
-      "date": "Mar 2026",
-      "date_sort": "2026-03-31",
-      "victim": "LiteLLM, Checkmarx, Trivy, Telnyx PyPI users (developer ecosystem)",
-      "industry": "Software supply chain / DevSecOps",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
+      "date": "Mar",
+      "date_sort": "2026-04-09",
+      "victim": "Bitcoin Depot",
+      "industry": "Financial services / crypto",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "TeamPCP used likely stolen developer credentials to obtain write access to trusted repositories, then injected credential-harvesting payloads into LiteLLM (~97M monthly downloads), poisoned two Checkmarx GitHub Actions workflows, and pivoted from an earlier Trivy compromise.",
-      "impact": "Malware silently harvested cloud credentials, access keys, and AI API keys from installs across the developer ecosystem; 300+ GB of data reportedly held for extortion. Campaign has expanded (SANS ISC tracking ongoing updates) and is linked in reporting to possible Lapsus$ collaboration.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "recordedfuture.com",
-        "isc.sans.edu"
-      ]
-    },
-    {
-      "id": "14",
-      "date": "Q1 2026",
-      "date_sort": "2026-03-31",
-      "victim": "Unnamed organization (Crimson Collective target)",
-      "industry": "Cross-sector",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Crimson Collective obtained a GitHub Personal Access Token accidentally published on a public website, used TruffleHog to scan the victim's GitHub repositories for more secrets, and then abused Microsoft Graph API calls to explore and exfiltrate data from Azure cloud storage.",
-      "impact": "Data exfiltration from Azure cloud storage and attempted injection of secret-harvesting code into multiple GitHub repositories (largely foiled by expired secrets). Cisco Talos's first documented Crimson Collective engagement demonstrates the group's shift to living-off-legitimate-cloud APIs.",
+      "vector": "Attackers accessed the company's crypto wallets in March; specific intrusion method has not been disclosed publicly.",
+      "impact": "Roughly $3.6 million in cryptocurrency stolen from the operator of more than 25,000 Bitcoin ATMs worldwide; incident disclosed in an SEC 8-K filing.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
-        "blog.talosintelligence.com"
+        "risky.biz",
+        "sec.gov"
       ]
     }
   ]
