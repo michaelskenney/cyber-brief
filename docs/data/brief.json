@@ -1,497 +1,328 @@
 {
-  "generated_at": "2026-04-27T08:07:24.574054+00:00",
-  "period_searched": "April 13-26, 2026",
-  "incident_count": 28,
+  "generated_at": "2026-04-27T20:06:37.192130+00:00",
+  "period_searched": "April 13-27, 2026",
+  "incident_count": 18,
   "incidents": [
     {
       "id": "1",
-      "date": "Apr 23",
-      "date_sort": "2026-04-23",
-      "victim": "U.S. federal civilian agency (unnamed)",
+      "date": "Apr 27",
+      "date_sort": "2026-04-27",
+      "victim": "German government — senior officials",
       "industry": "Government",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
+      "attacker": "Russia — state-suspected espionage group",
+      "attacker_origin": "russia",
       "motivation": "Espionage",
-      "vector": "Exploited Cisco ASA/Firepower vulnerabilities (CVE-2025-20333, CVE-2025-20362) and deployed FIRESTARTER backdoor that persists across firmware patches and standard reboots.",
-      "impact": "Attackers regained access in March 2026 without re-exploiting the patched bugs, redeploying Line Viper malware to harvest VPN credentials, certificates, and private keys. CISA issued an updated emergency directive forcing all federal civilian agencies to audit Cisco firewalls and submit memory snapshots.",
+      "vector": "Phishing campaign delivered through the Signal messaging app to top German decision-makers, attempting to harvest credentials or session data.",
+      "impact": "Berlin says affected officials were notified and the data leak has been stopped, but it cannot rule out that other targets were compromised. Authorities suspect Russian state actors.",
       "ongoing": "Y",
-      "severity": "critical",
+      "severity": "high",
       "sources": [
-        "cisa.gov",
-        "therecord.media",
-        "cyberscoop.com",
-        "blog.talosintelligence.com"
+        "bloomberg.com"
       ]
     },
     {
       "id": "2",
-      "date": "Apr 23",
-      "date_sort": "2026-04-23",
-      "victim": "Cambodian scam-center network (Kok An empire)",
-      "industry": "Government / Financial fraud",
-      "attacker": "Criminal gang — fraud / human trafficking",
-      "attacker_origin": "criminal",
+      "date": "Apr 27",
+      "date_sort": "2026-04-27",
+      "victim": "Corporate users on Microsoft Teams",
+      "industry": "Cross-sector enterprise",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "OFAC sanctions and DOJ/FBI/Secret Service Strike Force action against Cambodian Senator Kok An and 28 entities running 'pig butchering' crypto investment-fraud compounds.",
-      "impact": "Treasury designated 29 targets, seized 503 fraudulent web domains and a recruitment messaging app. The network has stolen millions from US victims; State Department offered a $10M reward for proceeds tied to the affiliated Tai Chang compound.",
+      "vector": "Email-flooding followed by Microsoft Teams messages from attackers posing as IT help desk; victims are tricked into installing a malicious browser extension (SnowBelt) and follow-on tools (SnowGlaze, SnowBasin) that act as a backdoor and credential harvester.",
+      "impact": "Mandiant says the UNC6692 cluster is using the access to maintain persistent control of corporate accounts and move laterally inside victim environments without re-authenticating.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "home.treasury.gov"
+        "therecord.media",
+        "Mandiant"
       ]
     },
     {
       "id": "3",
-      "date": "Apr 23",
-      "date_sort": "2026-04-23",
-      "victim": "Mongolian government institution",
-      "industry": "Government",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Newly disclosed APT (tracked as 'GopherWhisper') deployed at least six custom backdoors abusing Slack, Discord, Microsoft Outlook drafts, and file.io for command-and-control.",
-      "impact": "ESET found 12 backdoored systems inside a single Mongolian government institution, with evidence pointing to dozens of additional victims. Activity dates back to November 2023.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "darkreading.com"
-      ]
-    },
-    {
-      "id": "4",
-      "date": "Apr 22",
-      "date_sort": "2026-04-22",
-      "victim": "Carnival Corporation",
-      "industry": "Travel / Hospitality",
+      "date": "Apr 27",
+      "date_sort": "2026-04-27",
+      "victim": "Retail and hospitality organizations (multiple)",
+      "industry": "Retail and hospitality",
       "attacker": "Criminal gang — data extortion",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Data stolen earlier in 2026 by the ShinyHunters cybercrime collective in a multi-victim Salesforce-targeted campaign was leaked online this week.",
-      "impact": "Personal data of 7.5 million Carnival customers exposed. The same campaign also hit Zara, 7-Eleven, Udemy, and Medtronic.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "5",
-      "date": "Apr 21",
-      "date_sort": "2026-04-21",
-      "victim": "Tallahassee, Florida (city government)",
-      "industry": "Government / Municipal",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Suspected ransomware intrusion forced the city to take its IT network offline; surrounding Leon County disconnected from city systems to prevent spread.",
-      "impact": "Multiple city websites and public services were unavailable for days. Florida's capital city is operating in a degraded state.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "6",
-      "date": "Apr 20",
-      "date_sort": "2026-04-20",
-      "victim": "Israeli water and desalination utilities",
-      "industry": "Critical infrastructure / Water",
-      "attacker": "Iran — state-directed hacktivist proxies",
-      "attacker_origin": "iran",
-      "motivation": "Disruption",
-      "vector": "Newly discovered 'ZionSiphon' OT-targeted malware checked for Israeli IP ranges and ICS software paths, intending to push pump pressure and chlorine dosing to maximum.",
-      "impact": "Sabotage failed because of an XOR encoding bug that misclassified victim networks, causing the malware to self-delete. Politically motivated strings reference solidarity with Iran, Palestine, and Yemen.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "7",
-      "date": "Apr 20",
-      "date_sort": "2026-04-20",
-      "victim": "Vercel (and downstream customers)",
-      "industry": "Technology / Cloud",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Lumma infostealer infection at AI vendor Context.ai (via a Roblox-cheat lure) gave attackers OAuth tokens to a Vercel employee's Google Workspace, which was used to pivot into Vercel environments and read environment variables.",
-      "impact": "Attackers (claiming the ShinyHunters name) accessed Vercel customer environment variables and are selling source code, keys, and databases. A 'limited number' of Vercel customers were notified to rotate credentials.",
+      "vector": "Voice-phishing and fake single sign-on pages run by the BlackFile / Cordial Spider group (linked to The Com); operators impersonate IT support, harvest credentials, escalate into executive accounts, then exfiltrate data from Microsoft Graph, Salesforce, SharePoint and internal repositories.",
+      "impact": "Unit 42 and RH-ISAC report seven-figure ransom demands, a dedicated leak site, and physical 'swatting' of executives to pressure payment. Activity has been continuous since February 2026.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
         "cyberscoop.com",
-        "risky.biz"
+        "unit42.paloaltonetworks.com"
       ]
     },
     {
-      "id": "8",
-      "date": "Apr 17",
-      "date_sort": "2026-04-17",
-      "victim": "Iranian critical infrastructure & global Rockwell Automation OT operators",
-      "industry": "Critical infrastructure / Manufacturing",
-      "attacker": "Iran — state-directed hacktivist proxies",
-      "attacker_origin": "iran",
-      "motivation": "Disruption",
-      "vector": "Iranian cluster CL-STA-1128 (publicly known as 'Cyber Av3ngers') stood up its own Rockwell FactoryTalk software on VPS infrastructure to enumerate and exploit internet-exposed PLCs (Allen-Bradley and Unitronics).",
-      "impact": "Roughly 5,600 Rockwell/Allen-Bradley devices found exposed globally, including FactoryTalk services. CISA issued an advisory on April 7. Aligned with broader Iranian disruption operations during the US/Israel-Iran conflict.",
+      "id": "4",
+      "date": "Apr 27",
+      "date_sort": "2026-04-27",
+      "victim": "Navigate360 (P3 Global Intel school tip line)",
+      "industry": "Education technology",
+      "attacker": "Criminal gang — hacktivist motive",
+      "attacker_origin": "criminal",
+      "motivation": "Political",
+      "vector": "Exploitation of platform vulnerabilities in the P3 Global Intel anonymous school-safety tip line.",
+      "impact": "Hackers claim to have exfiltrated 93 GB of data, including identifying information on students who reported tips. Senators Hassan and Banks have demanded answers; Navigate360 supports more than 30,000 schools and 5,000 public-safety agencies.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "cyberscoop.com"
+      ]
+    },
+    {
+      "id": "5",
+      "date": "Apr 26",
+      "date_sort": "2026-04-26",
+      "victim": "Tibetan parliament-in-exile (Central Tibetan Administration)",
+      "industry": "Government / civil society",
+      "attacker": "China — state-suspected influence operation",
+      "attacker_origin": "china",
+      "motivation": "Political",
+      "vector": "Spamouflage influence network used 90+ inauthentic Facebook accounts and 13 Instagram profiles, plus AI-generated imagery, to push narratives attacking incumbent leader Penpa Tsering and the legitimacy of the parliamentary vote.",
+      "impact": "DFRLab found the activity attracted virtually no organic engagement, but the operation extends a multi-year Spamouflage targeting of Tibetan, Taiwanese, US and Japanese audiences.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "therecord.media",
+        "DFRLab"
+      ]
+    },
+    {
+      "id": "6",
+      "date": "Apr 24",
+      "date_sort": "2026-04-24",
+      "victim": "npm developer ecosystem (Bitwarden, Checkmarx, Trivy, LiteLLM, Telnyx, Axios users)",
+      "industry": "Software supply chain",
+      "attacker": "Criminal gang — ransomware affiliate",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "TeamPCP used stolen developer tokens to publish trojanized packages — most recently @bitwarden/cli 2026.4.0 — that download a Bun-based payload to harvest npm tokens, GitHub PATs, AWS/Azure/GCP credentials, and AI API keys, then republish themselves to spread.",
+      "impact": "The campaign is the latest wave of the Shai-Hulud worm pattern; Unit 42 and Recorded Future warn of cascading compromises across multiple security vendors and CI/CD pipelines, with TeamPCP claiming 300+ GB of stolen data and possible ties to Lapsus$.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
         "unit42.paloaltonetworks.com",
-        "cisa.gov"
+        "recordedfuture.com",
+        "isc.sans.edu"
+      ]
+    },
+    {
+      "id": "7",
+      "date": "Apr 23",
+      "date_sort": "2026-04-23",
+      "victim": "Cisco ASA / Firepower Threat Defense customers (incl. US federal agencies)",
+      "industry": "Critical infrastructure / network security",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "UAT-4356 (the ArcaneDoor actor) chained CVE-2025-20333 and CVE-2025-20362 in Cisco ASA WebVPN to deploy the FIRESTARTER backdoor inside the LINA process, achieving persistence by abusing the Cisco Service Platform mount list (CSP_MOUNT_LIST).",
+      "impact": "CISA confirmed FIRESTARTER survives firmware patching on compromised devices; Emergency Directive 25-03 was updated to require federal agencies to collect forensic data and apply new vendor updates. Joint advisory issued with NCSC-UK, ACSC and partners.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "cisa.gov",
+        "blog.talosintelligence.com",
+        "ncsc.gov.uk",
+        "cyber.gov.au",
+        "nsa.gov"
+      ]
+    },
+    {
+      "id": "8",
+      "date": "Apr 19",
+      "date_sort": "2026-04-19",
+      "victim": "Vercel (cloud hosting platform)",
+      "industry": "Technology / cloud infrastructure",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Intrusion into Vercel's internal systems followed by exfiltration of customer data; ShinyHunters publicly claimed responsibility on a leak forum.",
+      "impact": "Vercel confirmed the breach, notified a small number of affected customers, and recommended that all customers rotate keys and secrets; subsequent reporting indicates fallout has expanded to additional customers and third-party systems.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "risky.biz",
+        "cyberscoop.com"
       ]
     },
     {
       "id": "9",
       "date": "Apr 17",
       "date_sort": "2026-04-17",
-      "victim": "Synnovis / NHS South East London (ongoing impact)",
-      "industry": "Healthcare",
+      "victim": "City of Tallahassee, Florida",
+      "industry": "State and local government",
       "attacker": "Criminal gang — ransomware",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Continuing fallout from the June 2024 Qilin ransomware attack on NHS pathology provider Synnovis.",
-      "impact": "South London and Maudsley NHS Trust still operating without electronic pathology requesting/reporting; 161,560 reports delayed and 122 patient-safety incidents recorded as of January 2026. King's College Hospital has recorded a patient death where the attack was a contributing factor.",
+      "vector": "Unspecified intrusion that forced the city to take its IT network offline; surrounding Leon County disconnected its network as a containment measure, language consistent with a ransomware response.",
+      "impact": "City websites and several public services remained unavailable for days. No ransomware crew has publicly taken credit yet.",
       "ongoing": "Y",
-      "severity": "critical",
+      "severity": "high",
       "sources": [
-        "therecord.media",
-        "ncsc.gov.uk"
+        "risky.biz"
       ]
     },
     {
       "id": "10",
       "date": "Apr 17",
       "date_sort": "2026-04-17",
-      "victim": "Itron",
-      "industry": "Energy / Utilities (smart-grid vendor)",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Intrusion into Itron's internal corporate systems, discovered April 13, 2026.",
-      "impact": "American utility-metering provider disclosed and resolved a corporate-systems breach; cyber insurance is expected to cover most costs. Limited public detail on data accessed.",
-      "ongoing": "N",
-      "severity": "medium",
+      "victim": "Rockwell Automation FactoryTalk users (OT/ICS operators)",
+      "industry": "Critical infrastructure / industrial control",
+      "attacker": "Iran — state-directed hacktivist proxies",
+      "attacker_origin": "iran",
+      "motivation": "Disruption",
+      "vector": "Cyber Av3ngers (CL-STA-1128 / Storm-0784) shifted from Unitronics PLCs to Rockwell Automation FactoryTalk and Allen-Bradley PLCs, installing FactoryTalk on VPS infrastructure to support reconnaissance of internet-exposed ICS devices.",
+      "impact": "Unit 42 observed roughly 5,600 Rockwell/Allen-Bradley devices exposed globally; CISA issued an advisory on April 7 mirroring the findings. Activity coincides with renewed Iranian cyber escalation around the US-Israel Iran conflict.",
+      "ongoing": "Y",
+      "severity": "high",
       "sources": [
-        "risky.biz"
+        "unit42.paloaltonetworks.com",
+        "cisa.gov"
       ]
     },
     {
       "id": "11",
-      "date": "Apr 17",
-      "date_sort": "2026-04-17",
-      "victim": "Ukrainian prosecutors and militaries of Greece, Romania, Serbia",
-      "industry": "Government / Defense",
+      "date": "Apr 16",
+      "date_sort": "2026-04-16",
+      "victim": "Ukrainian prosecutors and EU militaries (Greece, Romania, Serbia)",
+      "industry": "Government / defense",
       "attacker": "Russia — GRU military intelligence",
       "attacker_origin": "russia",
       "motivation": "Espionage",
-      "vector": "Spear-phishing campaign attributed to Russia's GRU broke into the email accounts of more than 170 Ukrainian prosecutors and military networks across three NATO/aspirant states.",
-      "impact": "Loss of investigative information from the Office of the Prosecutor General and access to military communications across multiple allied states.",
+      "vector": "GRU-linked operators broke into the email accounts of more than 170 Ukrainian prosecutors and corresponding ministries in three EU countries, seeking access to investigative material and military correspondence.",
+      "impact": "Reuters reports the campaign pursued sensitive case files on Russian war crimes; the same activity also touched military targets in Greece, Romania, and Serbia.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
         "risky.biz",
-        "reuters.com"
+        "Reuters"
       ]
     },
     {
       "id": "12",
       "date": "Apr 16",
       "date_sort": "2026-04-16",
-      "victim": "Bluesky",
-      "industry": "Technology / Social media",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Disruption",
-      "vector": "Sustained, sophisticated distributed denial-of-service (DDoS) attack against the Bluesky platform.",
-      "impact": "Service operated intermittently for nearly a day on April 15-16, with secondary DDoS waves continuing through the week. No data compromise, but mass user impact.",
+      "victim": "McGraw Hill (educational publisher)",
+      "industry": "Education / publishing",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Theft of customer data from McGraw Hill's Salesforce environment, consistent with the broader ShinyHunters Salesforce-targeting campaign.",
+      "impact": "Personal information for 13.5 million users — including names, addresses, emails, and phone numbers — was leaked after a failed extortion attempt.",
       "ongoing": "N",
-      "severity": "medium",
+      "severity": "high",
       "sources": [
         "risky.biz"
       ]
     },
     {
       "id": "13",
-      "date": "Apr 15",
-      "date_sort": "2026-04-15",
-      "victim": "More than 100 US companies (incl. Fortune 500 and a California defense contractor)",
-      "industry": "Multiple / Defense industrial base",
-      "attacker": "North Korea — state-sponsored, financially motivated",
-      "attacker_origin": "north_korea",
+      "date": "Apr 16",
+      "date_sort": "2026-04-16",
+      "victim": "Kelp DAO (decentralized finance platform)",
+      "industry": "Financial services / cryptocurrency",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "Two US nationals operated 'laptop farms' that let DPRK IT workers impersonate US residents, using more than 80 stolen identities to land remote engineering jobs.",
-      "impact": "Scheme generated more than $5M for the DPRK regime and at least $3M in remediation costs for victims. ITAR-controlled defense data was exfiltrated from one AI/defense contractor. Two US co-conspirators sentenced to 108 and 92 months.",
-      "ongoing": "Y",
-      "severity": "critical",
+      "vector": "Exploitation of a smart-contract vulnerability allowing the attacker to withdraw assets as rsETH (restaked Ether) tokens.",
+      "impact": "Roughly $292 million in crypto assets stolen — the largest crypto-heist of 2026 to date.",
+      "ongoing": "N",
+      "severity": "high",
       "sources": [
-        "justice.gov",
-        "cyberscoop.com"
+        "risky.biz",
+        "The Block"
       ]
     },
     {
       "id": "14",
-      "date": "Apr 15",
-      "date_sort": "2026-04-15",
-      "victim": "LiteLLM, Checkmarx, Bitwarden CLI npm package, Trivy",
-      "industry": "Software supply chain / Security tooling",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Threat group 'TeamPCP' used stolen developer credentials to inject credential-harvesting payloads into legitimate packages and GitHub Actions, pivoting across Docker Hub, VS Code extensions, and npm.",
-      "impact": "Self-propagating Shai-Hulud-style worm stole npm tokens, GitHub PATs, AWS/GCP/Azure credentials, and AI API keys at scale. TeamPCP claims to have 300GB+ of stolen data and threatens ransomware/extortion across multiple ecosystems.",
+      "date": "Apr 16",
+      "date_sort": "2026-04-16",
+      "victim": "Standard Bank (South Africa)",
+      "industry": "Financial services / banking",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Intrusion into an internal Standard Bank network used to store customer data; specific attack vector not disclosed.",
+      "impact": "Standard Bank — South Africa's largest bank — confirmed the breach. It is the third disclosed hack against a South African bank this year, suggesting a coordinated campaign against the sector.",
       "ongoing": "Y",
-      "severity": "critical",
+      "severity": "high",
       "sources": [
-        "recordedfuture.com",
-        "unit42.paloaltonetworks.com",
-        "blog.talosintelligence.com"
+        "risky.biz",
+        "IOL"
       ]
     },
     {
       "id": "15",
-      "date": "Apr 15",
-      "date_sort": "2026-04-15",
-      "victim": "McGraw Hill",
-      "industry": "Education",
-      "attacker": "Criminal gang — data extortion",
+      "date": "Apr 16",
+      "date_sort": "2026-04-16",
+      "victim": "Autovista (automotive data analytics)",
+      "industry": "Automotive / data analytics",
+      "attacker": "Criminal gang — ransomware",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "ShinyHunters exploited a Salesforce environment misconfiguration affecting multiple Salesforce customers to access a public-facing webpage hosted on the platform.",
-      "impact": "Personal data on roughly 13.5 million users (names, addresses, emails, phone numbers) leaked after a failed extortion demand. McGraw Hill says no SSNs, financials, or student data were taken.",
-      "ongoing": "N",
-      "severity": "high",
+      "vector": "Ransomware deployment against Autovista's environment.",
+      "impact": "Disruption to systems supporting customers in Europe and Australia; Autovista provides pricing and residual-value data widely used by insurers and OEMs.",
+      "ongoing": "Y",
+      "severity": "medium",
       "sources": [
-        "therecord.media",
         "risky.biz"
       ]
     },
     {
       "id": "16",
-      "date": "Apr 15",
-      "date_sort": "2026-04-15",
-      "victim": "Swedish thermal power plant (western Sweden)",
-      "industry": "Critical infrastructure / Energy",
-      "attacker": "Russia — state-linked / hacktivist proxies",
-      "attacker_origin": "russia",
-      "motivation": "Disruption",
-      "vector": "Pro-Russian hacktivist group attempted a destructive attack on industrial control systems at a Swedish district-heating/thermal plant in spring 2025; intrusion caught by built-in safety controls.",
-      "impact": "Sweden's minister of civil defense publicly attributed the attempted destructive ICS attack to actors linked to Russian intelligence and security services. No customer impact, but a clear pre-positioning signal against NATO-aligned utilities.",
+      "date": "Apr 16",
+      "date_sort": "2026-04-16",
+      "victim": "Rhea Finance (DeFi protocol)",
+      "industry": "Financial services / cryptocurrency",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Pre-staged manipulation of margin-trading logic via fake token pools created over several days, then exploitation of vulnerabilities in the protocol's margin-trading feature.",
+      "impact": "Approximately $18.4 million in crypto assets stolen.",
       "ongoing": "N",
-      "severity": "high",
+      "severity": "medium",
       "sources": [
-        "blog.talosintelligence.com",
         "risky.biz"
       ]
     },
     {
       "id": "17",
-      "date": "Apr 14",
-      "date_sort": "2026-04-14",
-      "victim": "Microsoft SharePoint Server customers (worldwide)",
-      "industry": "Technology / Enterprise software",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Active exploitation of CVE-2026-32201, an improper input-validation flaw in Microsoft SharePoint Server allowing unauthenticated network spoofing of trusted content.",
-      "impact": "Microsoft's April Patch Tuesday addressed 165 CVEs (the second-largest ever); CISA added the actively exploited SharePoint zero-day to KEV. Risk to phishing, social engineering, and downstream compromise of enterprises that delay patching.",
+      "date": "Apr 16",
+      "date_sort": "2026-04-16",
+      "victim": "End-of-life TP-Link Wi-Fi routers (consumer / SMB)",
+      "industry": "Consumer / SMB networking",
+      "attacker": "Criminal gang — botnet operator",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Automated scanning and exploitation of CVE-2023-33538 in TP-Link TL-WR940N, TL-WR740N, and TL-WR841N routers, dropping a Mirai-like ARM ELF binary (Condi variant) that contacts a hard-coded C2 at 51.38.137.113 to recruit devices into a DDoS botnet.",
+      "impact": "Unit 42 observed sustained large-scale exploitation since the CVE was added to the CISA KEV catalog in June 2025; affected routers are end-of-life and will not receive vendor patches, leaving widespread devices recruitable as long as default credentials persist.",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "medium",
       "sources": [
-        "krebsonsecurity.com",
-        "darkreading.com",
-        "cyberscoop.com"
+        "unit42.paloaltonetworks.com"
       ]
     },
     {
       "id": "18",
-      "date": "Apr 14",
-      "date_sort": "2026-04-14",
-      "victim": "Senior executives across 100+ organizations (manufacturing, finance, professional services)",
-      "industry": "Multiple",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Former Black Basta affiliates running a fast-scale social-engineering campaign that combines mass email bombing with Microsoft Teams help-desk impersonation to coerce remote-access tool installs.",
-      "impact": "ReliaQuest tracked a March 2026 spike: 75% of targets were executives or senior staff. Operators routinely achieved remote access within minutes. Likely outcomes include data theft, extortion, or ransomware deployment.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "cyberscoop.com"
-      ]
-    },
-    {
-      "id": "19",
-      "date": "Apr 14",
-      "date_sort": "2026-04-14",
-      "victim": "Turkish home users and SMBs",
-      "industry": "Consumer / SMB",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "JanaWare ransomware delivered via phishing emails with malicious Java archives (Adwind loader); enforces Turkey-only locale and IP geolocation checks before encrypting.",
-      "impact": "Long-running campaign (since 2020) charging $200-$400 ransoms per victim. Localized targeting limits researcher visibility and helped the operation evade attention for years.",
-      "ongoing": "Y",
-      "severity": "low",
-      "sources": [
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "20",
-      "date": "Apr 14",
-      "date_sort": "2026-04-14",
-      "victim": "Cartel del Noreste financial network",
-      "industry": "Financial services / Casinos",
-      "attacker": "Criminal gang — money laundering",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "OFAC designated six individuals and two CDN-affiliated Mexican casinos near Laredo, Texas, used as fentanyl stash houses and money-laundering vehicles.",
-      "impact": "Third Trump-era OFAC action against CDN, blocking US assets and prohibiting US transactions with the network. Targets include Casino Centenario and Diamante Casino, a defense attorney facilitating cartel leadership, and a 'human rights' propagandist on cartel payroll.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "home.treasury.gov"
-      ]
-    },
-    {
-      "id": "21",
-      "date": "Apr 14",
-      "date_sort": "2026-04-14",
-      "victim": "Kelp DAO",
-      "industry": "Cryptocurrency / DeFi",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Smart-contract exploit allowed attackers to withdraw funds as rsETH (restaked Ether) tokens.",
-      "impact": "Roughly $292 million in crypto stolen — the largest crypto-heist of 2026 to date.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "22",
-      "date": "Apr 13",
-      "date_sort": "2026-04-13",
-      "victim": "Rockstar Games",
-      "industry": "Technology / Gaming",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "ShinyHunters obtained authentication tokens from cloud cost-monitoring vendor Anodot, allowing access to multiple customer Snowflake environments without directly breaching Rockstar or Snowflake.",
-      "impact": "Rockstar confirmed access to 'a limited amount of non-material company information' and downplayed impact. Part of a broader Anodot-Snowflake supply-chain compromise affecting more than a dozen organizations.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "23",
-      "date": "Apr 13",
-      "date_sort": "2026-04-13",
-      "victim": "Cloud workloads using AWS, GCP, Azure, and Alibaba Cloud",
-      "industry": "Technology / Cloud",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "China-linked actor (publicly tracked as APT41) deployed an undetected statically-linked ELF backdoor that abuses SMTP port 25 for C2 and queries cloud metadata services to harvest credentials.",
-      "impact": "Backdoor uses typosquatted Alibaba/Qianxin domains and 'zero detections' on VirusTotal. Once cloud credentials are stolen, attackers can move laterally as legitimate users, escalate privileges, and persist without traditional malware artifacts.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "darkreading.com"
-      ]
-    },
-    {
-      "id": "24",
-      "date": "Apr 13",
-      "date_sort": "2026-04-13",
-      "victim": "More than 18,000 SOHO routers; 200+ organizations and 5,000 consumer devices",
-      "industry": "Government / Defense / Telecom",
-      "attacker": "Russia — GRU military intelligence",
+      "date": "Spring 2025 (disclosed Apr 2026)",
+      "date_sort": "2026-04-15",
+      "victim": "Swedish thermal power plant",
+      "industry": "Energy / critical infrastructure",
+      "attacker": "Russia — state-linked hacktivist group",
       "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "Russia GRU operators (publicly known as 'Forest Blizzard'/APT28) exploited known flaws in older Mikrotik and TP-Link routers to modify DNS settings, redirecting Microsoft Office authentication traffic to attacker-controlled DNS servers.",
-      "impact": "Stealthy harvesting of OAuth authentication tokens from foreign-affairs ministries, law enforcement, and email providers — without deploying malware on victim machines. Microsoft and Black Lotus Labs disclosed the dragnet; FBI ran an 'Operation Masquerade' router takedown.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "krebsonsecurity.com",
-        "cyberscoop.com"
-      ]
-    },
-    {
-      "id": "25",
-      "date": "Apr 13",
-      "date_sort": "2026-04-13",
-      "victim": "Rhea Finance",
-      "industry": "Cryptocurrency / DeFi",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Margin-trading vulnerability in the protocol; attackers pre-staged fake token pools for days before routing the exploit through them.",
-      "impact": "$18.4 million in DeFi assets stolen.",
+      "motivation": "Disruption",
+      "vector": "Pro-Russian hacktivist intrusion into the OT environment of a thermal power plant in western Sweden, attempting destructive action.",
+      "impact": "Sweden's minister of civil defense disclosed the attack publicly in April 2026; the plant's built-in safeguards caught the intrusion before any disruption occurred. Swedish officials linked the group to Russia's intelligence and security services.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "26",
-      "date": "Early Apr",
-      "date_sort": "2026-04-13",
-      "victim": "Standard Bank (South Africa)",
-      "industry": "Financial services",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Hackers breached an internal network storing customer data; specifics not disclosed.",
-      "impact": "South Africa's largest bank confirmed a customer-data breach — the third major South African bank hack of 2026. Investigation ongoing.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "27",
-      "date": "Early Apr",
-      "date_sort": "2026-04-13",
-      "victim": "Canada Life",
-      "industry": "Insurance",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Compromised employee account used to access systems and exfiltrate customer data.",
-      "impact": "Canadian life-insurance provider disclosed a customer-data theft after tracing the incident to a single compromised employee identity. Scope and data types still under investigation.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "28",
-      "date": "Apr 13",
-      "date_sort": "2026-04-13",
-      "victim": "OneIndia (Indian media group)",
-      "industry": "Media",
-      "attacker": "Unknown — hacktivist",
-      "attacker_origin": "unknown",
-      "motivation": "Political",
-      "vector": "Afghani hacktivist collective 'True Muslim Afghans' breached OneIndia's digital streaming infrastructure to broadcast a political message attacking Indian government ties with the Taliban.",
-      "impact": "OneIndia (30M+ subscribers) had political content forced onto its streaming platforms.",
-      "ongoing": "N",
-      "severity": "low",
-      "sources": [
-        "risky.biz"
+        "TechCrunch",
+        "risky.biz",
+        "blog.talosintelligence.com"
       ]
     }
   ]
