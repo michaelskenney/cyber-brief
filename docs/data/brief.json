@@ -1,24 +1,24 @@
 {
-  "generated_at": "2026-05-01T08:09:59.074252+00:00",
-  "period_searched": "April 17-30, 2026",
-  "incident_count": 24,
+  "generated_at": "2026-05-01T20:06:10.045105+00:00",
+  "period_searched": "April 23 - May 1, 2026",
+  "incident_count": 14,
   "incidents": [
     {
       "id": "1",
-      "date": "Apr 30",
-      "date_sort": "2026-04-30",
-      "victim": "cPanel / WebHost Manager users (~1.5M instances)",
-      "industry": "Web hosting / SaaS",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Authentication-bypass flaw (CVE-2026-41940, CVSS 9.8) injects line-break payloads into the login session file before credentials are verified, allowing unauthenticated takeover.",
-      "impact": "Active exploitation observed before a patch was available; CISA added the CVE to its KEV catalog and Namecheap blocked cPanel ports for customers ahead of patching. About 1.5 million cPanel hosts are exposed.",
+      "date": "May 1",
+      "date_sort": "2026-05-01",
+      "victim": "cPanel / WebHost Manager (web hosting industry)",
+      "industry": "Technology / Web Hosting",
+      "attacker": "Criminal gang — opportunistic exploitation",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Active exploitation of CVE-2026-41940, a critical (CVSS 9.8) authentication bypass in cPanel/WHM that lets attackers inject data into session files via crafted login requests and skip credential checks entirely.",
+      "impact": "Approximately 1.5 million internet-exposed cPanel instances are at risk; CISA added the CVE to its Known Exploited Vulnerabilities catalog and Australia's ACSC issued a critical alert. Some hosting providers blocked cPanel ports pre-patch and Namecheap began emergency patching.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
         "cyberscoop.com",
-        "watchtowr",
+        "cyber.gov.au",
         "cisa.gov"
       ]
     },
@@ -26,172 +26,13 @@
       "id": "2",
       "date": "Apr 30",
       "date_sort": "2026-04-30",
-      "victim": "Microsoft SharePoint Server customers",
-      "industry": "Enterprise software",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Spoofing zero-day (CVE-2026-32201) in SharePoint Server allows attackers to present falsified content within trusted SharePoint environments; one of 167 fixes in April Patch Tuesday alongside publicly disclosed Windows Defender flaw 'BlueHammer'.",
-      "impact": "Active in-the-wild exploitation reported. Enables phishing, unauthorized data manipulation, and social-engineering pivots inside enterprise SharePoint deployments. Microsoft urging immediate patching.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "krebsonsecurity.com",
-        "microsoft.com"
-      ]
-    },
-    {
-      "id": "3",
-      "date": "Apr 30",
-      "date_sort": "2026-04-30",
-      "victim": "U.S. retail, hospitality, aviation, automotive, financial-services, legal, technology, and academic firms",
-      "industry": "Multi-sector / SaaS-dependent",
-      "attacker": "Criminal gang — data extortion (English-speaking, Scattered Spider-affiliated)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Vishing calls and SMS lures direct employees to adversary-in-the-middle phishing pages cloning corporate SSO/IdP portals; captured tokens grant SaaS-wide access. Attackers swap MFA devices, suppress alert emails, and exfiltrate data through residential proxies (Mullvad, Oxylabs, NetNut, NSOCKS).",
-      "impact": "Two extortion crews active since October 2025 are speed-running data-theft attacks on critical-infrastructure-adjacent firms. Demands typically in the seven-figure range; non-paying victims have been hit with DDoS and employee swatting. Data-leak site offline as of this week but campaign ongoing.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "crowdstrike.com",
-        "cyberscoop.com",
-        "unit42.paloaltonetworks.com"
-      ]
-    },
-    {
-      "id": "4",
-      "date": "Apr 30",
-      "date_sort": "2026-04-30",
-      "victim": "Moldova National Health Insurance Company (CNAM)",
-      "industry": "Healthcare / Government",
-      "attacker": "Russia — state-linked (suspected)",
-      "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "Network intrusion against CNAM's claims and contributions database; specific entry vector not disclosed.",
-      "impact": "Up to one-third of CNAM's database — including personal info and payment records for the national insurance system — possibly exfiltrated. No ransom demand received, leading Moldovan officials to suspect a state-sponsored data-theft operation; attribution to Russian-linked actors is being assessed.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "5",
-      "date": "Apr 30",
-      "date_sort": "2026-04-30",
-      "victim": "Brazilian regional ISPs (multiple)",
-      "industry": "Telecommunications",
-      "attacker": "Criminal gang — DDoS-for-hire (Brazil-based, abusing Huge Networks infrastructure)",
-      "attacker_origin": "criminal",
-      "motivation": "Disruption",
-      "vector": "Mirai-variant botnet built from TP-Link Archer AX21 routers vulnerable to CVE-2023-1389 plus open DNS resolvers used for amplification; attacker leveraged stolen SSH keys belonging to Huge Networks' CEO and the firm's IP space to launch attacks.",
-      "impact": "An anti-DDoS provider's compromised infrastructure was used for sustained 10-60 second DDoS bursts against small Brazilian ISPs. Huge Networks CEO acknowledges January 2026 intrusion via a bastion host but disputes intent; investigation ongoing with third-party forensics firm engaged.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "krebsonsecurity.com"
-      ]
-    },
-    {
-      "id": "6",
-      "date": "Apr 30",
-      "date_sort": "2026-04-30",
-      "victim": "Delta Dental Insurance Company / Delta Dental of New York",
-      "industry": "Insurance / Healthcare",
-      "attacker": "Criminal gang — data extortion (MOVEit zero-day operators)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Zero-day exploitation of MOVEit Transfer (mid-2023 incident) gave attackers access to file-transfer servers used to exchange consumer data among DDIC/DDNY affiliates and partners.",
-      "impact": "NYDFS issued a $2.25M penalty for cybersecurity-program and incident-reporting failures. Names, SSNs, driver's-license numbers, financial-account info, and patient-health information of New York consumers were exfiltrated.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "dfs.ny.gov"
-      ]
-    },
-    {
-      "id": "7",
-      "date": "Apr 30",
-      "date_sort": "2026-04-30",
-      "victim": "U.S. and Canadian freight brokers and carriers",
-      "industry": "Transportation / Logistics",
-      "attacker": "Criminal gang — cyber-enabled cargo theft",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Phishing emails and compromised carrier accounts give attackers access to freight load boards; criminals impersonate brokers, post fraudulent loads, and use 'double-brokering' to redirect shipments. In some cases the FMCSA contact and insurance details of legitimate carriers are altered to expand the scam.",
-      "impact": "FBI advisory: ~$725M in cargo stolen across U.S./Canada in 2025, a 60% jump from 2024 with average loss per theft up 36%. Car dealerships, vape companies, and other shippers report repeated million-dollar losses; some victims are extorted post-theft for return of cargo.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "therecord.media",
-        "fbi"
-      ]
-    },
-    {
-      "id": "8",
-      "date": "Apr 30",
-      "date_sort": "2026-04-30",
-      "victim": "Israeli water and desalination operators",
-      "industry": "Water / Critical infrastructure",
-      "attacker": "Iran — state-aligned hacktivist (likely)",
-      "attacker_origin": "iran",
-      "motivation": "Disruption",
-      "vector": "ZionSiphon ICS-targeting malware checks for Israeli IP ranges and Israeli water-utility software strings, then loads a config that forces water-pump pressure and chlorine levels to maximum; signed by a persona '0xICS' with messages supporting Iran, Palestine, and Yemen.",
-      "impact": "Sample analyzed by Darktrace; the malware's geo-check fails due to an XOR coding bug, causing it to delete itself rather than detonate. No confirmed in-the-wild infections, but capability and intent indicate continued Iranian targeting of Israeli water OT infrastructure consistent with attacks since 2020.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "risky.biz",
-        "darktrace"
-      ]
-    },
-    {
-      "id": "9",
-      "date": "Apr 29",
-      "date_sort": "2026-04-29",
-      "victim": "Cuban Embassy, Washington DC",
-      "industry": "Diplomatic / Government",
+      "victim": "Cuban Embassy in Washington, DC",
+      "industry": "Government / Diplomatic",
       "attacker": "China — state-suspected espionage group",
       "attacker_origin": "china",
       "motivation": "Espionage",
-      "vector": "Email-account compromise (specific initial-access vector not disclosed) inside the embassy's mail environment.",
-      "impact": "Researchers at Gambit Security found that intruders read the email of 68 officials, including the Cuban ambassador and deputy chief of mission, beginning January 2026. Campaign coincided with Trump-administration moves against Cuba and Venezuela, including a U.S. naval blockade and oil-delivery halt.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "bloomberg.com"
-      ]
-    },
-    {
-      "id": "10",
-      "date": "Apr 29",
-      "date_sort": "2026-04-29",
-      "victim": "Vect 2.0 ransomware victims (manufacturing, healthcare, education, technology)",
-      "industry": "Multi-sector",
-      "attacker": "Criminal gang — ransomware (allied with TeamPCP supply-chain operators)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "RaaS deployment via TeamPCP's supply-chain-implanted RAT (Trivy, Checkmarx KICS, LiteLLM, Telnyx) and other initial-access vectors. Targets Windows, Linux, and ESXi.",
-      "impact": "Check Point found Vect 2.0's ChaCha20-IETF implementation discards three of four nonces for any file >128KB — making large files (VM disks, databases, backups) permanently unrecoverable even with a paid decryptor. Effectively a wiper masquerading as ransomware.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "darkreading.com",
-        "checkpoint"
-      ]
-    },
-    {
-      "id": "11",
-      "date": "Apr 29",
-      "date_sort": "2026-04-29",
-      "victim": "Sri Lanka Ministry of Finance",
-      "industry": "Government",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Intrusion into the finance ministry's payment systems; funds were diverted during a foreign-debt repayment scheduled to go to Australia.",
-      "impact": "$2.5M stolen via the breach; a separate ~$600K payment to the U.S. Postal Service has also gone unaccounted for. Sri Lanka has asked Australian law enforcement to assist; a fragile economy still recovering from sovereign default now faces fresh scrutiny over financial-controls integrity.",
+      "vector": "Compromise of a Microsoft Exchange email server (part of a broader campaign that hit more than 5,000 Exchange servers) to access diplomatic email accounts.",
+      "impact": "Email inboxes of 68 Cuban officials, including the ambassador and deputy chief of mission, were monitored from January onward, coinciding with US naval blockade preparations and the halt of US oil deliveries to Cuba.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -200,237 +41,216 @@
       ]
     },
     {
-      "id": "12",
-      "date": "Apr 29",
-      "date_sort": "2026-04-29",
-      "victim": "GitHub Enterprise Server / GitHub.com customers",
-      "industry": "Software / DevOps",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "CVE-2026-3854 (CVSS 8.7): user-supplied git push-option values were inserted into internal protocol metadata without sanitizing the delimiter character, allowing an attacker with push access to inject trusted internal fields and chain payloads to remote code execution.",
-      "impact": "Reported by Wiz via AI-assisted reverse-engineering of closed-source binaries; GitHub patched github.com within two hours and confirmed no exploitation. 88% of self-hosted Enterprise Server instances were still vulnerable at disclosure; admins urged to upgrade.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "darkreading.com",
-        "github"
-      ]
-    },
-    {
-      "id": "13",
-      "date": "Apr 29",
-      "date_sort": "2026-04-29",
-      "victim": "Southeast Asian scam-center networks (Cambodia, Burma, Laos)",
-      "industry": "Law-enforcement action",
-      "attacker": "Criminal gang — pig-butchering / cryptocurrency investment fraud",
+      "id": "3",
+      "date": "Apr 30",
+      "date_sort": "2026-04-30",
+      "victim": "ADT (residential and commercial security)",
+      "industry": "Physical Security / Consumer Services",
+      "attacker": "Criminal gang — data extortion",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Romance- and friendship-themed pig-butchering scams direct U.S. victims to fraudulent crypto investment platforms run from compounds operating out of casinos and office parks; many scam-center workers are themselves trafficking victims.",
-      "impact": "FBI/Dubai Police/Chinese MPS coordination led to 276 arrests; San Diego prosecutors charged alleged managers and recruiters. Treasury OFAC sanctioned Cambodian Senator Kok An and 28 individuals/entities (Apr 23). The Scam Center Strike Force seized 503 fraudulent web domains and a recruitment messaging app.",
+      "vector": "Voice phishing (vishing) of an employee resulted in compromise of an Okta single sign-on account, which the extortion crew used to pivot into corporate systems.",
+      "impact": "Data breach affecting 5.5 million people; the extortion group is publicly pressuring ADT to pay.",
       "ongoing": "Y",
-      "severity": "medium",
+      "severity": "critical",
       "sources": [
-        "justice.gov",
-        "home.treasury.gov"
+        "BleepingComputer (via Talos)",
+        "blog.talosintelligence.com"
       ]
     },
     {
-      "id": "14",
-      "date": "Apr 25",
-      "date_sort": "2026-04-25",
-      "victim": "France National Agency for Secure Documents (ANTS)",
-      "industry": "Government / Identity",
-      "attacker": "Criminal gang — data theft (French teen 'breach3d')",
+      "id": "4",
+      "date": "Apr 30",
+      "date_sort": "2026-04-30",
+      "victim": "Multiple US organizations (academic, aviation, retail, hospitality, automotive, financial services, legal, technology)",
+      "industry": "Multiple sectors",
+      "attacker": "Criminal gang — data extortion (English-speaking crews)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Fraudulent access to ANTS' state automated personal-data processing system; specific exploitation method not disclosed publicly.",
-      "impact": "A 15-year-old taken into custody April 25; advertising 12-18 million records on cybercrime forums under the alias 'breach3d'. Login credentials, names, emails, birthdates, account IDs — and possibly addresses, phone numbers, and birthplaces — of holders of French passports, ID cards, residence permits, and driver's licenses appear authentic.",
-      "ongoing": "N",
+      "vector": "Vishing and SMS social engineering directing employees to adversary-in-the-middle phishing pages impersonating corporate SSO and identity providers; attackers steal session tokens, register their own MFA devices, and pivot across SaaS environments.",
+      "impact": "Active extortion campaign since at least October 2025 with seven-figure ransom demands; victims that refuse have been hit with DDoS follow-on, employee swatting, and data leak posts. Identity-system compromise means exposure across all connected SaaS apps.",
+      "ongoing": "Y",
       "severity": "high",
+      "sources": [
+        "cyberscoop.com",
+        "crowdstrike.com"
+      ]
+    },
+    {
+      "id": "5",
+      "date": "Apr 30",
+      "date_sort": "2026-04-30",
+      "victim": "Moldova National Health Insurance Company (CNAM)",
+      "industry": "Government / Healthcare",
+      "attacker": "Unknown — possible Russia state link",
+      "attacker_origin": "unknown",
+      "motivation": "Espionage",
+      "vector": "Cyberattack on the national health insurance database that administers Moldova's compulsory health insurance system; specific intrusion vector not disclosed.",
+      "impact": "Roughly one third of CNAM's database — personal and payment records covering virtually every adult in Moldova (~2.4M population) — was potentially exfiltrated. No ransom demand was made, prompting officials to assess the operation as state-directed data theft against a country Russia has threatened with military intervention.",
+      "ongoing": "Y",
+      "severity": "critical",
       "sources": [
         "therecord.media",
         "risky.biz"
       ]
     },
     {
-      "id": "15",
-      "date": "Apr 24",
-      "date_sort": "2026-04-24",
-      "victim": "ADT (5.5 million customers)",
-      "industry": "Home security / Consumer services",
-      "attacker": "Criminal gang — data extortion",
+      "id": "6",
+      "date": "Apr 30",
+      "date_sort": "2026-04-30",
+      "victim": "US and Canadian freight brokers, carriers, and shippers",
+      "industry": "Transportation / Logistics",
+      "attacker": "Criminal gang — cyber-enabled cargo theft",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Voice phishing (vishing) attack against an ADT employee compromised an Okta single sign-on account, providing access to corporate systems and customer data.",
-      "impact": "Extortion group claims data on ~5.5 million ADT customers was exfiltrated. Highlights the continuing trend of identity-provider compromise via vishing as the dominant initial-access vector.",
+      "vector": "Phishing and account takeover against brokers and carriers, allowing attackers to impersonate legitimate carriers on freight load boards, post fake loads, and reroute deliveries (sometimes via 'double-brokering' through unwitting drivers).",
+      "impact": "FBI advisory says nearly $725 million in cargo was stolen across the US and Canada last year; cargo theft losses are up 60% year-over-year and the average value per theft has risen 36%. Car dealerships and vape companies cited specific multi-million-dollar losses; some attackers have demanded ransom for hijacked loads.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "talosintelligence.com",
-        "bleepingcomputer"
+        "therecord.media",
+        "fbi.gov"
       ]
     },
     {
-      "id": "16",
-      "date": "Apr 24",
-      "date_sort": "2026-04-24",
-      "victim": "Bundestag President Julia Klöckner; German Bundestag leadership",
-      "industry": "Government / Politics",
-      "attacker": "Russia — state-linked espionage group",
-      "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "Compromise of Klöckner's Signal account; part of an ongoing Russian campaign targeting Signal and WhatsApp accounts of senior officials.",
-      "impact": "Attackers gained access to a sensitive group chat that included Chancellor Friedrich Merz (Merz's own account was not breached). Germany's BfV had previously warned of Russia's extensive secure-messaging-account targeting.",
+      "id": "7",
+      "date": "Apr 30",
+      "date_sort": "2026-04-30",
+      "victim": "Brazilian internet service providers (small regional operators)",
+      "industry": "Telecommunications / Internet Infrastructure",
+      "attacker": "Criminal gang — DDoS botnet operator",
+      "attacker_origin": "criminal",
+      "motivation": "Disruption",
+      "vector": "Threat actor with stolen SSH keys and root access to Huge Networks (a Brazilian DDoS-mitigation provider) used the firm's infrastructure to coordinate DDoS attacks; the underlying botnet was built by mass-scanning for TP-Link Archer AX21 routers vulnerable to CVE-2023-1389 and abusing misconfigured DNS servers for amplification.",
+      "impact": "Years-long campaign of large DDoS attacks against small Brazilian ISPs; Huge Networks' CEO confirmed a January 2026 intrusion compromised personal SSH keys and two development servers. Each target prefix was attacked for 10-60 seconds with four parallel processes per host.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "krebsonsecurity.com",
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "8",
+      "date": "Apr 30",
+      "date_sort": "2026-04-30",
+      "victim": "Five US companies (medical, pharmaceutical, doctor's office, engineering, drone manufacturer)",
+      "industry": "Healthcare, Manufacturing, Engineering",
+      "attacker": "Criminal gang — ransomware (insider affiliates of disrupted operation)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Two cybersecurity professionals — a Sygnia incident-response manager and a DigitalMint ransomware negotiator — used a known ransomware-as-a-service variant to attack victims; the negotiator separately exploited his negotiation role across at least five additional clients, sharing their internal positions and insurance limits with affiliates.",
+      "impact": "$1.3 million extorted from a Florida medical company in May 2023; the broader scheme involving the negotiator and accomplices netted a combined $75.3 million in ransoms, including patient-data leaks from a doctor's office. Both responders were sentenced to four years in prison; the third co-conspirator faces sentencing in July.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
-        "risky.biz",
-        "der-spiegel"
+        "cyberscoop.com",
+        "justice.gov"
       ]
     },
     {
-      "id": "17",
-      "date": "Apr 23",
-      "date_sort": "2026-04-23",
-      "victim": "U.S. Federal Civilian Executive Branch agencies (Cisco ASA / Firepower / FTD users)",
-      "industry": "Government / Critical infrastructure",
-      "attacker": "China — state-suspected espionage group (advanced persistent threat)",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Exploitation of Cisco ASA firmware flaws CVE-2025-20333 and CVE-2025-20362 to deploy 'FIRESTARTER' implant on Cisco ASA, Firepower, and Secure Firewall (FTD) devices — providing remote access and persistence that survives firmware patching.",
-      "impact": "CISA published a malware analysis report co-sealed with NCSC-UK and updated Emergency Directive 25-03 with new forensic, hunting, and update requirements after detecting FIRESTARTER on FCEB-managed Cisco ASAs. Patch alone does not evict the actor.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "cisa.gov",
-        "ncsc.gov.uk"
-      ]
-    },
-    {
-      "id": "18",
-      "date": "Apr 23",
-      "date_sort": "2026-04-23",
-      "victim": "Multiple targets of China-nexus actors (covert botnet-routing victims)",
-      "industry": "Critical infrastructure / Multi-sector",
-      "attacker": "China — state-suspected espionage group (multiple actors)",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Use of large covert botnets built from end-of-life SOHO routers, IoT devices, NAS, and firewalls to relay traffic from on-ramp through traversal to exit nodes near the target. Networks (e.g., Raptor Train, KV Botnet) were operated by Chinese information-security companies including the previously sanctioned Integrity Technology Group.",
-      "impact": "Joint advisory from NCSC-UK, CISA, NSA, FBI, DC3, and 11 other allied agencies warns that the majority of China-nexus actors now route operations through covert networks, defeating IP-based blocklists and accelerating IOC extinction. Defensive recommendations focus on baselining edge traffic and zero-trust policies.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "ncsc.gov.uk",
-        "cisa.gov",
-        "nsa.gov"
-      ]
-    },
-    {
-      "id": "19",
-      "date": "Apr 22",
-      "date_sort": "2026-04-22",
-      "victim": "170+ Ukrainian prosecutors; militaries of Greece, Romania, and Serbia",
-      "industry": "Government / Military",
-      "attacker": "Russia — GRU military intelligence",
-      "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "Spear-phishing and credential-theft against email accounts of prosecutorial and military targets; campaign linked to a GRU cyber unit.",
-      "impact": "Russia accessed prosecutorial mailboxes seeking insight into Ukrainian war-crimes investigations and other inquiries; same campaign breached three NATO/EU-aligned militaries. Identified by Ctrl-Alt-Intel.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "risky.biz",
-        "reuters.com"
-      ]
-    },
-    {
-      "id": "20",
-      "date": "Apr 22",
-      "date_sort": "2026-04-22",
-      "victim": "Checkmarx KICS users; Bitwarden CLI consumers",
-      "industry": "Software / DevSecOps",
-      "attacker": "Criminal gang — supply-chain compromise",
+      "id": "9",
+      "date": "Apr 30",
+      "date_sort": "2026-04-30",
+      "victim": "Delta Dental Insurance Company and Delta Dental of New York",
+      "industry": "Insurance / Healthcare",
+      "attacker": "Criminal gang — data extortion (MOVEit campaign)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Second compromise in a month of the KICS vulnerability scanner: malicious Docker images, a tainted GitHub Action, and trojanized VS Code extensions were published. Bitwarden CLI is the first major confirmed downstream victim.",
-      "impact": "Repeated breach of a developer-security tool extends a broader supply-chain campaign that has also tampered with Trivy, LiteLLM, and Telnyx PyPI packages and feeds initial access to the Vect 2.0 ransomware affiliate program.",
+      "vector": "Threat actors exploited the 2023 zero-day vulnerability in Progress MOVEit Transfer servers to gain unauthorized access and exfiltrate files.",
+      "impact": "Theft of consumer non-public information including names, addresses, Social Security numbers, driver's license numbers, financial account information, and patient health information. NYDFS settled with both Delta Dental entities for $2.25 million for inadequate incident-response policies and late breach reporting under 23 NYCRR Part 500.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "dfs.ny.gov"
+      ]
+    },
+    {
+      "id": "10",
+      "date": "Apr 30",
+      "date_sort": "2026-04-30",
+      "victim": "Marks & Spencer (UK retail)",
+      "industry": "Retail",
+      "attacker": "Criminal gang — ransomware (English-speaking social engineers)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "SMS-based phishing and IT help desk impersonation by an English-speaking cybercrime crew; tactics include SIM swapping and SSO-portal credential theft.",
+      "impact": "Marks & Spencer suffered a 2025 ransomware attack tied to this group; this week, 24-year-old Tyler Robert Buchanan pleaded guilty in US federal court to wire-fraud conspiracy and aggravated identity theft connected to the broader campaign that breached Twilio, LastPass, DoorDash, Mailchimp and others and stole at least $8 million in cryptocurrency. He faces over 20 years in prison.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "krebsonsecurity.com",
+        "justice.gov"
+      ]
+    },
+    {
+      "id": "11",
+      "date": "Apr 29",
+      "date_sort": "2026-04-29",
+      "victim": "Sri Lanka Finance Ministry",
+      "industry": "Government / Finance",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Hackers breached the finance ministry's computer systems; specific intrusion technique not disclosed.",
+      "impact": "$2.5 million stolen from Sri Lankan government systems, with a separate $600,000 payment to the US Postal Service also missing — raising broader questions about financial-system safeguards as the country recovers from default.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "risky.biz",
-        "isc.sans.edu",
+        "bloomberg.com"
+      ]
+    },
+    {
+      "id": "12",
+      "date": "Apr 29",
+      "date_sort": "2026-04-29",
+      "victim": "Spotswood, New Jersey school district",
+      "industry": "Government / Education",
+      "attacker": "Criminal gang — business email compromise",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Compromise of a school district employee's email account, used to impersonate the board of education and redirect tax-fund transfers from the borough.",
+      "impact": "$4.8 million in taxpayer funds diverted to attackers; the borough is now issuing short-term debt to recover the missing funds while pursuing recovery.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "bloomberg.com"
+      ]
+    },
+    {
+      "id": "13",
+      "date": "Apr 29",
+      "date_sort": "2026-04-29",
+      "victim": "Petróleos de Venezuela SA (PDVSA)",
+      "industry": "Energy / Oil & Gas",
+      "attacker": "Unknown — nation-state suspected",
+      "attacker_origin": "unknown",
+      "motivation": "Disruption",
+      "vector": "Multi-month intrusion using living-off-the-land techniques and two batch scripts to disable defenses and stage payloads, culminating in execution of the previously unknown Lotus Wiper malware that deletes files, overwrites physical drives, and removes recovery mechanisms.",
+      "impact": "December 2025 cyberattack on Venezuela's state oil-and-gas firm; PDVSA publicly attributed the attack to the US government. Independent reporting indicated petroleum tanker loading stalled even as PDVSA claimed operations were unaffected. Kaspersky published the technical analysis without attribution.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
         "darkreading.com"
       ]
     },
     {
-      "id": "21",
-      "date": "Apr 22",
-      "date_sort": "2026-04-22",
-      "victim": "Vercel and downstream customers (multiple)",
-      "industry": "Cloud hosting / Developer infrastructure",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "An infostealer infection on a Context.ai (AI vendor) employee gave attackers access to Context.ai's Google Workspace, which was then pivoted into Vercel's environment, where attackers exfiltrated credentials for cloud infrastructure.",
-      "impact": "Stolen Vercel data is being auctioned online. Vercel notified affected customers and recommended key/secret rotation. Fallout has expanded to additional customers and third-party systems with continuing disclosures this week.",
+      "id": "14",
+      "date": "Apr 23",
+      "date_sort": "2026-04-23",
+      "victim": "Federal Civilian Executive Branch agencies and Cisco ASA / Firepower / Secure Firewall users",
+      "industry": "Government and Critical Infrastructure",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "Exploitation of CVE-2025-20333 and CVE-2025-20362 in Cisco ASA firmware to deploy FIRESTARTER malware on Firepower and Secure Firewall devices, with persistence surviving firmware patches.",
+      "impact": "CISA, with UK NCSC, confirmed an advanced persistent threat actor maintained access on federal civilian agency Cisco devices even after patching; CISA updated Emergency Directive 25-03 requiring federal agencies to identify devices, collect forensic data, and apply new vendor updates. Allied agencies separately warned the same group is using compromised home routers and IoT devices as covert global infrastructure.",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "critical",
       "sources": [
-        "risky.biz",
-        "cyberscoop.com"
-      ]
-    },
-    {
-      "id": "22",
-      "date": "Apr 22",
-      "date_sort": "2026-04-22",
-      "victim": "Carnival cruise customers (7.5 million)",
-      "industry": "Travel / Hospitality",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Same multi-victim extortion campaign that hit Vercel, Zara, 7-Eleven, Udemy, and Medtronic in 2026; attackers leveraged third-party SaaS access and stolen identity credentials to exfiltrate customer data.",
-      "impact": "Personal data of 7.5 million Carnival customers leaked online; one of several major brands implicated in the same campaign now publicly disclosing impact.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "23",
-      "date": "Apr 17",
-      "date_sort": "2026-04-17",
-      "victim": "Rockwell Automation OT/ICS users (water/wastewater and broader industrial)",
-      "industry": "Industrial / Critical infrastructure",
-      "attacker": "Iran — state-directed hacktivist proxies",
-      "attacker_origin": "iran",
-      "motivation": "Disruption",
-      "vector": "Iran-aligned cluster (tracked by industry vendors as 'Cyber Av3ngers') installed Rockwell FactoryTalk software on VPS infrastructure to target FactoryTalk-managed environments and Allen-Bradley PLCs. Cortex Xpanse observed Rockwell/Allen-Bradley devices on 5,600 IP addresses globally.",
-      "impact": "Marks a shift from prior focus on Unitronics PLCs. CISA released a corroborating advisory April 7. Activity continues as Iran selectively restores internet access following a 47-day national outage; geopolitical tension drives ongoing targeting of Western water and industrial OT.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "unit42.paloaltonetworks.com",
-        "cisa.gov"
-      ]
-    },
-    {
-      "id": "24",
-      "date": "Apr 13",
-      "date_sort": "2026-04-13",
-      "victim": "Itron (utility metering and grid technology vendor)",
-      "industry": "Energy / Utilities",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Unauthorized access to internal corporate systems; no technical details released.",
-      "impact": "Itron disclosed a security breach discovered April 13; the company says the incident has been resolved and most costs will be covered by cyber insurance. Concerning given Itron's role supplying smart-meter and grid-management infrastructure to utilities globally.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
+        "cisa.gov",
+        "ncsc.gov.uk",
+        "nsa.gov"
       ]
     }
   ]
