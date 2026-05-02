@@ -49,7 +49,10 @@ echo "=== Stage 1: Fetch (Exa) ==="
 python3 fetch.py --date "$DATE"
 
 echo "=== Stage 2: Analyze (Claude Code) ==="
-claude -p "$(sed "s/{{DATE}}/$DATE/g" analyze_prompt.md)" --allowedTools Read,Write,Edit,Glob
+# Pinned to Sonnet 4.6: Opus 4.7 is currently blocked by Anthropic's AUP
+# classifier on this workload (cyber threat intel). Revisit once the Cyber
+# Verification Program application is approved.
+claude -p "$(sed "s/{{DATE}}/$DATE/g" analyze_prompt.md)" --model claude-sonnet-4-6 --allowedTools Read,Write,Edit,Glob
 
 # Stamp accurate generated_at timestamp (Claude Code may use a rounded time)
 python3 -c "
