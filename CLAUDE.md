@@ -62,11 +62,10 @@ cyber-brief/
 - Fails the pipeline if fewer than half the sources succeed
 
 ### Stage 2: Analyze (Claude Code CLI)
-- `run_pipeline.sh` invokes: `claude -p "$(sed "s/{{DATE}}/$DATE/g" analyze_prompt.md)" --model claude-sonnet-4-6 --allowedTools Read,Write,Edit,Glob`
+- `run_pipeline.sh` invokes: `claude -p "$(sed "s/{{DATE}}/$DATE/g" analyze_prompt.md)" --allowedTools Read,Write,Edit,Glob`
 - Claude Code reads the raw content from `data/raw/{date}/`, applies attacker naming rules, deduplicates, and writes `docs/data/brief.json`
 - Also appends a usage record to `docs/data/usage_log.jsonl`
 - After Claude Code finishes, the pipeline stamps an accurate `generated_at` timestamp
-- **Model pinned to Sonnet 4.6**: as of 2026-05-02, Opus 4.7 is blocked by Anthropic's AUP classifier on this cyber-intel workload while Sonnet 4.6 passes. Once the Cyber Verification Program application is approved, the pin can be re-evaluated.
 
 ### Stage 3: Publish (`publish.sh`)
 - Stages `docs/data/brief.json` and `docs/data/usage_log.jsonl`
