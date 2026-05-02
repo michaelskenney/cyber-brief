@@ -1,59 +1,61 @@
 {
-  "generated_at": "2026-05-02T19:03:47.834344+00:00",
-  "period_searched": "April 28 \u2013 May 2, 2026",
-  "incident_count": 14,
+  "generated_at": "2026-05-02T20:11:38.314163+00:00",
+  "period_searched": "April 30 – May 2, 2026",
+  "incident_count": 21,
   "incidents": [
     {
       "id": "1",
       "date": "May 1",
       "date_sort": "2026-05-01",
-      "victim": "Global web hosting providers (cPanel/WHM users)",
-      "industry": "Technology / Web Hosting",
-      "attacker": "Unknown \u2014 criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Active exploitation of CVE-2026-41940, a critical authentication bypass in cPanel/WHM web hosting control panel software.",
-      "impact": "Attackers are gaining unauthorized access to web hosting control panels globally; CISA added to KEV with federal patch deadline of May 3, 2026. Australian Cyber Security Centre confirmed active exploitation affecting Australian businesses.",
-      "ongoing": "Y",
-      "severity": "critical",
+      "victim": "U.S. and Ukrainian Oil & Gas Critical Infrastructure",
+      "industry": "Energy",
+      "attacker": "Russia — state-linked criminal actor",
+      "attacker_origin": "russia",
+      "motivation": "Disruption",
+      "vector": "Targeted attacks on oil and gas industrial control systems and physical infrastructure across the US, Ukraine, and other countries.",
+      "impact": "Caused physical and operational damage to critical energy infrastructure in multiple countries. Russian national Artem Revenskii ('Digit') pleaded guilty on May 1, 2026 and faces up to 27 years in prison.",
+      "ongoing": "N",
+      "severity": "high",
       "sources": [
-        "cyber.gov.au",
-        "therecord.media",
-        "cyberscoop.com"
+        "bloomberg.com",
+        "reuters.com"
       ]
     },
     {
       "id": "2",
-      "date": "May 1",
-      "date_sort": "2026-05-01",
-      "victim": "US and Ukrainian oil and gas facilities",
-      "industry": "Energy / Critical Infrastructure",
-      "attacker": "Russia \u2014 state-linked criminal",
-      "attacker_origin": "russia",
-      "motivation": "Disruption",
-      "vector": "Cyberattacks targeting industrial control systems at oil and gas facilities, conducted by Russian hacker Artem Revenskii (\"Digit\") and co-conspirators.",
-      "impact": "Revenskii pleaded guilty in US federal court to attacking US and Ukrainian energy infrastructure. Attacks caused operational disruptions at targeted facilities.",
-      "ongoing": "N",
+      "date": "Apr 30",
+      "date_sort": "2026-04-30",
+      "victim": "Web Hosting Organizations Worldwide (cPanel/WHM users)",
+      "industry": "Technology",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Authentication bypass via injected newline characters in the cPanel login form password field, allowing unauthenticated session promotion without credential verification; affects all cPanel/WHM versions since 11.40 (2013), CVSS 9.8.",
+      "impact": "Active exploitation confirmed before patch availability; approximately 1.5 million cPanel instances exposed online; CISA added CVE-2026-41940 to the Known Exploited Vulnerabilities catalog; hosting providers Namecheap and KnownHost confirmed in-the-wild compromises.",
+      "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "bloomberg.com"
+        "cyber.gov.au",
+        "cyberscoop.com",
+        "cisa.gov"
       ]
     },
     {
       "id": "3",
       "date": "Apr 30",
       "date_sort": "2026-04-30",
-      "victim": "Multiple SaaS organizations (financial services, retail, healthcare)",
-      "industry": "Multiple Sectors",
-      "attacker": "Criminal gang \u2014 data extortion",
+      "victim": "U.S. Medical, Pharmaceutical, and Engineering Companies",
+      "industry": "Healthcare",
+      "attacker": "Criminal gang — ransomware (insider threat)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Adversary-in-the-middle (AiTM) phishing combined with vishing calls to harvest MFA codes and gain persistent SaaS access, active since October 2025.",
-      "impact": "Campaign has compromised SaaS environments across multiple sectors, exfiltrating sensitive data and demanding ransoms. Campaign remains active with ongoing victim targeting.",
-      "ongoing": "Y",
-      "severity": "high",
+      "vector": "Two cybersecurity professionals — an incident response manager (Sygnia) and a ransomware negotiator (DigitalMint) — deployed BlackCat ransomware against victim organizations and betrayed clients by sharing confidential negotiation details and insurance policy limits with ransomware operators.",
+      "impact": "Multiple US healthcare and engineering firms extorted; patient data from a California doctor’s office publicly leaked; $1.2 million ransom paid by one victim; Goldberg and Martin each sentenced to 4 years on April 30, 2026; co-conspirator Martino enabled $75.3 million in total ransom payments and faces sentencing July 9.",
+      "ongoing": "N",
+      "severity": "medium",
       "sources": [
-        "crowdstrike.com",
+        "doj.gov",
+        "therecord.media",
         "cyberscoop.com"
       ]
     },
@@ -61,66 +63,32 @@
       "id": "4",
       "date": "Apr 30",
       "date_sort": "2026-04-30",
-      "victim": "ADT \u2014 home and business security provider",
-      "industry": "Physical Security / Technology",
-      "attacker": "Criminal gang \u2014 data theft",
+      "victim": "Multiple U.S. Organizations — retail, hospitality, aviation, financial services, and technology sectors",
+      "industry": "Multiple",
+      "attacker": "Criminal gang — data extortion (The Com affiliates)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Vishing attack against an ADT employee led to compromise of Okta SSO credentials and unauthorized access to internal systems.",
-      "impact": "Approximately 5.5 million customer records exfiltrated, including names, addresses, and account details. ADT is notifying affected customers.",
+      "vector": "Voice-phishing and social engineering directing employees to adversary-in-the-middle phishing pages mimicking corporate SSO portals; attackers remove and re-register MFA devices, traverse SaaS ecosystems, and exfiltrate data; some victims subjected to follow-on DDoS attacks and employee swatting.",
+      "impact": "Ongoing data theft and extortion across multiple US critical infrastructure sectors since October 2025; extortion demands typically in the seven-figure range; campaign is affiliated with the broader Scattered Spider ecosystem and linked to ShinyHunters.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "blog.talosintelligence.com"
+        "crowdstrike.com/blog",
+        "cyberscoop.com",
+        "unit42.paloaltonetworks.com"
       ]
     },
     {
       "id": "5",
       "date": "Apr 30",
       "date_sort": "2026-04-30",
-      "victim": "Scattered Spider \u2014 criminal group (law enforcement action)",
-      "industry": "Criminal Prosecution",
-      "attacker": "Criminal gang \u2014 ransomware and data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "US federal prosecution of Tyler Buchanan (UK national), a core Scattered Spider member responsible for SIM swapping, vishing, and ransomware operations against major US companies.",
-      "impact": "Buchanan entered a guilty plea to wire fraud charges; sentencing pending. Campaign caused hundreds of millions in losses across victims including MGM Resorts and Caesars Entertainment.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "krebsonsecurity.com"
-      ]
-    },
-    {
-      "id": "6",
-      "date": "Apr 30",
-      "date_sort": "2026-04-30",
-      "victim": "Multiple ransomware victims (law enforcement action)",
-      "industry": "Criminal Prosecution",
-      "attacker": "Criminal gang \u2014 ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Two US cybersecurity professionals convicted of operating as ALPHV/BlackCat ransomware affiliates, conducting attacks against US businesses.",
-      "impact": "Ryan Goldberg and Kevin Martin each sentenced to 4 years federal prison; co-conspirator Angelo Martino entered a guilty plea. Represents a rare successful prosecution of ransomware actors who were former incident responders.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "justice.gov",
-        "therecord.media",
-        "cyberscoop.com"
-      ]
-    },
-    {
-      "id": "7",
-      "date": "Apr 30",
-      "date_sort": "2026-04-30",
       "victim": "Delta Dental Insurance Company / Delta Dental of New York",
-      "industry": "Insurance / Healthcare",
-      "attacker": "Criminal gang \u2014 data extortion",
+      "industry": "Insurance",
+      "attacker": "Criminal gang — ransomware (MOVEit zero-day exploitation)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Exploitation of MOVEit Transfer zero-day vulnerability (June 2023) to exfiltrate files from DDIC and DDNY MOVEit servers.",
-      "impact": "Consumer PII including names, SSNs, driver's license numbers, financial account information, and health data was exfiltrated. NYDFS imposed a $2.25 million penalty for inadequate incident response and failure to timely report the breach.",
+      "vector": "Exploitation of a MOVEit Transfer zero-day vulnerability in mid-2023 to exfiltrate files from servers used to transfer data among affiliates, business partners, and healthcare providers.",
+      "impact": "Consumer PII — including Social Security numbers, driver’s license numbers, financial account details, and patient health data — exfiltrated from both Delta Dental entities. NYDFS imposed a $2.25 million penalty on April 30, 2026 for inadequate incident response programs and failure to timely report the breach.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
@@ -128,34 +96,70 @@
       ]
     },
     {
-      "id": "8",
+      "id": "6",
+      "date": "Apr 30",
+      "date_sort": "2026-04-30",
+      "victim": "Russian Government Agencies and Aviation Companies",
+      "industry": "Aerospace",
+      "attacker": "Unknown — possibly Ukraine-linked espionage group",
+      "attacker_origin": "unknown",
+      "motivation": "Espionage",
+      "vector": "Phishing emails with infected archive files, malicious advertising campaigns mimicking aviation software, and trojanized tools hosted on SourceForge; malware collects GIS/geospatial data, keystrokes, browser credentials, and screenshots.",
+      "impact": "Sensitive geographic information system data stolen from Russian government and aviation targets since September 2025; malware distribution lures also suggest targeting of military drone operators and satellite communications personnel.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "7",
       "date": "Apr 29",
       "date_sort": "2026-04-29",
-      "victim": "SAP ecosystem \u2014 npm package users (@cap-js/sqlite, @cap-js/postgres, @cap-js/db-service, mbt)",
-      "industry": "Technology / Software Supply Chain",
-      "attacker": "Criminal gang \u2014 data extortion",
+      "victim": "SAP Developer Ecosystem (≥570K weekly npm downloads affected)",
+      "industry": "Technology",
+      "attacker": "Criminal gang — supply chain compromise",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "TeamPCP threat actor injected malicious code into widely-used SAP npm packages (\"Mini Shai-Hulud\" campaign), compromising the software supply chain to enable credential theft and data exfiltration.",
-      "impact": "Any organization using affected SAP npm packages may have had credentials and sensitive data exfiltrated. Campaign has entered a monetization phase after initial compromise of the supply chain.",
+      "vector": "Four widely-used SAP CAP/MBT npm packages (@cap-js/sqlite, @cap-js/postgres, @cap-js/db-service, mbt) compromised with malicious preinstall scripts; multi-stage payload exfiltrates GitHub tokens, npm credentials, cloud access keys, and CI/CD pipeline secrets to attacker-controlled repositories; Russian locale killswitch included.",
+      "impact": "Over 570,000 weekly downloads affected; developer credentials and cloud secrets exposed across potentially tens of thousands of projects globally. Campaign is entering active monetization phase as of May 2, 2026; CISA added to Known Exploited Vulnerabilities catalog.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
+        "unit42.paloaltonetworks.com",
         "darkreading.com",
         "isc.sans.edu"
       ]
     },
     {
+      "id": "8",
+      "date": "Late Apr",
+      "date_sort": "2026-04-29",
+      "victim": "ADT Inc.",
+      "industry": "Physical Security",
+      "attacker": "Criminal gang — social engineering and data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Vishing attack targeting ADT employees with adversary-in-the-middle phishing pages mimicking Okta single sign-on; attackers removed and re-registered MFA devices to maintain persistent access to corporate systems.",
+      "impact": "Data on approximately 5.5 million customers exposed.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "blog.talosintelligence.com",
+        "risky.biz"
+      ]
+    },
+    {
       "id": "9",
-      "date": "Apr 27",
-      "date_sort": "2026-04-27",
-      "victim": "US COVID-19 research institutions; US government Exchange servers (Hafnium campaign)",
-      "industry": "Healthcare Research / Government",
-      "attacker": "China \u2014 Ministry of State Security (MSS)",
+      "date": "Apr 29",
+      "date_sort": "2026-04-29",
+      "victim": "COVID-19 Research Institutions, Law Firms; global Exchange Server users (Hafnium campaign)",
+      "industry": "Healthcare",
+      "attacker": "China — Ministry of State Security (Shanghai State Security Bureau)",
       "attacker_origin": "china",
       "motivation": "Espionage",
-      "vector": "Chinese national Xu Zewei, acting on behalf of MSS Shanghai, hacked COVID research organizations and exploited Hafnium vulnerabilities in Microsoft Exchange servers to steal sensitive research and government communications.",
-      "impact": "Xu Zewei extradited from Italy to face US federal charges. Stolen data included COVID-19 research findings and sensitive government email communications, part of a broader MSS-directed cyber espionage campaign.",
+      "vector": "Targeted intrusions into COVID-19 research institutions and law firms under MSS direction; also participated in the Hafnium Exchange Server exploitation campaign targeting thousands of organizations worldwide.",
+      "impact": "Sensitive pandemic research and confidential legal communications compromised; Chinese national Xu Zewei was extradited from Italy to the US on April 29, 2026 to face prosecution for MSS-directed espionage.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -165,15 +169,51 @@
     },
     {
       "id": "10",
-      "date": "Apr 25",
-      "date_sort": "2026-04-25",
-      "victim": "Moldova \u2014 National Health Insurance Agency (CNAM)",
-      "industry": "Government / Healthcare",
-      "attacker": "Russia \u2014 state-suspected espionage group",
+      "date": "Apr 28",
+      "date_sort": "2026-04-28",
+      "victim": "U.S. Federal Civilian Executive Branch Agencies (Cisco Firepower/ASA devices)",
+      "industry": "Government",
+      "attacker": "China — state-sponsored espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "Exploitation of Cisco Firepower FXOS zero-day vulnerabilities (CVE-2025-20333 and CVE-2025-20362) to deploy the FIRESTARTER custom backdoor; attackers maintained persistence even after patches were applied.",
+      "impact": "Custom backdoor installed on FCEB agency Cisco network devices with post-patching persistence; CISA issued Emergency Directive 25-03 update; joint advisory co-sealed with NCSC-UK warning all organizations running Cisco Firepower/ASA products.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "cisa.gov",
+        "blog.talosintelligence.com",
+        "ncsc.gov.uk"
+      ]
+    },
+    {
+      "id": "11",
+      "date": "Apr 2026",
+      "date_sort": "2026-04-28",
+      "victim": "Twilio, LastPass, DoorDash, Mailchimp, and others (2022 campaign)",
+      "industry": "Technology",
+      "attacker": "Criminal gang — Scattered Spider (The Com)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "SIM swapping, vishing, and social engineering targeting major US technology companies in 2022 to steal employee credentials, hijack accounts, and steal cryptocurrency from high-value targets.",
+      "impact": "Multiple major technology companies breached in 2022; over $8 million in cryptocurrency stolen; 24-year-old British national Tyler Buchanan pleaded guilty in April 2026 to wire fraud and identity theft charges.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "krebsonsecurity.com"
+      ]
+    },
+    {
+      "id": "12",
+      "date": "Late Apr",
+      "date_sort": "2026-04-28",
+      "victim": "Moldova National Health Insurance Company (CNAM)",
+      "industry": "Healthcare",
+      "attacker": "Unknown — Russia-linked suspected",
       "attacker_origin": "russia",
       "motivation": "Espionage",
-      "vector": "Hacking group breached CNAM's national healthcare database, potentially destroying or exfiltrating up to 30% of records containing personal and financial data on Moldovan citizens.",
-      "impact": "Personal and financial data of nearly every adult Moldovan who paid national health insurance was exposed. No ransom demanded; Russia's involvement not excluded by Moldovan officials. Incident occurred amid ongoing Russian military threats to Moldova.",
+      "vector": "Unknown intrusion method; data exfiltrated from CNAM’s compulsory health insurance database; no ransom demand issued, suggesting intelligence-gathering motivation.",
+      "impact": "Approximately 30% of Moldova’s national health insurance database stolen — containing personal information and payment records for a significant share of the country’s 2.4 million citizens. Assessed as Moldova’s most serious cyber incident this year; officials note cyberattacks on the country’s critical infrastructure have increased sharply since 2022.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -182,76 +222,157 @@
       ]
     },
     {
-      "id": "11",
-      "date": "Apr 23",
-      "date_sort": "2026-04-23",
-      "victim": "Organizations running Cisco Firepower network security appliances",
-      "industry": "Multiple Sectors / Critical Infrastructure",
-      "attacker": "Unknown \u2014 state-sponsored espionage group",
-      "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "Threat actor UAT-4356 deployed FIRESTARTER backdoor malware on Cisco Firepower appliances, exploiting a vulnerability to achieve persistent access on network security devices.",
-      "impact": "Affected organizations have persistent adversary presence on network security appliances, enabling long-term surveillance and lateral movement. CISA issued an emergency directive; Cisco Talos and NCSC published joint analysis.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "blog.talosintelligence.com",
-        "cisa.gov",
-        "ncsc.gov.uk"
-      ]
-    },
-    {
-      "id": "12",
-      "date": "Apr 23",
-      "date_sort": "2026-04-23",
-      "victim": "Western critical infrastructure and government networks",
-      "industry": "Government / Critical Infrastructure",
-      "attacker": "China \u2014 state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "China-nexus threat actors are operating large-scale covert networks of compromised SOHO routers and IoT devices to disguise the origin of espionage operations, reconnaissance, malware delivery, and data exfiltration.",
-      "impact": "A 16-nation joint advisory (NSA, CISA, FBI, Five Eyes, and allied partners) warns of a major shift to botnet-based operational infrastructure by the majority of China-nexus threat actors, making attribution and defense significantly harder.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "ncsc.gov.uk",
-        "nsa.gov",
-        "cyber.gov.au",
-        "risky.biz"
-      ]
-    },
-    {
       "id": "13",
-      "date": "Mar 1",
-      "date_sort": "2026-03-01",
-      "victim": "Enterprise Microsoft 365 and cloud platform users globally",
-      "industry": "Multiple Sectors",
-      "attacker": "Criminal gang \u2014 phishing-as-a-service",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Tycoon2FA phishing-as-a-service platform offered MFA bypass kits to criminal affiliates via QR code lures; Microsoft DCU and Europol executed a coordinated platform takedown in March 2026.",
-      "impact": "Platform disrupted after enabling widespread MFA bypass attacks; QR code phishing surged 146% during the period. Microsoft blocked 8.3 billion phishing threats in Q1 2026. Affiliate ecosystem may reconstitute under new infrastructure.",
-      "ongoing": "Y",
-      "severity": "medium",
+      "date": "Apr 2026",
+      "date_sort": "2026-04-20",
+      "victim": "German Government — Bundestag President Julia Klöckner",
+      "industry": "Government",
+      "attacker": "Russia — state intelligence",
+      "attacker_origin": "russia",
+      "motivation": "Espionage",
+      "vector": "Compromise of Signal encrypted messaging account used to gain access to a sensitive group chat including German Chancellor Friedrich Merz and other senior government officials.",
+      "impact": "Russia gained unauthorized access to encrypted internal communications among Germany’s most senior government officials; full scope of intelligence collected unknown.",
+      "ongoing": "N",
+      "severity": "high",
       "sources": [
-        "microsoft.com"
+        "risky.biz"
       ]
     },
     {
       "id": "14",
-      "date": "Early Feb",
-      "date_sort": "2026-02-01",
-      "victim": "Anthropic, OpenAI, Google \u2014 US frontier AI companies",
-      "industry": "Technology / Artificial Intelligence",
-      "attacker": "China \u2014 state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "IP theft",
-      "vector": "Chinese AI labs conducted industrial-scale model distillation attacks using tens of thousands of fraudulent accounts and jailbreaking techniques to extract proprietary capabilities from US frontier AI models.",
-      "impact": "Anthropic reported 16 million exchanges extracted via 24,000 fraudulent accounts; Google cited 100,000 queries to Gemini. White House acknowledged the attacks and issued a memo; analysis suggests countermeasures will be insufficient without stronger semiconductor export controls.",
-      "ongoing": "Y",
+      "date": "Apr 2026",
+      "date_sort": "2026-04-15",
+      "victim": "Israeli Water and Desalination Facilities",
+      "industry": "Utilities",
+      "attacker": "Iran — state-directed hacktivist proxy",
+      "attacker_origin": "iran",
+      "motivation": "Disruption",
+      "vector": "ZionSiphon OT malware deployed against industrial control systems at Israeli water treatment and desalination facilities; attack failed due to a critical bug in the malware that caused it to self-delete before executing its destructive payload.",
+      "impact": "No physical damage or disruption achieved; malware self-deleted before executing. The attempted attack demonstrates continued Iranian targeting of Israeli critical water infrastructure OT systems.",
+      "ongoing": "N",
       "severity": "high",
       "sources": [
         "risky.biz"
+      ]
+    },
+    {
+      "id": "15",
+      "date": "Apr 2026",
+      "date_sort": "2026-04-15",
+      "victim": "France — Agence Nationale des Titres Sécurisés (national identity document agency)",
+      "industry": "Government",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Unknown intrusion into France’s national identity and driver’s license management system.",
+      "impact": "Attackers exfiltrating and selling French citizens’ identity documents and driver’s license data on cybercrime forums; full scope of breach under investigation.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "16",
+      "date": "Apr 2026",
+      "date_sort": "2026-04-15",
+      "victim": "Sri Lanka Ministry of Finance",
+      "industry": "Government",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Hackers compromised Sri Lanka’s Finance Ministry systems and diverted a scheduled foreign debt repayment, redirecting $2.5 million to accounts in Australia.",
+      "impact": "$2.5 million in government funds stolen with diplomatic and financial implications for Sri Lanka’s debt management obligations.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "17",
+      "date": "Apr 2026",
+      "date_sort": "2026-04-15",
+      "victim": "Carnival Corporation; also Zara, 7-Eleven, Udemy, and Medtronic (same campaign)",
+      "industry": "Hospitality",
+      "attacker": "Criminal gang — ShinyHunters data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Infostealer malware compromise of employee credentials enabling unauthorized access to corporate systems; part of a coordinated ShinyHunters campaign targeting multiple industries.",
+      "impact": "7.5 million Carnival customers’ data stolen; same campaign also breached Zara, 7-Eleven, Udemy, and Medtronic; data being sold or leveraged for extortion.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "18",
+      "date": "Apr 2026",
+      "date_sort": "2026-04-15",
+      "victim": "Vercel Inc. and downstream customers",
+      "industry": "Technology",
+      "attacker": "Criminal gang — ShinyHunters data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Infostealer malware infected a Context.ai employee’s device, exposing credentials that provided access to Vercel’s cloud platform infrastructure.",
+      "impact": "Cloud infrastructure breach with confirmed fallout expanding to Vercel customers and third-party connected systems; full scope of customer data exposure still being determined as of May 2, 2026.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "risky.biz",
+        "cyberscoop.com"
+      ]
+    },
+    {
+      "id": "19",
+      "date": "Apr 2026",
+      "date_sort": "2026-04-15",
+      "victim": "U.S. Medicare (CMS) — Healthcare Provider Database",
+      "industry": "Healthcare",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Database misconfiguration or breach exposed the Medicare provider portal containing healthcare provider Social Security numbers.",
+      "impact": "Healthcare provider Social Security numbers exposed via the U.S. Medicare provider portal; scope and responsible party under investigation.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "reuters.com"
+      ]
+    },
+    {
+      "id": "20",
+      "date": "Mar 2026",
+      "date_sort": "2026-03-01",
+      "victim": "Hasbro Inc.",
+      "industry": "Consumer Goods",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Ransomware attack on Hasbro corporate systems.",
+      "impact": "Systems still being restored as of May 2026; Q1 2026 financial results delayed due to ongoing recovery; significant business disruption to the toy manufacturer.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "21",
+      "date": "Jan 2026",
+      "date_sort": "2026-01-15",
+      "victim": "Huge Networks (Brazilian DDoS protection firm) and Brazilian ISPs",
+      "industry": "Telecommunications",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Disruption",
+      "vector": "Hackers compromised Huge Networks’ own infrastructure using a Mirai botnet variant exploiting CVE-2023-1389, then repurposed the hijacked DDoS protection infrastructure to attack Brazilian ISPs.",
+      "impact": "Major Brazilian ISPs disrupted; a DDoS protection firm’s own infrastructure turned against the internet providers it served.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "krebsonsecurity.com"
       ]
     }
   ]
