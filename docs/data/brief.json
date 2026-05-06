@@ -1,19 +1,37 @@
 {
-  "generated_at": "2026-05-05T20:08:48.770668+00:00",
-  "period_searched": "April 14 - May 5, 2026",
-  "incident_count": 22,
+  "generated_at": "2026-05-06T08:09:21.799410+00:00",
+  "period_searched": "April 14 - May 6, 2026",
+  "incident_count": 20,
   "incidents": [
     {
       "id": "1",
+      "date": "May 6",
+      "date_sort": "2026-05-06",
+      "victim": "Ethnic Korean community (Yanbian, China)",
+      "industry": "Civil society / diaspora community",
+      "attacker": "North Korea — state-sponsored espionage (Ministry of State Security)",
+      "attacker_origin": "north_korea",
+      "motivation": "Espionage",
+      "vector": "Supply-chain compromise of a Sqgame Android card-game update package, since at least November 2024, that delivered the BirdCall backdoor when victims sideloaded the games outside the Play Store.",
+      "impact": "ESET attributes the operation to APT37 and says BirdCall harvests SMS, contacts, call logs, media files, screenshots and audio from compromised phones, with seven Android variants developed over several months. The campaign appears aimed at North Korean defectors and refugees in the border region.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "therecord.media",
+        "ESET"
+      ]
+    },
+    {
+      "id": "2",
       "date": "May 5",
       "date_sort": "2026-05-05",
-      "victim": "South American and southeastern European government agencies",
+      "victim": "Government entities in South America and southeastern Europe",
       "industry": "Government",
       "attacker": "China — state-suspected espionage group",
       "attacker_origin": "china",
       "motivation": "Espionage",
-      "vector": "Initial access via suspected zero-day or n-day exploitation, followed by deployment of custom NetDraft, CloudSorcerer, VSHELL and SNOWRUST implants for long-term access.",
-      "impact": "Talos disclosed a multi-year campaign by China-nexus group UAT-8302 against government entities in South America since late 2024 and southeastern Europe in 2025, with credential theft, AD enumeration and lateral movement across compromised networks.",
+      "vector": "Long-running intrusions deploying multiple custom malware families (NetDraft, an updated CloudSorcerer, VSHELL/SNOWLIGHT and a new Rust stager 'SNOWRUST') alongside Impacket, PowerShell recon and AD database extraction.",
+      "impact": "Cisco Talos disclosed UAT-8302, a China-nexus APT cluster targeting government networks since late 2024 (South America) and into 2025 (southeastern Europe). Toolset overlaps with several previously reported China-linked clusters and is consistent with long-term persistent access for intelligence collection.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -21,16 +39,16 @@
       ]
     },
     {
-      "id": "2",
+      "id": "3",
       "date": "May 5",
       "date_sort": "2026-05-05",
-      "victim": "Unspecified Windows enterprise victim",
-      "industry": "Unknown",
-      "attacker": "Unknown",
+      "victim": "Unidentified enterprise victims (one-time-password theft campaign)",
+      "industry": "Multi-sector",
+      "attacker": "Unknown — criminal likely",
       "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "Fake ScreenConnect updater drops a Rust loader that deploys the modular CloudZ .NET RAT, which uses a new Pheno plugin to abuse the Microsoft Phone Link bridge and read SMS-based one-time-password (OTP) data from the victim's phone.",
-      "impact": "Talos uncovered an intrusion active since at least January 2026 in which CloudZ exfiltrates browser credentials and intercepts SMS/OTP messages from synced mobile devices, undermining MFA based on text codes.",
+      "vector": "Fake ScreenConnect updater drops a Rust loader that stages an obfuscated .NET RAT (CloudZ); a custom 'Pheno' plugin abuses the Microsoft Phone Link SQLite database to siphon synced SMS messages, including SMS-based one-time passwords, without touching the phone itself.",
+      "impact": "Cisco Talos identified an intrusion active since at least January 2026 in which CloudZ exfiltrates browser credentials and intercepts Phone Link data to defeat SMS-based MFA. The operator uses Pastebin and Cloudflare Workers to rotate C2 configuration and hide traffic among legitimate browser requests.",
       "ongoing": "Y",
       "severity": "medium",
       "sources": [
@@ -38,50 +56,34 @@
       ]
     },
     {
-      "id": "3",
-      "date": "May 4",
-      "date_sort": "2026-05-04",
-      "victim": "Trellix",
-      "industry": "Cybersecurity",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "IP theft",
-      "vector": "Unspecified intrusion gaining access to internal source-code repositories.",
-      "impact": "Trellix disclosed a security breach exposing portions of its source code; the Europol partner says no product changes were made and notified law enforcement.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
       "id": "4",
       "date": "May 4",
       "date_sort": "2026-05-04",
-      "victim": "80+ organizations across the US, Western Europe and Latin America",
+      "victim": "Industrial, consulting, retail and transportation organisations in India and Russia",
       "industry": "Multi-sector",
-      "attacker": "Criminal gang — initial access broker / ransomware precursor",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Phishing emails impersonating the US Social Security Administration drive victims to a compromised site that deploys both SimpleHelp and ScreenConnect remote-monitoring tools, giving the attacker dual persistent access without traditional malware.",
-      "impact": "Securonix tracks the VENOMOUS#HELPER campaign as active since at least April 2025, hitting 80+ organizations and signaling a 277% year-over-year jump in RMM-tool abuse, with evidence the operator targets executives and cryptocurrency holders.",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "Tax-themed phishing emails impersonating Indian and Russian tax authorities deliver a modified Rust loader (RustSL) that drops the ValleyRAT backdoor and a previously undocumented Python backdoor (ABCDoor) hiding under pythonw.exe.",
+      "impact": "Kaspersky logged more than 1,600 malicious messages between January and February 2026. ABCDoor offers screen streaming, remote keyboard and mouse control, clipboard theft, file operations and limited encryption. The campaign is the China-linked group's first observed expansion into Russian targets, alongside ongoing Indian targeting.",
       "ongoing": "Y",
-      "severity": "medium",
+      "severity": "high",
       "sources": [
-        "darkreading.com"
+        "darkreading.com",
+        "Kaspersky"
       ]
     },
     {
       "id": "5",
-      "date": "May 2",
-      "date_sort": "2026-05-02",
+      "date": "May 3",
+      "date_sort": "2026-05-03",
       "victim": "Instructure (Canvas LMS)",
       "industry": "Education technology",
-      "attacker": "Criminal gang — data extortion (ShinyHunters)",
+      "attacker": "Criminal gang — data extortion",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Cybercriminal intrusion into Instructure's environment with theft of customer records; Instructure responded by revoking privileged credentials, rotating tokens and deploying patches.",
-      "impact": "ShinyHunters claimed theft of 3.6 TB of data covering more than 9,000 schools using the Canvas learning platform; Instructure confirmed names, emails, student IDs and user messages were exposed but said financial data and passwords were not.",
+      "vector": "Unauthorised access to Instructure systems was discovered Friday night; ShinyHunters claimed responsibility two days later. Initial access vector has not been disclosed; containment included revoking privileged credentials and access tokens.",
+      "impact": "Hackers accessed names, email addresses, student IDs and user-to-user messages at unspecified educational institutions. The group claims 3.6 TB of data covering more than 9,000 schools. Instructure says no passwords, financial information or government documents were taken.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -90,103 +92,51 @@
     },
     {
       "id": "6",
-      "date": "Late Apr",
-      "date_sort": "2026-04-30",
-      "victim": "Moldova National Health Insurance Agency (CNAM)",
-      "industry": "Government / Healthcare",
-      "attacker": "Russia — state-linked espionage group (suspected)",
-      "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "Unspecified intrusion of CNAM database systems with no ransom demand; Moldova's cyber agency has not ruled out Russian involvement.",
-      "impact": "Moldovan officials confirmed theft of personal and financial information on essentially every adult who paid into the national health insurance scheme, plus financial data on private medical providers; reports indicate roughly 30% of the database was impacted.",
+      "date": "May 1",
+      "date_sort": "2026-05-01",
+      "victim": "Trellix",
+      "industry": "Cybersecurity vendor",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Undisclosed access path into a portion of Trellix's source code repository.",
+      "impact": "Trellix disclosed a threat actor gained unauthorised access to part of its source code. The company says it has found no evidence the source-code release or distribution process was affected, but source-code visibility could expose detection logic and control placement to attackers. Investigation continues with outside forensics support.",
       "ongoing": "Y",
-      "severity": "critical",
+      "severity": "medium",
       "sources": [
-        "risky.biz"
+        "darkreading.com",
+        "Trellix statement"
       ]
     },
     {
       "id": "7",
-      "date": "Late Apr",
-      "date_sort": "2026-04-30",
-      "victim": "Cuban Embassy in Washington and 5,000+ Microsoft Exchange servers",
-      "industry": "Diplomatic / Multi-sector",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Mass exploitation of Microsoft Exchange email servers to access mailboxes; the same actor compromised more than 5,000 Exchange servers in 2026.",
-      "impact": "Chinese state-linked hackers reportedly breached the Cuban embassy in Washington to spy on the US-led naval blockade of Iran, lifting diplomatic email inboxes as part of a broader Exchange-server hacking campaign.",
-      "ongoing": "Y",
-      "severity": "high",
+      "date": "May 2",
+      "date_sort": "2026-05-02",
+      "victim": "Wasabi Protocol (DeFi)",
+      "industry": "Cryptocurrency / DeFi",
+      "attacker": "Criminal gang — financially motivated",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Attacker allegedly compromised an admin account on Wasabi Protocol and reduced the delay on admin actions to zero, allowing instant malicious transactions across the platform's multi-chain integration.",
+      "impact": "Approximately $5 million in crypto assets stolen via cross-chain integrations, joining a string of DeFi heists in recent weeks.",
+      "ongoing": "N",
+      "severity": "medium",
       "sources": [
         "risky.biz"
       ]
     },
     {
       "id": "8",
-      "date": "Apr 30",
-      "date_sort": "2026-04-30",
-      "victim": "Delta Dental Insurance Company and Delta Dental of New York",
-      "industry": "Healthcare insurance",
-      "attacker": "Criminal gang — data extortion (Cl0p MOVEit campaign)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Threat actors exploited the 2023 MOVEit Transfer zero-day to access file-transfer servers used by Delta Dental affiliates.",
-      "impact": "NYDFS announced a $2.25M settlement for inadequate incident-response and late breach reporting; the underlying 2023 incident exposed names, addresses, SSNs, driver's licenses, financial accounts and patient health information.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "dfs.ny.gov"
-      ]
-    },
-    {
-      "id": "9",
-      "date": "Late Apr",
-      "date_sort": "2026-04-29",
-      "victim": "cPanel / WHM-hosted websites (millions exposed, ~15,000 confirmed compromised)",
-      "industry": "Web hosting / Internet infrastructure",
-      "attacker": "Multiple criminal actors — ransomware and botnet operators",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Authentication-bypass flaw CVE-2026-41940 (CVSS 9.8) in cPanel/WHM session handling allows unauthenticated remote takeover and code execution; multiple working PoCs surfaced within 24 hours of disclosure.",
-      "impact": "Censys observed about 15,000 compromised instances within 24 hours of disclosure, with attackers deploying Mirai botnet variants, the .sorry ransomware and defacement payloads; KnownHost confirmed in-the-wild exploitation since at least 23 February 2026 and Shadowserver counts 44,000+ already compromised cPanel systems.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "darkreading.com",
-        "cyber.gov.au",
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "10",
-      "date": "Late Apr",
-      "date_sort": "2026-04-29",
-      "victim": "DigiCert",
-      "industry": "Public Key Infrastructure / Certificate Authority",
-      "attacker": "Unknown — criminal likely (Zhong Stealer / GoldenEyeDog links)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Social-engineering attack on tech-support staff posing as customers; targets were tricked into running a malicious .SCR Windows-screensaver file, and a misconfigured CrowdStrike EDR agent allowed access to persist for nearly two weeks.",
-      "impact": "Attackers stole initialization codes for in-progress EV code-signing orders and obtained 27 EV code-signing certificates, then used them to sign Zhong Stealer payloads tied to cryptocurrency theft; all 27 certificates were later revoked.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "11",
-      "date": "Late Apr",
-      "date_sort": "2026-04-29",
+      "date": "May 1",
+      "date_sort": "2026-05-01",
       "victim": "Mediaworks (Hungary)",
       "industry": "Media",
-      "attacker": "Criminal gang — data extortion (World Leaks / ex-Hunters International)",
+      "attacker": "Criminal gang — data extortion",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Data-theft and extortion intrusion against the publisher's environment; method not disclosed.",
-      "impact": "World Leaks published roughly 8.5 TB of allegedly sensitive Mediaworks data including payroll, contracts, financial statements and editorial communications; leaked memos suggest the pro-Orbán publisher coordinated anti-Ukraine messaging with Moscow contacts.",
-      "ongoing": "Y",
+      "vector": "Data-theft extortion attack by World Leaks (a rebrand of Hunters International); intrusion details have not been disclosed.",
+      "impact": "World Leaks published roughly 8.5 TB of allegedly stolen files including payroll, contracts, financial statements and editorial communications. Independent outlets reported the leaked notes contain a January 2025 editorial-meeting reference to 'contacting Moscow for help' on anti-Zelensky coverage. Mediaworks confirmed the breach and is pursuing legal action against outlets that report on the leak.",
+      "ongoing": "N",
       "severity": "high",
       "sources": [
         "therecord.media",
@@ -194,33 +144,16 @@
       ]
     },
     {
-      "id": "12",
-      "date": "Apr",
-      "date_sort": "2026-04-25",
-      "victim": "Carnival Corporation",
-      "industry": "Travel / Hospitality (cruise lines)",
-      "attacker": "Criminal gang — data extortion (ShinyHunters)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Data theft from a 2026 ShinyHunters campaign that also hit Zara, 7-Eleven, Udemy and Medtronic.",
-      "impact": "Personal data of 7.5 million Carnival customers was leaked online by ShinyHunters as part of a wider mass-extortion spree against major consumer brands.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "13",
-      "date": "Apr",
-      "date_sort": "2026-04-25",
-      "victim": "Canada Life",
-      "industry": "Financial services / Insurance",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Compromise of an employee account used to access customer-data systems.",
-      "impact": "Canada Life confirmed customer data was stolen via a compromised employee account; the company says the incident is contained and is investigating the scope of exposure.",
+      "id": "9",
+      "date": "May 1",
+      "date_sort": "2026-05-01",
+      "victim": "Canonical (Ubuntu)",
+      "industry": "Software / open source infrastructure",
+      "attacker": "Unknown — pro-Palestinian hacktivist",
+      "attacker_origin": "unknown",
+      "motivation": "Disruption",
+      "vector": "Volumetric distributed denial-of-service against Ubuntu/Canonical web infrastructure and APIs, claimed by a hacktivist group calling itself the 313 Team.",
+      "impact": "DDoS over Thursday and Friday took down most Ubuntu/Canonical web properties, preventing users from installing or updating Ubuntu systems. The same group claimed previous attacks on Bluesky and Mastodon.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
@@ -228,157 +161,203 @@
       ]
     },
     {
-      "id": "14",
-      "date": "Apr 23",
-      "date_sort": "2026-04-23",
-      "victim": "US federal civilian executive branch agencies (Cisco ASA / FTD users)",
-      "industry": "Government / Critical infrastructure",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
+      "id": "10",
+      "date": "Apr 29",
+      "date_sort": "2026-04-29",
+      "victim": "Moldova national health insurance agency (CNAM)",
+      "industry": "Government / healthcare",
+      "attacker": "Unknown — Russia suspected",
+      "attacker_origin": "unknown",
       "motivation": "Espionage",
-      "vector": "APT actors exploited CVE-2025-20333 and CVE-2025-20362 in Cisco ASA firmware to deploy the FIRESTARTER malware on Firepower and Secure Firewall devices, achieving persistence that survives firmware patching.",
-      "impact": "CISA, NCSC-UK and ASD's ACSC issued joint guidance and updated Emergency Directive 25-03 after detecting FIRESTARTER on FCEB devices; previously patched Cisco firewalls remained compromised, prompting required forensic collection and YARA-based detection across federal and allied networks.",
+      "vector": "Intrusion into Moldova's national healthcare database; specific entry vector has not been disclosed.",
+      "impact": "Moldovan officials confirmed sensitive data was stolen from CNAM, which holds personal and financial details on virtually every adult resident plus financials on contracted private medical providers. Around 30% of agency data was reportedly impacted (stolen and/or restored from backup). No ransom demand was made; the cybersecurity agency did not rule out Russian involvement amid heightened Moscow-Chișinău tensions.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "risky.biz",
+        "CNAM statement"
+      ]
+    },
+    {
+      "id": "11",
+      "date": "Apr 30",
+      "date_sort": "2026-04-30",
+      "victim": "Brazilian internet service providers",
+      "industry": "Telecommunications",
+      "attacker": "Criminal gang — DDoS botnet operator",
+      "attacker_origin": "criminal",
+      "motivation": "Disruption",
+      "vector": "Mirai-variant botnet built on TP-Link Archer AX21 routers vulnerable to CVE-2023-1389 plus open DNS resolvers used for amplification. Attack scripts were keyed to private SSH credentials and Huge Networks IP space.",
+      "impact": "An exposed file archive showed an extended campaign of large DDoS attacks against small Brazilian ISPs, run from infrastructure tied to Brazilian DDoS-mitigation provider Huge Networks. The CEO blames a January intrusion of two dev servers and his personal SSH keys; investigators are still tracing the operator. Each prefix was hit for 10–60 seconds at a time.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "cisa.gov",
-        "cyber.gov.au"
+        "krebsonsecurity.com"
+      ]
+    },
+    {
+      "id": "12",
+      "date": "Apr 30",
+      "date_sort": "2026-04-30",
+      "victim": "Cuban Embassy in Washington, DC",
+      "industry": "Government / diplomatic",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "Compromise of a Microsoft Exchange email server at the embassy, part of a broader campaign that hit more than 5,000 Exchange servers this year.",
+      "impact": "Chinese hackers stole Cuban diplomats' email inboxes to gather intelligence on the U.S. naval blockade of Cuba, per Bloomberg reporting cited by industry trackers.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "risky.biz",
+        "Bloomberg"
+      ]
+    },
+    {
+      "id": "13",
+      "date": "Apr 29",
+      "date_sort": "2026-04-29",
+      "victim": "Linux systems globally (Ubuntu, RHEL, SUSE, Debian, AlmaLinux, Amazon Linux)",
+      "industry": "Cross-sector / Linux ecosystem",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "CVE-2026-31431 'Copy Fail' — a deterministic logic flaw in the Linux kernel algif_aead AEAD module lets a local unprivileged user write four controlled bytes into the kernel page cache of setuid binaries (su, sudo) for instant root, without race conditions.",
+      "impact": "Researchers disclosed the bug on April 29 with a 732-byte Python PoC that works unmodified across most mainstream distros built since 2017. CISA added it to the Known Exploited Vulnerabilities catalog on May 1; researchers report active in-the-wild exploitation. The flaw enables Kubernetes container escapes and CI/CD pipeline takeover.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "unit42.paloaltonetworks.com",
+        "cyberscoop.com",
+        "CISA KEV"
+      ]
+    },
+    {
+      "id": "14",
+      "date": "Apr 28",
+      "date_sort": "2026-04-28",
+      "victim": "Web hosting providers and cPanel-managed sites (incl. Guam government)",
+      "industry": "Hosting / web infrastructure",
+      "attacker": "Criminal gang — multiple actors",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "CVE-2026-41940, an authentication bypass (CVSS 9.8) affecting all supported versions of cPanel/WHM/WP Squared. PoC and patch-diff appeared within a day, spawning Mirai botnet payloads, a '.sorry'-extension ransomware, fake-extortion defacements demanding $8,000 in BTC, and worming behaviour.",
+      "impact": "Censys logged ~15,000 potentially compromised cPanel instances within 24 hours; Shadowserver later put the figure at more than 44,000 systems. KnownHost and others observed in-the-wild exploitation as far back as Feb 23, before disclosure. Defaced victims include several Guam government websites. The flaw sits on management ports of infrastructure powering ~70 million domains.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "darkreading.com",
+        "cyber.gov.au",
+        "cyberscoop.com",
+        "risky.biz"
       ]
     },
     {
       "id": "15",
       "date": "Apr 23",
       "date_sort": "2026-04-23",
-      "victim": "Anonymous enterprise victim (Mandiant client)",
-      "industry": "Unknown",
+      "victim": "Unidentified enterprise victim (Mandiant case study)",
+      "industry": "Multi-sector",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "Threat group UNC6692 followed an email-bomb 'helpdesk' lure with Microsoft Teams social engineering, tricking the victim into running an AutoHotKey loader that installed the SNOWBELT browser extension and SNOWGLAZE tunnel for AD/LSASS dumping and pass-the-hash to the domain controller.",
-      "impact": "Google Threat Intelligence Group documented a multistage UNC6692 intrusion ('Snow Flurries') that achieved deep network penetration, dumped the NTDS.dit and SAM hives via FTK Imager and exfiltrated them via LimeWire — illustrating advanced helpdesk-impersonation tradecraft.",
-      "ongoing": "N",
+      "motivation": "Unclear",
+      "vector": "Email-bombing followed by Microsoft Teams chat from a fake IT helpdesk persona; victim was lured to install a 'Mailbox Repair Utility' that dropped an AutoHotKey loader, a malicious Edge browser extension (SNOWBELT), and tunnelling implants (SNOWGLAZE/SNOWBASIN). LSASS memory was exfiltrated via LimeWire and pass-the-hash used to reach the domain controller.",
+      "impact": "Google Threat Intelligence Group disclosed UNC6692, a multi-stage intrusion that achieved deep network compromise including extraction of NTDS.dit, SAM, SYSTEM and SECURITY hives via FTK Imager and screen-capture of Domain Administrator activity, all while exfiltrating data through attacker-controlled AWS S3 buckets.",
+      "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "cloud.google.com"
+        "cloud.google.com (Mandiant)"
       ]
     },
     {
       "id": "16",
       "date": "Apr 23",
       "date_sort": "2026-04-23",
-      "victim": "KICS vulnerability scanner users (incl. Bitwarden CLI)",
-      "industry": "Software supply chain / Cybersecurity",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Attackers pushed malicious versions of the KICS Docker image, GitHub Action and VS Code extension — the second supply-chain compromise of the Checkmarx-managed scanner in a month.",
-      "impact": "Bitwarden CLI was confirmed as the first major downstream victim of the KICS supply-chain compromise; users of the KICS Docker image and integrations were exposed to attacker-controlled code.",
+      "victim": "U.S. Federal Civilian Executive Branch agencies (Cisco ASA / Firepower / Secure Firewall users)",
+      "industry": "Government / critical infrastructure",
+      "attacker": "Unknown — state actor (suspected)",
+      "attacker_origin": "unknown",
+      "motivation": "Espionage",
+      "vector": "Advanced persistent threat actor exploited Cisco ASA flaws CVE-2025-20333 and CVE-2025-20362 to install FIRESTARTER, a remote-access implant that survives firmware patching on Cisco ASA, Firepower 1000/2100/4100/9300 and Secure Firewall 1200/3100/4200 series.",
+      "impact": "CISA, in a malware analysis report co-sealed with NCSC-UK, said proactive monitoring of FCEB Cisco devices uncovered live FIRESTARTER infections and that simply patching firmware does not remove the actor. CISA Emergency Directive 25-03 was updated, requiring federal agencies to identify in-scope appliances, generate forensic data and apply new vendor updates. ACSC issued a parallel high alert.",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "critical",
       "sources": [
-        "risky.biz"
+        "cisa.gov",
+        "ncsc.gov.uk",
+        "cyber.gov.au",
+        "blog.talosintelligence.com"
       ]
     },
     {
       "id": "17",
       "date": "Apr 22",
       "date_sort": "2026-04-22",
-      "victim": "Bundestag President Julia Klöckner / German federal government",
+      "victim": "German Bundestag President Julia Klöckner",
       "industry": "Government",
       "attacker": "Russia — state-linked espionage group",
       "attacker_origin": "russia",
       "motivation": "Espionage",
-      "vector": "Russian operators used Signal account-takeover techniques to compromise the Bundestag President's Signal account, gaining visibility into a sensitive group chat that included Chancellor Friedrich Merz.",
-      "impact": "Russian cyber spies eavesdropped on a Signal group containing senior German officials including the Chancellor; Merz's own account was not breached, but Germany's BSI confirmed sustained Russian phishing of Signal/WhatsApp accounts of European officials.",
+      "vector": "Compromise of a Signal account belonging to the Bundestag President; part of a broader Russia-attributed Signal/WhatsApp targeting campaign flagged by Germany's cybersecurity agency earlier in the year.",
+      "impact": "Russian cyber spies gained access to a sensitive Signal group chat that included Chancellor Friedrich Merz, allowing the actor to read messages from senior German leadership. Merz's own account was not compromised. (Der Spiegel reporting.)",
       "ongoing": "N",
-      "severity": "critical",
+      "severity": "high",
       "sources": [
-        "risky.biz"
+        "risky.biz",
+        "Der Spiegel"
       ]
     },
     {
       "id": "18",
-      "date": "Apr 22",
-      "date_sort": "2026-04-22",
-      "victim": "Sri Lanka Ministry of Finance",
-      "industry": "Government / Financial",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
+      "date": "Apr 14-16",
+      "date_sort": "2026-04-16",
+      "victim": "Approx. 13,000 organisations across 26 countries (92% U.S.)",
+      "industry": "Healthcare, financial services, professional services, technology",
+      "attacker": "Criminal gang — financially motivated",
+      "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Funds were diverted during a foreign-debt repayment workflow; Australian law enforcement is assisting with attribution.",
-      "impact": "Hackers stole $2.5 million from a debt repayment intended for Australia, prompting cross-border investigation.",
+      "vector": "Multi-wave phishing impersonating internal compliance teams ('Internal Regulatory COC', 'Workforce Communications'), with PDF attachments linking through Cloudflare CAPTCHAs and intermediate sites to a 'Sign in with Microsoft' adversary-in-the-middle proxy that captures live authentication tokens.",
+      "impact": "Microsoft Defender Research observed more than 35,000 targeted users between April 14 and 16. AiTM token theft bypasses non-phishing-resistant MFA, granting immediate account access; campaign infrastructure used likely cloud-hosted Windows VMs and attacker-controlled .de domains.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
-        "risky.biz"
+        "microsoft.com (MSTIC)"
       ]
     },
     {
       "id": "19",
-      "date": "Apr 22",
-      "date_sort": "2026-04-22",
-      "victim": "UK Biobank",
-      "industry": "Healthcare / Research",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "criminal",
+      "date": "Early Apr",
+      "date_sort": "2026-04-10",
+      "victim": "DigiCert",
+      "industry": "Public-key infrastructure / certificate authority",
+      "attacker": "Unknown — China-linked criminal suspected",
+      "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "Data-theft incident with stolen records subsequently offered for sale on the Alibaba marketplace.",
-      "impact": "Personal information of about 500,000 people who voluntarily contributed medical and genetic data to the UK Biobank was found being offered for sale online.",
+      "vector": "Social-engineering attack against DigiCert tech support: an attacker posing as a customer convinced two staffers to run a malicious Windows screensaver (.SCR) file. On one workstation a misconfigured CrowdStrike EDR agent (disconnected from its management server) failed to alert, giving the actor nearly two weeks of access.",
+      "impact": "Attacker stole 'initialization codes' for in-flight EV code-signing orders, then obtained 27 EV code-signing certificates across multiple customer accounts. The certificates were used to sign payloads delivering Zhong Stealer, a malware family historically tied to a Chinese e-crime cluster. DigiCert revoked all 60 affected certificates after a third-party researcher reported the abuse.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
-        "risky.biz"
+        "risky.biz",
+        "DigiCert post-mortem"
       ]
     },
     {
       "id": "20",
-      "date": "Apr 21",
-      "date_sort": "2026-04-21",
-      "victim": "Anthropic (Claude Mythos cybersecurity model)",
-      "industry": "Artificial intelligence / Technology",
-      "attacker": "Unknown — small group of AI hobbyists",
+      "date": "Apr 22",
+      "date_sort": "2026-04-22",
+      "victim": "Sri Lanka Ministry of Finance",
+      "industry": "Government / finance",
+      "attacker": "Unknown",
       "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Use of leaked contractor credentials combined with guessing of internal Mythos operating endpoints on launch day.",
-      "impact": "A group of AI hobbyists obtained access to Anthropic's private cybersecurity-focused Mythos agent on its launch day; Anthropic said no malicious prompts were issued and the access was used only to 'play around'.",
-      "ongoing": "N",
-      "severity": "low",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "21",
-      "date": "Apr 14",
-      "date_sort": "2026-04-14",
-      "victim": "35,000+ users across 13,000+ organizations in 26 countries (92% US)",
-      "industry": "Multi-sector (healthcare, financial services, professional services, technology)",
-      "attacker": "Criminal gang — credential theft / AiTM phishing",
-      "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Multi-stage phishing emails posing as internal 'code of conduct' compliance reviews used PDF attachments, Cloudflare CAPTCHAs and a chain of attacker-controlled .de domains to steer users into a Microsoft adversary-in-the-middle (AiTM) sign-in flow that captured authentication tokens.",
-      "impact": "Microsoft Defender Research observed targeted theft of session tokens that bypass non-phishing-resistant MFA, hitting tens of thousands of users between 14-16 April with healthcare, financial-services and tech firms most affected.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "microsoft.com"
-      ]
-    },
-    {
-      "id": "22",
-      "date": "Jan 2026",
-      "date_sort": "2026-01-15",
-      "victim": "Industrial, consulting, retail and transportation organizations in India and Russia",
-      "industry": "Multi-sector",
-      "attacker": "China — state-suspected espionage group (Silver Fox)",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Tax-themed phishing emails impersonating Indian and Russian tax authorities deliver a Rust-based loader that pulls down ValleyRAT and the previously undocumented Python-based ABCDoor backdoor, which abuses pythonw.exe and Socket.IO over HTTPS to hide its remote-control traffic.",
-      "impact": "Kaspersky logged 1,600+ malicious tax-themed messages in this campaign between early January and early February, with Silver Fox's first observed expansion into Russia and persistent surveillance capabilities including multi-monitor screen streaming, clipboard theft and remote input control.",
+      "vector": "Hijack of a foreign-debt repayment workflow; the precise compromise method has not been disclosed.",
+      "impact": "Approximately $2.5 million scheduled for debt repayment to Australia was diverted by attackers. Sri Lanka has requested investigative help from Australian law enforcement.",
       "ongoing": "Y",
       "severity": "medium",
       "sources": [
-        "darkreading.com"
+        "risky.biz",
+        "ABC"
       ]
     }
   ]
