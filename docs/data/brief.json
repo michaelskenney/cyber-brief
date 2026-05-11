@@ -1,92 +1,91 @@
 {
-  "generated_at": "2026-05-10T20:06:03.714182+00:00",
-  "period_searched": "April 27 – May 10, 2026",
-  "incident_count": 16,
+  "generated_at": "2026-05-11T08:07:34.386985+00:00",
+  "period_searched": "April 27 - May 11, 2026",
+  "incident_count": 24,
   "incidents": [
     {
       "id": "1",
-      "date": "May 7",
-      "date_sort": "2026-05-07",
-      "victim": "Instructure / Canvas (≈9,000 K-12 districts and universities; ~275M individuals)",
-      "industry": "Education / EdTech (SaaS)",
+      "date": "May 7-8",
+      "date_sort": "2026-05-08",
+      "victim": "Instructure (Canvas) — 9,000 universities & K-12 schools",
+      "industry": "Education technology",
       "attacker": "Criminal gang — data extortion (ShinyHunters)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Voice phishing and social engineering of staff via Free-For-Teacher accounts gave the attackers repeated access to Canvas back-end systems, including a second intrusion after Instructure claimed containment.",
-      "impact": "Roughly 3.65TB of names, emails, student ID numbers and billions of private messages from ~9,000 institutions stolen; defacements forced Canvas offline mid-finals across major U.S. universities and K-12 districts; Instructure suspended Free-For-Teacher accounts and notified FBI/CISA.",
+      "vector": "Voice phishing of employee Okta SSO credentials; attackers exploited a Free-For-Teacher account issue to maintain access after initial containment, then defaced the Canvas login page with a ransom demand.",
+      "impact": "Canvas platform taken fully offline during final exams week, disrupting Baylor, Penn, Duke, Princeton, Ohio State and dozens of other universities; ShinyHunters claims 3.6 TB of data including names, emails, student IDs and messages on 275M students and faculty.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
-        "krebsonsecurity.com",
-        "darkreading.com",
         "therecord.media",
-        "bloomberg.com",
+        "krebsonsecurity.com",
         "risky.biz"
       ]
     },
     {
       "id": "2",
-      "date": "May 8",
-      "date_sort": "2026-05-08",
-      "victim": "NYC Public Schools (one Manhattan campus computer lab)",
-      "industry": "Government / K-12 education",
+      "date": "May 7",
+      "date_sort": "2026-05-07",
+      "victim": "Ivanti Endpoint Manager Mobile (EPMM) customers",
+      "industry": "Enterprise mobility / Software vendor",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "Malware installed on shared computer-lab machines at a Manhattan school community, discovered amid the broader Canvas outage.",
-      "impact": "Malware was removed and the district is investigating with local police; no further disclosure of data loss or attribution yet.",
-      "ongoing": "N",
-      "severity": "low",
+      "vector": "Improper input validation vulnerability (CVE-2026-6973) in Ivanti EPMM under active exploitation; CISA added it to the Known Exploited Vulnerabilities catalog.",
+      "impact": "Federal Civilian Executive Branch agencies ordered to remediate; affects organizations worldwide using Ivanti EPMM for mobile device management.",
+      "ongoing": "Y",
+      "severity": "high",
       "sources": [
-        "bloomberg.com"
+        "cisa.gov"
       ]
     },
     {
       "id": "3",
-      "date": "May 8",
-      "date_sort": "2026-05-08",
-      "victim": "U.S. federal agency software contractor (45+ federal agencies including EEOC)",
-      "industry": "Government IT services",
-      "attacker": "Criminal gang — insider abuse",
-      "attacker_origin": "criminal",
-      "motivation": "Disruption",
-      "vector": "Two fired contractor employees (Sohaib and Muneem Akhter) used stolen credentials to access protected federal databases without authorization after termination.",
-      "impact": "Sohaib Akhter convicted on federal computer-fraud and identity charges for deleting 96 government databases and destroying evidence; he faces up to 21 years in prison.",
-      "ongoing": "N",
-      "severity": "high",
+      "date": "May 6-7",
+      "date_sort": "2026-05-07",
+      "victim": "Palo Alto Networks PAN-OS firewall customers",
+      "industry": "Network security / Firewalls",
+      "attacker": "Unknown — state-sponsored suspected",
+      "attacker_origin": "unknown",
+      "motivation": "Espionage",
+      "vector": "Buffer-overflow zero-day (CVE-2026-0300, CVSS 9.3) in PAN-OS User-ID Authentication Portal; unauthenticated RCE on PA-Series and VM-Series firewalls. Attackers injected shellcode into nginx, deployed EarthWorm and ReverseSocks5 tunnels, and used firewall service-account credentials for Active Directory enumeration.",
+      "impact": "Patches not yet available (expected May 13); CISA ordered federal agencies to apply mitigations immediately. Over 5,800 publicly exposed VM-Series firewalls identified. Unit 42 tracks the activity as CL-STA-1132 — a likely state-sponsored cluster.",
+      "ongoing": "Y",
+      "severity": "critical",
       "sources": [
-        "therecord.media",
-        "justice.gov"
+        "cyberscoop.com",
+        "unit42.paloaltonetworks.com",
+        "therecord.media"
       ]
     },
     {
       "id": "4",
-      "date": "May 8",
-      "date_sort": "2026-05-08",
-      "victim": "Anthropic Claude Chrome extension users",
-      "industry": "AI / consumer software",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Researcher (LayerX) found Claude's Chrome extension allowed any other browser extension — even without special permissions — to inject hidden instructions and hijack the AI agent across Google Drive, Gmail and GitHub.",
-      "impact": "Demonstrated exfiltration of Drive files, surveillance of email, and theft of private GitHub source code; Anthropic shipped only a partial fix on May 6 and the researcher still bypassed it in some scenarios.",
-      "ongoing": "Y",
+      "date": "May 7",
+      "date_sort": "2026-05-07",
+      "victim": "Carnival cruise customers (7.5 million)",
+      "industry": "Travel / Hospitality",
+      "attacker": "Criminal gang — data extortion (ShinyHunters)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Personal data stolen in an earlier 2026 ShinyHunters intrusion was published online this week. The same campaign also hit Zara, 7-Eleven, Udemy and Medtronic.",
+      "impact": "7.5 million customer records leaked publicly; high risk of follow-on phishing and identity-theft scams.",
+      "ongoing": "N",
       "severity": "high",
       "sources": [
-        "cyberscoop.com"
+        "risky.biz"
       ]
     },
     {
       "id": "5",
-      "date": "May 7",
-      "date_sort": "2026-05-07",
-      "victim": "Microsoft customers (SharePoint, Defender, Chrome, Adobe Reader)",
-      "industry": "Software vendors / cross-industry",
+      "date": "May 6",
+      "date_sort": "2026-05-06",
+      "victim": "Microsoft customers — SharePoint and Windows Defender",
+      "industry": "Enterprise software",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "May Patch Tuesday addressed 167 Microsoft CVEs, including SharePoint zero-day CVE-2026-32201 (spoof/social-engineering, under active exploitation) and Windows Defender flaw 'BlueHammer'; Chrome and Adobe Reader also patched actively exploited zero-days.",
-      "impact": "Active exploitation of the SharePoint flaw enables phishing and impersonation inside trusted SharePoint environments; risk extends to any internet-facing SharePoint deployment until patched.",
+      "vector": "Microsoft May 2026 Patch Tuesday fixed 167 vulnerabilities, including an actively-exploited SharePoint Server spoofing zero-day (CVE-2026-32201) and a publicly-disclosed Windows Defender privilege-escalation bug dubbed 'BlueHammer' (CVE-2026-33825).",
+      "impact": "SharePoint flaw enables spoofing of trusted content to fuel phishing, data manipulation and social-engineering against employees, partners and customers; defenders urged to patch immediately.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -95,50 +94,16 @@
     },
     {
       "id": "6",
-      "date": "May 6",
-      "date_sort": "2026-05-06",
-      "victim": "Palo Alto Networks PAN-OS firewall customers",
-      "industry": "Network security / cross-industry",
-      "attacker": "State-suspected espionage group (cluster CL-STA-1132)",
-      "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "Unauthenticated buffer-overflow zero-day CVE-2026-0300 in PAN-OS User-ID Authentication (Captive) Portal allows remote code execution as root; attackers injected shellcode into the nginx worker and used SAML floods to fail over to a second device.",
-      "impact": "Limited but confirmed exploitation; post-compromise activity included EarthWorm/ReverseSocks5 tunnelers, Active Directory enumeration with stolen firewall service-account credentials, and systematic log wiping.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "unit42.paloaltonetworks.com"
-      ]
-    },
-    {
-      "id": "7",
-      "date": "May 6",
-      "date_sort": "2026-05-06",
-      "victim": "DAEMON Tools (AVB Disc Soft) users — selected government, scientific, manufacturing and retail orgs in Russia, Belarus and Thailand",
-      "industry": "Software supply chain",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Attackers compromised AVB Disc Soft's build/signing pipeline and shipped backdoored DAEMON Tools installers signed with the vendor's legitimate certificate from at least April 8; selected victims received a second-stage QUIC RAT.",
-      "impact": "Thousands of infections; targeted deployment of QUIC RAT against ~12 high-value organizations for likely espionage; pattern matches prior Chinese-speaking-actor supply-chain operations (CCleaner 2017, Notepad++ 2025).",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "8",
       "date": "May 5",
       "date_sort": "2026-05-05",
       "victim": "Trellix (cybersecurity vendor)",
-      "industry": "Cybersecurity vendor",
+      "industry": "Cybersecurity / Software",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "Unauthorized access to a portion of Trellix's source-code repository; entry method not disclosed.",
-      "impact": "Trellix says it has no evidence the build/release pipeline or shipped source was tampered with; concerns remain that stolen source code may reveal detection logic and control locations, giving attackers a roadmap to evade Trellix products downstream.",
-      "ongoing": "Y",
+      "vector": "Unauthorized access to a portion of Trellix's source code repository; the company has not disclosed how the breach occurred.",
+      "impact": "Trellix says no evidence its source-code release or distribution process was affected or that source code was exploited; raises supply-chain concerns for downstream customers since source code can reveal where security controls and detections are implemented.",
+      "ongoing": "N",
       "severity": "high",
       "sources": [
         "darkreading.com",
@@ -146,16 +111,104 @@
       ]
     },
     {
-      "id": "9",
-      "date": "Early May",
-      "date_sort": "2026-05-04",
-      "victim": "DigiCert (certificate authority) and ~27 downstream EV code-signing customers",
-      "industry": "Public key infrastructure / cross-industry",
-      "attacker": "Criminal gang — likely Chinese-speaking",
+      "id": "7",
+      "date": "May 5",
+      "date_sort": "2026-05-05",
+      "victim": "Government entities in South America and southeastern Europe",
+      "industry": "Government",
+      "attacker": "China — state-suspected espionage group",
       "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "China-nexus APT 'UAT-8302' deploys custom malware including NetDraft (a C# variant of FinalDraft/SquidDoor), an updated CloudSorcerer backdoor, VSHELL, the SNOWLIGHT stager and a new Rust-based SNOWRUST stager after initial access; uses Impacket and PowerShell for AD reconnaissance.",
+      "impact": "Long-term access to government networks across multiple regions; shared tooling indicates a tight operational cluster with several other publicly known Chinese-speaking APTs.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "blog.talosintelligence.com"
+      ]
+    },
+    {
+      "id": "8",
+      "date": "May 5",
+      "date_sort": "2026-05-05",
+      "victim": "Unnamed enterprise (Phone Link OTP theft target)",
+      "industry": "Various / Targeted",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "Social engineering: attacker posed as a customer and tricked two DigiCert tech-support staff into running a malicious .SCR (Windows screensaver) file; one CrowdStrike EDR agent was misconfigured and not reporting, letting the attacker dwell for nearly two weeks.",
-      "impact": "27 EV code-signing certificates stolen and used to sign Zhong Stealer payloads (linked to Chinese e-crime group GoldenEyeDog/APT-Q-27); all 60 in-flight EV orders revoked and customer initialization codes exposed.",
+      "vector": "Attacker implants the CloudZ RAT (delivered via a fake ScreenConnect update and a Rust dropper that drops a .NET loader) plus a new 'Pheno' plugin that hijacks Microsoft Phone Link's PC-to-phone bridge to read SMS-based OTPs from the synced SQLite database.",
+      "impact": "Allows interception of authenticator and SMS OTP messages without compromising the victim's phone; active since at least January 2026 and demonstrates a novel MFA-bypass technique.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "blog.talosintelligence.com"
+      ]
+    },
+    {
+      "id": "9",
+      "date": "May 5",
+      "date_sort": "2026-05-05",
+      "victim": "Linux server and Kubernetes operators (broad)",
+      "industry": "Cloud / Infrastructure",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "'Copy Fail' (CVE-2026-31431) — deterministic logic flaw in the Linux kernel's algif_aead crypto module allows any local unprivileged user to overwrite the page cache of setuid binaries (e.g. /usr/bin/su) and escalate to root using a 732-byte Python script. Works across Ubuntu, RHEL, SUSE, Amazon Linux, Debian and others (kernels 4.14-6.19.12).",
+      "impact": "Enables container escape, multi-tenant compromise and CI/CD pipeline takeover. Added to the CISA KEV catalog; a fully working PoC is public and exploitation is expected to spread quickly.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "microsoft.com",
+        "unit42.paloaltonetworks.com"
+      ]
+    },
+    {
+      "id": "10",
+      "date": "Early May",
+      "date_sort": "2026-05-05",
+      "victim": "US Department of Defense — service member records (via Schemata)",
+      "industry": "Defense / Government",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "AI virtual-training platform Schemata, a DOD contractor, exposed US service member records and sensitive military training course data via an API left online without authentication. Researcher firm Strix reported the issue; Schemata took 150 days to secure it.",
+      "impact": "Sensitive defense training material and personnel records exposed for an extended period to anyone with the API endpoint.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "risky.biz",
+        "cyberscoop.com"
+      ]
+    },
+    {
+      "id": "11",
+      "date": "May 4-7",
+      "date_sort": "2026-05-04",
+      "victim": "Mediaworks (Hungarian pro-Orbán media conglomerate)",
+      "industry": "Media",
+      "attacker": "Criminal gang — data extortion (World Leaks / former Hunters International)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Ransomware-style intrusion followed by data theft; World Leaks (a Hunters International rebrand focused on extortion without encryption) published nearly 8.5 TB of internal files on its dark-web leak site.",
+      "impact": "Leak exposed payroll, contracts, financial statements and editorial communications — including a January 2025 memo suggesting Mediaworks would 'contact Moscow for help' coordinating anti-Zelensky coverage. Mediaworks threatened legal action against journalists who covered the leak.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "therecord.media",
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "12",
+      "date": "May 4",
+      "date_sort": "2026-05-04",
+      "victim": "DigiCert",
+      "industry": "Certificate authority / PKI",
+      "attacker": "Unknown — China-linked criminal suspected",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Social-engineering attack tricked two DigiCert tech-support staff into running a malicious .SCR (Windows screensaver) file, masquerading as a customer. CrowdStrike EDR on one host was misconfigured and failed to alert, letting the attacker dwell for nearly two weeks and harvest 'initialization codes' for in-progress EV code-signing orders.",
+      "impact": "27 EV code-signing certificates issued to customer accounts and used to sign Zhong Stealer malware (previously associated with a Chinese e-crime group); all 60 affected orders revoked.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -163,69 +216,16 @@
       ]
     },
     {
-      "id": "10",
-      "date": "May 3",
-      "date_sort": "2026-05-03",
-      "victim": "Canonical / Ubuntu",
-      "industry": "Open-source software / Linux distribution",
-      "attacker": "Criminal gang — hacktivist (The 313 Team)",
-      "attacker_origin": "criminal",
-      "motivation": "Political",
-      "vector": "Sustained DDoS-for-hire attacks by pro-Palestinian hacktivist group 'The 313 Team' against Ubuntu and Canonical domains and APIs.",
-      "impact": "Multi-day outages of Ubuntu install/update infrastructure; users globally unable to install or patch the OS; same group previously hit BlueSky and Mastodon.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "11",
-      "date": "May 1",
-      "date_sort": "2026-05-01",
-      "victim": "cPanel/WHM-hosted websites (44,000+ systems including Guam government sites)",
-      "industry": "Web hosting / cross-industry",
-      "attacker": "Criminal gang",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Mass exploitation of cPanel/WHM authentication-bypass CVE-2026-41940 (patched 30 April) to take over shared-hosting sites; attackers wipe pages and post fake $8,000 Bitcoin ransom demands, deploy cryptominers, and recruit servers into DDoS botnets.",
-      "impact": "Per Shadowserver Foundation, more than 44,000 cPanel systems compromised; Guam government sites taken offline; Australian Cyber Security Centre issued a critical alert and confirmed active exploitation in Australia.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "risky.biz",
-        "cyber.gov.au"
-      ]
-    },
-    {
-      "id": "12",
-      "date": "Apr 30",
-      "date_sort": "2026-04-30",
-      "victim": "Cuba's embassy in Washington, D.C., plus 5,000+ Microsoft Exchange servers globally",
-      "industry": "Government / diplomacy",
-      "attacker": "China — state-suspected espionage group",
+      "id": "13",
+      "date": "May 4",
+      "date_sort": "2026-05-04",
+      "victim": "Targeted government, scientific, manufacturing and retail orgs in Russia, Belarus and Thailand",
+      "industry": "Multiple sectors",
+      "attacker": "China — state-suspected espionage group (Chinese-speaking)",
       "attacker_origin": "china",
       "motivation": "Espionage",
-      "vector": "Chinese hackers compromised a Microsoft Exchange email server at Cuba's embassy and stole diplomat mailboxes, as part of a wider campaign hitting 5,000+ Exchange servers worldwide.",
-      "impact": "Targeted theft of Cuban diplomatic correspondence around U.S. naval blockade activity; broader campaign indicates large-scale Exchange compromise still active in 2026.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "risky.biz",
-        "bloomberg.com"
-      ]
-    },
-    {
-      "id": "13",
-      "date": "Apr 29",
-      "date_sort": "2026-04-29",
-      "victim": "Moldova national health-insurance agency (CNAM)",
-      "industry": "Government / healthcare",
-      "attacker": "Unknown — possible Russia link",
-      "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "Unattributed intrusion into the national healthcare database; Moldovan cyber officials say Russian involvement cannot be excluded but no ransom was demanded.",
-      "impact": "Personal and financial data on nearly every adult Moldovan and on all CNAM-affiliated private medical providers stolen; ~30% of the database was either stolen or had to be restored from backup; payments to providers continued uninterrupted.",
+      "vector": "Supply-chain compromise of DAEMON Tools (AVB Disc Soft); installers signed with the vendor's legitimate certificate have shipped a fingerprinting backdoor since at least April 8 that selectively deploys the QUIC RAT on high-value hosts.",
+      "impact": "Several thousand infections worldwide, but the second-stage QUIC RAT was deployed on only about a dozen carefully selected systems — the same targeted operational pattern Chinese APTs used in past Notepad++ and CCleaner compromises.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -234,33 +234,32 @@
     },
     {
       "id": "14",
-      "date": "Apr 29",
-      "date_sort": "2026-04-29",
-      "victim": "Linux endpoints across virtually all major distributions since 2017",
-      "industry": "Cross-industry (Linux infrastructure)",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "'Copy Fail' (CVE-2026-31431): deterministic local-privilege-escalation logic flaw in the Linux kernel's algif_aead crypto module; a 732-byte Python script reliably overwrites the page-cache of setuid binaries (su/sudo) to gain root without modifying anything on disk.",
-      "impact": "Affects Ubuntu, RHEL, Debian, SUSE, Amazon Linux, AlmaLinux on kernels 4.14–6.19.12; bypasses file-integrity tooling; enables Kubernetes container escape, multi-tenant host takeover, and CI/CD pipeline compromise. Patches available; immediate kernel updates strongly urged.",
+      "date": "May 4",
+      "date_sort": "2026-05-04",
+      "victim": "Indian and Russian organizations (industrial, consulting, retail, transportation)",
+      "industry": "Multiple sectors",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "Chinese threat actor 'Silver Fox' sent 1,600+ tax-themed phishing emails impersonating Indian tax authorities (December) and then Russian tax authorities (January-February), delivering a Rust-based loader, ValleyRAT, and a previously undocumented Python backdoor ('ABCDoor') that uses HTTPS/Socket.IO C2.",
+      "impact": "Persistent remote access with multimonitor screen streaming, mouse/keyboard control, clipboard theft and file operations. Marks Silver Fox's first known expansion into Russian targets.",
       "ongoing": "Y",
-      "severity": "critical",
+      "severity": "medium",
       "sources": [
-        "unit42.paloaltonetworks.com",
-        "risky.biz"
+        "darkreading.com"
       ]
     },
     {
       "id": "15",
-      "date": "Apr 28",
-      "date_sort": "2026-04-28",
-      "victim": "Five Polish water-treatment facilities",
-      "industry": "Critical infrastructure / water utilities",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Disruption",
-      "vector": "Intrusions into operational technology at five water-treatment stations across Poland during 2025; some attackers reached industrial control systems.",
-      "impact": "Polish intelligence service (ABW) confirmed the incidents but did not attribute them to any foreign state; underscores ongoing OT-targeting risk for water/wastewater operators across NATO-adjacent states.",
+      "date": "May 1",
+      "date_sort": "2026-05-01",
+      "victim": "Cuban Embassy in Washington, DC",
+      "industry": "Government / Diplomatic",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "Compromise of a Microsoft Exchange email server at the Cuban embassy; the same actor breached more than 5,000 Exchange servers globally this year.",
+      "impact": "Stolen diplomat email inboxes, reportedly used to spy on US naval blockade activity in the region.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -269,19 +268,158 @@
     },
     {
       "id": "16",
-      "date": "Apr 13",
-      "date_sort": "2026-04-13",
-      "victim": "Itron (U.S. utility metering / grid technology vendor)",
-      "industry": "Utilities / critical infrastructure supplier",
-      "attacker": "Unknown",
+      "date": "May 1",
+      "date_sort": "2026-05-01",
+      "victim": "Moldova National Health Insurance Agency (CNAM)",
+      "industry": "Government / Healthcare",
+      "attacker": "Unknown — Russia suspected",
       "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Intrusion into Itron's internal corporate systems; entry vector not disclosed.",
-      "impact": "Itron says the incident has been resolved and that cyber insurance will cover most costs; given Itron's footprint across U.S. utilities, downstream exposure for grid/metering customers warrants follow-up.",
+      "motivation": "Espionage",
+      "vector": "Unknown intrusion into Moldova's national healthcare database; no ransom demand was made. Moldovan officials did not exclude Russian involvement amid renewed Russian military threats against Moldova.",
+      "impact": "Personal and financial data on nearly every adult Moldovan, plus financial details of private medical providers, were stolen or had to be restored from backup. CNAM said payments and medical services were unaffected.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "17",
+      "date": "Apr 30",
+      "date_sort": "2026-04-30",
+      "victim": "cPanel/WHM shared-hosting servers (~1.5M instances exposed online)",
+      "industry": "Web hosting",
+      "attacker": "Criminal gang — opportunistic",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Critical authentication-bypass (CVE-2026-41940, CVSS 9.8) in cPanel/WHM caused by improper handling of line breaks in login-form input, allowing arbitrary data injection into pre-auth session files. Exploitation began before the patch was issued.",
+      "impact": "Shadowserver counted 44,000+ compromised cPanel systems; attackers used the bug for cryptominers, DDoS malware and a 'Fakestortion' campaign that wiped websites and posted $8,000 Bitcoin ransom notes. Several Guam government sites were taken offline. ACSC issued a critical alert; CISA added the CVE to the KEV.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "cyberscoop.com",
+        "cyber.gov.au",
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "18",
+      "date": "Apr 30",
+      "date_sort": "2026-04-30",
+      "victim": "Brazilian internet service providers (small regional ISPs)",
+      "industry": "Telecommunications",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Disruption",
+      "vector": "An attacker who breached Brazilian DDoS-mitigation firm Huge Networks in January built a Mirai-based botnet from TP-Link Archer AX21 routers (CVE-2023-1389) and unmanaged DNS resolvers, then used Huge Networks's own infrastructure and the CEO's SSH keys to launch DNS-amplification DDoS attacks against small Brazilian ISPs.",
+      "impact": "Multi-year DDoS campaign exposed in a leaked attacker archive; Huge Networks's CEO claims a competitor was sabotaging the company's reputation. The botnet attacked targets in 10-60 second bursts across Brazilian IP ranges.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
+        "krebsonsecurity.com",
         "risky.biz"
+      ]
+    },
+    {
+      "id": "19",
+      "date": "Apr 29",
+      "date_sort": "2026-04-29",
+      "victim": "Organizations infected by TeamPCP supply-chain attacks (manufacturing, healthcare, education, tech)",
+      "industry": "Multiple sectors",
+      "attacker": "Criminal gang — ransomware (Vect, Russian-language forum)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Vect 2.0 ransomware-as-a-service — launched as TeamPCP's affiliate to exploit downstream victims of recent Trivy/KICS/LiteLLM/Telnyx supply-chain compromises — has a ChaCha20 implementation flaw that discards 3 of 4 decryption nonces for any file over 128 KB, permanently destroying the bulk of large files (VM disks, DBs, backups).",
+      "impact": "Functions as a wiper rather than a true ransomware: victims who pay receive a decryptor that cannot recover the bulk of their data because the encryption key material is irrecoverable.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "darkreading.com"
+      ]
+    },
+    {
+      "id": "20",
+      "date": "Late Apr",
+      "date_sort": "2026-04-28",
+      "victim": "Five Polish water treatment facilities",
+      "industry": "Water utilities / Critical infrastructure",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Disruption",
+      "vector": "Five water treatment facilities across Poland were hacked last year; attackers gained access to industrial control systems at some of them. Poland's intelligence service (ABW) disclosed the incidents but did not attribute them.",
+      "impact": "Disclosed scope: ICS access at multiple treatment plants — a concerning precedent for OT-targeting against European water infrastructure.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "21",
+      "date": "Apr 27",
+      "date_sort": "2026-04-27",
+      "victim": "US Federal Civilian Executive Branch agencies and 11 state/local governments",
+      "industry": "Government",
+      "attacker": "China — state-suspected espionage group (ArcaneDoor cluster)",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "Ongoing exploitation of two Cisco ASA zero-days (CVE-2025-20333 CVSS 9.9 and CVE-2025-20362) — VPN web service memory corruption chained for RCE and persistence across reboots and software upgrades on 5500-X Series appliances.",
+      "impact": "CISA found that some agencies had patched to versions still vulnerable; attackers targeted 12 federal IPs and government IPs in India, Nigeria, Japan, the UK and 10+ other countries, plus US financial institutions, defense contractors and military orgs. Tied to last year's ArcaneDoor campaign.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "22",
+      "date": "Apr 27",
+      "date_sort": "2026-04-27",
+      "victim": "Retail and hospitality organizations (and healthcare, tech, transport, logistics)",
+      "industry": "Retail / Hospitality",
+      "attacker": "Criminal gang — data extortion (BlackFile / Cordial Spider)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Voice-phishing of help-desk staff to harvest single-sign-on credentials, followed by abuse of Microsoft Graph and Salesforce APIs, SharePoint and code-repo exfiltration. Some victims have been swatted to pressure ransom payment.",
+      "impact": "Multi-industry data theft and seven-figure ransom demands; activity overlaps with the CrowdStrike-tracked 'Cordial Spider' campaign ongoing since October 2025.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "cyberscoop.com"
+      ]
+    },
+    {
+      "id": "23",
+      "date": "Apr 27",
+      "date_sort": "2026-04-27",
+      "victim": "Cloud, container and developer infrastructure operators (broad)",
+      "industry": "Cloud / Software development",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "'PCPJack' modular cloud worm scans for exposed cloud services, exfiltrates secrets from Gmail/Outlook, AWS, GitHub, Slack, Stripe, Coinbase, Binance and crypto wallets, then propagates by downloading Common Crawl parquet files for stealthy, pre-validated target discovery.",
+      "impact": "Targets organizations already infected by rival TeamPCP and removes that malware before stealing cloud, container and crypto secrets. Spreading laterally via stolen Kubernetes/Docker/Redis/SSH credentials.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "darkreading.com"
+      ]
+    },
+    {
+      "id": "24",
+      "date": "Apr 27",
+      "date_sort": "2026-04-27",
+      "victim": "Windows server and workstation users (broad)",
+      "industry": "Enterprise software",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "'PhantomRPC' architectural flaw in Windows RPC allows a low-privileged process holding SeImpersonatePrivilege to register an RPC server that impersonates a missing legitimate service, hijacking calls from higher-privileged processes to escalate to SYSTEM.",
+      "impact": "Microsoft rated the bug 'moderate' and declined to issue a patch or CVE. Kaspersky published PoCs covering five exploit paths; defenders must rely on Event Tracing for Windows monitoring and tighter SeImpersonatePrivilege scoping.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "darkreading.com"
       ]
     }
   ]
