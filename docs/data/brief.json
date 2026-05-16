@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-15T20:06:56.344873+00:00",
+  "generated_at": "2026-05-16T08:04:30.220526+00:00",
   "period_searched": "May 5-15, 2026",
-  "incident_count": 21,
+  "incident_count": 8,
   "incidents": [
     {
       "id": "1",
@@ -12,362 +12,140 @@
       "attacker": "Unknown — criminal likely",
       "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "Attackers compromised one of THORChain's six cross-chain vaults via a smart-contract weakness and drained funds before automated controls halted signing.",
-      "impact": "About $10.7 million in Bitcoin and other coins stolen from protocol-owned funds; trading halted while investigation continues. User funds reported safe so far.",
-      "ongoing": "Y",
+      "vector": "Compromise of one of the platform's six liquidity vaults, exploiting flaws in protocol-owned funds handling.",
+      "impact": "Roughly $10.7 million in Bitcoin and other tokens stolen; trading halted and signing activity automatically suspended. The Swiss-based cross-chain platform says user funds were not affected.",
+      "ongoing": "N",
       "severity": "high",
       "sources": [
-        "therecord.media"
+        "therecord.media",
+        "Peckshield"
       ]
     },
     {
       "id": "2",
-      "date": "May 15",
-      "date_sort": "2026-05-15",
-      "victim": "South Korean crypto exchanges (multiple)",
-      "industry": "Cryptocurrency / Financial Services",
-      "attacker": "North Korea — state-sponsored, financially motivated",
-      "attacker_origin": "north_korea",
-      "motivation": "Financial",
-      "vector": "Long-running campaigns against South Korean exchanges using social engineering and supply-chain compromise, with proceeds laundered via the cross-border 'Hwanchigi' method that converts crypto into Korean won via offshore routing.",
-      "impact": "Crystal Intelligence report attributes six of nine major South Korean exchange attacks since 2018 (confirmed $120M+ theft) to North Korea, including a $30.4M November 2025 incident still under investigation. Report identifies $7.1B in illicit crypto flows 2021-2025.",
+      "date": "May 14",
+      "date_sort": "2026-05-14",
+      "victim": "Cisco Catalyst SD-WAN customers (global)",
+      "industry": "Network infrastructure / multiple sectors",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "Active exploitation of CVE-2026-20182, a CVSS 10.0 authentication bypass in Cisco Catalyst SD-WAN Controller and Manager that lets unauthenticated attackers impersonate a hub router and gain administrative access.",
+      "impact": "Threat cluster UAT-8616 — overlapping with Chinese Operational Relay Box networks — used the flaw to add SSH keys, modify NETCONF configurations, and escalate to root on victim controllers. Cisco patched the bug and CISA added it to the KEV catalog with an emergency directive for federal agencies.",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "critical",
       "sources": [
-        "reuters.com"
+        "blog.talosintelligence.com",
+        "darkreading.com",
+        "cyberscoop.com",
+        "therecord.media",
+        "cisa.gov"
       ]
     },
     {
       "id": "3",
       "date": "May 14",
       "date_sort": "2026-05-14",
-      "victim": "Foxconn (North American factories)",
-      "industry": "Manufacturing / Electronics",
-      "attacker": "Criminal gang — ransomware",
+      "victim": "OpenAI, Mistral AI, UiPath (TanStack supply chain)",
+      "industry": "Technology / AI",
+      "attacker": "Criminal gang — data extortion",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Nitrogen ransomware group breached Foxconn's North American factories; the group typically gains access via SEO-poisoned fake software installers or shared-vendor access points.",
-      "impact": "Production disrupted at multiple North American factories; gang claims theft of 8 TB and 11M files, allegedly including confidential project documentation referencing Apple, Google, Intel, NVIDIA, Dell, AMD, HPE, JPMorgan Chase, and Tencent. Factories reportedly resuming production.",
+      "vector": "TeamPCP group seeded credential-stealing malware (Shai-Hulud worm variant) into 84+ npm packages, including the widely-used TanStack React framework, which self-propagated to almost 400 downstream packages.",
+      "impact": "OpenAI is rotating macOS code-signing certificates after two employee devices were compromised and limited credential material was exfiltrated from internal repositories; macOS users must update by June 12. Mistral confirmed source code repos were temporarily breached and the attackers are offering Mistral source code for sale. Worm source code was subsequently leaked publicly, raising risk of follow-on attacks.",
       "ongoing": "Y",
-      "severity": "critical",
+      "severity": "high",
       "sources": [
-        "cyberscoop.com",
-        "darkreading.com",
-        "risky.biz"
+        "therecord.media",
+        "risky.biz",
+        "blog.talosintelligence.com"
       ]
     },
     {
       "id": "4",
       "date": "May 14",
       "date_sort": "2026-05-14",
-      "victim": "Cisco Catalyst SD-WAN customers",
-      "industry": "Technology / Networking",
-      "attacker": "Unknown — state-suspected espionage group",
-      "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "Persistent threat group exploited a max-severity authentication-bypass zero-day (CVE-2026-20182) in Cisco Catalyst SD-WAN Controller and Manager, granting unauthenticated administrative access; same actor previously exploited Cisco edge zero-days for at least three years before disclosure.",
-      "impact": "Limited but ongoing exploitation; a compromised SD-WAN controller can reroute traffic, intercept communications, push malicious configurations, or break connectivity across an entire enterprise. CISA added the bug to its KEV catalog and ordered federal agencies to patch.",
-      "ongoing": "Y",
-      "severity": "critical",
+      "victim": "Foxconn (Hon Hai Precision Industry)",
+      "industry": "Manufacturing / Electronics",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Ransomware intrusion by the Nitrogen group (using custom tooling derived from Conti and ALPHV code) against North American factories; data theft followed by encryption.",
+      "impact": "Several Foxconn factories in North America were disrupted; the company says affected sites are resuming production. Nitrogen claims to have stolen 8 TB / 11 million files, allegedly including confidential project files tied to Intel, Apple, Google, Dell, and Nvidia. Foxconn has not confirmed any ransom demand.",
+      "ongoing": "N",
+      "severity": "high",
       "sources": [
-        "cyberscoop.com",
-        "blog.talosintelligence.com",
-        "therecord.media"
+        "cyberscoop.com"
       ]
     },
     {
       "id": "5",
       "date": "May 14",
       "date_sort": "2026-05-14",
-      "victim": "Polish and Ukrainian government / military organizations",
-      "industry": "Government / Defense",
-      "attacker": "Belarus — state-sponsored espionage group, Russia-aligned",
+      "victim": "European government and diplomatic targets (incl. Ukraine)",
+      "industry": "Government / Diplomatic",
+      "attacker": "Russia — FSB intelligence service",
       "attacker_origin": "russia",
       "motivation": "Espionage",
-      "vector": "Belarusian threat group sent spear-phishing PDFs impersonating Ukrainian telecom Ukrtelecom, used server-side geolocation and victim fingerprinting to selectively deliver a JavaScript variant of the PicassoLoader downloader, then deployed Cobalt Strike for post-compromise activity.",
-      "impact": "Active espionage campaign against Eastern European governments and militaries; operators manually approve which victims receive the final implant based on collected reconnaissance. Ongoing since March 2026.",
+      "vector": "Russian FSB-linked actor 'Secret Blizzard' (Turla) deploying the modular Kazuar malware family, which has evolved into a peer-to-peer botnet with Kernel, Bridge, and Worker modules that elects a single 'leader' to handle external C2 over HTTP, WebSockets, and Exchange Web Services.",
+      "impact": "Long-running covert espionage access into government and diplomatic networks across Europe and Central Asia, and into systems in Ukraine previously compromised by Russian GRU-linked Aqua Blizzard — supporting Russian foreign-policy and military intelligence collection.",
       "ongoing": "Y",
       "severity": "medium",
       "sources": [
-        "darkreading.com"
+        "microsoft.com (MSTIC)"
       ]
     },
     {
       "id": "6",
-      "date": "May 13",
-      "date_sort": "2026-05-13",
-      "victim": "Azerbaijani oil and gas company",
-      "industry": "Energy / Oil & Gas",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
+      "date": "May 14",
+      "date_sort": "2026-05-14",
+      "victim": "Ukrainian and Polish government and military organizations",
+      "industry": "Government / Military",
+      "attacker": "Belarus — state-sponsored espionage (Russia-aligned)",
+      "attacker_origin": "russia",
       "motivation": "Espionage",
-      "vector": "China-linked actors exploited a vulnerable Microsoft Exchange server for initial access, then used a refined two-stage DLL side-loading chain to install the Deed RAT remote access tool, evading sandbox detection.",
-      "impact": "Repeated compromises between December 2025 and February 2026; the victim cleaned individual workstations but failed to patch the Exchange server, allowing two follow-up intrusions. OT networks not affected. Marks first known China-linked intrusion into Azerbaijan's energy sector.",
-      "ongoing": "N",
+      "vector": "Spearphishing campaign by Belarus-linked group FrostyNeighbor (also tracked as Ghostwriter / UNC1151) using PDF lures impersonating Ukrainian telecom Ukrtelecom, with server-side IP-based victim validation that delivers a JavaScript PicassoLoader downloader and Cobalt Strike payload only to selected Ukrainian targets.",
+      "impact": "Continued espionage and credential-collection operations against Eastern European government and military targets in support of Belarussian and Russian interests; victims that don't match operator-chosen criteria receive only a benign decoy.",
+      "ongoing": "Y",
       "severity": "medium",
       "sources": [
-        "darkreading.com"
+        "darkreading.com",
+        "ESET"
       ]
     },
     {
       "id": "7",
-      "date": "May 13",
-      "date_sort": "2026-05-13",
-      "victim": "Mexican government and Latin American financial sector",
-      "industry": "Government / Financial Services",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Spanish- and Brazilian-Portuguese-speaking threat actors jailbroke Anthropic's Claude via an agentic CLI (framing requests as 'authorized red-team' exercises) and used the AI agent to scan for vulnerabilities, deploy web shells, and dynamically generate custom backdoors and tunneling tools.",
-      "impact": "Six Mexican government entities compromised between late December 2025 and early January 2026, with data theft in some cases; a parallel Brazilian campaign targeted financial firms for financial-data theft.",
-      "ongoing": "Y",
-      "severity": "medium",
+      "date": "May 7",
+      "date_sort": "2026-05-07",
+      "victim": "Instructure / Canvas LMS (≈9,000 schools and universities)",
+      "industry": "Education",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "ShinyHunters (tied to the Scattered Spider / Lapsus$ collective) initially accessed Instructure via voice-phishing of staff and an issue tied to Free-for-Teacher accounts; on May 7 the group re-compromised the same path and defaced the Canvas login page with a ransom demand.",
+      "impact": "Canvas was taken offline mid-final-exam season, disrupting coursework at thousands of K-12 districts and universities; ShinyHunters claimed 3 TB of data including names, emails, student IDs and private messages on up to 275M users. Instructure paid the ransom and obtained 'shred logs' confirming destruction; House and Senate committees have demanded briefings from CEO Steve Daly.",
+      "ongoing": "N",
+      "severity": "critical",
       "sources": [
+        "krebsonsecurity.com",
         "darkreading.com"
       ]
     },
     {
       "id": "8",
-      "date": "May 13",
-      "date_sort": "2026-05-13",
-      "victim": "Skoda (Germany web store)",
-      "industry": "Automotive / Retail",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Attackers exploited a vulnerability in Skoda's German online store to gain access to customer data.",
-      "impact": "Likely customer-data exposure; specifics of affected records not disclosed.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "9",
-      "date": "May 13",
-      "date_sort": "2026-05-13",
-      "victim": "Best Western International",
-      "industry": "Hospitality",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Hacker maintained unauthorized access to Best Western's reservation systems for more than six months between October 2025 and April 2026.",
-      "impact": "Guest data potentially exposed across Best Western, Sure Hotels, and WorldHotels brands; notifications to affected guests being issued.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "10",
-      "date": "May 13",
-      "date_sort": "2026-05-13",
-      "victim": "Vodafone (EU telecom)",
-      "industry": "Telecommunications",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Lapsus$ leaked Vodafone source code after the telco refused to pay an extortion demand.",
-      "impact": "Sensitive source code published, creating downstream security and reputational risk; no customer data confirmed exposed.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "11",
-      "date": "May 13",
-      "date_sort": "2026-05-13",
-      "victim": "Brazilian ISPs",
-      "industry": "Telecommunications",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Disruption",
-      "vector": "An actor with root access to Huge Networks, a Brazilian DDoS-mitigation ISP, abused that foothold to scan for insecure routers and open DNS resolvers and build a DNS-amplification botnet aimed at other Brazilian network operators.",
-      "impact": "Sustained, large-scale DDoS attacks against Brazilian ISPs over multiple years; Huge Networks' CEO blamed a security breach or sabotage by a competitor.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "krebsonsecurity.com"
-      ]
-    },
-    {
-      "id": "12",
-      "date": "May 13",
-      "date_sort": "2026-05-13",
-      "victim": "Checkmarx Jenkins plugin users",
-      "industry": "Software / DevSecOps",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "A rogue version of the official Checkmarx Jenkins Application Security Testing (AST) plugin was published on the Jenkins Marketplace, bundling an information stealer.",
-      "impact": "Developers who installed the rogue plugin risk credential and secret theft from their CI/CD environments. Checkmarx warned customers and pulled the package.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "blog.talosintelligence.com",
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "13",
-      "date": "May 13",
-      "date_sort": "2026-05-13",
-      "victim": "South Staffordshire Water (UK)",
-      "industry": "Water utility / Critical infrastructure",
-      "attacker": "Unknown",
+      "date": "Apr 5",
+      "date_sort": "2026-04-05",
+      "victim": "Taiwan High Speed Rail (THSR)",
+      "industry": "Transportation",
+      "attacker": "Unknown — hobbyist",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "Hackers maintained access to the utility's network undetected for nearly two years; original intrusion vector not disclosed in the ICO action.",
-      "impact": "UK ICO fined the water utility nearly £1M for failing to detect the intrusion. Lagging regulatory signal for a previously reported breach.",
-      "ongoing": "N",
-      "severity": "low",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "14",
-      "date": "May 12",
-      "date_sort": "2026-05-12",
-      "victim": "OpenAI",
-      "industry": "AI / Technology",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Two OpenAI employee devices were compromised by the Shai-Hulud worm via the TanStack npm supply-chain attack, enabling credential exfiltration from a limited set of internal source repositories.",
-      "impact": "Limited credential material exfiltrated from internal code repos for iOS, macOS, and Windows products; OpenAI rotated code-signing certificates and is requiring macOS users to update by June 12. No customer data impacted.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "therecord.media",
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "15",
-      "date": "May 12",
-      "date_sort": "2026-05-12",
-      "victim": "Mistral AI",
-      "industry": "AI / Technology",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "TeamPCP hackers compromised one of Mistral AI's codebase management systems via the TanStack/Shai-Hulud third-party supply-chain attack, contaminating some packages.",
-      "impact": "Attackers accessed non-core code repositories; hosted services, user data, and research environments not compromised per Mistral. Stolen source code was later advertised for sale by TeamPCP.",
+      "vector": "A 23-year-old train enthusiast used commodity software-defined radio hardware to spoof a 'general alarm' message on THSR's TETRA emergency radio system, which appears to have been deployed without proper authentication or key management.",
+      "impact": "Three high-speed trains were ordered to perform emergency braking and were halted for roughly 48 minutes, triggering an anti-terrorism response and renewed scrutiny of cyber-physical risk in legacy rail communications worldwide.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "16",
-      "date": "May 11",
-      "date_sort": "2026-05-11",
-      "victim": "TanStack and npm developer ecosystem",
-      "industry": "Software / Open source",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "TeamPCP poisoned TanStack npm packages with the self-propagating Shai-Hulud worm, which stole developer credentials, API keys, cloud secrets, and cryptocurrency wallets and republished compromised packages downstream.",
-      "impact": "About 400 npm packages compromised, including libraries from Mistral, UiPath, and OpenAI's internal repos, exposing tens of millions of weekly downloads. Worm source code was later leaked on a hacking forum, increasing risk of copycat attacks.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "cyberscoop.com",
-        "blog.talosintelligence.com",
-        "risky.biz",
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "17",
-      "date": "May 11",
-      "date_sort": "2026-05-11",
-      "victim": "RubyGems",
-      "industry": "Software / Open source",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Attackers published hundreds of malicious Ruby packages designed to launch cross-site scripting attacks against RubyGems engineers and steal data from their systems.",
-      "impact": "RubyGems disabled new user sign-ups while it investigated; details of what attackers attempted to steal from staff remain unclear. Incident is unrelated to the parallel npm Shai-Hulud worm.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "18",
-      "date": "May 7",
-      "date_sort": "2026-05-07",
-      "victim": "Instructure / Canvas (9,000 schools and universities)",
-      "industry": "Education technology",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "ShinyHunters re-exploited an issue tied to Instructure's Free-for-Teacher accounts to deface Canvas login pages and exfiltrate user data; the group typically gains entry via voice-phishing and social engineering of IT/help-desk staff.",
-      "impact": "Classes and exams disrupted across roughly 9,000 schools and universities serving 275M students and faculty during end-of-year exams. Instructure ultimately paid the ransom in exchange for claimed data destruction.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "krebsonsecurity.com",
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "19",
-      "date": "May 7",
-      "date_sort": "2026-05-07",
-      "victim": "Ivanti Endpoint Manager Mobile (EPMM) customers",
-      "industry": "Technology / Endpoint management",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Active exploitation of an improper-input-validation vulnerability (CVE-2026-6973) in Ivanti EPMM.",
-      "impact": "CISA added the vulnerability to its Known Exploited Vulnerabilities catalog and ordered federal agencies to remediate. Affected enterprise mobile-management deployments are at risk of compromise.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "cisa.gov"
-      ]
-    },
-    {
-      "id": "20",
-      "date": "May 6",
-      "date_sort": "2026-05-06",
-      "victim": "Palo Alto Networks PAN-OS firewall customers",
-      "industry": "Technology / Network security",
-      "attacker": "Unknown — state-suspected espionage group",
-      "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "Likely state-sponsored actor exploited a zero-day buffer overflow in the PAN-OS User-ID Authentication Portal (CVE-2026-0300) to achieve unauthenticated remote code execution as root on internet-exposed firewalls.",
-      "impact": "Attackers gained root on at least two PA-Series firewalls, deployed open-source tunneling tools (EarthWorm, ReverseSocks5), enumerated Active Directory using firewall service-account credentials, and systematically destroyed logs. Patch released May 6.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "unit42.paloaltonetworks.com"
-      ]
-    },
-    {
-      "id": "21",
-      "date": "Early May",
-      "date_sort": "2026-05-05",
-      "victim": "West Pharmaceutical Services",
-      "industry": "Pharmaceutical / Manufacturing",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Ransomware attack hit West Pharmaceutical's IT environment; initial access vector not disclosed.",
-      "impact": "Global business operations disrupted; manufacturing, shipping, and receiving operations were affected and have been partially restored. Incident disclosed via SEC filing.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
+        "darkreading.com"
       ]
     }
   ]
