@@ -1,39 +1,40 @@
 {
-  "generated_at": "2026-05-19T20:06:16.968834+00:00",
-  "period_searched": "May 5-19, 2026",
-  "incident_count": 14,
+  "generated_at": "2026-05-20T08:07:22.642349+00:00",
+  "period_searched": "May 14-19, 2026",
+  "incident_count": 11,
   "incidents": [
     {
       "id": "1",
       "date": "May 19",
       "date_sort": "2026-05-19",
-      "victim": "Multiple organizations worldwide (via Fox Tempest service)",
-      "industry": "Multiple (schools, hospitals, critical infrastructure)",
-      "attacker": "Criminal gang — ransomware",
+      "victim": "Multiple sectors globally (healthcare, education, government, finance)",
+      "industry": "Multiple sectors",
+      "attacker": "Criminal gang — ransomware ecosystem (Fox Tempest malware-signing service, used by Vanilla Tempest/Rhysida and INC/Qilin/Akira affiliates)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Microsoft's Digital Crimes Unit, with Europol and FBI support, unsealed legal action and seized infrastructure of Fox Tempest, a malware-signing-as-a-service operation that abused Microsoft Artifact Signing to legitimize malware for ransomware affiliates including Vanilla Tempest (Rhysida), INC, Qilin, and Akira since May 2025.",
-      "impact": "Service signed malware delivered via fake Teams, AnyDesk, Putty, and Webex downloads, infecting thousands of machines worldwide and enabling ransomware operations against schools, hospitals, and critical infrastructure including prior attacks attributed to Vanilla Tempest on the British Library and Seattle-Tacoma International Airport.",
-      "ongoing": "N",
+      "vector": "Fox Tempest fraudulently abused Microsoft Artifact Signing to issue valid short-lived code-signing certificates, letting ransomware affiliates distribute signed malware via malvertising, SEO poisoning, and fake software downloads (e.g., counterfeit Teams installers).",
+      "impact": "Microsoft's Digital Crimes Unit seized signspace[.]cloud, took down hundreds of attacker VMs hosted on Cloudzy, and revoked over 1,000 fraudulent certificates. The service had operated since May 2025 and enabled deployment of Rhysida, Oyster, Lumma Stealer, and Vidar against thousands of victims worldwide; Microsoft observed Fox Tempest already attempting to migrate customers to a replacement service.",
+      "ongoing": "Y",
       "severity": "critical",
       "sources": [
         "microsoft.com",
-        "therecord.media"
+        "therecord.media",
+        "cyberscoop.com"
       ]
     },
     {
       "id": "2",
       "date": "May 19",
       "date_sort": "2026-05-19",
-      "victim": "POST Luxembourg (national telecom)",
-      "industry": "Telecommunications",
+      "victim": "POST Luxembourg (state-owned telecoms operator)",
+      "industry": "Telecommunications / Critical infrastructure",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Disruption",
-      "vector": "Attackers exploited a previously-undisclosed Huawei enterprise router zero-day with specially crafted packets that put devices into a continuous restart loop; Huawei told POST it had never encountered the attack pattern and had no patch available.",
-      "impact": "Denial-of-service attack on July 23, 2025 crashed Luxembourg's entire national telecom network for over three hours, knocking out landline, 4G, and 5G mobile service and leaving hundreds of thousands of residents unable to reach emergency services. Details surfaced May 19, 2026; the flaw has no public CVE and no warning has been issued to other operators.",
+      "vector": "Denial-of-service attack exploiting a previously unknown, undocumented vulnerability in Huawei enterprise router software; no CVE has been filed or public warning issued in the ten months since the incident.",
+      "impact": "Nationwide collapse of Luxembourg's telecoms network for over three hours on July 23, 2025 — disrupting mobile, landline, and emergency 112 calls for potentially hundreds of thousands of residents. Details disclosed publicly by The Record on May 19, 2026.",
       "ongoing": "N",
-      "severity": "critical",
+      "severity": "high",
       "sources": [
         "therecord.media"
       ]
@@ -42,101 +43,66 @@
       "id": "3",
       "date": "May 19",
       "date_sort": "2026-05-19",
-      "victim": "npm / JavaScript software supply chain",
-      "industry": "Software / developer ecosystem",
-      "attacker": "Criminal gang — data theft and extortion",
+      "victim": "npm software ecosystem (hundreds of packages and downstream consumers)",
+      "industry": "Software / Open source",
+      "attacker": "Criminal gang — data extortion (TeamPCP)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "TeamPCP (UNC6780) published Shai-Hulud worm source code on GitHub, triggering a wave of typosquat clones; the self-replicating malware fires on package install, harvests GitHub/npm tokens, SSH keys, cloud credentials, and database strings, then uses stolen maintainer credentials to push poisoned versions of trusted packages.",
-      "impact": "Hundreds of npm packages compromised in the latest 'Mini Shai-Hulud' wave; clones with swapped command-and-control infrastructure are spreading autonomously, install OS-level backdoors that survive package removal, and threaten the implicit trust model of CI/CD pipelines and shared developer dependencies.",
+      "vector": "Self-replicating worm dropped into hundreds of npm packages; a pre-install hook fires before any other step on the developer machine or CI runner, harvesting GitHub/npm tokens, SSH keys, cloud-provider credentials, and DB strings, then uses the pipeline's own publishing identity to push poisoned versions of additional packages under legitimate maintainer names.",
+      "impact": "Hundreds of npm packages compromised in this latest wave; persistent OS-level backdoors installed that survive package uninstall. Worm source code was released the prior week on a hacking forum, fueling broader copycat activity across the developer ecosystem.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
         "cyberscoop.com",
-        "darkreading.com",
         "risky.biz"
       ]
     },
     {
       "id": "4",
-      "date": "May 18",
-      "date_sort": "2026-05-18",
-      "victim": "Microsoft Exchange Server customers (on-premise)",
-      "industry": "Multiple (enterprise email)",
-      "attacker": "Unknown",
+      "date": "May 19",
+      "date_sort": "2026-05-19",
+      "victim": "Microsoft Windows users (sector)",
+      "industry": "Software / Multiple sectors",
+      "attacker": "Unknown (researcher disclosure, some flaws already being exploited in the wild)",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "CVE-2026-42897, a cross-site scripting flaw in Exchange Outlook Web Access, lets attackers execute arbitrary JavaScript in a victim's browser context when a specially crafted email is opened, enabling mailbox takeover, session token theft, and persistent forwarding rules.",
-      "impact": "Active exploitation reported with no patch yet available four days after disclosure; affects on-premise Exchange Server 2016, 2019, and Subscription Edition. CISA added the flaw to its Known Exploited Vulnerabilities catalog. Mailbox compromise can enable business email compromise and downstream ransomware operations.",
+      "vector": "Researcher \"Nightmare Eclipse\" publicly disclosed three new Windows flaws — YellowKey (BitLocker bypass via weaponized USB inserted before WinRE boot), GreenPlasma, and MiniPlasma — plus a PoC against a vulnerability Microsoft had marked as patched in 2020.",
+      "impact": "YellowKey lets anyone with physical access fully bypass BitLocker on encrypted laptops without credentials, PIN, or TPM bypass. Some of the disclosed flaws are already being exploited, and at least one is in CISA's KEV catalog. Patches are not yet available for several.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "darkreading.com",
-        "cisa.gov"
+        "darkreading.com"
       ]
     },
     {
       "id": "5",
       "date": "May 18",
       "date_sort": "2026-05-18",
-      "victim": "US gas station fuel storage infrastructure",
-      "industry": "Energy / critical infrastructure",
-      "attacker": "Iran — state-directed",
-      "attacker_origin": "iran",
-      "motivation": "Disruption",
-      "vector": "Iran-linked actors exploited internet-exposed automatic tank gauge (ATG) systems at US gas stations that lacked password protections, manipulating displayed fuel levels though not the physical fuel quantities.",
-      "impact": "No service disruption reported, but the breaches expand Iran's cyber pressure campaign against US infrastructure during the active US/Israel-Iran conflict and Strait of Hormuz crisis, demonstrating Iranian ability to reach into community-level US systems for strategic signaling.",
+      "victim": "Microsoft Exchange Server customers (on-prem)",
+      "industry": "Software / Multiple sectors",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Cross-site scripting flaw (CVE-2026-42897) in Outlook Web Access — attacker emails a crafted message; when opened in OWA arbitrary JavaScript runs in the browser context, enabling spoofing, mailbox access, and session-token theft.",
+      "impact": "Active in-the-wild exploitation with no patch available four days after disclosure. Affects Exchange Server 2016, 2019, and Subscription Edition. CISA added CVE-2026-42897 to its KEV catalog on May 15; the Belgian CCB warned successful exploitation could give attackers access to victim mailboxes, session tokens, and mailbox rules.",
       "ongoing": "Y",
-      "severity": "medium",
+      "severity": "critical",
       "sources": [
-        "darkreading.com"
+        "darkreading.com",
+        "cisa.gov"
       ]
     },
     {
       "id": "6",
       "date": "May 18",
       "date_sort": "2026-05-18",
-      "victim": "Unnamed enterprise (Storm-2949 target)",
-      "industry": "Unknown",
-      "attacker": "Criminal gang — data theft and extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Storm-2949 abused Microsoft's Self-Service Password Reset and social-engineered users (including IT staff and senior leadership) into approving fraudulent MFA prompts, then registered attacker-controlled authenticators, locked out victims, and pivoted from Microsoft 365 (OneDrive, SharePoint) into Azure App Services, Key Vaults, storage accounts, and SQL databases using legitimate cloud management features.",
-      "impact": "Full identity-driven cloud-wide breach with bulk exfiltration from OneDrive and SharePoint (thousands of files in single downloads) and exploration of production Azure subscriptions; persistence attempts via service-principal credential injection failed only due to insufficient permissions.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "microsoft.com"
-      ]
-    },
-    {
-      "id": "7",
-      "date": "May 18",
-      "date_sort": "2026-05-18",
-      "victim": "Grafana Labs",
-      "industry": "Software / analytics",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "CoinbaseCartel — an offshoot of the Scattered Lapsus$ Hunters collective — obtained a token granting access to Grafana Labs' GitHub environment and downloaded the company's codebase.",
-      "impact": "Codebase stolen; Grafana refused to pay ransom citing FBI guidance and stated no customer data, personal information, or customer-system operations were affected. Compromised credentials have been invalidated; the extortion group has attempted to extort 100+ companies since September 2025.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "8",
-      "date": "May 18",
-      "date_sort": "2026-05-18",
-      "victim": "CISA (US Cybersecurity and Infrastructure Security Agency)",
-      "industry": "Government / federal",
-      "attacker": "Unknown",
+      "victim": "Cybersecurity & Infrastructure Security Agency (CISA)",
+      "industry": "US federal government",
+      "attacker": "Unknown — no evidence of malicious access; exposure flagged by GitGuardian researcher",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "A CISA contractor maintained a public GitHub repository ('Private-CISA') containing plaintext credentials for multiple highly privileged AWS GovCloud accounts and CISA's internal artifactory code repository; the contractor had disabled GitHub's default secret-scanning protections.",
-      "impact": "GitGuardian researchers flagged the exposure as one of the most severe US government data leaks in recent memory, revealing how CISA builds, tests, and deploys internal software. Repository has been taken down but it is unclear whether the credentials were accessed by malicious parties before remediation.",
+      "vector": "A CISA contractor maintained a public GitHub repository (\"Private-CISA\") containing credentials, build/deploy artifacts, and internal system documentation. The administrator had disabled GitHub's default secret-push protection.",
+      "impact": "Exposed credentials authenticated to three highly privileged AWS GovCloud accounts and included plain-text creds for CISA's internal \"artifactory\" code-package repository. Security researchers called it one of the most egregious US government data leaks in recent history. The repo was taken down only after KrebsOnSecurity inquiries.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -144,101 +110,84 @@
       ]
     },
     {
-      "id": "9",
+      "id": "7",
       "date": "May 18",
       "date_sort": "2026-05-18",
-      "victim": "13 countries across Middle East and North Africa",
-      "industry": "Multiple (financial fraud, scam infrastructure)",
-      "attacker": "Criminal gang — data extortion",
+      "victim": "Undisclosed enterprise (Microsoft IR engagement)",
+      "industry": "Unknown",
+      "attacker": "Criminal gang — data extortion (tracked by Microsoft as Storm-2949)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Coordinated Interpol-led law enforcement effort (Operation Ramz) targeting phishing services, scam platforms, malware, and fraud operations across the MENA region.",
-      "impact": "201 arrests, 53 servers seized, 382 suspects identified, and approximately 4,000 victims linked to the operations; police in Jordan also discovered 15 financial-fraud scam operators who were themselves victims of human trafficking. First large-scale MENA cybercrime sweep of its kind.",
+      "vector": "Social engineering of IT and senior-leadership users via fraudulent IT-helpdesk calls during attacker-initiated Self-Service Password Reset; victims approved MFA prompts believing they were doing a routine reset. Attacker reset passwords, re-enrolled Microsoft Authenticator to their own device, then used legitimate Azure management features (publishxml/action, Kudu) and Microsoft Graph to enumerate and pivot.",
+      "impact": "Full-spectrum cloud breach spanning Microsoft 365 (OneDrive, SharePoint), Azure App Services, Key Vaults, Storage, and SQL. Mass downloads of sensitive IT, VPN, and production data via the OneDrive web UI and custom Python scripts; lateral movement into multiple Azure subscriptions.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
-        "cyberscoop.com"
+        "microsoft.com"
+      ]
+    },
+    {
+      "id": "8",
+      "date": "May 15",
+      "date_sort": "2026-05-15",
+      "victim": "US gas stations (fuel storage tank monitoring)",
+      "industry": "Energy / Critical infrastructure",
+      "attacker": "Iran — state-directed hacktivist proxies",
+      "attacker_origin": "iran",
+      "motivation": "Disruption",
+      "vector": "Exploited automatic tank gauge (ATG) systems that were internet-exposed without password protection.",
+      "impact": "Attackers tampered with displayed fuel-level readings at US gas stations but did not alter actual fuel levels; no operational disruption to fuel delivery reported. CNN attributed the activity to Iran in the context of the ongoing US/Israel-Iran conflict and Strait of Hormuz tensions.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "darkreading.com"
+      ]
+    },
+    {
+      "id": "9",
+      "date": "May 15",
+      "date_sort": "2026-05-15",
+      "victim": "Grafana Labs",
+      "industry": "Software / Observability",
+      "attacker": "Criminal gang — data extortion (CoinbaseCartel)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Unauthorized party obtained a leaked token granting access to Grafana Labs' GitHub environment and downloaded the company's source code.",
+      "impact": "Full codebase downloaded by extortion group CoinbaseCartel; Grafana refused to pay the ransom, citing FBI guidance. The company stated no customer data, personal information, or customer-system operations were affected, and compromised credentials have been invalidated.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "therecord.media"
       ]
     },
     {
       "id": "10",
       "date": "May 15",
       "date_sort": "2026-05-15",
-      "victim": "Dozens of organizations in US, UK, Australia",
-      "industry": "Multiple (SaaS-heavy enterprises)",
-      "attacker": "Criminal gang — data extortion",
+      "victim": "Dozens of organizations across North America, Australia, and the UK",
+      "industry": "Multiple sectors",
+      "attacker": "Criminal gang — data extortion (BlackFile, tracked by Google/Mandiant as UNC6671)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "UNC6671 ('BlackFile') voice-phishes employees on personal phones posing as IT help desk, drives them to lookalike single sign-on portals (.passkeyms[.]com, .enrollms[.]com, .setupsso[.]com), captures credentials and MFA codes in real time via adversary-in-the-middle, registers their own MFA device, then uses Python and PowerShell scripts to mass-exfiltrate from SharePoint, OneDrive, Salesforce, and Zendesk via Microsoft Graph.",
-      "impact": "Ongoing high-cadence extortion campaign active since early 2026 against M365 and Okta tenants; in one incident the actor scripted access to over a million SharePoint and OneDrive files. Extortion escalates to mass-email bombing, executive voicemail threats, and swatting when victims do not engage.",
+      "vector": "High-volume voice phishing (vishing) to employees' personal phones impersonating IT/helpdesk, paired with adversary-in-the-middle credential capture against lookalike SSO portals; attackers harvest MFA codes in real time, then immediately enroll attacker-controlled MFA devices to lock out the user. Followed by scripted exfiltration using python-requests/PowerShell against Microsoft Graph and SharePoint with stolen session cookies.",
+      "impact": "Mass theft of corporate data from Microsoft 365 and Okta environments (SharePoint, OneDrive, Salesforce, Zendesk). In one engagement, over one million files were exfiltrated from a single victim. Extortion includes Tox/Session ransom demands, swatting of executives, and Gmail-based mailbox flooding when victims do not engage.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "cloud.google.com (Mandiant)"
+        "cloud.google.com"
       ]
     },
     {
       "id": "11",
       "date": "May 14",
       "date_sort": "2026-05-14",
-      "victim": "Cisco Catalyst SD-WAN customers",
-      "industry": "Multiple (enterprise networking)",
-      "attacker": "Unknown",
+      "victim": "Cisco Catalyst SD-WAN customers (sector)",
+      "industry": "Networking / Multiple sectors",
+      "attacker": "State-suspected espionage group (tracked by Cisco Talos as UAT-8616; infrastructure overlaps with Operational Relay Box networks)",
       "attacker_origin": "unknown",
       "motivation": "Espionage",
-      "vector": "Active exploitation of CVE-2026-20182, an authentication-bypass flaw in Cisco Catalyst SD-WAN Controller and Manager that gives an unauthenticated remote attacker administrative privileges; Talos tracks the activity as UAT-8616 and has observed infrastructure overlap with Operational Relay Box (ORB) networks.",
-      "impact": "Limited but active exploitation observed; additional distinct threat actors are exploiting an older set of Cisco SD-WAN CVEs (CVE-2026-20133, -20128, -20122) in new ways using publicly available proof-of-concept code and JSP webshells. Successful exploitation gives administrative control over a customer's SD-WAN fabric.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "blog.talosintelligence.com"
-      ]
-    },
-    {
-      "id": "12",
-      "date": "May 7",
-      "date_sort": "2026-05-07",
-      "victim": "Australian WordPress site visitors",
-      "industry": "Multiple (general public via web)",
-      "attacker": "Criminal gang — data theft",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Compromised WordPress sites targeting Australian audiences serve ClickFix-style social-engineering lures that trick users into pasting attacker-supplied commands into Windows Run, which downloads and runs the Vidar information stealer.",
-      "impact": "Vidar harvests browser credentials, session cookies, cryptocurrency wallets, and other sensitive data; ACSC issued an alert as part of broader warnings about ongoing targeting of online code repositories and credential-theft campaigns against Australian users.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "cyber.gov.au"
-      ]
-    },
-    {
-      "id": "13",
-      "date": "May 6",
-      "date_sort": "2026-05-06",
-      "victim": "Palo Alto Networks PAN-OS firewall customers",
-      "industry": "Multiple (enterprise security infrastructure)",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Likely state-sponsored cluster CL-STA-1132 exploited zero-day CVE-2026-0300, a buffer overflow in the PAN-OS User-ID Authentication Portal (Captive Portal), to gain unauthenticated root code execution by injecting shellcode into an nginx worker process; post-exploitation deployed open-source EarthWorm and ReverseSocks5 tunnels, enumerated Active Directory using firewall service-account credentials, and methodically wiped crash dumps and audit logs.",
-      "impact": "Limited but successful exploitation of internet-exposed firewalls beginning April 9, 2026. Attackers used SAML floods to fail over to a second device and continue access, consistent with the long-running pattern of state-nexus actors targeting edge devices for long-dwell espionage with minimal detection.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "unit42.paloaltonetworks.com"
-      ]
-    },
-    {
-      "id": "14",
-      "date": "May 5",
-      "date_sort": "2026-05-05",
-      "victim": "Government entities in South America and Southeastern Europe",
-      "industry": "Government",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "UAT-8302 deploys custom malware families including 'NetDraft' (a C# variant of FinalDraft/SquidDoor), an updated CloudSorcerer backdoor previously used against Russian government targets, VSHELL with SNOWLIGHT, and a new Rust-based 'SNOWRUST' stager to establish persistent footholds in compromised government networks.",
-      "impact": "Long-running China-nexus campaign targeting government agencies in South America since late 2024 and southeastern Europe through 2025; tooling overlap links the group to multiple previously-disclosed Chinese threat clusters and indicates close cooperation among Chinese espionage operations.",
+      "vector": "Active in-the-wild exploitation of CVE-2026-20182, an authentication-bypass flaw in Cisco Catalyst SD-WAN Controller (formerly vSmart) and SD-WAN Manager (formerly vManage), giving unauthenticated remote attackers administrative privileges. A separate set of actors is also chaining the older February 2026 SD-WAN vulnerabilities (CVE-2026-20133/20128/20122) using the public ZeroZenX PoC and its associated JSP webshell (\"XenShell\").",
+      "impact": "Limited but confirmed exploitation by a sophisticated actor; post-compromise deployment of webshells and tooling on SD-WAN management-plane appliances. Talos urges immediate patching per Cisco's advisory.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
