@@ -1,36 +1,55 @@
 {
-  "generated_at": "2026-05-22T20:04:14.869656+00:00",
-  "period_searched": "May 8-22, 2026",
-  "incident_count": 11,
+  "generated_at": "2026-05-23T08:06:01.149072+00:00",
+  "period_searched": "May 11-22, 2026",
+  "incident_count": 17,
   "incidents": [
     {
       "id": "1",
       "date": "May 22",
       "date_sort": "2026-05-22",
-      "victim": "German university hospitals (Cologne, Freiburg, Heidelberg, Tübingen, Ulm, Mannheim) via Unimed billing provider",
-      "industry": "Healthcare",
-      "attacker": "Unknown — criminal likely",
+      "victim": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+      "industry": "Federal government",
+      "attacker": "Unknown — insider negligence",
       "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Compromise of Unimed, a third-party billing service provider used by German university hospitals; attackers exfiltrated patient and billing records starting in mid-April.",
-      "impact": "Nearly 30,000 patients affected at Cologne, 54,000 at Freiburg, 11,000 at Heidelberg, plus thousands more at Ulm, Tübingen and Mannheim; stolen data includes names, addresses, treating physicians, and in hundreds of cases health and diagnosis information; hospitals halted data transfers, filed criminal complaints and are weighing legal action.",
+      "motivation": "Unclear",
+      "vector": "A CISA contractor with admin access created a public GitHub repo named 'Private-CISA' and disabled GitHub's built-in secret-scanning protections before publishing plaintext credentials, AWS GovCloud admin keys, an RSA private key for a CISA-IT GitHub App, and internal system logs.",
+      "impact": "Exposed administrative credentials to three AWS GovCloud accounts and dozens of internal CISA systems including the agency's 'Landing Zone DevSecOps' environment, giving any opportunistic attacker a roadmap to federal networks; more than a week after notification CISA was still working to invalidate keys, and lawmakers including Sen. Hassan and Rep. Thompson have demanded answers.",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "critical",
       "sources": [
-        "therecord.media"
+        "krebsonsecurity.com",
+        "risky.biz",
+        "cyberscoop.com"
       ]
     },
     {
       "id": "2",
       "date": "May 22",
       "date_sort": "2026-05-22",
-      "victim": "Multiple sectors in US, Israel, UAE and Middle East (tech, aerospace, defense, telecom)",
-      "industry": "Multiple critical sectors",
+      "victim": "Undisclosed enterprise (Microsoft Defender IR case)",
+      "industry": "Unspecified — hybrid Linux/Windows enterprise",
+      "attacker": "Unknown — hands-on-keyboard threat actor",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Attacker compromised an end-of-life Azure-hosted F5 BIG-IP load balancer, pivoted via SSH to an internal Linux host, then exploited an unpatched Atlassian Confluence server to obtain credentials and launched Kerberos relay attacks (CVE-2025-33073) against Active Directory.",
+      "impact": "Multi-stage Linux intrusion cascaded from a perimeter appliance to credential theft and lateral movement against domain infrastructure; Microsoft published the case to warn that EOL edge appliances and unpatched internal Confluence servers are now common ingress for identity-centric, multi-domain attack chains.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "microsoft.com"
+      ]
+    },
+    {
+      "id": "3",
+      "date": "Feb-Apr",
+      "date_sort": "2026-05-22",
+      "victim": "Technology sector workers in U.S., Israel, UAE and two other Middle Eastern entities",
+      "industry": "Aerospace, defense, telecommunications",
       "attacker": "Iran — state-sponsored espionage group",
       "attacker_origin": "iran",
       "motivation": "Espionage",
-      "vector": "Iran-nexus APT (tracked as Screening Serpens / UNC1549) used tailored fake job recruitment lures and DLL sideloading with AppDomainManager hijacking to deploy new MiniUpdate and MiniJunk V2 remote access trojans from February through April 2026.",
-      "impact": "Six new RAT variants observed against entities in the US, Israel, UAE and two additional Middle Eastern targets; campaign tempo aligned with the regional conflict that started Feb. 28, 2026; Unit 42 assesses moderate-high confidence attribution and notes continuous development of upgraded variants.",
+      "vector": "Spear-phishing recruitment lures impersonating an airline and a video conferencing platform delivered DLL-sideloaded payloads; new MiniUpdate and MiniJunk V2 RAT variants used AppDomainManager hijacking to disable .NET security mechanisms and route C2 through 3-5 rotating Azure-hosted domains per target.",
+      "impact": "Six new RAT variants deployed against high-value tech professionals between mid-February and April, coinciding with the regional conflict that began Feb 28, 2026; Unit 42 assesses moderate-high confidence the campaign supports Iranian intelligence collection on aerospace, defense and telecom targets.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -38,160 +57,247 @@
       ]
     },
     {
-      "id": "3",
-      "date": "May 21",
-      "date_sort": "2026-05-21",
-      "victim": "Cybersecurity and Infrastructure Security Agency (CISA)",
-      "industry": "US federal government",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "CISA contractor with admin access to the agency's development platform created a public GitHub repository (\"Private-CISA\") and disabled GitHub's built-in secret-publishing protections, exposing AWS GovCloud admin credentials, an RSA private key for a CISA-IT GitHub app, plaintext passwords for dozens of internal systems and other sensitive build/deploy artifacts.",
-      "impact": "GitGuardian and TruffleHog researchers say it is one of the worst government data leaks in recent memory; more than a week after notification CISA was still rotating keys and had not invalidated a private key granting full repo, CI/CD and admin access to CISA-IT GitHub; Sens. Hassan and Rep. Thompson demanding answers; no confirmed downstream compromise yet but adversary exploitation window is wide open.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "krebsonsecurity.com",
-        "cyberscoop.com"
-      ]
-    },
-    {
       "id": "4",
-      "date": "May 21",
-      "date_sort": "2026-05-21",
-      "victim": "First VPN cybercrime service (criminal infrastructure)",
-      "industry": "Criminal infrastructure (law-enforcement disruption)",
-      "attacker": "Criminal gang — service provider to ransomware and fraud actors",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Europol-led operation by French and Dutch authorities, with support from eight additional countries, dismantled 33 servers, seized multiple domains (including 1vpns.com/.net/.org) and arrested the alleged administrator at a residence in Ukraine.",
-      "impact": "First VPN, marketed on Russian-speaking cybercrime forums and tied to most major Europol-supported cybercrime investigations, was taken offline; investigators obtained the user database and identified thousands of users tied to ransomware and fraud, feeding 21 additional inquiries globally; affected users were notified that their identities are now known to law enforcement.",
-      "ongoing": "N",
-      "severity": "medium",
+      "date": "May 22",
+      "date_sort": "2026-05-22",
+      "victim": "Government organizations in Belgium, Italy, Serbia, Spain, Poland and South Africa",
+      "industry": "Government",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "Initial access via vulnerability scanning of internet-facing assets followed by deployment of two new custom backdoors — EchoCreep (uses Discord servers for C2) and GraphWorm (uses Microsoft Graph/OneDrive for C2) — plus SoftEther VPN and custom SOCKS proxies to tunnel traffic and evade detection.",
+      "impact": "ESET research details a China-aligned APT pivoting from Asian to European government targets, abusing trusted SaaS endpoints (Discord, Microsoft Graph, Amazon S3) for command-and-control to blend with legitimate traffic; analysts say the actor is searching for pivot points to burrow deeper for espionage.",
+      "ongoing": "Y",
+      "severity": "high",
       "sources": [
-        "cyberscoop.com"
+        "darkreading.com"
       ]
     },
     {
       "id": "5",
-      "date": "May 21",
-      "date_sort": "2026-05-21",
-      "victim": "US federal civilian agencies and downstream enterprises (Trend Micro Apex One and Langflow users)",
-      "industry": "Multiple sectors",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "CISA added CVE-2025-34291 (Langflow Origin Validation Error) and CVE-2026-34926 (Trend Micro Apex One on-prem directory traversal) to the Known Exploited Vulnerabilities catalog based on evidence of active in-the-wild exploitation.",
-      "impact": "Federal Civilian Executive Branch agencies must remediate by the due date under BOD 22-01; CISA urged all organizations to prioritize patching as the bugs are being actively used against enterprise security and AI/ML application servers.",
-      "ongoing": "Y",
+      "date": "May 22",
+      "date_sort": "2026-05-22",
+      "victim": "U.S. Department of Defense and other DDoS victims",
+      "industry": "Defense, hosting, online services",
+      "attacker": "Criminal gang — DDoS-for-hire",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Operator built and ran the Kimwolf IoT botnet, enslaving millions of devices traditionally firewalled from the internet (digital photo frames, web cameras) and renting them out for record-setting DDoS attacks issued via over 25,000 attack commands.",
+      "impact": "Canadian police arrested 23-year-old Jacob Butler ('Dort') in Ottawa on a U.S. extradition warrant; Kimwolf was tied to attacks measured at nearly 30 Tbps — a record DDoS volume — that affected DoD IP ranges and caused some victims more than $1M in losses. Earlier infrastructure seizures in March took down Kimwolf alongside botnets Aisuru, JackSkid and Mossad.",
+      "ongoing": "N",
       "severity": "high",
       "sources": [
-        "cisa.gov"
+        "krebsonsecurity.com",
+        "justice.gov",
+        "cyberscoop.com"
       ]
     },
     {
       "id": "6",
-      "date": "May 21",
-      "date_sort": "2026-05-21",
-      "victim": "NY-regulated financial entities (heightened-threat guidance)",
-      "industry": "Financial services",
-      "attacker": "Multiple — nation-state and criminal threats",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "NYDFS issued an industry letter warning that frontier AI models and geopolitical events have produced a heightened cybersecurity threat environment, and laid out non-mandatory but expected additional controls (phishing-resistant MFA, KEV-driven patching, secure programming, backup testing, third-party validation).",
-      "impact": "Regulated banks, insurers and fintechs are expected to layer additional defensive measures on top of 23 NYCRR Part 500; the unusual public guidance signals NYDFS sees current threat level (driven in part by AI-accelerated vulnerability discovery and exploitation) as a near-term risk to financial sector operations.",
+      "date": "May 22",
+      "date_sort": "2026-05-22",
+      "victim": "Microsoft 365 enterprise customers (hundreds of organizations)",
+      "industry": "Cross-industry",
+      "attacker": "Criminal gang — phishing-as-a-service operators",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Kali365 phishing-as-a-service platform (sold on Telegram for $250/month to $2,000/year) uses AI-generated lures impersonating Adobe, DocuSign and SharePoint to trick victims into completing Microsoft's legitimate OAuth device-code login flow, granting attacker-controlled apps persistent access without intercepting credentials or MFA codes.",
+      "impact": "FBI public service announcement Thursday warned of hundreds of Kali365-enabled attacks since April; captured OAuth access and refresh tokens give immediate, MFA-bypassing access to Outlook, Teams and OneDrive and have been reused by other criminals for mailbox theft, BEC, lateral phishing and post-compromise extortion.",
       "ongoing": "Y",
-      "severity": "medium",
+      "severity": "high",
       "sources": [
-        "dfs.ny.gov"
+        "therecord.media",
+        "cyberscoop.com"
       ]
     },
     {
       "id": "7",
-      "date": "May 20",
-      "date_sort": "2026-05-20",
-      "victim": "GitHub (internal repositories)",
-      "industry": "Software development infrastructure",
-      "attacker": "North Korea — state-sponsored, financially motivated",
-      "attacker_origin": "north_korea",
-      "motivation": "Financial",
-      "vector": "TeamPCP (a suspected North Korean group also behind recent npm/PyPI supply-chain attacks) compromised a GitHub employee's device via a poisoned Visual Studio Code extension and exfiltrated internal source code repositories.",
-      "impact": "GitHub confirmed roughly 3,800 internal repositories were taken; the company says customer data was unaffected, the malicious extension was removed, the endpoint isolated and high-priority secrets rotated the same day; TeamPCP advertised the code for sale at $50,000 on a cybercrime forum and threatened to release it for free if no buyer emerged.",
-      "ongoing": "Y",
+      "date": "May 21",
+      "date_sort": "2026-05-21",
+      "victim": "German university hospitals (Cologne, Freiburg, Heidelberg, Tübingen, Ulm, Mannheim) via billing provider Unimed",
+      "industry": "Healthcare",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Unknown hackers breached Unimed, a third-party that handles billing for privately insured and self-paying patients at numerous German hospitals; the attackers exfiltrated patient billing and demographic data without touching hospital clinical infrastructure.",
+      "impact": "University Hospital Cologne reported ~30,000 affected (with health-related details exposed in 840+ cases and bank/payment data in five), Freiburg ~54,000 (900 with diagnosis/treatment information), Heidelberg ~11,000 (2,700 with billing data), Ulm ~1,600; hospitals halted data transfers, filed criminal complaints and are weighing legal action against Unimed.",
+      "ongoing": "N",
       "severity": "high",
       "sources": [
-        "cyberscoop.com",
         "therecord.media"
       ]
     },
     {
       "id": "8",
-      "date": "May 20",
-      "date_sort": "2026-05-20",
-      "victim": "7-Eleven (US franchisee documents)",
-      "industry": "Retail",
-      "attacker": "Criminal gang — data extortion (ShinyHunters)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "ShinyHunters accessed a 7-Eleven system used to store franchisee documents, part of a broader campaign against Salesforce-hosted data stores at numerous companies in late April.",
-      "impact": "7-Eleven confirmed the breach to regulators in Maine, Vermont and Massachusetts; stolen data includes names, addresses and Social Security numbers from franchisee records; comes alongside ShinyHunters' Instructure/Canvas breach against US universities and K-12 schools, which prompted an FBI 'do not pay' advisory.",
-      "ongoing": "N",
-      "severity": "high",
+      "date": "May 21",
+      "date_sort": "2026-05-21",
+      "victim": "Telecommunications providers and ISPs in Afghanistan, Azerbaijan, the Middle East and disputed Donbas region",
+      "industry": "Telecommunications",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "Multiple Chinese threat clusters deployed 'Showboat' (a.k.a. 'kworker'), a previously undetected Linux post-exploitation framework with LAN-scanning capabilities to reach internal devices isolated from the public internet; one operator paired it with the JFMBackdoor Windows implant.",
+      "impact": "Black Lotus Labs and PwC found Showboat has enabled years of stealthy espionage against small-market telcos in Central Asia and beyond, with zero VirusTotal detections at the time of discovery; analysts say its presence usually signals a much deeper compromise of the surrounding network.",
+      "ongoing": "Y",
+      "severity": "medium",
       "sources": [
-        "therecord.media"
+        "darkreading.com"
       ]
     },
     {
       "id": "9",
       "date": "May 20",
       "date_sort": "2026-05-20",
-      "victim": "npm ecosystem (@antv packages, echarts-for-react, ~169 downstream packages) and their CI/CD users",
-      "industry": "Software supply chain",
+      "victim": "GitHub (Microsoft)",
+      "industry": "Software / developer platform",
       "attacker": "North Korea — state-sponsored, financially motivated",
       "attacker_origin": "north_korea",
-      "motivation": "Financial",
-      "vector": "TeamPCP compromised an @antv maintainer account and published malicious versions of widely used data-visualization packages; the obfuscated preinstall payload (Mini Shai-Hulud) runs during npm install on GitHub Actions Linux runners, scrapes Runner.Worker process memory and steals credentials for GitHub, AWS, HashiCorp Vault, npm, Kubernetes and 1Password.",
-      "impact": "Malicious versions propagated through echarts-for-react (1M+ weekly downloads) into thousands of downstream projects; GitHub removed 640 malicious packages and invalidated 61,274 npm granular tokens with write/2FA-bypass permissions; payload forges SLSA provenance via Sigstore, creates rogue public repos under victim accounts (>2,200 observed) and establishes persistent credential capture in CI/CD pipelines.",
+      "motivation": "IP theft",
+      "vector": "A GitHub employee installed the malicious Nx Console VS Code extension — itself compromised in the May 11 TanStack supply-chain attack — which executed an attacker payload that exfiltrated internal repository contents.",
+      "impact": "More than 3,800 of GitHub's internal code repositories were stolen and listed for sale on a hacking forum; GitHub is rotating critical secret tokens to prevent follow-on access. The same TanStack-derived compromise was named as the source of an intrusion at Grafana days earlier.",
       "ongoing": "Y",
-      "severity": "critical",
+      "severity": "high",
       "sources": [
-        "microsoft.com",
-        "unit42.paloaltonetworks.com"
+        "risky.biz",
+        "cyberscoop.com"
       ]
     },
     {
       "id": "10",
       "date": "May 20",
       "date_sort": "2026-05-20",
-      "victim": "KimWolf DDoS botnet operator / DoD and other US victims of the botnet",
-      "industry": "Critical infrastructure and enterprises (DDoS targeting)",
-      "attacker": "Criminal gang — DDoS-for-hire",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Ontario Provincial Police arrested 23-year-old Ottawa resident Jacob Butler (aka 'Dort') on a US extradition warrant for operating KimWolf, an IoT botnet of more than one million infected residential proxy devices (digital photo frames, web cameras, streaming boxes) used for DDoS-for-hire.",
-      "impact": "KimWolf was tied to record-breaking DDoS attacks measured near 30 Tbps, more than 25,000 attack commands and victim losses exceeding $1 million in some cases; the botnet also targeted US Department of Defense IP ranges, prompting DCIS and FBI investigation; infrastructure for KimWolf and three rival botnets (Aisuru, JackSkid, Mossad) had already been seized in March, and Butler now faces up to 10 years in US prison plus Canadian computer-misuse charges.",
-      "ongoing": "N",
-      "severity": "high",
+      "victim": "Grafana Labs",
+      "industry": "Software / observability",
+      "attacker": "North Korea — state-sponsored, financially motivated",
+      "attacker_origin": "north_korea",
+      "motivation": "IP theft",
+      "vector": "Compromise traced to the same TanStack npm/Nx Console supply-chain incident that hit GitHub, in which a malicious VS Code extension was used as initial access.",
+      "impact": "Grafana publicly named the TanStack incident as the source of its breach; full scope of accessed data has not been disclosed but the company is responding alongside other affected dependents of the wave.",
+      "ongoing": "Y",
+      "severity": "medium",
       "sources": [
-        "krebsonsecurity.com",
-        "therecord.media"
+        "risky.biz"
       ]
     },
     {
       "id": "11",
-      "date": "Apr 24",
-      "date_sort": "2026-04-24",
-      "victim": "High-profile individuals in Japan, Taiwan and South Korea (Chinese-speaking diaspora, technical and government targets)",
-      "industry": "Government, defense, technology and individuals",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Tropic Trooper (aka Pirate Panda / Earth Centaur) compromised victims' home Wi-Fi routers to perform DNS hijacking of a Chinese dictionary app's update server, then delivered a Cobalt Strike beacon and new malware families (DaveShell, Donut loader, Merlin/Apollo agents, C6DOOR) via trojanized installers; secondary campaigns used Signal-impersonation phishing pages and military-themed lures.",
-      "impact": "Itochu and Zscaler researchers presented at Black Hat Asia that the long-running Chinese APT has shifted to targeting personal devices outside corporate networks, expanded its victim set into Japan, Taiwan and South Korea, and is rapidly adopting open-source loaders and C2 frameworks; IoCs for the campaign were published for defenders in the region.",
+      "date": "Apr-May",
+      "date_sort": "2026-05-20",
+      "victim": "7-Eleven",
+      "industry": "Retail",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Specific intrusion method not disclosed; the ShinyHunters extortion group listed the company on its dark web leak site.",
+      "impact": "7-Eleven disclosed an April data breach to Maine's Attorney General after ShinyHunters posted the company on its leak site; details on the scope of stolen customer data remain limited.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "12",
+      "date": "May 20",
+      "date_sort": "2026-05-20",
+      "victim": "Government of the Northern Mariana Islands (CNMI)",
+      "industry": "Government — U.S. territory",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Cyberattack against government email infrastructure; officials have not yet specified whether the incident involved ransomware.",
+      "impact": "Disrupted email servers across the CNMI government and is expected to slow administrative operations for the U.S. Pacific territory.",
       "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "13",
+      "date": "Since Apr",
+      "date_sort": "2026-05-20",
+      "victim": "BlueSky users (account hijacking campaign)",
+      "industry": "Social media",
+      "attacker": "Russia — state-linked disinformation group",
+      "attacker_origin": "russia",
+      "motivation": "Political",
+      "vector": "Account takeovers of legitimate BlueSky users — exact compromise vector not disclosed — followed by posting of attacker-controlled content from trusted handles.",
+      "impact": "Hijacked accounts were used to push pro-Kremlin and anti-Ukraine propaganda from a known Russian disinformation outfit; BlueSky has been suspending compromised accounts pending owner recovery.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "14",
+      "date": "May 20",
+      "date_sort": "2026-05-20",
+      "victim": "Pierre & Vacances, Belambra, Gîtes de France",
+      "industry": "Travel / hospitality",
+      "attacker": "Criminal gang — data theft",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Specific intrusion vector unspecified; an actor calling themselves 'ChimeraZ' claimed all three breaches and posted the stolen data for sale.",
+      "impact": "Customer data from three major French holiday-booking sites is now circulating in cybercrime markets, exposing affected travelers to fraud and phishing follow-on.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "15",
+      "date": "May 20",
+      "date_sort": "2026-05-20",
+      "victim": "Verus-Ethereum cross-chain bridge",
+      "industry": "Cryptocurrency / DeFi",
+      "attacker": "Criminal gang — crypto theft",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Exploit against the Verus-Ethereum bridge protocol; technical root cause not yet publicly disclosed.",
+      "impact": "Hackers stole approximately $11.58 million in crypto assets from the bridge, adding to a long string of DeFi bridge exploits.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "16",
+      "date": "Mar",
+      "date_sort": "2026-05-20",
+      "victim": "RXNT (and U.S. Congress members served by its e-prescription service)",
+      "industry": "Healthcare software",
+      "attacker": "Criminal gang — data theft",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "RXNT — which handles drug prescriptions including for members of the U.S. Congress — was breached in March 2026 by unidentified attackers who exfiltrated patient data.",
+      "impact": "Patient data including for U.S. lawmakers was stolen; RXNT notified authorities on the final day allowed under U.S. health privacy laws, raising questions about the company's disclosure practices.",
+      "ongoing": "N",
       "severity": "high",
       "sources": [
-        "darkreading.com"
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "17",
+      "date": "May 11",
+      "date_sort": "2026-05-11",
+      "victim": "TanStack, OpenSearch, UiPath, Mistral AI and 165+ other npm/PyPI projects (520M cumulative weekly downloads in scope)",
+      "industry": "Open-source software supply chain",
+      "attacker": "North Korea — state-sponsored, financially motivated",
+      "attacker_origin": "north_korea",
+      "motivation": "IP theft",
+      "vector": "First documented Shai-Hulud wave needing no stolen credential: attackers chained a GitHub Actions 'Pwn Request' (pull_request_target with checkout of fork merge ref) with cache poisoning of a 1.1GB pnpm store and OIDC token extraction from runner /proc/<pid>/mem to publish 84 malicious packages with valid SLSA Build Level 3 provenance.",
+      "impact": "Within hours, 373 malicious versions across 169 npm packages plus PyPI packages were published — including the official OpenSearch JavaScript client, 57 UiPath automation packages and Mistral AI's TypeScript client — propagating credential theft and CI/CD pipeline backdoors across the ecosystem; the worm's source code was publicly released May 12, already spawning copycat activity.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "unit42.paloaltonetworks.com",
+        "cloud.google.com",
+        "cyberscoop.com"
       ]
     }
   ]
