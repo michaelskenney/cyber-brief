@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-30T08:06:42.384966+00:00",
+  "generated_at": "2026-05-30T20:06:59.115580+00:00",
   "period_searched": "May 11-29, 2026",
-  "incident_count": 21,
+  "incident_count": 25,
   "incidents": [
     {
       "id": "1",
@@ -41,17 +41,18 @@
       "id": "3",
       "date": "May 28",
       "date_sort": "2026-05-28",
-      "victim": "Multiple unnamed Microsoft products",
+      "victim": "Multiple unpatched Microsoft Windows products",
       "industry": "Software / Operating systems",
-      "attacker": "Unknown — independent researchers",
+      "attacker": "Unknown — independent researcher 'Nightmare Eclipse'",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "Public disclosure of six zero-day vulnerabilities (codenamed RedSun, UnDefend, BlueHammer, YellowKey, GreenPlasma and MiniPlasma) without prior coordination with Microsoft, releasing proof-of-concept details before patches were available.",
-      "impact": "Microsoft says its security teams are working around the clock to understand the impact, protect customers and develop updates; the company called the uncoordinated disclosures unjustifiable and warned they put proof-of-concept code in the hands of bad actors.",
+      "vector": "Pseudonymous researcher 'Nightmare Eclipse' publicly released six Windows zero-day vulnerabilities (BlueHammer, UnDefend, RedSun, YellowKey, GreenPlasma, MiniPlasma) with working proof-of-concept code on GitHub between April and May 2026, without coordinated disclosure to Microsoft.",
+      "impact": "Microsoft confirmed BlueHammer, UnDefend and RedSun have been exploited in live intrusions and all three are now on CISA's KEV catalog. The three more recent vulnerabilities (YellowKey, GreenPlasma, MiniPlasma) remain unpatched. The researcher has threatened additional releases on July 14 (Patch Tuesday).",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "critical",
       "sources": [
-        "microsoft.com (MSRC)"
+        "microsoft.com (MSRC)",
+        "therecord.media"
       ]
     },
     {
@@ -110,6 +111,130 @@
     },
     {
       "id": "7",
+      "date": "May 28",
+      "date_sort": "2026-05-28",
+      "victim": "TD Bank N.A. customers",
+      "industry": "Financial services / Banking",
+      "attacker": "Criminal gang — insider fraud",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Former TD Bank employee Cheungkin (Kelvin) Lam, 28, of Queens, NY, accepted bribes to identify customer accounts with large balances and shared confidential customer information with outside co-conspirators; separately bribed an employee at a second financial institution to falsify bank records used to open accounts for fraud schemes.",
+      "impact": "Lam received at least $155,000 in bribes and facilitated more than $3.4M in fraud losses across two financial institutions between January 2021 and August 2022. He pleaded guilty to conspiring to commit wire fraud affecting a financial institution and making false bank entries; faces up to 30 years in prison at October sentencing.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "justice.gov"
+      ]
+    },
+    {
+      "id": "8",
+      "date": "May 28",
+      "date_sort": "2026-05-28",
+      "victim": "7+ million elderly Americans (lead-list victims)",
+      "industry": "Consumer fraud / Elder abuse",
+      "attacker": "Criminal gang — data brokerage to Jamaican scammers",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "North Carolina lead-list broker Troy Murray, operating under the pseudonym 'Steve Dixon', sold lists of elderly Americans' names, phone numbers, addresses and email addresses to Jamaican lottery-fraud scammers from 2016 to 2023; payments were collected via wire transfer and (after wire blocks) pre-paid gift cards.",
+      "impact": "Murray sent 22,000+ lead lists containing the personal information of more than 7 million elderly Americans and earned $5.2M; victim losses exceeded $9.5M. Sentenced May 28 to 121 months in prison plus $5.2M forfeiture for conspiracy to commit wire fraud.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "justice.gov"
+      ]
+    },
+    {
+      "id": "9",
+      "date": "May 26",
+      "date_sort": "2026-05-26",
+      "victim": "AI infrastructure built on the Starlette Python framework (LiteLLM, vLLM, MCP servers, AI proxies)",
+      "industry": "AI infrastructure / Software",
+      "attacker": "Unknown — vulnerability disclosure",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "X41 D-Sec disclosed CVE-2026-48710 ('BadHost') — a Host-header parsing flaw in the Starlette Python asynchronous web framework that lets attackers craft requests so the server treats private endpoints as public, bypassing authentication. Exploit example: GET /privateendpoint HTTP/1.1 with Host: example.com/public?bar=",
+      "impact": "Starlette underpins a large portion of modern AI-server infrastructure including LiteLLM, vLLM, AI proxy servers, MCP servers and agent frameworks; patches were released but a significant portion of deployed AI backends are believed to remain unpatched. X41 published a scanner; no confirmed exploitation reported yet.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "risky.biz",
+        "X41 D-Sec"
+      ]
+    },
+    {
+      "id": "10",
+      "date": "May 26",
+      "date_sort": "2026-05-26",
+      "victim": "Charter Communications",
+      "industry": "Telecommunications",
+      "attacker": "Criminal gang — data extortion (ShinyHunters / Scattered Lapsus$ Hunters)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Charter confirmed a security breach after its name was published on the ShinyHunters dark-web data-leak portal; ShinyHunters (Bling Libra) typically uses voice-phishing of help-desk staff to harvest SaaS credentials and intercept MFA codes.",
+      "impact": "Specific data volume and customer impact not yet disclosed by Charter; ShinyHunters has a pattern of layering DDoS and media leaks on top of pure data-theft extortion when victims do not pay.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "risky.biz",
+        "BleepingComputer"
+      ]
+    },
+    {
+      "id": "11",
+      "date": "May 26",
+      "date_sort": "2026-05-26",
+      "victim": "Lithuania state registry (Centre of Registers)",
+      "industry": "Government / Land records",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Attackers used compromised credentials issued to other Lithuanian government agencies authorized to access land and real-estate data to query the state registry.",
+      "impact": "Approximately 600,000 records exfiltrated including property information, real names and cadastral details. Lithuania's state registry has confirmed the breach; entry-point credentials traced back to other government agencies.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "risky.biz",
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "12",
+      "date": "May 26",
+      "date_sort": "2026-05-26",
+      "victim": "Independent Australian MP Zali Steggall and three staffers",
+      "industry": "Government (Australia)",
+      "attacker": "Russia — state-linked espionage (suspected)",
+      "attacker_origin": "russia",
+      "motivation": "Espionage",
+      "vector": "Suspected foreign-state actor compromised the WhatsApp account of independent Australian MP Zali Steggall and three of her staff in March 2026, in what is believed to be part of a Russian campaign targeting foreign politicians' Signal and WhatsApp accounts.",
+      "impact": "Scope of message and contact-list exposure not publicly detailed. Reporting attributes the activity to the same operational pattern of Russia-attributed messenger account hijacks seen against politicians in Europe; Australian authorities have not publicly confirmed attribution.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz",
+        "Sydney Morning Herald"
+      ]
+    },
+    {
+      "id": "13",
+      "date": "May 26",
+      "date_sort": "2026-05-26",
+      "victim": "MyPillow",
+      "industry": "Consumer goods / Retail",
+      "attacker": "Criminal gang — ransomware (Play)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Play ransomware group named MyPillow on its data-leak site and claims to have stolen sensitive financial documents from MyPillow's corporate network; intrusion vector not disclosed.",
+      "impact": "MyPillow has not publicly confirmed the incident as of reporting. Play is one of the most prolific double-extortion crews of the past two years.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "risky.biz",
+        "Straight Arrow News"
+      ]
+    },
+    {
+      "id": "14",
       "date": "May 25",
       "date_sort": "2026-05-25",
       "victim": "Japanese KnowledgeDeliver LMS customers (Digital Knowledge)",
@@ -126,7 +251,7 @@
       ]
     },
     {
-      "id": "8",
+      "id": "15",
       "date": "May 25",
       "date_sort": "2026-05-25",
       "victim": "Japanese consumers (Apple, PayPay, Rakuten, JR, Nintendo, JCB and others)",
@@ -143,7 +268,7 @@
       ]
     },
     {
-      "id": "9",
+      "id": "16",
       "date": "May 22",
       "date_sort": "2026-05-22",
       "victim": "Technology-sector professionals in the U.S., Israel and UAE",
@@ -160,7 +285,7 @@
       ]
     },
     {
-      "id": "10",
+      "id": "17",
       "date": "May 22",
       "date_sort": "2026-05-22",
       "victim": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
@@ -178,7 +303,7 @@
       ]
     },
     {
-      "id": "11",
+      "id": "18",
       "date": "May 21",
       "date_sort": "2026-05-21",
       "victim": "Vietnamese government agencies (two unnamed)",
@@ -196,7 +321,7 @@
       ]
     },
     {
-      "id": "12",
+      "id": "19",
       "date": "May 21",
       "date_sort": "2026-05-21",
       "victim": "NYC Health + Hospitals",
@@ -214,7 +339,7 @@
       ]
     },
     {
-      "id": "13",
+      "id": "20",
       "date": "May 21",
       "date_sort": "2026-05-21",
       "victim": "Jacob Butler ('Dort') / Kimwolf DDoS-for-hire customers",
@@ -232,7 +357,7 @@
       ]
     },
     {
-      "id": "14",
+      "id": "21",
       "date": "May 21",
       "date_sort": "2026-05-21",
       "victim": "Wahlap (Chinese game arcade maker)",
@@ -250,25 +375,7 @@
       ]
     },
     {
-      "id": "15",
-      "date": "May 21",
-      "date_sort": "2026-05-21",
-      "victim": "Northern Mariana Islands government",
-      "industry": "Government (U.S. territory)",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Cyberattack disrupted government email servers; officials did not specify whether the incident was ransomware.",
-      "impact": "Email outage expected to slow down administrative tasks across the U.S. territory's government.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "risky.biz",
-        "DysruptionHub"
-      ]
-    },
-    {
-      "id": "16",
+      "id": "22",
       "date": "May 21",
       "date_sort": "2026-05-21",
       "victim": "BlueSky users (account takeovers for disinformation)",
@@ -286,26 +393,7 @@
       ]
     },
     {
-      "id": "17",
-      "date": "May 21",
-      "date_sort": "2026-05-21",
-      "victim": "Social Design Agency (SDA) — Russian disinformation group",
-      "industry": "Information operations (Russia)",
-      "attacker": "Unknown — counter-disinformation leak",
-      "attacker_origin": "unknown",
-      "motivation": "Political",
-      "vector": "Unknown actors breached SDA and shared internal documents with selected journalists detailing ongoing influence operations.",
-      "impact": "Leaked files exposed SDA campaigns in Armenia, France, Ukraine, Germany, Moldova and Norway aimed at stirring anti-migrant sentiment, blaming Ukraine for economic conditions, and supporting far-right groups; documents also named local collaborators including a retired U.S. general, a former Bundestag member and a Romanian oligarch.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz",
-        "OCCRP",
-        "Le Monde"
-      ]
-    },
-    {
-      "id": "18",
+      "id": "23",
       "date": "May 20",
       "date_sort": "2026-05-20",
       "victim": "GitHub (Microsoft)",
@@ -323,7 +411,7 @@
       ]
     },
     {
-      "id": "19",
+      "id": "24",
       "date": "May 18",
       "date_sort": "2026-05-18",
       "victim": "5,500+ GitHub repositories (Megalodon supply-chain campaign)",
@@ -341,26 +429,7 @@
       ]
     },
     {
-      "id": "20",
-      "date": "May 18",
-      "date_sort": "2026-05-18",
-      "victim": "Two unnamed crypto platforms (RetoSwap and StablR)",
-      "industry": "Cryptocurrency",
-      "attacker": "Criminal gang — crypto theft",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "RetoSwap (an anonymous Tor-based Monero trading hub) was tricked into changing a multisig wallet to one controlled by attackers; StablR token theft details not disclosed.",
-      "impact": "RetoSwap lost approximately $2.7M worth of Monero; StablR lost approximately $2.8M in tokens over the weekend.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz",
-        "RetoSwap",
-        "StablR"
-      ]
-    },
-    {
-      "id": "21",
+      "id": "25",
       "date": "May 11",
       "date_sort": "2026-05-11",
       "victim": "TanStack, OpenSearch, UiPath, Mistral AI and 169+ npm packages (Mini Shai-Hulud)",
