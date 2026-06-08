@@ -1,55 +1,76 @@
 {
-  "generated_at": "2026-06-08T08:07:07.383996+00:00",
-  "period_searched": "May 26 - June 5, 2026",
-  "incident_count": 23,
+  "generated_at": "2026-06-08T20:05:39.739143+00:00",
+  "period_searched": "May 25 - June 8, 2026",
+  "incident_count": 18,
   "incidents": [
     {
       "id": "1",
-      "date": "Jun 5",
-      "date_sort": "2026-06-05",
-      "victim": "Organizations running Palo Alto PAN-OS GlobalProtect",
-      "industry": "Technology / Enterprise networking",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Attackers exploited an authentication-bypass flaw (CVE-2026-0257) in PAN-OS GlobalProtect portals/gateways, forging authentication-override cookies to obtain unauthenticated VPN access.",
-      "impact": "Active exploitation in two waves since mid-May; some attackers were assigned VPN addresses and gained internal network access, though no lateral movement has been confirmed yet. CISA added the flaw to its KEV catalog on May 29.",
+      "date": "Jun 8",
+      "date_sort": "2026-06-08",
+      "victim": "US water, energy and government utilities",
+      "industry": "Critical infrastructure",
+      "attacker": "Iran — IRGC-linked industrial control system actors",
+      "attacker_origin": "iran",
+      "motivation": "Disruption",
+      "vector": "Manipulation of internet-exposed programmable logic controllers (Rockwell/Allen-Bradley and Unitronics) at water, energy and municipal sites since at least March.",
+      "impact": "Six US federal agencies (FBI, CISA, NSA, EPA, DOE, Cyber Command) issued a joint advisory; victim organizations confirmed operational disruptions and financial losses. One IRGC-linked group paused US attacks at the ceasefire but vowed to resume.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
-        "unit42.paloaltonetworks.com",
         "darkreading.com",
+        "unit42.paloaltonetworks.com",
         "cisa.gov"
       ]
     },
     {
       "id": "2",
-      "date": "Jun 4",
-      "date_sort": "2026-06-04",
-      "victim": "npm open-source ecosystem (Arweave/WeaveDB packages)",
-      "industry": "Software / Open source",
-      "attacker": "Criminal gang — supply chain",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "A Rust-written worm ('IronWorm') compromised npm publishing workflows, harvested developer secrets (API keys, cloud/SSH credentials, npm tokens) and reused them to self-propagate; it used an eBPF rootkit to hide activity and Tor-based C2.",
-      "impact": "At least 36 npm packages (~32,000 monthly downloads) were trojanized and 57 malicious commits made across nine organizations before packages were deprecated; backdated commits were used to obscure the timeline.",
-      "ongoing": "N",
+      "date": "Jun 8",
+      "date_sort": "2026-06-08",
+      "victim": "WhatsApp / Meta users",
+      "industry": "Technology / Messaging",
+      "attacker": "Commercial spyware vendor (NSO Group)",
+      "attacker_origin": "unknown",
+      "motivation": "Espionage",
+      "vector": "Spearphishing and social-engineering links driving users to malicious external sites, plus creation of test accounts and groups on WhatsApp.",
+      "impact": "Meta says NSO Group ran spyware-linked attacks against WhatsApp users in violation of an October court injunction; Meta filed a contempt-of-court complaint. Activity resembled prior 1-click campaigns that hit journalists and activists.",
+      "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "darkreading.com"
+        "therecord.media",
+        "cyberscoop.com"
       ]
     },
     {
       "id": "3",
-      "date": "Jun 4",
-      "date_sort": "2026-06-04",
-      "victim": "UN World Food Programme (Gaza aid recipients)",
-      "industry": "Humanitarian / Non-profit",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Unauthorized parties accessed data stored in WFP's Gaza Self-Registration Application, used by Palestinians to register for food and cash assistance.",
-      "impact": "Sensitive information for roughly 600,000 Palestinian households — names, ID numbers, phone numbers and neighborhood location details — was exposed. WFP suspended the platform while investigating; attribution and whether data was leaked remain unknown.",
+      "date": "Jun 8",
+      "date_sort": "2026-06-08",
+      "victim": "Open-source software ecosystem (npm, PyPI, Red Hat namespace)",
+      "industry": "Software / DevOps",
+      "attacker": "Criminal gang — software supply-chain worm (TeamPCP)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Self-propagating Shai-Hulud/Miasma/Hades worm abuses npm install hooks and Python .pth startup files, installing a Bun-powered stealer that harvests cloud, CI/CD, GitHub and SSH secrets then republishes poisoned packages.",
+      "impact": "Latest 'Hades' wave hit 37 PyPI wheels across 19 packages; a June 1 wave trojanized 32 packages in the @redhat-cloud-services namespace (~80K weekly downloads) via a compromised Red Hat GitHub account. Credential rotation urged for any install environment.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "darkreading.com",
+        "unit42.paloaltonetworks.com",
+        "blog.talosintelligence.com",
+        "news.risky.biz"
+      ]
+    },
+    {
+      "id": "4",
+      "date": "Jun 8",
+      "date_sort": "2026-06-08",
+      "victim": "Armenia parliamentary election",
+      "industry": "Government / Elections",
+      "attacker": "Russia — state-linked influence operation",
+      "attacker_origin": "russia",
+      "motivation": "Political",
+      "vector": "Eight-month 'Matryoshka'/Doppelganger campaign of fabricated news, manipulated videos, bot amplification and impersonated outlets, plus fake bomb threats to polling stations.",
+      "impact": "One of the largest Russia-linked disinformation campaigns observed; aimed to undermine PM Pashinyan's pro-European party, which still won ~50% of the vote. Bomb hoaxes from foreign numbers disrupted several polling stations.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -57,349 +78,244 @@
       ]
     },
     {
-      "id": "4",
-      "date": "Jun 4",
-      "date_sort": "2026-06-04",
-      "victim": "Global finance, tax and HR organizations",
-      "industry": "Cross-sector (finance-themed targets)",
-      "attacker": "China — state-suspected cybercrime group",
-      "attacker_origin": "china",
-      "motivation": "Financial",
-      "vector": "Group tracked as TA4922 ran finance- and tax-themed phishing using thousands of disposable sender addresses, impersonating finance departments and colleagues, then deployed remote-access trojans, RMM tools or credential-phishing pages.",
-      "impact": "Operational tempo expanded sharply over two months from Japan to East Asia, Europe (UK, Germany, Italy) and South Africa; the group blends espionage and cybercrime with overlaps to the China-linked Silver Fox actor.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "darkreading.com"
-      ]
-    },
-    {
       "id": "5",
-      "date": "Jun 3",
-      "date_sort": "2026-06-03",
-      "victim": "Unnamed global stock exchange",
-      "industry": "Financial services / Market infrastructure",
-      "attacker": "Unknown — espionage likely",
-      "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "After gaining administrative access via lateral movement, the attacker deployed implants disguised as Adobe and OneDrive software, set up Dropbox-based C2, and used a legitimate Aspose .NET library to convert a finance executive's Outlook mailbox into files for exfiltration.",
-      "impact": "A senior finance executive's entire email inbox was siphoned roughly every two-to-four weeks for at least five months (Oct 2025-Feb 2026), exposing non-public information on listings, deals and enforcement matters. Activity ended around March 19.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "darkreading.com"
-      ]
-    },
-    {
-      "id": "6",
-      "date": "Jun 3",
-      "date_sort": "2026-06-03",
-      "victim": "Southeast Asia scam-center networks (DOJ/private-sector disruption)",
-      "industry": "Cross-sector / Consumer fraud",
-      "attacker": "Criminal gang — Chinese organized crime",
+      "date": "Jun 8",
+      "date_sort": "2026-06-08",
+      "victim": "Enterprises globally (IT, education, financial services)",
+      "industry": "Cross-sector",
+      "attacker": "Criminal gang — phishing and initial-access brokers",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Transnational crime groups ran cryptocurrency 'pig butchering' investment-fraud schemes from industrial-scale compounds in Cambodia, Laos and Burma, abusing US social-media, email and internet infrastructure.",
-      "impact": "DOJ 'Disruption Week' with Apple, Google, Meta, Microsoft, Coinbase and others interrupted 1.4M+ social media/email accounts, froze $3.8M in crypto, and led to seven arrests in Thailand. IC3 reported $7.2B in 2025 US investment-scam losses.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "justice.gov"
-      ]
-    },
-    {
-      "id": "7",
-      "date": "Jun 2",
-      "date_sort": "2026-06-02",
-      "victim": "Instagram (Obama White House & US Space Force accounts)",
-      "industry": "Social media / Technology",
-      "attacker": "Iran — state-directed hacktivist proxies",
-      "attacker_origin": "iran",
-      "motivation": "Political",
-      "vector": "Pro-Iran hackers social-engineered Meta's AI customer-support bot: using a VPN near the target's hometown, they triggered a password reset, then instructed the bot to link a new email address, which the bot used to send a one-time reset code.",
-      "impact": "Verified Instagram accounts including the Obama White House and Chief Master Sergeant of the US Space Force were briefly defaced with pro-Iran imagery; high-value short usernames were hijacked. Meta pushed an emergency patch; accounts with MFA were unaffected.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "krebsonsecurity.com"
-      ]
-    },
-    {
-      "id": "8",
-      "date": "Jun 1",
-      "date_sort": "2026-06-01",
-      "victim": "Red Hat (@redhat-cloud-services npm packages)",
-      "industry": "Software / Open source",
-      "attacker": "Criminal gang — supply chain",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Via a compromised Red Hat employee GitHub account, attackers pushed orphan commits and abused the GitHub Actions OIDC trusted-publisher flow to ship trojanized packages ('Miasma') carrying valid SLSA provenance; an obfuscated 4.29 MB dropper harvested credentials.",
-      "impact": "At least 32 packages across 90+ versions (~80,000 weekly downloads) were poisoned, stealing GitHub, npm, AWS, Azure, GCP, Vault and Kubernetes secrets, scraping CI runner memory, and self-propagating worm-style. A decoy tripwire could trigger a destructive 'rm -rf ~/'.",
+      "vector": "Phishing, malvertising and SEO abuse impersonating AI brands (ChatGPT, Claude/Anthropic, Copilot, DeepSeek) using multi-hop redirect chains, CAPTCHA gating and AiTM kits to steal credentials, card data and tokens.",
+      "impact": "Microsoft tracked AI-themed campaigns including a ChatGPT-billing lure (up to 100K emails/day) harvesting card data and a Claude 'AUP appeal' lure targeting 2,000+ organizations for AiTM token theft; some delivered Vidar stealer via Storm-3075/Fox Tempest.",
       "ongoing": "Y",
       "severity": "high",
-      "sources": [
-        "microsoft.com",
-        "unit42.paloaltonetworks.com"
-      ]
-    },
-    {
-      "id": "9",
-      "date": "May 29",
-      "date_sort": "2026-05-29",
-      "victim": "Enterprise developers (nine spoofed corporate npm scopes, incl. Sberbank)",
-      "industry": "Software / Open source",
-      "attacker": "Criminal gang — data theft",
-      "attacker_origin": "criminal",
-      "motivation": "Unclear",
-      "vector": "A single operator using three aliases published dependency-confusion packages mirroring internal corporate namespaces with inflated version numbers and spoofed GitHub Enterprise/Jira URLs; a postinstall hook ran an obfuscated reconnaissance dropper from a shared C2.",
-      "impact": "Packages impersonating internal services (including Sberbank's SberPay widget) fingerprinted developer environments in 'reconnaissance-only' mode, with a server-side flag designed to enable full exploitation later. Packages were taken down after disclosure.",
-      "ongoing": "N",
-      "severity": "medium",
       "sources": [
         "microsoft.com"
       ]
     },
     {
-      "id": "10",
-      "date": "May 28",
-      "date_sort": "2026-05-28",
-      "victim": "GitHub (internal repositories) & developer CI/CD ecosystems",
-      "industry": "Software / Technology",
-      "attacker": "Criminal gang — supply chain",
-      "attacker_origin": "criminal",
+      "id": "6",
+      "date": "Jun 8",
+      "date_sort": "2026-06-08",
+      "victim": "Lockheed Martin (claimed)",
+      "industry": "Aerospace / Defense",
+      "attacker": "Iran — state-linked actors (claimed)",
+      "attacker_origin": "iran",
       "motivation": "IP theft",
-      "vector": "Threat actors leveraged a prior Nx compromise to poison the Nx Console VS Code extension (v18.95.0, CVE-2026-48027), pushed via auto-update; a parallel 'Megalodon' campaign injected malicious GitHub Action workflows to harvest CI/CD secrets.",
-      "impact": "A GitHub employee device was compromised, leading to unauthorized access and exfiltration of internal GitHub repositories; Megalodon backdoored 5,500+ repositories via 5,700+ malicious commits, stealing cloud credentials and tokens. CISA issued an alert and KEV listing.",
+      "vector": "Claimed network intrusion and data exfiltration; details unverified.",
+      "impact": "A group calling itself 'APT Iran' claimed to be selling exfiltrated Lockheed Martin data, including purported F-35 blueprints, for over $598 million. Claim is unverified but fits a pattern of multiyear Iranian espionage against Western aerospace and defense.",
       "ongoing": "Y",
-      "severity": "critical",
+      "severity": "medium",
       "sources": [
-        "cisa.gov",
-        "therecord.media",
-        "blog.talosintelligence.com"
+        "darkreading.com"
+      ]
+    },
+    {
+      "id": "7",
+      "date": "Jun 5",
+      "date_sort": "2026-06-05",
+      "victim": "Organizations running Palo Alto PAN-OS / GlobalProtect",
+      "industry": "Cross-sector",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Active exploitation of CVE-2026-0257, an authentication-bypass flaw in PAN-OS GlobalProtect portal/gateway that lets unauthorized attackers establish VPN sessions.",
+      "impact": "Unit 42 observed probing and some successful gateway-connected sessions; no post-access lateral movement yet identified. Added to CISA's KEV catalog May 29; patching and IOC hunting advised.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "unit42.paloaltonetworks.com",
+        "cyberscoop.com",
+        "cisa.gov"
+      ]
+    },
+    {
+      "id": "8",
+      "date": "Jun 2",
+      "date_sort": "2026-06-02",
+      "victim": "macOS users (Anglophone / Western European markets)",
+      "industry": "Consumer / Cross-sector",
+      "attacker": "Criminal gang — malvertising",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Operation FlutterBridge: Google Ads from shell companies push Flutter-built apps (podcast/PDF tools) carrying the FlutterShell backdoor, which uses a WebView JavaScript-to-native bridge for remote command execution and file theft.",
+      "impact": "Notarized, Apple-signed samples with zero VirusTotal detections hijack Chrome and add backdoor capabilities including AI-summarization-based data exfiltration. Google suspended the advertiser accounts; malware under active development.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "unit42.paloaltonetworks.com"
+      ]
+    },
+    {
+      "id": "9",
+      "date": "Early Jun",
+      "date_sort": "2026-06-02",
+      "victim": "TesseraDAO and SuperFortune (DeFi platforms)",
+      "industry": "Cryptocurrency / DeFi",
+      "attacker": "Criminal gang — cryptocurrency theft",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Smart-contract abuse: unauthorized token minting/dumping (TesseraDAO) and draining of a central airdrop wallet (SuperFortune), with proceeds laundered via cross-chain bridges and Tornado Cash.",
+      "impact": "Attackers stole roughly $2.5 million from TesseraDAO and about $15 million from SuperFortune; both platforms are still investigating.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "news.risky.biz"
+      ]
+    },
+    {
+      "id": "10",
+      "date": "Early Jun",
+      "date_sort": "2026-06-01",
+      "victim": "Dashlane users",
+      "industry": "Technology / Password management",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Brute-force attack against user accounts.",
+      "impact": "Password manager Dashlane disclosed that a brute-force attack resulted in the theft of nearly 20 encrypted password vaults; the company published a technical post-mortem.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "news.risky.biz"
       ]
     },
     {
       "id": "11",
-      "date": "May 28",
-      "date_sort": "2026-05-28",
-      "victim": "Carnival Corporation",
-      "industry": "Travel / Hospitality (cruise)",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Attackers (claimed by ShinyHunters) compromised an employee account via phishing and accessed a limited portion of Carnival's IT environment in April.",
-      "impact": "Personal data of nearly 6 million people — names, addresses, dates of birth, driver's license and passport numbers — was copied. ShinyHunters released what it said were 8.7M records on its leak site after a failed extortion attempt.",
+      "date": "May 31",
+      "date_sort": "2026-05-31",
+      "victim": "Instagram (incl. Obama White House, US Space Force accounts)",
+      "industry": "Government / Social media",
+      "attacker": "Iran — state-aligned hacktivists",
+      "attacker_origin": "iran",
+      "motivation": "Political",
+      "vector": "Social-engineering of Meta's AI support assistant: using a local-area VPN and the bot's password-reset flow to link an attacker email and trigger a one-time reset code, bypassing weak account recovery.",
+      "impact": "High-value Instagram accounts including the Obama White House and the Space Force Chief Master Sergeant were briefly defaced with pro-Iranian messages; hackers claimed to seize short usernames worth over $500K. Meta pushed an emergency patch; MFA-protected accounts were unaffected.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
-        "therecord.media"
+        "krebsonsecurity.com"
       ]
     },
     {
       "id": "12",
       "date": "May 28",
       "date_sort": "2026-05-28",
-      "victim": "npm OpenSearch / ElasticSearch developer ecosystem",
-      "industry": "Software / Open source",
-      "attacker": "Criminal gang — supply chain",
+      "victim": "GitHub (internal repositories)",
+      "industry": "Software / DevOps",
+      "attacker": "Criminal gang — supply-chain / source-code theft",
       "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "A single actor (alias 'vpmdhaj') published 14 typosquatted packages spoofing OpenSearch/Elastic/DevOps libraries with inflated versions; install-time hooks ran a Bun-compiled harvester, with a stealthier variant abusing the legitimate Bun runtime to avoid C2 traffic.",
-      "impact": "The payload stole AWS IMDS/ECS credentials, Secrets Manager material across 16+ regions, HashiCorp Vault tokens, GitHub Actions context and npm publish tokens, enabling cloud lateral movement and downstream supply-chain pivoting. Packages were removed.",
-      "ongoing": "N",
-      "severity": "medium",
+      "motivation": "IP theft",
+      "vector": "A poisoned Nx Console VS Code extension (v18.95.0, CVE-2026-48027) distributed via auto-update compromised a GitHub employee device; the separate 'Megalodon' campaign injected malicious GitHub Action workflows to harvest CI/CD secrets and cloud tokens.",
+      "impact": "Unauthorized access and exfiltration of internal GitHub repositories; Megalodon backdoored numerous public repos to steal credentials. CISA added the CVE to KEV and urged secret rotation and workflow audits.",
+      "ongoing": "Y",
+      "severity": "high",
       "sources": [
-        "microsoft.com"
+        "cisa.gov",
+        "blog.talosintelligence.com"
       ]
     },
     {
       "id": "13",
-      "date": "May 27",
+      "date": "Late May",
       "date_sort": "2026-05-27",
-      "victim": "Los Angeles County Metropolitan Transportation Authority (LACMTA)",
-      "industry": "Transportation / Government",
-      "attacker": "Iran — Ministry of Intelligence (MOIS)",
-      "attacker_origin": "iran",
-      "motivation": "Disruption",
-      "vector": "A group posing as a hacktivist crew ('Ababil of Minab') but tied by researchers to Iran's MOIS breached the transit system in March, using custom exfiltration tooling and scripted plus hands-on-keyboard destruction across virtualization, storage and backup layers.",
-      "impact": "The attackers exfiltrated LACMTA data and destroyed databases, virtual machines and storage volumes to deny recovery. Additional victims included Israeli, Turkish and Saudi organizations across media, education and other sectors.",
+      "victim": "Lithuania state property registry",
+      "industry": "Government",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Use of compromised credentials issued to other government agencies authorized to access land and real-estate data.",
+      "impact": "Roughly 600,000 records stolen, including real names, cadastral and property information.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
-        "therecord.media",
-        "recordedfuture.com"
+        "news.risky.biz"
       ]
     },
     {
       "id": "14",
-      "date": "May 27",
-      "date_sort": "2026-05-27",
-      "victim": "US law firms (legal sector)",
-      "industry": "Legal services",
-      "attacker": "Criminal gang — data extortion (Russia-based)",
+      "date": "Late May",
+      "date_sort": "2026-05-26",
+      "victim": "Charter Communications",
+      "industry": "Telecommunications",
+      "attacker": "Criminal gang — data extortion (ShinyHunters)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "The Silent Ransom Group impersonates IT support via phone and phishing to obtain remote-desktop access, and has escalated to sending operators in person to insert storage devices; data is exfiltrated with WinSCP or renamed Rclone, bypassing encryption.",
-      "impact": "The FBI warned that the extortion gang has targeted law firms since 2023 (also insurance, finance and healthcare), stealing sensitive client data and threatening to leak it. The move to in-person social engineering is a rare, concerning escalation.",
+      "vector": "Data theft and extortion; victim named on the actor's dark-web leak portal.",
+      "impact": "US telecom Charter confirmed a security breach after being listed on the ShinyHunters leak site.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "darkreading.com",
-        "cyberscoop.com"
+        "news.risky.biz"
       ]
     },
     {
       "id": "15",
-      "date": "May 27",
-      "date_sort": "2026-05-27",
-      "victim": "Ajax (AFC Ajax football club)",
-      "industry": "Sports / Entertainment",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "A hacker exploited an unpatched vulnerability to repeatedly access the club's computer systems, with the ability to transfer tickets and alter stadium-ban records.",
-      "impact": "Disclosed in March, the breach exposed email addresses and limited personal data; Dutch broadcaster RTL reported it may have affected 300,000+ registered supporters and 42,000+ season tickets. Dutch police arrested a 35-year-old suspect.",
+      "date": "Late May",
+      "date_sort": "2026-05-26",
+      "victim": "Carnival Corporation",
+      "industry": "Travel / Hospitality",
+      "attacker": "Criminal gang — data extortion (ShinyHunters)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Data-theft intrusion attributed to the ShinyHunters group.",
+      "impact": "American cruise operator Carnival disclosed another security incident, the latest caused by ShinyHunters.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
-        "therecord.media"
+        "news.risky.biz"
       ]
     },
     {
       "id": "16",
       "date": "Late May",
-      "date_sort": "2026-05-27",
-      "victim": "Charter Communications",
-      "industry": "Telecommunications",
-      "attacker": "Criminal gang — data extortion",
+      "date_sort": "2026-05-26",
+      "victim": "MyPillow",
+      "industry": "Retail / Manufacturing",
+      "attacker": "Criminal gang — ransomware (Play)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Breach disclosed after Charter's name appeared on the ShinyHunters dark-web leak portal.",
-      "impact": "The American telecom confirmed a security breach; ShinyHunters listed it among extortion targets. Scope of stolen data not yet detailed.",
-      "ongoing": "N",
+      "vector": "Ransomware intrusion with data theft for extortion leverage.",
+      "impact": "The Play ransomware group is extorting MyPillow, claiming theft of sensitive financial documents from its corporate network. The company has not confirmed the incident.",
+      "ongoing": "Y",
       "severity": "medium",
       "sources": [
-        "risky.biz"
+        "news.risky.biz"
       ]
     },
     {
       "id": "17",
       "date": "Late May",
-      "date_sort": "2026-05-27",
-      "victim": "Lithuania state property registry",
-      "industry": "Government",
-      "attacker": "Unknown — criminal likely",
+      "date_sort": "2026-05-26",
+      "victim": "UK visa application portal (third-party)",
+      "industry": "Government services (third-party)",
+      "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "Entry point traced to compromised credentials issued to other government agencies authorized to access land and real-estate data.",
-      "impact": "Hackers stole 600,000 records including real names, cadastral information and property/real-estate details from Lithuania's state registry.",
-      "ongoing": "N",
+      "vector": "Misconfigured, non-official immigration website exposing applicant data publicly.",
+      "impact": "More than 100,000 documents, including selfies and passport scans, were leaking from an unofficial UK visa portal, which had not fixed the exposure.",
+      "ongoing": "Y",
       "severity": "medium",
       "sources": [
-        "risky.biz"
+        "news.risky.biz"
       ]
     },
     {
       "id": "18",
-      "date": "Late May",
-      "date_sort": "2026-05-27",
-      "victim": "Australian MP Zali Steggall & staff",
+      "date": "March",
+      "date_sort": "2026-03-15",
+      "victim": "Australian MP Zali Steggall and staff",
       "industry": "Government",
-      "attacker": "Russia — state-linked espionage group",
+      "attacker": "Russia — state-linked espionage group (suspected)",
       "attacker_origin": "russia",
       "motivation": "Espionage",
-      "vector": "A suspected foreign state actor breached the WhatsApp account of an independent Australian MP and three staffers in March, believed to be part of a campaign targeting Signal and WhatsApp accounts of foreign politicians.",
-      "impact": "Compromise of the messaging accounts of an elected official and staff; assessed (though unconfirmed) as part of a Russian campaign against foreign politicians.",
+      "vector": "Compromise of WhatsApp accounts, believed to be part of a broader campaign targeting Signal and WhatsApp accounts of foreign politicians.",
+      "impact": "A suspected foreign state actor breached the WhatsApp account of independent MP Zali Steggall and three staffers in March; attribution to a Russian campaign is unconfirmed.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "19",
-      "date": "Late May",
-      "date_sort": "2026-05-27",
-      "victim": "MyPillow",
-      "industry": "Retail / Consumer goods",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "The Play ransomware group claims to have stolen sensitive financial documents from MyPillow's corporate network.",
-      "impact": "Play is extorting the company, claiming theft of financial records; MyPillow had not confirmed the incident at time of reporting.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "20",
-      "date": "May 27",
-      "date_sort": "2026-05-27",
-      "victim": "Oregon state government office",
-      "industry": "Government",
-      "attacker": "Criminal gang — access broker",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "A Romanian national gained unauthorized access to a computer on an Oregon state government network in 2021 and sold dark-web access (with samples of personal data) to it and numerous other US and global victims.",
-      "impact": "Catalin Dragomir was sentenced to 56 months in US federal prison; the access-selling scheme caused at least $250,000 in losses. He was extradited from Romania in January 2025.",
-      "ongoing": "N",
-      "severity": "low",
-      "sources": [
-        "justice.gov"
-      ]
-    },
-    {
-      "id": "21",
-      "date": "May 26",
-      "date_sort": "2026-05-26",
-      "victim": "PC enthusiasts / GPU owners (global)",
-      "industry": "Consumer / Technology",
-      "attacker": "Criminal gang — cryptojacking",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Via SEO poisoning and AI-chatbot-recommended links, victims downloaded fake system utilities (CrystalDiskInfo, HWMonitor, FurMark, etc.) that side-loaded a malicious DLL, silently installed abused ScreenConnect for remote access, and used process hollowing into signed .NET binaries.",
-      "impact": "The campaign deliberately targeted high-performance GPU owners for cryptomining while establishing persistent remote access (via 150+ malicious domains) that could enable later data theft, lateral movement or ransomware.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "microsoft.com"
-      ]
-    },
-    {
-      "id": "22",
-      "date": "Late May",
-      "date_sort": "2026-05-26",
-      "victim": "Pay Tel (prison calling service)",
-      "industry": "Telecommunications / Corrections",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "A publicly exposed cloud server lacked a password, leaving inmate-related records openly accessible for at least a week.",
-      "impact": "More than 3.4 million scanned images — including driver's licenses, legal and financial documents — were exposed before the server was secured. No confirmed malicious access.",
-      "ongoing": "N",
-      "severity": "low",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "23",
-      "date": "Mar 2026",
-      "date_sort": "2026-03-15",
-      "victim": "Stryker (medical device manufacturer)",
-      "industry": "Healthcare / Medical devices",
-      "attacker": "Iran — Ministry of Intelligence (MOIS)",
-      "attacker_origin": "iran",
-      "motivation": "Disruption",
-      "vector": "A group claiming to be pro-Palestine hacktivists ('Handala'), assessed by experts and DOJ to be MOIS-backed, deployed destructive wiper malware against employee devices and systems.",
-      "impact": "The March attack crippled Stryker by wiping employee devices and manufacturer systems; it is cited alongside the LACMTA breach as part of Iran's expanded destructive operations against US targets during the Iran war.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "therecord.media",
-        "recordedfuture.com"
+        "news.risky.biz"
       ]
     }
   ]
