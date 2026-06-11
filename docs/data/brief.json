@@ -1,302 +1,316 @@
 {
-  "generated_at": "2026-06-10T20:06:38.415646+00:00",
-  "period_searched": "June 4-10, 2026",
-  "incident_count": 20,
+  "generated_at": "2026-06-11T08:06:05.502987+00:00",
+  "period_searched": "May 18 – June 11, 2026",
+  "incident_count": 22,
   "incidents": [
     {
       "id": "1",
       "date": "Jun 10",
       "date_sort": "2026-06-10",
-      "victim": "UK telecommunications networks",
-      "industry": "Telecommunications",
-      "attacker": "China — state-suspected espionage group",
+      "victim": "US online public (data-center / tariff debates)",
+      "industry": "Social media / public discourse",
+      "attacker": "China — state-suspected influence operation",
       "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "State-linked actors compromised telecom signalling infrastructure to siphon call and location data, the campaign that prompted the UK's now-weakened telecoms security code.",
-      "impact": "Britain rolled back proposed defenses (independent signalling intrusion detection, monthly equipment reboots, service-account hardening) after industry lobbying; NCSC has confirmed Chinese hackers targeted UK critical-sector organizations, leaving known weaknesses open for years.",
+      "motivation": "Political",
+      "vector": "Operators posing as Americans used ChatGPT to mass-produce images and social posts amplifying anger over AI data centers and US tariffs, spread via VPN-masked fake X and YouTube accounts.",
+      "impact": "OpenAI disrupted two likely China-origin influence clusters; campaigns gained little organic traction (rated 1-2 on the breakout scale) but show AI being used to inflame existing US domestic divisions.",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "low",
       "sources": [
-        "therecord.media",
-        "ncsc.gov.uk"
+        "cyberscoop.com",
+        "OpenAI"
       ]
     },
     {
       "id": "2",
-      "date": "Jun 9",
-      "date_sort": "2026-06-09",
-      "victim": "Cisco Catalyst SD-WAN Manager customers",
-      "industry": "Technology / Networking",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Active exploitation of zero-day CVE-2026-20245, an output-encoding flaw letting authenticated or local attackers run commands as root; chaining earlier Cisco zero-days supplies the needed access.",
-      "impact": "Seventh actively exploited Cisco SD-WAN zero-day this year, first flagged by Mandiant; no patch or workaround available, with limited cases pushing configuration changes to edge devices.",
+      "date": "Jun 10",
+      "date_sort": "2026-06-10",
+      "victim": "Bluesky account holders",
+      "industry": "Social media",
+      "attacker": "Russia — state-linked disinformation group",
+      "attacker_origin": "russia",
+      "motivation": "Political",
+      "vector": "Russian operators hijacked existing Bluesky accounts since April to post pro-Kremlin, anti-Ukraine propaganda produced by the Matryoshka disinformation network.",
+      "impact": "Bluesky has been suspending compromised accounts until owners can resecure them; part of a sustained Russian narrative-control effort tied to the war in Ukraine.",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "medium",
       "sources": [
-        "cyberscoop.com",
-        "cisa.gov"
+        "risky.biz",
+        "The New York Times",
+        "Clemson University"
       ]
     },
     {
       "id": "3",
-      "date": "Jun 9",
-      "date_sort": "2026-06-09",
-      "victim": "Ukrainian military and government organizations",
-      "industry": "Government / Defense",
-      "attacker": "Russia — state-linked espionage groups",
-      "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "Two Russia-aligned clusters weaponized the patched WinRAR path-traversal flaw CVE-2025-8088 via spear-phishing emails carrying malicious archives that drop payloads into Windows Startup locations.",
-      "impact": "One cluster deployed the GiftedCrook stealer to harvest credentials and documents; another delivered HTA-based espionage malware via Cloudflare Workers C2, targeting military innovation centers, formations, and law enforcement.",
+      "date": "Jun 10",
+      "date_sort": "2026-06-10",
+      "victim": "Government of the Northern Mariana Islands",
+      "industry": "Government (US territory)",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "A cyberattack disrupted the territorial government's email servers; officials have not specified whether ransomware was involved.",
+      "impact": "Email outages are expected to slow administrative operations for the US territory's government.",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "medium",
       "sources": [
-        "darkreading.com"
+        "risky.biz",
+        "DysruptionHub"
       ]
     },
     {
       "id": "4",
-      "date": "Jun 9",
-      "date_sort": "2026-06-09",
-      "victim": "PAN-OS GlobalProtect customers",
-      "industry": "Technology / Networking",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Active exploitation of CVE-2026-0257, an authentication bypass in PAN-OS portal and gateway components allowing unauthorized attackers to establish GlobalProtect VPN sessions.",
-      "impact": "Unit 42 observed probing and a small number of successful gateway-connected sessions; no lateral movement seen yet. Added to CISA's KEV catalog on May 29 with public PoC code now circulating.",
-      "ongoing": "Y",
-      "severity": "high",
+      "date": "Jun 10",
+      "date_sort": "2026-06-10",
+      "victim": "Stark Industries / the[.]hosting bulletproof infrastructure",
+      "industry": "Internet hosting / infrastructure",
+      "attacker": "Russia — state-aligned operations (infrastructure disrupted)",
+      "attacker_origin": "russia",
+      "motivation": "Disruption",
+      "vector": "Dutch financial-crime investigators (FIOD) arrested the operators of MIRhosting/WorkTitans for providing infrastructure to EU-sanctioned, Russia-linked hosting used in DDoS, influence and disinformation operations.",
+      "impact": "Over 800 servers were seized — including infrastructure tied to pro-Russian attacks on Danish government bodies during November 2025 municipal elections — and customer data on those servers was lost.",
+      "ongoing": "N",
+      "severity": "medium",
       "sources": [
-        "unit42.paloaltonetworks.com"
+        "krebsonsecurity.com",
+        "de Volkskrant"
       ]
     },
     {
       "id": "5",
       "date": "Jun 9",
       "date_sort": "2026-06-09",
-      "victim": "U.S.-based technology organizations (340+ entities)",
-      "industry": "Technology",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "IP theft",
-      "vector": "Large-scale password-spraying campaign against U.S. technology firms, part of China-nexus espionage seeking AI capabilities and intellectual property.",
-      "impact": "CrowdStrike reports a single China-nexus password-spraying campaign impacted more than 340 U.S. entities; China-nexus actors drove over 58% of state-sponsored intrusions against the technology sector, now the world's most targeted industry.",
+      "victim": "Organizations running Palo Alto Networks PAN-OS / GlobalProtect",
+      "industry": "Networking / VPN infrastructure",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "An unidentified actor is actively exploiting CVE-2026-0257, an authentication-bypass flaw in PAN-OS GlobalProtect portal and gateway components, to initiate unauthorized VPN sessions.",
+      "impact": "Unit 42 confirmed in-the-wild exploitation (CVE added to CISA KEV on May 29); a small portion of probed devices established VPN sessions, though no post-access lateral movement has been observed yet.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "crowdstrike.com"
+        "unit42.paloaltonetworks.com",
+        "Rapid7"
       ]
     },
     {
       "id": "6",
       "date": "Jun 9",
       "date_sort": "2026-06-09",
-      "victim": "Russian military personnel",
-      "industry": "Government / Defense",
+      "victim": "Cisco Catalyst SD-WAN Manager customers",
+      "industry": "Networking infrastructure",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "A previously undocumented group posed as women seeking romance or aid volunteers on Telegram, luring soldiers into installing SafeLoveStealer Android spyware or entering Telegram credentials on spoofed login pages.",
-      "impact": "The campaign stole files, photos, location data and live microphone audio, and hijacked Telegram sessions to intercept communications from troops in border regions and combat zones; an internal panel stored intercepted military unit data. Not attributed by researchers.",
+      "motivation": "Unclear",
+      "vector": "Attackers are exploiting CVE-2026-20245, an input-validation flaw in Catalyst SD-WAN Manager allowing authenticated/local attackers to run commands as root, often chained with earlier Cisco zero-days (CVE-2026-20182/20127) to gain the required access.",
+      "impact": "Seventh actively exploited Cisco SD-WAN zero-day this year; no patch or workaround is available, and Cisco observed limited cases of malicious configuration changes pushed to edge devices.",
       "ongoing": "Y",
-      "severity": "medium",
+      "severity": "high",
       "sources": [
-        "therecord.media"
+        "cyberscoop.com",
+        "cloud.google.com (Mandiant)"
       ]
     },
     {
       "id": "7",
-      "date": "Early Jun",
+      "date": "Jun 9",
       "date_sort": "2026-06-09",
-      "victim": "Axios NPM package (open-source ecosystem)",
-      "industry": "Technology / Software supply chain",
-      "attacker": "North Korea — state-sponsored, financially motivated",
-      "attacker_origin": "north_korea",
-      "motivation": "Financial",
-      "vector": "DPRK-nexus actors compromised the widely used Axios NPM package — downloaded roughly 100 million times per week — to poison the open-source software supply chain.",
-      "impact": "Likely exposed millions of downstream users; part of broader DPRK targeting of developer ecosystems. Tracked by Mandiant as UNC1069 and tied by CrowdStrike to a DPRK-nexus cluster.",
+      "victim": "Windows users (Microsoft Defender)",
+      "industry": "Software / endpoint security",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "CVE-2026-41091, an elevation-of-privilege flaw in Microsoft Defender, lets an attacker with an existing foothold trick Defender into writing a malicious file to a protected location to seize full system control.",
+      "impact": "Disclosed in Microsoft's record 206-CVE June Patch Tuesday as the one bug under active attack (added to CISA KEV May 20); the release also included the 'wormable' kernel flaw CVE-2026-45657 (CVSS 9.8) and three publicly disclosed zero-days.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "crowdstrike.com",
-        "cloud.google.com"
+        "therecord.media",
+        "cyberscoop.com",
+        "krebsonsecurity.com",
+        "blog.talosintelligence.com"
       ]
     },
     {
       "id": "8",
-      "date": "Early Jun",
+      "date": "Jun 9",
       "date_sort": "2026-06-09",
-      "victim": "ServiceNow customers (primarily Australia platform)",
-      "industry": "Technology / SaaS",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Attackers abused an API bug to access data from ServiceNow customer instances; exploitation traced back to at least April 2026.",
-      "impact": "ServiceNow quietly patched the platform and notified affected customers, with incidents mainly impacting its Australia platform release.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "9",
-      "date": "Early Jun",
-      "date_sort": "2026-06-09",
-      "victim": "Lithuania state registry",
-      "industry": "Government",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Intruders used compromised credentials issued to other government agencies authorized to access land and real estate data to reach the registry.",
-      "impact": "About 600,000 records stolen, including real names, cadastral information and real estate-specific property details.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "10",
-      "date": "Early Jun",
-      "date_sort": "2026-06-09",
-      "victim": "MyPillow",
-      "industry": "Retail / Manufacturing",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "A ransomware group breached the company's corporate network and is extorting it under threat of leaking stolen data.",
-      "impact": "Attackers claim to have stolen sensitive financial documents and listed the company on their leak portal; MyPillow has not confirmed the incident.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "11",
-      "date": "Jun 8",
-      "date_sort": "2026-06-08",
-      "victim": "Check Point VPN / firewall customers",
-      "industry": "Technology / Security",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Zero-day CVE-2026-50751, a critical (9.3) authentication bypass in Remote Access VPN and Mobile Access deployments using the deprecated IKEv1 protocol, exploited in the wild since at least May 7.",
-      "impact": "A few dozen organizations globally were targeted; Check Point confirmed at least one case where post-exploitation was tied to a ransomware affiliate also abusing Palo Alto, Fortinet and F5 VPN flaws.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "darkreading.com",
-        "cisa.gov"
-      ]
-    },
-    {
-      "id": "12",
-      "date": "Jun 8",
-      "date_sort": "2026-06-08",
-      "victim": "U.S. legal, professional and financial services firms",
-      "industry": "Legal / Professional services",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "The Silent Ransom group (UNC3753) combined invoice-themed phishing, IT-helpdesk voice impersonation, and even in-person office visits to install RMM tools and abuse BYOD/VDI access for data theft.",
-      "impact": "Dozens of organizations hit between January and May; the group moved from compromise to exfiltration and extortion in under an hour in recent cases, threatening to publish stolen client files and PII. FBI also warned of in-person USB-based intrusions.",
+      "victim": "Ukrainian military and government organizations",
+      "industry": "Government / defense",
+      "attacker": "Russia — state-aligned espionage groups",
+      "attacker_origin": "russia",
+      "motivation": "Espionage",
+      "vector": "Two Russia-aligned clusters sent weaponized emails with malicious RAR archives exploiting the patched WinRAR path-traversal flaw CVE-2025-8088 to drop payloads into Windows Startup locations.",
+      "impact": "One cluster deployed the GiftedCrook info-stealer to harvest credentials and documents; a second (Gamaredon) delivered HTA-based espionage malware against military innovation centers, formations and law-enforcement targets. Activity remains ongoing.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
         "darkreading.com",
-        "cyberscoop.com"
+        "Trend Micro"
+      ]
+    },
+    {
+      "id": "9",
+      "date": "Jun 9",
+      "date_sort": "2026-06-09",
+      "victim": "NûJINHA (women-led Kurdish news agency, Türkiye)",
+      "industry": "Media",
+      "attacker": "Iran — state-directed hacktivist proxies",
+      "attacker_origin": "iran",
+      "motivation": "Political",
+      "vector": "Iranian hackers breached the news agency's website, deleted articles and disrupted online broadcasts.",
+      "impact": "The Handala group claimed the attack and threatened to dox and harm employees of the independent all-female news outlet.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz",
+        "NûJINHA"
+      ]
+    },
+    {
+      "id": "10",
+      "date": "Jun 9",
+      "date_sort": "2026-06-09",
+      "victim": "Tchap (French government encrypted messaging app)",
+      "industry": "Government",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "An attacker compromised a Tchap account, joined public channels and harvested conversations.",
+      "impact": "Scraped data was posted to a hacking forum; officials suspended the account and urged staff to use the app's encrypted chat feature for sensitive topics.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz",
+        "French government"
+      ]
+    },
+    {
+      "id": "11",
+      "date": "Jun 9",
+      "date_sort": "2026-06-09",
+      "victim": "SoFi (Hong Kong division)",
+      "industry": "Financial services",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Customer financial and securities data was stolen through an unnamed third-party service provider.",
+      "impact": "Data on some of the division's customers was exfiltrated via the supply-chain compromise.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz",
+        "BleepingComputer"
+      ]
+    },
+    {
+      "id": "12",
+      "date": "Jun 9",
+      "date_sort": "2026-06-09",
+      "victim": "Two Hokkaido hospitals (180,000+ patients and staff)",
+      "industry": "Healthcare",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Two decommissioned hospital hard drives containing personal data were put up for sale on an online auction site.",
+      "impact": "The personal information of more than 180,000 patients and employees was exposed through improper disposal of storage media.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz",
+        "NHK"
       ]
     },
     {
       "id": "13",
       "date": "Jun 8",
       "date_sort": "2026-06-08",
-      "victim": "WhatsApp users (targeted individuals)",
-      "industry": "Technology / Civil society",
-      "attacker": "Commercial spyware vendor",
+      "victim": "WhatsApp users (spyware targets)",
+      "industry": "Technology / communications",
+      "attacker": "Commercial spyware vendor (NSO Group)",
       "attacker_origin": "unknown",
       "motivation": "Espionage",
-      "vector": "Meta says NSO Group ran a new spear-phishing operation luring WhatsApp users to click malicious links leading to an external site, in violation of a U.S. court injunction.",
-      "impact": "Meta disrupted the campaign and filed a contempt motion; it urged lawmakers to keep NSO sanctioned, warning the sanctioned, Entity-Listed firm continues to defy U.S. courts.",
+      "vector": "Meta says NSO Group ran a new spear-phishing operation luring select WhatsApp users to click malicious links leading to an external site, in violation of an October 2025 US court injunction.",
+      "impact": "Meta filed a contempt complaint asking the court to hold NSO accountable and urged US lawmakers to keep NSO on the sanctions list; researchers say the legally cornered vendor has grown more reckless.",
       "ongoing": "Y",
       "severity": "medium",
       "sources": [
-        "risky.biz"
+        "risky.biz",
+        "Meta"
       ]
     },
     {
       "id": "14",
-      "date": "Jun 8",
-      "date_sort": "2026-06-08",
-      "victim": "Charter Communications",
-      "industry": "Telecommunications",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Data extortion actors listed Charter on their dark web leak portal; the telecom subsequently confirmed a security breach.",
-      "impact": "Charter confirmed a breach after the ShinyHunters extortion crew named it on its leak site.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "15",
-      "date": "Jun 8",
-      "date_sort": "2026-06-08",
-      "victim": "NûJINHA (women-run news agency, Türkiye)",
-      "industry": "Media",
-      "attacker": "Iran — state-directed hacktivist proxies",
-      "attacker_origin": "iran",
-      "motivation": "Disruption",
-      "vector": "Iranian hackers breached the news agency's website, deleting articles and disrupting online broadcasts.",
-      "impact": "The attackers defaced and disrupted the independent all-female outlet and threatened to dox and harm employees.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "16",
-      "date": "Early Jun",
-      "date_sort": "2026-06-07",
-      "victim": "U.S. government-linked Instagram accounts (Obama White House, Space Force)",
-      "industry": "Government / Social media",
-      "attacker": "Iran — state-directed hacktivist proxies",
-      "attacker_origin": "iran",
-      "motivation": "Political",
-      "vector": "Pro-Iran hackers tricked Meta's AI customer-support bot into adding an attacker email to target accounts during the password-reset flow, using a VPN IP near the victim's hometown.",
-      "impact": "The Obama White House and Space Force senior-enlisted Instagram accounts were briefly defaced with pro-Iran messaging; Meta pushed an emergency patch and said no backend database was breached.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "krebsonsecurity.com"
-      ]
-    },
-    {
-      "id": "17",
       "date": "Jun 5",
       "date_sort": "2026-06-05",
-      "victim": "Microsoft (73 GitHub repositories)",
-      "industry": "Technology / Software supply chain",
-      "attacker": "Criminal gang — data extortion",
+      "victim": "Microsoft (Azure GitHub repositories) and downstream CI/CD users",
+      "industry": "Software / supply chain",
+      "attacker": "Criminal gang — supply chain worm",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "A Shai-Hulud-variant worm (Miasma) compromised 73 Microsoft GitHub repositories, planting config files that auto-execute a 4.6MB credential-stealing payload when repos are opened in AI coding agents (Claude Code, Gemini CLI, Cursor, VS Code).",
-      "impact": "The automated sweep broke CI/CD pipelines worldwide (notably Azure/functions-action) and harvested developer credentials; tied to the earlier May 19 compromise of Microsoft's durabletask PyPI package. Linked to the broader TeamPCP supply-chain campaign.",
+      "vector": "A variant of the Shai-Hulud worm ('Miasma', tied to TeamPCP) compromised 73 Microsoft GitHub repos, planting config files for Claude Code, Gemini CLI, Cursor and VS Code that auto-execute a 4.6MB credential-stealing payload when a repo is opened in an AI coding tool.",
+      "impact": "73 repos — including Azure/functions-action — were taken offline, breaking CI/CD pipelines globally; anyone who cloned an affected repo after June 2 and opened it in the targeted tools is urged to assume compromise and rotate all credentials.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
         "darkreading.com",
         "krebsonsecurity.com",
-        "blog.talosintelligence.com"
+        "StepSecurity"
+      ]
+    },
+    {
+      "id": "15",
+      "date": "Jun 5",
+      "date_sort": "2026-06-05",
+      "victim": "US law, professional and financial-services firms",
+      "industry": "Legal / professional services",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "The UNC3753 cluster (aka 'Luna Moth'/Silent Ransom Group) uses voice phishing and IT-helpdesk impersonation to push victims into screen-sharing and RMM tools, then exfiltrates sensitive files; in some cases operatives entered offices in person posing as IT technicians to copy data to USB.",
+      "impact": "Dozens of US firms hit from January–May 2026, with full theft-to-extortion cycles often inside a single business day; in one case 16GB was stolen. The FBI has warned US law firms specifically about the in-person variant.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "cloud.google.com (Mandiant)",
+        "cyberscoop.com"
+      ]
+    },
+    {
+      "id": "16",
+      "date": "Jun 5",
+      "date_sort": "2026-06-05",
+      "victim": "ServiceNow customers (primarily Australia platform)",
+      "industry": "SaaS / IT service management",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Attackers abused an API bug to access data from ServiceNow customer instances; the flaw was reportedly exploited since at least April.",
+      "impact": "ServiceNow quietly patched the platform and notified affected customers, mainly those on its Australia release.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz",
+        "Reddit"
+      ]
+    },
+    {
+      "id": "17",
+      "date": "Early Jun",
+      "date_sort": "2026-06-05",
+      "victim": "Wahlap (Chinese arcade-machine maker, ~19M customers)",
+      "industry": "Gaming / entertainment",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "An Elasticsearch database was left exposed on the internet without authentication for at least two months.",
+      "impact": "Personal details of almost 19 million customers — tied to WeChat accounts and including phone numbers and full names — were exposed before the server was secured.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz",
+        "Cybernews"
       ]
     },
     {
@@ -304,50 +318,89 @@
       "date": "Jun 4",
       "date_sort": "2026-06-04",
       "victim": "IBM and AT&T",
-      "industry": "Technology / Telecommunications",
-      "attacker": "Unknown",
+      "industry": "Technology / telecommunications",
+      "attacker": "Unknown — foreign government-linked",
       "attacker_origin": "unknown",
       "motivation": "Espionage",
-      "vector": "A former IBM threat-intelligence VP alleges in a lawsuit that foreign-government-linked attackers repeatedly breached IBM and AT&T systems over years.",
-      "impact": "The whistleblower complaint claims the companies concealed multiple intrusions from the U.S. government and made false security assurances to win and keep federal contracts.",
+      "vector": "A former IBM VP of threat intelligence alleges in a whistleblower lawsuit that both companies' systems were repeatedly breached over years by attackers linked to foreign governments.",
+      "impact": "The complaint claims IBM and AT&T concealed the intrusions from the US government and made false security assurances to win and keep federal contracts.",
       "ongoing": "N",
-      "severity": "medium",
+      "severity": "high",
       "sources": [
         "bloomberg.com"
       ]
     },
     {
       "id": "19",
-      "date": "Late May",
-      "date_sort": "2026-05-29",
-      "victim": "Oxford University (CareerConnect platform)",
-      "industry": "Education",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Hackers accessed the university's CareerConnect careers portal at the end of May and exfiltrated stored records.",
-      "impact": "Data of alumni, research staff and employers was stolen from the platform used to connect students and staff with recruiters.",
+      "date": "Jun 1",
+      "date_sort": "2026-06-01",
+      "victim": "Obama White House & US Space Force Instagram accounts",
+      "industry": "Government / social media",
+      "attacker": "Iran — state-directed hacktivist proxies",
+      "attacker_origin": "iran",
+      "motivation": "Political",
+      "vector": "Pro-Iran hackers tricked Meta's AI support assistant into adding an attacker email to target accounts during the password-reset flow (using a VPN IP near the target's hometown), enabling account takeover.",
+      "impact": "The Obama White House and Chief Master Sergeant of the Space Force Instagram accounts were briefly defaced with pro-Iranian content; Meta pushed an emergency patch and said no back-end database was breached.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
-        "risky.biz"
+        "krebsonsecurity.com",
+        "thecybersecguru.com"
       ]
     },
     {
       "id": "20",
-      "date": "Mar (disclosed Jun)",
-      "date_sort": "2026-03-15",
-      "victim": "Australian federal MP (Zali Steggall) and staff",
-      "industry": "Government",
-      "attacker": "Russia — state-linked espionage group",
-      "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "A suspected foreign state actor compromised the WhatsApp account of an independent MP and three staffers in March, believed to be part of a campaign targeting politicians' Signal and WhatsApp accounts.",
-      "impact": "The breach, disclosed in June, is unconfirmed but assessed as likely part of a Russian campaign against the messaging accounts of foreign politicians.",
+      "date": "Late May",
+      "date_sort": "2026-05-31",
+      "victim": "University of Oxford (CareerConnect platform)",
+      "industry": "Education",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Hackers accessed Oxford's CareerConnect careers portal at the end of May and stole stored data.",
+      "impact": "Data of alumni, research staff and employers using the platform for internships and recruitment was exfiltrated.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
-        "risky.biz"
+        "risky.biz",
+        "BleepingComputer"
+      ]
+    },
+    {
+      "id": "21",
+      "date": "May 20",
+      "date_sort": "2026-05-20",
+      "victim": "GitHub (Microsoft) internal repositories",
+      "industry": "Software / supply chain",
+      "attacker": "Criminal gang — data theft",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "A GitHub employee installed the malicious Nx Console VS Code extension — compromised in the TanStack supply-chain attack — which exfiltrated internal source code.",
+      "impact": "More than 3,800 internal GitHub repositories were stolen and offered for sale on a hacking forum; GitHub is rotating critical secret tokens. Grafana linked a separate breach to the same TanStack incident.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "risky.biz",
+        "GitHub",
+        "Grafana"
+      ]
+    },
+    {
+      "id": "22",
+      "date": "May 18",
+      "date_sort": "2026-05-18",
+      "victim": "US Cybersecurity and Infrastructure Security Agency (CISA)",
+      "industry": "Government",
+      "attacker": "Unknown — insider/contractor exposure",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "A CISA contractor intentionally published AWS GovCloud keys and a large trove of other agency secrets to a public GitHub account.",
+      "impact": "The leak exposed sensitive cloud credentials for CISA's server infrastructure; the agency is still working to invalidate the keys, and lawmakers in both houses of Congress are demanding answers.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "krebsonsecurity.com",
+        "cyberscoop.com"
       ]
     }
   ]
