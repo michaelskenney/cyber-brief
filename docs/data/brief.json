@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-06-17T20:04:42.127018+00:00",
-  "period_searched": "June 4-17, 2026",
-  "incident_count": 12,
+  "generated_at": "2026-06-18T08:06:25.865303+00:00",
+  "period_searched": "June 5-17, 2026",
+  "incident_count": 20,
   "incidents": [
     {
       "id": "1",
       "date": "Jun 17",
       "date_sort": "2026-06-17",
-      "victim": "30,000+ Fortinet firewall/VPN owners worldwide",
-      "industry": "Government, telecom, healthcare, finance, critical infrastructure",
-      "attacker": "Unknown — Russian-speaking operators",
-      "attacker_origin": "unknown",
+      "victim": "Fortinet firewall/VPN users (200 countries)",
+      "industry": "Cross-sector (telecom, government, healthcare, finance, critical infrastructure)",
+      "attacker": "Russia — Russian-speaking threat actors (espionage-linked)",
+      "attacker_origin": "russia",
       "motivation": "Espionage",
-      "vector": "A large-scale credential-harvesting operation built and continuously verified a database of working logins for internet-facing Fortinet devices; researchers found no evidence a Fortinet flaw was exploited.",
-      "impact": "SOCRadar uncovered an exposed attacker server holding verified, working credentials for 30,791 devices (21,108 IPs, 8,316 domains) across 194 countries, giving the operators ready access to government and enterprise networks.",
+      "vector": "Large-scale credential stuffing, reuse and password spraying against exposed Fortinet management and VPN interfaces, using previously leaked credentials and a self-sustaining automated scanner.",
+      "impact": "Attackers compiled verified working credentials for 30,791 internet-facing Fortinet devices across 194 countries; targeting was heavily weighted toward NATO members and included a defense-industry VPN endpoint. SOCRadar found the exposed operator server; the campaign remains active.",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "critical",
       "sources": [
         "darkreading.com",
         "SOCRadar"
@@ -25,50 +25,106 @@
       "id": "2",
       "date": "Jun 17",
       "date_sort": "2026-06-17",
-      "victim": "Fortinet FortiSandbox customers",
-      "industry": "Technology / Security appliances",
-      "attacker": "Unknown — multiple independent operators",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Attackers began exploiting two critical FortiSandbox flaws patched in April (CVE-2026-39808 OS-command injection and CVE-2026-39813 path traversal), plus a third disclosed in June, to bypass authentication and run arbitrary commands.",
-      "impact": "VulnCheck and Defused observed 49 exploitation events from 11 IPs over six days; activity so far is verification and reconnaissance, which researchers warn typically precedes a heavier wave of attacks.",
+      "victim": "Software supply chain (npm/PyPI/RubyGems) — incl. Red Hat, GitHub, European Commission, Mercor, LiteLLM",
+      "industry": "Technology / software development",
+      "attacker": "Criminal gang — data and credential theft",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Self-propagating 'Shai-Hulud' worm spreading via compromised maintainer credentials and tokens across open-source package registries; abuses forgeable Git commit timestamps and author metadata to evade detection.",
+      "impact": "Researchers confirmed 516 live malicious packages across five ecosystems, 3,000+ affected GitHub repositories and 200+ compromised developer accounts; 1,729 throwaway credential-theft repos and 151 active payload repos remained live as of Jun 16. GitHub dismissed two formal vulnerability reports on the enabling design flaws.",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "critical",
       "sources": [
-        "cyberscoop.com",
-        "VulnCheck",
-        "Defused"
+        "therecord.media",
+        "blog.talosintelligence.com",
+        "krebsonsecurity.com",
+        "Deep Specter Research"
       ]
     },
     {
       "id": "3",
       "date": "Jun 17",
       "date_sort": "2026-06-17",
-      "victim": "Open-source software supply chain (npm, PyPI, RubyGems, GitHub)",
-      "industry": "Software / Technology",
-      "attacker": "Criminal gang — supply-chain worm",
-      "attacker_origin": "criminal",
+      "victim": "Mastra npm ecosystem (140+ @mastra packages)",
+      "industry": "Technology / software development",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "Self-propagating Shai-Hulud worm variants steal developer credentials and republish trojanized packages; researchers say GitHub dismissed two formal reports of the enabling design flaws as ineligible.",
-      "impact": "Deep Specter confirmed 516 live malicious packages across five ecosystems, 3,000+ affected repositories and 200+ compromised developer accounts; variants have been linked to breaches at the European Commission, Mercor, LiteLLM, GitHub and Red Hat.",
+      "vector": "Takeover of the 'ehindero' npm maintainer account to publish 140+ poisoned package versions injected with 'easy-day-js', a typosquat of dayjs whose postinstall hook ran an obfuscated dropper, disabled TLS verification, and fetched a second-stage tasking implant from C2.",
+      "impact": "Any developer workstation or CI/CD pipeline running npm install/update after the compromise was exposed, risking credentials, tokens and build environments. Microsoft Threat Intelligence reported it to npm; packages were removed and publish access revoked.",
       "ongoing": "Y",
-      "severity": "critical",
+      "severity": "high",
       "sources": [
-        "therecord.media",
-        "Deep Specter Research"
+        "microsoft.com",
+        "Microsoft Threat Intelligence"
       ]
     },
     {
       "id": "4",
       "date": "Jun 17",
       "date_sort": "2026-06-17",
-      "victim": "Chinese internet users (Silver Fox trojan victims)",
-      "industry": "Consumer / Cross-sector",
-      "attacker": "Criminal gang — malware operators",
+      "victim": "Oracle PeopleSoft customers (Council of Europe, Ralph Lauren, JCPenney, Nexstar, U. of Nottingham)",
+      "industry": "Cross-sector (retail, media, government, education)",
+      "attacker": "Criminal gang — data extortion",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Chinese police dismantled the Silver Fox group, which spread its namesake trojan via phishing sites and fake app-download portals to steal funds and online assets.",
-      "impact": "67 suspects were arrested across five provinces, including the trojan's author Ji Moufei and affiliates running phishing and distribution operations — a takedown of China's largest domestic cybercrime group.",
+      "vector": "Exploitation of an Oracle PeopleSoft zero-day (CVE-2026-35273, added to CISA KEV Jun 12) to steal large volumes of records, followed by extortion demands.",
+      "impact": "The ShinyHunters group listed multiple victims on its leak site; University of Nottingham confirmed 40GB and the data of 450,000+ students and alumni stolen. Several listed organizations have confirmed breaches.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "news.risky.biz",
+        "cyberscoop.com",
+        "cisa.gov"
+      ]
+    },
+    {
+      "id": "5",
+      "date": "Jun 17",
+      "date_sort": "2026-06-17",
+      "victim": "UK critical national infrastructure",
+      "industry": "Critical infrastructure / government",
+      "attacker": "China — state-linked espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "State actors 'prepositioning' within technology underpinning critical national infrastructure to establish footholds for potential future disruption, exemplified by the China-linked Volt Typhoon tactic cited by the NCSC.",
+      "impact": "NCSC chief Richard Horne disclosed his agency handled 200+ incidents affecting critical infrastructure in the year to May, about 75% attributed to hostile states; he warned adversaries are establishing footholds that could enable mass disruption in a future conflict.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "therecord.media",
+        "ncsc.gov.uk"
+      ]
+    },
+    {
+      "id": "6",
+      "date": "Jun 17",
+      "date_sort": "2026-06-17",
+      "victim": "Healthcare and high-pressure sectors (INC ransomware victims)",
+      "industry": "Healthcare / manufacturing / legal / education",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Double-extortion ransomware-as-a-service; intrusion via spearphishing, broker-supplied valid credentials, and exploitation of known flaws (Citrix Bleed 2, SimpleHelp, Citrix NetScaler, Fortinet EMS), with Rust-rewritten Windows/ESXi lockers.",
+      "impact": "Acronis reports INC has claimed 800+ victims since 2023 and is among the most active RaaS gangs, repeatedly hitting healthcare orgs such as NHS Dumfries & Galloway and Alder Hey Children's Hospital; 124 incidents in Q1 2026 alone.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "darkreading.com",
+        "Acronis"
+      ]
+    },
+    {
+      "id": "7",
+      "date": "Jun 17",
+      "date_sort": "2026-06-17",
+      "victim": "Silver Fox cybercrime group (China — disrupted)",
+      "industry": "Law enforcement action",
+      "attacker": "Criminal gang — financially motivated",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Malspam and fake download/app sites delivering the Silver Fox (Winos) trojan, used to drop infostealers and custom AtlasRAT/ValleyRAT remote access trojans.",
+      "impact": "Chinese police arrested 67 suspects across five provinces, including the malware author Ji Moufei; the group primarily targeted Chinese-speaking users to steal online assets and funds before recently expanding abroad.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
@@ -76,34 +132,16 @@
       ]
     },
     {
-      "id": "5",
+      "id": "8",
       "date": "Jun 16",
       "date_sort": "2026-06-16",
-      "victim": "Banks and other high-value organizations",
-      "industry": "Financial services",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "A phishing campaign delivers Phantom Stealer, a fileless malware-as-a-service that runs in memory and uses heavy obfuscation to evade endpoint defenses.",
-      "impact": "The malware harvests browser credentials, session cookies, financial data and crypto wallets, exfiltrating via four parallel channels (Telegram, Discord, FTP, SMTP); Fortra rates it high-severity.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "darkreading.com",
-        "Fortra"
-      ]
-    },
-    {
-      "id": "6",
-      "date": "Jun 16",
-      "date_sort": "2026-06-16",
-      "victim": "Visitors to compromised WordPress sites",
-      "industry": "Cross-sector / Web",
+      "victim": "Web users via compromised WordPress sites (Lorem Ipsum campaign)",
+      "industry": "Cross-sector (architecture, legal, construction tech)",
       "attacker": "Criminal gang — ransomware",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "After Microsoft revoked 1,000+ fraudulent signing certificates and dismantled the Fox Tempest signing service, the Lorem Ipsum loader pivoted from trojanized Teams installers to ClickFix lures on compromised WordPress sites.",
-      "impact": "BlueVoyant links the campaign to the Vice Society ransomware/extortion group; the ClickFix shift broadens the victim pool to anyone browsing the hijacked sites.",
+      "vector": "After Microsoft disrupted the Fox Tempest signing service, operators abandoned Trojanized Teams installers for ClickFix lures on compromised WordPress sites, tricking users into pasting a PowerShell command that installs a multistage loader and backdoor.",
+      "impact": "BlueVoyant links the Lorem Ipsum loader to the financially motivated group Rapid Brigantine (aka Vice Society/Vanilla Tempest), tied to Rhysida, BlackCat, Zeppelin and Quantum Locker ransomware, broadening the victim pool and raising the threat profile.",
       "ongoing": "Y",
       "severity": "medium",
       "sources": [
@@ -112,87 +150,16 @@
       ]
     },
     {
-      "id": "7",
-      "date": "Jun 15",
-      "date_sort": "2026-06-15",
-      "victim": "U.S. and Canadian medical-research universities",
-      "industry": "Healthcare / Academic research",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "The previously unknown group UNC6508 exploited externally facing REDCap research-data servers, deployed the custom INFINITERED backdoor, and stole administrative credentials and communications.",
-      "impact": "Google found the group compromised a medical-research university in September 2023 and remained undetected until November 2025, stealing research data and credentials across academia, medicine, military and foreign-policy targets.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "cyberscoop.com",
-        "darkreading.com",
-        "cloud.google.com"
-      ]
-    },
-    {
-      "id": "8",
-      "date": "Jun 15",
-      "date_sort": "2026-06-15",
-      "victim": "Kaluga Astral (Russian software firm)",
-      "industry": "Technology / Government services",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Disruption",
-      "vector": "An unattributed cyberattack disrupted Astral's services for about a week; the company disclosed no technical details and Russian government agencies are involved in the investigation.",
-      "impact": "Customers lost access to tax reporting, electronic document management, cash registers and corporate email; Astral serves Russian government bodies, banks and state enterprises including Russian Post and Mosgortrans. It reports no evidence of data theft.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "therecord.media"
-      ]
-    },
-    {
       "id": "9",
       "date": "Jun 15",
       "date_sort": "2026-06-15",
-      "victim": "Polish public figures and their families",
-      "industry": "Government / Public sector",
-      "attacker": "Belarus — state intelligence service",
+      "victim": "Novo Nordisk",
+      "industry": "Pharmaceuticals",
+      "attacker": "Unknown",
       "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "The GhostWriter group expanded its credential-phishing operation to personal Gmail accounts, using new phishing domains almost daily and harvesting logins plus two-factor codes.",
-      "impact": "CERT Polska warns the campaign targets government officials, researchers, journalists and law-enforcement personnel — and their relatives — to steal email, contacts and documents and pivot to further targets.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "therecord.media",
-        "CERT Polska"
-      ]
-    },
-    {
-      "id": "10",
-      "date": "Jun 15",
-      "date_sort": "2026-06-15",
-      "victim": "Baltic Sea submarine telecommunications cables",
-      "industry": "Telecommunications / Critical infrastructure",
-      "attacker": "Russia — suspected state-linked sabotage (shadow fleet)",
-      "attacker_origin": "russia",
-      "motivation": "Disruption",
-      "vector": "The cargo vessel Fitburg, carrying sanctioned Russian steel, allegedly dragged its anchor along the seabed for at least 130 km, damaging undersea cables on New Year's Eve.",
-      "impact": "Finland charged the captain and bosun with damaging two telecom cables and attempting to damage eight more; the defendants deny the charges and dispute Finnish jurisdiction, echoing the earlier Eagle S cable-sabotage case.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "11",
-      "date": "Jun 15",
-      "date_sort": "2026-06-15",
-      "victim": "Arch Linux AUR users",
-      "industry": "Software / Open source",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Attackers 'adopted' orphaned packages on the community AUR portal and modified install procedures to pull a malicious npm package (later a Bun script to evade detection) that installed a rootkit and infostealer.",
-      "impact": "More than 1,900 packages were hijacked over a weekend; affected users are urged to rotate all passwords and tokens. The number of downloads during the attack window is still being assessed.",
+      "motivation": "Unclear",
+      "vector": "Unauthorized access to parts of the company's internal network; specifics undisclosed.",
+      "impact": "The Danish pharmaceutical giant (maker of Ozempic and Wegovy) took systems offline to evict attackers and confirmed some sensitive data, including patient PII, was copied.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -200,21 +167,201 @@
       ]
     },
     {
+      "id": "10",
+      "date": "Jun 14",
+      "date_sort": "2026-06-14",
+      "victim": "Arch Linux AUR users",
+      "industry": "Technology / software development",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Attacker abused the AUR 'adopt orphaned package' mechanism to take over 1,900+ abandoned community packages and inject install procedures that pulled a malicious npm package (later a Bun script) deploying a rootkit and credential-harvesting infostealer.",
+      "impact": "Massive weekend supply chain attack against the unofficial Arch Linux repository; the infostealer collects browser, Electron-app and developer secrets. Affected users urged to rotate all credentials and remove persistence. Hijack attempts were ongoing at time of reporting.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "news.risky.biz"
+      ]
+    },
+    {
+      "id": "11",
+      "date": "Jun 14",
+      "date_sort": "2026-06-14",
+      "victim": "1.2M websites via Awesome Motive WordPress plugins",
+      "industry": "Technology / web hosting",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Malicious code added to legitimate JavaScript of three Awesome Motive plugins (OptinMonster, TrustPulse, PushEngage); it waits for an admin login, creates a rogue admin account, and installs a self-hiding backdoor plugin.",
+      "impact": "More than 1.2 million websites were backdoored following a security incident at the major WordPress plugin developer, per Sansec.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "news.risky.biz",
+        "Sansec"
+      ]
+    },
+    {
       "id": "12",
+      "date": "Jun 14",
+      "date_sort": "2026-06-14",
+      "victim": "Iranian banks (Bank Melli, Tejarat, Saderat, Export Development Bank)",
+      "industry": "Financial services",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Disruption",
+      "vector": "Attack reportedly targeted communications infrastructure shared by the four banks, disrupting online portals and mobile apps.",
+      "impact": "A cyberattack disrupted services at four of Iran's largest banks over the weekend amid the ongoing Iran War. Iran's banking council said no customer data was accessed.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "news.risky.biz",
+        "WANA"
+      ]
+    },
+    {
+      "id": "13",
+      "date": "Jun 12",
+      "date_sort": "2026-06-12",
+      "victim": "U.S. Rep. Don Bacon",
+      "industry": "Government",
+      "attacker": "Russia — state-linked espionage group",
+      "attacker_origin": "russia",
+      "motivation": "Espionage",
+      "vector": "Compromise of the lawmaker's Signal messaging account; method undisclosed.",
+      "impact": "The FBI notified the Nebraska Republican — a staunch Ukraine supporter and Kremlin critic — that suspected Russian hackers had breached his Signal account.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "news.risky.biz",
+        "Politico"
+      ]
+    },
+    {
+      "id": "14",
+      "date": "Jun 11",
+      "date_sort": "2026-06-11",
+      "victim": "Thai healthcare entitlements agency (67M citizens)",
+      "industry": "Government / healthcare",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Data allegedly stolen from a government agency managing healthcare entitlements; intrusion method undisclosed.",
+      "impact": "Hackers allegedly stole personal information on more than 67 million Thai citizens, with some of the data posted on online black markets. The Thai government launched an investigation.",
+      "ongoing": "N",
+      "severity": "critical",
+      "sources": [
+        "news.risky.biz",
+        "The Bangkok Post"
+      ]
+    },
+    {
+      "id": "15",
+      "date": "Jun 11",
+      "date_sort": "2026-06-11",
+      "victim": "Global Schools Group (65 campuses, 9 countries)",
+      "industry": "Education",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Terabytes of data taken in April from an unsecured database exposed online; leaked after ransom negotiations failed.",
+      "impact": "The FulcrumSec group claims it obtained passport details for children and parents, attendance records, teacher passwords and visitor photos from the K-12 operator, then leaked the data after a failed extortion negotiation.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "news.risky.biz",
+        "DataBreaches.net"
+      ]
+    },
+    {
+      "id": "16",
+      "date": "Jun 11",
+      "date_sort": "2026-06-11",
+      "victim": "Mackay Sugar (Australia)",
+      "industry": "Agriculture / manufacturing",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Cyberattack of undisclosed type that halted operational systems.",
+      "impact": "Australia's second-largest sugar producer paused cane haulage and milling at two Mackay-region mills at the start of the annual crushing season.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "news.risky.biz",
+        "ABC"
+      ]
+    },
+    {
+      "id": "17",
       "date": "Jun 10",
       "date_sort": "2026-06-10",
-      "victim": "Multiple organizations (ransomware victims)",
+      "victim": "'The Gentlemen' ransomware victims (332+)",
       "industry": "Cross-sector",
       "attacker": "Criminal gang — ransomware",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "The Gentlemen ransomware-as-a-service breaches internet-facing VPNs and firewalls, then encrypts entire networks within hours; an aggressive 90/10 affiliate split is luring experienced operators.",
-      "impact": "Check Point ranks The Gentlemen the second most active ransomware group by victim count, with 332+ published victims since mid-2025 (240+ in 2026); Krebs ties the admin 'Zeta88'/'Hastalamuerte' to a Russian-language forum identity.",
+      "vector": "Ransomware-as-a-service offering a 90/10 affiliate split; gains entry via internet-facing devices (VPNs, firewalls) and encrypts entire networks within hours.",
+      "impact": "Check Point ranks the group the second-most-active ransomware gang of 2026 with 332+ published victims since mid-2025. Krebs traced the administrator (Hastalamuerte/Zeta88) to an individual in Izhevsk, Russia.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
         "krebsonsecurity.com",
         "Check Point"
+      ]
+    },
+    {
+      "id": "18",
+      "date": "Jun 8",
+      "date_sort": "2026-06-08",
+      "victim": "Check Point Security Gateway / VPN users",
+      "industry": "Cross-sector",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Active exploitation of a Check Point Security Gateway improper-authentication flaw (CVE-2026-50751, added to CISA KEV Jun 8) affecting remote-access tools, firewalls and VPNs.",
+      "impact": "CISA gave federal agencies three days to patch the VPN bug reported as under attack by the Qilin ransomware operation; Check Point confirmed several remote-access products are affected.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "cisa.gov",
+        "blog.talosintelligence.com"
+      ]
+    },
+    {
+      "id": "19",
+      "date": "Jun 8",
+      "date_sort": "2026-06-08",
+      "victim": "WhatsApp users (targeted)",
+      "industry": "Technology / civil society",
+      "attacker": "Commercial spyware operator (NSO Group)",
+      "attacker_origin": "unknown",
+      "motivation": "Espionage",
+      "vector": "Spear-phishing campaign luring WhatsApp users to click a malicious link leading to an external site, in violation of a 2024 U.S. court injunction barring NSO from targeting the platform.",
+      "impact": "Meta says it detected and disrupted the new NSO campaign and filed a contempt complaint; it urged U.S. lawmakers to maintain sanctions on the sanctioned, Entity-Listed spyware maker.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "news.risky.biz",
+        "blog.talosintelligence.com",
+        "Meta"
+      ]
+    },
+    {
+      "id": "20",
+      "date": "Jun 5",
+      "date_sort": "2026-06-05",
+      "victim": "Palo Alto PAN-OS GlobalProtect users",
+      "industry": "Cross-sector",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Active exploitation of a PAN-OS authentication-bypass flaw (CVE-2026-0257) in the GlobalProtect portal and gateway, allowing attackers to circumvent controls and initiate VPN connections.",
+      "impact": "Unit 42 observed an unidentified actor exploiting the CISA KEV-listed flaw; only a small portion of probed devices established VPN sessions and no post-access lateral movement was confirmed at time of reporting.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "unit42.paloaltonetworks.com",
+        "Rapid7"
       ]
     }
   ]
