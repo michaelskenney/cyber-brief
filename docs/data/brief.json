@@ -1,202 +1,53 @@
 {
-  "generated_at": "2026-06-20T08:06:21.468146+00:00",
+  "generated_at": "2026-06-22T08:07:12.292589+00:00",
   "period_searched": "June 8-19, 2026",
-  "incident_count": 16,
+  "incident_count": 22,
   "incidents": [
     {
       "id": "1",
       "date": "Jun 19",
       "date_sort": "2026-06-19",
-      "victim": "FortiGate firewall operators worldwide (~73,932 devices)",
-      "industry": "Multiple sectors / critical infrastructure",
-      "attacker": "Russia — Russian-speaking threat group",
-      "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "Mass password-spraying and SSL VPN hash interception against internet-exposed Fortinet (and MSSQL) devices, with stolen configuration files cracked offline on a 45-GPU cluster to recover plaintext admin and VPN credentials.",
-      "impact": "Valid administrative and VPN credentials for roughly 73,932 FortiGate firewalls across 194 countries were exposed; confirmed compromises include a Turkish NATO defense contractor from which classified documents were allegedly exfiltrated.",
+      "victim": "Mackay Sugar (Australia's 2nd-largest sugar producer)",
+      "industry": "Food & agriculture / manufacturing",
+      "attacker": "Criminal gang — ransomware (claimed by 'Gentlemen' group)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Intrusion into the company's IT environment followed by a ransomware/data-theft extortion claim on a dark web leak site.",
+      "impact": "Two of three sugar mills (Racecourse and Farleigh) have been shut since June 10, halting harvesting across Queensland's Mackay cane region; the company is restoring systems and investigating what data was accessed.",
       "ongoing": "Y",
-      "severity": "critical",
+      "severity": "high",
       "sources": [
-        "recordedfuture.com",
-        "unit42.paloaltonetworks.com",
-        "darkreading.com"
+        "therecord.media"
       ]
     },
     {
       "id": "2",
       "date": "Jun 19",
       "date_sort": "2026-06-19",
-      "victim": "~15,000 compromised websites (small businesses, WordPress sites)",
-      "industry": "Multiple / SMB web hosting",
-      "attacker": "Russia — cybercrime group (Evil Corp, sanctioned)",
+      "victim": "FortiGate firewall operators worldwide (~73,932 devices, 194 countries)",
+      "industry": "Multiple sectors / critical infrastructure",
+      "attacker": "Russia — Russian-speaking criminal group (mass credential theft)",
       "attacker_origin": "russia",
       "motivation": "Financial",
-      "vector": "SocGholish/FakeUpdates malware delivered via fake browser-update prompts on compromised WordPress sites, used as an initial-access botnet feeding ransomware and espionage operations.",
-      "impact": "An international law enforcement operation (US, Canada, Germany, Netherlands, Europol) seized 106 servers and disinfected nearly 15,000 infected sites, disrupting the Evil Corp-linked SocGholish initial-access botnet active since 2017.",
-      "ongoing": "N",
-      "severity": "high",
+      "vector": "'FortiBleed' dataset of valid admin and SSL-VPN credentials assembled via ~1.16 billion credential attempts, interception of VPN auth hashes, and offline GPU-cluster cracking of exported FortiGate config files.",
+      "impact": "Tens of thousands of FortiGate firewalls across government, telecom, finance, healthcare, manufacturing and critical infrastructure exposed; researchers validated sampled credentials as authentic and confirmed Active Directory access. Affected orgs must rotate credentials immediately.",
+      "ongoing": "Y",
+      "severity": "critical",
       "sources": [
-        "therecord.media",
-        "cyberscoop.com"
+        "recordedfuture.com"
       ]
     },
     {
       "id": "3",
       "date": "Jun 18",
       "date_sort": "2026-06-18",
-      "victim": "Higher-education institutions & large enterprises (Univ. of Nottingham, Council of Europe, Ralph Lauren, JCPenney, Nexstar)",
-      "industry": "Education / multiple",
-      "attacker": "Criminal gang — data extortion",
+      "victim": "European Commission (Europa.eu platform on AWS)",
+      "industry": "Government / EU institutions",
+      "attacker": "Criminal gang — data extortion (TeamPCP; data later listed by ShinyHunters)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Zero-day exploitation of an Oracle PeopleSoft remote code execution flaw (CVE-2026-35273) before the June 10 patch, deploying disguised MeshCentral agents and a lateral-movement/defacement script to steal data.",
-      "impact": "Over 100 organizations were notified (68% higher education); stolen data has been published on the group's leak site and victims extorted, including 450,000+ University of Nottingham records and the Council of Europe (alleged 297GB).",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "cloud.google.com (Mandiant)",
-        "cisa.gov",
-        "therecord.media",
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "4",
-      "date": "Jun 18",
-      "date_sort": "2026-06-18",
-      "victim": "Salesforce customers via Klue Battlecards (Huntress, Recorded Future)",
-      "industry": "Technology / cybersecurity",
-      "attacker": "Criminal gang — data extortion (Icarus)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Compromise of Klue's third-party integration backend (via a long-dormant but active test credential) and theft of customer OAuth tokens, used to query and bulk-exfiltrate connected Salesforce instances through the REST API.",
-      "impact": "Salesforce suspended the Battlecards integration after attackers exfiltrated business contacts, price quotes and sales data from multiple customers; the emerging Icarus extortion group is demanding ransoms. Continues the Salesloft Drift/Gainsight OAuth-abuse pattern.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "darkreading.com",
-        "recordedfuture.com"
-      ]
-    },
-    {
-      "id": "5",
-      "date": "Jun 18",
-      "date_sort": "2026-06-18",
-      "victim": "Novo Nordisk",
-      "industry": "Pharmaceuticals",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Initial access via an exposed high-privilege GitHub personal access token in client-side JavaScript on an obscure subdomain, used to clone private repositories and harvest further credentials for deeper network pivoting.",
-      "impact": "Threat group FulcrumSec claims it spent two months inside and exfiltrated ~1.3TB (700,000+ files) including source code, drug research, internal AI models and clinical-trial data, demanded $25M, and began leaking after non-payment; a second group also claimed an intrusion.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "darkreading.com",
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "6",
-      "date": "Jun 18",
-      "date_sort": "2026-06-18",
-      "victim": "Mackay Sugar (Australia's 2nd-largest sugar producer)",
-      "industry": "Agriculture / food production",
-      "attacker": "Criminal gang — ransomware (The Gentlemen)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Ransomware intrusion disrupting IT and milling operations, paired with data theft for double extortion.",
-      "impact": "Two Queensland sugar mills (Racecourse and Farleigh) have been shut since June 10 at the start of the cane-crushing season; the Gentlemen ransomware-as-a-service group claims data theft and threatens to leak it absent payment.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "therecord.media",
-        "risky.biz",
-        "krebsonsecurity.com"
-      ]
-    },
-    {
-      "id": "7",
-      "date": "Jun 18",
-      "date_sort": "2026-06-18",
-      "victim": "FIFA 2026 World Cup digital infrastructure",
-      "industry": "Sports / media broadcasting",
-      "attacker": "Unknown — security researcher (responsible disclosure)",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Client-side-only authorization in FIFA's Microsoft Entra tenant let a self-registered 'football agent' account reach backend APIs that performed no server-side access enforcement.",
-      "impact": "An ethical hacker gained control of World Cup live TV-stream production, match-management, commentary and analytics systems; the flaw was reported via CISA/FBI and fixed the next day, with no known malicious exploitation.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "darkreading.com"
-      ]
-    },
-    {
-      "id": "8",
-      "date": "Jun 17",
-      "date_sort": "2026-06-17",
-      "victim": "Mastra npm ecosystem users (developers, CI/CD pipelines)",
-      "industry": "Software development",
-      "attacker": "Criminal gang — supply chain compromise",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Takeover of the 'ehindero' npm maintainer account to publish 140+ poisoned @mastra packages injecting 'easy-day-js', a dayjs typosquat whose postinstall hook ran an obfuscated dropper that disabled TLS checks and fetched a second-stage tasking implant.",
-      "impact": "Any workstation or pipeline running npm install of the compromised versions risked theft of credentials, tokens and build secrets plus persistent remote access; npm removed the packages and revoked the attacker's publish access.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "microsoft.com (MSTIC)"
-      ]
-    },
-    {
-      "id": "9",
-      "date": "Jun 16",
-      "date_sort": "2026-06-16",
-      "victim": "LiteLLM users (AI and cloud environments)",
-      "industry": "Technology / AI",
-      "attacker": "Criminal gang — supply chain compromise (TeamPCP)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Malicious LiteLLM versions (1.82.7/1.82.8) published to PyPI using valid publishing access, embedding code to steal cloud credentials, API keys and crypto wallets and to install a persistent downloader for follow-on intrusions.",
-      "impact": "LiteLLM sees ~3M daily downloads and is present in an estimated 36% of cloud environments; exposed credentials should be treated as compromised. Part of TeamPCP's broader 1,000+ package open-source supply chain campaign.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "therecord.media",
-        "cyberscoop.com",
-        "cisa.gov"
-      ]
-    },
-    {
-      "id": "10",
-      "date": "Jun 15",
-      "date_sort": "2026-06-15",
-      "victim": "North American academic, medical and military research institutions",
-      "industry": "Healthcare / research / defense",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Exploitation of externally facing REDCap research servers with custom INFINITERED malware to harvest credentials, then pivoting to internal networks and abusing Google Workspace content-compliance rules to silently BCC-forward matched emails.",
-      "impact": "Undetected for over a year (initial compromise Sept 2023, activity through Nov 2025), the China-nexus actor pursued AI, cyber, medical and national-defense research; Google disrupted the infrastructure and notified affected organizations.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "cloud.google.com (Mandiant)",
-        "cyberscoop.com"
-      ]
-    },
-    {
-      "id": "11",
-      "date": "Jun 15",
-      "date_sort": "2026-06-15",
-      "victim": "Red Hat software distribution users (developers)",
-      "industry": "Software / open source",
-      "attacker": "Criminal gang — supply chain compromise (Mini Shai-Hulud worm)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "A compromised GitHub account was used to push credential-stealing 'Miasma' malware — a cosmetically reskinned variant of the self-propagating Mini Shai-Hulud worm — into Red Hat's software pipeline.",
-      "impact": "32 packages downloaded roughly 117,000 times per week were tainted before Red Hat pulled them; the open-sourcing of the worm by TeamPCP has spawned copycat activity, complicating attribution.",
+      "vector": "Initial access via the Trivy supply-chain compromise, then misuse of a secret Amazon API key to access the Commission's AWS account.",
+      "impact": "CERT-EU attributed a March 19 breach to TeamPCP; about 92 GB of compressed data (names, email addresses, some email content) tied to 42 internal clients and 29+ EU entities was taken and surfaced on ShinyHunters' dark web site.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -204,33 +55,169 @@
       ]
     },
     {
-      "id": "12",
-      "date": "Jun 14",
-      "date_sort": "2026-06-14",
-      "victim": "Four major Iranian banks (Bank Melli, Tejarat, Saderat, Export Development Bank)",
-      "industry": "Financial services",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Disruption",
-      "vector": "Cyberattack reportedly targeting communications infrastructure shared by the four banks.",
-      "impact": "Online portals and mobile apps for the four banks were down over a weekend; the country's banking council said no customer data was accessed.",
+      "id": "4",
+      "date": "Jun 18",
+      "date_sort": "2026-06-18",
+      "victim": "LiteLLM users (open-source AI gateway package on PyPI)",
+      "industry": "Software / AI supply chain",
+      "attacker": "Criminal gang — supply chain compromise",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Malicious versions (1.82.7, 1.82.8) of the widely used LiteLLM Python package published to PyPI using valid publishing access, likely via a compromised maintainer account.",
+      "impact": "Poisoned packages (~3M daily downloads) were live for at least two hours and designed to steal cloud credentials, API keys and crypto wallets and install a persistent downloader; potential to affect tens of thousands of corporate environments, including AI firm Mercor.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "5",
+      "date": "Jun 18",
+      "date_sort": "2026-06-18",
+      "victim": "Red Hat software distribution users (developers/customers)",
+      "industry": "Software supply chain",
+      "attacker": "Criminal gang — supply chain worm (Mini Shai-Hulud 'Miasma' variant)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "A compromised GitHub account was used to push credential-stealing malware (a self-propagating Shai-Hulud worm variant) into Red Hat's distribution pipeline.",
+      "impact": "32 packages downloaded ~117,000 times per week were tainted before Red Hat pulled them; the company says no customer action is required. Derived from TeamPCP's open-sourced worm code, now spawning copycats.",
       "ongoing": "N",
       "severity": "high",
+      "sources": [
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "6",
+      "date": "Jun 18",
+      "date_sort": "2026-06-18",
+      "victim": "Mastra npm ecosystem users (developers, CI/CD pipelines)",
+      "industry": "Software supply chain / AI tooling",
+      "attacker": "North Korea — state-sponsored, financially motivated",
+      "attacker_origin": "north_korea",
+      "motivation": "Financial",
+      "vector": "Takeover of the 'ehindero' npm maintainer account to publish 140+ poisoned packages across the mastra/@mastra scopes, introducing a malicious dayjs typosquat ('easy-day-js') whose postinstall hook ran an obfuscated dropper.",
+      "impact": "Microsoft attributes the compromise with high confidence to North Korean actor Sapphire Sleet; any workstation or CI/CD pipeline that ran npm install/update fetched a hidden second-stage payload. Packages removed and publish access revoked, but installed hosts remain at risk.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "microsoft.com"
+      ]
+    },
+    {
+      "id": "7",
+      "date": "Jun 17",
+      "date_sort": "2026-06-17",
+      "victim": "Fortinet FortiSandbox appliance operators",
+      "industry": "Multiple sectors / enterprise security",
+      "attacker": "Unknown — multiple independent operators",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Active exploitation of critical FortiSandbox flaws CVE-2026-39808 (OS command injection) and CVE-2026-39813 (path traversal), disclosed in April, plus attempts against CVE-2026-25089.",
+      "impact": "Researchers observed 49 exploitation events from 11 IPs over six days, originating from nine countries; the recon/verification activity signals the early stage of a likely larger wave against trusted security appliances. Not yet in CISA's KEV catalog.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "cyberscoop.com"
+      ]
+    },
+    {
+      "id": "8",
+      "date": "Jun 17",
+      "date_sort": "2026-06-17",
+      "victim": "Open-source software supply chain (npm, PyPI, RubyGems ecosystems)",
+      "industry": "Software supply chain",
+      "attacker": "Criminal gang — self-propagating supply chain worm (Shai-Hulud variants)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Shai-Hulud worm variants exploiting GitHub design flaws; GitHub reportedly closed two formal vulnerability reports from Deep Specter as ineligible despite ongoing exploitation.",
+      "impact": "Deep Specter confirmed 516 malicious packages live across five ecosystems, 3,000+ affected GitHub repositories and 200+ compromised developer accounts — figures it calls a floor. Linked to breaches at the European Commission, Mercor, LiteLLM, GitHub and Red Hat.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "9",
+      "date": "Jun 17",
+      "date_sort": "2026-06-17",
+      "victim": "Healthcare, manufacturing, legal and other sensitive-data sectors",
+      "industry": "Multiple (healthcare-focused)",
+      "attacker": "Criminal gang — ransomware (INC RaaS)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Double-extortion ransomware delivered via spear-phishing, broker-supplied valid credentials, and exploitation of known flaws (Citrix Bleed 2 CVE-2025-5777, SimpleHelp CVE-2024-57727, NetScaler CVE-2023-3519).",
+      "impact": "Acronis reports the INC RaaS group has claimed 800+ victims since 2023, deliberately hitting sectors where disruption forces fast payment; prior victims include NHS Dumfries & Galloway and Alder Hey Children's Hospital.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "darkreading.com"
+      ]
+    },
+    {
+      "id": "10",
+      "date": "Jun 17",
+      "date_sort": "2026-06-17",
+      "victim": "Silver Fox cybercrime group members (China-based)",
+      "industry": "Law enforcement action / cybercrime",
+      "attacker": "Criminal gang — malware/infostealer operators (Silver Fox)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Chinese police arrested 67 suspects across five provinces tied to the Silver Fox trojan, distributed via malspam and fake download sites to deploy infostealers and the AtlasRAT/ValleyRAT remote-access trojans.",
+      "impact": "Disruption of China's largest and most active domestic cybercrime group; arrests spanned developers, phishing-site operators and affiliates, including the malware's primary author. The group had recently begun expanding beyond Chinese-speaking targets.",
+      "ongoing": "N",
+      "severity": "medium",
       "sources": [
         "risky.biz"
       ]
     },
     {
-      "id": "13",
-      "date": "Jun 14",
-      "date_sort": "2026-06-14",
-      "victim": "Arch Linux users (AUR community packages)",
-      "industry": "Software / open source",
-      "attacker": "Criminal gang — supply chain compromise",
+      "id": "11",
+      "date": "Jun 16",
+      "date_sort": "2026-06-16",
+      "victim": "Web users via compromised WordPress sites",
+      "industry": "Multiple sectors",
+      "attacker": "Criminal gang — ransomware/data extortion (Rapid Brigantine / Vice Society)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Attackers abused the AUR 'adopt' mechanism to take over 1,900+ orphaned community packages and modified their install procedures to pull a malicious npm (later Bun) script delivering a rootkit and an infostealer.",
-      "impact": "Hijacked packages installed a rootkit plus credential- and developer-secret-stealing malware; affected users were urged to rotate all passwords and tokens. Hijacking attempts remained ongoing during the response.",
+      "vector": "The 'Lorem Ipsum' shellcode loader pivoted from Trojanized Microsoft Teams installers to ClickFix lures hosted on compromised WordPress sites after Microsoft dismantled the Fox Tempest malware-signing service.",
+      "impact": "BlueVoyant links the campaign to financially motivated group Rapid Brigantine (aka Vanilla Tempest / Vice Society), tied to Rhysida, BlackCat, Zeppelin and Quantum Locker ransomware; the ClickFix shift broadens the victim pool to anyone browsing the poisoned sites.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "darkreading.com"
+      ]
+    },
+    {
+      "id": "12",
+      "date": "Jun 15",
+      "date_sort": "2026-06-15",
+      "victim": "US public and private medical research community",
+      "industry": "Healthcare / academic research / defense",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "China-nexus actor UNC6508 abused Google Workspace compliance rules and exploited REDCap research-platform vulnerabilities for intelligence collection.",
+      "impact": "Google Threat Intelligence reports a sophisticated campaign targeting AI, cyber, medical and national-defense research data across the public and private medical community.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "cloud.google.com"
+      ]
+    },
+    {
+      "id": "13",
+      "date": "Jun 15",
+      "date_sort": "2026-06-15",
+      "victim": "Arch Linux users (AUR community packages)",
+      "industry": "Software supply chain / open source",
+      "attacker": "Criminal gang — supply chain compromise (unattributed)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Attackers abused the AUR 'adopt' mechanism to seize 1,900+ orphaned community packages and inject a malicious npm/Bun install step that downloaded a rootkit and infostealer.",
+      "impact": "Affected users got a rootkit plus a credential harvester collecting browser, Electron-app and developer secrets; victims are urged to rotate all passwords/tokens before removing persistence. Hijack attempts were still ongoing at time of reporting.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -239,32 +226,68 @@
     },
     {
       "id": "14",
-      "date": "Jun 13",
-      "date_sort": "2026-06-13",
-      "victim": "1.2M+ WordPress sites (OptinMonster, TrustPulse, PushEngage plugin users)",
-      "industry": "Web / SMB",
-      "attacker": "Criminal gang — supply chain compromise",
+      "date": "Jun 12",
+      "date_sort": "2026-06-12",
+      "victim": "Higher-education institutions worldwide (100+ orgs, incl. University of Nottingham)",
+      "industry": "Education",
+      "attacker": "Criminal gang — data theft extortion (ShinyHunters)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Malicious code added to the legitimate JavaScript of three Awesome Motive WordPress plugins; it waits for an admin login, creates a rogue admin account, then installs a self-hiding backdoor plugin to maintain access.",
-      "impact": "More than 1.2 million sites were backdoored via the compromised plugins, granting attackers persistent administrative control; remediation across affected sites is ongoing.",
+      "vector": "Exploitation of Oracle PeopleSoft PeopleTools zero-day CVE-2026-35273, an unauthenticated RCE that allows server takeover; Oracle issued mitigation guidance but no patch.",
+      "impact": "Mandiant says attacks date to at least May 27 and potentially compromised 100+ organizations, 68% in higher education; ShinyHunters is naming victims and leaking data, with University of Nottingham confirming significant student-data theft. Campaign still active.",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "critical",
       "sources": [
-        "risky.biz"
+        "cyberscoop.com",
+        "cloud.google.com"
       ]
     },
     {
       "id": "15",
+      "date": "Jun 12",
+      "date_sort": "2026-06-12",
+      "victim": "Conti ransomware victims (1,000+ orgs globally)",
+      "industry": "Law enforcement action / multiple sectors",
+      "attacker": "Criminal gang — ransomware (Conti)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "DOJ secured a guilty plea from Ukrainian national Oleksii Lytvynenko, who admitted developing malware used in Conti attacks and holding data on 12 victims.",
+      "impact": "Lytvynenko pleaded guilty to wire-fraud conspiracy and faces up to 20 years; Conti hit 1,000+ victims across 47 US states and ~31 countries and extorted $150M+. Prosecutors cited $634K taken from two Tennessee victims, including a compromised sheriff's department and EMS.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "justice.gov",
+        "cyberscoop.com"
+      ]
+    },
+    {
+      "id": "16",
+      "date": "Jun 11",
+      "date_sort": "2026-06-11",
+      "victim": "Organizations running Ivanti Sentry mobile gateway",
+      "industry": "Multiple sectors",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Exploitation of max-severity (CVSS 10) OS command-injection flaw CVE-2026-10520 using a public proof-of-concept, within 24 hours of disclosure, enabling unauthenticated root RCE.",
+      "impact": "Shadowserver observed mass exploitation attempts and spotted 19 vulnerable instances, at least two already backdoored; unpatched Sentry instances are likely compromised. A second flaw, CVE-2026-10523 (auth bypass, CVSS 9.9), was disclosed alongside.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "darkreading.com"
+      ]
+    },
+    {
+      "id": "17",
       "date": "Jun 10",
       "date_sort": "2026-06-10",
-      "victim": "US security clearance holders / current & former government employees",
+      "victim": "US security clearance holders (current & former)",
       "industry": "Government / national security",
-      "attacker": "China — state intelligence services",
+      "attacker": "China — state-suspected agents",
       "attacker_origin": "china",
       "motivation": "Espionage",
-      "vector": "Suspected Chinese intelligence created 13 fake 'consulting' company websites with AI-generated personas and job postings to recruit clearance holders and pay (via crypto) for insider and classified information.",
-      "impact": "DOJ and the FBI seized the 13 domains used to lure Americans into disclosing sensitive U.S. government information through sham consulting contracts and confidentiality agreements.",
+      "vector": "Thirteen fake 'consulting company' websites used social-engineering lures offering easy income to recruit clearance holders into revealing classified or sensitive information.",
+      "impact": "DOJ and FBI seized the 13 domains backed by suspected Chinese agents that targeted current and former clearance holders with access to classified US government information.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
@@ -272,21 +295,88 @@
       ]
     },
     {
-      "id": "16",
-      "date": "Jun 9",
-      "date_sort": "2026-06-09",
-      "victim": "Organizations running Palo Alto PAN-OS GlobalProtect",
-      "industry": "Multiple",
-      "attacker": "Unknown",
+      "id": "18",
+      "date": "Jun 10",
+      "date_sort": "2026-06-10",
+      "victim": "WhatsApp users targeted by spyware",
+      "industry": "Technology / civil society",
+      "attacker": "Commercial spyware vendor (NSO Group)",
       "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Active exploitation of a PAN-OS GlobalProtect authentication-bypass vulnerability (CVE-2026-0257), including via a public proof-of-concept, to initiate unauthorized VPN connections.",
-      "impact": "Unit 42 observed widespread probing and a small number of successful gateway-connected sessions, with no post-access lateral movement confirmed yet. The CVE was added to CISA's KEV catalog on May 29.",
+      "motivation": "Espionage",
+      "vector": "A spear-phishing operation lured targeted WhatsApp users into clicking a malicious link leading to an external site, in alleged violation of a US court injunction barring NSO from targeting Meta's platforms.",
+      "impact": "Meta says it disrupted the new NSO campaign and filed to hold the (US-sanctioned) Israeli spyware firm in contempt, urging lawmakers to keep sanctions in place; researchers warn NSO's weakened legal status has made it more reckless.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "unit42.paloaltonetworks.com",
-        "cisa.gov"
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "19",
+      "date": "Jun 9",
+      "date_sort": "2026-06-09",
+      "victim": "Cisco Catalyst SD-WAN Manager customers",
+      "industry": "Multiple sectors / networking",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Active exploitation of zero-day CVE-2026-20245, a validation-error flaw in Catalyst SD-WAN Manager allowing authenticated/local attackers to execute commands as root; no patch yet available.",
+      "impact": "The seventh actively exploited Cisco SD-WAN zero-day this year; Cisco observed limited cases where exploitation pushed configuration changes to edge devices. Exploitation requires existing credentials, often obtained via earlier zero-days CVE-2026-20182/20127.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "cyberscoop.com"
+      ]
+    },
+    {
+      "id": "20",
+      "date": "Jun 9",
+      "date_sort": "2026-06-09",
+      "victim": "Organizations running Palo Alto PAN-OS GlobalProtect",
+      "industry": "Multiple sectors",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Active exploitation of PAN-OS authentication-bypass flaw CVE-2026-0257 in the GlobalProtect portal/gateway, allowing attackers to circumvent controls and initiate VPN connections.",
+      "impact": "Unit 42 observed an unidentified actor probing GlobalProtect, with only a small portion of devices establishing VPN sessions and no post-access lateral movement yet identified. Added to CISA's KEV catalog on May 29.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "unit42.paloaltonetworks.com"
+      ]
+    },
+    {
+      "id": "21",
+      "date": "Jun 8",
+      "date_sort": "2026-06-08",
+      "victim": "Check Point Remote Access VPN / Mobile Access customers",
+      "industry": "Multiple sectors",
+      "attacker": "Criminal gang — ransomware (Qilin affiliate)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Zero-day exploitation of critical authentication-bypass flaw CVE-2026-50751 (CVSS 9.3) in IKEv1-configured VPN deployments, letting attackers establish a VPN session without valid credentials.",
+      "impact": "Exploited in the wild since early May against a few dozen organizations globally; Check Point confirmed one case where post-exploitation activity was tied to a Qilin ransomware affiliate. A related MitM flaw, CVE-2026-50752, was disclosed alongside.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "darkreading.com"
+      ]
+    },
+    {
+      "id": "22",
+      "date": "Jun 8",
+      "date_sort": "2026-06-08",
+      "victim": "US legal, professional and financial services firms",
+      "industry": "Legal / professional services / finance",
+      "attacker": "Criminal gang — data theft extortion (Silent Ransom / Luna Moth)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Vishing and IT-support impersonation to trick staff into screen-sharing and installing legitimate RMM tools, escalating in some cases to in-person office intrusions and USB-based data theft.",
+      "impact": "Mandiant (tracking the group as UNC3753) reports dozens of organizations targeted Jan-May 2026, with some intrusions moving from initial contact to data exfiltration and ransom demands in under an hour.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "darkreading.com"
       ]
     }
   ]
