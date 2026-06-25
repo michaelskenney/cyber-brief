@@ -1,75 +1,109 @@
 {
-  "generated_at": "2026-06-25T08:07:23.903695+00:00",
+  "generated_at": "2026-06-25T20:05:48.530343+00:00",
   "period_searched": "June 11-25, 2026",
-  "incident_count": 19,
+  "incident_count": 15,
   "incidents": [
     {
       "id": "1",
-      "date": "Jun 24",
-      "date_sort": "2026-06-24",
-      "victim": "Unnamed communications service provider",
-      "industry": "Telecommunications",
-      "attacker": "Unknown — state-sponsored espionage suspected",
-      "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "Attacker abused Cisco Catalyst SD-WAN auth-bypass flaws to make rogue peering connections to SD-WAN Manager devices, then exploited a zero-day (CVE-2026-20245) to escalate to root and create a hidden administrative account.",
-      "impact": "Gained root control of the provider's SD-WAN orchestrator, giving stealthy visibility into internal enterprise traffic; extensive anti-forensics (deleted files, reverted configs) prevented investigators from assessing the full scope.",
+      "date": "Jun 25",
+      "date_sort": "2026-06-25",
+      "victim": "Ukrposhta (Ukraine national postal operator)",
+      "industry": "Postal / Logistics",
+      "attacker": "Russia — pro-Russia hacktivists",
+      "attacker_origin": "russia",
+      "motivation": "Disruption",
+      "vector": "A pro-Russia hacktivist group claimed it breached Ukrposhta servers weeks earlier and launched an overnight attack on the company's IT systems.",
+      "impact": "Mobile application knocked offline with temporary service disruptions; the group claims theft of a user-information database, which Ukrposhta has not confirmed.",
       "ongoing": "Y",
-      "severity": "critical",
+      "severity": "medium",
       "sources": [
-        "cyberscoop.com",
-        "darkreading.com",
-        "cloud.google.com (Mandiant)"
+        "therecord.media"
       ]
     },
     {
       "id": "2",
-      "date": "Jun 24",
-      "date_sort": "2026-06-24",
-      "victim": "Fortinet FortiGate firewall/VPN users worldwide (incl. a Turkish NATO defense contractor)",
-      "industry": "Cross-sector / critical infrastructure",
-      "attacker": "Russia — state-linked, Russian-speaking group",
+      "date": "Jun 25",
+      "date_sort": "2026-06-25",
+      "victim": "Andrey Pivovarov (Russian political activist)",
+      "industry": "Civil Society / Individual",
+      "attacker": "Russia — state security services",
       "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "The 'FortiBleed' campaign ran roughly 1.16 billion credential attempts against 320,000+ FortiGate targets, intercepted SSL VPN authentication hashes, cracked them offline on a 45-GPU cluster, and used recovered admin/VPN credentials to reach internal Active Directory environments.",
-      "impact": "Valid admin and VPN credentials for roughly 74,000 FortiGate firewalls across 194 countries were exposed; classified documents were allegedly exfiltrated from a Turkish NATO defense contractor. Australia's ACSC issued a critical alert urging immediate credential rotation.",
-      "ongoing": "Y",
-      "severity": "critical",
+      "motivation": "Political",
+      "vector": "Russian authorities used Cellebrite UFED forensic extraction technology to break into a jailed dissident's seized iPhone in June 2021 — three months after Cellebrite said it had cut Russia off.",
+      "impact": "Phone data was extracted and used to build a prosecution; Citizen Lab concluded Cellebrite's design made it difficult to deny abusive customers continued use of legacy hardware.",
+      "ongoing": "N",
+      "severity": "medium",
       "sources": [
-        "recordedfuture.com",
-        "cyber.gov.au (ACSC)",
-        "risky.biz",
-        "blog.talosintelligence.com"
+        "therecord.media",
+        "cyberscoop.com"
       ]
     },
     {
       "id": "3",
-      "date": "Jun 24",
-      "date_sort": "2026-06-24",
-      "victim": "Belgian State Security Service (VSSE)",
-      "industry": "Government / Intelligence",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "Compromise of a third-party firm managing the agency's mobile device management (MDM) platform, tied to exploitation of internet-facing Ivanti EPMM servers.",
-      "impact": "Names, phone numbers, and email addresses of Belgian intelligence service employees — plus mobile phone details of officials — were stolen.",
+      "date": "Jun 25",
+      "date_sort": "2026-06-25",
+      "victim": "DraftKings",
+      "industry": "Online Gaming / Betting",
+      "attacker": "Criminal gang — credential stuffing",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "The third and final defendant, 'Snoopy' (Nathan Austad), was sentenced for a 2022 credential-stuffing attack that compromised roughly 60,000 DraftKings accounts.",
+      "impact": "Attackers stole about $600,000 from ~1,600 accounts and sold access to others via criminal marketplaces; Austad received 18 months and $1.3M in restitution.",
       "ongoing": "N",
-      "severity": "high",
+      "severity": "medium",
       "sources": [
-        "risky.biz"
+        "cyberscoop.com"
       ]
     },
     {
       "id": "4",
       "date": "Jun 24",
       "date_sort": "2026-06-24",
-      "victim": "Tata Electronics (supplier to Apple, Tesla)",
-      "industry": "Electronics manufacturing",
-      "attacker": "Criminal gang — data extortion",
+      "victim": "Undisclosed communications service provider",
+      "industry": "Telecommunications",
+      "attacker": "Unknown — state-suspected espionage",
+      "attacker_origin": "unknown",
+      "motivation": "Espionage",
+      "vector": "Attackers made rogue SD-WAN peering connections (likely via CVE-2026-20127/20182), then exploited a zero-day (CVE-2026-20245) in Cisco Catalyst SD-WAN Manager to create a rogue root account.",
+      "impact": "Gained root-level control of the SD-WAN orchestrator, enabling potential undetected visibility into the provider's internal traffic; extensive anti-forensic cleanup obscured the full scope.",
+      "ongoing": "N",
+      "severity": "critical",
+      "sources": [
+        "cloud.google.com",
+        "cyberscoop.com",
+        "darkreading.com"
+      ]
+    },
+    {
+      "id": "5",
+      "date": "Jun 24",
+      "date_sort": "2026-06-24",
+      "victim": "Fortinet FortiGate firewall users (73,932 systems, 194 countries)",
+      "industry": "Multiple / Critical Infrastructure",
+      "attacker": "Criminal gang — Russian-speaking access broker",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Data-theft and extortion intrusion; the World Leaks group (rebrand of Hunters International) claims it stole more than 200,000 documents and listed the company on its leak site.",
-      "impact": "Tata confirmed a security incident; leaked samples allegedly include Apple supplier specifications and Tesla-related manufacturing documents. Tata says operations were unaffected and the data's authenticity is unverified.",
+      "vector": "Mass brute-forcing and exploitation of unpatched FortiGate flaws plus a custom 'FortigateSniffer' that intercepted credentials and hashes across 24 protocols; hashes were cracked on a GPU cluster and access sold.",
+      "impact": "Valid admin and SSL VPN credentials for ~73,932 firewalls exposed; confirmed compromises across government, telecom, finance and healthcare, with classified documents allegedly stolen from a Turkish NATO defense contractor.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "recordedfuture.com",
+        "risky.biz",
+        "cyber.gov.au"
+      ]
+    },
+    {
+      "id": "6",
+      "date": "Jun 24",
+      "date_sort": "2026-06-24",
+      "victim": "Tata Electronics",
+      "industry": "Electronics Manufacturing",
+      "attacker": "Criminal gang — data extortion (World Leaks)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Extortion group exfiltrated confidential files; Tata confirmed a breach it detected a few weeks earlier.",
+      "impact": "The group claims 200,000+ stolen documents, allegedly including Apple supplier specifications and Tesla manufacturing files; Tata says operations were unaffected.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -78,105 +112,72 @@
       ]
     },
     {
-      "id": "5",
+      "id": "7",
       "date": "Jun 24",
       "date_sort": "2026-06-24",
-      "victim": "140,000+ infected computers worldwide; ~15,000 compromised websites",
-      "industry": "Cross-sector",
+      "victim": "StealC, Amadey & SocGholish malware operations (takedown)",
+      "industry": "Cybercrime Infrastructure",
       "attacker": "Criminal gang — malware-as-a-service (Russia-linked)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Operation Endgame — a coordinated Microsoft Digital Crimes Unit and Europol action seizing 326 servers and 142 domains powering the SocGholish, Amadey, and StealC malware 'assembly line' used for initial access, credential theft, and ransomware staging.",
-      "impact": "Disrupted infrastructure feeding ransomware and fraud campaigns; investigators recovered ~27 million stolen credentials, seized €41M ($47M) in cryptocurrency, and identified 18,000 victim machines.",
+      "vector": "Coordinated Microsoft and law-enforcement action seized servers and domains underpinning infostealer and loader 'cybercrime-as-a-service' supply chains; Microsoft used AI to link Amadey and StealC infrastructure.",
+      "impact": "326 servers and 142 domains dismantled, 27M stolen credentials reclaimed and €41M ($47M) in crypto found; 200+ StealC/Amadey C2 domains disrupted and SocGholish backdoors removed from ~15,000 sites.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
-        "microsoft.com (MSTIC)",
+        "microsoft.com",
         "therecord.media",
-        "cyberscoop.com",
-        "darkreading.com"
-      ]
-    },
-    {
-      "id": "6",
-      "date": "Jun 23",
-      "date_sort": "2026-06-23",
-      "victim": "Klue customers: Huntress, LastPass, HackerOne, Recorded Future, Jamf, Snyk, OneTrust, Tanium, Gong and others",
-      "industry": "Technology / Cybersecurity (SaaS)",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "The Icarus group breached market-intelligence vendor Klue and abused its OAuth tokens and Salesforce integration to pull customers' Salesforce CRM data.",
-      "impact": "Multiple technology and security firms had Salesforce CRM data (contacts, sales records, pricing data) stolen; Icarus is leaking data on its dark web site and extorting victims, raising the risk of targeted social-engineering follow-on.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "darkreading.com"
-      ]
-    },
-    {
-      "id": "7",
-      "date": "Jun 23",
-      "date_sort": "2026-06-23",
-      "victim": "Transport for London (TfL); also M&S, Harrods, Co-op, SSM Health, Sutter Health",
-      "industry": "Public transit / Government",
-      "attacker": "Criminal gang — extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Two members of the Scattered Spider crew pleaded guilty to the September 2024 TfL intrusion, which relied on social engineering and credential theft (historically SIM-swapping and SMS/voice phishing).",
-      "impact": "The TfL attack disrupted services for months, forced 28,000 employees to reset passwords in person, exposed Oyster refund customer data, and cost ~£29M ($38M). The broader group extorted $115M+ across 47 US entities.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "therecord.media",
-        "krebsonsecurity.com"
+        "cyberscoop.com"
       ]
     },
     {
       "id": "8",
       "date": "Jun 23",
       "date_sort": "2026-06-23",
-      "victim": "Millions of consumer Android TV boxes; organizations hit by mass data scraping",
-      "industry": "Consumer IoT / Hosting",
-      "attacker": "Criminal gang — proxy/ad-fraud operation",
+      "victim": "Multiple tech & cybersecurity firms (Huntress, LastPass, HackerOne, Recorded Future, Jamf, Snyk, others)",
+      "industry": "Technology / Cybersecurity",
+      "attacker": "Criminal gang — data extortion (Icarus)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "A malicious pre-installed SDK (the Popa plugin of the Vo1d / Badbox 2.0 botnet) on cheap Android TV streaming boxes enrolls devices into a residential proxy pool that relays traffic for ad fraud, account takeovers, and mass scraping.",
-      "impact": "Millions of TV boxes forced to relay malicious traffic; a May 2026 scraping event spanned 1.4M+ IPs. Researchers tie revived control domains to a publicly traded Israeli proxy firm, which disputes the characterization.",
+      "vector": "Attackers breached market-intelligence vendor Klue and abused its Salesforce OAuth tokens to steal customers' Salesforce CRM data.",
+      "impact": "Salesforce instances of numerous firms compromised; Icarus began leaking data and warned of more victims, raising the risk of follow-on social-engineering attacks.",
       "ongoing": "Y",
-      "severity": "medium",
+      "severity": "high",
       "sources": [
-        "krebsonsecurity.com"
+        "darkreading.com",
+        "risky.biz"
       ]
     },
     {
       "id": "9",
       "date": "Jun 23",
       "date_sort": "2026-06-23",
-      "victim": "OpenClaw AI agent users (developers, macOS users, cryptocurrency holders)",
-      "industry": "Software / AI supply chain",
-      "attacker": "Criminal gang — infostealer operators",
+      "victim": "Transport for London",
+      "industry": "Transportation / Public Sector",
+      "attacker": "Criminal gang — English-speaking extortion crew",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Malicious 'skills' on the ClawHub AI-agent marketplace used semantic instruction hijacking and curl-pipe-bash lures to trick the AI agent into fetching and running macOS infostealers (AMOS/cluw), with file-padding tricks to evade marketplace scanning.",
-      "impact": "Five unblocked malicious skills delivered infostealers to active command-and-control servers before OpenClaw removed them; earlier waves involved 341+ malicious skills, with roughly 17% of analyzed skills carrying payloads.",
-      "ongoing": "Y",
-      "severity": "medium",
+      "vector": "Two UK members of the Scattered Spider crew pleaded guilty to the September 2024 intrusion into Transport for London's network.",
+      "impact": "The 2024 attack disrupted services for months, exposed Oyster refund customer data, forced 28,000 staff to reset passwords in person and cost ~£29M ($38M); sentencing is set for July.",
+      "ongoing": "N",
+      "severity": "high",
       "sources": [
-        "unit42.paloaltonetworks.com"
+        "krebsonsecurity.com",
+        "therecord.media",
+        "blog.talosintelligence.com"
       ]
     },
     {
       "id": "10",
-      "date": "Mid-June",
-      "date_sort": "2026-06-20",
-      "victim": "Bank Melli, Bank Tejarat, Bank Saderat, Export Development Bank of Iran",
-      "industry": "Banking / Financial services",
-      "attacker": "Israel — state-linked (suspected)",
+      "date": "Late Jun",
+      "date_sort": "2026-06-23",
+      "victim": "Belgian State Security Service (VSSE)",
+      "industry": "Government / Intelligence",
+      "attacker": "Unknown — espionage",
       "attacker_origin": "unknown",
-      "motivation": "Disruption",
-      "vector": "Cyberattack targeting communications infrastructure shared by four of Iran's largest banks.",
-      "impact": "Online portals and mobile apps for the four banks were knocked offline over a weekend; the Iranian banking council said no customer data was accessed.",
+      "motivation": "Espionage",
+      "vector": "Attackers stole intelligence officers' mobile contact details from a company managing the agency's mobile device management platform; activity linked to 2025 Ivanti EPMM server attacks.",
+      "impact": "Names, phone numbers and email addresses of Belgian State Security Service employees were exposed.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -185,69 +186,68 @@
     },
     {
       "id": "11",
-      "date": "Jun 17",
-      "date_sort": "2026-06-17",
-      "victim": "Chinese-speaking users in China and abroad",
-      "industry": "Cross-sector / Consumers",
-      "attacker": "Criminal gang — malware/fraud (China-based)",
+      "date": "Jun 21",
+      "date_sort": "2026-06-21",
+      "victim": "Check Point Remote Access VPN customers (dozens of organizations)",
+      "industry": "Multiple",
+      "attacker": "Criminal gang — ransomware",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "The Silver Fox crew used malspam and fake app-download/phishing sites to lure victims into installing a trojan that deployed infostealers and custom remote-access tools to steal funds.",
-      "impact": "Chinese police arrested 67 suspects across five provinces, including the malware author, disrupting one of China's largest active domestic cybercrime operations.",
-      "ongoing": "N",
+      "vector": "A ransomware affiliate exploited CVE-2026-50751, a CVSS 9.3 authentication-bypass in Check Point VPN (IKEv1), to establish fully authenticated sessions without credentials, beginning in early May — weeks before the June disclosure.",
+      "impact": "A few dozen organizations were compromised; attackers used Rclone for data exfiltration and staged ransomware. CISA issued an emergency directive on June 21.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "cyberscoop.com"
+      ]
+    },
+    {
+      "id": "12",
+      "date": "Mid-Jun",
+      "date_sort": "2026-06-18",
+      "victim": "Universities and Oracle PeopleSoft users (incl. University of Nottingham)",
+      "industry": "Education / Multiple",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Extortion group exploited an unpatched Oracle PeopleSoft zero-day (CVE-2026-35273, added to CISA's Known Exploited Vulnerabilities catalog) to steal data since late May.",
+      "impact": "Multiple universities are being extorted; data theft confirmed at the University of Nottingham, with the Oracle flaw under active exploitation.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "cyberscoop.com",
+        "therecord.media",
+        "cisa.gov"
+      ]
+    },
+    {
+      "id": "13",
+      "date": "Mid-Jun",
+      "date_sort": "2026-06-18",
+      "victim": "Mount Royal University (Calgary)",
+      "industry": "Education",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "The university is rebuilding its entire IT infrastructure following a hack the prior week; details have not been disclosed.",
+      "impact": "Significant IT disruption requiring a full infrastructure rebuild.",
+      "ongoing": "Y",
       "severity": "medium",
       "sources": [
         "risky.biz"
       ]
     },
     {
-      "id": "12",
-      "date": "Jun 15",
-      "date_sort": "2026-06-15",
-      "victim": "North American academic, medical, and military research institutions",
-      "industry": "Healthcare / medical & defense research",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Attackers exploited externally facing REDCap research servers, deployed custom malware to harvest credentials, pivoted to domain admin, and abused Google Workspace content-compliance rules to silently BCC-forward sensitive emails for exfiltration.",
-      "impact": "A China-nexus actor remained undetected for over a year, targeting national-security, Indo-Pacific command, AI, uncrewed-vehicle, and medical-research data across multiple US and Canadian organizations.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "cloud.google.com (Mandiant)"
-      ]
-    },
-    {
-      "id": "13",
-      "date": "Jun 15",
-      "date_sort": "2026-06-15",
-      "victim": "Oracle PeopleSoft customers: universities, Council of Europe, Ralph Lauren, JCPenney, Nexstar, University of Nottingham",
-      "industry": "Cross-sector (education, government, retail, media)",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "The ShinyHunters group exploited a critical zero-day in Oracle PeopleSoft (CVE-2026-35273, CVSS 9.8; now in CISA's Known Exploited Vulnerabilities catalog) to gain remote code execution, then deployed disguised remote-management agents and credential-spraying scripts to steal data.",
-      "impact": "100+ organizations compromised (heavily higher education); stolen data published on the group's leak site. The University of Nottingham confirmed 40GB+ of data on 450,000+ students and alumni was taken.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "cloud.google.com (Mandiant)",
-        "cisa.gov",
-        "risky.biz",
-        "blog.talosintelligence.com"
-      ]
-    },
-    {
       "id": "14",
-      "date": "Jun 15",
-      "date_sort": "2026-06-15",
-      "victim": "Novo Nordisk",
-      "industry": "Pharmaceutical / Healthcare",
-      "attacker": "Unknown",
+      "date": "Mid-Jun",
+      "date_sort": "2026-06-17",
+      "victim": "Iranian banks",
+      "industry": "Financial Services",
+      "attacker": "Israel — state-linked (suspected)",
       "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Attackers gained access to parts of the internal network; the company took systems offline to evict them.",
-      "impact": "Some sensitive data, including patient personal information, was copied during the intrusion at the maker of Ozempic and Wegovy.",
+      "motivation": "Disruption",
+      "vector": "Intelligence sources believe Israeli hackers were likely behind a cyberattack that crippled Iranian banks earlier in June.",
+      "impact": "Iranian banking operations were disrupted.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -256,87 +256,20 @@
     },
     {
       "id": "15",
-      "date": "Jun 15",
-      "date_sort": "2026-06-15",
-      "victim": "Arch Linux users installing affected AUR packages",
-      "industry": "Software / Open source",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Attacker abused the Arch User Repository's orphaned-package adoption mechanism to take over abandoned packages and inject a malicious script that downloads a rootkit and infostealer during installation.",
-      "impact": "More than 1,900 AUR packages hijacked to deploy a rootkit plus credential harvester that steals browser, Electron app, and developer secrets; hijacking attempts are ongoing.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "16",
-      "date": "Jun 15",
-      "date_sort": "2026-06-15",
-      "victim": "1.2M+ websites using OptinMonster, TrustPulse, and PushEngage plugins",
-      "industry": "Web / Hosting",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Malicious code planted in three legitimate Awesome Motive WordPress plugins waits for an admin login, then creates a rogue admin account and installs a self-hiding backdoor plugin.",
-      "impact": "More than 1.2 million websites were backdoored, granting attackers persistent administrative access.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "17",
-      "date": "Jun 15",
-      "date_sort": "2026-06-15",
-      "victim": "Global Schools Group (65 K-12 campuses across nine countries)",
-      "industry": "Education",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Data was exfiltrated from an unsecured database exposed online, followed by a failed ransom negotiation and a public leak.",
-      "impact": "Terabytes of data leaked, including passport details of children and parents, attendance records, teacher passwords, and photos of campus visitors.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "18",
       "date": "Jun 12",
       "date_sort": "2026-06-12",
-      "victim": "1,000+ Conti ransomware victims across 47 US states and 31 countries",
-      "industry": "Cross-sector (incl. critical infrastructure)",
+      "victim": "Conti ransomware victims (1,000+ organizations)",
+      "industry": "Multiple",
       "attacker": "Criminal gang — ransomware",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Conti conspirators hacked into victim networks, encrypted data, and demanded ransom; a Ukrainian national who coded a malware loader and handled stolen data was extradited from Ireland.",
-      "impact": "Conti caused at least $150M in ransom payments; the conspirator pleaded guilty to wire fraud conspiracy and faces up to 20 years, with sentencing set for September 10, 2026.",
+      "vector": "Ukrainian national Oleksii Lytvynenko pleaded guilty, after extradition from Ireland, to coding a Conti malware 'loader' and handling stolen victim data (2020-2022).",
+      "impact": "Conti infected 1,000+ networks across 47 US states and 31 countries, causing at least $150M in ransom payments; Lytvynenko faces up to 20 years in prison.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
-        "justice.gov"
-      ]
-    },
-    {
-      "id": "19",
-      "date": "Jun 11",
-      "date_sort": "2026-06-11",
-      "victim": "Organizations running Ivanti Sentry (incl. US federal agencies)",
-      "industry": "Enterprise software / Government",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "An OS command-injection flaw in Ivanti Sentry (CVE-2026-10520) lets an attacker execute arbitrary commands on the appliance.",
-      "impact": "CISA added the vulnerability to its Known Exploited Vulnerabilities catalog based on evidence of active exploitation and mandated rapid federal remediation under BOD 26-04.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "cisa.gov"
+        "justice.gov",
+        "cyberscoop.com"
       ]
     }
   ]
