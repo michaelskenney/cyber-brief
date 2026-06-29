@@ -1,47 +1,28 @@
 {
-  "generated_at": "2026-06-28T20:05:59.522202+00:00",
-  "period_searched": "June 13-28, 2026",
-  "incident_count": 16,
+  "generated_at": "2026-06-29T08:08:41.475713+00:00",
+  "period_searched": "June 15-26, 2026",
+  "incident_count": 26,
   "incidents": [
     {
       "id": "1",
       "date": "Jun 26",
       "date_sort": "2026-06-26",
-      "victim": "US, Ukrainian and European officials, military and journalists",
-      "industry": "Government / Defense / Media",
-      "attacker": "Russia — FSB intelligence service",
-      "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "Social-engineering phishing posing as messaging-app support staff to trick high-value targets into surrendering verification codes, PINs and backup recovery keys for Signal, WhatsApp and similar apps.",
-      "impact": "FBI/CISA and Ukraine's SBU say Russian intelligence clusters have hijacked individual encrypted-messaging accounts to read historical and group messages; the campaign is ongoing with newly evolved tactics targeting backup recovery keys.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "cisa.gov",
-        "ic3.gov",
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "2",
-      "date": "Jun 26",
-      "date_sort": "2026-06-26",
-      "victim": "Ukrainian government and defense organizations",
+      "victim": "US, Ukrainian and allied officials, military, journalists and political figures",
       "industry": "Government / Defense",
       "attacker": "Russia — FSB intelligence service",
       "attacker_origin": "russia",
       "motivation": "Espionage",
-      "vector": "Phishing emails carrying malicious Remote Desktop Protocol configuration files that deploy the newly documented StockStay malware, disguised as PDF readers and calculator apps.",
-      "impact": "Google reports Russia's long-running Turla group has run a parallel espionage toolkit (StockStay, modeled on its older Kazuar framework) against Ukrainian and European government and defense targets since 2022, ensuring persistent access even as tools are discovered.",
+      "vector": "Phishing messages impersonating commercial messaging app (e.g. Signal) support accounts to trick high-value targets into surrendering verification codes, account PINs and backup recovery keys.",
+      "impact": "FBI and CISA updated their warning that Russian intelligence actors have taken over individual messaging accounts to read private and group message history; a stolen backup recovery key can compromise even a re-created account on the same number.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "therecord.media",
-        "cloud.google.com"
+        "cisa.gov",
+        "ic3.gov"
       ]
     },
     {
-      "id": "3",
+      "id": "2",
       "date": "Jun 26",
       "date_sort": "2026-06-26",
       "victim": "John Bolton (former US National Security Advisor)",
@@ -49,16 +30,152 @@
       "attacker": "Iran — state-linked cyber actor",
       "attacker_origin": "iran",
       "motivation": "Espionage",
-      "vector": "Compromise of a personal email account that Bolton had used to store and transmit classified 'diary' notes after leaving office.",
-      "impact": "DOJ disclosed, alongside Bolton's guilty plea to retaining national defense information, that an Iran-linked actor hacked his personal email and accessed top-secret material; Bolton reported the hack but did not disclose the account held national defense information.",
+      "vector": "Compromise of Bolton's personal email account, which he had used to send classified 'diary' notes to unauthorized family members after leaving office in 2019.",
+      "impact": "Disclosed via Bolton's guilty plea to mishandling national defense information; an Iran-linked actor accessed the account containing TOP SECRET/SCI material, including foreign military plans and intelligence from human sources.",
       "ongoing": "N",
-      "severity": "medium",
+      "severity": "high",
       "sources": [
         "justice.gov"
       ]
     },
     {
+      "id": "3",
+      "date": "Jun 26",
+      "date_sort": "2026-06-26",
+      "victim": "KDDI (Japanese telecommunications provider)",
+      "industry": "Telecommunications",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Breach of KDDI's public email service infrastructure, also used by five other Japanese internet service providers.",
+      "impact": "Attackers stole the data of more than 14 million users of the shared email service in an incident earlier in the month.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
       "id": "4",
+      "date": "Jun 26",
+      "date_sort": "2026-06-26",
+      "victim": "Japan Self-Defense Forces",
+      "industry": "Government / Defense",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "USB drives infected with Chinese malware were connected to classified military networks.",
+      "impact": "A potential leak of classified data went undisclosed for nearly a year until uncovered by reporters; Japanese officials are notifying NATO partners of the possible exposure.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "5",
+      "date": "Jun 26",
+      "date_sort": "2026-06-26",
+      "victim": "Ukrposhta (Ukraine state postal operator)",
+      "industry": "Logistics / Government",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Disruption",
+      "vector": "Cyberattack of undisclosed method against Ukrposhta's digital services.",
+      "impact": "The attack took down Ukrposhta's mobile app and several web services; the operator is working to restore service.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "6",
+      "date": "Jun 25",
+      "date_sort": "2026-06-25",
+      "victim": "Southeast Asian government bodies and state-owned energy infrastructure",
+      "industry": "Government / Energy",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "ASPX web shells deployed via vulnerable web applications, followed by SoftEther VPN, Mimikatz, JuicyPotato and a new custom .NET backdoor (TinyRCT) for command execution and data theft.",
+      "impact": "Unit 42 tracked cluster CL-STA-1062 compromising at least ten Southeast Asian organizations, including two state-owned critical energy entities, exfiltrating databases and web-server source code.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "unit42.paloaltonetworks.com"
+      ]
+    },
+    {
+      "id": "7",
+      "date": "Jun 25",
+      "date_sort": "2026-06-25",
+      "victim": "Turla espionage targets — Ukrainian government/military and Italian foreign-policy entities",
+      "industry": "Government / Defense",
+      "attacker": "Russia — FSB intelligence service",
+      "attacker_origin": "russia",
+      "motivation": "Espionage",
+      "vector": "Multi-component .NET backdoor (STOCKSTAY) disguised as a stock-market tool, using encrypted WebSocket C2 for file theft, screen capture and command execution.",
+      "impact": "Google attributes STOCKSTAY to Russia's FSB-linked Turla group, deployed since at least December 2022 for ongoing cyber-espionage against Ukrainian and Italian-foreign-policy targets.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "cloud.google.com"
+      ]
+    },
+    {
+      "id": "8",
+      "date": "Jun 25",
+      "date_sort": "2026-06-25",
+      "victim": "Hospitality and hotel organizations in Europe and Asia",
+      "industry": "Hospitality",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Phishing emails laundered through Calendly and Google redirect infrastructure deliver photo-themed ZIP archives containing fake-image LNK files that launch obfuscated PowerShell and a Node.js implant.",
+      "impact": "Microsoft tracked an active campaign since April 2026 targeting hotel front-desk staff, establishing persistent access via dual registry persistence and C2 beaconing; ultimate objective unclear but appears to be staging for follow-on activity.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "microsoft.com"
+      ]
+    },
+    {
+      "id": "9",
+      "date": "Jun 25",
+      "date_sort": "2026-06-25",
+      "victim": "Polymarket (prediction market)",
+      "industry": "Financial Services / Crypto",
+      "attacker": "Criminal gang — financially motivated",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Compromise of a third-party vendor that allowed attackers to load malicious code onto Polymarket's website.",
+      "impact": "Attackers stole roughly $3 million before the breach was detected; Polymarket will reimburse affected users.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "10",
+      "date": "Jun 25",
+      "date_sort": "2026-06-25",
+      "victim": "DraftKings",
+      "industry": "Gaming / Online Betting",
+      "attacker": "Criminal gang — credential stuffing",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "2022 credential-stuffing attack reusing leaked username/password pairs to take over accounts, then adding attacker-controlled payment methods.",
+      "impact": "Third and final defendant ('Snoopy') sentenced to 18 months; the 2022 attack compromised ~60,000 accounts and stole about $600,000, with access to other accounts resold on criminal markets.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "cyberscoop.com"
+      ]
+    },
+    {
+      "id": "11",
       "date": "Jun 24",
       "date_sort": "2026-06-24",
       "victim": "Unnamed communications service provider",
@@ -66,8 +183,8 @@
       "attacker": "Unknown — state-suspected espionage group",
       "attacker_origin": "unknown",
       "motivation": "Espionage",
-      "vector": "Exploitation of a Cisco Catalyst SD-WAN Manager zero-day (CVE-2026-20245) via a malicious CSV tenant upload, after rogue peering connections and SSH access, to create a hidden root account ('troot').",
-      "impact": "Mandiant says the attacker gained root-level control of the provider's SD-WAN orchestrator earlier in 2026, potentially exposing all internal corporate traffic; extensive anti-forensic cleanup left the full scope unclear. Cisco has since patched the flaw.",
+      "vector": "Rogue SD-WAN peering and stolen certificates to access Cisco Catalyst SD-WAN Manager, then exploitation of zero-day CVE-2026-20245 via a malicious CSV upload to create a root 'troot' account.",
+      "impact": "Mandiant found an attacker gained root-level control of the provider's SD-WAN orchestrator — enabling broad visibility into internal traffic — and used extensive anti-forensic cleanup; full scope could not be determined.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -76,7 +193,7 @@
       ]
     },
     {
-      "id": "5",
+      "id": "12",
       "date": "Jun 24",
       "date_sort": "2026-06-24",
       "victim": "Belgian State Security Service (VSSE)",
@@ -84,8 +201,8 @@
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Espionage",
-      "vector": "Breach of a third-party vendor that managed the intelligence agency's mobile device management platform, linked to a wave of attacks against Ivanti EPMM servers.",
-      "impact": "Hackers stole names, phone numbers and email addresses of Belgian intelligence officers, exposing sensitive personnel details of the country's state security service.",
+      "vector": "Breach of a contractor that managed the agency's mobile device management platform, linked to a wave of attacks on Ivanti EPMM servers.",
+      "impact": "Attackers stole names, phone numbers and email addresses of Belgian intelligence service employees.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -93,7 +210,64 @@
       ]
     },
     {
-      "id": "6",
+      "id": "13",
+      "date": "Jun 24",
+      "date_sort": "2026-06-24",
+      "victim": "Bajaj Auto",
+      "industry": "Manufacturing / Automotive",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Ransomware attack affecting Bajaj Auto and its technology subsidiary, Bajaj Auto Technology Limited.",
+      "impact": "One of India's largest vehicle manufacturers disclosed the incident to regulators and took containment measures; threat actor, data theft and any ransom demand were not disclosed.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "therecord.media",
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "14",
+      "date": "Jun 24",
+      "date_sort": "2026-06-24",
+      "victim": "Global victims of Amadey loader and StealC infostealer (140,000+ computers)",
+      "industry": "Cross-sector",
+      "attacker": "Criminal gang — malware-as-a-service",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Amadey loader used for initial access then StealC infostealer to harvest credentials, cookies and session tokens; sold as malware-as-a-service feeding access brokers and ransomware crews.",
+      "impact": "Microsoft DCU, Europol and partners disrupted the operations — 326 servers, 142 domains and $47M in crypto seized; the tools had infected 140,000+ computers and stolen 27M+ credentials over their lifetime.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "microsoft.com",
+        "risky.biz",
+        "cyberscoop.com"
+      ]
+    },
+    {
+      "id": "15",
+      "date": "Jun 24",
+      "date_sort": "2026-06-24",
+      "victim": "73,932+ Fortinet FortiGate organizations worldwide",
+      "industry": "Cross-sector / Critical Infrastructure",
+      "attacker": "Criminal gang — initial access broker (Russian-speaking)",
+      "attacker_origin": "russia",
+      "motivation": "Financial",
+      "vector": "Mass scanning and brute-forcing escalated to exploiting unpatched FortiGate CVEs and a custom 'FortigateSniffer' that intercepted credentials across 24 protocols; hashes cracked on a GPU cluster and validated inside victim networks.",
+      "impact": "The 'FortiBleed' campaign exposed valid admin and SSL VPN credentials for ~73,932 firewalls across 194 countries, including a Turkish NATO defense contractor; network access is being sold on, and infrastructure remains active.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "recordedfuture.com",
+        "risky.biz",
+        "unit42.paloaltonetworks.com",
+        "cyber.gov.au"
+      ]
+    },
+    {
+      "id": "16",
       "date": "Jun 23",
       "date_sort": "2026-06-23",
       "victim": "Transport for London; SSM Health and Sutter Health (US)",
@@ -101,17 +275,16 @@
       "attacker": "Criminal gang — data extortion (Scattered Spider)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Social engineering, SIM-swapping and SMS/voice phishing to steal employee credentials and bypass multi-factor authentication.",
-      "impact": "Two UK members of the Scattered Spider cybercrime group pleaded guilty over the August 2024 attack that crippled Transport for London and (for one defendant) intrusions at US healthcare providers; the wider group is tied to 120 intrusions and at least $115M in ransom payments.",
+      "vector": "Social-engineering and SIM-swapping intrusions by the Scattered Spider group; the August 2024 Transport for London attack disrupted its systems.",
+      "impact": "Two members pleaded guilty in the UK; one also admitted hacking US healthcare providers. The wider group is tied to 120 intrusions, 47 US victims and at least $115M in ransom payments.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
-        "krebsonsecurity.com",
-        "blog.talosintelligence.com"
+        "krebsonsecurity.com"
       ]
     },
     {
-      "id": "7",
+      "id": "17",
       "date": "Jun 22",
       "date_sort": "2026-06-22",
       "victim": "Tata Electronics",
@@ -119,17 +292,17 @@
       "attacker": "Criminal gang — data extortion (World Leaks)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Network intrusion and bulk data theft, with the stolen files listed on the group's extortion leak site.",
-      "impact": "Tata Electronics confirmed a breach after the World Leaks group claimed it stole more than 200,000 documents, allegedly including sensitive data on Apple and Tesla electronic components.",
+      "vector": "Intrusion claimed by the World Leaks extortion group, which listed the company on its leak site.",
+      "impact": "World Leaks claims to have stolen more than 200,000 documents, allegedly including sensitive data on Apple and Tesla electronic components; Tata confirmed a security breach.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "risky.biz",
-        "therecord.media"
+        "therecord.media",
+        "risky.biz"
       ]
     },
     {
-      "id": "8",
+      "id": "18",
       "date": "Jun 22",
       "date_sort": "2026-06-22",
       "victim": "Klue customers — LastPass, Snyk and other firms",
@@ -137,25 +310,94 @@
       "attacker": "Criminal gang — data extortion (Icarus / ShinyHunters-style)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Compromise of a legacy integration credential at market-analytics platform Klue, then theft of customers' OAuth tokens to pivot into their connected Salesforce instances and download data.",
-      "impact": "At least eight companies, including LastPass and Snyk, confirmed data stolen from their Salesforce accounts via the Klue breach; a group calling itself Icarus is extorting victims and the list is expected to grow.",
+      "vector": "Compromise of a legacy integration credential at business-intelligence platform Klue, then theft of customers' OAuth tokens used to pull data from their connected Salesforce accounts.",
+      "impact": "At least eight companies, including several security firms, had Salesforce data stolen; a group calling itself Icarus is extorting Klue and threatening to leak the data.",
       "ongoing": "Y",
       "severity": "high",
+      "sources": [
+        "risky.biz",
+        "blog.talosintelligence.com"
+      ]
+    },
+    {
+      "id": "19",
+      "date": "Jun 22",
+      "date_sort": "2026-06-22",
+      "victim": "Mount Royal University (Calgary)",
+      "industry": "Education",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Network intrusion of undisclosed method.",
+      "impact": "The university is rebuilding its entire IT infrastructure following a hack the prior week.",
+      "ongoing": "Y",
+      "severity": "medium",
       "sources": [
         "risky.biz"
       ]
     },
     {
-      "id": "9",
+      "id": "20",
+      "date": "Jun 18",
+      "date_sort": "2026-06-18",
+      "victim": "European Commission",
+      "industry": "Government",
+      "attacker": "Criminal gang — data extortion (TeamPCP)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Initial access via the Trivy supply-chain compromise (attributed to TeamPCP), then misuse of a secret Amazon API key to access the Commission's Europa.eu AWS environment.",
+      "impact": "CERT-EU attributes a March 19 breach in which ~92GB of data — names, email addresses and some content affecting 42 internal clients and 29+ EU entities — was stolen and later appeared on ShinyHunters' leak site.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "21",
+      "date": "Jun 18",
+      "date_sort": "2026-06-18",
+      "victim": "Open-source software ecosystem — LiteLLM, Red Hat packages, Mercor and others",
+      "industry": "Technology / Software Supply Chain",
+      "attacker": "Criminal gang — supply chain (TeamPCP / Shai-Hulud)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Compromised maintainer/GitHub accounts used to publish poisoned packages laced with credential-stealing Shai-Hulud worm variants (e.g. 'Miasma'); LiteLLM PyPI packages and 32 Red Hat packages were trojanized.",
+      "impact": "Malicious LiteLLM versions (~3M daily downloads) could expose cloud credentials, API keys and crypto wallets across tens of thousands of environments including Mercor; Red Hat pulled 32 affected packages (~117K weekly downloads).",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "22",
+      "date": "Jun 17",
+      "date_sort": "2026-06-17",
+      "victim": "npm developers using Mastra/@mastra packages",
+      "industry": "Technology / Software Supply Chain",
+      "attacker": "North Korea — state-sponsored, financially motivated",
+      "attacker_origin": "north_korea",
+      "motivation": "Financial",
+      "vector": "Takeover of the 'ehindero' npm maintainer account to publish 140+ poisoned Mastra packages depending on a malicious dayjs typosquat ('easy-day-js'), whose postinstall hook ran an obfuscated dropper and fetched a second-stage Node.js implant.",
+      "impact": "Microsoft attributes the compromise to North Korea's Sapphire Sleet; any workstation or CI/CD pipeline running npm install/update of the poisoned versions risked theft of credentials, tokens and build environments.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "microsoft.com"
+      ]
+    },
+    {
+      "id": "23",
       "date": "Jun 17",
       "date_sort": "2026-06-17",
       "victim": "Fortinet FortiSandbox customers",
-      "industry": "Technology / Cybersecurity",
+      "industry": "Cross-sector",
       "attacker": "Unknown — multiple independent operators",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "Active exploitation of FortiSandbox flaws (CVE-2026-39808 OS-command injection and CVE-2026-39813 path traversal, plus CVE-2026-25089) to bypass authentication, escalate privileges and run arbitrary commands.",
-      "impact": "Researchers observed dozens of exploitation events from multiple sources against the security appliance; post-exploitation reconnaissance suggests early stages of a broader wave against the trusted sandbox systems that connect to other Fortinet devices.",
+      "vector": "Active exploitation of FortiSandbox flaws CVE-2026-39808 (OS command injection) and CVE-2026-39813 (path traversal), bypassing authentication and escalating privileges for arbitrary command execution.",
+      "impact": "Researchers observed dozens of exploitation events from multiple operators on commodity infrastructure; compromise of these trusted security appliances could grant elevated access in sensitive environments.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -163,16 +405,16 @@
       ]
     },
     {
-      "id": "10",
+      "id": "24",
       "date": "Jun 15",
       "date_sort": "2026-06-15",
       "victim": "US and Canadian medical, academic and military research institutions",
-      "industry": "Healthcare / Academia / Defense",
+      "industry": "Healthcare / Research / Defense",
       "attacker": "China — state-suspected espionage group",
       "attacker_origin": "china",
       "motivation": "Espionage",
-      "vector": "Exploitation of externally facing REDCap research servers, deployment of custom INFINITERED malware to harvest credentials, then abuse of enterprise domain-compliance rules to silently BCC-forward sensitive email.",
-      "impact": "Google attributes a campaign undetected since September 2023 to China-nexus group UNC6508, which targeted defense, AI, medical and national-security research; Google disrupted infrastructure but assesses the actor remains active and known victims are likely a fraction of the total.",
+      "vector": "Exploitation of externally facing REDCap research servers and deployment of custom INFINITERED malware to harvest credentials, then abuse of domain content-compliance rules to silently BCC-forward emails for exfiltration.",
+      "impact": "Google's UNC6508 remained undetected for over a year (since September 2023) pursuing AI, defense, cyber and medical research; known victims are assessed to be only a fraction of a larger, ongoing campaign.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -181,109 +423,38 @@
       ]
     },
     {
-      "id": "11",
+      "id": "25",
       "date": "Jun 15",
       "date_sort": "2026-06-15",
-      "victim": "Universities, Council of Europe, Ralph Lauren, JCPenney, Nexstar, Kodak",
-      "industry": "Multiple (Education / Retail / Media)",
+      "victim": "Council of Europe, universities and other ShinyHunters victims",
+      "industry": "Government / Education",
       "attacker": "Criminal gang — data extortion (ShinyHunters)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Exploitation of an unpatched Oracle PeopleSoft ERP zero-day to steal data, followed by extortion via a dark-web leak site.",
-      "impact": "The ShinyHunters group has been exploiting an Oracle PeopleSoft flaw since late May to compromise and extort a growing roster of universities and major corporations; many listed victims have confirmed breaches.",
+      "vector": "Data theft and extortion, including exploitation of an unpatched Oracle PeopleSoft flaw to breach universities; stolen data posted to a Tor leak site.",
+      "impact": "ShinyHunters added the Council of Europe to its leak site, threatening to release 297GB of allegedly stolen data, and is actively extorting universities exploited via the Oracle vulnerability.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "cyberscoop.com",
-        "risky.biz"
+        "blog.talosintelligence.com",
+        "cyberscoop.com"
       ]
     },
     {
-      "id": "12",
+      "id": "26",
       "date": "Jun 15",
       "date_sort": "2026-06-15",
-      "victim": "Novo Nordisk",
-      "industry": "Pharmaceuticals",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Unauthorized access to parts of the company's internal network, with sensitive data copied before detection.",
-      "impact": "The Danish pharma giant behind Ozempic and Wegovy disclosed an intrusion in which some sensitive data, including patient personal information, was copied; affected systems were taken offline to evict the attackers.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "13",
-      "date": "Jun 15",
-      "date_sort": "2026-06-15",
-      "victim": "Awesome Motive WordPress plugin users (~1.2M websites)",
-      "industry": "Technology / Web services",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Supply-chain compromise injecting malicious JavaScript into legitimate updates of the OptinMonster, TrustPulse and PushEngage plugins, which create hidden admin accounts and a self-concealing backdoor when a site admin logs in.",
-      "impact": "More than 1.2 million WordPress websites were backdoored through the compromised plugins, giving attackers persistent administrative access.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "14",
-      "date": "Jun 14",
-      "date_sort": "2026-06-14",
       "victim": "Major Iranian banks (Bank Melli, Tejarat, Saderat, EDBI)",
-      "industry": "Financial services",
+      "industry": "Financial Services",
       "attacker": "Unknown — Israel suspected",
       "attacker_origin": "unknown",
       "motivation": "Disruption",
-      "vector": "Attack on shared communications infrastructure used by the four banks, knocking out their online portals and mobile apps.",
-      "impact": "A cyberattack disrupted services at four of Iran's largest banks over a weekend; intelligence sources believe Israeli hackers were likely responsible. The banking council said no customer data was accessed.",
+      "vector": "Attack against communications infrastructure shared by the four banks.",
+      "impact": "Online portals and mobile apps for four of Iran's largest banks were down over a weekend; intelligence sources believe Israeli hackers were likely responsible. The banking council said no customer data was accessed.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
         "risky.biz"
-      ]
-    },
-    {
-      "id": "15",
-      "date": "Jun 14",
-      "date_sort": "2026-06-14",
-      "victim": "Arch Linux AUR users",
-      "industry": "Technology / Open source",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Abuse of the Arch User Repository 'orphaned package' adoption mechanism to take over more than 1,900 abandoned packages and add install steps that pull a rootkit and credential-stealing infostealer.",
-      "impact": "A large-scale supply-chain attack hijacked roughly 1,900 community Arch Linux packages to deploy a rootkit and infostealer capable of harvesting browser credentials, developer secrets and access keys before maintainers intervened.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "16",
-      "date": "Jun 13",
-      "date_sort": "2026-06-13",
-      "victim": "73,932+ Fortinet FortiGate organizations worldwide",
-      "industry": "Multiple (Government / Critical infrastructure / Finance)",
-      "attacker": "Criminal gang — initial access broker (Russian-speaking)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Mass internet scanning and password spraying against FortiGate, Sophos, Citrix and MSSQL services, exploitation of unpatched flaws, a custom 'FortigateSniffer' to intercept credentials, and a 45-GPU cluster to crack hashes offline.",
-      "impact": "The 'FortiBleed' campaign exposed valid admin and VPN credentials for ~73,932 FortiGate firewalls across 194 countries, with confirmed compromises in government, finance and critical infrastructure; a Turkish NATO defense contractor allegedly had classified documents exfiltrated. The Russian-speaking broker remains active and sells the access on.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "recordedfuture.com",
-        "unit42.paloaltonetworks.com",
-        "risky.biz",
-        "cyber.gov.au"
       ]
     }
   ]
