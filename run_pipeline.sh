@@ -7,20 +7,18 @@ LOG_DIR="data/logs"
 mkdir -p "$LOG_DIR"
 LOG_FILE="$LOG_DIR/pipeline-$DATE.log"
 
-# Load secrets from macOS Keychain
-export GMAIL_USER=$(security find-generic-password -s cyber-brief -a GMAIL_USER -w)
-export GMAIL_APP_PASSWORD=$(security find-generic-password -s cyber-brief -a GMAIL_APP_PASSWORD -w)
-export NOTIFY_EMAIL=$(security find-generic-password -s cyber-brief -a NOTIFY_EMAIL -w)
+# Tee all output to log file — must happen before anything that can fail,
+# so early failures (keychain, git state) are captured in the pipeline log
+exec > >(tee -a "$LOG_FILE") 2>&1
 
-# Ensure we're on the main branch — the pipeline must commit and push to main
-CURRENT_BRANCH=$(git branch --show-current)
-if [ "$CURRENT_BRANCH" != "main" ]; then
-    echo "WARNING: Not on main branch (on '$CURRENT_BRANCH'). Switching to main."
-    git checkout main
-fi
+echo "=== Pipeline started: $DATE ==="
 
 # Send email notification via Gmail SMTP
 send_email() {
+    if [ -z "$GMAIL_USER" ] || [ -z "$GMAIL_APP_PASSWORD" ] || [ -z "$NOTIFY_EMAIL" ]; then
+        echo "WARNING: email credentials not loaded — skipping notification"
+        return 0
+    fi
     EMAIL_SUBJECT="$1" EMAIL_BODY="$2" python3 -c "
 import smtplib, os
 from email.mime.text import MIMEText
@@ -40,10 +38,28 @@ notify_failure() {
 }
 trap notify_failure ERR
 
-# Tee all output to log file
-exec > >(tee -a "$LOG_FILE") 2>&1
+# Load secrets from macOS Keychain. Non-fatal: a locked keychain or ACL
+# prompt in the launchd context must not kill the pipeline — it only means
+# notifications are skipped for this run.
+export GMAIL_USER=$(security find-generic-password -s cyber-brief -a GMAIL_USER -w 2>/dev/null || true)
+export GMAIL_APP_PASSWORD=$(security find-generic-password -s cyber-brief -a GMAIL_APP_PASSWORD -w 2>/dev/null || true)
+export NOTIFY_EMAIL=$(security find-generic-password -s cyber-brief -a NOTIFY_EMAIL -w 2>/dev/null || true)
+if [ -z "$GMAIL_USER" ] || [ -z "$GMAIL_APP_PASSWORD" ] || [ -z "$NOTIFY_EMAIL" ]; then
+    echo "WARNING: could not load email credentials from Keychain (locked or missing item)"
+fi
 
-echo "=== Pipeline started: $DATE ==="
+# Ensure we're on the main branch — the pipeline must commit and push to main.
+# An empty branch name means detached HEAD or an interrupted rebase.
+CURRENT_BRANCH=$(git branch --show-current)
+if [ -z "$CURRENT_BRANCH" ]; then
+    echo "ERROR: repo is in a detached/rebase state (no current branch). Manual cleanup needed."
+    notify_failure
+    exit 1
+fi
+if [ "$CURRENT_BRANCH" != "main" ]; then
+    echo "WARNING: Not on main branch (on '$CURRENT_BRANCH'). Switching to main."
+    git checkout main
+fi
 
 echo "=== Stage 1: Fetch (Exa) ==="
 python3 fetch.py --date "$DATE"
