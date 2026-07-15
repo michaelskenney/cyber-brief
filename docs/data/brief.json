@@ -1,37 +1,19 @@
 {
-  "generated_at": "2026-07-14T20:05:47.767446+00:00",
-  "period_searched": "June 29 - July 14, 2026",
-  "incident_count": 16,
+  "generated_at": "2026-07-15T08:07:41.640359+00:00",
+  "period_searched": "July 1-14, 2026",
+  "incident_count": 22,
   "incidents": [
     {
       "id": "1",
       "date": "Jul 14",
       "date_sort": "2026-07-14",
-      "victim": "On-premises SharePoint Server users",
-      "industry": "Cross-sector (enterprise IT)",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Active exploitation of three SharePoint flaws (CVE-2026-32201, CVE-2026-45659, CVE-2026-56164) for remote code execution, IIS machine-key theft and persistence.",
-      "impact": "CISA warns of ongoing compromise of all supported on-premises SharePoint versions; attackers are deploying malware and web shells and harvesting machine keys for persistent access.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "cisa.gov",
-        "krebsonsecurity.com"
-      ]
-    },
-    {
-      "id": "2",
-      "date": "Jul 14",
-      "date_sort": "2026-07-14",
-      "victim": "NATO/EU logistics routes and Ukrainian military",
-      "industry": "Defense / Critical infrastructure",
-      "attacker": "Russia — state-linked intelligence service",
+      "victim": "NATO/EU critical infrastructure & Ukrainian military",
+      "industry": "Government / Defense",
+      "attacker": "Russia — state intelligence services",
       "attacker_origin": "russia",
       "motivation": "Espionage",
-      "vector": "Scanning for internet-exposed IP cameras with default credentials or outdated firmware, then using image-recognition software to analyze feeds of military transport and weapons shipments.",
-      "impact": "Dutch AIVD/MIVD say Russia compromised cameras across the Netherlands, NATO/EU states and Ukraine to track weapons shipments; in Ukraine hacked feeds helped locate and target soldiers and equipment.",
+      "vector": "Scanning the internet for internet-connected IP cameras and exploiting default passwords, outdated firmware and weak configurations to hijack video feeds, then using image-recognition software to identify military vehicles and cargo.",
+      "impact": "Dutch intelligence agencies (AIVD/MIVD) warned Russian operators compromised cameras along military logistics routes across NATO/EU states and Ukraine to track weapons shipments; in Ukraine hacked cameras were used to locate soldiers, supporting strikes to kill personnel and destroy equipment.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -40,36 +22,113 @@
       ]
     },
     {
+      "id": "2",
+      "date": "Jul 14",
+      "date_sort": "2026-07-14",
+      "victim": "On-premises Microsoft SharePoint Server users",
+      "industry": "Cross-sector (enterprise/government)",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Chained exploitation of SharePoint flaws CVE-2026-32201, CVE-2026-45659 and zero-day CVE-2026-56164 for remote code execution, then theft of IIS machine keys and deserialization for persistence and malware deployment.",
+      "impact": "CISA confirmed active exploitation of all supported on-prem SharePoint versions and added the CVEs to its Known Exploited Vulnerabilities catalog; Microsoft's July Patch Tuesday (622 CVEs) also fixed an actively exploited ADFS privilege-escalation zero-day (CVE-2026-56155).",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "cisa.gov",
+        "krebsonsecurity.com",
+        "blog.talosintelligence.com",
+        "cyberscoop.com"
+      ]
+    },
+    {
       "id": "3",
       "date": "Jul 13",
       "date_sort": "2026-07-13",
-      "victim": "Poland energy grid and European critical infrastructure",
-      "industry": "Energy / Government",
-      "attacker": "Russia — FSB signals intelligence (Center 16)",
+      "victim": "Poland energy grid & water treatment facilities",
+      "industry": "Energy / Utilities",
+      "attacker": "Russia — FSB intelligence service",
       "attacker_origin": "russia",
       "motivation": "Disruption",
-      "vector": "Compromise of weakly protected routers and networking gear via default/weak credentials, SNMP abuse and old Cisco Smart Install flaws (CVE-2008-4128, CVE-2018-0171).",
-      "impact": "EU/UK formally blamed the FSB for the December 2025 attack that nearly cut heat to 500,000 Poles; the UK/EU imposed first joint cyber sanctions on 24+ entities and 13 nations issued a joint advisory on ongoing critical-infrastructure router targeting.",
-      "ongoing": "Y",
+      "vector": "Cyber-sabotage intrusion into Polish energy-sector networks attributed to the FSB's signals-intelligence arm (Center 16), traced by CERT Polska to FSB-linked infrastructure.",
+      "impact": "A December 2025 attack came 'very close' to cutting heat to half a million people in winter; the UK and EU imposed their first joint cyber sanctions (30+ individuals/entities) and France sanctioned and summoned Russia's ambassador over espionage and sabotage across ~10 European countries.",
+      "ongoing": "N",
       "severity": "critical",
       "sources": [
         "therecord.media",
         "cyberscoop.com",
-        "darkreading.com",
-        "cisa.gov"
+        "darkreading.com"
       ]
     },
     {
       "id": "4",
       "date": "Jul 13",
       "date_sort": "2026-07-13",
-      "victim": "Lidl online-shop customers",
-      "industry": "Retail",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
+      "victim": "Global critical infrastructure (defense, energy, telecom, finance, health, government)",
+      "industry": "Critical infrastructure",
+      "attacker": "Russia — FSB intelligence service",
+      "attacker_origin": "russia",
+      "motivation": "Espionage",
+      "vector": "Scanning for routers and networking gear with default/weak credentials and exposed SNMP, exploiting old Cisco flaws (CVE-2008-4128, CVE-2018-0171) and abusing Cisco Smart Install to export device configs to attacker-controlled servers.",
+      "impact": "The US and 12 allied nations issued a joint advisory warning that FSB Center 16 has compromised networking devices worldwide for over a decade; NSA urged basic router hygiene as the primary defense against the ongoing campaign.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "cyberscoop.com",
+        "darkreading.com",
+        "cisa.gov",
+        "ic3.gov"
+      ]
+    },
+    {
+      "id": "5",
+      "date": "Jul 13",
+      "date_sort": "2026-07-13",
+      "victim": "Salesforce customers (retail, education, manufacturing)",
+      "industry": "Cross-sector (SaaS/CRM users)",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Attackers accessed a customer database held by one of Lidl's third-party IT service providers and exfiltrated part of its contents.",
-      "impact": "Names, phone numbers, emails, dates of birth and customer numbers of online-shop customers in Germany, Belgium and the Netherlands were stolen; Lidl says no passwords or payment data were exposed.",
+      "vector": "Voice-phishing employees into authorizing malicious OAuth apps in Salesforce, compromising trusted third-party integrations (Salesloft Drift, Gainsight, Klue), and abusing misconfigured guest access to Aura/GraphQL endpoints for bulk data queries.",
+      "impact": "Microsoft detailed campaigns (mid-2025 to mid-2026) attributed to tradecraft associated with the 'ShinyHunters' cluster that quietly exfiltrated CRM records at scale across many tenants; a June 2026 compromise of market-intelligence firm Klue reused credentials to query Salesforce customer data.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "microsoft.com",
+        "salesloft.com",
+        "gainsight.com"
+      ]
+    },
+    {
+      "id": "6",
+      "date": "Jul 13",
+      "date_sort": "2026-07-13",
+      "victim": "US municipalities, hospitals & financial-services firms",
+      "industry": "Cybercrime infrastructure",
+      "attacker": "Criminal gang — ransomware enabler",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Provision of no-logs VPN/anonymization infrastructure and malware 'cryptors' sold to ransomware operators to hide attack origins, deploy malware and manage exfiltrated data.",
+      "impact": "US Treasury (with the UK) sanctioned First VPN Service (1VPNS), its Ukrainian administrator and a Belarusian cryptor seller for enabling ransomware attacks that caused billions in losses; the service had been taken down by Europol and the FBI in May.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "therecord.media",
+        "cyberscoop.com",
+        "home.treasury.gov"
+      ]
+    },
+    {
+      "id": "7",
+      "date": "Jul 13",
+      "date_sort": "2026-07-13",
+      "victim": "Lidl (online shop customers, Germany/Belgium/Netherlands)",
+      "industry": "Retail",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Unauthorized access to a customer database stored by one of Lidl's third-party IT service providers, from which part of the file contents were exfiltrated.",
+      "impact": "Attackers stole customer names, phone numbers, email addresses, dates of birth and customer numbers; Lidl said no passwords or payment data were exposed and warned customers of phishing and identity-theft risk. The provider and victim count were not disclosed.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
@@ -78,70 +137,34 @@
       ]
     },
     {
-      "id": "5",
-      "date": "Jul 13",
-      "date_sort": "2026-07-13",
-      "victim": "Central Bank of Libya",
-      "industry": "Financial services / Government",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Network intrusion traced to an incident roughly three weeks earlier; data later published on the dark web by the Qilin ransomware group.",
-      "impact": "Files allegedly taken from the central bank's network were leaked online; Libyan authorities are investigating the breach of the country's monetary authority.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "risky.biz",
-        "libyareview.com"
-      ]
-    },
-    {
-      "id": "6",
-      "date": "Jul 13",
-      "date_sort": "2026-07-13",
-      "victim": "Salesforce customers (Klue and others)",
-      "industry": "Cross-sector (retail, education, manufacturing)",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Abuse of trusted OAuth relationships via vishing-driven consent, compromised SaaS integrations (Salesloft Drift, Gainsight) and misconfigured guest access to query and exfiltrate CRM data.",
-      "impact": "Microsoft detailed ShinyHunters-linked campaigns (2025-2026) exfiltrating Salesforce CRM records at scale across many tenants; a June 2026 intrusion at market-intelligence firm Klue (Storm-3138) reused stolen credentials against customer Salesforce instances.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "microsoft.com",
-        "klue.com"
-      ]
-    },
-    {
-      "id": "7",
-      "date": "Jul 13",
-      "date_sort": "2026-07-13",
-      "victim": "US municipalities, hospitals and financial firms (ransomware victims)",
-      "industry": "Cross-sector / Critical infrastructure",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "First VPN Service (1VPNS) sold anonymity infrastructure and 'cryptors' used by ransomware gangs to hide their origin, disguise malware and manage exfiltrated data.",
-      "impact": "US Treasury (with the UK) sanctioned 1VPNS and its Ukrainian administrator plus a Belarusian cryptor seller; the service, taken down by Europol/FBI in May, enabled attacks causing billions in losses to US critical infrastructure.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "therecord.media",
-        "cyberscoop.com"
-      ]
-    },
-    {
       "id": "8",
+      "date": "Jul 13",
+      "date_sort": "2026-07-13",
+      "victim": "Organizations hit by destructive 'GigaWiper' attacks",
+      "industry": "Cross-sector",
+      "attacker": "Unknown — suspected Iran-nexus",
+      "attacker_origin": "unknown",
+      "motivation": "Disruption",
+      "vector": "A modular Go-based backdoor ('GigaWiper'/'BlueRabbit') combining ~20 C2 commands with three destructive modules — a raw disk wiper, fake ransomware that discards keys, and a multipass secure wiper — using RabbitMQ/Redis for command and control.",
+      "impact": "Microsoft and Google documented destructive wiper activity first seen in October 2025 that gives operators on-demand ability to destroy systems with little chance of recovery; Binary Defense attributed the tooling to an Iran-based actor, though Microsoft did not attribute it.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "darkreading.com",
+        "microsoft.com"
+      ]
+    },
+    {
+      "id": "9",
       "date": "Jul 10",
       "date_sort": "2026-07-10",
-      "victim": "Global enterprises (manufacturing heavily targeted)",
-      "industry": "Cross-sector (manufacturing)",
+      "victim": "Enterprises worldwide (manufacturing heavily targeted)",
+      "industry": "Manufacturing / Cross-sector",
       "attacker": "Criminal gang — ransomware",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Ransomware-as-a-service using edge-device exploitation, stolen credentials, a custom Go backdoor, an EDR-killer framework and a suspected zero-day; C and Go encryptors hit multiple OSes and ESXi.",
-      "impact": "Unit 42 reports 'The Gentlemen' RaaS claimed 580 victims across 77 countries since 2025 (103 in manufacturing), with a 6x jump in the first half of 2026 and 117 victims in June alone.",
+      "vector": "Ransomware-as-a-service using edge-device exploits (firewalls/VPNs), brute force, stolen credentials and initial-access brokers, plus custom Go backdoors, an EDR-killer framework and a suspected zero-day; encryptors written in C and Go to hit Windows and ESXi/virtual infrastructure.",
+      "impact": "Unit 42 reported the RaaS operation known as 'The Gentlemen' claimed 580 victims across 77 countries since inception (103 in manufacturing), a >6x half-over-half increase, making it the second most active ransomware program of 2026 with a 90% affiliate payout.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -149,146 +172,235 @@
       ]
     },
     {
-      "id": "9",
-      "date": "Jul 7",
-      "date_sort": "2026-07-07",
-      "victim": "AdaptHealth, Nissan North America (Oracle PeopleSoft spree)",
-      "industry": "Healthcare / Automotive",
-      "attacker": "Unknown — criminal likely",
+      "id": "10",
+      "date": "Jul 9",
+      "date_sort": "2026-07-09",
+      "victim": "Australian & global website operators (many SMBs)",
+      "industry": "Cross-sector (web hosting)",
+      "attacker": "Unknown",
       "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Exploitation of a zero-day vulnerability in the Oracle PeopleSoft platform to access cloud-stored records and internal documents.",
-      "impact": "AdaptHealth notified the SEC that patient data and internal documents were accessed; Nissan NA disclosed a related breach, both tied to a broader hacking spree against Oracle PeopleSoft deployments.",
+      "motivation": "Unclear",
+      "vector": "Automated scanning and mass exploitation of known CMS and plugin vulnerabilities (WordPress, Craft, Joomla JCE and others) allowing unauthenticated file upload, RCE, SSRF or deserialization to deploy webshells.",
+      "impact": "Australia's ACSC issued a critical alert on a large-scale global campaign deploying webshells for website defacement, credential capture, malware hosting and pivoting into broader networks; many small and medium Australian businesses were impacted.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "risky.biz",
-        "sec.gov"
+        "cyber.gov.au"
       ]
     },
     {
-      "id": "10",
-      "date": "Jul 2",
-      "date_sort": "2026-07-02",
-      "victim": "Consumers with compromised home devices (NetNut/Popa botnet)",
-      "industry": "Consumer / Internet infrastructure",
-      "attacker": "Criminal gang — data extortion",
+      "id": "11",
+      "date": "Jul 7",
+      "date_sort": "2026-07-07",
+      "victim": "Consumers & SMBs in the US and EU",
+      "industry": "Cross-sector (consumer/SMB)",
+      "attacker": "Criminal gang — infostealer (MaaS affiliate)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Malicious SDKs bundled into smart TVs, streaming boxes and apps enrolled 2M+ home devices as residential-proxy exit nodes for the NetNut/Popa botnet.",
-      "impact": "The FBI, Google and Lumen seized hundreds of domains and disabled infrastructure behind NetNut (operated by Israeli firm Alarum); GTIG saw 316 threat-actor clusters using its nodes to mask attacks in a single week of June.",
-      "ongoing": "N",
+      "vector": "Malvertising luring victims to fake cracked-software downloads that deliver a Factory-v3 Go loader (signed with a fabricated JustWatch certificate, padded to hundreds of MB to evade sandboxes) dropping Vidar stealer and the XMRig miner with an in-memory AMSI bypass.",
+      "impact": "Unit 42 identified a financially motivated campaign (spiking mid-late April 2026) stealing browser credentials, cookies and crypto wallets while mining Monero on victim machines across the US and EU.",
+      "ongoing": "Y",
       "severity": "medium",
+      "sources": [
+        "unit42.paloaltonetworks.com"
+      ]
+    },
+    {
+      "id": "12",
+      "date": "Early Jul",
+      "date_sort": "2026-07-06",
+      "victim": "Nissan North America, AdaptHealth & other PeopleSoft users",
+      "industry": "Automotive / Healthcare / Cross-sector",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Exploitation of a zero-day vulnerability in the Oracle PeopleSoft platform to access enterprise and cloud-stored data.",
+      "impact": "Nissan NA disclosed a breach linked to the Oracle PeopleSoft hacking spree, and medical-equipment maker AdaptHealth notified the SEC that intruders accessed patient data and internal documents in a cloud-based platform; multiple organizations were caught in the same campaign.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "news.risky.biz",
+        "sec.gov",
+        "reuters.com"
+      ]
+    },
+    {
+      "id": "13",
+      "date": "Jul 2",
+      "date_sort": "2026-07-02",
+      "victim": "NetNut/Popa residential proxy network (~2M devices)",
+      "industry": "Cybercrime infrastructure",
+      "attacker": "Criminal — proxy/botnet operator",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Distribution of SDKs bundled into consumer devices (smart TVs, streaming boxes) to enroll them as residential proxy exit nodes, sold to customers who relay abusive traffic, password-spray attacks and C2.",
+      "impact": "The FBI, Google and Lumen seized hundreds of domains and degraded the NetNut network (operated by Israeli firm Alarum Technologies); Google observed 316 distinct threat clusters, including espionage groups, using NetNut exit nodes in a single week in June 2026.",
+      "ongoing": "N",
+      "severity": "high",
       "sources": [
         "cloud.google.com",
         "krebsonsecurity.com"
       ]
     },
     {
-      "id": "11",
-      "date": "Jul 1",
+      "id": "14",
+      "date": "Early Jul",
       "date_sort": "2026-07-01",
-      "victim": "Aflac Japan",
-      "industry": "Insurance",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Undisclosed intrusion into the Japanese branch's systems resulting in theft of customer data.",
-      "impact": "More than 4.38 million customers of Aflac's Japan branch were affected; the company had also disclosed a separate breach a year earlier.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "risky.biz",
-        "japantimes.co.jp"
-      ]
-    },
-    {
-      "id": "12",
-      "date": "Jun 30",
-      "date_sort": "2026-06-30",
-      "victim": "Tata Electronics",
-      "industry": "Manufacturing / Technology supply chain",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
+      "victim": "Anthropic (AI model intellectual property)",
+      "industry": "Technology / AI",
+      "attacker": "China — Alibaba-affiliated operators",
+      "attacker_origin": "china",
       "motivation": "IP theft",
-      "vector": "Network intrusion by the World Leaks data-extortion group, which exfiltrated documents after the company refused to pay.",
-      "impact": "About 200,000 documents were leaked, including images of the unreleased iPhone 18 and its components (battery, chips, circuit boards) from the Apple supplier.",
+      "vector": "A large-scale AI 'distillation' campaign using more than 25,000 fraudulent accounts to generate 28.8 million exchanges, harvesting outputs of Anthropic's models to train competing Chinese models.",
+      "impact": "Anthropic told US lawmakers that operators affiliated with Alibaba and its Qwen AI lab ran the 'largest known distillation attack' (Apr 22–Jun 5, 2026), which it said could accelerate advanced Chinese cyber capabilities and benefit the PLA.",
       "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "risky.biz",
-        "macrumors.com"
-      ]
-    },
-    {
-      "id": "13",
-      "date": "Jun 30",
-      "date_sort": "2026-06-30",
-      "victim": "Pi Mobile",
-      "industry": "Telecommunications",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Intrusion by newly launched ransomware operation 'Settra' against one of Taiwan's largest mobile operators.",
-      "impact": "Pi Mobile was extorted by the group; the telco says its mobile-payments platform was unaffected, and Taiwan's Ministry of Digital Affairs opened an investigation into possible data theft.",
-      "ongoing": "Y",
       "severity": "medium",
       "sources": [
-        "risky.biz",
-        "taiwannews.com.tw"
-      ]
-    },
-    {
-      "id": "14",
-      "date": "Jun 29",
-      "date_sort": "2026-06-29",
-      "victim": "Grand Line (Russian construction firm)",
-      "industry": "Construction",
-      "attacker": "Pro-Ukraine hacktivists",
-      "attacker_origin": "unknown",
-      "motivation": "Disruption",
-      "vector": "The Cyber Anarchy Squad breached the company's network, wiping systems and deleting backups after stealing data.",
-      "impact": "Hacktivists claim to have wiped 3,000 servers/workstations and 700 VMs, deleted all backups and stolen more than 650 TB of documents from one of Russia's largest construction companies.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
+        "news.risky.biz",
+        "reuters.com"
       ]
     },
     {
       "id": "15",
-      "date": "Jun 29",
-      "date_sort": "2026-06-29",
-      "victim": "Nidec Corporation",
-      "industry": "Manufacturing",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Ransomware intrusion by a new group calling itself 'BLackField' that forced the company to take its entire IT network offline.",
-      "impact": "The Japanese motor and electronics maker faces a $2 million ransom demand; it had also suffered a ransomware attack in late 2024.",
-      "ongoing": "Y",
+      "date": "Early Jul",
+      "date_sort": "2026-07-01",
+      "victim": "Aflac (Japan branch)",
+      "industry": "Insurance",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Intrusion into the Japanese branch's systems resulting in theft of customer data (specific vector not disclosed).",
+      "impact": "More than 4.38 million customers of Aflac's Japan branch were impacted by the data breach; the company had also disclosed a breach in June of the prior year.",
+      "ongoing": "N",
       "severity": "high",
       "sources": [
-        "risky.biz",
-        "bleepingcomputer.com"
+        "news.risky.biz",
+        "japantimes.co.jp"
       ]
     },
     {
       "id": "16",
-      "date": "Early Jun",
-      "date_sort": "2026-06-01",
-      "victim": "US National Association of Insurance Commissioners (NAIC)",
-      "industry": "Financial services / Regulatory",
-      "attacker": "Criminal gang — data extortion",
+      "date": "Jun 30",
+      "date_sort": "2026-06-30",
+      "victim": "Jaguar Land Rover",
+      "industry": "Automotive / Manufacturing",
+      "attacker": "Russia — state-linked hackers (suspected)",
+      "attacker_origin": "russia",
+      "motivation": "Unclear",
+      "vector": "Network intrusion using novel ransomware with a previously unseen encryption algorithm; no ransom note was left, and the methodology differed from typical Scattered Spider-style attacks.",
+      "impact": "The New York Times reported that JLR's 2025 hack — which shut production from September to mid-October and cost the UK economy an estimated £1.9bn ($2.55bn) — was the work of Russian hackers Microsoft had been tracking, though direct state direction remains unconfirmed.",
+      "ongoing": "N",
+      "severity": "critical",
+      "sources": [
+        "news.risky.biz",
+        "nytimes.com"
+      ]
+    },
+    {
+      "id": "17",
+      "date": "Late Jun",
+      "date_sort": "2026-06-29",
+      "victim": "Nidec Corporation (Japan)",
+      "industry": "Manufacturing",
+      "attacker": "Criminal gang — ransomware",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Network intrusion by the ShinyHunters group at the start of June.",
-      "impact": "The US insurance sector's standards body suspended risk designations for insurers; some credit rating agencies paused data sharing to avoid exposure. NAIC says it evicted the attackers and is restoring operations.",
+      "vector": "Ransomware intrusion that forced the company to take its entire IT network offline.",
+      "impact": "A group calling itself 'BlackField' demanded a $2 million ransom from the major Japanese motor and electronics maker; Nidec (formerly Nippon Densan) had also suffered a ransomware attack in late 2024.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
-        "risky.biz",
+        "news.risky.biz",
+        "bleepingcomputer.com"
+      ]
+    },
+    {
+      "id": "18",
+      "date": "Late Jun",
+      "date_sort": "2026-06-29",
+      "victim": "Central Bank of Libya",
+      "industry": "Government / Financial",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Network intrusion by the Qilin ransomware group, which exfiltrated internal files later leaked on the dark web.",
+      "impact": "Libyan authorities are investigating a breach of the country's central bank after files allegedly taken from its network were leaked; officials traced the incident to roughly three weeks earlier.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "news.risky.biz",
+        "libyareview.com"
+      ]
+    },
+    {
+      "id": "19",
+      "date": "Late Jun",
+      "date_sort": "2026-06-29",
+      "victim": "Grand Line (Russian construction company)",
+      "industry": "Construction",
+      "attacker": "Pro-Ukraine hacktivists",
+      "attacker_origin": "unknown",
+      "motivation": "Disruption",
+      "vector": "Destructive intrusion by the Cyber Anarchy Squad hacktivist group, which wiped systems, deleted backups and exfiltrated data.",
+      "impact": "The hacktivists claim to have wiped roughly 3,000 servers and workstations and 700 virtual machines, deleted all backups, and stolen more than 650 TB of documents from one of Russia's largest construction firms; the May breach was disclosed only recently.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "news.risky.biz"
+      ]
+    },
+    {
+      "id": "20",
+      "date": "Jun",
+      "date_sort": "2026-06-15",
+      "victim": "Tata Electronics (Apple supplier)",
+      "industry": "Technology / Manufacturing",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Data-theft intrusion by the World Leaks extortion group, which exfiltrated internal documents after the company refused to pay a ransom.",
+      "impact": "World Leaks leaked 200,000 documents from Indian supplier Tata Electronics, including images of the unreleased iPhone 18 and its battery, chips and circuit boards.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "news.risky.biz",
+        "macrumors.com"
+      ]
+    },
+    {
+      "id": "21",
+      "date": "Early Jun",
+      "date_sort": "2026-06-05",
+      "victim": "National Association of Insurance Commissioners (NAIC)",
+      "industry": "Insurance / Regulatory",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Network intrusion attributed to the 'ShinyHunters' group at the start of June 2026.",
+      "impact": "The US insurance sector's standards body suspended risk designations for insurers after the breach; some credit-rating agencies paused data sharing with NAIC to avoid exposing sensitive data. NAIC says it has evicted the attackers and is restoring operations.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "news.risky.biz",
         "ft.com"
+      ]
+    },
+    {
+      "id": "22",
+      "date": "Late May–Jun",
+      "date_sort": "2026-06-05",
+      "victim": "US Department of Homeland Security (HSIN)",
+      "industry": "Government",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Espionage",
+      "vector": "Intrusion into the Homeland Security Information Network servers and a connected SharePoint system used to share sensitive data with federal, state, local and industry partners.",
+      "impact": "Hackers breached DHS's HSIN internal network between late May and early June; details about the intruders and what data was taken remain unknown.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "news.risky.biz",
+        "nextgov.com"
       ]
     }
   ]
