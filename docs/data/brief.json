@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-18T08:06:28.964453+00:00",
-  "period_searched": "July 11-17, 2026",
-  "incident_count": 10,
+  "generated_at": "2026-07-19T20:06:01.704943+00:00",
+  "period_searched": "July 6-18, 2026",
+  "incident_count": 16,
   "incidents": [
     {
       "id": "1",
       "date": "Jul 17",
       "date_sort": "2026-07-17",
-      "victim": "SonicWall SMA 1000 appliance customers",
-      "industry": "Multiple (enterprise VPN / secure access)",
+      "victim": "SonicWall SMA appliance customers (government, MSSPs, enterprises)",
+      "industry": "Technology / Managed security services",
       "attacker": "Criminal gang — ransomware",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Attackers chained two SonicWall SMA 1000 zero-days — CVE-2026-15409 (a max-severity, unauthenticated server-side request forgery) and CVE-2026-15410 (command injection) — to gain root-level remote code execution on internet-facing appliances.",
-      "impact": "Rapid7 attributed the activity to the Inc ransomware group, which stole credentials, session databases and one-time-code seeds, pivoted to domain controllers, and in at least one case deployed ransomware; CISA added both CVEs to its KEV catalog and SonicWall shipped an emergency hotfix.",
+      "vector": "Attackers chained two SonicWall Secure Mobile Access zero-days (CVE-2026-15409, a maximum-severity unauthenticated SSRF, and CVE-2026-15410) to gain root-level remote code execution on internet-facing appliances.",
+      "impact": "A threat actor tied to the Inc ransomware-as-a-service group used the flaws to breach multiple enterprise networks, steal credentials and session data, pivot to domain controllers, and in at least one case deploy ransomware; some victims who patched saw attackers roll the appliance back to a vulnerable state to keep access.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
@@ -26,48 +26,48 @@
       "id": "2",
       "date": "Jul 17",
       "date_sort": "2026-07-17",
-      "victim": "Fairlife (The Coca-Cola Company)",
-      "industry": "Food & beverage",
-      "attacker": "Criminal gang — ransomware",
+      "victim": "Transport for London (2024 attack)",
+      "industry": "Transportation / Public sector",
+      "attacker": "Criminal gang — data extortion and SIM-swapping",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Ransomware intrusion detected on July 16 across Fairlife's U.S. IT systems; the initial access vector was not disclosed.",
-      "impact": "Coca-Cola temporarily halted Fairlife dairy production at its U.S. plants in Michigan, New York and Arizona and disclosed the incident in an SEC filing; it said product quality and safety were unaffected and Canadian operations were not impacted.",
-      "ongoing": "Y",
+      "vector": "Two leading members of a young English-speaking cybercrime collective used social engineering and SIM-swap techniques to breach corporate networks, including the 2024 attack that froze Transport for London's systems.",
+      "impact": "The UK's National Crime Agency secured 66-month sentences for the pair in Britain's largest-ever cybercrime prosecution; one was tied by US authorities to at least 120 attacks, extortion of 47 US organizations, and roughly $89.5 million in traced cryptocurrency.",
+      "ongoing": "N",
       "severity": "high",
       "sources": [
-        "therecord.media",
-        "sec.gov"
+        "cyberscoop.com",
+        "krebsonsecurity.com"
       ]
     },
     {
       "id": "3",
       "date": "Jul 16",
       "date_sort": "2026-07-16",
-      "victim": "Nichirei Logistics Group (KFC Japan, Kura Sushi, Aeon, TableMark affected)",
-      "industry": "Logistics / food supply chain",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Hackers breached Nichirei's servers, prompting the company to disconnect key systems to contain the intrusion; whether ransomware was involved has not been confirmed.",
-      "impact": "Japan's largest refrigerated-logistics operator suffered a multi-day outage that disrupted frozen-food shipments, leaving KFC Japan's 1,300+ restaurants short of ingredients and causing shortages at Kura Sushi, Aeon supermarkets and other chains; some affected servers held personal data.",
+      "victim": "Novo Nordisk",
+      "industry": "Pharmaceutical",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "IP theft",
+      "vector": "The FulcrumSec extortion group gained access via exposed or hardcoded credentials and unpatched applications, then used AI agents to analyze the stolen data and maximize negotiating leverage.",
+      "impact": "The group claims to have stolen 1.3TB of data (700,000+ files) including five undisclosed drug programs, RNA delivery research, and private AI drug-discovery models, asserting the theft could save competitors years of development; initial ransom demand was $25 million.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "therecord.media"
+        "risky.biz"
       ]
     },
     {
       "id": "4",
       "date": "Jul 16",
       "date_sort": "2026-07-16",
-      "victim": "Ukrainian government and military targets",
-      "industry": "Government / defense",
-      "attacker": "Russia — GRU military intelligence",
-      "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "Russian military intelligence placed fake CAPTCHA 'ClickFix' prompts on compromised websites, tricking Ukrainian users into pasting a PowerShell command that installed the GhettoVibe downloader and follow-on reconnaissance and loader malware.",
-      "impact": "CERT-UA observed the technique on more than 10 compromised sites during June-July; in at least one case the group used its foothold to launch a destructive attack against a Ukrainian central executive authority. Android and Signal-based social-engineering lures also continue.",
+      "victim": "Nichirei Logistics Group (KFC Japan, retailers)",
+      "industry": "Logistics / Food supply chain",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Attackers breached servers at Japan's largest refrigerated-logistics operator; the company disconnected key systems to contain the intrusion, and it remains unclear whether ransomware was involved.",
+      "impact": "The outage halted frozen-food shipments across 140 distribution centers, leaving all 1,300+ KFC Japan restaurants short on ingredients and disrupting supermarket chains, sushi and bento operators; some affected servers held personal data still under investigation.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -78,49 +78,13 @@
       "id": "5",
       "date": "Jul 16",
       "date_sort": "2026-07-16",
-      "victim": "Transport for London (2024 attack)",
-      "industry": "Transportation / critical infrastructure",
-      "attacker": "Criminal gang — data extortion",
+      "victim": "Software users in the US and Europe",
+      "industry": "Cross-sector / Individuals",
+      "attacker": "Criminal gang — financially motivated (Russian-speaking)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Two leading members of the English-speaking Scattered Spider collective used social engineering and stolen credentials to infiltrate TfL's network in 2024.",
-      "impact": "Thalha Jubair and Owen Flowers were each sentenced to five years and six months in UK prison; the 2024 breach forced password resets for 27,000 staff, took 148 systems offline and cost TfL £29M ($39M). It was the UK's largest-ever cybercrime prosecution.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "cyberscoop.com",
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "6",
-      "date": "Jul 16",
-      "date_sort": "2026-07-16",
-      "victim": "U.S. critical infrastructure across 21 states (plus international victims)",
-      "industry": "Critical infrastructure / multiple",
-      "attacker": "Criminal gang — bulletproof hosting (Russia-based)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Two 'bulletproof hosting' providers, Media Land and ML.Cloud, allegedly supplied cybercriminals with infrastructure and technical support to deliver malware, ransomware, phishing and denial-of-service attacks while obscuring their activity.",
-      "impact": "The DOJ unsealed a 2024 indictment charging three St. Petersburg-based Russian nationals; the services facilitated attacks causing more than $62M in losses across 21 U.S. states and several countries. A $10M State Department reward and prior U.S./U.K./Australia sanctions accompany the case.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "cyberscoop.com",
-        "justice.gov"
-      ]
-    },
-    {
-      "id": "7",
-      "date": "Jul 16",
-      "date_sort": "2026-07-16",
-      "victim": "Enterprise and consumer users in the U.S. and Europe",
-      "industry": "Multiple (opportunistic)",
-      "attacker": "Criminal gang — Russian-speaking, financially motivated",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "The actor tracked as UAT-11795 distributed trojanized installers for popular tools (Webex, Zoom, MobaXterm, DBeaver) via ClickFix lures, delivering a Python-based 'Starland RAT' and a bespoke in-memory PowerShell command-and-control implant.",
-      "impact": "Cisco Talos reported the campaign, active since June 2025, steals browser credentials and cryptocurrency wallets and deploys CastleStealer and Remcos RAT; infections concentrated in the U.S. with additional victims in Germany, Romania and Venezuela.",
+      "vector": "A Russian-speaking actor (tracked as UAT-11795) used ClickFix-style social engineering to deliver trojanized installers for popular tools (MobaXterm, Zoom, WebEx, DBeaver, FACEIT), dropping a Python-based 'Starland RAT' and a PowerShell C2 implant.",
+      "impact": "The malware harvests browser credentials and cryptocurrency wallet assets, establishes persistent C2 (with a Polygon smart-contract fallback), and can deploy follow-on payloads including CastleStealer and Remcos RAT; infections are concentrated in the United States.",
       "ongoing": "Y",
       "severity": "medium",
       "sources": [
@@ -128,16 +92,140 @@
       ]
     },
     {
+      "id": "6",
+      "date": "Jul 14",
+      "date_sort": "2026-07-14",
+      "victim": "On-premises Microsoft SharePoint Server operators",
+      "industry": "Cross-sector / Enterprise IT",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Threat actors are actively exploiting three SharePoint vulnerabilities (CVE-2026-32201, CVE-2026-45659, CVE-2026-56164) affecting all supported on-prem versions to gain remote code execution and steal IIS machine keys.",
+      "impact": "CISA warned that successful exploitation enables unauthorized access, persistence via stolen machine keys, and malware deployment on internet-exposed SharePoint servers; all three CVEs are in CISA's Known Exploited Vulnerabilities catalog.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "cisa.gov",
+        "krebsonsecurity.com"
+      ]
+    },
+    {
+      "id": "7",
+      "date": "Jul 14",
+      "date_sort": "2026-07-14",
+      "victim": "NATO/EU logistics routes and Ukrainian military",
+      "industry": "Defense / Critical infrastructure",
+      "attacker": "Russia — state intelligence service",
+      "attacker_origin": "russia",
+      "motivation": "Espionage",
+      "vector": "Russian intelligence scanned the internet for exposed IP cameras and exploited weak or default credentials and outdated firmware, then used image-recognition software to automatically analyze the feeds.",
+      "impact": "Dutch intelligence agencies (AIVD/MIVD) said hacked cameras were used to monitor NATO military transport routes and weapons shipments to Ukraine, and in some cases to locate Ukrainian troops for lethal targeting; compromised cameras were also found along Dutch logistics routes.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "therecord.media"
+      ]
+    },
+    {
       "id": "8",
-      "date": "Jul 15",
-      "date_sort": "2026-07-15",
-      "victim": "Novo Nordisk",
-      "industry": "Pharmaceuticals",
-      "attacker": "Criminal gang — data extortion",
+      "date": "Jul 13",
+      "date_sort": "2026-07-13",
+      "victim": "Poland energy grid and water treatment facilities",
+      "industry": "Energy / Critical infrastructure",
+      "attacker": "Russia — FSB intelligence service (Center 16)",
+      "attacker_origin": "russia",
+      "motivation": "Disruption",
+      "vector": "Russia's FSB signals-intelligence arm conducted cyber-sabotage operations against Polish energy and water infrastructure; investigators traced the intrusion infrastructure to an FSB-linked cluster.",
+      "impact": "A December 2025 attack came 'very close' to causing a blackout that would have cut heating to half a million people; the UK and EU responded with their first joint cyber sanctions package, targeting 30+ individuals and entities across Russia's cyber ecosystem including Lumma Stealer operators.",
+      "ongoing": "N",
+      "severity": "critical",
+      "sources": [
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "9",
+      "date": "Jul 13",
+      "date_sort": "2026-07-13",
+      "victim": "Critical infrastructure networks worldwide",
+      "industry": "Critical infrastructure / Communications / Energy",
+      "attacker": "Russia — FSB intelligence service (Center 16)",
+      "attacker_origin": "russia",
+      "motivation": "Espionage",
+      "vector": "FSB Center 16 actors scan the internet for networking devices with weak or default SNMP community strings, then issue SNMP Set-Requests to copy device configurations and exfiltrate them via TFTP to actor-controlled servers, occasionally exploiting Cisco Smart Install and known CVEs.",
+      "impact": "A joint advisory from the US and a dozen allied nations (NSA, CISA, FBI, ACSC and others) detailed a decade-plus campaign opportunistically compromising routers across communications, energy, financial services, government, and healthcare sectors for espionage.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "cyber.gov.au",
+        "nsa.gov",
+        "cyberscoop.com",
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "10",
+      "date": "Jul 10",
+      "date_sort": "2026-07-10",
+      "victim": "Global enterprises (manufacturing and other sectors)",
+      "industry": "Manufacturing / Cross-sector",
+      "attacker": "Criminal gang — ransomware (RaaS)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "The FulcrumSec extortion group gained access via exposed or hardcoded credentials and misconfigurations, then used AI agents to triage and analyze the stolen data to sharpen its ransom demand.",
-      "impact": "The group claims to have stolen roughly 1.3TB (~700,000 files) including intellectual property for five undisclosed drug programs and private AI models, demanding $25M and publicizing the theft to pressure the company. Detailed in a GuidePoint Security report.",
+      "vector": "The Gentlemen ransomware-as-a-service program gains access via edge-device vulnerabilities (firewalls, VPNs), brute force, stolen credentials and initial access brokers, using custom Go/C encryptors, a Go backdoor, and an EDR-killer framework.",
+      "impact": "Unit 42 reports the group claimed 580 victims across 77 countries since inception, with victims up roughly 6x in the first half of 2026 versus late 2025 (117 in June alone), making it the second-most-active RaaS program of the year; manufacturing is the most-targeted sector.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "unit42.paloaltonetworks.com",
+        "krebsonsecurity.com"
+      ]
+    },
+    {
+      "id": "11",
+      "date": "Jul 9",
+      "date_sort": "2026-07-09",
+      "victim": "Australian and global website owners (SMBs)",
+      "industry": "Cross-sector / Small business",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "A large-scale campaign scans websites and exploits numerous known CMS and plugin vulnerabilities (WordPress plugins, Craft CMS, Joomla, MetInfo and others) allowing unauthenticated file upload, RCE, SSRF or deserialization to deploy webshells.",
+      "impact": "Australia's ACSC issued a critical alert warning that compromised web servers are being used for defacement, credential capture, malware distribution, and as pivots for broader network compromise, with many Australian small and medium businesses already impacted.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "cyber.gov.au"
+      ]
+    },
+    {
+      "id": "12",
+      "date": "Jul 9",
+      "date_sort": "2026-07-09",
+      "victim": "Latvijas Valsts Mezi (LVM) and Olpha",
+      "industry": "Forestry / Pharmaceutical / State-owned",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "A financially motivated ransomware group exploited a vulnerability in a system that had not been updated for two years and dwelled in Latvia's state forestry company's network for over a week before detection.",
+      "impact": "The attack knocked out mapping, hunting and contractor systems and leaked ~44GB of stolen data (internal documents, source code, cryptographic keys, credentials); the same actor also compromised a server at pharmaceutical firm Olpha, though election infrastructure LVM helped build was confirmed unaffected.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "13",
+      "date": "Jul 8",
+      "date_sort": "2026-07-08",
+      "victim": "UK Foreign Office, British embassies, local councils",
+      "industry": "Government / Public sector",
+      "attacker": "Criminal gang — credential theft",
+      "attacker_origin": "criminal",
+      "motivation": "Espionage",
+      "vector": "Credentials for firewall and VPN servers were harvested during the earlier 'FortiBleed' campaign, in which an actor stole credentials from nearly 80,000 Fortinet devices.",
+      "impact": "Stolen credentials for the UK Foreign Office, British embassies and some local councils are being sold as a single archive for $60,000 by a threat actor known as SantaAd, creating espionage and follow-on intrusion risk for sensitive government networks.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -145,37 +233,55 @@
       ]
     },
     {
-      "id": "9",
-      "date": "Jul 14",
-      "date_sort": "2026-07-14",
-      "victim": "AsyncAPI npm packages and downstream developers",
-      "industry": "Software / open source",
+      "id": "14",
+      "date": "Jul 7",
+      "date_sort": "2026-07-07",
+      "victim": "KDDI (Japanese ISP email platform)",
+      "industry": "Telecommunications",
       "attacker": "Unknown — criminal likely",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "Attackers exploited a misconfigured GitHub Actions 'pull_request_target' workflow (a pwn request) to steal the asyncapi-bot token, then rode the project's legitimate trusted-publishing pipeline to release five poisoned package versions carrying import-time malicious loaders.",
-      "impact": "Microsoft Threat Intelligence found the packages delivered a 'Miasma' modular runtime with command-and-control, persistence and disabled credential-harvesting modules; because @asyncapi/specs is a transitive dependency, developer workstations, CI/CD pipelines and builds importing the versions during the ~90-minute window were exposed.",
+      "vector": "Attackers exploited a vulnerability in third-party software used by an email platform KDDI operates for five Japanese internet service providers.",
+      "impact": "The breach exposed more than 12.2 million customer email addresses and 7.6 million passwords; KDDI patched the flaw, said no other systems were compromised, and affected ISPs are forcing mandatory password resets.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
-        "microsoft.com"
+        "therecord.media",
+        "risky.biz"
       ]
     },
     {
-      "id": "10",
-      "date": "Jul 14",
-      "date_sort": "2026-07-14",
-      "victim": "Cybersecurity and Infrastructure Security Agency (CISA)",
-      "industry": "Government",
-      "attacker": "Unknown",
+      "id": "15",
+      "date": "Jul 7",
+      "date_sort": "2026-07-07",
+      "victim": "Unpatched networking devices (ORB network hosts)",
+      "industry": "Critical infrastructure / Technology",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "A China-nexus actor (tracked as UAT-7810) exploits known vulnerabilities in unpatched Ruckus wireless routers and other edge devices to deploy new custom malware families (LONGLEASH, DOGLEASH, JARLEASH) and build operational relay box networks.",
+      "impact": "Cisco Talos reports the actor maintains and expands the 'LapDogs' ORB network — proxy infrastructure that secondary China-nexus espionage groups then use to obscure and launch attacks against high-value targets.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "blog.talosintelligence.com"
+      ]
+    },
+    {
+      "id": "16",
+      "date": "Late June",
+      "date_sort": "2026-06-29",
+      "victim": "Grand Line (Russian construction company)",
+      "industry": "Construction",
+      "attacker": "Pro-Ukraine hacktivists",
       "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "A contractor published roughly 844 MB of sensitive CISA data — including AWS GovCloud administrative keys and plaintext credentials for dozens of internal systems — in a public GitHub repository that remained exposed for about six months.",
-      "impact": "CISA's postmortem acknowledged it ignored nine automated GitGuardian alerts and took more than 48 hours to rotate keys after notification; no confirmed malicious exploitation, but the exposure revealed gaps in the agency's vulnerability-report intake channels. Surfaced by KrebsOnSecurity and GitGuardian.",
+      "motivation": "Disruption",
+      "vector": "A pro-Ukraine hacktivist group breached one of Russia's largest construction firms and gained broad access to its infrastructure over a period in May.",
+      "impact": "The attackers claim to have wiped roughly 3,000 servers and workstations plus 700 virtual machines, deleted all backups, and exfiltrated more than 650TB of sensitive documents; the breach was disclosed only recently.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
-        "krebsonsecurity.com"
+        "risky.biz"
       ]
     }
   ]
