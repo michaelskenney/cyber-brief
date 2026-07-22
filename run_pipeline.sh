@@ -7,10 +7,20 @@ LOG_DIR="data/logs"
 mkdir -p "$LOG_DIR"
 LOG_FILE="$LOG_DIR/pipeline-$DATE.log"
 
-# Load secrets from macOS Keychain
-export GMAIL_USER=$(security find-generic-password -s cyber-brief -a GMAIL_USER -w)
-export GMAIL_APP_PASSWORD=$(security find-generic-password -s cyber-brief -a GMAIL_APP_PASSWORD -w)
-export NOTIFY_EMAIL=$(security find-generic-password -s cyber-brief -a NOTIFY_EMAIL -w)
+# Load notification secrets from macOS Keychain. These are needed BEFORE the
+# failure trap is installed, so the failure email can actually be sent — which
+# means a miss here can only surface on launchd-stderr.log (email isn't possible
+# yet). require_secret fails LOUDLY on a missing/empty item; the bare `VAR=$(...)`
+# form is deliberate — `export VAR=$(...)` would mask the failure (export always
+# returns 0), which is the exact bug that hid a missing token for months.
+source "$(dirname "$0")/secrets.sh"
+GMAIL_USER=$(require_secret GMAIL_USER) || exit 1
+GMAIL_APP_PASSWORD=$(require_secret GMAIL_APP_PASSWORD) || exit 1
+NOTIFY_EMAIL=$(require_secret NOTIFY_EMAIL) || exit 1
+export GMAIL_USER GMAIL_APP_PASSWORD NOTIFY_EMAIL
+
+# NOTE: CLAUDE_CODE_OAUTH_TOKEN is loaded LATER, after the log redirect + ERR trap
+# (see below), so an auth-token miss is captured in the pipeline log and emailed.
 
 # Ensure we're on the main branch — the pipeline must commit and push to main
 CURRENT_BRANCH=$(git branch --show-current)
@@ -45,11 +55,23 @@ exec > >(tee -a "$LOG_FILE") 2>&1
 
 echo "=== Pipeline started: $DATE ==="
 
+# Dedicated long-lived Claude Code auth token (from `claude setup-token`).
+# Stage 2 runs headless under launchd; without this it rides the interactive OAuth
+# login token, whose unattended refresh is unreliable and 401s the cron job while
+# interactive sessions keep working. This is a SUBSCRIPTION-billed OAuth token, the
+# same billing mode as an interactive login — it is NOT an ANTHROPIC_API_KEY and
+# adds no metered charges. Loaded here (after the log redirect + ERR trap) so a
+# missing/empty token is captured in the log AND triggers the failure email.
+CLAUDE_CODE_OAUTH_TOKEN=$(require_secret CLAUDE_CODE_OAUTH_TOKEN) || { notify_failure; exit 1; }
+export CLAUDE_CODE_OAUTH_TOKEN
+
 echo "=== Stage 1: Fetch (Exa) ==="
 python3 fetch.py --date "$DATE"
 
 echo "=== Stage 2: Analyze (Claude Code) ==="
-claude -p "$(sed "s/{{DATE}}/$DATE/g" analyze_prompt.md)" --allowedTools Read,Write,Edit,Glob
+# Resilient Stage 2: tries default model, retries, then falls back to Sonnet 4.6
+# if the Anthropic AUP classifier blocks the preferred model. See analyze.sh.
+./analyze.sh
 
 # Stamp accurate generated_at timestamp (Claude Code may use a rounded time)
 python3 -c "

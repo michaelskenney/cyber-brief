@@ -26,6 +26,7 @@ cyber-brief/
 ├── README.md                              ← user-facing setup instructions
 ├── fetch.py                               ← Stage 1: Exa content retrieval
 ├── analyze_prompt.md                      ← Stage 2: Claude Code analysis prompt
+├── analyze.sh                             ← Stage 2: resilient claude-CLI wrapper (retry + Sonnet fallback)
 ├── publish.sh                             ← Stage 3: git commit + push
 ├── run_pipeline.sh                        ← Pipeline wrapper (chains all stages)
 ├── sources.json                           ← Approved source list (single source of truth)
@@ -34,7 +35,8 @@ cyber-brief/
 ├── com.cyberbrief.refresh.plist           ← macOS launchd schedule (noon + midnight)
 ├── generate_brief.py                      ← Legacy: Anthropic API fallback (manual GH Actions)
 ├── tests/
-│   └── test_fetch.py                      ← Unit tests for fetch.py
+│   ├── test_fetch.py                      ← Unit tests for fetch.py
+│   └── test_analyze.sh                    ← Unit tests for analyze.sh escalation (fake claude bin)
 ├── data/
 │   ├── raw/{date}/                        ← Raw fetched content (local only, gitignored)
 │   └── logs/                              ← Pipeline logs (local only, gitignored)
@@ -62,10 +64,22 @@ cyber-brief/
 - Fails the pipeline if fewer than half the sources succeed
 
 ### Stage 2: Analyze (Claude Code CLI)
-- `run_pipeline.sh` invokes: `claude -p "$(sed "s/{{DATE}}/$DATE/g" analyze_prompt.md)" --allowedTools Read,Write,Edit,Glob`
+- `run_pipeline.sh` calls `./analyze.sh`, a resilient wrapper around the Claude Code CLI
+- `analyze.sh` runs `claude -p "$(sed "s/{{DATE}}/$DATE/g" analyze_prompt.md)" --allowedTools Read,Write,Edit,Glob` with a 3-attempt escalation ladder:
+  1. **default model (Opus)** — preferred; auto-recovers for free if a block lifts
+  2. **retry default once** — absorbs one-off / probabilistic AUP-classifier trips
+  3. **Sonnet 4.6 fallback** (`--model claude-sonnet-4-6`) — known-good path for this workload
+- **Why:** Anthropic's AUP classifier intermittently blocks a given model on this cyber-intel workload with a "violative cyber content" error (non-zero exit). The block is *probabilistic* — the same model/content can pass one run and fail the next — so a single unguarded call was a single point of failure. See the AUP-block notes below.
+- An attempt only counts as success if `claude` exits 0 **and** `brief.json` validates (parseable, `incident_count > 0`); a clean-exit-but-bad-write escalates instead of publishing an empty brief.
+- Configurable via env (`CLAUDE_BIN`, `PROMPT_FILE`, `BRIEF_PATH`, `RETRY_SLEEP`) — used by `tests/test_analyze.sh` to exercise the escalation logic with a fake `claude` (no real API calls)
 - Claude Code reads the raw content from `data/raw/{date}/`, applies attacker naming rules, deduplicates, and writes `docs/data/brief.json`
 - Also appends a usage record to `docs/data/usage_log.jsonl`
-- After Claude Code finishes, the pipeline stamps an accurate `generated_at` timestamp
+- After Stage 2 finishes, the pipeline stamps an accurate `generated_at` timestamp
+
+#### AUP-classifier block — history & playbook
+- **2026-05-02:** Opus consistently blocked; Sonnet 4.6 passed → pinned Sonnet as stop-gap, then reverted after the Anthropic **Cyber Verification Program** application was approved.
+- **2026-06-06 → 06-07:** Block recurred, but *probabilistically* (Opus passed at 06-06 midnight, blocked at 06-06 noon and 06-07 midnight, passed again on a manual 06-07 re-run). CVP approval still intact (account not hard-blocked). Fix: the retry + Sonnet-fallback ladder above (replaces the old single-shot call). No model pin — Opus stays primary.
+- **If Stage 2 fails on ALL attempts** (Opus + retry + Sonnet all blocked): that's a *new* escalation beyond the probabilistic pattern — check Anthropic console/account status and escalate referencing the prior CVP approval rather than re-applying.
 
 ### Stage 3: Publish (`publish.sh`)
 - Stages `docs/data/brief.json` and `docs/data/usage_log.jsonl`
