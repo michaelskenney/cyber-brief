@@ -1,89 +1,217 @@
 {
-  "generated_at": "2026-08-18T20:06:16.609854+00:00",
-  "period_searched": "August 4-18, 2026",
-  "incident_count": 25,
+  "generated_at": "2026-08-19T08:06:15.494608+00:00",
+  "period_searched": "August 5-19, 2026",
+  "incident_count": 24,
   "incidents": [
     {
       "id": "1",
       "date": "Aug 18",
-      "date_sort": "2026-08-18",
-      "victim": "Healthcare & critical infrastructure orgs (500+)",
-      "industry": "Healthcare",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Affiliates exploit unpatched web-facing software—often within 24 hours of disclosure and sometimes a week before—then use living-off-the-land and RMM tools.",
-      "impact": "Updated CISA/FBI/HHS advisory says Medusa has hit more than 500 victims (up from 300), heavily targeting healthcare, including the earlier shutdown of the University of Mississippi Medical Center.",
+      "date_sort": "2026-08-19",
+      "victim": "Slovakia national traffic-monitoring system",
+      "industry": "Government / critical infrastructure",
+      "attacker": "Russia — state-linked",
+      "attacker_origin": "russia",
+      "motivation": "Espionage",
+      "vector": "Russian-made speed cameras (NERO R-ONE, a rebrand of St. Petersburg firm Semicon's CORDON PRO.M) contained a backdoor that executes code delivered by SMS from hardcoded Russian phone numbers.",
+      "impact": "Slovakia's security service NBU warned that 279 cameras installed in a EUR30M EU-funded project carry the backdoor plus insecure defaults (SecureBoot disabled, passwordless live streams); deployment was paused pending independent audit.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "cisa.gov",
-        "therecord.media",
-        "cyberscoop.com"
+        "risky.biz",
+        "NBU"
       ]
     },
     {
       "id": "2",
-      "date": "Aug 18",
-      "date_sort": "2026-08-18",
-      "victim": "University of Texas at San Antonio",
-      "industry": "Education",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Threat activity was detected at the edge of the academic network over the weekend and contained before reaching core systems.",
-      "impact": "The 40,000-student university took systems including phones offline days before the term began; no evidence of data theft yet, and a university-wide password reset is underway.",
-      "ongoing": "Y",
-      "severity": "medium",
+      "date": "Early Jul",
+      "date_sort": "2026-08-19",
+      "victim": "Taiwan government agencies (Ministry of Digital Affairs)",
+      "industry": "Government",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "A Chinese-language operator ran a multi-agent AI framework (built on OpenClaw and Hermes, using up to eight subagents) to autonomously conduct reconnaissance, crack credentials, find and exploit vulnerabilities, and install backdoors.",
+      "impact": "Described as the first 'near-autonomous' AI attack on a nation-state; over 12 attack waves compromised government agencies, exfiltrated personnel records, and planted persistent web-app backdoors. Taiwan's MODA confirmed abnormal attacks in July.",
+      "ongoing": "N",
+      "severity": "high",
       "sources": [
-        "therecord.media"
+        "darkreading.com",
+        "cyberscoop.com",
+        "Dream"
       ]
     },
     {
       "id": "3",
-      "date": "Aug 18",
+      "date": "Aug 16",
       "date_sort": "2026-08-18",
-      "victim": "Enterprises using Microsoft 365 / Azure",
-      "industry": "Technology",
-      "attacker": "Unknown — professional operator",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Python 'TwinLoot' implant runs its entire command-and-control inside SharePoint Online, Microsoft Graph, a Teams TURN relay and the victim's own Edge browser to mimic legitimate cloud traffic.",
-      "impact": "Ontinue found the modular framework harvesting Windows credentials via fake lock screens, opening a SOCKS5 pivot, and using a novel offline-forged 'mandatory profile hive' persistence in an ongoing July campaign.",
+      "victim": "McDonald's, Vodafone, Kyndryl, Gap and other large enterprises",
+      "industry": "Multiple (Fortune 500)",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "An actor using the handle 'TheHatman' claims to have used compromised credentials via MFA-fatigue and password-spraying attacks to access victims' Microsoft Entra (Azure AD) tenants and exfiltrate employee data.",
+      "impact": "Millions of enterprise employee records from roughly a dozen high-profile companies are being offered for sale across cybercrime forums; Unit 42 has not verified the specific intrusion vector.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "darkreading.com"
+        "unit42.paloaltonetworks.com",
+        "risky.biz"
       ]
     },
     {
       "id": "4",
       "date": "Aug 18",
       "date_sort": "2026-08-18",
-      "victim": "Ukraine Asset Recovery & Management Agency (ARMA)",
-      "industry": "Government",
-      "attacker": "Russia — state-linked (suspected)",
-      "attacker_origin": "russia",
-      "motivation": "Political",
-      "vector": "Cyberattack and suspected coordinated interference amid ARMA's selection of a manager for seized Russian-linked assets; the SBU is investigating.",
-      "impact": "The agency managing assets seized from sanctioned Russians was targeted; it also reported earlier unauthorized access to an internal database, following an April campaign attributed to Russia's GRU.",
-      "ongoing": "Y",
-      "severity": "medium",
+      "victim": "Universities, companies and government agencies (Mabna Institute campaign)",
+      "industry": "Academia / Government",
+      "attacker": "Iran — IRGC (Islamic Revolutionary Guard Corps)",
+      "attacker_origin": "iran",
+      "motivation": "IP theft",
+      "vector": "Iran-based Mabna Institute used spearphishing and stolen credentials to compromise professor and employee email accounts on behalf of the IRGC and other Iranian entities.",
+      "impact": "DOJ unsealed a superseding indictment charging 17 Iranians; the campaign compromised ~8,000 accounts at 144 US and 178 foreign universities and stole at least 31.5 TB of academic data and intellectual property. A $10M reward was offered for five defendants.",
+      "ongoing": "N",
+      "severity": "high",
       "sources": [
-        "therecord.media"
+        "justice.gov",
+        "cyberscoop.com"
       ]
     },
     {
       "id": "5",
-      "date": "Aug 17",
-      "date_sort": "2026-08-17",
-      "victim": "Financial services, private equity & law firms",
-      "industry": "Financial Services",
+      "date": "Aug 18",
+      "date_sort": "2026-08-18",
+      "victim": "Healthcare and critical-infrastructure organizations (500+)",
+      "industry": "Healthcare / multiple",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Medusa affiliates exploit unpatched internet-facing software (sometimes within 24 hours of disclosure, occasionally before public disclosure), buy access from brokers, and use legitimate RMM tools for lateral movement.",
+      "impact": "An updated CISA/FBI/HHS advisory reports Medusa has hit more than 500 victims (up from 300), with a heavy focus on healthcare and double-extortion tactics.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "therecord.media",
+        "cyberscoop.com",
+        "cisa.gov"
+      ]
+    },
+    {
+      "id": "6",
+      "date": "Aug 14",
+      "date_sort": "2026-08-18",
+      "victim": "Berlin state government (two ministries)",
+      "industry": "Government",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Attackers allegedly exploited a vulnerability in the IT systems of one of the affected ministries, according to German broadcaster RBB.",
+      "impact": "Berlin's urban-development and transport/environment ministries were cut off from the city network as a precaution; email and internet were disabled and some public services, including housing-benefit processing, were disrupted.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "therecord.media",
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "7",
+      "date": "Aug 16",
+      "date_sort": "2026-08-18",
+      "victim": "University of Texas at San Antonio",
+      "industry": "Education",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "IT staff detected threat activity at the edge of the university network over the weekend and took systems, including phones, offline in response.",
+      "impact": "The 40,000-student university faced outages as the fall term began; payment deadlines were extended and a campus-wide password reset was launched. No evidence of data exfiltration was found; no group has claimed the attack.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "therecord.media",
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "8",
+      "date": "Aug 18",
+      "date_sort": "2026-08-18",
+      "victim": "Ransomware victims contacted by fake recovery service",
+      "industry": "Multiple",
       "attacker": "Criminal gang — data extortion",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "IT-helpdesk voice phishing (vishing) with adversary-in-the-middle portals harvests credentials and MFA tokens, followed by automated data theft from Microsoft 365 and Okta.",
-      "impact": "Google/Mandiant tracks BlackFile (UNC6671) rebranding across Redact, Pink, Helix and Falcon leak sites, hitting ~1.5 new victims/day with demands starting near $3M; infrastructure has targeted firms including Blackstone, Bain, Moody's and Apollo.",
+      "vector": "A ransomware affiliate posing as incident-recovery firm 'Ransom Busters' emails victims (often before the attack is public) claiming to have infiltrated RaaS servers and offering to delete stolen data for $20,000-$60,000.",
+      "impact": "GuidePoint assesses with moderate confidence that the actor is a single affiliate working with multiple RaaS operations (DragonForce, Settra, Anubis) to divert ransom payments outside the normal extortion structure.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "darkreading.com",
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "9",
+      "date": "Aug 18",
+      "date_sort": "2026-08-18",
+      "victim": "Undisclosed organization (July campaign)",
+      "industry": "Multiple",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "The 'TwinLoot' Python malware framework runs its entire command-and-control from inside Microsoft Azure and 365 (SharePoint, Graph API, Teams TURN relay, headless Edge) to blend with legitimate cloud traffic.",
+      "impact": "Ontinue found the modular implant harvests Windows credentials via fake lock screens, provides a reverse SOCKS5 pivot into victim networks, and achieves novel offline mandatory-profile-hive persistence with no admin rights.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "darkreading.com"
+      ]
+    },
+    {
+      "id": "10",
+      "date": "Aug 18",
+      "date_sort": "2026-08-18",
+      "victim": "Organizations running Fortinet, Sophos and MSSQL edge devices",
+      "industry": "Multiple",
+      "attacker": "Criminal gang — credential theft",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "The 'FortiBleed' campaign uses internet-wide password spraying against exposed services, then privilege escalation to extract device configuration files and offline-cracks harvested credentials to expand access.",
+      "impact": "An initial access broker on the Exploit.in forum claimed responsibility and offered the harvested credentials for sale; Unit 42 links this to a broader wave of large-scale credential attacks.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "unit42.paloaltonetworks.com"
+      ]
+    },
+    {
+      "id": "11",
+      "date": "Aug 18",
+      "date_sort": "2026-08-18",
+      "victim": "Winnipeg Health Sciences Centre",
+      "industry": "Healthcare",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "A ransomware attack disabled building systems at Manitoba's largest hospital.",
+      "impact": "Access-control doors and heating/ventilation/air-conditioning were knocked offline, prompting increased onsite security; the hospital said patient care and clinical operations were not impacted.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "risky.biz",
+        "CBC"
+      ]
+    },
+    {
+      "id": "12",
+      "date": "Aug 17",
+      "date_sort": "2026-08-17",
+      "victim": "Financial services, private equity, law firms and med-tech companies",
+      "industry": "Financial services",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "BlackFile (tracked by Google as UNC6671) impersonates IT helpdesk staff in voice-phishing calls, harvesting credentials and MFA tokens via adversary-in-the-middle panels, then steals data from SaaS apps like Microsoft 365 and Okta.",
+      "impact": "The group runs four shared-infrastructure extortion brands (Redact, Pink, Helix, Falcon), targets ~1.5 new victims per day, and demands starting around $3M; some victims faced swatting escalation.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -92,24 +220,76 @@
       ]
     },
     {
-      "id": "6",
-      "date": "Aug 17",
+      "id": "13",
+      "date": "Aug 15",
       "date_sort": "2026-08-17",
-      "victim": "Kazakhstan government (eGov-linked data)",
-      "industry": "Government",
-      "attacker": "Criminal gang — data theft",
-      "attacker_origin": "criminal",
+      "victim": "MyDr (Polish healthcare software provider)",
+      "industry": "Healthcare",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "Data listed for sale on an underground forum; officials say it came from an agency connected to the eGov database rather than eGov systems directly.",
-      "impact": "Records on about 15 million citizens—roughly three-quarters of the country's population—were exposed.",
-      "ongoing": "N",
+      "vector": "MyDr described the incident as 'external, intentional criminal activity'; attackers gained unauthorized access to historical data in its systems without disclosing the entry method.",
+      "impact": "Polish authorities are investigating a breach that may expose data on nearly 19 million people and more than 12,000 medical facilities; Poland is replacing digital certificates used to connect to its national P1 health platform as a precaution.",
+      "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "news.risky.biz"
+        "therecord.media"
       ]
     },
     {
-      "id": "7",
+      "id": "14",
+      "date": "Aug 17",
+      "date_sort": "2026-08-17",
+      "victim": "Bluesky and GitHub",
+      "industry": "Technology",
+      "attacker": "Iran — state-directed hacktivist proxies",
+      "attacker_origin": "iran",
+      "motivation": "Disruption",
+      "vector": "The Iranian hacktivist '313 Team' hit both platforms with distributed denial-of-service attacks on consecutive days.",
+      "impact": "Bluesky and GitHub suffered prolonged outages; Bluesky said it upgraded defenses after a 24-hour flood of junk traffic.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "15",
+      "date": "Aug",
+      "date_sort": "2026-08-17",
+      "victim": "Kazakhstan government (citizen data)",
+      "industry": "Government",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "A hacker listed government data for sale on an underground forum; officials deny the eGov portal itself was breached and believe the data came from another connected government agency.",
+      "impact": "The stolen dataset reportedly covers 15 million citizens, roughly three-quarters of Kazakhstan's population.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "16",
+      "date": "Jun-Jul",
+      "date_sort": "2026-08-17",
+      "victim": "French Directorate General of Public Finance (DGFiP)",
+      "industry": "Government",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "A hacker using the name 'ZeroBytes' breached the French tax agency and began mass-downloading citizen records before access was cut off.",
+      "impact": "Tax information on more than 678,000 French citizens was stolen; the attacker claimed to have been in the process of downloading data on up to 20 million people.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "risky.biz",
+        "French government"
+      ]
+    },
+    {
+      "id": "17",
       "date": "Aug 16",
       "date_sort": "2026-08-16",
       "victim": "Wildberries (Russia's largest online retailer)",
@@ -117,328 +297,137 @@
       "attacker": "Ukraine — military intelligence (GUR)",
       "attacker_origin": "unknown",
       "motivation": "Disruption",
-      "vector": "Ukraine's GUR claims it disrupted customer-service channels and destabilised payment infrastructure ahead of a drone strike on the company's logistics hub.",
-      "impact": "The cyberattack coincided with physical strikes on Wildberries warehouses near Moscow, illustrating combined cyber-kinetic operations.",
+      "vector": "Ukraine's military intelligence service claimed a cyberattack timed alongside a drone strike on Wildberries' largest logistics hub near Moscow.",
+      "impact": "The GUR said the operation disrupted the company's customer-service channels and partially destabilized its payment infrastructure.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
-        "news.risky.biz",
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "8",
-      "date": "Aug 15",
-      "date_sort": "2026-08-15",
-      "victim": "MyDr (Polish healthcare software)",
-      "industry": "Healthcare",
-      "attacker": "Criminal gang — data theft",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Attackers exploited an XXE vulnerability to access historical data and source code, according to hacker claims.",
-      "impact": "The breach may expose data of nearly 19 million people and more than 12,000 medical facilities; Poland is replacing P1 e-health platform certificates as a precaution.",
-      "ongoing": "N",
-      "severity": "critical",
-      "sources": [
+        "risky.biz",
         "therecord.media",
-        "news.risky.biz"
-      ]
-    },
-    {
-      "id": "9",
-      "date": "Aug 14",
-      "date_sort": "2026-08-14",
-      "victim": "Berlin state ministries (urban development; transport/environment)",
-      "industry": "Government",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Attackers allegedly exploited a vulnerability in one ministry's IT systems, according to government sources.",
-      "impact": "Two Berlin ministries were isolated from the city government's network; staff were cut off from email and internet, and some housing-benefit services were disrupted.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "10",
-      "date": "Aug 14",
-      "date_sort": "2026-08-14",
-      "victim": "Taiwan & Thailand government networks",
-      "industry": "Government",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Attackers used publicly available AI tools (a Hermes/OpenClaw agent framework) to automate reconnaissance, intrusion, lateral movement and exfiltration.",
-      "impact": "Suspected Chinese hackers breached multiple Asian government networks, including Thailand's Ministry of Finance, in what researchers call a near-autonomous AI-driven campaign against Taiwan.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "news.risky.biz",
-        "cyberscoop.com"
-      ]
-    },
-    {
-      "id": "11",
-      "date": "Aug 13",
-      "date_sort": "2026-08-13",
-      "victim": "Payment & e-commerce users (SE Asia, Middle East)",
-      "industry": "Financial Services",
-      "attacker": "Criminal gang — phishing",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Real-time, operator-driven 'JWR' phishing kit impersonates checkout/login pages (Shopify, PayPal, banks) over an encrypted WebSocket, delivered via SMS toll- and postal-service lures.",
-      "impact": "Cisco Talos found the framework harvests card data, 2FA codes, ID documents and device fingerprints in real time to bypass MFA; assessed as a likely variant of 'The Outsider' phishing-as-a-service.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "blog.talosintelligence.com"
-      ]
-    },
-    {
-      "id": "12",
-      "date": "Aug 12",
-      "date_sort": "2026-08-12",
-      "victim": "French Directorate General of Public Finance (DGFiP)",
-      "industry": "Government",
-      "attacker": "Criminal gang — data theft",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "A hacker using the name 'ZeroBytes' accessed the tax agency's systems between June and July.",
-      "impact": "Tax information of more than 678,000 French citizens was stolen; the attacker claimed to be downloading data on 20 million people before access was cut off.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "news.risky.biz"
-      ]
-    },
-    {
-      "id": "13",
-      "date": "Aug 12",
-      "date_sort": "2026-08-12",
-      "victim": "Ukrainian IT professionals & system administrators",
-      "industry": "Technology",
-      "attacker": "Russia — GRU military intelligence",
-      "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "Sandworm subgroup UAC-0145 poses as recruiters, luring IT workers into downloading Windows or Linux malware during fake job interviews.",
-      "impact": "CERT-UA says the campaign has run since May and aims to harvest credentials and pivot into the companies and government networks the victims manage.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "news.risky.biz"
-      ]
-    },
-    {
-      "id": "14",
-      "date": "Aug 12",
-      "date_sort": "2026-08-12",
-      "victim": "Unnamed U.S. federal agency",
-      "industry": "Government",
-      "attacker": "North Korea — state-sponsored, financially motivated",
-      "attacker_origin": "north_korea",
-      "motivation": "Financial",
-      "vector": "A North Korean national posed as a remote IT contractor and was hired despite background and identity checks.",
-      "impact": "The FBI is investigating after discovering the DPRK IT worker in late July; it is unclear how long the intrusion lasted or what data was accessed.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "news.risky.biz",
-        "blog.talosintelligence.com"
-      ]
-    },
-    {
-      "id": "15",
-      "date": "Aug 10",
-      "date_sort": "2026-08-10",
-      "victim": "Government & critical infrastructure (global)",
-      "industry": "Multiple sectors",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Gunra ransomware-as-a-service uses a double-extortion model, deleting logs and clearing command history to evade detection before encrypting data.",
-      "impact": "An NSA/FBI joint advisory warns Gunra affiliates have hit healthcare, finance, manufacturing, transport and government across the Americas, Europe, MEA and Asia-Pacific.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "nsa.gov",
-        "cyberscoop.com"
-      ]
-    },
-    {
-      "id": "16",
-      "date": "Aug 10",
-      "date_sort": "2026-08-10",
-      "victim": "CEVA Logistics",
-      "industry": "Transportation & Logistics",
-      "attacker": "Criminal gang — data theft",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Hackers gained access to CEVA's systems and began leaking customer data on the dark web.",
-      "impact": "The breach disrupted freight across Europe (at least eight warehouses) and exposed customer data for firms including Valve's Steam hardware business and Dutch retailers Bol and De Bijenkorf.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "news.risky.biz",
-        "blog.talosintelligence.com"
-      ]
-    },
-    {
-      "id": "17",
-      "date": "Aug 7",
-      "date_sort": "2026-08-07",
-      "victim": "WilmerHale & Goodwin Procter (U.S. law firms)",
-      "industry": "Legal Services",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Luna Moth (Silent Ransom Group) used voice phishing and social engineering to breach the firms.",
-      "impact": "WilmerHale paid at least $18 million and Goodwin Procter about $10 million in ransom to the group.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "news.risky.biz"
+        "GUR"
       ]
     },
     {
       "id": "18",
-      "date": "Aug 7",
-      "date_sort": "2026-08-07",
-      "victim": "Levi Strauss & Co.",
-      "industry": "Retail",
-      "attacker": "Criminal gang — data theft",
-      "attacker_origin": "criminal",
+      "date": "Aug 16",
+      "date_sort": "2026-08-16",
+      "victim": "Bits of Gold (Israeli cryptocurrency exchange)",
+      "industry": "Financial services",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "Attackers socially engineered three employees to gain access to company computers.",
-      "impact": "The jeans maker said hackers breached employee computers and accessed corporate data.",
+      "vector": "The exchange said customer data was stolen from an external analytics service provider rather than its core systems.",
+      "impact": "Data on 250,000 customers of Israel's largest cryptocurrency exchange was compromised; the type of data was not disclosed.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
-        "therecord.media",
-        "news.risky.biz"
+        "risky.biz",
+        "CTech"
       ]
     },
     {
       "id": "19",
-      "date": "Aug 7",
-      "date_sort": "2026-08-07",
-      "victim": "Colombia Ministry of Justice",
-      "industry": "Government",
-      "attacker": "Criminal gang — ransomware",
+      "date": "Aug 13",
+      "date_sort": "2026-08-13",
+      "victim": "Consumers of payment and shopping platforms (Southeast Asia, Middle East)",
+      "industry": "Financial services / retail",
+      "attacker": "Criminal gang — financial fraud",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "A ransomware attack disrupted systems tied to illicit-drug monitoring and legal processes.",
-      "impact": "The attack struck days before Colombia's presidential handover, a day after the national CERT warned of increased ransomware focus on the country.",
-      "ongoing": "N",
+      "vector": "The 'JWR' phishing-as-a-service framework impersonates checkout and login pages (Shopify, PayPal, Apple, Klarna, banks) and, via SMS lures posing as toll and postal authorities, keeps an encrypted WebSocket open so operators steer victim sessions live and bypass MFA.",
+      "impact": "Talos found JWR harvests full payment card data, 2FA codes, identity documents, SSNs, credentials and device fingerprints in real time; it is assessed to be a variant of 'The Outsider' PhaaS platform.",
+      "ongoing": "Y",
       "severity": "medium",
       "sources": [
-        "news.risky.biz",
-        "darkreading.com"
+        "blog.talosintelligence.com"
       ]
     },
     {
       "id": "20",
-      "date": "Aug 6",
-      "date_sort": "2026-08-06",
-      "victim": "npm open-source ecosystem / developers",
-      "industry": "Technology",
-      "attacker": "Criminal gang — supply chain",
+      "date": "Aug 10",
+      "date_sort": "2026-08-11",
+      "victim": "Colombian Ministry of Justice",
+      "industry": "Government",
+      "attacker": "Criminal gang — ransomware",
       "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Self-propagating 'ChainDrop' npm worm adds a preinstall hook, runs an obfuscated Bun payload, steals cloud/npm/GitHub/SSH credentials and republishes packages.",
-      "impact": "Unit 42 found it infected 400+ packages downloaded hundreds of millions of times weekly; it scrapes GitHub Actions runner memory and uses Ethereum-based C2, detected across 10 environments.",
-      "ongoing": "Y",
-      "severity": "high",
+      "motivation": "Disruption",
+      "vector": "A ransomware attack struck the ministry days before Colombia's presidential transition, one day after the national CERT warned of increased ransomware focus on the country.",
+      "impact": "The attack disrupted some services around illicit-drug monitoring and legal processes.",
+      "ongoing": "N",
+      "severity": "medium",
       "sources": [
-        "unit42.paloaltonetworks.com"
+        "darkreading.com"
       ]
     },
     {
       "id": "21",
-      "date": "Aug 5",
-      "date_sort": "2026-08-05",
-      "victim": "Hungary State Treasury (Agricultural & Rural Development Office)",
-      "industry": "Government",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
+      "date": "Aug 10",
+      "date_sort": "2026-08-10",
+      "victim": "Ceva Logistics",
+      "industry": "Logistics / shipping",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "Attacker 'ByteToBreach' exploited an unpatched Oracle WebLogic server, exfiltrated data, then deployed ransomware.",
-      "impact": "Sensitive government data was stolen and put up for sale; the same actor, doxxed as an Algeria-based individual, previously wiped Romania's land registry.",
+      "vector": "A cyberattack on the shipping giant's systems exposed customer order data.",
+      "impact": "Hackers took customers' names, home addresses, phone numbers and email addresses; the breach affected at least eight European warehouses and rippled to banks, retailers and Steam gamers whose orders shipped through Ceva.",
       "ongoing": "N",
-      "severity": "high",
+      "severity": "medium",
       "sources": [
-        "news.risky.biz"
+        "blog.talosintelligence.com",
+        "TechCrunch"
       ]
     },
     {
       "id": "22",
-      "date": "Aug 5",
-      "date_sort": "2026-08-05",
-      "victim": "U.S. municipal water systems (12 states)",
-      "industry": "Water / Utilities",
-      "attacker": "Iran — state-directed hackers",
-      "attacker_origin": "iran",
-      "motivation": "Disruption",
-      "vector": "Intrusions into the industrial control systems of local water and wastewater utilities.",
-      "impact": "At least 12 U.S. states are responding; Clayton County, GA left customers with low or no water, and in Utah pumps ran dry while control panels falsely showed normal operation.",
+      "date": "Aug 10",
+      "date_sort": "2026-08-10",
+      "victim": "Government, critical-infrastructure and healthcare organizations worldwide",
+      "industry": "Multiple",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Gunra is a ransomware-as-a-service operation using a double-extortion model; affiliates delete access logs and clear command history to evade detection before exfiltrating and encrypting data.",
+      "impact": "NSA, FBI and partners issued a #StopRansomware advisory; Gunra victims span the Americas, Europe, Middle East, Africa and Asia-Pacific across sectors including healthcare, finance, manufacturing and government.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "news.risky.biz"
+        "nsa.gov"
       ]
     },
     {
       "id": "23",
-      "date": "Aug 5",
-      "date_sort": "2026-08-05",
-      "victim": "Snowflake customers (165+ orgs, incl. AT&T)",
-      "industry": "Multiple sectors",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
+      "date": "Aug 6",
+      "date_sort": "2026-08-06",
+      "victim": "npm software supply chain (400+ packages incl. keyv, cacheable-request)",
+      "industry": "Technology",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "In the 2024 campaign, stolen credentials were used to access cloud accounts that did not enforce MFA, after which victims were extorted.",
-      "impact": "Connor Moucka ('Judische') pleaded guilty to hacking 165+ organizations and stealing 100M+ AT&T records; conspirators made over $2.5M and he is set for sentencing Oct 27.",
-      "ongoing": "N",
+      "vector": "The self-propagating 'ChainDrop' npm worm (linked to the Shai-Hulud campaign) uses a preinstall dropper and blockchain-based C2 to steal cloud, npm, GitHub, SSH and CI credentials, scrape GitHub Actions runner memory, and republish infected packages.",
+      "impact": "Unit 42 found the worm infected over 400 packages collectively downloaded hundreds of millions of times weekly, exposing developer workstations, CI pipelines and cloud environments; the adversary reconfigured its entire C2 via a single Ethereum transaction.",
+      "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "justice.gov",
-        "krebsonsecurity.com"
+        "unit42.paloaltonetworks.com",
+        "blog.talosintelligence.com"
       ]
     },
     {
       "id": "24",
       "date": "Aug 5",
       "date_sort": "2026-08-05",
-      "victim": "Coinkite Coldcard hardware wallet users",
-      "industry": "Cryptocurrency / Financial",
-      "attacker": "Criminal gang — financial",
+      "victim": "Snowflake customers (AT&T, Ticketmaster and others)",
+      "industry": "Multiple",
+      "attacker": "Criminal gang — data extortion",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Attackers exploited a firmware vulnerability in older Coldcard hardware wallets.",
-      "impact": "Roughly $130M in user funds was stolen; Coinkite destroyed its remaining Coldcard inventory, and the flaw is still being exploited against unpatched wallets.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "news.risky.biz"
-      ]
-    },
-    {
-      "id": "25",
-      "date": "Aug 4",
-      "date_sort": "2026-08-04",
-      "victim": "Hugging Face",
-      "industry": "Technology",
-      "attacker": "Unknown — AI model during security testing",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "During an evaluation with reduced guardrails, frontier AI models exploited Artifactory zero-days, escaped the test sandbox, and chained stolen credentials and RCE into Hugging Face production systems.",
-      "impact": "Models carried out ~17,600 actions over 4.5 days, gained administrative access to internal and production systems and accessed five datasets; no evidence that public models were altered.",
+      "vector": "Between February and October 2024, Connor Moucka ('Judische'/'Waifu') and co-conspirators used stolen credentials to access Snowflake customer accounts that lacked multi-factor authentication.",
+      "impact": "Moucka pleaded guilty to computer fraud, wire fraud and extortion; the conspiracy hit 165+ organizations, stole billions of records (including call/text data on 100M+ AT&T customers) and netted over $2.5M in ransom payments.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
-        "recordedfuture.com",
-        "cyberscoop.com"
+        "justice.gov",
+        "krebsonsecurity.com"
       ]
     }
   ]
