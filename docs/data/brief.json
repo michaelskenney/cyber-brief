@@ -1,90 +1,89 @@
 {
-  "generated_at": "2026-08-26T20:05:23.273553+00:00",
-  "period_searched": "August 18-26, 2026",
-  "incident_count": 19,
+  "generated_at": "2026-08-27T08:04:53.206990+00:00",
+  "period_searched": "August 14-26, 2026",
+  "incident_count": 22,
   "incidents": [
     {
       "id": "1",
       "date": "Aug 26",
       "date_sort": "2026-08-26",
-      "victim": "US federal agencies (Federal Reserve, DOE, DOJ, Senate, NASA, HHS/NIH)",
+      "victim": "U.S. federal agencies & critical infrastructure",
       "industry": "Government / Critical infrastructure",
-      "attacker": "China — Ministry of State Security and PLA military intelligence",
+      "attacker": "China — state-suspected espionage group (MSS and PLA-linked)",
       "attacker_origin": "china",
       "motivation": "Espionage",
-      "vector": "Contractor Nanjing Xinjiuwei ran the 'QScan' scanner and 'QTRouter' obfuscation network to infect IoT devices and route intrusions, hiding the true origin of attacks dating to 2018.",
-      "impact": "DOJ and FBI seized the platforms, rendering both tools inoperable; the affidavit ties the operation to breaches of numerous federal agencies, hospitals, telecoms, power companies and defense contractors, including a 2026 intrusion at the US Senate.",
+      "vector": "A China-based front company (Nanjing Xinjiuwei) ran the 'QScan' vulnerability scanner and 'QTRouter' obfuscation botnet to breach networks by exploiting flaws in Ivanti, Fortinet, Citrix, Pulse Secure, F5 and other products.",
+      "impact": "The DOJ said the QTFY group had compromised the Federal Reserve, DOE, DOJ, NASA, NIH and HHS since 2018 and attempted to breach the U.S. Senate; the FBI seized three domains, rendering both hacking platforms inoperable.",
       "ongoing": "N",
       "severity": "critical",
       "sources": [
         "therecord.media",
-        "justice.gov"
+        "cyberscoop.com"
       ]
     },
     {
       "id": "2",
       "date": "Aug 26",
       "date_sort": "2026-08-26",
-      "victim": "Organizations running exposed AI infrastructure (LiteLLM, RAGFlow, Kestra)",
-      "industry": "Technology / AI services",
-      "attacker": "Criminal gang — cryptomining",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Attackers exploited exposed AI gateways and orchestration surfaces (chaining flaws such as CVE-2026-42271 and CVE-2026-48710 in LiteLLM) to gain code execution, harvest credentials from process environments, and access backend databases.",
-      "impact": "Microsoft observed credential and API-key theft, PostgreSQL data collection, XMRig cryptominer deployment and SSH-key persistence across compromised AI workloads, treating these control points as high-value targets.",
+      "victim": "Boston Scientific",
+      "industry": "Medical devices / Healthcare",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "The medical device manufacturer disclosed a cyberattack; the initial access method and threat actor have not been identified.",
+      "impact": "The incident disrupted the company's shipment and order-processing operations.",
       "ongoing": "Y",
       "severity": "high",
+      "sources": [
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "3",
+      "date": "Aug 26",
+      "date_sort": "2026-08-26",
+      "victim": "Exposed enterprise AI infrastructure (LiteLLM, RAGFlow, Kestra)",
+      "industry": "Technology / AI infrastructure",
+      "attacker": "Criminal gang — cryptojacking",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Attackers exploited internet-exposed AI gateway and orchestration services (LiteLLM via CVE-2026-42271/CVE-2026-48710, plus RAGFlow and Kestra) to run code, harvest secrets from process environments and reach backend databases.",
+      "impact": "Microsoft observed credential theft (model-provider keys, database strings), PostgreSQL data collection, XMRig cryptominer deployment and SSH-key persistence across compromised AI workloads.",
+      "ongoing": "Y",
+      "severity": "medium",
       "sources": [
         "microsoft.com"
       ]
     },
     {
-      "id": "3",
-      "date": "Aug 25",
-      "date_sort": "2026-08-25",
-      "victim": "Rockstar Games / Take-Two Interactive",
-      "industry": "Gaming / Entertainment",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "An actor using the persona 'CyberLeek' obtained pre-release Grand Theft Auto VI gameplay footage, likely via an insider with access to a game build, and published it publicly with crypto-wallet watermarks.",
-      "impact": "One of the year's highest-profile data-extortion cases; daily leaks continued for over a week while Take-Two pursued DMCA subpoenas against Discord, Microsoft, X and Google to unmask those responsible.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "cyberscoop.com"
-      ]
-    },
-    {
       "id": "4",
-      "date": "Aug 25",
-      "date_sort": "2026-08-25",
-      "victim": "Paylogix",
-      "industry": "Insurance / Employee benefits",
-      "attacker": "Criminal gang — ransomware",
+      "date": "Aug 26",
+      "date_sort": "2026-08-26",
+      "victim": "Microsoft 365 users (hundreds of organizations)",
+      "industry": "Multiple / Enterprise email",
+      "attacker": "Criminal gang — phishing-as-a-service",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "The Akira ransomware gang breached the benefits-administration platform's network in November 2025 and exfiltrated files before disrupting systems.",
-      "impact": "Attackers stole Social Security numbers, financial account data, health insurance and medical information, passport numbers and taxpayer IDs on tens of thousands of people; class-action lawsuits are being organized.",
-      "ongoing": "N",
-      "severity": "high",
+      "vector": "The 'NovaCookies' adversary-in-the-middle phishing service relays Microsoft 365 logins in real time using Docusign lures and legitimate Microsoft/Google redirects, stealing authenticated session cookies to bypass MFA.",
+      "impact": "The rented kit uses at least 755 domains and targets hundreds of organizations, more than half in the U.S.; stolen sessions let attackers into accounts without triggering typical login anomalies.",
+      "ongoing": "Y",
+      "severity": "medium",
       "sources": [
-        "therecord.media",
-        "risky.biz"
+        "darkreading.com"
       ]
     },
     {
       "id": "5",
       "date": "Aug 25",
       "date_sort": "2026-08-25",
-      "victim": "Norwegian Digitalisation Agency (Digdir)",
-      "industry": "Government",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Disruption",
-      "vector": "A large distributed denial-of-service attack flooded the infrastructure of Digdir's IT partner Vivicta, two to three times larger than prior incidents.",
-      "impact": "Ten digital services were disrupted for roughly 30 hours, including the ID-porten identity gateway used by 4.5 million people, affecting logins to public services and parts of Norway's health and e-prescription systems; no data was accessed.",
-      "ongoing": "Y",
+      "victim": "Paylogix",
+      "industry": "Insurance / Benefits administration",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "The Akira ransomware group breached the benefits-administration platform's network and exfiltrated files over a five-day window in November 2025.",
+      "impact": "Attackers stole Social Security numbers, financial account details, health insurance and medical data, passport numbers and taxpayer IDs; more than 64,000 people in South Carolina alone were affected, and class actions are forming.",
+      "ongoing": "N",
       "severity": "high",
       "sources": [
         "therecord.media",
@@ -95,121 +94,14 @@
       "id": "6",
       "date": "Aug 25",
       "date_sort": "2026-08-25",
-      "victim": "South Korea Presidential Office",
+      "victim": "Norwegian government digital services (Digdir / ID-porten)",
       "industry": "Government",
-      "attacker": "North Korea — state-sponsored espionage group",
-      "attacker_origin": "north_korea",
-      "motivation": "Espionage",
-      "vector": "A North Korean espionage group breached the Presidential Office in February 2026 as part of a broader campaign; the initial access method has not been disclosed.",
-      "impact": "The campaign racked up more than 100 victims by April, including universities, police departments, news agencies and hospitals; South Korean authorities are still investigating.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "7",
-      "date": "Aug 25",
-      "date_sort": "2026-08-25",
-      "victim": "Nutex Health",
-      "industry": "Healthcare",
-      "attacker": "Unknown",
+      "attacker": "Unknown — hacktivist likely",
       "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Hackers breached the healthcare provider's internal network and stole confidential and sensitive data; the intrusion method was not disclosed.",
-      "impact": "Nutex, which operates 27 medical facilities across 12 US states, disclosed the breach to the SEC but provided no further detail on scope or affected individuals.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "8",
-      "date": "Aug 25",
-      "date_sort": "2026-08-25",
-      "victim": "Spanish military and police personnel",
-      "industry": "Government / Defense",
-      "attacker": "Russia — pro-Kremlin hacktivists",
-      "attacker_origin": "russia",
-      "motivation": "Political",
-      "vector": "The pro-Kremlin group NoName057 compiled and leaked personal data on Telegram, citing Spain's support for Ukraine.",
-      "impact": "Names of nearly 1,000 members of the Spanish military and police forces were exposed; authorities linked the release to a former professor who fled to Russia.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "9",
-      "date": "Aug 25",
-      "date_sort": "2026-08-25",
-      "victim": "Victims of West African fraud networks (Black Axe)",
-      "industry": "Cross-sector / Financial fraud",
-      "attacker": "Criminal gang — financial fraud",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Interpol's Operation Jackal IV targeted organized fraud networks running business email compromise, romance and investment scams, money laundering and sextortion across 22 countries.",
-      "impact": "58 arrests and 263 identified suspects; seizures included millions in cash and crypto and hundreds of blocked bank accounts tied to schemes such as a 143 million-euro investment scam.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "cyberscoop.com",
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "10",
-      "date": "Aug 25",
-      "date_sort": "2026-08-25",
-      "victim": "Senior European Union officials",
-      "industry": "Government",
-      "attacker": "Russia — state-sponsored espionage group",
-      "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "State-sponsored actors attempted to compromise the messaging accounts of high-ranking EU officials, apparently linked to earlier Signal and WhatsApp phishing operations.",
-      "impact": "Disclosed in a closed CERT-EU presentation; details remain limited but the activity targets senior officials' encrypted communications.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "11",
-      "date": "Aug 24",
-      "date_sort": "2026-08-24",
-      "victim": "US critical infrastructure, universities and government agencies",
-      "industry": "Critical infrastructure / Education / Government",
-      "attacker": "Iran — Ministry of Intelligence (MOIS) and IRGC, via the Mabna Institute",
-      "attacker_origin": "iran",
-      "motivation": "Espionage",
-      "vector": "The Tehran-based Mabna Institute conducted spearphishing and credential theft against university faculty accounts and, since 2023, breached energy, defense, healthcare, IT and financial-sector targets on behalf of Iranian intelligence.",
-      "impact": "DOJ unsealed a superseding indictment charging 17 individuals over the theft of 31.5 terabytes of academic data and IP, and Treasury sanctioned six MOIS-directed hackers; the group also targeted US Labor Department, FERC and UN email accounts.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "justice.gov",
-        "home.treasury.gov",
-        "cyberscoop.com",
-        "reuters.com",
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "12",
-      "date": "Aug 24",
-      "date_sort": "2026-08-24",
-      "victim": "Small UK power plant",
-      "industry": "Energy / Critical infrastructure",
-      "attacker": "Iran — state-linked",
-      "attacker_origin": "iran",
       "motivation": "Disruption",
-      "vector": "Iranian hackers — reportedly the same actors who breached US water utilities — compromised operational technology, with reports of an unsecured programmable logic controller (PLC).",
-      "impact": "A small British power plant was forced offline for four days; no customers lost power and the wider grid was unaffected, but officials called it a major escalation from earlier water-utility targeting.",
-      "ongoing": "N",
+      "vector": "A large distributed denial-of-service (DDoS) attack flooded the infrastructure of Digdir's IT partner, Vivicta.",
+      "impact": "The attack knocked out roughly 10 digital services including the ID-porten identity gateway (4.5M+ users), disrupting logins to public services and parts of Norway's health and e-prescription systems for over 30 hours; it was the third DDoS on Digdir since June.",
+      "ongoing": "Y",
       "severity": "high",
       "sources": [
         "therecord.media",
@@ -217,51 +109,89 @@
       ]
     },
     {
-      "id": "13",
-      "date": "Aug 24",
-      "date_sort": "2026-08-24",
-      "victim": "Apollo Global Management",
-      "industry": "Financial services / Private equity",
-      "attacker": "Criminal gang — data extortion",
+      "id": "7",
+      "date": "Aug 25",
+      "date_sort": "2026-08-25",
+      "victim": "West African cybercrime networks (Black Axe and affiliates)",
+      "industry": "Law enforcement action",
+      "attacker": "Criminal gang — financial fraud",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Attackers used a social-engineering attack in early July to breach Apollo's cloud systems, part of a broader wave hitting US investment and Wall Street firms.",
-      "impact": "Apollo confirmed a data breach in a notification to the California attorney general; the incident is tied to an ongoing campaign against the financial sector.",
-      "ongoing": "Y",
-      "severity": "high",
+      "vector": "Interpol's eight-month Operation Jackal IV mapped and disrupted crime-as-a-service infrastructure — domains, money-laundering networks and call-center investment/romance scam operations across 22 countries.",
+      "impact": "Police made 58 arrests and identified 263 more suspects; seizures included $2.67M in South Africa and $379K plus properties in Romania, while an Argentine crime-as-a-service network of 196 people was uncovered.",
+      "ongoing": "N",
+      "severity": "medium",
       "sources": [
-        "risky.biz",
+        "darkreading.com",
+        "therecord.media",
         "cyberscoop.com"
       ]
     },
     {
-      "id": "14",
-      "date": "Aug 24",
-      "date_sort": "2026-08-24",
-      "victim": "Zimbra Collaboration Suite users",
-      "industry": "Technology / Government / Enterprise email",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Attackers exploited CVE-2026-73570, an unauthenticated remote code execution flaw in Zimbra servers with SNMP notifications enabled (on by default in vulnerable versions), via crafted SMTP requests.",
-      "impact": "CISA added the bug to its Known Exploited Vulnerabilities catalog and set a three-day federal patch deadline after CERT Polska reported an active exploitation campaign; compromised servers expose email, calendars and contacts for follow-on attacks.",
+      "id": "8",
+      "date": "Aug 25",
+      "date_sort": "2026-08-25",
+      "victim": "Rockstar Games / Take-Two Interactive (GTA VI)",
+      "industry": "Media / Gaming",
+      "attacker": "Criminal — data extortion / insider",
+      "attacker_origin": "criminal",
+      "motivation": "IP theft",
+      "vector": "An actor using the persona 'CyberLeek' obtained pre-release Grand Theft Auto VI gameplay footage — likely via direct access to Rockstar systems or an insider — and drip-published it a week before the planned reveal.",
+      "impact": "The leaks became one of the year's highest-profile extortion cases; the actor monetized via a memecoin and watermarked crypto wallet links, prompting Take-Two to obtain DMCA subpoenas against Discord, Microsoft and X.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "darkreading.com"
+        "cyberscoop.com"
       ]
     },
     {
-      "id": "15",
+      "id": "9",
       "date": "Aug 24",
       "date_sort": "2026-08-24",
-      "victim": "Maya Protocol",
-      "industry": "Cryptocurrency / DeFi",
-      "attacker": "Criminal gang — financially motivated",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "The attacker allegedly abused the protocol's anti-theft defenses to trick the platform into unwanted loans, reportedly using an AI tool to chain exploits across six smaller unrelated bugs.",
-      "impact": "Roughly $1.7 million in crypto-assets was stolen from the platform.",
+      "victim": "UK power plant",
+      "industry": "Energy / Critical infrastructure",
+      "attacker": "Iran — state-linked",
+      "attacker_origin": "iran",
+      "motivation": "Disruption",
+      "vector": "The UK disclosed an Iranian cyberattack against a power plant; the incident prompted a proposed amendment to the Cyber Security and Resilience Bill to ban critical-sector purchases from foreign adversaries.",
+      "impact": "The attack forced the power plant offline for four days the previous month.",
+      "ongoing": "N",
+      "severity": "critical",
+      "sources": [
+        "therecord.media",
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "10",
+      "date": "Aug 24",
+      "date_sort": "2026-08-24",
+      "victim": "U.S. universities & research institutions",
+      "industry": "Education / Government",
+      "attacker": "Iran — IRGC (Islamic Revolutionary Guard Corps)",
+      "attacker_origin": "iran",
+      "motivation": "IP theft",
+      "vector": "The Iran-based Mabna Institute ran spearphishing campaigns against professor accounts on behalf of the IRGC; DOJ unsealed a superseding indictment against 17 members and Treasury imposed new sanctions.",
+      "impact": "The campaign compromised ~8,000 professor accounts across 144 U.S. and 178 foreign universities, stealing at least 31.5 terabytes of academic data and intellectual property; a $10M reward was offered for five defendants.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "justice.gov",
+        "cyberscoop.com",
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "11",
+      "date": "Aug 24",
+      "date_sort": "2026-08-24",
+      "victim": "Spanish military & police personnel",
+      "industry": "Government / Defense",
+      "attacker": "Russia — state-aligned hacktivists",
+      "attacker_origin": "russia",
+      "motivation": "Political",
+      "vector": "The pro-Kremlin hacktivist group NoName057 compiled and published personnel data on Telegram, citing Spain's support for Ukraine.",
+      "impact": "The group leaked the names of nearly 1,000 members of the Spanish military and police forces.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
@@ -269,17 +199,85 @@
       ]
     },
     {
-      "id": "16",
-      "date": "Aug 24",
-      "date_sort": "2026-08-24",
-      "victim": "The Hospital for Sick Children (SickKids)",
-      "industry": "Healthcare",
+      "id": "12",
+      "date": "Aug 21",
+      "date_sort": "2026-08-21",
+      "victim": "Latvia road traffic safety agency (CSDD)",
+      "industry": "Government",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "Hackers exploited a vulnerability in a third-party software application to access the Toronto pediatric hospital's systems.",
-      "impact": "Personal data of hospital employees was stolen; SickKids said no patient data was exposed and offered 24 months of credit monitoring to affected staff.",
+      "vector": "Hackers breached the road traffic agency's systems; the intrusion method was not disclosed.",
+      "impact": "Attackers stole personal information, payment receipts and license plate details on 1.2 million Latvian citizens going back to 2008; the agency's leadership resigned following the hack.",
       "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "13",
+      "date": "Aug 21",
+      "date_sort": "2026-08-21",
+      "victim": "Rust open-source ecosystem (arrayref and two other crates)",
+      "industry": "Technology / Software supply chain",
+      "attacker": "North Korea — state-sponsored",
+      "attacker_origin": "north_korea",
+      "motivation": "Financial",
+      "vector": "Attackers compromised a prominent Rust developer and injected malware into three of his libraries in a supply-chain attack; Wiz linked the infrastructure to North Korean operations.",
+      "impact": "The malicious versions were live for only 23 minutes, but one affected crate (arrayref) has nearly 5 million weekly downloads; the Rust security team removed the versions and locked the account.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "14",
+      "date": "Aug 19",
+      "date_sort": "2026-08-19",
+      "victim": "Slovak national traffic camera system",
+      "industry": "Government / Critical infrastructure",
+      "attacker": "Russia — state-linked supply chain",
+      "attacker_origin": "russia",
+      "motivation": "Espionage",
+      "vector": "Slovakia's NBU found that NERO R-ONE traffic cameras — a rebranded Russian CORDON PRO.M model — contained a backdoor granting shell and network access via SMS from hardcoded Russian phone numbers, plus disabled SecureBoot and exposed live streams.",
+      "impact": "The €30M EU-funded project intended to deploy 279 cameras; officials paused installation and ordered an independent audit after the backdoor was disclosed. Similar devices are reportedly installed in Croatia and other Eastern European states.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "15",
+      "date": "Aug 19",
+      "date_sort": "2026-08-19",
+      "victim": "CareCloud",
+      "industry": "Healthcare / Electronic health records",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "The electronic health record company disclosed a data breach; details of the intrusion were not provided.",
+      "impact": "The company said 3.7 million people were affected by the breach.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "16",
+      "date": "Aug 18",
+      "date_sort": "2026-08-18",
+      "victim": "Berlin city government",
+      "industry": "Government",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Disruption",
+      "vector": "A cyberattack hit the Berlin city government; IT staff disconnected affected agencies from the city network to contain it.",
+      "impact": "The attack took down emails, remote gateways and internet connectivity across the transport and urban development departments.",
+      "ongoing": "Y",
       "severity": "medium",
       "sources": [
         "risky.biz"
@@ -287,53 +285,105 @@
     },
     {
       "id": "17",
-      "date": "Aug 24",
-      "date_sort": "2026-08-24",
-      "victim": "ReliaQuest",
-      "industry": "Technology / Cybersecurity",
-      "attacker": "Criminal gang — data extortion",
+      "date": "Aug 18",
+      "date_sort": "2026-08-18",
+      "victim": "Winnipeg Health Sciences Centre",
+      "industry": "Healthcare",
+      "attacker": "Criminal gang — ransomware",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "The ShinyHunters group listed the security firm on its dark-web leak site; ReliaQuest says the actors phished one employee and reached an Okta backend in view-only mode.",
-      "impact": "ReliaQuest denied a meaningful breach, stating repeated attempts to access backend apps were blocked; ShinyHunters has provided no proof of its claims.",
-      "ongoing": "N",
-      "severity": "low",
+      "vector": "A ransomware attack struck Winnipeg's largest hospital, affecting building and facility control systems.",
+      "impact": "The attack disabled access doors and HVAC systems, forcing the hospital to increase onsite security; the hospital said patient care and clinical operations were not impacted.",
+      "ongoing": "Y",
+      "severity": "medium",
       "sources": [
         "risky.biz"
       ]
     },
     {
       "id": "18",
-      "date": "Aug 20",
-      "date_sort": "2026-08-20",
-      "victim": "SFR",
-      "industry": "Telecommunications",
+      "date": "Aug 18",
+      "date_sort": "2026-08-18",
+      "victim": "University of Texas at San Antonio",
+      "industry": "Education",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "Hackers breached the French telecom operator and exfiltrated customer records in an incident disclosed the following month.",
-      "impact": "More than 2.1 million customers were affected; exposed data included names, postal addresses, phone numbers and contract details, with IP addresses and equipment details for some.",
-      "ongoing": "N",
-      "severity": "high",
+      "vector": "The university took IT systems offline following a security breach over the weekend; the intrusion vector was not disclosed.",
+      "impact": "UTSA extended tuition payment deadlines and planned to reset all user account passwords once systems were restored; classes were expected to start on schedule.",
+      "ongoing": "Y",
+      "severity": "medium",
       "sources": [
-        "risky.biz"
+        "risky.biz",
+        "therecord.media"
       ]
     },
     {
       "id": "19",
       "date": "Aug 18",
       "date_sort": "2026-08-18",
-      "victim": "Global technology, staffing, healthcare and fintech employers",
-      "industry": "Cross-sector / Technology employers",
+      "victim": "Global employers hiring remote IT staff (1,100+ companies)",
+      "industry": "Technology / Staffing",
       "attacker": "North Korea — state-sponsored, financially motivated",
       "attacker_origin": "north_korea",
       "motivation": "Financial",
-      "vector": "North Korean IT operators (tracked as PurpleDelta), likely based in China, used 22+ fabricated personas, AI-generated photos, custom ChatGPT assistants and real-time AI interview tools to secure remote technical jobs.",
-      "impact": "Operators applied to over 1,100 companies and were likely actively employed at ten or more organizations, recording internal meetings and posing a material insider-threat and sanctions-evasion risk that funds the DPRK regime.",
+      "vector": "Recorded Future's 'PurpleDelta' cluster of North Korean IT workers, likely based in China, used 22+ fabricated personas, AI-generated photos, custom ChatGPT assistants and forged IDs to secure remote technical jobs, applying to 60+ positions a day.",
+      "impact": "Operators applied to over 1,100 companies and were likely employed at 10 or more, funneling wages to the North Korean regime and posing an active insider-threat and supply-chain risk to hiring organizations.",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "medium",
       "sources": [
         "recordedfuture.com"
+      ]
+    },
+    {
+      "id": "20",
+      "date": "Aug 17",
+      "date_sort": "2026-08-17",
+      "victim": "Bluesky & GitHub",
+      "industry": "Technology",
+      "attacker": "Iran — state-directed hacktivist proxies",
+      "attacker_origin": "iran",
+      "motivation": "Disruption",
+      "vector": "An Iranian hacktivist group calling itself the '313 Team' launched DDoS attacks against the two platforms on consecutive days.",
+      "impact": "The attacks caused prolonged outages at both Bluesky and GitHub; the group had run a prior DDoS wave in April.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "21",
+      "date": "Aug 16",
+      "date_sort": "2026-08-16",
+      "victim": "Bits of Gold (Israeli cryptocurrency exchange)",
+      "industry": "Financial services / Cryptocurrency",
+      "attacker": "Criminal — data theft",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Hackers stole customer data from an external analytics service provider used by Israel's largest cryptocurrency exchange.",
+      "impact": "The data of 250,000 customers was compromised; the company did not specify what type of data was taken.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "22",
+      "date": "Aug 14",
+      "date_sort": "2026-08-14",
+      "victim": "Taiwan & Thailand government networks",
+      "industry": "Government",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "Suspected Chinese hackers used publicly available AI tools, chaining Hermes and OpenClaw agents to automate reconnaissance, intrusion, lateral movement and data exfiltration against government networks across Asia.",
+      "impact": "The campaign breached Taiwanese government networks and Thailand's Ministry of Finance as part of a broader wave targeting multiple Asian governments.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
       ]
     }
   ]
