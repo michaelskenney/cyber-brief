@@ -1,19 +1,70 @@
 {
-  "generated_at": "2026-08-31T20:04:38.057894+00:00",
-  "period_searched": "August 17-31, 2026",
-  "incident_count": 21,
+  "generated_at": "2026-09-01T08:04:49.804908+00:00",
+  "period_searched": "August 13 - September 1, 2026",
+  "incident_count": 17,
   "incidents": [
     {
       "id": "1",
       "date": "Aug 31",
       "date_sort": "2026-08-31",
-      "victim": "10+ companies, multiple industries (Teams vishing)",
+      "victim": "Anthropic (Claude users)",
+      "industry": "Technology / AI",
+      "attacker": "Criminal gang — infostealer credential theft",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Infostealer malware (Vidar, Lumma, StealC, RedLine, Acreed, Atomic Stealer) on users' devices harvested Claude login sessions and cookies, bypassing MFA via session hijacking.",
+      "impact": "An unknown number of Claude accounts were accessed and their usage allotments consumed; Anthropic force-signed out affected users, removed saved payment methods, and refunded unauthorized charges.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "darkreading.com"
+      ]
+    },
+    {
+      "id": "2",
+      "date": "Aug 31",
+      "date_sort": "2026-08-31",
+      "victim": "Multiple enterprises (cross-industry)",
       "industry": "Cross-sector",
       "attacker": "Unknown — criminal likely",
       "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "External Microsoft Teams accounts posing as IT help desk placed voice-phishing calls to coerce employees into running remote-access tools or custom malware, in some cases escalating to NTLM relay attacks against domain controllers.",
-      "impact": "More than 150 employees across at least 10 organizations were targeted between January and April 2026; successful calls delivered remote-control tooling and obfuscated payloads aimed at domain-level compromise.",
+      "vector": "ClickFix-style social engineering (\"TerminalFix\") using fake Cloudflare CAPTCHA overlays that trick users into pasting a malicious command into PowerShell, leading to DLL sideloading and payloads hidden in PNG images.",
+      "impact": "Microsoft reports the campaign establishes encrypted reverse tunnels into enterprise networks, enabling privilege escalation, data exfiltration, and ransomware deployment in follow-on hands-on-keyboard activity.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "darkreading.com"
+      ]
+    },
+    {
+      "id": "3",
+      "date": "Aug 31",
+      "date_sort": "2026-08-31",
+      "victim": "Norwegian government",
+      "industry": "Government",
+      "attacker": "Russia — pro-Kremlin hacktivist group",
+      "attacker_origin": "russia",
+      "motivation": "Political",
+      "vector": "Distributed denial-of-service (DDoS) attack against government network infrastructure.",
+      "impact": "Norway's government network was temporarily taken offline; a pro-Kremlin hacktivist group claimed responsibility.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "4",
+      "date": "Aug 31",
+      "date_sort": "2026-08-31",
+      "victim": "10+ companies, 150+ employees targeted",
+      "industry": "Cross-sector",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Voice-phishing (\"Spring Ring\") via external Microsoft Teams accounts posing as IT help desk, coercing employees to run remote-access tools or malware; one variant escalated to an NTLM relay attack against domain controllers.",
+      "impact": "Coordinated January-April 2026 operation disclosed by Unit 42 targeted more than 150 employees across at least 10 organizations to gain enterprise network footholds via attacker-controlled Microsoft 365 tenants.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
@@ -21,24 +72,24 @@
       ]
     },
     {
-      "id": "2",
-      "date": "Aug 31",
-      "date_sort": "2026-08-31",
-      "victim": "Indian consumers (Meta ad fraud campaign)",
-      "industry": "Consumer / Financial services",
-      "attacker": "Criminal gang — financial fraud",
-      "attacker_origin": "criminal",
+      "id": "5",
+      "date": "Aug 30",
+      "date_sort": "2026-08-30",
+      "victim": "Tectonic (DeFi lending platform)",
+      "industry": "Cryptocurrency / Financial services",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "Facebook and Instagram ads disguised as adult content lured users into downloading malware apps that steal banking credentials.",
-      "impact": "Meta removed dozens of fraudulent ads after India flagged the pattern; India recorded nearly $2.4 billion in cyber-fraud losses in 2025, with scam operators increasingly targeting banking customers.",
+      "vector": "Market manipulation — inflated the thinly traded Tonic token more than 100x in 20 minutes, then borrowed assets against the inflated collateral.",
+      "impact": "At least $6 million stolen; an attempted $74 million outflow was largely blocked when the Cronos blockchain made an emergency halt and rolled back roughly $68 million still on-chain.",
       "ongoing": "N",
-      "severity": "low",
+      "severity": "medium",
       "sources": [
-        "reuters.com"
+        "therecord.media"
       ]
     },
     {
-      "id": "3",
+      "id": "6",
       "date": "Aug 28",
       "date_sort": "2026-08-28",
       "victim": "McKesson",
@@ -46,63 +97,13 @@
       "attacker": "Criminal gang — data extortion",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Attackers compromised an unnamed third-party application connected to McKesson systems and are actively exfiltrating data.",
-      "impact": "Customers face intermittent service degradation at a company that delivers roughly one-third of all North American prescriptions; a prolific extortion group claimed credit and is threatening to leak stolen data. Disclosed in an SEC filing.",
+      "vector": "Compromise of a third-party application, likely via social engineering and identity abuse, with a four-day data-theft intrusion beginning August 21.",
+      "impact": "Data on customers in oncology, multispecialty and medical-surgical units stolen from the distributor of roughly one-third of North American pharmaceuticals; extortionists claim hundreds of millions of records and reportedly demand over $55 million with a September 1 deadline.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "4",
-      "date": "Aug 28",
-      "date_sort": "2026-08-28",
-      "victim": "State of Berlin (Germany)",
-      "industry": "Government",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Network intrusion into two Berlin state ministries between August 7-12, with data stolen before the breach was discovered mid-August.",
-      "impact": "Attackers claim 5.79 TB of government data including contracts, emails, passwords and classified material, auctioned for roughly $2.3 million; Berlin refuses to pay. Two ministries were cut off from the state network, disrupting public services weeks before September 20 elections.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
         "therecord.media",
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "5",
-      "date": "Aug 28",
-      "date_sort": "2026-08-28",
-      "victim": "Boston Scientific",
-      "industry": "Healthcare / Medical devices",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Cyberattack on systems used to process and ship customer orders; intrusion method not yet disclosed.",
-      "impact": "Global operations of the medical device maker (nearly 60,000 employees) were disrupted, affecting order processing and shipping. Disclosed to the SEC.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "6",
-      "date": "Aug 28",
-      "date_sort": "2026-08-28",
-      "victim": "Philippine Nuclear Agency and naval contractor",
-      "industry": "Government / Defense",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Network intrusions into the Philippine nuclear research agency and a major naval contractor; details not yet public.",
-      "impact": "Suspected Chinese state hackers breached sensitive government and defense-industrial networks amid regional tensions in the South China Sea.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
+        "cyberscoop.com",
         "risky.biz"
       ]
     },
@@ -110,64 +111,65 @@
       "id": "7",
       "date": "Aug 28",
       "date_sort": "2026-08-28",
-      "victim": "Organizations across multiple industries (TerminalFix campaign)",
-      "industry": "Cross-sector",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
+      "victim": "Berlin state government (Germany)",
+      "industry": "Government",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Compromised websites display fake Cloudflare CAPTCHA overlays that trick users into pasting malicious PowerShell into Windows Terminal, leading to DLL sideloading and payloads hidden in PNG images.",
-      "impact": "Infected hosts receive a reverse-tunnel implant giving attackers persistent network-level proxy access, plus extensive Active Directory reconnaissance — a staging position for ransomware and data theft.",
+      "vector": "Network intrusion of two Berlin ministries with data exfiltration between August 7 and 12, followed by an extortion demand.",
+      "impact": "Attackers claim 5.79 TB of government data including contracts, emails and classified material, auctioned for 30 bitcoin; Berlin refused to pay, and affected ministries remain cut off from normal IT systems weeks before September 20 elections.",
       "ongoing": "Y",
-      "severity": "medium",
+      "severity": "high",
       "sources": [
-        "microsoft.com"
+        "therecord.media"
       ]
     },
     {
       "id": "8",
-      "date": "Aug 28",
-      "date_sort": "2026-08-28",
-      "victim": "US Bureau of Alcohol, Tobacco, Firearms and Explosives",
-      "industry": "Government / Law enforcement",
-      "attacker": "Criminal gang — ransomware",
+      "date": "Aug 27",
+      "date_sort": "2026-08-27",
+      "victim": "Open-source software supply chain (thousands of businesses)",
+      "industry": "Technology / Software",
+      "attacker": "Criminal gang — supply chain extortion",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Ransomware group breached one standalone system at the agency; entry method not disclosed.",
-      "impact": "The agency confirmed the incident but says its main network was unaffected and public portals remain operational.",
+      "vector": "Self-propagating worm embedded in open-source packages via phished or stolen developer credentials at GitHub and NPM, harvesting cloud keys and secrets downstream.",
+      "impact": "Australian Federal Police arrested two alleged members of the group behind the longest-running software supply chain attack spree, which compromised an AI gateway used by 2,500+ organizations and 3,800+ GitHub repositories.",
       "ongoing": "N",
-      "severity": "medium",
+      "severity": "high",
       "sources": [
-        "risky.biz"
+        "krebsonsecurity.com",
+        "cyberscoop.com"
       ]
     },
     {
       "id": "9",
-      "date": "Aug 28",
-      "date_sort": "2026-08-28",
-      "victim": "Carhartt",
-      "industry": "Retail / Apparel",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Data theft followed by a $3.3 million ransom demand, which the company refused.",
-      "impact": "Data of nearly 13 million customers was published online after the refused extortion attempt; the dataset also contained millions of synthetic fake records.",
+      "date": "Aug 27",
+      "date_sort": "2026-08-27",
+      "victim": "Government and defense organizations in Romania, Spain, Türkiye",
+      "industry": "Government / Defense",
+      "attacker": "Russia — GRU military intelligence",
+      "attacker_origin": "russia",
+      "motivation": "Espionage",
+      "vector": "Spearphishing with macro-enabled Word documents using diplomatic-themed lures that install a lightweight batch-script backdoor abusing legitimate webhook services for command-and-control.",
+      "impact": "Initial-access campaigns from late September 2025 through early April 2026 targeted European diplomatic and defense-manufacturing entities for intelligence collection, including material tied to Moldova's parliamentary elections.",
       "ongoing": "N",
-      "severity": "medium",
+      "severity": "high",
       "sources": [
-        "risky.biz"
+        "recordedfuture.com"
       ]
     },
     {
       "id": "10",
-      "date": "Aug 28",
-      "date_sort": "2026-08-28",
-      "victim": "Manchester Airports Group (UK)",
-      "industry": "Transportation / Aviation",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
+      "date": "Aug 27",
+      "date_sort": "2026-08-27",
+      "victim": "Moonwell (DeFi platform)",
+      "industry": "Cryptocurrency / Financial services",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "Data theft from airport WiFi sign-up systems followed by an extortion demand, which the company refused.",
-      "impact": "Data of 8.7 million travelers who passed through Manchester, East Midlands and London Stansted airports was stolen, including email addresses used for airport WiFi registration.",
+      "vector": "Manipulation of the platform's MAMO token price to borrow assets with no effective collateral.",
+      "impact": "$8.7 million in crypto-assets stolen; borrowing paused during investigation. This is the platform's fourth hack in twelve months.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
@@ -176,170 +178,15 @@
     },
     {
       "id": "11",
-      "date": "Aug 28",
-      "date_sort": "2026-08-28",
-      "victim": "Micro-Comm (US water utility software provider)",
-      "industry": "Water / Critical infrastructure software",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Ransomware intrusion into the systems of a SCADA software provider serving US water utilities, followed by a failed extortion attempt.",
-      "impact": "Company data was leaked after the extortion failed; the incident raises supply-chain concerns for water utilities using its SCADA products, though it is unrelated to recent Iranian attacks on the sector.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "12",
-      "date": "Aug 28",
-      "date_sort": "2026-08-28",
-      "victim": "Hachette Australia / Alliance Distribution Services",
-      "industry": "Publishing / Logistics",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Cyberattack in mid-July on the book distribution platform managed by Hachette Australia; method not disclosed.",
-      "impact": "Six weeks later the distribution platform is still not restored, leaving some Australian bookstores running out of stock.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "13",
-      "date": "Aug 27",
-      "date_sort": "2026-08-27",
-      "victim": "Government and diplomatic organizations in Romania, Spain and Türkiye",
-      "industry": "Government / Diplomatic / Defense",
-      "attacker": "Russia — GRU military intelligence",
-      "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "Spearphishing with macro-enabled Word documents using diplomatic lures deployed a lightweight batch-script backdoor that abuses legitimate webhook services for command-and-control.",
-      "impact": "Campaigns from September 2025 through April 2026 established initial access for intelligence collection against European diplomatic targets, including activity tied to Moldova's parliamentary elections; higher-value targets received a more responsive second-stage implant.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "recordedfuture.com"
-      ]
-    },
-    {
-      "id": "14",
       "date": "Aug 26",
       "date_sort": "2026-08-26",
-      "victim": "Open-source software ecosystem and thousands of downstream businesses",
-      "industry": "Technology / Cross-sector",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Self-propagating worm embedded in compromised open-source libraries (including Trivy, KICS, LiteLLM and Telnyx) stole developer credentials and spread to other packages.",
-      "impact": "Australian police arrested two alleged members of the group behind the longest-running software supply-chain attack spree on record — over 500,000 stolen credentials, cloud secrets harvested from 2,500+ organizations, and extortion of major companies. Both suspects remain in custody.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "krebsonsecurity.com",
-        "risky.biz",
-        "cyberscoop.com"
-      ]
-    },
-    {
-      "id": "15",
-      "date": "Aug 26",
-      "date_sort": "2026-08-26",
-      "victim": "US federal agencies incl. NASA, Federal Reserve, DOE, DOJ, HHS, NIH, US Senate",
+      "victim": "U.S. federal agencies and critical infrastructure",
       "industry": "Government / Critical infrastructure",
-      "attacker": "China — state-sponsored hacking contractors",
+      "attacker": "China — state-sponsored hackers-for-hire",
       "attacker_origin": "china",
       "motivation": "Espionage",
-      "vector": "A China-based contractor operated a scanning platform that mass-infected internet-of-things devices worldwide, chaining them into an obfuscation network that disguised the origin of intrusions against US networks.",
-      "impact": "DOJ and FBI seized the hard-coded domains, rendering both hacking platforms inoperable and disrupting a service sold to China's Ministry of State Security and military. Activity dated back to at least 2018.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "justice.gov"
-      ]
-    },
-    {
-      "id": "16",
-      "date": "Aug 20",
-      "date_sort": "2026-08-20",
-      "victim": "Academia, defense, government and think-tank personnel (US and Europe)",
-      "industry": "Government / Academia / Defense",
-      "attacker": "Russia — state-linked espionage group",
-      "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "Three distinct clusters abuse legitimate authentication flows — app-password phishing, OAuth consent phishing, and Microsoft/WhatsApp device-code phishing — often impersonating the US State Department or diplomatic conferences.",
-      "impact": "Persistent, highly targeted account-takeover campaigns against individuals of interest to Russia; compromised accounts grant attackers mailbox and messaging access without triggering two-factor authentication.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "cloud.google.com"
-      ]
-    },
-    {
-      "id": "17",
-      "date": "Aug 20",
-      "date_sort": "2026-08-20",
-      "victim": "Web servers in government, education, media, tech and gaming sectors globally",
-      "industry": "Cross-sector",
-      "attacker": "Criminal gang — Chinese-speaking, financially motivated",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Exploitation of known vulnerabilities in internet-facing Windows and Linux web servers, accelerated by AI-generated exploit scripts and playbooks, followed by privilege escalation and custom cross-platform implants.",
-      "impact": "Compromised servers across Brazil, Bolivia, China, Canada and Vietnam were monetized through SEO fraud and data theft; a target list of roughly 170,000 URLs and a new implant with kernel-level EDR-killing and Linux rootkit capabilities indicate an ongoing, scaled operation.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "blog.talosintelligence.com"
-      ]
-    },
-    {
-      "id": "18",
-      "date": "Aug 19",
-      "date_sort": "2026-08-19",
-      "victim": "US critical infrastructure PLC operators (manufacturing, energy, water, chemical)",
-      "industry": "Critical infrastructure / Industrial",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Disruption",
-      "vector": "Internet scanning to find exposed Siemens S7-series PLCs, then AI-generated exploitation scripts disguised as legitimate monitoring tools to gain read/write access to controller memory and logic.",
-      "impact": "NSA, CISA, FBI, DOE and EPA warn of active reconnaissance and pre-positioning against US industrial control systems that could enable disruption of critical processes, safety incidents and equipment damage.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "cisa.gov"
-      ]
-    },
-    {
-      "id": "19",
-      "date": "Aug 19",
-      "date_sort": "2026-08-19",
-      "victim": "Slovakia national traffic monitoring system",
-      "industry": "Government / Transportation",
-      "attacker": "Russia — suspected state-linked supplier backdoor",
-      "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "Rebranded Russian-made traffic speed cameras shipped with a built-in backdoor granting shell and network access via SMS from hardcoded Russian phone numbers.",
-      "impact": "Slovakia's security service flagged 279 cameras bought under a €30 million EU-funded project; deployment is paused pending an independent audit, and similar devices may be installed in Croatia and elsewhere in Eastern Europe.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "20",
-      "date": "Aug 18",
-      "date_sort": "2026-08-18",
-      "victim": "144 US universities, 178 foreign universities, companies and agencies",
-      "industry": "Academia / Cross-sector",
-      "attacker": "Iran — IRGC (Islamic Revolutionary Guard Corps)",
-      "attacker_origin": "iran",
-      "motivation": "IP theft",
-      "vector": "Sustained spearphishing campaign against more than 100,000 professor accounts to steal credentials and harvest academic research at scale.",
-      "impact": "DOJ unsealed a superseding indictment charging 17 members of an Iran-based hacking-for-hire institute that stole over 31 terabytes of research and intellectual property for the IRGC; the State Department is offering up to $10 million for information on five defendants.",
+      "vector": "Complementary hacking platforms that mass-infected internet-of-things devices and routed intrusions through an obfuscation proxy network to disguise their Chinese origin.",
+      "impact": "DOJ and FBI seized the platforms' domains, disabling infrastructure a China-based contractor used against NASA, the Federal Reserve, DOE, DOJ, HHS, NIH and the U.S. Senate; activity dates back to at least 2018.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -348,20 +195,106 @@
       ]
     },
     {
-      "id": "21",
+      "id": "12",
+      "date": "Aug 25",
+      "date_sort": "2026-08-25",
+      "victim": "Hit Group (Slovenian casinos and hotels)",
+      "industry": "Hospitality / Gaming",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Attack on company servers; the company has not disclosed the intrusion method.",
+      "impact": "Six casinos closed for roughly three days with cash registers and hotel systems disrupted and some staff furloughed; reopening is gradual with table games, bingo and the loyalty system still unavailable.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "13",
+      "date": "Aug 19",
+      "date_sort": "2026-08-19",
+      "victim": "U.S. industrial operators (Siemens S7 PLCs)",
+      "industry": "Critical infrastructure / Manufacturing, energy, water",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Disruption",
+      "vector": "Internet scanning for exposed Siemens S7 programmable logic controllers, then AI-generated exploitation scripts disguised as legitimate monitoring tools to gain read/write access.",
+      "impact": "NSA, CISA, FBI, DOE and EPA warn of active reconnaissance and capability development against U.S. manufacturing, energy, water, chemical and food-sector control systems, assessed as pre-positioning for future disruptive operations.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "cisa.gov"
+      ]
+    },
+    {
+      "id": "14",
       "date": "Aug 18",
       "date_sort": "2026-08-18",
-      "victim": "1,100+ companies in software, staffing, healthcare and finance",
-      "industry": "Cross-sector",
+      "victim": "Universities, companies and government agencies (US and allied)",
+      "industry": "Education / Research",
+      "attacker": "Iran — IRGC (Islamic Revolutionary Guard Corps)",
+      "attacker_origin": "iran",
+      "motivation": "IP theft",
+      "vector": "Coordinated spearphishing against more than 100,000 professor accounts to steal credentials and exfiltrate research data.",
+      "impact": "DOJ unsealed a superseding indictment charging 17 members of an Iran-based hacking-for-hire institute that stole 31+ terabytes of academic data and IP from 322 universities, dozens of companies and government agencies; $10 million rewards offered for five defendants.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "justice.gov",
+        "cyberscoop.com"
+      ]
+    },
+    {
+      "id": "15",
+      "date": "Aug 18",
+      "date_sort": "2026-08-18",
+      "victim": "1,100+ companies targeted; 10+ infiltrated",
+      "industry": "Technology / Staffing / Healthcare",
       "attacker": "North Korea — state-sponsored, financially motivated",
       "attacker_origin": "north_korea",
       "motivation": "Financial",
-      "vector": "Covert IT workers using at least 22 fabricated personas, AI-generated photos and real-time AI interview assistance applied to remote technical jobs at scale, supported by facilitators hosting company laptops.",
-      "impact": "Operators were likely employed at ten or more organizations, funneling salaries to the North Korean regime and creating insider-threat exposure including recorded internal meetings and access from personal devices.",
+      "vector": "Fraudulent remote-employment operations using 22+ fabricated personas with AI-generated photos, AI-assisted interview responses, and facilitators maintaining company-issued hardware.",
+      "impact": "North Korean IT workers, likely operating from China, applied to over 1,100 companies and are assessed to be actively employed at ten or more organizations, posing an ongoing insider threat and funneling wages to the North Korean regime.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
         "recordedfuture.com"
+      ]
+    },
+    {
+      "id": "16",
+      "date": "Aug 17",
+      "date_sort": "2026-08-17",
+      "victim": "Multiple enterprises (Microsoft Entra tenants)",
+      "industry": "Cross-sector",
+      "attacker": "Criminal hacker — credential theft and resale",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Claimed use of compromised credentials via MFA-fatigue and password-spraying attacks to access Microsoft Entra tenants (claims not yet verified).",
+      "impact": "An actor is offering allegedly stolen employee data from several high-profile organizations for sale on criminal forums following August 1-17 activity; Unit 42 recommends auditing remote-access logs for logins following large volumes of password failures.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "unit42.paloaltonetworks.com"
+      ]
+    },
+    {
+      "id": "17",
+      "date": "Mid-Aug",
+      "date_sort": "2026-08-13",
+      "victim": "Taiwan government agencies",
+      "industry": "Government",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "Near-autonomous AI attack using up to eight coordinated AI agents to crack credentials, find and exploit vulnerabilities, and install backdoors over 12 attack waves in four days — no zero-days required.",
+      "impact": "Personnel records exfiltrated and persistent backdoors placed on government web applications in what researchers call the first near-autonomous AI attack on a nation-state; Taiwan's digital ministry confirmed the July attacks in mid-August.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "darkreading.com"
       ]
     }
   ]
