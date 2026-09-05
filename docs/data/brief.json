@@ -1,54 +1,72 @@
 {
-  "generated_at": "2026-09-05T08:11:34.446260+00:00",
-  "period_searched": "September 1-5, 2026",
-  "incident_count": 16,
+  "generated_at": "2026-09-05T20:11:03.896177+00:00",
+  "period_searched": "September 3–5, 2026",
+  "incident_count": 18,
   "incidents": [
     {
       "id": "1",
       "date": "Sep 4",
       "date_sort": "2026-09-04",
-      "victim": "US Water Utilities and Critical Infrastructure (100+ entities)",
-      "industry": "Critical Infrastructure",
+      "victim": "US Critical Infrastructure (Water, Energy, Defense, Telecom)",
+      "industry": "Utilities / Critical Infrastructure",
       "attacker": "Iran — IRGC (Islamic Revolutionary Guard Corps)",
       "attacker_origin": "iran",
       "motivation": "Disruption",
-      "vector": "IRGC Cyber-Electronic Command directed multiple proxy hacking groups against US water utilities, government agencies, and critical infrastructure using known device vulnerabilities and default credentials",
-      "impact": "100+ water and wastewater utilities across 12 US states breached since late July 2026; US State Department posted $10M reward for IRGC-CEC director Amir Yaryab; Treasury sanctioned Turkish bank Golden Global Bank for facilitating IRGC financial operations",
+      "vector": "IRGC-linked operatives exploited internet-exposed industrial control systems and default credentials in water utility SCADA systems, as well as defense, energy, and telecom networks.",
+      "impact": "More than 100 water utilities across 12 US states compromised; DOJ also charged IRGC hackers with breaching the Department of Labor, FERC, and UN organizations, and accessing the FBI Director’s personal email. A $10M reward has been posted for IRGC-CEC commander Amir Yaryab, who oversaw the CyberAv3ngers, DAA, and MASN groups responsible for these operations.",
       "ongoing": "Y",
-      "severity": "critical",
+      "severity": "high",
       "sources": [
-        "therecord.media",
-        "home.treasury.gov"
+        "therecord.media"
       ]
     },
     {
       "id": "2",
       "date": "Sep 4",
       "date_sort": "2026-09-04",
-      "victim": "CrowdStrike, Kaspersky, and Avast Users",
-      "industry": "Technology",
-      "attacker": "Unknown — Nightmare Eclipse (exploit researcher)",
+      "victim": "Serbian Opposition, Activists, and Student Protesters",
+      "industry": "Civil Society / Government",
+      "attacker": "Serbia — government-attributed spyware operation",
       "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Public release of three privilege escalation exploits targeting widely deployed antimalware products: Falcon Flank (CrowdStrike), Hard Breacher (Kaspersky), and Pretty Prague (Avast)",
-      "impact": "Publicly available exploits enable local privilege escalation by abusing the elevated kernel-level privileges inherent to antimalware products; organizations relying on these endpoint security tools are exposed; no confirmed in-the-wild exploitation reported yet",
+      "motivation": "Political",
+      "vector": "Zero-click Pegasus spyware and NoviSpy mobile surveillance software deployed against targets’ devices; evidence from NoviSpy infections points to Serbian government authorities as the operator.",
+      "impact": "At least 14 individuals targeted including a sitting Serbian MP, local officials, and peaceful student protesters; infections confirmed December 2025–January 2026, timed around Serbia’s March 2026 elections. Twenty-nine European Parliament members are now calling to freeze Serbia’s EU accession pending an investigation into the surveillance campaign.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "isc.sans.edu"
+        "therecord.media",
+        "cyberscoop.com",
+        "risky.biz"
       ]
     },
     {
       "id": "3",
       "date": "Sep 4",
       "date_sort": "2026-09-04",
-      "victim": "Trezor Hardware Wallet Customers",
-      "industry": "Financial Services",
-      "attacker": "Unknown — criminal likely",
+      "victim": "Google Chrome / Chromium Users (Worldwide)",
+      "industry": "Technology",
+      "attacker": "Unknown",
       "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Type confusion vulnerability in Chrome’s V8 JavaScript engine (CVE-2026-85046) exploited in the wild to achieve arbitrary code execution in browser sessions.",
+      "impact": "CISA added CVE-2026-85046 to its Known Exploited Vulnerabilities catalog confirming active exploitation against unpatched installations. All organizations should prioritize immediate updates to Chrome and Chromium-based browsers.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "cisa.gov"
+      ]
+    },
+    {
+      "id": "4",
+      "date": "Sep 4",
+      "date_sort": "2026-09-04",
+      "victim": "Trezor Cryptocurrency Wallet Customers",
+      "industry": "Financial Services / Cryptocurrency",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Breach of Trezor's unnamed third-party shipping fulfillment provider",
-      "impact": "67,000 additional US customers exposed (names, email, phone, shipping address) for orders placed November 2019 through August 2021; widens a breach first disclosed in August 2026",
+      "vector": "Breach of a third-party shipping provider used by Trezor exposed customer order records from November 2019 through August 2021.",
+      "impact": "An additional 67,000 US customers had names, email addresses, phone numbers, and shipping addresses exposed, widening a breach Trezor first disclosed in August 2026. Affected customers face elevated risk of targeted phishing and physical theft of hardware wallets.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
@@ -56,16 +74,33 @@
       ]
     },
     {
-      "id": "4",
+      "id": "5",
+      "date": "Sep 4",
+      "date_sort": "2026-09-04",
+      "victim": "CrowdStrike, Kaspersky, and Avast Antivirus Users",
+      "industry": "Technology / Security",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Public exploit code released targeting memory-parsing privilege escalation vulnerabilities in three widely deployed antivirus products; AV software’s elevated system privileges make these flaws immediately critical upon exploitation.",
+      "impact": "The ‘Nightmare Eclipse’ group released three exploits: Falcon Flank (CrowdStrike), Hard Breacher (Kaspersky), and Pretty Prague (Avast). Organizations relying on these products for endpoint protection should apply vendor patches immediately and monitor for local privilege escalation activity.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "isc.sans.edu"
+      ]
+    },
+    {
+      "id": "6",
       "date": "Sep 3",
       "date_sort": "2026-09-03",
-      "victim": "Enterprise SonicWall SMA 1000 Customers",
-      "industry": "Technology",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Two zero-days chained for unauthenticated RCE: CVE-2026-83548 (max-severity pre-auth SSRF abusing front-end proxy to bypass internal API authentication) and CVE-2026-83549 (OS command injection executed once authenticated)",
-      "impact": "Active exploitation confirmed prior to patching; CISA added both CVEs to the Known Exploited Vulnerabilities catalog on September 3; SonicWall SMA 1000 has accumulated five actively exploited vulnerabilities since late 2025; patches released September 2",
+      "victim": "SonicWall SMA-1000 Appliance Customers",
+      "industry": "Technology / Network Security",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Two zero-days chained together — a max-severity pre-authentication SSRF (CVE-2026-83548) and a high-severity OS command injection (CVE-2026-83549) — enable unauthenticated remote code execution on internet-facing SMA-1000 appliances.",
+      "impact": "Active exploitation confirmed in the wild; CISA added both CVEs to its KEV catalog. This is the fifth actively exploited SMA-1000 vulnerability since late 2025. Ransomware groups including INC and Akira have a demonstrated pattern of targeting SonicWall devices; organizations should patch immediately and hunt for signs of compromise.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -74,86 +109,33 @@
       ]
     },
     {
-      "id": "5",
-      "date": "Sep 3",
-      "date_sort": "2026-09-03",
-      "victim": "US and Canadian Courts (12+ states, Ontario, US Virgin Islands)",
-      "industry": "Government / Legal",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Unauthorized access to Thomson Reuters C-Track court case management platform; breach undetected from March through June 30, 2026",
-      "impact": "Sealed court records, SSNs, driver's license numbers, medical information, dates of birth, and health insurance data exposed across appellate courts in 12+ US states, the US Virgin Islands, and Ontario Canada; Thomson Reuters notified affected courts weeks after its own discovery",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "therecord.media",
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "6",
-      "date": "Sep 3",
-      "date_sort": "2026-09-03",
-      "victim": "Serbian Opposition Politicians, Activists, and Student Protesters",
-      "industry": "Government / Civil Society",
-      "attacker": "Serbia — government intelligence services (suspected)",
-      "attacker_origin": "unknown",
-      "motivation": "Political",
-      "vector": "Pegasus zero-click spyware delivered remotely via iMessage exploit chain; NoviSpy spyware installed directly on devices during police detentions and phone confiscations",
-      "impact": "At least 14 confirmed victims including an MP, a local government official, and student pro-democracy activists targeted since December 2025; infections timed to coincide with March 2026 local elections; Citizen Lab confirmed Pegasus zero-click infections; EU Parliament members called for slowdown of Serbia's EU accession",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "therecord.media",
-        "cyberscoop.com"
-      ]
-    },
-    {
       "id": "7",
-      "date": "Sep 3",
-      "date_sort": "2026-09-03",
-      "victim": "US Federal Agencies, Senate, Hospitals, Telecoms, Financial Institutions",
-      "industry": "Multiple / Government",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "QScan (distributed IoT vulnerability scanning and target database) and QTRouter (covert traffic relay through compromised IoT devices) operated by private firm Nanjing Xinjiuwei Network Technology on behalf of China's MSS and PLA",
-      "impact": "US DOJ disrupted both platforms; FBI/NSA joint advisory confirmed targets included US federal agencies, the Senate, hospitals, telecoms, and financial institutions; the operator has supported Chinese government cyber operations for nearly a decade since at least 2018",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "8",
       "date": "Sep 2",
       "date_sort": "2026-09-02",
-      "victim": "US Bureau of Alcohol, Tobacco, Firearms and Explosives (ATF)",
+      "victim": "Bureau of Alcohol, Tobacco, Firearms and Explosives (ATF)",
       "industry": "Government / Law Enforcement",
       "attacker": "Criminal gang — ransomware",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Unauthorized access to ATF's CALEA (Communications Assistance for Law Enforcement Act) lawful interception system",
-      "impact": "Qilin ransomware group published 6.3 GB of data including law enforcement case folders, investigation target names, phone numbers, IP addresses, and mobile device forensic data; ATF Director Robert Cekada confirmed the agency is investigating the breach",
-      "ongoing": "N",
+      "vector": "The Russian-speaking Qilin ransomware-as-a-service group breached the ATF’s CALEA (lawful intercept) system; method of initial access has not been publicly confirmed.",
+      "impact": "6.3 GB of sensitive law enforcement data briefly published, including names, phone numbers, and IP addresses of ATF investigation targets plus forensic data extracted from suspects’ mobile phones. ATF Director confirmed the breach investigation. The Trump administration’s recent authorization of private-sector cyber operators against criminal groups may lead to retaliation against Qilin.",
+      "ongoing": "Y",
       "severity": "critical",
       "sources": [
         "risky.biz"
       ]
     },
     {
-      "id": "9",
+      "id": "8",
       "date": "Sep 1",
       "date_sort": "2026-09-01",
-      "victim": "US and Canadian Identity Verification Sector (153M+ individuals)",
-      "industry": "Technology / Identity Services",
+      "victim": "IDScan.net / Nexus Identity Verification Supply Chain",
+      "industry": "Technology / Identity Verification",
       "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
+      "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Long-term breach of a Louisiana-based identity verification company whose systems hold biometric scans of government IDs collected at Hertz rental locations, cannabis dispensaries, and other Fortune 500 customer touchpoints",
-      "impact": "153 million+ US and Canadian driver's license images — including infrared and UV scans — now sold on darknet marketplace \"Nexus\"; data includes government officials including the US Defense Secretary; breach active for over a year and adding roughly 400,000 records per day; FBI New Orleans field office opened investigation",
+      "vector": "Attackers exfiltrated driver’s license scan data from IDScan.net, a Louisiana-based identity verification provider used by retailers and hospitality companies, then sold 153 million records through a dark web service called Nexus.",
+      "impact": "Over 153 million US and Canadian driver’s licenses — including those of government officials — are actively being sold on the dark web; the breach is estimated to have been ongoing for more than a year. Downstream customers of IDScan.net including Hertz, Target, FedEx, Planet13 dispensaries, and Caesars Entertainment are affected. FBI has launched a probe.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
@@ -161,7 +143,7 @@
       ]
     },
     {
-      "id": "10",
+      "id": "9",
       "date": "Sep 1",
       "date_sort": "2026-09-01",
       "victim": "McKesson Corporation",
@@ -169,76 +151,78 @@
       "attacker": "Criminal gang — data extortion",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Voice phishing (vishing) of McKesson employees to steal credentials, followed by use of stolen credentials to take over Okta SSO accounts and exfiltrate patient records at scale",
-      "impact": "ShinyHunters group claims 284 million patient records stolen; the same group breached bank IT provider Jack Henry using an identical vishing and Okta-credential-theft playbook the same week",
-      "ongoing": "N",
+      "vector": "ShinyHunters used voice phishing (vishing) to social-engineer a McKesson employee into surrendering Okta SSO credentials, then used those credentials to gain broad access to internal systems.",
+      "impact": "ShinyHunters claims 284 million patient records stolen; if confirmed, this would rank among the largest healthcare data breaches in US history. Extortion demand is pending and McKesson is managing fallout. The attack follows the same vishing-plus-SSO playbook used against Jack Henry and other recent targets.",
+      "ongoing": "Y",
       "severity": "critical",
       "sources": [
-        "blog.talosintelligence.com"
+        "blog.talosintelligence.com",
+        "cyberscoop.com"
+      ]
+    },
+    {
+      "id": "10",
+      "date": "Sep 1",
+      "date_sort": "2026-09-01",
+      "victim": "Jack Henry & Associates",
+      "industry": "Financial Services / Banking Technology",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "ShinyHunters hackers used voice phishing to gain access to Jack Henry’s internal network and exfiltrate internal documents; same social engineering playbook used against McKesson.",
+      "impact": "More than 7,200 bank customers notified of the breach; internal documents confirmed stolen. Jack Henry has refused to pay the ransom. The incident raises third-party risk concerns for any financial institution relying on Jack Henry’s banking platform.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "risky.biz"
       ]
     },
     {
       "id": "11",
       "date": "Sep 1",
       "date_sort": "2026-09-01",
-      "victim": "Jack Henry & Associates",
-      "industry": "Financial Services / Technology",
+      "victim": "Open Source Software Ecosystem / Downstream Organizations",
+      "industry": "Technology / Software Supply Chain",
       "attacker": "Criminal gang — data extortion",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Voice phishing (vishing) attack to gain network access; internal documents stolen and ransom demand issued",
-      "impact": "More than 7,200 bank and financial institution customers notified of breach; Jack Henry refused to pay ransom; ShinyHunters claimed responsibility using the same credential-theft methodology deployed against McKesson",
+      "vector": "TeamPCP deployed the Shai-Hulud worm to embed malicious code into hundreds of open-source software packages across multiple repositories and language ecosystems.",
+      "impact": "Two alleged TeamPCP members (ages 21 and 23) arrested by Australian Federal Police in Western Australia; criminal charges pending. Organizations that consumed affected open-source packages may have implanted backdoors or exfiltrated data and should audit dependency provenance.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
-        "risky.biz"
+        "krebsonsecurity.com",
+        "blog.talosintelligence.com"
       ]
     },
     {
       "id": "12",
       "date": "Sep 1",
       "date_sort": "2026-09-01",
-      "victim": "X (Twitter) Users",
-      "industry": "Technology / Financial Services",
+      "victim": "Global Financial Institutions (349 Targets)",
+      "industry": "Financial Services",
       "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
+      "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Mass automated password recovery attack targeting hundreds of thousands of X accounts, believed aimed at pivoting to the X Money digital banking service",
-      "impact": "Attack mitigated by X before account takeovers occurred; no confirmed compromises or financial theft; US Attorney General confirmed DOJ is investigating; incident highlights the expanded attack surface introduced by X Money",
-      "ongoing": "N",
+      "vector": "ToxicPanda 2.0 banking trojan distributed via sideloaded Android applications; intercepts NFC payment data and one-time passwords to conduct unauthorized transactions from victim devices.",
+      "impact": "Target list expanded from 16 to 349 financial institutions globally, dramatically widening exposure for NFC payment fraud. Victims face unauthorized transactions that may be difficult to reverse; financial institutions should assess whether mobile fraud controls cover NFC interception scenarios.",
+      "ongoing": "Y",
       "severity": "medium",
       "sources": [
-        "risky.biz"
+        "blog.talosintelligence.com"
       ]
     },
     {
       "id": "13",
       "date": "Aug 31",
       "date_sort": "2026-08-31",
-      "victim": "Coder Platform Users (Developer Sector)",
-      "industry": "Technology",
-      "attacker": "Unknown — criminal likely",
+      "victim": "Coder Platform Users / Terraform Infrastructure Developers",
+      "industry": "Technology / Cloud Infrastructure",
+      "attacker": "Unknown",
       "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Compromise of Coder's Cloudflare infrastructure to inject malicious Terraform module registry servers live for 14 hours on August 31",
-      "impact": "Developers using Coder's cloud-infrastructure tooling were served malicious Terraform modules during the window; any cloud environments provisioned via Coder during that period may be compromised",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "14",
-      "date": "Aug 31",
-      "date_sort": "2026-08-31",
-      "victim": "Dropbox",
-      "industry": "Technology",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Attackers registered Lenovo ID accounts using the same email addresses as existing Dropbox accounts, bypassed Lenovo's email verification, then exploited the cross-service integration to access the corresponding Dropbox accounts",
-      "impact": "Approximately 5,000 Dropbox accounts accessed and data downloaded; breach disclosed September 4, 2026",
+      "motivation": "Unclear",
+      "vector": "Attackers compromised Coder’s Cloudflare infrastructure and served malicious Terraform module registry servers to developers building cloud-hosted AI application environments.",
+      "impact": "Malicious Terraform modules were delivered for 14 hours on August 31, 2026. Organizations that pulled Terraform modules during that window should immediately audit their cloud environments for unauthorized resource creation, modified IAM policies, or exfiltrated secrets.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
@@ -246,35 +230,88 @@
       ]
     },
     {
-      "id": "15",
-      "date": "Jun 2026",
-      "date_sort": "2026-06-01",
-      "victim": "TVING",
-      "industry": "Media / Entertainment",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Unauthorized intrusion into TVING's systems at the start of June; the company failed to meet regulatory disclosure deadlines",
-      "impact": "Personal data of approximately 40 million user accounts stolen, including 70+ categories of information such as names, email addresses, and phone numbers; company offered roughly $15 compensation per user in streaming credits and faces regulatory fines for late disclosure",
+      "id": "14",
+      "date": "Aug 26",
+      "date_sort": "2026-08-26",
+      "victim": "US Federal Agencies, Senate, Hospitals, Telecoms, Financial Institutions",
+      "industry": "Government / Critical Infrastructure",
+      "attacker": "China — state-sponsored espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "Nanjing Xinjiuwei Network Technology (QTFY) operated QScan (a distributed vulnerability scanning platform) and QTRouter (a covert traffic relay through compromised IoT devices) as commercial cyber services sold to China’s Ministry of State Security and People’s Liberation Army; DOJ seized hard-coded command-and-control domains.",
+      "impact": "Infrastructure used to target US federal agencies, the Senate, hospitals, telecoms, and financial institutions for nearly a decade has been disrupted. This is the third China state-backed botnet taken down by the US since December 2023; the QTFY database contained close to a decade of internet scanning data. Related botnet infrastructure has more than doubled in size following each prior disruption, signaling a persistent rebuild cycle.",
       "ongoing": "N",
-      "severity": "high",
+      "severity": "critical",
+      "sources": [
+        "justice.gov",
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "15",
+      "date": "Aug 1",
+      "date_sort": "2026-08-01",
+      "victim": "Dropbox",
+      "industry": "Technology / Cloud Storage",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Attackers registered Lenovo ID accounts using email addresses of existing Dropbox users, bypassed Lenovo’s email verification, then used the verified Lenovo identity to pivot into and take over the corresponding Dropbox accounts.",
+      "impact": "Nearly 5,000 Dropbox accounts accessed and data downloaded in August 2026. The attack exploited a verification gap in a third-party identity integration, highlighting risk in any SSO or federated identity arrangement that does not enforce re-verification on account linking.",
+      "ongoing": "N",
+      "severity": "medium",
       "sources": [
         "risky.biz"
       ]
     },
     {
       "id": "16",
-      "date": "Feb–Jun 2026",
-      "date_sort": "2026-02-15",
-      "victim": "Mexican Government Agencies and Brazilian Financial Institutions",
+      "date": "Jun 30",
+      "date_sort": "2026-06-30",
+      "victim": "Thomson Reuters C-Track Court Case Management",
+      "industry": "Legal / Government",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Unauthorized access to the C-Track online court case management platform maintained from March through June 2026; discovered June 30, 2026.",
+      "impact": "Sealed court records and sensitive PII — Social Security numbers, driver’s license numbers, and medical information — exposed across 12+ US states, the US Virgin Islands, and Canada. The breach poses direct risks to sealed investigations, protected witnesses, and individuals with confidential case records.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "therecord.media",
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "17",
+      "date": "Jun 1",
+      "date_sort": "2026-06-01",
+      "victim": "TVING (South Korean Streaming Service)",
+      "industry": "Media / Entertainment",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Hackers breached TVING’s systems in early June 2026 and exfiltrated a large user account database.",
+      "impact": "Personal data of approximately 40 million users stolen, comprising more than 70 types of PII including names, email addresses, and phone numbers. Company executives issued a public apology and offered user compensation; TVING faces regulatory fines for delayed incident reporting.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "18",
+      "date": "Jun 1",
+      "date_sort": "2026-06-01",
+      "victim": "Mexican Government/Transport and Brazilian Financial Sector",
       "industry": "Government / Financial Services",
       "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
+      "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Two parallel campaigns using large language models (Claude, GPT-4.1) hosted on attacker-controlled NextChat infrastructure to generate and debug intrusion scripts, combined with living-off-the-land techniques, custom RATs, and SOCKS5 proxies",
-      "impact": "Mexico: federal transport ministry, water utilities in Mexico and Ecuador, and federal agencies compromised; Brazil: financial sector organizations breached with data exfiltrated; both campaigns ongoing since February 2026 and represent the first confirmed operational use of AI tools to assist active intrusions in Latin America",
+      "vector": "Two AI-assisted campaigns: living-off-the-land intrusions into Mexican transport and government networks using LLM-generated script naming and NextChat AI infrastructure (April–June 2026); and job-themed phishing against Brazilian financial targets delivering custom remote access tools and a Go-based SOCKS5 proxy built with AI assistance.",
+      "impact": "Confirmed intrusions across Mexican government and transport organizations (CL-CRI-1131) and Brazilian financial institutions (CL-CRI-1163). AI-assisted tooling marks a capability shift for Latin American threat actors, enabling faster development of novel malware and evasion of signature-based detection. Both campaigns assessed as ongoing.",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "medium",
       "sources": [
         "unit42.paloaltonetworks.com"
       ]
