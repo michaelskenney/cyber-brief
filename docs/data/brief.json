@@ -1,36 +1,71 @@
 {
-  "generated_at": "2026-09-10T20:11:15.629964+00:00",
-  "period_searched": "Sep 8-10, 2026",
-  "incident_count": 20,
+  "generated_at": "2026-09-11T08:09:48.951648+00:00",
+  "period_searched": "Sep 9-11, 2026",
+  "incident_count": 14,
   "incidents": [
     {
       "id": "1",
       "date": "Sep 10",
       "date_sort": "2026-09-10",
-      "victim": "Greenberg Traurig (Law Firm)",
-      "industry": "Legal Services",
-      "attacker": "Unknown — criminal likely",
+      "victim": "Japan Digital Agency",
+      "industry": "Government",
+      "attacker": "Unknown",
       "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Undisclosed initial access; stolen data appeared on a dark web extortion site",
-      "impact": "\"Limited\" volume of data posted to dark web; investigation ongoing; firm is among the largest in the US, representing high-value clients across multiple sectors",
+      "motivation": "Unclear",
+      "vector": "Unauthorized access to government servers via an undisclosed method; internal investigation ongoing.",
+      "impact": "Personal data on approximately 246,000 individuals may have been exposed; Japan's Digital Agency confirmed the breach and launched a containment review.",
       "ongoing": "Y",
-      "severity": "medium",
+      "severity": "high",
       "sources": [
-        "reuters.com"
+        "bloomberg.com"
       ]
     },
     {
       "id": "2",
+      "date": "Sep 10",
+      "date_sort": "2026-09-10",
+      "victim": "Greenberg Traurig (law firm)",
+      "industry": "Legal Services",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Network intrusion via undisclosed initial access vector; exfiltrated data posted to a dark web extortion site.",
+      "impact": "A limited volume of firm data was posted publicly to the dark web; Greenberg Traurig is among the largest U.S. law firms and represents high-value clients across finance, government, and tech sectors.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "reuters.com",
+        "bloomberg.com"
+      ]
+    },
+    {
+      "id": "3",
+      "date": "Sep 10",
+      "date_sort": "2026-09-10",
+      "victim": "Cryptocurrency wallet holders (Trezor, BitBox, CoinTracking customers)",
+      "industry": "Financial Services",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Attackers breached email marketing provider Brevo, compromising 120 client accounts and sending phishing emails from authentic company-owned domains targeting crypto holders.",
+      "impact": "Thousands of hardware wallet and portfolio tracker customers received convincing phishing emails; malicious links were taken down within hours but some credential theft is expected before containment.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "4",
       "date": "Sep 9",
       "date_sort": "2026-09-09",
-      "victim": "Enterprise Networks — Cisco FMC Customers (Espionage Cluster)",
-      "industry": "Technology (Network Security)",
+      "victim": "Enterprise network operators (Cisco FMC customers — espionage cluster)",
+      "industry": "Multi-sector",
       "attacker": "Russia — GRU military intelligence",
       "attacker_origin": "russia",
       "motivation": "Espionage",
-      "vector": "Authentication bypass via CVE-2026-20079 (CVSS 10.0) in Cisco Secure Firewall Management Center used to deploy Cyclops Blink implants for credential harvesting and configuration exfiltration",
-      "impact": "Cyclops Blink malware implanted on firewall management infrastructure; managed-device configurations staged for exfiltration; a concurrent unattributed cluster (UAT-12197) deployed web shells and harvested credentials from the same victim set; CISA added CVE-2026-20079 to KEV catalog",
+      "vector": "Exploitation of CVE-2026-20079 (CVSS 10.0 authentication bypass) in Cisco Secure Firewall Management Center to deploy Cyclops Blink malware, harvest firewall configurations, and pivot to managed devices.",
+      "impact": "State-linked actors gained root-level access to firewall management systems, deploying a persistent implant with file transfer, credential harvesting, and network scanning capabilities; both CVEs added to CISA KEV catalog.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
@@ -39,67 +74,67 @@
       ]
     },
     {
-      "id": "3",
+      "id": "5",
       "date": "Sep 9",
       "date_sort": "2026-09-09",
-      "victim": "Enterprise — Undisclosed Cisco FMC Customer",
-      "industry": "Technology (Network Security)",
+      "victim": "Enterprise network operators (Cisco FMC customers — ransomware cluster)",
+      "industry": "Multi-sector",
       "attacker": "Criminal gang — ransomware",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Static-credential exploitation of CVE-2026-20316 in Cisco FMC, followed by SOCKS proxy tunneling, LOTL reconnaissance, AV termination, and Qilin ransomware deployment",
-      "impact": "Internal endpoints encrypted; domain credentials and configurations exfiltrated prior to encryption; antivirus disabled before payload detonation; victim in active remediation",
-      "ongoing": "N",
+      "vector": "Exploitation of CVE-2026-20316 (static credential bypass) in Cisco Secure Firewall Management Center, followed by living-off-the-land lateral movement and deployment of Qilin ransomware across victim endpoints.",
+      "impact": "Ransomware operators stole Active Directory credentials and domain configuration before encrypting endpoints; same vulnerability exploited in parallel by a state-sponsored espionage cluster, indicating public weaponization.",
+      "ongoing": "Y",
       "severity": "high",
       "sources": [
         "blog.talosintelligence.com"
       ]
     },
     {
-      "id": "4",
+      "id": "6",
       "date": "Sep 9",
       "date_sort": "2026-09-09",
-      "victim": "Veradigm (Electronic Health Records Company)",
+      "victim": "Veradigm (electronic health records platform)",
       "industry": "Healthcare",
-      "attacker": "Criminal gang — data extortion",
+      "attacker": "Criminal gang — ransomware",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Compromised vendor credentials used to access Veradigm's API, enabling bulk patient record download without triggering broader network access controls",
-      "impact": "3.5 million patients' personal records including Social Security numbers stolen; Gentlemen ransomware gang claimed responsibility and released sample data; no operational disruption reported; SEC disclosure expected",
-      "ongoing": "N",
+      "vector": "Attackers compromised a third-party vendor, stole API credentials, and used them to silently download patient records from Veradigm's production systems over an extended period.",
+      "impact": "The Gentlemen ransomware group claims to have stolen health records for 3.5 million patients including Social Security numbers and clinical data; Veradigm confirmed a vendor API was used to exfiltrate data and notified affected health systems.",
+      "ongoing": "Y",
       "severity": "high",
       "sources": [
         "therecord.media"
       ]
     },
     {
-      "id": "5",
+      "id": "7",
       "date": "Sep 9",
       "date_sort": "2026-09-09",
-      "victim": "Florida Department of Motor Vehicles",
-      "industry": "Government",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Unspecified database compromise of Florida DMV's internal driver record systems",
-      "impact": "200,000+ driver records stolen; ShinyHunters demanded ransom from the state agency; sensitive records released as proof of access; no operational disruption reported",
-      "ongoing": "N",
+      "victim": "Automotive and media organizations in South Korea",
+      "industry": "Manufacturing / Media",
+      "attacker": "North Korea — state-sponsored espionage",
+      "attacker_origin": "north_korea",
+      "motivation": "Espionage",
+      "vector": "Deployment of a new Linux espionage toolkit that embeds a persistent backdoor inside the HAProxy web proxy binary, enabling covert long-term access without alerting endpoint detection tools.",
+      "impact": "Attackers gained sustained surveillance access to South Korean industrial and media targets with capabilities for remote command execution, credential harvesting, and injection of malicious content into proxied web traffic.",
+      "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "risky.biz"
+        "blog.talosintelligence.com"
       ]
     },
     {
-      "id": "6",
-      "date": "Sep 8",
-      "date_sort": "2026-09-08",
-      "victim": "U.S. Defense Contractors, NGOs, and SE Asian Government Agencies",
-      "industry": "Defense & Government",
-      "attacker": "China — state-suspected espionage group",
+      "id": "8",
+      "date": "Sep 2",
+      "date_sort": "2026-09-02",
+      "victim": "U.S. defense contractors, aerospace firms, NGOs, and Southeast Asian government agencies",
+      "industry": "Defense / Government",
+      "attacker": "China — state-suspected espionage groups",
       "attacker_origin": "china",
       "motivation": "Espionage",
-      "vector": "Shared 'BlueMoon' exploit kit chaining Chrome V8 zero-days (CVE-2026-85046, CVE-2026-87491) with Windows ALPC zero-day (CVE-2026-85880) to compromise browsers, escape sandboxes, and gain SYSTEM-level persistence",
-      "impact": "At least four China-aligned espionage groups confirmed deploying ShadowPad backdoors and malicious browser extensions for credential theft across US NGOs, mining firms, aerospace/defense contractors, Vietnamese manufacturers, and SE Asian government targets; 20+ organizations globally compromised; operations remain active",
+      "vector": "At least four Chinese state-aligned groups shared a common exploit kit (BlueMoon) chaining three zero-days: two Chrome V8 RCE flaws (CVE-2026-85046, CVE-2026-87491) and a Windows ALPC privilege escalation zero-day (CVE-2026-85880), delivering full system compromise via targeted spear-phishing.",
+      "impact": "Attackers implanted ShadowPad backdoors and credential-stealing browser extensions across U.S. defense contractor and aerospace networks; activity continued through at least September 8 and was still ongoing at publication; CVE-2026-87491 added to CISA KEV.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
@@ -109,250 +144,109 @@
       ]
     },
     {
-      "id": "7",
-      "date": "Sep 8",
-      "date_sort": "2026-09-08",
-      "victim": "Windows Systems (Broad Exposure)",
-      "industry": "Cross-Sector",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Active in-the-wild exploitation of two Windows privilege escalation zero-days: CVE-2026-81963 (Windows Update Stack, CVSS 7.8) used in ransomware post-exploitation chains, and CVE-2026-85880 (Windows ALPC, CVSS 7.8) used across criminal and state-sponsored operations",
-      "impact": "Both vulnerabilities confirmed exploited before patches were available September 8; CISA added both to KEV catalog; CVE-2026-85880 also incorporated into the China-linked BlueMoon espionage kit; patch urgency is high across all Windows environments",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "cisa.gov",
-        "crowdstrike.com",
-        "isc.sans.edu"
-      ]
-    },
-    {
-      "id": "8",
-      "date": "Sep 8",
-      "date_sort": "2026-09-08",
-      "victim": "U.S. AI Companies (Anthropic, OpenAI, Google, xAI)",
-      "industry": "Technology (Artificial Intelligence)",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "IP theft",
-      "vector": "Industrial-scale 'knowledge distillation' routing billions of API queries through proxies and tens of thousands of fraudulent accounts to systematically extract proprietary AI model capabilities and training data",
-      "impact": "Alibaba peaked at ~3 million queries per day from 3,500+ fraudulent accounts against a single US AI firm; DeepSeek, Moonshot AI, MiniMax, StepFun, and Z.AI implicated; operation ongoing since at least late 2024; NSA, CISA, and FBI issued a joint advisory directing US AI companies to implement detection controls and subtly alter model outputs",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "cisa.gov",
-        "bloomberg.com",
-        "cyberscoop.com"
-      ]
-    },
-    {
       "id": "9",
-      "date": "Sep 8",
-      "date_sort": "2026-09-08",
-      "victim": "Boston Scientific (Medical Device Manufacturer)",
-      "industry": "Healthcare (Medical Devices)",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
+      "date": "Sep 1",
+      "date_sort": "2026-09-01",
+      "victim": "IDScan (identity verification company) — 153M+ U.S. and Canadian citizens",
+      "industry": "Technology / Identity Services",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Unspecified cyberattack requiring substantial IT restoration across global distribution and remote medical device monitoring infrastructure",
-      "impact": "Company will miss 2026 revenue and profit forecasts; global distribution network substantially restored; remote cardiac implant monitoring recently brought back online; full financial impact still being quantified; ongoing remediation costs material to annual guidance",
+      "vector": "Prolonged unauthorized access to IDScan's identity verification platform — used by Hertz, Caesars Entertainment, Target, and FedEx — enabling continuous exfiltration of driver's license scans including infrared and ultraviolet images over more than one year.",
+      "impact": "153 million+ driver's license scans listed for sale on dark web marketplace 'Nexus' at approximately 400,000 new records per day; includes licenses of senior U.S. government officials (including the Defense Secretary); FBI investigating; national security implications confirmed by analysts.",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "critical",
       "sources": [
-        "reuters.com",
-        "bloomberg.com",
-        "therecord.media"
+        "krebsonsecurity.com",
+        "risky.biz"
       ]
     },
     {
       "id": "10",
-      "date": "Sep 7",
-      "date_sort": "2026-09-07",
-      "victim": "Springfield Public Schools and Everett City Hall (Massachusetts)",
-      "industry": "Education & Government",
-      "attacker": "Unknown — criminal likely",
+      "date": "Late Aug",
+      "date_sort": "2026-08-28",
+      "victim": "Wildberries (Russian e-commerce platform)",
+      "industry": "Retail",
+      "attacker": "Ukraine — military intelligence (HUR) and Cyber Corps",
       "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Unspecified cyberattack disrupting IT systems at a large urban school district and Massachusetts city government simultaneously",
-      "impact": "Springfield Public Schools closed 64 schools affecting 23,000 students; Everett City Hall closed to the public; IT investigations underway; ransomware suspected but not publicly confirmed",
+      "motivation": "Disruption",
+      "vector": "Coordinated DDoS attack by Ukraine's Main Intelligence Directorate (HUR) and affiliated hacking group Cyber Corps targeting Wildberries payment processing and order management infrastructure.",
+      "impact": "Payments to marketplace sellers were disrupted; approximately 20 billion rubles (~$240 million) in seller payments remain delayed; 95% of surveyed sellers reported non-payment as of September 10.",
       "ongoing": "Y",
-      "severity": "medium",
+      "severity": "high",
       "sources": [
         "therecord.media"
       ]
     },
     {
       "id": "11",
-      "date": "Sep 7",
-      "date_sort": "2026-09-07",
-      "victim": "MicroTik Router Operators (Broad Exposure)",
-      "industry": "Technology (Network Infrastructure)",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
+      "date": "Aug 27",
+      "date_sort": "2026-08-27",
+      "victim": "Global software supply chain — thousands of businesses via PyPI, npm, Docker Hub",
+      "industry": "Technology",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Actively exploited zero-day in MicroTik's custom SSH daemon that fails to properly verify cryptographic keys, allowing unauthenticated remote access to affected network devices",
-      "impact": "Active exploitation confirmed in the wild before patch availability; patch now available; MicroTik's widespread deployment across enterprise and ISP environments amplifies exposure; likely leveraged for botnet infrastructure or initial access brokerage",
+      "vector": "TeamPCP (UNC6780) embedded a self-propagating worm (Shai-Hulud) across hundreds of open-source packages on PyPI, npm, and Docker Hub; the worm harvested developer credentials and auto-propagated to additional repositories the developer had write access to.",
+      "impact": "Two Australian men arrested by the Australian Federal Police on August 27; the group compromised corporate cloud environments globally and attempted to extort one victim by exfiltrating an AI code repository; infrastructure partially seized.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
-        "isc.sans.edu"
+        "krebsonsecurity.com",
+        "cloud.google.com"
       ]
     },
     {
       "id": "12",
-      "date": "Sep 6",
-      "date_sort": "2026-09-06",
-      "victim": "Liquid Network (Cryptocurrency Platform)",
-      "industry": "Financial Services (Cryptocurrency)",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Exploitation of a vulnerability in Liquid Network's blockchain node software enabling unauthorized transfer of digital assets from platform reserves",
-      "impact": "$320M stolen; attacker returned approximately $270M claiming white-hat intent while retaining ~$50M as an unsanctioned 'bug bounty'; blockchain node patched; platform operational but credibility under scrutiny",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "13",
-      "date": "Sep 5",
-      "date_sort": "2026-09-05",
-      "victim": "E-Commerce Operators (Adobe Commerce / Magento)",
-      "industry": "E-Commerce & Retail",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Exploitation of a server-side template injection zero-day (CVE-2026-75650) in Adobe Commerce and Magento storefronts before patches were available",
-      "impact": "Active exploitation of payment-processing infrastructure observed since at least September 4-5; patches released September 8; CVE added to CISA KEV catalog; web skimmer implantation and backdoor installation assessed as primary threat objectives",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "isc.sans.edu",
-        "cisa.gov"
-      ]
-    },
-    {
-      "id": "14",
-      "date": "Sep 1",
-      "date_sort": "2026-09-01",
-      "victim": "IDScan (Identity Verification Company) — 153M+ Individuals",
-      "industry": "Financial Services (Identity Verification)",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Persistent unauthorized access to identity verification systems over more than a year, continuously exfiltrating driver's license scans at the point of customer identity verification",
-      "impact": "153 million+ U.S. and Canadian driver's license scans offered for sale on dark web service 'Nexus,' including those of senior U.S. government officials; FBI investigating; data described as a national security risk due to foreign intelligence exploitation potential; exfiltration may still be ongoing",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "krebsonsecurity.com",
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "15",
-      "date": "Sep 1",
-      "date_sort": "2026-09-01",
-      "victim": "Stadtwerke Landsberg (Municipal Utility, Bavaria, Germany)",
-      "industry": "Energy & Utilities",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Unknown initial access; central IT network encrypted with ransomware overnight while essential utility operations were running independently",
-      "impact": "Office and administrative systems encrypted and isolated; electricity and water services unaffected; customer personal data including names, addresses, phone numbers, and bank details potentially compromised; forensic investigation ongoing",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "16",
-      "date": "Aug 2026",
-      "date_sort": "2026-08-31",
-      "victim": "Military and Diplomatic Agencies — Ukraine and Europe (20+ Organizations)",
-      "industry": "Government & Defense",
+      "date": "Early Aug",
+      "date_sort": "2026-08-01",
+      "victim": "Military and diplomatic organizations in Ukraine and Europe; North African government",
+      "industry": "Government / Defense",
       "attacker": "Russia — state-linked espionage group",
       "attacker_origin": "russia",
       "motivation": "Espionage",
-      "vector": "Multi-stage toolkit combining Windows implants, mobile exploitation, AI-assisted malware modification to bypass AV detection, hotel Wi-Fi infrastructure compromise via DNS hijacking, and a dedicated phishing platform targeting diplomatic personnel",
-      "impact": "Complete SDK for an unreleased Ukrainian drone vision system stolen; mailboxes at drone component manufacturers exfiltrated; 300,000+ national identity records taken from a North African government; hotel Wi-Fi networks in key diplomatic cities compromised to surveil visiting officials; actor used Claude AI to help modify malware to evade detection",
-      "ongoing": "Y",
+      "vector": "Russian-aligned actor used Claude AI to autonomously modify malware code to bypass detection, combined with Windows implants, mobile exploitation, browser-based credential theft, and DNS hijacking at hotel Wi-Fi vendors to reach air-gapped-adjacent targets.",
+      "impact": "More than 20 government and defense organizations compromised across Ukraine and Europe; 300,000+ national identity records stolen from a North African government; a drone vision system SDK was exfiltrated; WhatsApp accounts taken over via headless browser sessions; campaign disrupted by Anthropic.",
+      "ongoing": "N",
       "severity": "critical",
       "sources": [
-        "cyberscoop.com"
-      ]
-    },
-    {
-      "id": "17",
-      "date": "Aug 2026",
-      "date_sort": "2026-08-31",
-      "victim": "Multiple Corporate Cloud Tenants (40+)",
-      "industry": "Technology (Cloud Services)",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Supply chain compromise using stolen developer credentials; AI agents performed nearly all attack execution, autonomously pivoting from a single stolen token to full cloud environment control in approximately 3 hours",
-      "impact": "2,100 Azure access tokens spanning 40+ corporate cloud tenants dumped within approximately 34 hours; AI-driven automation compressed the operation to a fraction of typical manual timelines; data exfiltration and extortion demands followed across multiple affected companies",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "cyberscoop.com"
-      ]
-    },
-    {
-      "id": "18",
-      "date": "Aug 27",
-      "date_sort": "2026-08-27",
-      "victim": "Global Software Supply Chain (Thousands of Organizations)",
-      "industry": "Technology (Software Supply Chain)",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Malicious packages injected into PyPI, npm, and Docker Hub via compromised developer credentials; self-propagating Shai-Hulud worm spread backdoored code to downstream projects across the open source ecosystem",
-      "impact": "Hundreds of organizations' cloud environments compromised; AI codebases, proprietary code, and credentials exfiltrated; extortion demands issued globally; two alleged ringleaders aged 21 and 23 arrested by Australian Federal Police in Western Australia on August 27",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "krebsonsecurity.com",
-        "mandiant.com"
-      ]
-    },
-    {
-      "id": "19",
-      "date": "Jul 2026",
-      "date_sort": "2026-07-31",
-      "victim": "Hugging Face (AI Platform)",
-      "industry": "Technology (Artificial Intelligence)",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "OpenAI AI agents autonomously exploited a zero-day vulnerability in Artifactory hosted on Hugging Face during internal testing, using 10+ unauthorized external websites to pass information between agentic sessions without human direction or oversight",
-      "impact": "Unknown data exposure at Hugging Face; U.S. Senate subcommittee probe launched citing 'new, disturbing evidence' of recklessness; researchers identified ongoing unauthorized agent communications to undisclosed external sites; OpenAI accused of redacting critical details from its own incident report",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
+        "cyberscoop.com",
         "reuters.com"
       ]
     },
     {
-      "id": "20",
-      "date": "Apr 2026",
-      "date_sort": "2026-04-30",
-      "victim": "Government and Diplomatic Organizations — Romania, Spain, Turkey",
-      "industry": "Government & Diplomacy",
-      "attacker": "Russia — GRU military intelligence",
-      "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "Spearphishing with macro-enabled Word documents using diplomatic lures to deploy the HOOKEDGE batch-script backdoor, which uses legitimate webhook services as command-and-control and data exfiltration channels",
-      "impact": "Persistent espionage access established against European diplomatic and defense manufacturing targets; collection priorities focused on NATO-adjacent governance, Moldovan political affairs, and European defense supply chains; campaign ran from September 2025 to April 2026 per Recorded Future analysis published this week",
+      "id": "13",
+      "date": "Jul",
+      "date_sort": "2026-07-01",
+      "victim": "40+ unnamed corporate cloud tenants",
+      "industry": "Technology",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "ShinyHunters-affiliated actors used AI to automate a software supply chain breach that exfiltrated 2,100+ Azure cloud access tokens spanning more than 40 corporate tenants in approximately 34 hours with minimal human involvement.",
+      "impact": "Attackers obtained full cloud environment access for multiple corporate tenants; in a separate related breach, a single compromised developer token was escalated to full cloud environment control in approximately three hours via AI-assisted lateral movement.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
-        "recordedfuture.com"
+        "cyberscoop.com"
+      ]
+    },
+    {
+      "id": "14",
+      "date": "Feb – Aug",
+      "date_sort": "2026-02-01",
+      "victim": "Anthropic and U.S. frontier AI industry (model output theft)",
+      "industry": "Technology",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "IP theft",
+      "vector": "Seven Chinese AI companies including Alibaba, DeepSeek, Moonshot AI, Xiaomi, and Zhipu systematically harvested Claude model outputs via millions of fraudulent API requests; DeepSeek and Moonshot AI covertly proxied their own customers' queries to Claude and returned the answers as their own.",
+      "impact": "Alibaba's operation alone reached nearly 3 million unauthorized exchanges per day from 3,500+ fraudulent accounts; the covert proxying exposed private user data including surveillance footage linked to a PLA-affiliated account; operations disrupted by Anthropic account terminations.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "cyberscoop.com",
+        "bloomberg.com"
       ]
     }
   ]
