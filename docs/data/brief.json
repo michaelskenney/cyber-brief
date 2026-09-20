@@ -1,228 +1,108 @@
 {
-  "generated_at": "2026-09-19T20:11:38.414010+00:00",
-  "period_searched": "September 7–19, 2026",
+  "generated_at": "2026-09-20T08:12:21.106593+00:00",
+  "period_searched": "August 31 – September 19, 2026",
   "incident_count": 20,
   "incidents": [
     {
       "id": "1",
-      "date": "Sep 19",
-      "date_sort": "2026-09-19",
-      "victim": "Colorado water utilities (2 privately owned systems)",
-      "industry": "Water / Critical Infrastructure",
-      "attacker": "Unknown foreign actors",
+      "date": "Sep 18",
+      "date_sort": "2026-09-18",
+      "victim": "Enterprise networks using Cisco Identity Services Engine (ISE)",
+      "industry": "Network Security / Multi-Sector",
+      "attacker": "Unknown",
       "attacker_origin": "unknown",
-      "motivation": "Disruption",
-      "vector": "Remote access to OT/SCADA equipment at two privately-owned water utilities, each serving fewer than 200 customers.",
-      "impact": "Equipment was manipulated in both systems during August; no public safety impact or service disruption reported, but the incidents represent confirmed foreign OT compromise of US water infrastructure. Colorado Governor's office disclosed on Sept 19.",
-      "ongoing": "N",
+      "motivation": "Unclear",
+      "vector": "Unauthenticated crafted HTTP request exploits authentication bypass in Cisco ISE API endpoint (CVE-2026-76460, CVSS 10.0), granting root-level access without credentials.",
+      "impact": "Attackers gain control of ISE — the hub of most enterprise network access controls — enabling them to disable defenses, impersonate hosts, and pivot freely across connected networks; CISA added to KEV catalog same day patches released.",
+      "ongoing": "Y",
       "severity": "critical",
       "sources": [
-        "reuters.com"
+        "darkreading.com",
+        "cisa.gov"
       ]
     },
     {
       "id": "2",
       "date": "Sep 18",
       "date_sort": "2026-09-18",
-      "victim": "Organizations running Cisco Identity Services Engine (enterprise and government globally)",
-      "industry": "Technology / Network Infrastructure",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Unauthenticated crafted request to an exposed Cisco ISE API endpoint bypasses authentication, granting root-level control with no user interaction required.",
-      "impact": "Root access to Cisco ISE lets attackers modify network access policies, extract stored credentials, delete logs, and move laterally into every network segment ISE controls. CISA added CVE-2026-76460 (CVSS 10) to its KEV catalog on the same day Cisco disclosed and patched it.",
+      "victim": "IT professionals and cryptocurrency firms — Japan, US, Europe, globally",
+      "industry": "Technology / Cryptocurrency",
+      "attacker": "North Korea — state-sponsored, financially motivated",
+      "attacker_origin": "north_korea",
+      "motivation": "Financial",
+      "vector": "Fake job interview campaigns distributing malicious NPM packages (BeaverTail, InvisibleFerret, OtterCookie, StoatWaffle) via social media and freelance platforms to compromise developer devices.",
+      "impact": "30,000+ devices infected across 100 countries; $10.7M stolen from 7,000+ cryptocurrency wallets; Japan's first laptop farm dismantled; North Korean IT workers simultaneously infiltrating tech companies via stolen identities.",
       "ongoing": "Y",
-      "severity": "critical",
+      "severity": "high",
       "sources": [
-        "darkreading.com",
-        "cyberscoop.com",
-        "isc.sans.edu"
+        "ic3.gov",
+        "cyber.gov.au",
+        "therecord.media",
+        "cyberscoop.com"
       ]
     },
     {
       "id": "3",
       "date": "Sep 18",
       "date_sort": "2026-09-18",
-      "victim": "IT professionals and job seekers; 7,000+ cryptocurrency wallets; 30,000+ devices across 100 countries",
-      "industry": "Technology / Cryptocurrency",
-      "attacker": "North Korea — state-sponsored, financially motivated",
-      "attacker_origin": "north_korea",
-      "motivation": "Financial",
-      "vector": "North Korean operators pose as AI/blockchain company recruiters on LinkedIn and freelance platforms, instructing applicants to download malware-laden files (BeaverTail, InvisibleFerret, OtterCookie, StoatWaffle) during fake job interviews.",
-      "impact": "More than $10.5 million stolen from 7,000+ cryptocurrency wallets; 30,000+ devices infected across 100 countries. Stolen identities used to infiltrate tech companies for follow-on intrusions. Japan disrupted first known laptop farm linked to the operation. FBI/DoD/Australia/Germany/Japan issued joint advisory.",
+      "victim": "US frontier AI model developers",
+      "industry": "Technology / Artificial Intelligence",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "IP theft",
+      "vector": "Industrial-scale systematic querying of US frontier AI models to extract proprietary model capabilities and training methodology through knowledge distillation at scale.",
+      "impact": "Intellectual property extracted from US AI companies, eroding US competitive advantage in frontier AI development; CISA, NSA, and FBI issued joint advisory with TTPs and defensive guidance.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "therecord.media",
-        "cyberscoop.com",
-        "cyber.gov.au"
+        "cisa.gov"
       ]
     },
     {
       "id": "4",
       "date": "Sep 18",
       "date_sort": "2026-09-18",
-      "victim": "Open-source ecosystems (PyPI, npm, Docker Hub); AI/technology companies",
-      "industry": "Technology / Software Supply Chain",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Trojanized MCP servers and malicious repository forks; DUSTMAKER credential-stealer hides in AI tool directories (.claude/, .vscode/, .cursor/), injects prompt-injection into codebases, and poisons CI/CD pipelines to steal OIDC tokens and sign malicious packages.",
-      "impact": "Multiple large-scale supply chain compromises across PyPI, npm, and Docker Hub since March 2026; one victim's proprietary AI repository exfiltrated and held for ransom. Stolen credentials monetized through ransomware partnerships. Campaign uses AI automation to operate at scale.",
+      "victim": "Russian technology and defense sector companies",
+      "industry": "Technology / Defense",
+      "attacker": "Unknown — state-suspected espionage group",
+      "attacker_origin": "unknown",
+      "motivation": "Espionage",
+      "vector": "Stolen VPN credentials used to access corporate networks; GhostContainer memory-only backdoor deployed via Microsoft Exchange server manipulation to evade security logging.",
+      "impact": "Multiple Russian companies breached; domain controllers targeted for persistent access; group previously focused on Chinese high-tech and defense sector has expanded scope to Russian targets.",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "medium",
       "sources": [
-        "cloud.google.com"
+        "therecord.media"
       ]
     },
     {
       "id": "5",
       "date": "Sep 18",
       "date_sort": "2026-09-18",
-      "victim": "Organizations running ISSABEL PBX telephony management framework",
-      "industry": "Telecommunications",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "ISSABEL framework shipped with a hard-coded JWT signing key; attackers forge authentication tokens to bypass security and execute arbitrary code on connected Asterisk telephony servers with no credentials required.",
-      "impact": "Unauthenticated remote code execution on PBX infrastructure confirmed in active exploitation by Shadowserver Foundation. Patch submitted but exploitation preceded public disclosure.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "isc.sans.edu"
-      ]
-    },
-    {
-      "id": "6",
-      "date": "Sep 18",
-      "date_sort": "2026-09-18",
-      "victim": "Russian technology and defense companies (multiple, unspecified)",
-      "industry": "Defense / Technology",
-      "attacker": "Unknown — state-suspected cyberespionage group",
-      "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "Stolen VPN credentials used for initial access; GhostContainer backdoor installed on Microsoft Exchange servers via memory-injection technique; Active Directory exploited for privilege escalation and lateral movement to domain controllers.",
-      "impact": "Multiple Russian defense and technology firms breached; attackers maintain persistent access, steal credentials, and impersonate legitimate users. Group previously targeted Chinese semiconductor, AI, and defense sectors and has now expanded operations to Russian companies.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "7",
-      "date": "Sep 17",
-      "date_sort": "2026-09-17",
-      "victim": "Revolut (London-based fintech, ~50 million customers)",
-      "industry": "Financial Services",
-      "attacker": "Unknown criminal gang",
+      "victim": "12+ companies — entertainment, telecom, technology, cloud, cryptocurrency (US)",
+      "industry": "Technology / Financial",
+      "attacker": "Criminal gang — social engineering and data extortion",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Unauthorized third-party access to Revolut systems exposed sensitive customer information; method not publicly disclosed.",
-      "impact": "Sensitive data of an unspecified number of customers exposed; a criminal group posted a public ultimatum demanding $3 million within 24 hours, threatening to sell the stolen data. Revolut reports no direct contact from attackers and is investigating.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "bloomberg.com"
-      ]
-    },
-    {
-      "id": "8",
-      "date": "Sep 17",
-      "date_sort": "2026-09-17",
-      "victim": "Travelers and enterprise users in hospitality networks globally",
-      "industry": "Hospitality / Travel",
-      "attacker": "Russia — FSB intelligence service",
-      "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "Attackers manipulate DNS and HTTP traffic at hotel networks, redirecting travelers into device-code phishing via legitimate Microsoft sign-in pages or malware delivered as fake software updates (CaptiveCrunch campaign).",
-      "impact": "Cloud identity compromise and endpoint malware installation on targeted travelers' devices; malware collects credentials, session tokens, security configurations, and remote-access history. Microsoft Threat Intelligence disclosed the active campaign.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "microsoft.com"
-      ]
-    },
-    {
-      "id": "9",
-      "date": "Sep 17",
-      "date_sort": "2026-09-17",
-      "victim": "Enterprise organizations globally (sector unspecified)",
-      "industry": "Cross-sector",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Attackers impersonate IT support over Microsoft Teams, persuade users to grant remote desktop access, then use PowerShell to deploy a malicious MSI package staging a portable Node.js C2 runtime.",
-      "impact": "Persistent command-and-control established; attackers mapped Active Directory and attempted lateral movement to domain controllers and certificate authorities via WinRM. Each step uses legitimate enterprise tools, blending with normal operations to evade detection.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "microsoft.com"
-      ]
-    },
-    {
-      "id": "10",
-      "date": "Sep 17",
-      "date_sort": "2026-09-17",
-      "victim": "Russia's Central Election Commission, Rostelecom, Vybory election platform",
-      "industry": "Government / Election Infrastructure",
-      "attacker": "Unknown — hacktivist group",
-      "attacker_origin": "unknown",
-      "motivation": "Political",
-      "vector": "Hackers breached election commission IT systems and contractor infrastructure, exfiltrating internal documents, server configurations, passwords, and developer communications.",
-      "impact": "Internal documents, credentials, and communications from Russia's Central Election Commission and Rostelecom contractors stolen and shared with independent media days before Russia's State Duma parliamentary vote (Sep 18–20). Depth of access to voting or ballot-counting systems remains unclear.",
+      "vector": "Social engineering via phone calls impersonating IT support to steal employee credentials; SIM swapping to hijack accounts of high-net-worth cryptocurrency holders.",
+      "impact": "Ahmed Elbadawy pleaded guilty; ~$17.6M in cryptocurrency, vehicles, jewelry and designer goods sought for forfeiture; 29 individuals and 12+ companies victimized between 2021–2023.",
       "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "therecord.media",
-        "reuters.com"
-      ]
-    },
-    {
-      "id": "11",
-      "date": "Sep 17",
-      "date_sort": "2026-09-17",
-      "victim": "Government agencies in Guatemala, Honduras, Puerto Rico, Panama, Venezuela, Peru, Argentina",
-      "industry": "Government",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Chinese espionage operators deployed the SparroWocky backdoor against government departments, exploiting Microsoft Exchange vulnerabilities to achieve persistent access; malware obfuscates analysis and leverages open-source code.",
-      "impact": "Government agencies across seven Latin American countries breached; attackers can exfiltrate files, capture screenshots, and gather network intelligence. ESET assesses the campaign monitors regional governments' responses to US pressure on Chinese investments, including the Panama Canal ports dispute.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "12",
-      "date": "Sep 16",
-      "date_sort": "2026-09-16",
-      "victim": "Organizations running Cisco Secure Email Gateway",
-      "industry": "Technology / Email Security",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Actively exploited zero-day (CVE-2026-76461) in Cisco Secure Email Gateway; specific vulnerability class not publicly detailed at time of disclosure.",
-      "impact": "Second consecutive-day Cisco zero-day patched and confirmed exploited; attackers gained unauthorized access to email security appliances before patches were available. CISA added to KEV catalog.",
-      "ongoing": "Y",
-      "severity": "high",
+      "severity": "medium",
       "sources": [
         "cyberscoop.com"
       ]
     },
     {
-      "id": "13",
+      "id": "6",
       "date": "Sep 15",
       "date_sort": "2026-09-15",
-      "victim": "Dissidents, activists, and journalists in UK, US, Netherlands, and globally",
+      "victim": "Dissidents, activists, journalists — UK, US, Netherlands, worldwide",
       "industry": "Civil Society / Media",
-      "attacker": "Iran — Ministry of Intelligence (MOIS)",
+      "attacker": "Iran — state intelligence service",
       "attacker_origin": "iran",
       "motivation": "Political",
-      "vector": "Iranian operators use WhatsApp and Telegram to impersonate trusted contacts or platform support, building rapport before delivering CHOSEN BRICK malware disguised as legitimate apps (Norton, Telegram, KeePass) or medical scan files.",
-      "impact": "CHOSEN BRICK captures screen content, intercepts emails and messages, activates the microphone, and can wipe devices. Personal details of some victims published on pro-Iranian leak sites, increasing physical safety risks. NCSC/FBI/Netherlands AIVD issued joint advisory with indicators of compromise.",
+      "vector": "Spear-phishing via WhatsApp and Telegram impersonating trusted contacts, tricking targets into installing CHOSEN BRICK malware disguised as apps (Pictory, Norton, KeePass) or fake medical files.",
+      "impact": "Device compromise enabling collection of emails, messages, contacts, screen captures, and microphone audio; personal data published on pro-Iranian leak sites enabling tracking of movements and potential physical targeting of dissidents abroad.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -230,16 +110,16 @@
       ]
     },
     {
-      "id": "14",
+      "id": "7",
       "date": "Sep 14",
       "date_sort": "2026-09-14",
       "victim": "Unnamed Spanish organization",
-      "industry": "Commercial (unspecified)",
-      "attacker": "Unknown criminal",
+      "industry": "Unknown",
+      "attacker": "Unknown — criminal likely",
       "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Attacker used a large language model as an autonomous agent to conduct reconnaissance, discover exposed credentials, identify an application vulnerability, and chain exploits to breach personal data stores.",
-      "impact": "Personal data records were modified and corporate invoices accessed; Spain's AEPD data protection authority cited this as the first confirmed AI-agent-driven data breach, warning that AI-enabled attacks compress the defender's response window to near zero.",
+      "motivation": "Unclear",
+      "vector": "AI agent (LLM) autonomously discovered loose credentials via open-source intelligence, then chained them with a corporate application vulnerability to access personal data systems.",
+      "impact": "Personal data records modified; corporate invoices accessed; Spain's data protection authority (AEPD) published it as the first confirmed agentic AI-enabled breach on record.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
@@ -247,59 +127,127 @@
       ]
     },
     {
-      "id": "15",
-      "date": "Sep 9",
-      "date_sort": "2026-09-09",
-      "victim": "IDScan (identity verification service); 153 million US and Canadian individuals",
-      "industry": "Identity Verification / Technology",
-      "attacker": "Unknown criminal",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Attackers compromised IDScan's identity verification platform and continuously exfiltrated driver's license records for over a year, ingesting nearly 400,000 new records per day.",
-      "impact": "Approximately 153 million US and Canadian driver's licenses — roughly 63% of all US licenses — stolen and offered on the dark web; records include photos, addresses, and license numbers. US officials including a senior FBI official had records in the database. National security implications given adversary potential to link this data with other stolen identity databases.",
-      "ongoing": "N",
-      "severity": "critical",
-      "sources": [
-        "risky.biz",
-        "krebsonsecurity.com"
-      ]
-    },
-    {
-      "id": "16",
-      "date": "Sep 9",
-      "date_sort": "2026-09-09",
-      "victim": "Americans targeted by Southeast Asia-based scam centers",
-      "industry": "Financial Services / Consumer",
-      "attacker": "Criminal gang — cyber fraud (Chinese-language cybercrime platform)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Chinese-language illicit marketplace connecting scam center operators with financial services, escrow, and money laundering facilitators; migrated to encrypted messaging app and cryptocurrency wallet under law enforcement pressure.",
-      "impact": "Platform processed over $24 billion in digital assets since 2022 supporting cyber scam operations targeting Americans; reportedly used by North Korean hackers and multiple OFAC-designated entities. OFAC sanctioned the platform and two supporting entities; DOJ's Scam Center Strike Force seized infrastructure.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "home.treasury.gov"
-      ]
-    },
-    {
-      "id": "17",
-      "date": "Sep 8",
-      "date_sort": "2026-09-08",
-      "victim": "Windows users and enterprises globally",
-      "industry": "Technology (cross-sector)",
+      "id": "8",
+      "date": "Sep 11",
+      "date_sort": "2026-09-11",
+      "victim": "Veradigm (Electronic Health Records platform)",
+      "industry": "Healthcare",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "Two actively exploited Windows privilege escalation zero-days (CVE-2026-81963 and CVE-2026-85880) addressed in September Patch Tuesday alongside CVE-2026-69829, a CVSS 9.8 Windows Shell RCE requiring no user interaction.",
-      "impact": "Record 974 vulnerabilities patched in a single release, including 113 rated critical; two zero-days exploited before the patch dropped allow local privilege escalation to SYSTEM; DNS critical flaw CVE-2026-69730 affects Windows Server 2012 onward.",
+      "vector": "Third-party vendor compromise provided attackers with a foothold into Veradigm's healthcare network.",
+      "impact": "Patient and provider data breach disclosed in SEC filing; scope of exposure under investigation; EHR systems serving thousands of clinicians potentially affected.",
       "ongoing": "Y",
-      "severity": "critical",
+      "severity": "medium",
       "sources": [
-        "krebsonsecurity.com"
+        "risky.biz"
       ]
     },
     {
-      "id": "18",
+      "id": "9",
+      "date": "Sep 11",
+      "date_sort": "2026-09-11",
+      "victim": "Trezor hardware wallet users",
+      "industry": "Cryptocurrency / Financial",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Breach of Trezor's third-party email service provider; phishing emails sent from official Trezor domain accounts to hardware wallet customers.",
+      "impact": "Official Trezor accounts weaponized to deliver phishing to cryptocurrency users; campaign designed to steal wallet credentials, seed phrases, and private keys.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "10",
+      "date": "Sep 11",
+      "date_sort": "2026-09-11",
+      "victim": "Stadtwerke Landsberg KU (German public utility)",
+      "industry": "Energy / Utilities",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Ransomware attack targeting corporate and business IT infrastructure at a German municipal utility provider.",
+      "impact": "Corporate and business IT systems encrypted; public utility services (electricity, gas, water) unaffected; incident response and recovery ongoing.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "11",
+      "date": "Sep 9",
+      "date_sort": "2026-09-09",
+      "victim": "Organizations using Cisco Secure Firewall Management Center",
+      "industry": "Network Security / Multi-Sector",
+      "attacker": "Russia — GRU military intelligence",
+      "attacker_origin": "russia",
+      "motivation": "Espionage",
+      "vector": "Exploitation of Cisco Secure FMC authentication bypass (CVE-2026-20079, CVSS 10.0) and static credential flaw (CVE-2026-20316) to deploy Cyclops Blink persistent backdoor across managed firewall networks.",
+      "impact": "Cyclops Blink malware deployed with DNS-over-HTTPS C2 channels; managed device configurations and credentials harvested for lateral movement into connected enterprise networks; active espionage campaign ongoing.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "blog.talosintelligence.com"
+      ]
+    },
+    {
+      "id": "12",
+      "date": "Sep 9",
+      "date_sort": "2026-09-09",
+      "victim": "Undisclosed enterprise — Cisco FMC ransomware victim",
+      "industry": "Unknown",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Logged into Cisco Secure FMC using static default credentials (CVE-2026-20316); performed full Active Directory reconnaissance and mass credential harvesting before deploying Qilin ransomware to selected endpoints.",
+      "impact": "Active Directory architecture fully mapped; enterprise credentials stolen; Qilin ransomware deployed causing significant data encryption across the organization.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "blog.talosintelligence.com"
+      ]
+    },
+    {
+      "id": "13",
+      "date": "Sep 8",
+      "date_sort": "2026-09-08",
+      "victim": "Windows users and enterprises globally",
+      "industry": "Multi-Sector",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Active in-the-wild exploitation of Windows privilege escalation zero-days CVE-2026-81963 (Update Stack) and CVE-2026-85880 (ALPC heap overflow) before September Patch Tuesday.",
+      "impact": "Privilege escalation to SYSTEM on vulnerable Windows machines; Microsoft's largest-ever single patch batch (974 vulnerabilities, 113 critical) released; both zero-days confirmed actively exploited prior to patches.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "krebsonsecurity.com",
+        "blog.talosintelligence.com"
+      ]
+    },
+    {
+      "id": "14",
+      "date": "Sep 8",
+      "date_sort": "2026-09-08",
+      "victim": "Ukrainian government organization (unnamed)",
+      "industry": "Government",
+      "attacker": "Russia — state-linked cyber actor",
+      "attacker_origin": "russia",
+      "motivation": "Espionage",
+      "vector": "ClearFake JavaScript injected on a compromised website displayed a ClickFix CAPTCHA that prompted the target to execute a WebDAV DLL loader, installing Amatera credential stealer and NetSupport Manager RAT.",
+      "impact": "Credentials harvested from Ukrainian government network; persistent remote access established via NetSupport Manager with command-and-control infrastructure based in Russia.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "blog.talosintelligence.com"
+      ]
+    },
+    {
+      "id": "15",
       "date": "Sep 7",
       "date_sort": "2026-09-07",
       "victim": "Berlin city government (Germany)",
@@ -307,46 +255,98 @@
       "attacker": "Criminal gang — ransomware",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "ClickFix social engineering lured a city employee into solving a fake Cloudflare CAPTCHA and pasting a malicious command; Rhysida ransomware was subsequently deployed across city networks.",
-      "impact": "Rhysida ransomware encrypted Berlin city systems; attackers demanded $2 million, were refused, and publicly dumped stolen city data. ClickFix has now been observed enabling multiple nation-state and criminal ransomware deployments.",
+      "vector": "Employee infected via ClickFix fake Cloudflare CAPTCHA prompt that triggered malware installation; Rhysida ransomware subsequently deployed to city government systems.",
+      "impact": "$2 million ransom demanded; Berlin officials refused to pay; sensitive government data published on Rhysida ransomware group's data leak site.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
         "risky.biz"
+      ]
+    },
+    {
+      "id": "16",
+      "date": "Sep 7",
+      "date_sort": "2026-09-07",
+      "victim": "French notary sector — 500+ offices (~7% of all French notaries)",
+      "industry": "Legal / Financial Services",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Phishing campaigns to gain persistent deep network access; wire transaction details silently modified over years to redirect notarial property transaction payments.",
+      "impact": "€35 million stolen over 4 years from 500+ notary offices; ANSSI spent 2 years on remediation; risk of forged notarized documents identified; French notary sector now mandating 2FA for financial transactions.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "17",
+      "date": "Sep 7",
+      "date_sort": "2026-09-07",
+      "victim": "Liquid Network (Blockstream cryptocurrency platform)",
+      "industry": "Cryptocurrency / Financial",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Exploitation of an undisclosed vulnerability in the Liquid Network cryptocurrency settlement platform protocol.",
+      "impact": "$320 million in Bitcoin extracted; platform suspended; attackers claiming 'white hat' status returned ~$273M but retained ~$47M as a self-declared bug bounty.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "18",
+      "date": "Early Sep",
+      "date_sort": "2026-09-04",
+      "victim": "IDScan — 153 million US and Canadian citizens",
+      "industry": "Identity Verification",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Long-term unauthorized access to IDScan identity verification systems; driver's license data continuously exfiltrated for over a year and sold via the 'Nexus' dark web service.",
+      "impact": "153 million US and Canadian driver's licenses exposed (~63% of all US licenses), including senior federal officials; database growing ~400,000 records daily; national security implications acknowledged; class-action lawsuits filed.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "risky.biz",
+        "krebsonsecurity.com"
       ]
     },
     {
       "id": "19",
-      "date": "Sep 7",
-      "date_sort": "2026-09-07",
-      "victim": "500+ French notary offices (approx. 7% of France's notaries)",
-      "industry": "Legal / Professional Services",
-      "attacker": "Criminal gang — BEC",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Phishing for initial access; attackers then silently modified client banking details within notary transaction systems over months or years to redirect wire transfers.",
-      "impact": "Over €35 million stolen across 500+ firms during a four-year campaign; France's national cybersecurity agency (ANSSI) spent two years remediating; sector-wide procedural changes implemented to require out-of-band transaction confirmation.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "20",
-      "date": "Aug 24",
-      "date_sort": "2026-08-24",
-      "victim": "Two foreign-flagged commercial vessels bound for US ports",
-      "industry": "Maritime / Shipping",
-      "attacker": "Unknown foreign actors",
+      "date": "Aug 2026",
+      "date_sort": "2026-08-31",
+      "victim": "Two private water utilities in Colorado (US)",
+      "industry": "Water / Critical Infrastructure",
+      "attacker": "Unknown — foreign state actor",
       "attacker_origin": "unknown",
       "motivation": "Disruption",
-      "vector": "Hackers breached the computer networks of two commercial vessels while in the Gulf of Mexico; attack method not publicly disclosed.",
-      "impact": "US Coast Guard and FBI conducted emergency boardings of both vessels (Aug 21 and Aug 24) after indications of network compromise; incidents part of a series of cyber attacks US officials have linked to Iran amid ongoing US-Iran tensions.",
+      "vector": "Remote access to operational technology equipment controlling water distribution systems at two privately-owned Colorado utilities serving under 200 customers each.",
+      "impact": "Water system equipment remotely manipulated; Colorado governor confirmed incidents; no impact on public safety or water service reported; incidents under federal investigation.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
         "reuters.com"
+      ]
+    },
+    {
+      "id": "20",
+      "date": "Aug 2026",
+      "date_sort": "2026-08-31",
+      "victim": "JetBrains Cadence customers",
+      "industry": "Technology / Software",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Exploitation of vulnerability in JetBrains' own TeamCity CI/CD servers; attackers pivoted to the Cadence cloud-based LLM training platform used by customers.",
+      "impact": "Source code and credentials stored by customers in Cadence LLM training instances likely stolen; software and AI development intellectual property compromised.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "risky.biz"
       ]
     }
   ]
