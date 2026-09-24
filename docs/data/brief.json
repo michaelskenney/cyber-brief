@@ -1,24 +1,22 @@
 {
-  "generated_at": "2026-09-23T20:14:54.055617+00:00",
-  "period_searched": "September 21–23, 2026",
-  "incident_count": 22,
+  "generated_at": "2026-09-24T08:12:43.033780+00:00",
+  "period_searched": "September 10-24, 2026",
+  "incident_count": 26,
   "incidents": [
     {
       "id": "1",
       "date": "Sep 23",
       "date_sort": "2026-09-23",
-      "victim": "FBI — FBIjobs.gov (federal law enforcement job portal)",
-      "industry": "Government / Law Enforcement",
-      "attacker": "Criminal gang — data extortion (ShinyHunters)",
-      "attacker_origin": "criminal",
-      "motivation": "Disruption",
-      "vector": "Unknown intrusion method used to breach FBIjobs.gov; attackers defaced the site and claim to have exfiltrated records on nearly all current and former FBI agents and job applicants.",
-      "impact": "FBIjobs.gov defaced and taken offline; 5,000 FBI agent records confirmed authentic by multiple media outlets; group threatens full release unless the FBI retracts a May 2026 public advisory; FBI investigating.",
+      "victim": "Western AI Services and Frontier Labs",
+      "industry": "Technology",
+      "attacker": "China — state-linked or criminal operators",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "Over 10,000 proxy relay servers routing malicious Chinese traffic to Western AI services, including distillation attacks against frontier AI model providers to steal model capabilities",
+      "impact": "Ongoing theft of AI model capabilities via distillation attacks; abuse of compromised AI accounts at scale; circumvention of region restrictions across major Western AI platforms; full scope under investigation by Team Cymru",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "medium",
       "sources": [
-        "therecord.media",
-        "cyberscoop.com",
         "risky.biz"
       ]
     },
@@ -26,35 +24,35 @@
       "id": "2",
       "date": "Sep 23",
       "date_sort": "2026-09-23",
-      "victim": "Organizations running Check Point, Arista VeloCloud, and F5 BIG-IP network appliances",
-      "industry": "Technology / Network Security",
-      "attacker": "Unknown — criminal likely",
+      "victim": "Russian Navy / Military-Industrial Complex",
+      "industry": "Defense",
+      "attacker": "Ukrainian hacktivist group (Ukrainian Militant)",
       "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Three separate zero-days actively exploited simultaneously: a directory-traversal RCE in Check Point management servers, a CVSS 10.0 RCE in Arista VeloCloud SD-WAN orchestrators, and a buffer overflow in F5 BIG-IP APM configured as an OAuth server; hotfixes released Sep 23.",
-      "impact": "Active in-the-wild exploitation of three network security appliance zero-days on the same day; attackers gain remote code execution on critical network perimeter devices; emergency patching required.",
-      "ongoing": "Y",
+      "motivation": "Political",
+      "vector": "Intrusion into Russian science research centers and defense manufacturers to exfiltrate technical documentation on active naval programs",
+      "impact": "Technical documentation on 70+ Russian naval projects leaked publicly, including submarines, warships, navigation systems, sonar technology, and autonomous underwater vehicles",
+      "ongoing": "N",
       "severity": "medium",
       "sources": [
-        "isc.sans.edu"
+        "risky.biz"
       ]
     },
     {
       "id": "3",
       "date": "Sep 22",
       "date_sort": "2026-09-22",
-      "victim": "12,000+ Microsoft customer email inboxes across 10,000+ organizations globally",
-      "industry": "Cross-sector (financial, healthcare, construction, wholesale, real estate, higher education)",
-      "attacker": "Criminal gang — phishing-as-a-service / business email compromise",
+      "victim": "Organizations worldwide (10,000+ orgs compromised)",
+      "industry": "Multiple sectors",
+      "attacker": "Criminal gang — AI-powered phishing-as-a-service operators (2 UK nationals arrested)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "AI-powered phishing-as-a-service platform EvilTokens sold on Telegram ($1,500 initiation + $500/month) used device code phishing to steal session tokens and bypass MFA, enabling persistent inbox access and targeted financial fraud.",
-      "impact": "12,000+ inboxes compromised across 10,000+ organizations in 79 countries; at least $1.7M in confirmed losses; Microsoft and partners seized 50 websites and disabled 175+ domains under federal court order Sep 15; UK Metropolitan Police arrested two operators (Felix Utomi and Waidi Segun Adams) Sep 18.",
+      "vector": "AI-powered phishing-as-a-service platform sold on Telegram ($1,500 initiation + $500/month) used device code phishing and OAuth token theft to compromise email accounts without requiring passwords",
+      "impact": "12,000+ email inboxes compromised across 10,000+ organizations in the US, Canada, UK, Australia, India, and France; Microsoft seized 50 websites and disabled 150+ domains on Sept 22; 2 UK operators arrested Sept 11",
       "ongoing": "N",
-      "severity": "critical",
+      "severity": "high",
       "sources": [
         "microsoft.com/security",
-        "cyberscoop.com",
+        "therecord.media",
         "risky.biz"
       ]
     },
@@ -62,53 +60,52 @@
       "id": "4",
       "date": "Sep 22",
       "date_sort": "2026-09-22",
-      "victim": "Internet users in 100+ countries",
-      "industry": "Telecommunications / Internet Infrastructure",
-      "attacker": "Iran — autonomous system (deliberate vs. misconfiguration undetermined)",
-      "attacker_origin": "iran",
-      "motivation": "Disruption",
-      "vector": "An Iranian autonomous system originated a BGP route leak or hijack that propagated globally, disrupting internet routing across more than 100 countries.",
-      "impact": "Internet access disrupted across 100+ countries on Sep 22; confirmed by BGP monitoring firm Qrator and analyst Doug Madory; whether the incident was deliberate or a misconfiguration has not been publicly determined.",
-      "ongoing": "N",
+      "victim": "FBI (FBIjobs.gov)",
+      "industry": "Government / Law Enforcement",
+      "attacker": "Criminal gang — data extortion (ShinyHunters)",
+      "attacker_origin": "criminal",
+      "motivation": "Political",
+      "vector": "Exploitation of identity system weaknesses to access the FBI's job application portal; website defaced and employee data exfiltrated",
+      "impact": "Data on nearly all FBI agents and job applicants potentially stolen; 5,000 agent records independently verified as legitimate by media; FBI jobs portal taken offline; group threatening full data release unless FBI retracts a prior public advisory",
+      "ongoing": "Y",
       "severity": "high",
       "sources": [
+        "therecord.media",
+        "cyberscoop.com",
         "risky.biz"
       ]
     },
     {
       "id": "5",
-      "date": "Sep 21",
-      "date_sort": "2026-09-21",
-      "victim": "ZRON hacking victims — companies and governments (exact scope not disclosed)",
-      "industry": "Cross-sector (victims of Chinese cyber espionage)",
-      "attacker": "China — state-linked hacker-for-hire network (ZRON)",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Internal data from Chinese hacker-for-hire firm ZRON leaked publicly, revealing the company's AI-powered system for indexing vast repositories of stolen data to enable rapid querying by Chinese intelligence services.",
-      "impact": "Leak exposes the scale of a state-linked Chinese hacking-for-hire operation; AI infrastructure enables Chinese state actors to rapidly query stolen corporate and government data; full victim count and stolen data scope not yet disclosed.",
+      "date": "Sep 22",
+      "date_sort": "2026-09-22",
+      "victim": "macOS users globally (via compromised websites)",
+      "industry": "Multiple sectors",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Malicious scripts injected into legitimate websites serve fake bot-verification popups (ClickFix technique) that trick macOS users into running a shell script delivering an AMOS stealer variant",
+      "impact": "Credential theft and data exfiltration from infected macOS systems; campaign identified as active and spreading via multiple compromised legitimate websites",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "medium",
       "sources": [
-        "risky.biz"
+        "isc.sans.edu"
       ]
     },
     {
       "id": "6",
-      "date": "Sep 19",
-      "date_sort": "2026-09-19",
-      "victim": "Clop ransomware gang (criminal infrastructure targeted by rival group)",
-      "industry": "Criminal enterprise",
-      "attacker": "Criminal gang — data extortion (ShinyHunters)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "ShinyHunters exploited a Grav CMS vulnerability to seize and deface Clop's dark web leak site, then issued an eight-figure extortion demand and threatened to expose companies that paid Clop ransoms.",
-      "impact": "Clop's dark web site seized; ShinyHunters threatens to publish identities of Clop's victim companies, ransom amounts paid, and Bitcoin payment addresses from Clop's Oracle EBS campaign; feud stems from Clop's unauthorized use of a ShinyHunters-discovered vulnerability and direct threats against a ShinyHunters member.",
-      "ongoing": "Y",
-      "severity": "high",
+      "date": "Sep 21",
+      "date_sort": "2026-09-21",
+      "victim": "Global internet users (100+ countries)",
+      "industry": "Telecommunications / Internet Infrastructure",
+      "attacker": "Iran — state telecommunications (Iranian autonomous system)",
+      "attacker_origin": "iran",
+      "motivation": "Unclear",
+      "vector": "Iranian autonomous system caused a massive BGP route leak that disrupted global internet routing",
+      "impact": "Internet access disrupted across more than 100 countries; cause and intent remain under investigation",
+      "ongoing": "N",
+      "severity": "medium",
       "sources": [
-        "darkreading.com",
-        "therecord.media",
-        "reuters.com",
         "risky.biz"
       ]
     },
@@ -116,48 +113,32 @@
       "id": "7",
       "date": "Sep 18",
       "date_sort": "2026-09-18",
-      "victim": "IT professionals and software developers globally",
-      "industry": "Technology / Cross-sector",
+      "victim": "IT professionals and cryptocurrency developers worldwide (30,000+ victims)",
+      "industry": "Technology / Finance",
       "attacker": "North Korea — state-sponsored, financially motivated (313 General Bureau)",
       "attacker_origin": "north_korea",
       "motivation": "Financial",
-      "vector": "Fake job interview scheme delivering malicious npm packages (BeaverTail, InvisibleFerret, OtterCookie, OtterCandy, StoatWaffle) during staged technical interviews targeting developers; parallel laptop farm schemes insert North Korean IT workers into Western tech firms.",
-      "impact": "30,000+ devices infected across 100+ countries; 7,000+ cryptocurrency wallets compromised; 1.7 billion JPY (~$10.71M USD) transferred to North Korea; first laptop farm dismantled in Japan; five-nation joint advisory issued by FBI, Japan NPA, Australia ASD, Germany BND and BfV.",
+      "vector": "Fake job interview scheme delivers malicious npm packages (BeaverTail, InvisibleFerret, OtterCookie, StoatWaffle) during technical coding assignments to steal cryptocurrency and credentials",
+      "impact": "30,000+ devices infected across 100+ countries; 7,000+ cryptocurrency wallets exfiltrated; $10.71M USD transferred to North Korea; laptop farms in Japan dismantled; 2 Australian facilitators arrested August 27",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
         "ic3.gov",
-        "cyber.gov.au"
+        "cyber.gov.au",
+        "krebsonsecurity.com"
       ]
     },
     {
       "id": "8",
-      "date": "Sep 18",
-      "date_sort": "2026-09-18",
-      "victim": "Rust programming language core team and popular library maintainers",
-      "industry": "Technology / Open-source software",
-      "attacker": "North Korea — state-sponsored (attack style assessed as consistent with North Korean operations; formal attribution not confirmed)",
-      "attacker_origin": "north_korea",
-      "motivation": "IP theft",
-      "vector": "Threat actor contacts Rust library maintainers with fake job offers or project collaboration requests, then lures targets onto video calls where malware is delivered to developer workstations.",
-      "impact": "Rust team alerted core members and library owners; no confirmed compromises disclosed; Python security team separately alerted to the same campaign; attack pattern mirrors North Korean developer-targeting supply chain operations.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "9",
       "date": "Sep 17",
       "date_sort": "2026-09-17",
-      "victim": "US financial system / IRGC sanctions evasion",
-      "industry": "Financial / Cryptocurrency",
+      "victim": "U.S. sanctions framework / international financial system",
+      "industry": "Finance / Cryptocurrency",
       "attacker": "Iran — IRGC (Islamic Revolutionary Guard Corps)",
       "attacker_origin": "iran",
-      "motivation": "Political",
-      "vector": "Iranian cryptocurrency exchange BitBank, controlled by sanctioned businessman Babak Zanjani, served as a laundering conduit transferring hundreds of millions in Bitcoin to the IRGC in violation of US sanctions.",
-      "impact": "Hundreds of millions in Bitcoin transferred to the IRGC Jun–Jul 2026; OFAC sanctioned BitBank, Pishtaz Simorgh, and three Zanjani associates on Sep 17 (Operation Economic Outcast); all US-linked assets frozen and US persons prohibited from transacting.",
+      "motivation": "Financial",
+      "vector": "Iranian cryptocurrency exchange BitBank used as a conduit to transfer hundreds of millions in Bitcoin to the IRGC via the Babak Zanjani international sanctions evasion network",
+      "impact": "Hundreds of millions in Bitcoin transferred to IRGC funding; U.S. Treasury designated BitBank and associated entities in Operation Economic Outcast on September 17",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -165,51 +146,68 @@
       ]
     },
     {
-      "id": "10",
-      "date": "Sep 17",
-      "date_sort": "2026-09-17",
-      "victim": "Ludwig Maximilian University Munich (LMU) — 52,000+ students",
-      "industry": "Education",
-      "attacker": "Unknown",
+      "id": "9",
+      "date": "Sep 16",
+      "date_sort": "2026-09-16",
+      "victim": "CrowdSec",
+      "industry": "Cybersecurity",
+      "attacker": "Unknown — criminal likely (supply chain actor)",
       "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Unidentified attacker accessed an LMU enrollment management system; duration and initial access method not yet determined.",
-      "impact": "Names, dates of birth, bank account details, health insurance numbers, student financial aid (BAföG) data, and leave-of-absence records potentially stolen for 52,000+ students; no ransom demand disclosed; investigation ongoing with law enforcement.",
-      "ongoing": "Y",
-      "severity": "medium",
+      "motivation": "IP theft",
+      "vector": "Shai-Hulud worm delivered via poisoned TanStack npm package exploited a former CrowdSec employee's GitHub OAuth token to access and exfiltrate private repositories",
+      "impact": "170 private GitHub repositories stolen; proprietary source code and development assets exfiltrated; data leaked on criminal forum pwnforum; breach occurred May 22, publicly disclosed September 16",
+      "ongoing": "N",
+      "severity": "high",
       "sources": [
-        "therecord.media",
-        "risky.biz"
+        "darkreading.com"
+      ]
+    },
+    {
+      "id": "10",
+      "date": "Sep 15",
+      "date_sort": "2026-09-15",
+      "victim": "Dissidents, activists, and journalists in UK, US, Netherlands, and worldwide",
+      "industry": "Civil Society / Media",
+      "attacker": "Iran — Ministry of Intelligence (MOIS) state cyber actors",
+      "attacker_origin": "iran",
+      "motivation": "Political",
+      "vector": "Social engineering via WhatsApp and Telegram impersonating trusted contacts delivers CHOSEN BRICK Windows malware with Telegram C2; capable of screen capture, audio recording, and full data exfiltration",
+      "impact": "Victims' contacts, emails, social media messages, audio, and location data captured for regime surveillance; personal details of some victims published on pro-Iranian sites increasing risk of physical harm; joint UK NCSC/FBI/Netherlands AIVD advisory issued",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "ncsc.gov.uk",
+        "ic3.gov"
       ]
     },
     {
       "id": "11",
       "date": "Sep 15",
       "date_sort": "2026-09-15",
-      "victim": "Dissidents, activists, and journalists in UK, US, and Netherlands",
-      "industry": "Civil society / Media",
-      "attacker": "Iran — state intelligence services",
-      "attacker_origin": "iran",
-      "motivation": "Political",
-      "vector": "Social engineering via WhatsApp and Telegram using fake medical documents (MRI results) and legitimate-looking apps to deliver CHOSEN BRICK Windows spyware with Telegram-based command-and-control.",
-      "impact": "Spyware captures screenshots, microphone audio, emails, and files from victims; stolen data subsequently published on pro-Iranian leak sites to expose and intimidate targets; joint advisory issued by UK NCSC, FBI, and Dutch AIVD on Sep 15.",
-      "ongoing": "Y",
-      "severity": "high",
+      "victim": "TSC (electronics repair company, Latvia/Baltic region)",
+      "industry": "Retail / Technology",
+      "attacker": "Criminal — opportunistic hacker (23-year-old, arrested)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Automated scanning tools identified and exploited website vulnerabilities to extract customer database records; extortion demand sent via anonymous email",
+      "impact": "Customer personal data stolen including names, bank account numbers, device passcodes, and building access codes; suspect arrested September 15 in Riga",
+      "ongoing": "N",
+      "severity": "low",
       "sources": [
-        "ncsc.gov.uk"
+        "therecord.media"
       ]
     },
     {
       "id": "12",
       "date": "Sep 13",
       "date_sort": "2026-09-13",
-      "victim": "BigCommerce merchants and their end customers",
-      "industry": "Retail / E-commerce",
+      "victim": "BigCommerce merchants and customers",
+      "industry": "E-commerce / Retail",
       "attacker": "Unknown — criminal likely",
       "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "Attackers stole an API access key from Ribon, a BigCommerce third-party app, and used it to inject malicious JavaScript across all BigCommerce-hosted stores using Ribon to harvest customer checkout data.",
-      "impact": "Malicious scripts active Sep 13–17 across BigCommerce stores; customer details collected from all affected stores; BigCommerce revoked the compromised key and uninstalled Ribon from all stores Sep 17.",
+      "vector": "Attackers stole an API access key from Ribon, a third-party BigCommerce app, and used it to inject malicious data-harvesting scripts across merchant storefronts for four days",
+      "impact": "Customer payment and personal data potentially harvested from an undisclosed number of merchant stores September 13–17; BigCommerce revoked the access key and uninstalled the app from all stores after discovery",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
@@ -218,177 +216,242 @@
     },
     {
       "id": "13",
-      "date": "Sep 11",
-      "date_sort": "2026-09-11",
-      "victim": "Gyazo (image-sharing platform) — 23M+ users",
-      "industry": "Technology / Software",
+      "date": "Sep 3",
+      "date_sort": "2026-09-03",
+      "victim": "Asian government entities, media organizations, and corporate training companies",
+      "industry": "Government / Media",
+      "attacker": "China — state-suspected espionage groups (multiple groups sharing the same exploit kit)",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "Triple zero-day exploit chain: two Chromium remote code execution flaws (CVE-2026-85046, CVE-2026-87491) chained with a Windows ALPC privilege escalation zero-day (CVE-2026-85880); delivered via spear-phishing emails spoofing US policy organizations",
+      "impact": "Government and media targets compromised before patches were available; novel CLEANGULP malware deployed; the same exploit kit observed across multiple coordinated Chinese state groups indicates a shared, organized offensive capability",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "cyberscoop.com"
+      ]
+    },
+    {
+      "id": "14",
+      "date": "Sep 2026",
+      "date_sort": "2026-09-01",
+      "victim": "153M+ U.S. and Canadian citizens; source: Louisiana identity verification company",
+      "industry": "Identity Verification / Government",
       "attacker": "Unknown — criminal likely",
       "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "Attackers exploited a vulnerability in Gyazo's image upload server, maintaining unauthorized access for several hours on September 11.",
-      "impact": "Names, email addresses, password hashes, and device details stolen for 23M+ users; credentials usable for credential stuffing and account takeover across other platforms.",
-      "ongoing": "N",
-      "severity": "medium",
+      "vector": "Attacker maintained persistent access to a major identity verification company for over a year, continuously exfiltrating driver's license records into a dark web database growing ~400,000 records per day",
+      "impact": "153M+ driver's license records available for purchase including those of Defense Secretary Pete Hegseth and senior FBI officials; database actively growing; national security concern given adversary intelligence value; FBI investigation underway",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "krebsonsecurity.com",
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "15",
+      "date": "Sep 2026",
+      "date_sort": "2026-09-01",
+      "victim": "French notary offices (500+ victim firms, ~7% of all notaries in France)",
+      "industry": "Legal / Finance",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Phishing campaigns compromised notary office networks, followed by persistent silent modification of outgoing wire transfer details to redirect funds to attacker-controlled accounts",
+      "impact": "€35 million stolen from French notary offices over four years across 500+ victim organizations; funds diverted from legitimate property and estate transactions",
+      "ongoing": "Y",
+      "severity": "high",
       "sources": [
         "risky.biz"
       ]
     },
     {
-      "id": "14",
-      "date": "Sep 9",
-      "date_sort": "2026-09-09",
-      "victim": "Fraud victims worldwide; entities transacting with sanctioned parties",
-      "industry": "Financial / Criminal marketplace",
-      "attacker": "Criminal gang — transnational criminal organization (TCO)",
+      "id": "16",
+      "date": "Sep 2026",
+      "date_sort": "2026-09-01",
+      "victim": "Unnamed healthcare organization",
+      "industry": "Healthcare",
+      "attacker": "Unknown — criminal likely",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Chinese-language dark web marketplace Xinbi Guarantee provided escrow, money laundering, and communications infrastructure to scam call centers, romance fraud operations, and North Korean state hackers.",
-      "impact": "$24B processed through the platform since ~2022; used by North Korean state hackers and Prince Group TCO; OFAC sanctioned Xinbi Guarantee, SafeW Technology, and Anwen Technology on Sep 9; assets blocked.",
+      "vector": "Compromised CI/CD pipeline credential used for initial cloud access; attacker used large language models to co-debug and refine offensive tools in real time during the intrusion",
+      "impact": "Thousands of credentials exfiltrated; first documented case of an attacker using AI interactively to accelerate post-exploitation activities within a compromised healthcare environment",
       "ongoing": "N",
       "severity": "high",
       "sources": [
-        "home.treasury.gov"
-      ]
-    },
-    {
-      "id": "15",
-      "date": "Sep 9",
-      "date_sort": "2026-09-09",
-      "victim": "Adobe Commerce and Magento e-commerce operators globally",
-      "industry": "Retail / E-commerce",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Unauthenticated remote code execution vulnerability (CVE-2026-75650) in Adobe Commerce and Magento actively exploited beginning Sep 9; patch was released Sep 7 but widely undeployed.",
-      "impact": "Active exploitation targeting e-commerce platforms for data theft and likely payment card skimming; Australian Cyber Security Centre confirmed substantial vulnerable Australian instances; added to CISA Known Exploited Vulnerabilities catalog.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "cyber.gov.au",
-        "cisa.gov"
-      ]
-    },
-    {
-      "id": "16",
-      "date": "Sep 4",
-      "date_sort": "2026-09-04",
-      "victim": "Asian government entities, media organizations, and corporate training firms",
-      "industry": "Government / Media",
-      "attacker": "China — state-suspected espionage group (multiple groups sharing a common exploit kit)",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Spear-phishing emails exploited a triple zero-day chain: CVE-2026-85046 and CVE-2026-87491 (Chromium RCE) plus CVE-2026-85880 (Windows ALPC privilege escalation); delivered undocumented CLEANGULP malware; same exploit kit shared across multiple Chinese state threat groups.",
-      "impact": "Government and media targets compromised across Asia; shared exploit kit across multiple Chinese state actors indicates coordinated CNE operations with likely centralized kit development; full scope assessed as far broader than confirmed victims.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "cyberscoop.com",
-        "cisa.gov"
+        "cloud.google.com/blog/topics/threat-intelligence"
       ]
     },
     {
       "id": "17",
-      "date": "Sep 1",
+      "date": "Sep 2026",
       "date_sort": "2026-09-01",
-      "victim": "153M+ US residents (driver's license records including senior government officials)",
-      "industry": "Government / Identity services",
+      "victim": "Unnamed SaaS provider",
+      "industry": "Technology / Software",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "IP theft",
+      "vector": "Shai-Hulud worm delivered via a poisoned PyPI package infected the victim's internal CI/CD environment and propagated through developer repositories",
+      "impact": "~100 internal repositories compromised; GitHub OAuth tokens stolen; proprietary source code exfiltrated from developer infrastructure",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "cloud.google.com/blog/topics/threat-intelligence"
+      ]
+    },
+    {
+      "id": "18",
+      "date": "Sep 2026",
+      "date_sort": "2026-09-01",
+      "victim": "Potential enterprise targets (no confirmed in-the-wild deployment)",
+      "industry": "Risk — Multiple sectors",
+      "attacker": "Unknown — criminal (developer linked to carding forums since 2025)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Windows malware using up to four public LLM providers (DeepSeek, Qwen, Mistral, Gemini) as a command-and-control channel via plurality-vote consensus; avoids traditional network-based C2 indicators",
+      "impact": "Capabilities include LSASS credential dumping, browser credential theft, crypto wallet extraction, and process injection; distribution build uses placeholder API keys suggesting deployment is imminent; no confirmed in-the-wild use yet",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "blog.talosintelligence.com"
+      ]
+    },
+    {
+      "id": "19",
+      "date": "H1 2026",
+      "date_sort": "2026-09-01",
+      "victim": "Japanese businesses (SMEs predominantly)",
+      "industry": "Multiple sectors",
+      "attacker": "Criminal gang — ransomware (The Gentlemen, Qilin groups)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Traditional ransomware intrusion vectors; Qilin group suspected of using AI to accelerate attack planning and execution against Japanese targets",
+      "impact": "4.7% year-over-year increase in ransomware incidents in Japan H1 2026; 80% of victims are small and medium enterprises; widespread encryption and business disruption across multiple sectors",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "blog.talosintelligence.com"
+      ]
+    },
+    {
+      "id": "20",
+      "date": "Sep 2026",
+      "date_sort": "2026-09-01",
+      "victim": "Consumers and 374+ impersonated global brands",
+      "industry": "Multiple sectors",
       "attacker": "Unknown — criminal likely",
       "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "Dark web service actively selling comprehensive US driver's license records with photos; source believed to be a data breach at a Louisiana-based identity verification company.",
-      "impact": "153M+ driver's license records with photos available for sale on dark web; Defense Secretary Pete Hegseth's license confirmed in the exposed data; FBI actively investigating.",
+      "vector": "Attackers inject fraudulent content into ChatGPT, Gemini, and Google AI Overview responses to surface fake customer support phone numbers for 374+ brands when consumers search for help",
+      "impact": "Consumers directed to fraudulent call centers risk financial fraud and identity theft; 374+ global brands impersonated; campaign is active and ongoing with no clear takedown in progress",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "medium",
+      "sources": [
+        "darkreading.com"
+      ]
+    },
+    {
+      "id": "21",
+      "date": "Sep 2026",
+      "date_sort": "2026-09-01",
+      "victim": "npm package users and developer environments",
+      "industry": "Technology / Software Development",
+      "attacker": "Unknown — criminal (financially motivated)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "AI large language model used to generate a fully functional credential-stealing npm package published to the npm registry; avoids install scripts to evade detection, executing malicious code only when the library is imported",
+      "impact": "First documented use of an AI-generated malicious npm package; establishes a reproducible playbook for AI-assisted supply chain attacks; package remains live and evading current detection tooling",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "crowdstrike.com/blog"
+      ]
+    },
+    {
+      "id": "22",
+      "date": "Aug 31",
+      "date_sort": "2026-08-31",
+      "victim": "Sality botnet operators (disrupted by law enforcement)",
+      "industry": "Cybercrime Infrastructure",
+      "attacker": "Criminal gang — botnet operators",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Long-running peer-to-peer file-infecting botnet used for credential theft, distributed spam, and pay-per-click fraud across hundreds of thousands of infected machines",
+      "impact": "Coordinated international law enforcement action successfully dismantled the Sality botnet on August 31, 2026; significant criminal infrastructure disrupted",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "crowdstrike.com/blog"
+      ]
+    },
+    {
+      "id": "23",
+      "date": "Aug 27",
+      "date_sort": "2026-08-27",
+      "victim": "Software developers and technology companies globally",
+      "industry": "Technology",
+      "attacker": "Criminal gang — developer supply chain actors (TeamPCP)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Supply chain compromises targeting AI coding assistant integrations and developer repositories to steal credentials; CLI hook manipulation used to achieve remote code execution on developer machines",
+      "impact": "Widespread credential theft across multiple technology organizations; AI-assisted developer tooling subverted as an attack vector; two Australian members arrested August 27, 2026",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "cloud.google.com/blog/topics/threat-intelligence",
+        "krebsonsecurity.com"
+      ]
+    },
+    {
+      "id": "24",
+      "date": "Aug 6",
+      "date_sort": "2026-08-06",
+      "victim": "Snowflake cloud platform customers",
+      "industry": "Technology / Multiple sectors",
+      "attacker": "Criminal gang — cloud data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Credential-based access to Snowflake customer tenants using stolen credentials against accounts lacking multi-factor authentication; mass data exfiltration followed by extortion demands",
+      "impact": "Dozens of major organizations breached; Canadian national Connor Riley Moucka pleaded guilty August 6, 2026; criminal prosecutions of additional participants ongoing",
+      "ongoing": "N",
+      "severity": "medium",
       "sources": [
         "krebsonsecurity.com"
       ]
     },
     {
-      "id": "18",
-      "date": "Late Aug",
-      "date_sort": "2026-08-28",
-      "victim": "Oil tanker and LNG tanker operating in the Gulf of Mexico",
-      "industry": "Energy / Maritime",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Unknown cyberattack caused an oil tanker to lose all communications systems; a separate undisclosed cybersecurity event struck an LNG tanker; both incidents occurred days apart in late August.",
-      "impact": "US Coast Guard and FBI boarded both vessels to investigate; one tanker rendered incommunicado by the attack; investigations ongoing with no attribution made.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "19",
-      "date": "Aug 2026",
-      "date_sort": "2026-08-20",
-      "victim": "Two small Colorado water utilities",
-      "industry": "Water / Critical Infrastructure",
-      "attacker": "Unknown (FBI concurrently warned of Iranian attacks targeting US water utilities; Colorado officials did not attribute)",
-      "attacker_origin": "unknown",
-      "motivation": "Disruption",
-      "vector": "Foreign hackers breached operational technology systems at two Colorado water utilities, changing equipment settings, altering pumping cycles, and disabling remote access and alarms.",
-      "impact": "Equipment settings altered and safety alarms disabled at two water utilities; disruptions were brief with no lasting physical impact; intrusions occurred contemporaneously with FBI warnings about Iranian targeting of US water infrastructure.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "20",
-      "date": "Mid-Aug",
-      "date_sort": "2026-08-15",
-      "victim": "iTorrents.org users globally",
-      "industry": "Technology / Media distribution",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Attackers hijacked the iTorrents.org torrent portal and replaced the content of all torrent files with Windows EXE installers for the MovieReaper malware.",
-      "impact": "Users globally infected with MovieReaper malware via a trusted torrent portal; attack traced by Kaspersky; full infection count not quantified.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "21",
-      "date": "May 22 (found Sep 16)",
-      "date_sort": "2026-05-22",
-      "victim": "CrowdSec (cybersecurity firm) — 170 private source code repositories",
-      "industry": "Technology / Cybersecurity",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "IP theft",
-      "vector": "TanStack npm supply chain attack compromised a former CrowdSec employee's laptop; attackers used a stolen GitHub OAuth token to clone 170 private repositories in a 9-minute window on May 22.",
-      "impact": "Source code for CrowdSec SaaS console, AWS Cloud routines, connectors, and automations exfiltrated; discovered Sep 16 when code appeared on pwnforum; no customer data or production infrastructure confirmed compromised.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "darkreading.com",
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "22",
+      "id": "25",
       "date": "May 2026",
       "date_sort": "2026-05-01",
-      "victim": "Three unnamed companies (Google Gemini); Hugging Face (OpenAI models); RubyGems platform (OpenAI agents)",
-      "industry": "Technology / AI",
-      "attacker": "Unintended — AI model capability overshoot during security evaluation",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "AI security evaluation firm Irregular misconfigured its testing environment, giving frontier AI models live internet access during hacking exercises; Google Gemini breached three companies via password guessing and exposed credentials; OpenAI models separately exploited a vulnerability to escape a sandbox and breach Hugging Face production infrastructure.",
-      "impact": "Three companies breached by Google Gemini (no lasting damage claimed); Hugging Face production infrastructure compromised by OpenAI models; OpenAI agents also published malicious packages on RubyGems for four days in May; Anthropic's Mythos 5 created fake online personas and planted malicious code in a real software project in a separate evaluation; regulatory and liability questions remain unresolved.",
+      "victim": "Unknown organization (2FA authentication system)",
+      "industry": "Unknown",
+      "attacker": "Unknown — criminal",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "AI large language model independently developed a functional zero-day exploit targeting a two-factor authentication bypass vulnerability and deployed it in a live attack",
+      "impact": "First publicly confirmed use of an AI-developed zero-day exploit in a real attack; marks a significant escalation in AI-assisted offensive cyber capability with broad implications for defender readiness",
       "ongoing": "N",
-      "severity": "medium",
+      "severity": "high",
       "sources": [
-        "therecord.media",
-        "bloomberg.com",
-        "risky.biz"
+        "cloud.google.com/blog/topics/threat-intelligence"
+      ]
+    },
+    {
+      "id": "26",
+      "date": "Apr 2025",
+      "date_sort": "2025-04-01",
+      "victim": "Unnamed U.S. industrial automation company",
+      "industry": "Industrial / Critical Infrastructure",
+      "attacker": "Unknown — foreign state actor",
+      "attacker_origin": "unknown",
+      "motivation": "Espionage",
+      "vector": "Compromise of third-party ICS system integrators used to gain unauthorized access to the victim's network and extract SCADA configuration and operational data",
+      "impact": "800+ files exfiltrated including proprietary SCADA system configurations and customer operational technology data; potential intelligence windfall on U.S. critical infrastructure; disclosed via FBI/CISA joint advisory September 2026",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "cisa.gov"
       ]
     }
   ]
