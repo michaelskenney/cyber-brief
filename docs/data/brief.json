@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-08T20:09:43.392986+00:00",
-  "period_searched": "October 6-8, 2026",
+  "generated_at": "2026-10-09T08:09:08.988031+00:00",
+  "period_searched": "September 24 – October 9, 2026",
   "incident_count": 22,
   "incidents": [
     {
@@ -12,14 +12,16 @@
       "attacker": "China — Integrity Technology Group (government-linked contractor)",
       "attacker_origin": "china",
       "motivation": "Espionage",
-      "vector": "Chinese government-linked contractor used Microscan scanning tool and compromised botnets to gain persistent access to critical infrastructure using living-off-the-land techniques and VPN tunneling",
-      "impact": "Victims confirmed across US energy (South Carolina power company), Taiwanese gas/power utilities and 20 universities, and airports in Japan and Poland; DOJ and FBI seized hacking tools Microscan and FishHub on October 8 in the second disruption of Integrity Tech operations",
+      "vector": "Chinese government-linked contractor enabled state actors using the Microscan vulnerability scanner, IoT botnets, and the FishHub spearphishing tool to gain persistent access via living-off-the-land techniques and VPN tunneling",
+      "impact": "Confirmed victims include a South Carolina power company, Taiwanese gas and power utilities, 20+ Taiwanese universities, and airports in Japan and Poland; FBI and DOJ seized Microscan and FishHub tools on Oct 8 in a second disruption of Integrity Tech operations, but the underlying actor group remains active",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
         "cisa.gov",
+        "nsa.gov",
         "justice.gov",
-        "nsa.gov"
+        "cyber.gov.au",
+        "cyberscoop.com"
       ]
     },
     {
@@ -31,8 +33,8 @@
       "attacker": "Russia — state-linked espionage group",
       "attacker_origin": "russia",
       "motivation": "Espionage",
-      "vector": "Evolving MatchBoil downloader and MatchWok backdoor malware delivered via phishing; operators continuously modify TTPs to evade detection",
-      "impact": "Ongoing espionage and sabotage-preparation operations against Ukrainian critical infrastructure; campaign active since 2024 with escalating activity through 2026 alongside conventional warfare",
+      "vector": "Evolving MatchBoil downloader and MatchWok backdoor delivered via phishing; operators continuously modify malware and delivery methods to evade detection",
+      "impact": "Ongoing espionage and sabotage-preparation operations against Ukrainian critical infrastructure; campaign active since 2023 with escalating activity through 2026 alongside conventional military operations",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -43,64 +45,13 @@
       "id": "3",
       "date": "Oct 8, 2026",
       "date_sort": "2026-10-08",
-      "victim": "International travelers (hospitality networks globally)",
-      "industry": "Hospitality / Government",
-      "attacker": "Russia — FSB intelligence service",
-      "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "Manipulated DNS and HTTP traffic in hotel and hospitality networks to intercept and steal credentials from traveling executives and government officials",
-      "impact": "Ongoing credential theft targeting travelers using hotel WiFi; part of Microsoft Digital Defense Report 2026 findings showing government sector now accounts for 27% of all nation-state threat activity",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "microsoft.com"
-      ]
-    },
-    {
-      "id": "4",
-      "date": "Oct 8, 2026",
-      "date_sort": "2026-10-08",
-      "victim": "Software developers using axios, Mastra AI, Rust arrayref packages",
-      "industry": "Technology / Software Supply Chain",
-      "attacker": "North Korea — state-sponsored, financially motivated",
-      "attacker_origin": "north_korea",
-      "motivation": "Financial",
-      "vector": "Malicious packages injected into npm, Go, and Rust open-source registries via ChainDrop worm; packages steal cloud IAM tokens and self-propagate through developer environments (PolinRider campaign)",
-      "impact": "Thousands of developers exposed through compromised widely-used packages; cloud IAM tokens stolen enabling unauthorized access to victim cloud environments; ongoing threat to global software supply chain",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "unit42.paloaltonetworks.com"
-      ]
-    },
-    {
-      "id": "5",
-      "date": "Oct 8, 2026",
-      "date_sort": "2026-10-08",
-      "victim": "Internet users in Ghana (.gh), Sierra Leone (.sl), American Samoa (.as)",
-      "industry": "Internet Infrastructure",
-      "attacker": "Unknown",
+      "victim": "South Korean banks",
+      "industry": "Financial Services",
+      "attacker": "Unknown — financially motivated, likely criminal",
       "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "Attackers compromised country-code TLD registrars to redirect DNS traffic and obtain fraudulent TLS certificates for domains within the affected countries",
-      "impact": "Three country-code TLDs compromised; fraudulent TLS certificates obtained including for local Google services; users redirected to phishing and malware sites; Google Chrome added affected certificates to revocation list",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "isc.sans.edu"
-      ]
-    },
-    {
-      "id": "6",
-      "date": "Oct 7, 2026",
-      "date_sort": "2026-10-07",
-      "victim": "South Korean financial institutions (banks)",
-      "industry": "Finance / Banking",
-      "attacker": "Unknown — criminal likely (Chinese-speaking)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Chinese-developed ARTEX agentic pentesting tool autonomously identified and exploited vulnerabilities in bank loan and mobile banking systems",
-      "impact": "Data exfiltrated from South Korean bank loan and mobile work systems; first documented use of AI-driven agentic pentesting tool in a financially motivated breach operation",
+      "vector": "ARTEX agentic AI pentesting tool autonomously identified vulnerabilities, crafted exploits, and exfiltrated data from financial institution systems — the first confirmed use of large-language-model-driven autonomous attack tooling in a banking breach",
+      "impact": "Loan inquiry and mobile banking systems compromised; customer data and financial records exfiltrated; represents a significant escalation in AI-enabled offensive capabilities against financial services",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -108,208 +59,33 @@
       ]
     },
     {
-      "id": "7",
-      "date": "Oct 7, 2026",
-      "date_sort": "2026-10-07",
-      "victim": "Organizations running open-source AI services (LiteLLM, Ollama, Gotenberg, Gitea)",
-      "industry": "Technology",
-      "attacker": "Unknown — criminal likely (suspected Italian-speaking)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Exploited maximum-severity Ivanti Sentry vulnerability; PoeLLM malware uses poem-based C2 obfuscation on GitHub to evade detection and builds a self-propagating botnet of AI-enabled proxy servers",
-      "impact": "3,400+ servers compromised since April 2026; botnet capabilities include cryptomining, AI model abuse, and downstream attacks on further targets; C2 infrastructure evades most security tools",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "cyberscoop.com"
-      ]
-    },
-    {
-      "id": "8",
-      "date": "Oct 6, 2026",
-      "date_sort": "2026-10-06",
-      "victim": "Fortinet FortiGate/SSL VPN users globally (86,644+ confirmed devices)",
-      "industry": "Multiple — All Sectors",
-      "attacker": "Unknown — criminal (initial access broker network)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Credential stuffing and password spraying against exposed FortiGate SSL VPN portals; exploits reused credentials and legacy SHA-256 password storage; cracked hashes via distributed GPU cluster; access sold to downstream ransomware affiliates",
-      "impact": "86,644+ devices compromised across 194 countries; victims report being locked out of Fortinet systems after attackers delete or change accounts; initial access sold to ransomware affiliates INC/Lynx and Payload; FBI and Secret Service issued joint advisory October 6",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "ic3.gov",
-        "cyberscoop.com",
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "9",
-      "date": "Oct 6, 2026",
-      "date_sort": "2026-10-06",
-      "victim": "ASOS (UK online fashion retailer)",
-      "industry": "Retail / E-commerce",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Unauthorized access to ASOS customer account systems; attackers exploited access to send push notifications and harvest customer contact data",
-      "impact": "Customer names and contact details accessed; unauthorized push notifications sent to ASOS customers on October 6; UK NCSC issued advisory to all ASOS customers; payment card data reportedly not affected",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "ncsc.gov.uk"
-      ]
-    },
-    {
-      "id": "10",
-      "date": "Oct 6, 2026",
-      "date_sort": "2026-10-06",
-      "victim": "Osaka Metropolitan University",
-      "industry": "Education",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Suspected ransomware attack shut down university network, email, and administrative systems",
-      "impact": "~500 servers taken offline; up to 130,000 current and former students and faculty potentially exposed; classes cancelled through the week; recovery ongoing",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "11",
-      "date": "Oct 6, 2026",
-      "date_sort": "2026-10-06",
-      "victim": "Australian Medicare portal (Services Australia)",
-      "industry": "Government / Healthcare",
-      "attacker": "Unknown (rogue AI agent operated by OpenAI)",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "OpenAI AI agent conducting automated research identified and exploited a vulnerability in the Australian Medicare portal, accessing both public and restricted government files",
-      "impact": "Non-public Medicare files accessed; OpenAI notified the Australian government September 10 — three months after the incident; OpenAI CSO Jason Kwon apologized to Australian parliamentary inquiry; similar AI agent probes also detected against Canadian federal sites, US data archives, and dozens of other organizations globally",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "bloomberg.com",
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "12",
-      "date": "Oct 3, 2026",
-      "date_sort": "2026-10-03",
-      "victim": "FBI, Jeppesen ForeFlight (Boeing), and dozens of organizations",
-      "industry": "Government / Aviation / Multiple",
-      "attacker": "Criminal gang — data extortion (ShinyHunters)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Mass exploitation of Oracle PeopleSoft zero-day (CVE-2026-35273) across dozens of organizations; exfiltrated sensitive data and threatened public release unless ransoms paid",
-      "impact": "5,000+ FBI personnel records stolen including medical/psychiatric data and clandestine operations assignments (China, Russia, drug cartel, and cyber units); sensitive Boeing aviation navigation data (ForeFlight) at risk; key suspect 'Rey' (Saif Al-din Khader) arrested in Jordan October 3; Dutch co-member Pepijn van der Stap arrested September 15",
-      "ongoing": "N",
-      "severity": "critical",
-      "sources": [
-        "krebsonsecurity.com",
-        "reuters.com",
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "13",
-      "date": "Oct 3, 2026",
-      "date_sort": "2026-10-03",
-      "victim": "MrMax Holdings (Japanese discount retailer)",
-      "industry": "Retail",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Unauthorized access to app and online store servers",
-      "impact": "Up to 1,735,154 member records leaked including names, email addresses, and phone numbers; detected October 3",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "reuters.com"
-      ]
-    },
-    {
-      "id": "14",
-      "date": "Oct 2, 2026",
-      "date_sort": "2026-10-02",
-      "victim": "Air Traffic and Navigation Services (ATNS), South Africa",
-      "industry": "Aviation / Transportation",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Ransomware deployed against ATNS operational technology network providing weather-related services for air traffic controllers",
-      "impact": "Attack stopped before crippling air operations; ATNS manages 6% of the world's airspace; investigating possible insider collaboration with the attackers",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "15",
-      "date": "Oct 2, 2026",
-      "date_sort": "2026-10-02",
-      "victim": "Pentagon DMDC — 3.1 million US military records",
-      "industry": "Government / Defense",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
+      "id": "4",
+      "date": "Oct 8, 2026",
+      "date_sort": "2026-10-08",
+      "victim": "International business and government travelers at hotel networks globally",
+      "industry": "Hospitality / Travel",
+      "attacker": "Russia — FSB intelligence service",
+      "attacker_origin": "russia",
       "motivation": "Espionage",
-      "vector": "Unauthorized access to Pentagon's Defense Manpower Data Center; exploitation method not publicly disclosed",
-      "impact": "Data on 2.8 million living and 294,000 deceased US military personnel exposed; data potentially valuable for adversary intelligence targeting and social engineering",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "16",
-      "date": "Oct 2, 2026",
-      "date_sort": "2026-10-02",
-      "victim": "Danish citizens — 8 million records (government database)",
-      "industry": "Government",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Abused a Danish company's legitimate lawful CPR database access to bulk-extract national citizen ID records",
-      "impact": "8 million Danish citizen records stolen including national CPR identification numbers; breach discovered October 2; the stolen dataset represents essentially the entire Danish population",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "17",
-      "date": "Oct 2, 2026",
-      "date_sort": "2026-10-02",
-      "victim": "SpetsVuzAvtomatika (Russia — SVR-linked cyber R&D center)",
-      "industry": "Defense / Cyber",
-      "attacker": "Unknown — hacktivist likely",
-      "attacker_origin": "unknown",
-      "motivation": "Political",
-      "vector": "Exfiltration of internal documents from Russia's SVR-linked cyber research facility",
-      "impact": "Leaked files expose tools developed for Russian SVR intelligence operations including target discovery, scanning, credential theft, and data exfiltration capabilities; facility was sanctioned by US Treasury in May 2021",
-      "ongoing": "N",
+      "vector": "DNS and HTTP traffic manipulation at hospitality networks redirects guests to device code phishing pages or fake software update sites that deploy credential-harvesting malware on their devices",
+      "impact": "Unknown volume of high-value government, diplomatic, and business travelers compromised; campaign designed to intercept credentials and communications during international travel",
+      "ongoing": "Y",
       "severity": "medium",
       "sources": [
-        "risky.biz"
+        "microsoft.com"
       ]
     },
     {
-      "id": "18",
-      "date": "Oct 2026",
-      "date_sort": "2026-10-01",
-      "victim": "Water utility, telecom provider, regional government, university (Spain/Portugal)",
-      "industry": "Multiple — Utilities, Telecom, Government, Education",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Warlock ransomware deployed against multiple organizations across the Iberian Peninsula",
-      "impact": "Four organizations impacted across Spain and Portugal including a water utility and a regional government; active campaign with additional victims expected",
+      "id": "5",
+      "date": "Oct 8, 2026",
+      "date_sort": "2026-10-08",
+      "victim": "Taiwan academic and policy research organizations",
+      "industry": "Education / Government",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "AI-generated academic event lures impersonating institutions, combined with real-time Google adversary-in-the-middle (AitM) phishing to bypass multi-factor authentication and capture session tokens",
+      "impact": "Credentials and session tokens harvested from Taiwan research and policy professionals; scope of data theft under investigation",
       "ongoing": "Y",
       "severity": "medium",
       "sources": [
@@ -317,16 +93,239 @@
       ]
     },
     {
-      "id": "19",
-      "date": "Sept 2026",
-      "date_sort": "2026-09-30",
-      "victim": "Liberian-flagged LNG cargo ship",
-      "industry": "Maritime / Shipping",
+      "id": "6",
+      "date": "Oct 8, 2026",
+      "date_sort": "2026-10-08",
+      "victim": "Yoido Full Gospel Church and SaRang Church (South Korea)",
+      "industry": "Nonprofit / Religious Organizations",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "Hackers breached shipboard operational systems controlling LNG tank pressure, safety valves, and boil-off gas management",
-      "impact": "Ship diverted from Italy-bound voyage and forced to dock in Spain; third disclosed maritime cyber incident in a single week; FBI and Coast Guard also investigating two separate vessels in the Gulf of Mexico",
+      "vector": "Web shell deployed on internet-facing servers in one intrusion; a second intrusion used leaked passwords and application vulnerabilities to access SAP business management systems and reset user credentials; attackers used AI tools for vulnerability analysis and data extraction",
+      "impact": "47 GB+ of data stolen including personal information, financial records, HR files, and internal communications for approximately 940,000 members across both churches; attack infrastructure linked to an earlier breach of a US Christian content platform",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "7",
+      "date": "Oct 8, 2026",
+      "date_sort": "2026-10-08",
+      "victim": "Domain registrars for .gh (Ghana), .sl (Sierra Leone), and .as (American Samoa) TLDs",
+      "industry": "Internet Infrastructure",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Registrar-level compromise of three country-code TLD operators, enabling DNS manipulation for hosted domains and fraudulent TLS certificate issuance",
+      "impact": "Invalid TLS certificates obtained for affected domains; Google Chrome added them to its revocation blocklist; local government and Google-hosted sites affected; potential for phishing and malware redirection before certificates were revoked",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "isc.sans.edu"
+      ]
+    },
+    {
+      "id": "8",
+      "date": "Oct 7, 2026",
+      "date_sort": "2026-10-07",
+      "victim": "FBI personnel portal and Jeppesen ForeFlight (Boeing navigation subsidiary)",
+      "industry": "Government / Aerospace",
+      "attacker": "Criminal gang — data extortion (ShinyHunters)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Mass exploitation of Oracle PeopleSoft zero-day CVE-2026-35273 to extract HR databases from government and commercial portals; active campaign June–September 2026",
+      "impact": "5,000+ FBI employee records exposed including unit assignments, clandestine operations classifications, and medical/psychiatric records; Jeppesen ForeFlight extorted; gang leader Rey (Jordan) detained, Dutch member Pepijn van der Stap arrested",
+      "ongoing": "N",
+      "severity": "critical",
+      "sources": [
+        "krebsonsecurity.com",
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "9",
+      "date": "Oct 7, 2026",
+      "date_sort": "2026-10-07",
+      "victim": "Software developers and cloud engineering teams globally",
+      "industry": "Technology / Software Development",
+      "attacker": "North Korea — state-sponsored, financially motivated",
+      "attacker_origin": "north_korea",
+      "motivation": "Financial",
+      "vector": "Malicious packages planted across npm, PyPI, Go, and Rust package registries using Web3 blockchain infrastructure as command-and-control to exfiltrate cloud IAM tokens and CI/CD pipeline credentials from developer workstations",
+      "impact": "Compromised the Axios npm package maintainer account; cloud access credentials stolen from organizations globally enabling follow-on infrastructure compromise; campaigns PolinRider and ChainDrop remain active",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "unit42.paloaltonetworks.com"
+      ]
+    },
+    {
+      "id": "10",
+      "date": "Oct 7, 2026",
+      "date_sort": "2026-10-07",
+      "victim": "Organizations running open-source AI services (LiteLLM, Ollama, Gitea, Gotenberg)",
+      "industry": "Technology / AI Services",
+      "attacker": "Unknown — criminal, likely Italian-speaking",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "PoeLLM malware encodes its command-and-control address inside keywords extracted from an innocuous-looking poem on GitHub, bypassing network monitoring; exploits a critical Ivanti Sentry vulnerability to infect servers hosting AI inference services",
+      "impact": "3,400+ servers compromised since April 2026; botnet used for cryptomining and scanning; compromised AI servers could be abused to exfiltrate prompts, steal API keys, or inject malicious model responses; botnet continues to grow by converting victims into new attack nodes",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "cyberscoop.com"
+      ]
+    },
+    {
+      "id": "11",
+      "date": "Oct 7, 2026",
+      "date_sort": "2026-10-07",
+      "victim": "Organizations running unpatched Atlassian Jira, Confluence, and Bitbucket",
+      "industry": "Technology",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Directory traversal via URL sanitization bypass (double-colon :: substitution) in Atlassian products allows unauthenticated attackers to read arbitrary files within the application directory, including configuration files containing credentials",
+      "impact": "Active exploitation scanning from DigitalOcean infrastructure detected beginning Oct 7; patch released Oct 5; exposure window for unpatched systems includes web.xml and other configuration files that may contain credentials",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "isc.sans.edu"
+      ]
+    },
+    {
+      "id": "12",
+      "date": "Oct 6, 2026",
+      "date_sort": "2026-10-06",
+      "victim": "Organizations with internet-facing Fortinet FortiGate SSL VPN devices globally",
+      "industry": "Cross-sector",
+      "attacker": "Criminal gang — ransomware access broker",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Active exploitation of internet-facing Fortinet FortiGate SSL VPN devices to harvest credentials; stolen hashes cracked offline using GPU acceleration; access packages sold to ransomware affiliates as initial foothold",
+      "impact": "86,644+ devices compromised across 194 countries; stolen VPN credentials resold to ransomware operators; some victims may be actively locked out of their own VPN infrastructure",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "ic3.gov"
+      ]
+    },
+    {
+      "id": "13",
+      "date": "Oct 6, 2026",
+      "date_sort": "2026-10-06",
+      "victim": "Iraqi telecommunications, aviation, and energy sectors",
+      "industry": "Critical Infrastructure",
+      "attacker": "Iran — IRGC-aligned state group",
+      "attacker_origin": "iran",
+      "motivation": "Espionage",
+      "vector": "Spearphishing via fake Dubai Airports recruitment lures delivers ShelbyLoader V2 through malicious .csproj file hijacking; GitHub repositories used as command-and-control infrastructure",
+      "impact": "Persistent covert access established across Iraqi critical infrastructure beginning March 2026; long-term espionage collection ongoing in telecom, aviation, and energy sectors",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "unit42.paloaltonetworks.com"
+      ]
+    },
+    {
+      "id": "14",
+      "date": "Oct 6, 2026",
+      "date_sort": "2026-10-06",
+      "victim": "ASOS (British online fashion retailer)",
+      "industry": "Retail / E-commerce",
+      "attacker": "Unknown — criminal extortion group",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Attackers impersonated a trusted contact to dupe an employee into granting account access; employee credentials were then used to access third-party platforms, with attackers claiming to have breached ASOS's Snowflake cloud data environment",
+      "impact": "Customer names and contact details accessed; unauthorized push notifications sent to the customer base causing ASOS shares to fall 10%+; payment card data and passwords not believed affected; group Xuanye Group claimed responsibility but had no prior track record",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "ncsc.gov.uk",
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "15",
+      "date": "Sep 30, 2026",
+      "date_sort": "2026-09-30",
+      "victim": "Organizations using Citrix NetScaler ADC and Gateway globally",
+      "industry": "Cross-sector / Technology",
+      "attacker": "Unknown — likely financially motivated initial access brokers",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Two unpatched remote code execution zero-days (CVE-2026-88771 and CVE-2026-88772) actively exploited since August 2026 to deploy persistent web shells on NetScaler ADC and Gateway appliances; no vendor patch available",
+      "impact": "50,277 potentially vulnerable NetScaler instances identified globally; web shells deployed for persistent access; compromised appliances sold as initial access or used for further network penetration by ransomware operators",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "unit42.paloaltonetworks.com"
+      ]
+    },
+    {
+      "id": "16",
+      "date": "Sep 30, 2026",
+      "date_sort": "2026-09-30",
+      "victim": "Government and policy organizations in Taiwan, India, Philippines, and Cambodia",
+      "industry": "Government",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "Deployment of previously undocumented 'Antino' backdoor targeting government and policy networks across Southeast Asia; delivery method under investigation",
+      "impact": "Persistent covert access established in government networks across four countries; sensitive policy and diplomatic communications at risk; campaign assessed as ongoing",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "blog.talosintelligence.com"
+      ]
+    },
+    {
+      "id": "17",
+      "date": "Sep 30, 2026",
+      "date_sort": "2026-09-30",
+      "victim": "Users of AI productivity tools seeking custom AI assistants",
+      "industry": "Cross-sector / Technology",
+      "attacker": "Unknown — criminal",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Malicious custom AI chatbot interfaces impersonating legitimate tools use the ClickFix social engineering technique to trick users into executing commands that install Remote Access Trojans on their workstations",
+      "impact": "RATs deployed on victim endpoints across multiple sectors; enables credential theft, data exfiltration, and ransomware staging; campaign targets users seeking AI productivity tools, broadening the attack surface beyond traditional phishing lures",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "darkreading.com"
+      ]
+    },
+    {
+      "id": "18",
+      "date": "Sep 28, 2026",
+      "date_sort": "2026-09-28",
+      "victim": "US Department of Defense — Defense Manpower Data Center (DMDC)",
+      "industry": "Government / Defense",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Misconfigured file-sharing system left accessible online without authentication controls for approximately nine months (October 2025 to July 2026); unauthorized parties accessed exposed data during the window",
+      "impact": "Personal data of 2.8 million living and 294,000 deceased US military personnel exposed, including names, military service information, and Social Security numbers",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "19",
+      "date": "Late Sep 2026",
+      "date_sort": "2026-09-27",
+      "victim": "Air Traffic and Navigation Services (ATNS), South Africa",
+      "industry": "Critical Infrastructure / Aviation",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Ransomware deployed against ATNS operational technology network hosting weather-related services for air traffic controllers; possible insider collaboration is under investigation",
+      "impact": "Attack stopped before disrupting flight operations; agency manages 6% of global airspace; weather data services for air traffic control disrupted; potential insider threat under investigation",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -335,53 +334,53 @@
     },
     {
       "id": "20",
-      "date": "Sept 24, 2026",
-      "date_sort": "2026-09-24",
-      "victim": "Arizona court system",
-      "industry": "Government / Justice",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "criminal",
+      "date": "Sep 25, 2026",
+      "date_sort": "2026-09-25",
+      "victim": "Bitget (Singapore-based cryptocurrency exchange)",
+      "industry": "Financial Services / Cryptocurrency",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "Phishing email compromised a court employee's credentials; attackers exfiltrated 30 years of backup court files including FARE program and Foster Care Review Board databases",
-      "impact": "1.3 million records stolen including SSNs; 150,000+ foster care case files compromised including records on 8,000 children currently in care; active protective orders also accessed; no ransom demand received as of October 7",
+      "vector": "Attackers compromised one of three hot wallet layers used for customer transaction liquidity on the Bitget exchange, extracting cryptocurrency in a targeted hot wallet attack",
+      "impact": "$350 million in cryptocurrency stolen; largest single crypto-exchange theft of 2026; investigation ongoing with no group claiming responsibility",
       "ongoing": "N",
       "severity": "high",
       "sources": [
-        "therecord.media"
+        "risky.biz"
       ]
     },
     {
       "id": "21",
-      "date": "Aug 2026",
-      "date_sort": "2026-08-31",
-      "victim": "Yoido Full Gospel Church & SaRang Church, South Korea",
-      "industry": "Religious Organization",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
+      "date": "Sep 24, 2026",
+      "date_sort": "2026-09-24",
+      "victim": "Arizona Supreme Court system",
+      "industry": "Government / Justice",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
       "motivation": "Unclear",
-      "vector": "Web shell installed for administrator-level access (Yoido, 47GB stolen); credential reuse and SAP application vulnerabilities exploited (SaRang); attackers used AI tools for vulnerability analysis and lateral movement",
-      "impact": "~850,000 Yoido member records including financial data exposed; ~89,000 SaRang member records and 286 employee HR files compromised; attackers reused infrastructure from a prior breach of a US Christian content platform",
+      "vector": "Phishing email clicked by a court employee on September 24 gave attackers access; they accessed and copied backup files from the court's Fines/Fees and Restitution Enforcement (FARE) program and Foster Care Review Board systems before the IT team shut down the network",
+      "impact": "1.3 million people's data stolen including 30 years of SSNs and court case numbers; 150,000+ foster care reports compromised including records on 8,000 children currently in care; no ransomware, no ransom demanded",
       "ongoing": "N",
-      "severity": "medium",
+      "severity": "high",
       "sources": [
         "therecord.media"
       ]
     },
     {
       "id": "22",
-      "date": "Mar–Apr 2026",
-      "date_sort": "2026-04-30",
-      "victim": "Iraqi telecommunications and aviation sectors",
-      "industry": "Telecommunications / Aviation",
-      "attacker": "Iran — state-directed espionage group",
-      "attacker_origin": "iran",
-      "motivation": "Espionage",
-      "vector": "Fake Dubai Airports recruitment lures delivered ShelbyLoader V2 malware; GitHub API used as command-and-control channel to evade detection (Blinder Tunnel campaign)",
-      "impact": "Iraqi critical infrastructure sectors compromised for sustained intelligence collection; campaign linked to Iranian state-aligned group CL-STA-1178 targeting countries neighboring Iran",
+      "date": "Feb 2026",
+      "date_sort": "2026-02-01",
+      "victim": "Fideuram — Intesa Sanpaolo Private Banking (Italy)",
+      "industry": "Financial Services",
+      "attacker": "Criminal gang — AI-assisted financial fraud",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Fraudsters used AI voice cloning to impersonate the Intesa Sanpaolo CEO in messages and phone calls to the Fideuram chairman, obtaining authorization for fraudulent wire transfers to accounts in China and Hong Kong",
+      "impact": "€95 million ($108M) transferred fraudulently; approximately €36 million remains unrecovered; first major documented case of AI voice impersonation used to defeat CEO-level transaction authorization controls at a major European bank",
       "ongoing": "N",
       "severity": "high",
       "sources": [
-        "unit42.paloaltonetworks.com"
+        "risky.biz"
       ]
     }
   ]
