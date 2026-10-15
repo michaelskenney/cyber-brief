@@ -1,65 +1,58 @@
 {
-  "generated_at": "2026-10-15T08:10:05.048360+00:00",
-  "period_searched": "Oct 8–15, 2026",
-  "incident_count": 22,
+  "generated_at": "2026-10-15T20:12:53.673708+00:00",
+  "period_searched": "October 1-15, 2026",
+  "incident_count": 23,
   "incidents": [
     {
       "id": "1",
-      "date": "Oct 14",
-      "date_sort": "2026-10-14",
-      "victim": "Global FortiGate device owners (86,644+ devices across 194 countries)",
-      "industry": "Technology",
-      "attacker": "Criminal gang — credential harvesting operation",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Mass exploitation of unpatched FortiGate firewall vulnerabilities to harvest credentials from internet-exposed management interfaces at scale.",
-      "impact": "86,644+ FortiGate devices compromised across 194 countries; stolen credentials actively used as ransomware entry points; IC3/CISA joint advisory issued urging immediate remediation.",
-      "ongoing": "Y",
+      "date": "Oct 15",
+      "date_sort": "2026-10-15",
+      "victim": "Al Jazeera, US DoD, NATO, IAEA, cybersecurity agencies (targeted)",
+      "industry": "Media / Government",
+      "attacker": "Unknown — Israeli-linked mercenary spyware operators (Discover-Tech / Candiru)",
+      "attacker_origin": "unknown",
+      "motivation": "Espionage",
+      "vector": "Zero-click spyware (Candiru) delivered silently through targeted online advertising via Discover-Tech's 'Controlium' ad platform, infecting devices the moment an ad renders on-screen without any user interaction",
+      "impact": "At least 45 devices at Al Jazeera confirmed infected; Discover-Tech ads appeared on US DoD, NATO, IAEA, and world cybersecurity agency networks; campaign active since at least 2024; Discover-Tech removed from Google and IAB Europe vendor registries",
+      "ongoing": "N",
       "severity": "critical",
       "sources": [
-        "ic3.gov",
-        "cisa.gov",
-        "therecord.media"
+        "cyberscoop.com"
       ]
     },
     {
       "id": "2",
-      "date": "Oct 14",
-      "date_sort": "2026-10-14",
-      "victim": "Organizations using Ivanti Connect Secure VPN (multiple sectors)",
-      "industry": "Multiple sectors",
-      "attacker": "Unknown — nation-state suspected",
-      "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "Chained zero-day exploit (CVE-2026-104935) combining authentication bypass and RCE; Ivanti discovered the flaw internally in June but did not issue an out-of-band patch before attackers exploited it.",
-      "impact": "Limited number of customers confirmed compromised before patch release; post-exploitation included credential theft, Active Directory exfiltration, log tampering, and reconnaissance; CISA warns Ivanti's own Integrity Checker Tool may not detect exploitation.",
-      "ongoing": "Y",
-      "severity": "critical",
+      "date": "Oct 15",
+      "date_sort": "2026-10-15",
+      "victim": "UK Legal Aid Agency",
+      "industry": "Government",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Attackers exploited vulnerabilities in Legal Aid Agency IT systems to gain unauthorized access and exfiltrate decades of unstructured case management data",
+      "impact": "~250,000 records predating 2007 confirmed stolen including criminal histories, financial assessments, bank account and property details, probation records, and partially redacted payment card data; earliest record from 1978; UK government refuses to pay extortion demand",
+      "ongoing": "N",
+      "severity": "high",
       "sources": [
-        "cisa.gov",
-        "darkreading.com",
-        "cyberscoop.com",
-        "therecord.media",
-        "isc.sans.edu"
+        "therecord.media"
       ]
     },
     {
       "id": "3",
       "date": "Oct 14",
       "date_sort": "2026-10-14",
-      "victim": "Organizations running Windows (all sectors)",
+      "victim": "Windows users (broad targeting, multiple sectors)",
       "industry": "Multiple sectors",
-      "attacker": "Unknown — exploited in the wild",
+      "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "CVE-2026-96951 Windows Shell security feature bypass exploited in the wild; allows attackers to deliver malicious files while bypassing Mark of the Web warnings that would otherwise alert users.",
-      "impact": "Microsoft patched a record 1,413 CVEs in a single release; one zero-day actively exploited; critical RCE flaws in Exchange Server (CVE-2026-70571), Windows DHCP Server (10 flaws, 5 critical), and Office also addressed.",
+      "vector": "Active exploitation of Windows Shell security feature bypass (CVE-2026-96951) allowing attackers to send files that skip Mark of the Web warnings, enabling malware execution without user prompts",
+      "impact": "Actively exploited in the wild; patched in October 2026 Patch Tuesday (1,413 total CVEs — highest ever monthly Microsoft release); CISA added to KEV Oct 13; third Windows Shell bypass exploited in 2026",
       "ongoing": "N",
       "severity": "high",
       "sources": [
+        "cisa.gov",
         "crowdstrike.com",
-        "darkreading.com",
-        "krebsonsecurity.com",
         "cyberscoop.com",
         "isc.sans.edu"
       ]
@@ -68,171 +61,108 @@
       "id": "4",
       "date": "Oct 14",
       "date_sort": "2026-10-14",
-      "victim": "Telecom managed service provider and 500+ downstream customer organizations",
-      "industry": "Telecommunications",
-      "attacker": "Unknown — nation-state tradecraft suspected",
-      "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "Exploitation of CVE-2024-47575 (FortiManager) to breach a telecom MSP, then exfiltrate configurations for 500+ managed FortiGate devices including credentials, network topology, and VPN settings.",
-      "impact": "Memory-resident ARM64 PEERSTITCH implant deployed on FortiGate devices; 500+ downstream organizations' firewall credentials and network designs exposed; sophisticated supply-chain-style persistent access enabling follow-on attacks.",
+      "victim": "75,000+ organizations globally (Japan, US, Australia, India)",
+      "industry": "Multiple sectors",
+      "attacker": "China — criminal-linked phishing-as-a-service operators (Storm-3119, Storm-2990)",
+      "attacker_origin": "china",
+      "motivation": "Financial",
+      "vector": "Chinese-language YAM Store marketplace sold compromised Microsoft and Google cloud accounts alongside phishing kits (CoGUI, Haozi, Iron Man System) to operators who blasted over 1 billion phishing emails and SMS messages since January 2026",
+      "impact": "75,000+ organizations targeted; Microsoft seized marketplace domains via US federal court and disabled 20,000+ accounts; operations disrupted in coordination with Japan NPA, JC3, Health-ISAC, Resecurity, Cloudflare, Oracle, Proofpoint, and TRM Labs",
       "ongoing": "N",
       "severity": "high",
       "sources": [
-        "unit42.paloaltonetworks.com"
+        "microsoft.com",
+        "darkreading.com",
+        "cyberscoop.com"
       ]
     },
     {
       "id": "5",
       "date": "Oct 14",
       "date_sort": "2026-10-14",
-      "victim": "75,000+ organizations (healthcare, financial services, technology, wholesale distribution)",
+      "victim": "Multiple organizations (Ivanti Connect Secure VPN customers)",
       "industry": "Multiple sectors",
-      "attacker": "China — state-linked cybercrime ecosystem (Storm-3119 / Storm-2990)",
-      "attacker_origin": "china",
-      "motivation": "Financial",
-      "vector": "YAM Store phishing-as-a-service platform distributed over 1 billion phishing messages to organizations in Japan, US, Australia, and India via branded kits impersonating Microsoft and healthcare portals.",
-      "impact": "Microsoft and Health-ISAC disrupted the YAM Store ecosystem via court order; 75,000+ organizations targeted with credential-theft phishing at unprecedented scale; large-scale financial fraud facilitated.",
-      "ongoing": "N",
-      "severity": "high",
+      "attacker": "Unknown — likely state-linked espionage group (tracked by Volexity as UTA0576)",
+      "attacker_origin": "unknown",
+      "motivation": "Espionage",
+      "vector": "Unauthenticated remote code execution via chained zero-days in Ivanti Connect Secure VPN (CVE-2026-104935); exploit chain bypasses authentication, executes code remotely, and escalates privileges; exploitation began Oct 1 before Ivanti issued a patch",
+      "impact": "Confirmed post-exploitation includes credential theft, Active Directory metadata dump, custom tool deployment, log tampering, and network reconnaissance; CISA warns Integrity Checker Tool cannot detect memory-only exploitation; widespread exploitation expected given history of Ivanti targeting",
+      "ongoing": "Y",
+      "severity": "critical",
       "sources": [
-        "microsoft.com/security",
-        "darkreading.com",
-        "cyberscoop.com"
+        "cisa.gov",
+        "blog.talosintelligence.com",
+        "cyberscoop.com",
+        "therecord.media"
       ]
     },
     {
       "id": "6",
       "date": "Oct 14",
       "date_sort": "2026-10-14",
-      "victim": "395 organizations (440 PaperCut print management instances)",
-      "industry": "Multiple sectors",
-      "attacker": "Russia — state-linked criminal actors",
-      "attacker_origin": "russia",
+      "victim": "Ledger hardware cryptocurrency wallet customers (CryptoBilis reseller, Asia and Europe)",
+      "industry": "Financial services",
+      "attacker": "Unknown — suspected Chinese-linked group (CryptoBilis acquired by undisclosed Chinese company)",
+      "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "Coordinated fleet of 100+ AI agents automated the exploitation of CVE-2026-81578/82078 in PaperCut print management software to compromise instances across hundreds of organizations simultaneously.",
-      "impact": "440 PaperCut instances at 395 organizations compromised; credentials harvested; represents first documented large-scale AI-agent-coordinated exploitation campaign by Russia-linked actors.",
+      "vector": "Spy chips (LTE modem with eSIM) professionally soldered into Ledger Nano X and Flex hardware wallets by a rogue reseller, intercepting seed phrases from the device display before transmitting them over cellular to attackers",
+      "impact": "$86–100 million in cryptocurrency stolen; Ledger recalled all CryptoBilis-sourced devices; customers advised to immediately move funds to new wallet addresses; implants found in devices sold in Southeast Asia and at MediaMarkt stores in Europe",
       "ongoing": "N",
-      "severity": "high",
+      "severity": "critical",
       "sources": [
-        "recordedfuture.com"
+        "bloomberg.com",
+        "risky.biz",
+        "isc.sans.edu"
       ]
     },
     {
       "id": "7",
-      "date": "Oct 14",
-      "date_sort": "2026-10-14",
-      "victim": "49+ critical infrastructure organizations (energy, utilities, government)",
-      "industry": "Critical Infrastructure",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Exploitation of WordPress and Gitea CVE vulnerabilities for initial access to critical infrastructure networks across multiple countries.",
-      "impact": "49+ critical infrastructure organizations compromised; suspected pre-positioning and intelligence collection across energy, utilities, and government sectors.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "recordedfuture.com"
-      ]
-    },
-    {
-      "id": "8",
-      "date": "Oct 14",
-      "date_sort": "2026-10-14",
-      "victim": "Russian companies (Exchange servers)",
-      "industry": "Multiple sectors",
-      "attacker": "Unknown — espionage-motivated",
-      "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "Compromised VPN credentials used for initial access; GhostContainer backdoor deployed on Microsoft Exchange servers at Russian organizations.",
-      "impact": "Exchange servers at multiple Russian companies backdoored for persistent access; enables ongoing email surveillance and data exfiltration.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "recordedfuture.com"
-      ]
-    },
-    {
-      "id": "9",
-      "date": "Oct 14",
-      "date_sort": "2026-10-14",
-      "victim": "South Korean financial organizations",
-      "industry": "Financial Services",
-      "attacker": "Unknown — financially motivated",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "ARTEX campaign uses AI-driven reconnaissance and exploitation tooling to target South Korean financial sector networks.",
-      "impact": "Data exfiltrated from South Korean financial institutions; AI-augmented tradecraft accelerates attack cycle and complicates attribution.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "crowdstrike.com"
-      ]
-    },
-    {
-      "id": "10",
-      "date": "Oct 14",
-      "date_sort": "2026-10-14",
-      "victim": "Government organizations across 9 CIS countries",
-      "industry": "Government",
-      "attacker": "Unknown — Kazakhstan-nexus espionage group",
-      "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "Multiple infection chains including macro-enabled Office documents and WinRAR exploit targeting government organizations with a specific interest in water and energy sector intelligence.",
-      "impact": "Government organizations across Central Asia and former Soviet states compromised; water and energy sector targeting suggests critical infrastructure pre-positioning.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "blog.talosintelligence.com"
-      ]
-    },
-    {
-      "id": "11",
-      "date": "Oct 14",
-      "date_sort": "2026-10-14",
-      "victim": "Asian organizations (technology, financial services, government)",
-      "industry": "Multiple sectors",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Multiple commercial AI LLMs (including Claude, Qwen, and DeepSeek) used to automate reconnaissance, vulnerability research, and attack planning in SecFlow-based offensive operations.",
-      "impact": "Ongoing AI-assisted intrusion campaigns against Asian targets; documents operational use of multiple commercial AI systems to accelerate Chinese state-linked cyber operations.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "recordedfuture.com"
-      ]
-    },
-    {
-      "id": "12",
       "date": "Oct 13",
       "date_sort": "2026-10-13",
-      "victim": "70+ US companies (aerospace, energy, financial, healthcare, defense, cybersecurity)",
+      "victim": "70+ US companies (aerospace, energy, financial services, healthcare, cybersecurity, defense, technology)",
       "industry": "Multiple sectors",
-      "attacker": "North Korea — state-sponsored, financially motivated",
+      "attacker": "North Korea — state-sponsored, financially motivated (DPRK 313 General Bureau)",
       "attacker_origin": "north_korea",
       "motivation": "Financial",
-      "vector": "North Korean engineers used stolen identities and US-based laptop farm facilitators to secure remote IT employment; device identifiers spoofed and video capture cards used as fake webcams to evade detection.",
-      "impact": "14 indicted (2 arrested), 40+ laptop farms raided, 187 computers seized; approximately $3M in wages funneled to Pyongyang for weapons programs; scheme persists despite ongoing law enforcement pressure.",
+      "vector": "DPRK-controlled IT workers used stolen identities and US-hosted laptop farms maintained by paid American facilitators to covertly hold remote jobs, exfiltrate data, and extort employers; Operation Lonestar Roundup",
+      "impact": "14 individuals charged including 2 US citizen facilitators; 40+ Texas laptop farms seized; 187+ computers confiscated; ~$3M in salary diverted to DPRK weapons programs; scheme persists through subcontracting to freelancers in South Asia and West Africa",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
         "justice.gov",
-        "crowdstrike.com",
         "ic3.gov",
+        "crowdstrike.com",
         "cyberscoop.com"
       ]
     },
     {
-      "id": "13",
+      "id": "8",
       "date": "Oct 13",
       "date_sort": "2026-10-13",
-      "victim": "Ahold Delhaize (Food Lion, Stop & Shop, Albert Heijn, Delhaize, Profi, Mega Image)",
-      "industry": "Retail / Grocery",
-      "attacker": "Unknown — criminal likely",
+      "victim": "Foschini Group UK (Phase Eight, Hobbs, Whistles)",
+      "industry": "Retail",
+      "attacker": "Unknown — criminal likely (part of wave targeting UK fashion retail)",
       "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Unknown attack vector; IT infrastructure supporting online ordering and distribution systems targeted, forcing precautionary shutdowns across multiple countries.",
-      "impact": "Online orders, distribution operations, and in-store pricing disrupted across US, Netherlands, Belgium, and Romania; more than 400,000 employees and millions of customers affected.",
+      "motivation": "Unclear",
+      "vector": "Undisclosed attack vector; IT systems taken offline as a containment measure shortly after discovery",
+      "impact": "IT systems at three UK fashion brands disrupted; online orders delayed; South African and Australian operations unaffected due to separate IT infrastructure; investigation and forensics ongoing",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "9",
+      "date": "Oct 13",
+      "date_sort": "2026-10-13",
+      "victim": "Ahold Delhaize (Food Lion, Stop & Shop, Albert Heijn, Etos, Gall & Gall, Delhaize, Profi, Mega Image)",
+      "industry": "Retail",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Cyberattack of undisclosed nature; Ahold Delhaize proactively took systems offline across multiple subsidiary brands to limit potential damage",
+      "impact": "Online grocery orders, distribution center operations, and in-store electronic pricing disrupted across US, Netherlands, Belgium, and Romania; operations affecting over 400,000 employees; prior 2024 breach of same company stole 2.2 million customer records",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -241,33 +171,51 @@
       ]
     },
     {
-      "id": "14",
+      "id": "10",
       "date": "Oct 13",
       "date_sort": "2026-10-13",
-      "victim": "Ledger Nano X hardware wallet users (CryptoBilis reseller purchases)",
-      "industry": "Financial Services",
-      "attacker": "Unknown — supply chain threat actor (alleged Chinese-linked company)",
+      "victim": "OpenAI",
+      "industry": "Technology",
+      "attacker": "Unknown — Saudi Arabia intelligence-linked (implied by DOJ framing and meeting topics captured)",
       "attacker_origin": "unknown",
+      "motivation": "Espionage",
+      "vector": "Saudi national employee installed a covert audio recording device concealed inside a USB port in OpenAI's executive conference room, capturing high-level meetings",
+      "impact": "Meetings covering AI technology, product plans, and government engagements recorded over an unknown period; device discovered September 30 and arrested October 13; full extent of captured intelligence unknown",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "justice.gov"
+      ]
+    },
+    {
+      "id": "11",
+      "date": "Oct 13",
+      "date_sort": "2026-10-13",
+      "victim": "Multiple organizations (Cisco Firepower Management Console customers)",
+      "industry": "Multiple sectors",
+      "attacker": "Criminal gang — ransomware (Qilin group, with separate espionage actors also exploiting same flaws)",
+      "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Spy chips soldered inside Ledger Nano X wallets sold through a Southeast Asian reseller intercept seed phrases from the device screen and exfiltrate them via built-in eSIM modem to attacker infrastructure.",
-      "impact": "$86 million in cryptocurrency stolen; Ledger advising customers to discard all affected devices and move funds immediately; isolated cases found in additional wallet models suggest broader supply chain exposure.",
+      "vector": "Three separate threat groups exploited CVE-2026-20079 and CVE-2026-20316 in Cisco Firepower Management Console for credential theft, webshell installation, Cyclops Blink-style persistent malware, and Qilin ransomware deployment",
+      "impact": "Multiple organizations breached via their core network security management platform; Qilin ransomware deployed in at least one campaign; persistent backdoors installed; a Qilin member was subsequently arrested in Japan",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
+        "recordedfuture.com",
         "risky.biz"
       ]
     },
     {
-      "id": "15",
+      "id": "12",
       "date": "Oct 13",
       "date_sort": "2026-10-13",
-      "victim": "FBI (employee intelligence data); Jeppesen ForeFlight / Boeing (aviation data)",
-      "industry": "Government / Aviation",
+      "victim": "FBI (US federal law enforcement), Boeing spin-off (extortion target)",
+      "industry": "Government / Aerospace & Defense",
       "attacker": "Criminal gang — data extortion (ShinyHunters)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "FBI employee data stolen via compromised credentials; Oracle PeopleSoft WAF bypass used in separate extortion attacks; stolen data leveraged to extort Boeing's aviation subsidiary Jeppesen ForeFlight.",
-      "impact": "Sensitive FBI employee intelligence role data exposed; Boeing spin-off extorted; multiple ShinyHunters suspects arrested in Netherlands, US, and Jordan as law enforcement closes in on the group.",
+      "vector": "ShinyHunters breached FBI data infrastructure and stole personnel records; separately extorted a Boeing spin-off company using stolen data as leverage",
+      "impact": "FBI employee data including sensitive intelligence role information stolen; Boeing spin-off extorted; ShinyHunters leader 'Rey' arrested in Jordan and cooperating with authorities; Dutch member arrested separately",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -276,67 +224,16 @@
       ]
     },
     {
-      "id": "16",
-      "date": "Oct 13",
-      "date_sort": "2026-10-13",
-      "victim": "OpenAI",
-      "industry": "Technology / Artificial Intelligence",
-      "attacker": "Unknown — foreign intelligence suspected",
-      "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "An OpenAI software engineer (Saudi national) installed a covert audio recording device inside the executive conference room to capture sensitive business and strategic discussions.",
-      "impact": "OpenAI executive communications compromised over an unknown period; employee arrested by DOJ; extent of intelligence collected and potential foreign recipients under investigation.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "justice.gov"
-      ]
-    },
-    {
-      "id": "17",
-      "date": "Oct 13",
-      "date_sort": "2026-10-13",
-      "victim": "Foschini Group UK brands (Phase Eight, Hobbs, Whistles)",
-      "industry": "Retail / Fashion",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Unknown attack vector; IT systems at TFG's three UK fashion brands disrupted, requiring partial system shutdowns.",
-      "impact": "Multiple IT systems offline; online orders delayed; stores remained open; potential customer data exposure under investigation; second cyber incident involving TFG's UK operations this year.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "18",
-      "date": "Oct 13",
-      "date_sort": "2026-10-13",
-      "victim": "SkyNet ISP (St. Petersburg, Russia)",
-      "industry": "Telecommunications",
-      "attacker": "Ukraine — state-linked hacktivist group",
-      "attacker_origin": "unknown",
-      "motivation": "Political",
-      "vector": "Sustained DDoS attack combined with claimed network device disruption by Ukrainian hacktivist group BO Team since Oct 6, 2026; stated retaliation for Russian strikes on Ukrainian data centers.",
-      "impact": "Ongoing service disruptions affecting internet, VoIP, gaming, and video services for residential and business customers across St. Petersburg; more than 15,000 network devices claimed disabled; full recovery timeline unknown.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "19",
-      "date": "Oct 13",
-      "date_sort": "2026-10-13",
-      "victim": "Meta",
+      "id": "13",
+      "date": "Oct 12",
+      "date_sort": "2026-10-12",
+      "victim": "Meta (Facebook parent company)",
       "industry": "Technology",
       "attacker": "Unknown — criminal likely",
       "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Employee credentials compromised and used to access Meta's internal GitHub repositories.",
-      "impact": "Data of 1,500+ US employees stolen including sensitive role information; portions of Meta source code exfiltrated; employees being notified.",
+      "motivation": "IP theft",
+      "vector": "Threat actor used stolen employee credentials to access Meta's GitHub repositories and exfiltrate employee data and source code",
+      "impact": "Personal data of 1,500+ US employees stolen including some proprietary source code; Meta notified all affected personnel; breach occurred in September 2026 and disclosed in October",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
@@ -344,57 +241,177 @@
       ]
     },
     {
-      "id": "20",
-      "date": "Oct 13",
-      "date_sort": "2026-10-13",
-      "victim": "Android phone buyers (cheap flagship-imitating models sold globally)",
-      "industry": "Consumer Technology",
-      "attacker": "Unknown — criminal supply chain",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Midnight Mimosa malware pre-installed at manufacturing or distribution stage on cheap Android phones mimicking flagship devices (S25 Ultra, i17 Pro); Google Play Store disabled by the malware to evade detection.",
-      "impact": "Unknown number of users affected globally; malware enables clickjacking, proxy botnet participation, and ad fraud; Bitdefender research published; ongoing supply chain risk with no clear remediation path for affected devices.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "isc.sans.edu"
-      ]
-    },
-    {
-      "id": "21",
+      "id": "14",
       "date": "Oct 12",
       "date_sort": "2026-10-12",
-      "victim": "European grocery retailers (Intermarché and others — 400+ stores across France, Spain, Portugal, Poland, Germany, Belgium)",
+      "victim": "Hundreds of French supermarkets (primarily Intermarché chain)",
       "industry": "Retail / Food & Beverage",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Disruption",
-      "vector": "Exploitation of default credentials and outdated firmware in Danfoss AK-SM 800A refrigeration controllers and XWEB management systems to remotely raise freezer and refrigerator temperatures to 50°C.",
-      "impact": "400+ French stores affected; tens of millions of euros in food stock destroyed; similar incidents reported across five additional European countries; Danfoss vulnerabilities had been publicly disclosed months before the attacks.",
+      "vector": "Attackers exploited internet-connected Danfoss refrigeration units running outdated firmware with default credentials, triggering defrost cycles and raising freezer and refrigerator temperatures to 50°C",
+      "impact": "Tens of millions of euros in food stock destroyed overnight across hundreds of locations; widespread food supply disruption; ACSC issued alert warning Australian operators of similar OT refrigeration risks",
       "ongoing": "N",
       "severity": "high",
       "sources": [
-        "darkreading.com",
+        "blog.talosintelligence.com",
         "risky.biz",
         "cyber.gov.au"
       ]
     },
     {
-      "id": "22",
+      "id": "15",
       "date": "Oct 8",
       "date_sort": "2026-10-08",
-      "victim": "Government, critical manufacturing, healthcare, and IT organizations globally",
-      "industry": "Multiple sectors",
-      "attacker": "China — state-sponsored espionage group (Integrity Technology Group)",
+      "victim": "Government, critical manufacturing, healthcare, IT, law enforcement, education organizations globally",
+      "industry": "Multiple sectors (critical infrastructure)",
+      "attacker": "China — Integrity Technology Group-enabled state actors (Chinese government-linked)",
       "attacker_origin": "china",
       "motivation": "Espionage",
-      "vector": "AI-enabled automated scanning, large-scale botnets, and manual exploitation of internet-facing infrastructure; Integrity Tech provides tools, operators, and hosting to support Chinese state-directed cyber operations.",
-      "impact": "Ongoing global campaign targeting critical sectors across multiple continents; joint advisory issued by UK, US, Australia, Canada, Japan, New Zealand, and Spain; Integrity Tech previously sanctioned by the UK government.",
+      "vector": "AI-enabled automated scanning combined with large-scale botnets and hands-on exploitation by Chinese state actors enabled through Integrity Technology Group's infrastructure, tooling, and personnel",
+      "impact": "Ongoing global compromise of critical sector networks and sensitive data theft; joint advisory from NSA, FBI, NCSC, and partners from Australia, Canada, Japan, New Zealand, Spain; actor TTPs overlap with Flax Typhoon, Storm 919, Ethereal Panda, and Red Juliett campaigns; Integrity Tech sanctioned by UK",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
         "nsa.gov",
         "ncsc.gov.uk"
+      ]
+    },
+    {
+      "id": "16",
+      "date": "Oct 6",
+      "date_sort": "2026-10-06",
+      "victim": "ASOS (UK online fashion retailer and its customers)",
+      "industry": "Retail",
+      "attacker": "Unknown — criminal likely (part of coordinated wave targeting UK fashion retailers)",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Attacker compromised an ASOS employee account by impersonating a trusted contact, then used access to send unauthorized push notifications to customers and access personal records",
+      "impact": "Customer names and contact details accessed for potentially all ASOS customers; payment card information and account passwords not believed compromised; NCSC issued public guidance; part of broader wave also targeting H&M and Foschini Group UK brands",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "ncsc.gov.uk",
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "17",
+      "date": "Oct 1",
+      "date_sort": "2026-10-01",
+      "victim": "Telecom managed service provider and 500+ downstream managed FortiGate firewall clients",
+      "industry": "Telecommunications",
+      "attacker": "Unknown — nation-state level tradecraft (tracked as CL-STA-0954 / UNC5820)",
+      "attacker_origin": "unknown",
+      "motivation": "Espionage",
+      "vector": "Initial access via CVE-2024-47575 (FortiJump); privilege escalation via CVE-2025-61624; novel memory-resident ARM64 PEERSTITCH malware communicates exclusively through legitimate process traffic with no listening ports or outbound connections to evade detection",
+      "impact": "Firewall configurations for 500+ client organizations exfiltrated; PEERSTITCH implant designed to survive standard detection; downstream MSP clients face significant lateral exposure risk",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "unit42.paloaltonetworks.com"
+      ]
+    },
+    {
+      "id": "18",
+      "date": "Oct 1",
+      "date_sort": "2026-10-01",
+      "victim": "395 organizations (440 PaperCut print management instances)",
+      "industry": "Multiple sectors",
+      "attacker": "Criminal gang — Russian-speaking, AI-augmented",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "AI agents deployed to automate mass exploitation of PaperCut NG/MF print management vulnerabilities CVE-2026-81578 and CVE-2026-82078 across hundreds of organizations simultaneously",
+      "impact": "440 PaperCut instances compromised across 395 organizations; AI-augmented exploitation enabled attack scale and speed far exceeding traditional campaigns; full downstream impact under investigation",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "recordedfuture.com"
+      ]
+    },
+    {
+      "id": "19",
+      "date": "Oct 1",
+      "date_sort": "2026-10-01",
+      "victim": "49+ organizations (WordPress), 11 critical infrastructure organizations (Gitea), others",
+      "industry": "Critical infrastructure / Multiple",
+      "attacker": "China — state-suspected espionage group (Red Heron)",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "Opportunistic mass exploitation of CVE-2026-63030 (WordPress RCE) and CVE-2026-60004 (Gitea) alongside Linux kernel and Proxmox vulnerabilities to establish persistent footholds for data collection",
+      "impact": "Persistent access established across 60+ organizations including 11 critical infrastructure targets; source code repositories and databases exfiltrated; credential harvesting ongoing; campaign active since May 2026",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "recordedfuture.com"
+      ]
+    },
+    {
+      "id": "20",
+      "date": "Sep 1",
+      "date_sort": "2026-09-01",
+      "victim": "153 million+ US and Canadian residents (via Louisiana identity verification company)",
+      "industry": "Government / Technology",
+      "attacker": "Unknown — criminal",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Criminal actor exfiltrated driver's license images and associated records from a Louisiana-based identity verification company and launched a dark web service selling the stolen data",
+      "impact": "Over 153 million US and Canadian driver's license images and personal records offered for sale on the dark web; FBI investigation launched; massive identity fraud and impersonation risk for affected populations",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "krebsonsecurity.com"
+      ]
+    },
+    {
+      "id": "21",
+      "date": "Aug 1",
+      "date_sort": "2026-08-01",
+      "victim": "US Embassy, Suva, Fiji",
+      "industry": "Government",
+      "attacker": "China — state-linked espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "Network intrusion maintaining persistent unauthorized access to the US Embassy's IT systems over a two-month period",
+      "impact": "Chinese hackers maintained access to US Embassy Fiji network from July to August 2026; US government notified Fiji authorities; Fiji government networks potentially also targeted during the same period",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "22",
+      "date": "Aug 1",
+      "date_sort": "2026-08-01",
+      "victim": "CIS government organizations (Kazakhstan, Kyrgyzstan, Tajikistan, Turkmenistan, Uzbekistan, Armenia, Azerbaijan, Russia, Belarus)",
+      "industry": "Government",
+      "attacker": "Unknown — Kazakhstan-nexus espionage group (medium confidence; also tracked as Silent Lynx / YoroTrooper cluster)",
+      "attacker_origin": "unknown",
+      "motivation": "Espionage",
+      "vector": "Macro-enabled documents, PS2EXE obfuscation, GitHub-hosted PowerShell command-and-control, and WinRAR vulnerability CVE-2025-8088 used to collect diplomatic, economic, and energy intelligence from nine Central Asian and post-Soviet governments",
+      "impact": "15-month intelligence collection campaign across nine countries targeting diplomatic, economic, and energy information; campaign concluded August 2026 and attributed with medium confidence to a Kazakhstan-nexus actor",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "blog.talosintelligence.com"
+      ]
+    },
+    {
+      "id": "23",
+      "date": "Jul 1",
+      "date_sort": "2026-07-01",
+      "victim": "Russian companies (Microsoft Exchange server operators)",
+      "industry": "Multiple sectors",
+      "attacker": "Unknown — suspected Western or Ukraine-aligned espionage group",
+      "attacker_origin": "unknown",
+      "motivation": "Espionage",
+      "vector": "Compromised VPN credentials provided initial access; Exchange crypto keys extracted to modify VIEWSTATE and deploy GhostContainer backdoor; CVE-2019-0708 (BlueKeep RDP) exploited for lateral movement to unpatched legacy systems",
+      "impact": "Persistent GhostContainer backdoor deployed on Exchange servers of multiple Russian organizations; ongoing email intelligence collection; exploitation of BlueKeep indicates continued exposure of unpatched legacy Windows systems within targeted environments",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "recordedfuture.com"
       ]
     }
   ]
