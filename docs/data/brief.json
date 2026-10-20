@@ -1,404 +1,176 @@
 {
-  "generated_at": "2026-10-16T20:10:26.284584+00:00",
-  "period_searched": "October 14-16, 2026",
-  "incident_count": 24,
+  "generated_at": "2026-10-20T08:07:41.191728+00:00",
+  "period_searched": "October 6-20, 2026",
+  "incident_count": 16,
   "incidents": [
     {
       "id": "1",
-      "date": "Oct 16",
-      "date_sort": "2026-10-16",
-      "victim": "ATB Market, Tez Tour, Dodo Pizza",
-      "industry": "Retail / Food Service / Travel",
-      "attacker": "Criminal gang — data extortion (DataSuckers)",
+      "date": "Late Sep (upd. Oct 19)",
+      "date_sort": "2026-10-19",
+      "victim": "FBI (fbijobs.gov recruitment platform)",
+      "industry": "Government / Law Enforcement",
+      "attacker": "Criminal gang — data extortion (ShinyHunters)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Attackers found valid credentials in Dodo Pizza's GitHub repositories and used them to access backend systems across multiple companies, stealing data and destroying systems before demanding ransoms.",
-      "impact": "Three organizations across Ukraine and Russia breached; data exfiltrated and systems destroyed. Three of four gang members arrested in Russia and Belarus; one 19-year-old suspect placed under house arrest facing up to six years.",
-      "ongoing": "N",
-      "severity": "medium",
+      "vector": "Attackers compromised the FBI's recruitment site via an Oracle PeopleSoft platform managed by an Accenture contractor who failed to apply a security patch; credentials/access abuse followed.",
+      "impact": "Exposed medical and psychological records, Social Security numbers, home addresses, and unit/specialization details for thousands of FBI employees. Accenture contractor removed from the account; FBI has arrested multiple suspected ShinyHunters associates, including a ransomware negotiator (Edward Dubrovsky) suspected of helping run the extortion site.",
+      "ongoing": "Y",
+      "severity": "critical",
       "sources": [
-        "risky.biz"
+        "reuters.com",
+        "krebsonsecurity.com",
+        "darkreading.com"
       ]
     },
     {
       "id": "2",
-      "date": "Oct 15",
-      "date_sort": "2026-10-15",
-      "victim": "BAE Systems / US Federal Bankruptcy Courts",
-      "industry": "Government / Defense",
+      "date": "Oct 19",
+      "date_sort": "2026-10-19",
+      "victim": "Ahold Delhaize (Food Lion, Stop & Shop, Albert Heijn, Etos, Gall & Gall)",
+      "industry": "Retail / Grocery",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
-      "motivation": "Disruption",
-      "vector": "Cyberattack on BAE Systems compromised the Bankruptcy Noticing Center, the platform BAE operates on behalf of all US federal bankruptcy courts.",
-      "impact": "All federal bankruptcy court notice production halted nationwide; BNC websites offline including bnc.uscourts.gov. Scope of any data theft under investigation. Incident follows separate attacks on DOT contractor and the FBI.",
+      "motivation": "Unclear",
+      "vector": "Not disclosed; company confirmed suspicious IT activity detected the prior week was caused by malicious actors and filed a police report in the Netherlands.",
+      "impact": "Online ordering and e-commerce systems taken offline across US and European brands; stores remained open. No confirmed data theft yet; investigation ongoing. Company previously had 2.2 million customers' data stolen in a 2024 breach.",
       "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "therecord.media",
-        "cyberscoop.com"
-      ]
-    },
-    {
-      "id": "3",
-      "date": "Oct 15",
-      "date_sort": "2026-10-15",
-      "victim": "UK Legal Aid Agency",
-      "industry": "Government / Legal",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Attackers exploited vulnerabilities in the Legal Aid Agency's IT systems to gain unauthorized access and exfiltrate unstructured data from its online service, initially breached prior to May 2025.",
-      "impact": "October 15 update revealed 250,000 records pre-dating 2007 (earliest from 1978) included, raising total affected individuals above 2 million. Stolen data includes criminal histories, financial assessments, bank account details, and probation records. UK government has refused ransom; hackers claim 2M+ records.",
-      "ongoing": "N",
       "severity": "high",
       "sources": [
         "therecord.media"
       ]
     },
     {
-      "id": "4",
-      "date": "Oct 2026",
-      "date_sort": "2026-10-15",
-      "victim": "Ledger cryptocurrency wallet users",
-      "industry": "Financial Services / Cryptocurrency",
-      "attacker": "Unknown — criminal likely",
+      "id": "3",
+      "date": "Oct 14-19",
+      "date_sort": "2026-10-19",
+      "victim": "ConnectWise Cloud Backup customers (downstream MSPs)",
+      "industry": "IT / Managed Service Providers",
+      "attacker": "Unknown",
       "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Hardware supply chain attack: LTE modules with SIM cards were professionally soldered into Ledger Nano X wallets by a compromised Southeast Asian reseller (CryptoBilis), intercepting seed phrases and transmitting them to attackers.",
-      "impact": "Up to $100 million in cryptocurrency stolen from affected wallet holders since spring 2026. Implants confirmed in devices sold through Asian resellers and MediaMarkt stores in Europe. Ledger directed all customers to move funds off affected devices.",
+      "motivation": "Unclear",
+      "vector": "Threat actor obtained credentials tied to ConnectWise's Cloud Backup (formerly SkyKick) application and used them to authenticate into customers' Microsoft 365 tenants, abusing highly elevated permissions such as Directory.ReadWrite.All.",
+      "impact": "ConnectWise disabled Cloud Backup, SaaS Security, and Cloud Management services; backups and restores unavailable for partners/clients. No confirmed data exfiltration yet; full blast radius across downstream MSP customers still under investigation.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "risky.biz",
-        "isc.sans.edu"
+        "darkreading.com",
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "4",
+      "date": "Oct 19",
+      "date_sort": "2026-10-19",
+      "victim": "Al-Jazeera personnel",
+      "industry": "Media",
+      "attacker": "Unknown — commercial spyware vendor (Candiru/Integrity Labs)",
+      "attacker_origin": "unknown",
+      "motivation": "Political",
+      "vector": "Ad-tech company Discover-Tech used targeted ad-bidding infrastructure (dubbed \"AdFection\") to deliver Candiru spyware via ad impressions, requiring no click from the victim.",
+      "impact": "At least 45 devices belonging to Al-Jazeera personnel infected with surveillance spyware. Candiru (now Integrity Labs) remains on the US Commerce Department's Entity List for supplying spyware to foreign governments.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "darkreading.com"
       ]
     },
     {
       "id": "5",
-      "date": "Oct 15",
-      "date_sort": "2026-10-15",
-      "victim": "Al Jazeera employees (and potentially EU governments, NATO, UN networks)",
-      "industry": "Media",
-      "attacker": "Unknown — state-sponsored likely",
+      "date": "Oct 19",
+      "date_sort": "2026-10-19",
+      "victim": "Serbian opposition and civil society figures",
+      "industry": "Government / Civil Society",
+      "attacker": "Unknown — government surveillance using commercial spyware (Pegasus)",
       "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "Israeli advertising company Discover-Tech deployed Candiru commercial spyware payloads via targeted online advertisements; CitizenLab confirmed device infections at Al Jazeera headquarters.",
-      "impact": "Confirmed device compromises at Al Jazeera HQ. Ad cluster analysis indicates likely targeting of EU governments, NATO, UN networks, global news organizations, and semiconductor manufacturers. Google removed Discover-Tech from ad platforms; IAB Europe suspended its membership.",
-      "ongoing": "N",
+      "motivation": "Political",
+      "vector": "NSO Group's Pegasus spyware deployed against the phones of regime critics, including a university rector and a prosecutor, ahead of national elections.",
+      "impact": "University of Belgrade rector Vladan Đokić confirmed infected with Pegasus; prosecutor Rade Bajić received an Apple threat notification. At least 15 Serbian civil-society figures targeted with spyware in 2026, days before the October 25 elections.",
+      "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "risky.biz"
+        "cyberscoop.com",
+        "therecord.media"
       ]
     },
     {
       "id": "6",
-      "date": "Oct 14",
-      "date_sort": "2026-10-14",
-      "victim": "Israeli Prime Minister Netanyahu's inner circle",
-      "industry": "Government / Political",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Political",
-      "vector": "Unknown attacker gained access to phones belonging to members of PM Netanyahu's inner circle and exfiltrated personal photos and videos.",
-      "impact": "Photos and videos from the PM's spouse, Israel's Ambassador to the UAE, and a senior PM adviser were leaked publicly two weeks before Israeli elections on October 27. Haaretz independently verified some leaked content.",
+      "date": "Oct 19",
+      "date_sort": "2026-10-19",
+      "victim": "FirstVDS",
+      "industry": "IT / Hosting & Cloud Services",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Unclear",
+      "vector": "Not disclosed.",
+      "impact": "Customer data stolen from major Russian hosting provider FirstVDS.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
-        "risky.biz"
+        "therecord.media"
       ]
     },
     {
       "id": "7",
-      "date": "Oct 14",
-      "date_sort": "2026-10-14",
-      "victim": "FLC consortium (Fehmarn Belt fixed link project)",
-      "industry": "Infrastructure / Construction",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Disruption",
-      "vector": "Cyberattack targeted FLC, the international consortium building the Fehmarn Belt fixed link — the world's longest road and rail tunnel under construction between Denmark and Germany.",
-      "impact": "Tunnel construction halted; some equipment systems and employee access cards affected. Project timeline impact unknown.",
+      "date": "Oct 19",
+      "date_sort": "2026-10-19",
+      "victim": "U.S. tax preparation businesses",
+      "industry": "Professional Services / Tax Preparation",
+      "attacker": "Criminal gang — fraud and identity theft",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Spearphishing emails used to gain access to tax preparation businesses' electronic systems beginning in 2019.",
+      "impact": "Tax and identifying information stolen for at least 800 customers per compromised business across multiple US tax firms. Nigerian national Chukwuemeka Victor Amachukwu sentenced to eight years in prison for his role in the scheme.",
       "ongoing": "N",
-      "severity": "medium",
+      "severity": "low",
       "sources": [
-        "risky.biz"
+        "justice.gov"
       ]
     },
     {
       "id": "8",
-      "date": "Oct 14",
-      "date_sort": "2026-10-14",
-      "victim": "75,000+ organizations in 150 countries (healthcare, financial services, IT)",
-      "industry": "Multiple sectors",
-      "attacker": "Criminal gang — phishing-as-a-service",
-      "attacker_origin": "criminal",
+      "date": "Oct 16",
+      "date_sort": "2026-10-16",
+      "victim": "Seven South Korean financial institutions",
+      "industry": "Financial Services / Banking",
+      "attacker": "Unknown — AI-assisted intrusion (ARTEX framework)",
+      "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "Chinese-language phishing-as-a-service infrastructure (YAM Store / CoGUI / Iron Man System) provided customizable phishing kits to criminal operators targeting organizations worldwide since January 2026.",
-      "impact": "Over 1 billion malicious messages sent to 75,000+ organizations across 150 countries. Microsoft and Health-ISAC filed civil lawsuit against operator Yang Jian (d/b/a Yam Store); Microsoft seized and redirected infrastructure, disabled 20,000+ accounts, and blocked 100,000+ domains.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "microsoft.com/en-us/security/blog",
-        "cyberscoop.com"
-      ]
-    },
-    {
-      "id": "9",
-      "date": "Oct 12–13",
-      "date_sort": "2026-10-13",
-      "victim": "Intermarché and other French supermarket chains",
-      "industry": "Retail / OT",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Disruption",
-      "vector": "Attackers exploited Danfoss refrigeration and freezer equipment running outdated firmware with default credentials unchanged, remotely raising temperatures across hundreds of stores.",
-      "impact": "Hundreds of Intermarché and other French supermarkets affected; tens of millions of euros in food stock losses. ACSC and cybersecurity researchers issued advisories on OT/refrigeration vulnerabilities.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "blog.talosintelligence.com",
-        "risky.biz",
-        "cyber.gov.au"
-      ]
-    },
-    {
-      "id": "10",
-      "date": "Oct 12–13",
-      "date_sort": "2026-10-13",
-      "victim": "Ahold Delhaize (Food Lion, Stop & Shop, Albert Heijn, Delhaize, and others)",
-      "industry": "Retail",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Disruption",
-      "vector": "Cyberattack targeted Ahold Delhaize's centralized online ordering and logistics platform over the weekend.",
-      "impact": "Supermarket chains taken offline across the US (Food Lion, Stop & Shop), Netherlands (Albert Heijn, Etos, Gall & Gall), Belgium (Delhaize), and Romania (Profi, Mega Image). Millions of customers unable to place online orders.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "11",
-      "date": "Oct 13",
-      "date_sort": "2026-10-13",
-      "victim": "OpenAI",
-      "industry": "Technology / AI",
-      "attacker": "Unknown — insider threat",
-      "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "A Saudi national OpenAI employee planted a covert LTE-enabled listening device behind a TV in a conference room at OpenAI's San Francisco headquarters; a second device was found unattended in a building.",
-      "impact": "Extent of information captured undetermined. OpenAI states no evidence of unauthorized access to model weights, source code, or customer data. Employee arrested by FBI and terminated. FTC launched inquiry into AI company security incidents.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "12",
-      "date": "Oct 13",
-      "date_sort": "2026-10-13",
-      "victim": "70+ US companies (healthcare, communications, cybersecurity, retail, manufacturing)",
-      "industry": "Multiple sectors",
-      "attacker": "North Korea — state-sponsored, financially motivated",
-      "attacker_origin": "north_korea",
-      "motivation": "Financial",
-      "vector": "North Korean nationals used laptop farms to masquerade as US remote workers, gaining employment at US companies to generate revenue for the North Korean state and potentially access sensitive systems.",
-      "impact": "Over $3 million generated for North Korean government programs. 40 laptop farms in Texas disrupted; 187 laptops seized. DOJ indicted 14 individuals and arrested two. Sectors impacted include healthcare, communications, and cybersecurity.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "justice.gov",
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "13",
-      "date": "Oct 8",
-      "date_sort": "2026-10-08",
-      "victim": "Global critical infrastructure (government, manufacturing, healthcare, IT, law enforcement, education)",
-      "industry": "Multiple sectors",
-      "attacker": "China — state-linked cyber operator (Integrity Technology Group)",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Chinese government-linked company Integrity Technology Group operated a botnet enabling Chinese state cyber actors to conduct reconnaissance and intrusions targeting government and critical infrastructure globally.",
-      "impact": "Ongoing intrusion campaign affecting government services, critical manufacturing, healthcare, IT, and education across Southeast Asia, Africa, and North America. NSA, FBI, UK NCSC, and partners from Australia, Canada, Japan, New Zealand, and Spain issued joint advisory.",
+      "vector": "Threat actor tracked as TAG-217 used ARTEX, a Chinese-language open-source AI penetration-testing framework, to compromise different systems at each target, with infrastructure staging dating back to August 2026.",
+      "impact": "Personal data of at least 68,000 people exposed across at least seven financial institutions; one breach exposed an outsourced developer's access, another resulted in customer data theft. Further prep infrastructure for crypto-wallet theft and mobile exploitation uncovered.",
       "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "nsa.gov",
-        "ncsc.gov.uk"
-      ]
-    },
-    {
-      "id": "14",
-      "date": "Oct 3",
-      "date_sort": "2026-10-03",
-      "victim": "MrMax Holdings (Japanese discount retailer)",
-      "industry": "Retail",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Unauthorized third-party access to MrMax app and online store servers via unspecified intrusion, discovered October 3, 2026.",
-      "impact": "Up to 1,735,154 member records exposed including names, email addresses, phone numbers, and membership IDs. Company states no credit card data or passwords were compromised. Services temporarily suspended.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "reuters.com"
-      ]
-    },
-    {
-      "id": "15",
-      "date": "Sep 2026",
-      "date_sort": "2026-09-01",
-      "victim": "FBI (Federal Bureau of Investigation)",
-      "industry": "Government / Law Enforcement",
-      "attacker": "Criminal gang — data extortion (ShinyHunters)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "ShinyHunters exploited Oracle PeopleSoft CVE-2026-35273 using a WAF bypass technique; Accenture, the platform manager, had failed to apply the security patch explicitly issued to secure the system.",
-      "impact": "Sensitive personal data of thousands of FBI employees exposed, including job details, home addresses, medical records, and intelligence role assignments. Accenture contractor removed from FBI. Multiple ShinyHunters suspects subsequently arrested: leader detained in Jordan, one arrested in Netherlands, one in Pennsylvania.",
-      "ongoing": "N",
-      "severity": "critical",
-      "sources": [
-        "krebsonsecurity.com",
-        "reuters.com"
-      ]
-    },
-    {
-      "id": "16",
-      "date": "Sep 2026",
-      "date_sort": "2026-09-01",
-      "victim": "395 organizations (440+ PaperCut instances)",
-      "industry": "Technology / Enterprise IT",
-      "attacker": "Russia — state-linked group",
-      "attacker_origin": "russia",
-      "motivation": "Financial",
-      "vector": "Russia-linked threat actors used AI-automated agents to conduct broad, automated exploitation of vulnerable PaperCut NG/MF print management software at scale.",
-      "impact": "440+ vulnerable PaperCut instances compromised across 395 organizations in an AI-assisted campaign. Scope of data theft or system access undisclosed.",
-      "ongoing": "N",
       "severity": "high",
       "sources": [
         "recordedfuture.com"
       ]
     },
     {
-      "id": "17",
-      "date": "Sep 2026",
-      "date_sort": "2026-09-01",
-      "victim": "Meta (Facebook parent company)",
-      "industry": "Technology",
+      "id": "9",
+      "date": "Oct 16",
+      "date_sort": "2026-10-16",
+      "victim": "OVHcloud CLI users",
+      "industry": "IT / Cloud Services",
       "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Threat actor used a Meta employee's stolen credentials to gain unauthorized access to Meta's GitHub repositories and exfiltrate employee data and portions of source code.",
-      "impact": "Personal data of 1,500+ US employees stolen. Some Meta source code exfiltrated. Company began notifying affected employees.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "18",
-      "date": "Sep 2026",
-      "date_sort": "2026-09-01",
-      "victim": "Jeppesen ForeFlight (Boeing aviation subsidiary)",
-      "industry": "Aviation / Technology",
-      "attacker": "Criminal gang — data extortion (ShinyHunters)",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "ShinyHunters breached Jeppesen ForeFlight, a Boeing spin-off providing aviation navigation software, and demanded extortion payment.",
-      "impact": "Data exfiltrated and extortion demands made. Breach extent not publicly disclosed. Part of a broader ShinyHunters campaign targeting multiple high-profile organizations.",
+      "vector": "Compromised versions of the OVHcloud command line tool package shipped an infostealer for a few hours before being pulled.",
+      "impact": "Users who installed the compromised package were exposed to credential-stealing malware. Fixed in version 0.16.0; OVHcloud recommends pinning package hashes.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
-        "krebsonsecurity.com"
+        "isc.sans.edu"
       ]
     },
     {
-      "id": "19",
-      "date": "Aug 29",
-      "date_sort": "2026-08-29",
-      "victim": "Multiple organizations (legal, SaaS, BPO, technology, government)",
-      "industry": "Technology / Government",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Exploited a zero-day authentication bypass in BeyondTrust Remote Support appliances (CVE-2026-102764) to gain root access, deploy custom SAWFLY webshell and BARECLAW tunneler, and harvest all stored credentials.",
-      "impact": "Credential vault contents exfiltrated; persistent implants installed surviving configuration resets. Group known to follow selective zero-day use with broad exploitation post-disclosure. BeyondTrust patch released Oct 8; widespread exploitation expected for unpatched systems.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "cloud.google.com/blog/topics/threat-intelligence",
-        "therecord.media",
-        "cyberscoop.com",
-        "cisa.gov"
-      ]
-    },
-    {
-      "id": "20",
-      "date": "Aug 28",
-      "date_sort": "2026-08-28",
-      "victim": "Anne Arundel County, Maryland",
-      "industry": "Government / Public Sector",
-      "attacker": "Criminal gang — ransomware (Rhysida)",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Rhysida ransomware gang gained unauthorized access to a subset of Anne Arundel County government systems and exfiltrated files.",
-      "impact": "2.6 TB of files allegedly stolen; $2 million ransom demanded. Investigation ongoing to determine if resident data is included. County hosts offices of DOD, IRS, EPA, Social Security Administration, and US Coast Guard.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "21",
-      "date": "Jun–Aug 2026",
-      "date_sort": "2026-08-01",
-      "victim": "Government organizations across CIS (Kazakhstan, Kyrgyzstan, Tajikistan, others)",
+      "id": "10",
+      "date": "Oct 15",
+      "date_sort": "2026-10-15",
+      "victim": "Government entities (unnamed, Linux infrastructure)",
       "industry": "Government",
-      "attacker": "Unknown — Kazakhstan-nexus suspected",
+      "attacker": "Unknown — state-suspected espionage group",
       "attacker_origin": "unknown",
       "motivation": "Espionage",
-      "vector": "Macro-enabled documents delivered PS2EXE PowerShell downloaders with second-stage payloads hosted on GitHub; also exploited WinRAR CVE-2025-8088 to gain initial access to target systems.",
-      "impact": "Multi-year espionage campaign against CIS government entities focused on diplomatic and water/energy sector data. Cisco Talos attributes with medium confidence to a Kazakhstan-nexus threat actor (UAT-6275).",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "blog.talosintelligence.com"
-      ]
-    },
-    {
-      "id": "22",
-      "date": "Jul–Aug 2026",
-      "date_sort": "2026-08-01",
-      "victim": "US Embassy in Fiji",
-      "industry": "Government",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Chinese hackers breached the US Embassy in Fiji's network and maintained persistent access for approximately two months.",
-      "impact": "Embassy network compromised July through August 2026. US government notified Fiji government and provided technical indicators for Fiji's own investigation of possible parallel intrusions.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "23",
-      "date": "Oct 2025–Apr 2026",
-      "date_sort": "2026-04-01",
-      "victim": "Government entities (multiple countries)",
-      "industry": "Government",
-      "attacker": "Unknown — nation-state suspected",
-      "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "AI-generated custom malware payloads, SysGoRAT remote access trojan, web shells, and credential harvesting tools used to compromise Linux-based government infrastructure over six months.",
-      "impact": "Mailbox contents and database records exfiltrated from government networks. Attribution unclear between nation-state and sophisticated criminal actors. Campaign discovered and reported by Palo Alto Unit 42.",
+      "vector": "Campaign (tracked as CL-UNK-1211) used AI-generated payloads, open-source tools, custom cross-platform backdoors, and web shells to target Linux environments, active from October 2025 to April 2026.",
+      "impact": "Attackers conducted extensive reconnaissance, dumped sensitive databases, exfiltrated government mailboxes, and attempted to access social media accounts; used anti-forensic techniques including log wiping and planting fake red-team markers.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -406,21 +178,107 @@
       ]
     },
     {
-      "id": "24",
-      "date": "Sep 2024",
-      "date_sort": "2024-09-01",
-      "victim": "Telecom managed service provider and 500+ client organizations",
+      "id": "11",
+      "date": "Oct 14",
+      "date_sort": "2026-10-14",
+      "victim": "Telecommunications organization (unnamed) and its clients",
       "industry": "Telecommunications",
-      "attacker": "Unknown — nation-state suspected",
+      "attacker": "Unknown — suspected nation-state espionage group",
       "attacker_origin": "unknown",
       "motivation": "Espionage",
-      "vector": "Exploited CVE-2024-47575 (FortiJump) against a centralized FortiManager to exfiltrate firewall configurations for 500+ managed FortiGate clients; later returned to deploy novel PEERSTITCH memory-resident ARM64 implant via CVE-2025-61624.",
-      "impact": "Network configurations of 500+ managed customer organizations exfiltrated. Novel PEERSTITCH implant survived device reboots, providing persistent access. Downstream exposure risks for all MSP customers. CISA added CVE-2025-61624 to KEV catalog Oct 16.",
+      "vector": "Attackers (tracked as CL-STA-0954/UNC5820) exploited CVE-2024-47575 against a FortiManager appliance in September 2024, then exploited CVE-2025-61624 to deploy PEERSTITCH, a memory-resident, network-traffic-based implant leaving no file artifacts.",
+      "impact": "Exfiltrated configuration, cryptographic material, and database files for more than 500 managed FortiGate firewalls protecting the target's own infrastructure and its clients' networks; long-term access, traffic interception, and backdoors established.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
-        "unit42.paloaltonetworks.com",
-        "cisa.gov"
+        "unit42.paloaltonetworks.com"
+      ]
+    },
+    {
+      "id": "12",
+      "date": "Oct 14",
+      "date_sort": "2026-10-14",
+      "victim": "CIS government organizations",
+      "industry": "Government",
+      "attacker": "Unknown — state-linked espionage group (Kazakhstan-linked, medium confidence)",
+      "attacker_origin": "unknown",
+      "motivation": "Espionage",
+      "vector": "UAT-6275 used macro-enabled documents, PS2EXE downloaders, GitHub-hosted PowerShell, and a WinRAR exploit (CVE-2025-8088) to deploy custom reverse shells, active from June 2025 through August 2026.",
+      "impact": "Targeted government organizations across the Commonwealth of Independent States, with additional interest in water and energy sectors; researchers gained visibility into the group's tooling and C2 infrastructure via exposed staging servers.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "blog.talosintelligence.com"
+      ]
+    },
+    {
+      "id": "13",
+      "date": "Oct 8",
+      "date_sort": "2026-10-08",
+      "victim": "US critical infrastructure and global organizations (government, healthcare, IT, manufacturing)",
+      "industry": "Critical Infrastructure (multi-sector)",
+      "attacker": "China — state-linked espionage group (enabled by Integrity Technology Group)",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "Combined automated scanning tools, botnets, and hands-on exploitation including XSS and password spraying against Microsoft Exchange servers, with persistence via VPN software.",
+      "impact": "Sensitive data and credentials exfiltrated from organizations worldwide, including US critical infrastructure sectors; joint CISA/NSA/NCSC advisory issued with indicators of compromise.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "cisa.gov",
+        "nsa.gov",
+        "ncsc.gov.uk"
+      ]
+    },
+    {
+      "id": "14",
+      "date": "Oct 6",
+      "date_sort": "2026-10-06",
+      "victim": "Mr.Max (discount retailer, Japan)",
+      "industry": "Retail",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Unauthorized third-party access to the servers hosting the MrMax app and online store, detected October 3.",
+      "impact": "Member IDs, names, email addresses, phone numbers, addresses, and birthdates exposed for up to 1,735,154 members; credit card data, passwords, and purchase history were not affected.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "reuters.com"
+      ]
+    },
+    {
+      "id": "15",
+      "date": "Mar 2026 (disclosed Oct 6)",
+      "date_sort": "2026-10-06",
+      "victim": "Iraqi critical infrastructure",
+      "industry": "Critical Infrastructure / Government",
+      "attacker": "Iran — state-aligned threat actor",
+      "attacker_origin": "iran",
+      "motivation": "Espionage",
+      "vector": "Attackers (tracked as CL-STA-1178) impersonated Dubai Airports' IT department to deliver trojanized coding challenges, using legitimate Windows developer files, AppDomainManager hijacking, and DLL sideloading to deploy custom malware (ShelbyLoader V2), with GitHub infrastructure misused for command-and-control.",
+      "impact": "Campaign (\"Blinder Tunnel\") targeted Iraqi critical infrastructure in March 2026 following infrastructure staging as early as November 2025; GitHub has taken down the identified malicious infrastructure.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "unit42.paloaltonetworks.com"
+      ]
+    },
+    {
+      "id": "16",
+      "date": "Oct 6",
+      "date_sort": "2026-10-06",
+      "victim": "ASOS",
+      "industry": "Retail",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Unauthorized push notification sent to customers; attacker accessed personal information in the process.",
+      "impact": "Customer names and contact details accessed; company does not believe payment card data or account passwords were affected. Investigation ongoing.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "ncsc.gov.uk"
       ]
     }
   ]
