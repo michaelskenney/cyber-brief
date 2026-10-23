@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-23T08:05:43.489627+00:00",
+  "generated_at": "2026-10-23T20:06:19.432576+00:00",
   "period_searched": "October 5-23, 2026",
-  "incident_count": 21,
+  "incident_count": 38,
   "incidents": [
     {
       "id": "1",
@@ -39,6 +39,93 @@
     },
     {
       "id": "3",
+      "date": "Oct 23",
+      "date_sort": "2026-10-23",
+      "victim": "Quest Diagnostics",
+      "industry": "Healthcare / Clinical laboratory services",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Unauthorized access to Quest's Quanum Lab Services Manager (LSM) portal, used by clinicians to place test orders and retrieve results.",
+      "impact": "Quest took the Quanum LSM system offline and believes some patient data was accessed; no hacking group has claimed responsibility, and the company said lab testing operations and the recent PHP vulnerabilities were not involved.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "The Record",
+        "Risky Business"
+      ]
+    },
+    {
+      "id": "4",
+      "date": "Oct 23",
+      "date_sort": "2026-10-23",
+      "victim": "Railway.com customers",
+      "industry": "Cloud / Developer platform",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Hackers breached cloud platform Railway.com and stole encrypted environment variables from customer accounts, likely decrypting some to obtain API keys and credentials.",
+      "impact": "Railway believes the incident is part of a larger wave of attacks against AI providers and notified affected AI providers so they could revoke exposed customer API keys.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "Risky Business"
+      ]
+    },
+    {
+      "id": "5",
+      "date": "Oct 23",
+      "date_sort": "2026-10-23",
+      "victim": "Hollys (coffee and tea shop chain)",
+      "industry": "Retail / Food & beverage",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Not specified in available reporting.",
+      "impact": "Hackers breached the South Korean coffee and tea chain and stole data on 2.76 million customers.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "Risky Business"
+      ]
+    },
+    {
+      "id": "6",
+      "date": "Oct 23",
+      "date_sort": "2026-10-23",
+      "victim": "TAKKT (food services division)",
+      "industry": "Food delivery / Logistics",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Disruption",
+      "vector": "Not specified in available reporting.",
+      "impact": "A cyberattack against German group TAKKT's food services division disrupted food delivery services across North America.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "Risky Business"
+      ]
+    },
+    {
+      "id": "7",
+      "date": "Oct 23",
+      "date_sort": "2026-10-23",
+      "victim": "ccTLD registries for American Samoa (.as), Ghana (.gh) and Sierra Leone (.sl)",
+      "industry": "Internet infrastructure / Domain registries",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Attackers modified DNS records for the hijacked ccTLDs to pass domain-ownership checks and fraudulently obtain HTTPS certificates for specific domains.",
+      "impact": "Google said the threat actor targeted some of its services as well as other organizations using the hijacked domain infrastructure.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "Risky Business",
+        "Google"
+      ]
+    },
+    {
+      "id": "8",
       "date": "Oct 22",
       "date_sort": "2026-10-22",
       "victim": "ConnectWise Cloud Backup customers (2,250+ Microsoft 365 tenants)",
@@ -47,7 +134,7 @@
       "attacker_origin": "china",
       "motivation": "Espionage",
       "vector": "Storm-0940 compromised ConnectWise Cloud Backup application credentials, then used the open-source agentic AI penetration-testing framework ARTEX to automate password-spraying (up to 2,900 attempts/minute) and OAuth application abuse against downstream tenants.",
-      "impact": "The actor attempted sign-ins to more than 2,250 Microsoft 365 tenants and achieved privileged cloud persistence — including credential and privilege changes — at multiple organizations within three hours of targeting; ConnectWise suspended its Cloud Backup, SaaS Security and Cloud Management services.",
+      "impact": "The actor attempted sign-ins to more than 2,250 Microsoft 365 tenants and achieved privileged cloud persistence — including credential and privilege changes — at multiple organizations within three hours of targeting; ConnectWise suspended its Cloud Backup, SaaS Security and Cloud Management services and began restoring them in phases starting Oct. 22.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
@@ -58,7 +145,7 @@
       ]
     },
     {
-      "id": "4",
+      "id": "9",
       "date": "Oct 22",
       "date_sort": "2026-10-22",
       "victim": "eMudhra (certificate authority) and relying parties",
@@ -67,7 +154,7 @@
       "attacker_origin": "unknown",
       "motivation": "Unclear",
       "vector": "A flawed April 2025 HSM key-generation ceremony produced eight eMudhra intermediate CA private keys with only a handful of bits of entropy — one key was simply the number 4 — letting anyone derive the private keys directly from the public certificates.",
-      "impact": "Chrome, Firefox, Apple and Microsoft blocked the affected certificates; eMudhra revoked them and announced it is exiting the SSL/TLS certificate business entirely, with shares falling 40%.",
+      "impact": "Chrome, Firefox, Apple and Microsoft blocked the affected certificates; eMudhra revoked them and announced it is exiting the SSL/TLS certificate business entirely, with shares falling 40%. The Go team also shipped patched releases (CVE-2026-111943) that reject the compromised keys across Docker, Kubernetes, Terraform and other cloud-native tooling.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -79,7 +166,7 @@
       ]
     },
     {
-      "id": "5",
+      "id": "10",
       "date": "Oct 22",
       "date_sort": "2026-10-22",
       "victim": "PHP-based websites and applications worldwide",
@@ -88,7 +175,7 @@
       "attacker_origin": "unknown",
       "motivation": "Unclear",
       "vector": "Two unauthenticated memory-corruption flaws in PHP's core Zend engine (out-of-memory handling and stale request state), triggerable via crafted multipart file-upload requests, allow remote code execution before any application code runs.",
-      "impact": "Palo Alto Networks identified more than 22.6 million potentially exposed instances; Cloudflare, Patchstack and Cisco Talos confirmed in-the-wild exploitation within hours of disclosure and SANS raised its Infocon to yellow; hundreds of websites and government services went offline as precautionary shutdowns.",
+      "impact": "Palo Alto Networks and Censys estimated 22.6-41 million potentially exposed instances; exploitation attempts (scanning, botnet recruitment) have been widespread since disclosure, but as of Oct. 23 researchers had not confirmed any successful mass compromise, and SANS returned its Infocon to green after the feared wave of exploitation failed to materialize. Hundreds of websites and government services went offline as precautionary shutdowns.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
@@ -110,7 +197,7 @@
       ]
     },
     {
-      "id": "6",
+      "id": "11",
       "date": "Oct 22",
       "date_sort": "2026-10-22",
       "victim": "City of Columbia, South Carolina",
@@ -127,7 +214,25 @@
       ]
     },
     {
-      "id": "7",
+      "id": "12",
+      "date": "Oct 22",
+      "date_sort": "2026-10-22",
+      "victim": "State Bank of India (SBI)",
+      "industry": "Banking / Financial services",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Not specified in available reporting.",
+      "impact": "Hackers breached India's largest bank and stole data on almost 4,000 customers, prompting renewed scrutiny of cyber defenses at Indian banks.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "Risky Business",
+        "Bloomberg"
+      ]
+    },
+    {
+      "id": "13",
       "date": "Oct 21",
       "date_sort": "2026-10-21",
       "victim": "OVHcloud (CLI tool users)",
@@ -145,7 +250,7 @@
       ]
     },
     {
-      "id": "8",
+      "id": "14",
       "date": "Oct 21",
       "date_sort": "2026-10-21",
       "victim": "LiteLLM project users",
@@ -162,7 +267,7 @@
       ]
     },
     {
-      "id": "9",
+      "id": "15",
       "date": "Oct 21",
       "date_sort": "2026-10-21",
       "victim": "Critical infrastructure organizations across the Americas, Europe and Australia (~600 victims)",
@@ -179,7 +284,76 @@
       ]
     },
     {
-      "id": "10",
+      "id": "16",
+      "date": "Oct 21",
+      "date_sort": "2026-10-21",
+      "victim": "John Deere, SharkNinja, Cummins and 100+ other websites",
+      "industry": "Manufacturing / Multiple sectors",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Unclear",
+      "vector": "A suspected Chinese hacker used the DeepSeek and Claude Code AI tools to automate the compromise of more than 100 websites, reportedly spending only about $5,000 worth of tokens.",
+      "impact": "Victims included well-known manufacturers; researchers say the low-cost, AI-driven campaign illustrates how agentic AI is lowering the barrier to mass website compromise.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "Risky Business",
+        "Reuters"
+      ]
+    },
+    {
+      "id": "17",
+      "date": "Oct 21",
+      "date_sort": "2026-10-21",
+      "victim": "Staples",
+      "industry": "Retail",
+      "attacker": "Criminal gang",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "A Chinese organized crime group gained access to Staples' internal \"Nexus\" application and used it to issue fraudulent gift cards.",
+      "impact": "The group issued more than 15,000 gift cards worth over $5 million for retailers including Target and Sephora, using them to buy electronics and other goods shipped to China for resale.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "Risky Business"
+      ]
+    },
+    {
+      "id": "18",
+      "date": "Oct 21",
+      "date_sort": "2026-10-21",
+      "victim": "Nikkei",
+      "industry": "Media",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Hackers used stolen credentials to access a Nikkei cloud server.",
+      "impact": "The Japanese media conglomerate's third security breach in a month resulted in the theft of 1.83 million records.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "Risky Business"
+      ]
+    },
+    {
+      "id": "19",
+      "date": "Oct 21",
+      "date_sort": "2026-10-21",
+      "victim": "Multiple Indian universities and an e-commerce site",
+      "industry": "Education / E-commerce",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "An actor dubbed BUGSTER used a jailbroken AI agent framework (Hermes Agent with DeepSeek V4) to automate reconnaissance, WordPress brute-forcing, and database exfiltration against target networks, primarily in India.",
+      "impact": "The actor exfiltrated a database of more than 5,200 student and faculty records containing personal information from one university and compromised a second university's WordPress site; the same operator also built AI-assisted VoIP fraud, Wi-Fi password-cracking, and cryptocurrency reconnaissance tooling.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "Unit 42"
+      ]
+    },
+    {
+      "id": "20",
       "date": "Oct 20",
       "date_sort": "2026-10-20",
       "victim": "Onamae (Desktop Cloud VPS service)",
@@ -196,7 +370,7 @@
       ]
     },
     {
-      "id": "11",
+      "id": "21",
       "date": "Oct 20",
       "date_sort": "2026-10-20",
       "victim": "Iwai Cosmo Securities",
@@ -213,7 +387,7 @@
       ]
     },
     {
-      "id": "12",
+      "id": "22",
       "date": "Oct 20",
       "date_sort": "2026-10-20",
       "victim": "Qubic crypto platform users",
@@ -230,7 +404,7 @@
       ]
     },
     {
-      "id": "13",
+      "id": "23",
       "date": "Oct 20",
       "date_sort": "2026-10-20",
       "victim": "National Radiocommunications Company (Radiocom), Romania",
@@ -247,7 +421,7 @@
       ]
     },
     {
-      "id": "14",
+      "id": "24",
       "date": "Oct 20",
       "date_sort": "2026-10-20",
       "victim": "Ukraine's state data-exchange platform",
@@ -264,7 +438,7 @@
       ]
     },
     {
-      "id": "15",
+      "id": "25",
       "date": "Oct 20",
       "date_sort": "2026-10-20",
       "victim": "Alternative for Germany (AfD) political party",
@@ -281,7 +455,25 @@
       ]
     },
     {
-      "id": "16",
+      "id": "26",
+      "date": "Oct 20",
+      "date_sort": "2026-10-20",
+      "victim": "Ledger Nano X customers who purchased devices via reseller CryptoBilis",
+      "industry": "Cryptocurrency / Hardware wallets",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "A Southeast Asian reseller, CryptoBilis, distributed Ledger Nano X hardware wallets implanted with spy chips.",
+      "impact": "Ledger told affected customers to discard the compromised devices and move funds to new blockchain addresses to prevent theft.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "Risky Business",
+        "Tibane Labs"
+      ]
+    },
+    {
+      "id": "27",
       "date": "Oct 19",
       "date_sort": "2026-10-19",
       "victim": "PingCAP (TiDB Cloud) and downstream customers",
@@ -299,7 +491,25 @@
       ]
     },
     {
-      "id": "17",
+      "id": "28",
+      "date": "Oct 19",
+      "date_sort": "2026-10-19",
+      "victim": "20+ Japanese companies (GMO Cybersecurity by Ierae reported up to 80)",
+      "industry": "Multiple sectors (Japan)",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "A Chinese open-source AI penetration-testing agent, ARTEX, was used to automate attacks against Japanese corporate networks — the same framework linked to the Storm-0940/ConnectWise campaign and attacks on South Korean banks.",
+      "impact": "Japanese security firm GMO Cybersecurity by Ierae concluded ARTEX was used in attacks against roughly 80 Japanese companies, with eight occurring in the 30 days before its report.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "Recorded Future",
+        "Risky Business"
+      ]
+    },
+    {
+      "id": "29",
       "date": "Oct 18",
       "date_sort": "2026-10-18",
       "victim": "TeamUpdraft and its WordPress plugin customers",
@@ -316,7 +526,24 @@
       ]
     },
     {
-      "id": "18",
+      "id": "30",
+      "date": "Oct 18",
+      "date_sort": "2026-10-18",
+      "victim": "LOXONE",
+      "industry": "Smart home / Building automation",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Unclear",
+      "vector": "Not specified in available reporting.",
+      "impact": "The German smart home and building automation company shut down its internal IT network to contain an intrusion; the incident did not spread to customer systems, which run on localized mini-servers.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "Risky Business"
+      ]
+    },
+    {
+      "id": "31",
       "date": "Oct 16",
       "date_sort": "2026-10-16",
       "victim": "Accenture (U.S. federal IT contractor) / FBI",
@@ -333,7 +560,58 @@
       ]
     },
     {
-      "id": "19",
+      "id": "32",
+      "date": "Oct 16",
+      "date_sort": "2026-10-16",
+      "victim": "Save-On-Foods",
+      "industry": "Retail / Grocery",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Not specified in available reporting.",
+      "impact": "The Canadian supermarket chain disclosed a data breach and notified customers that their personal data was stolen in the incident.",
+      "ongoing": "N",
+      "severity": "low",
+      "sources": [
+        "Risky Business"
+      ]
+    },
+    {
+      "id": "33",
+      "date": "Oct 14",
+      "date_sort": "2026-10-14",
+      "victim": "H2O Retailing (Hankyu Hanshin department stores)",
+      "industry": "Retail",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Unauthorized access to a website operated by department store brand Hankyu Hanshin.",
+      "impact": "Hackers stole the data of 1.26 million customers in the breach.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "Risky Business"
+      ]
+    },
+    {
+      "id": "34",
+      "date": "Oct 14",
+      "date_sort": "2026-10-14",
+      "victim": "Zeabur (AI DevOps platform) and its customers",
+      "industry": "Cloud / DevOps platform",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "A hacker stole environment variables and other account records in the platform's second breach of the year, following an earlier AWS backend compromise in August.",
+      "impact": "More than 320,000 accounts were affected; Zeabur announced it will shut down entirely at the end of 2026 as a result.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "Risky Business"
+      ]
+    },
+    {
+      "id": "35",
       "date": "Oct 13",
       "date_sort": "2026-10-13",
       "victim": "Sourcenext",
@@ -350,7 +628,7 @@
       ]
     },
     {
-      "id": "20",
+      "id": "36",
       "date": "Oct 12",
       "date_sort": "2026-10-12",
       "victim": "French and other European grocery/retail chains (Intermarché/Netto and 700+ stores)",
@@ -367,7 +645,24 @@
       ]
     },
     {
-      "id": "21",
+      "id": "37",
+      "date": "Oct 7",
+      "date_sort": "2026-10-07",
+      "victim": "IDCFrontier (Japanese cloud provider) and downstream customers",
+      "industry": "Cloud hosting",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Not specified in available reporting.",
+      "impact": "A ransomware attack on the Japanese cloud provider disrupted services for 495 companies and local governments that rely on its hosting.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "Recorded Future"
+      ]
+    },
+    {
+      "id": "38",
       "date": "Oct 5",
       "date_sort": "2026-10-05",
       "victim": "Tor network users",
