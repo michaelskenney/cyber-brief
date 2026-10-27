@@ -1,10 +1,51 @@
 {
-  "generated_at": "2026-10-27T08:05:53.485796+00:00",
-  "period_searched": "October 13-27, 2026",
-  "incident_count": 13,
+  "generated_at": "2026-10-27T20:05:26.511777+00:00",
+  "period_searched": "October 1-27, 2026",
+  "incident_count": 16,
   "incidents": [
     {
       "id": "1",
+      "date": "Oct 27",
+      "date_sort": "2026-10-27",
+      "victim": "Organizations running PHP worldwide, including U.S. federal civilian agencies",
+      "industry": "Multiple / Cross-sector",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Disruption",
+      "vector": "Two unauthenticated remote-code-execution flaws in PHP core (CVE-2026-109618, CVE-2026-109619, dubbed 'PHP2Shell') affect every PHP build since version 5.4 and are exploitable via a plain HTTP request before any application code runs.",
+      "impact": "CISA added both CVEs to its Known Exploited Vulnerabilities catalog after confirming exploitation attempts, giving federal civilian agencies until Oct. 29 to patch; Censys found more than 10 million of 42 million exposed PHP instances patched so far, but millions remain on end-of-life branches that will not receive fixes.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "CISA",
+        "The Record",
+        "Cisco Talos",
+        "NSA",
+        "NYDFS",
+        "Krebs on Security",
+        "Recorded Future",
+        "Palo Alto Networks Unit 42"
+      ]
+    },
+    {
+      "id": "2",
+      "date": "Oct 26",
+      "date_sort": "2026-10-26",
+      "victim": "University of New Mexico Health System",
+      "industry": "Healthcare",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "A ransomware gang calling itself 'BYOD' breached the health system's network; the specific initial access method has not been disclosed.",
+      "impact": "The hospital diverted ambulances for about two hours, suspended outpatient surgeries and appointments, and canceled medical school classes; the attackers claim to have compromised 36,000 machines and stolen data on students, patients and employees. Federal law enforcement has been notified.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "The Record"
+      ]
+    },
+    {
+      "id": "3",
       "date": "Oct 26",
       "date_sort": "2026-10-26",
       "victim": "LiteLLM (open-source AI gateway project) users",
@@ -12,18 +53,17 @@
       "attacker": "Unknown — criminal likely",
       "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "An attacker used a LiteLLM master key exposed in a May leak to gain GitHub access and publish a malicious PyPI package (v1.107.0) containing credential-harvesting malware.",
-      "impact": "The malicious package was downloaded roughly 49,000 times; stolen AWS cloud credentials were tested within hours in a scheme known as 'LLMjacking' to run AI services at victims' expense.",
+      "vector": "A threat actor used a LiteLLM master key — exposed in a May leak tied to an experimental 'LiteLLM Agent Platform' project — to gain GitHub access and insert an infostealer into a LiteLLM package version released last week.",
+      "impact": "The compromised release distributed credential-harvesting malware to LiteLLM users before the issue was identified and the leaked master key traced to its source.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
-        "The Record",
         "Risky Business",
-        "Wiz"
+        "Microsoft"
       ]
     },
     {
-      "id": "2",
+      "id": "4",
       "date": "Oct 26",
       "date_sort": "2026-10-26",
       "victim": "Andromeda (cloud AI platform)",
@@ -31,45 +71,10 @@
       "attacker": "Criminal gang — credential theft",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Threat actors compromised customer accounts as part of a broader, industry-wide campaign against AI infrastructure providers.",
-      "impact": "Customer credentials and AI API keys were stolen; access to the compromised AI infrastructure was reportedly resold on underground forums.",
+      "vector": "Threat actors compromised customer accounts as part of a broader, industry-wide campaign targeting AI infrastructure providers.",
+      "impact": "Customer credentials and AI API keys were stolen; the stolen access to AI infrastructure was reportedly resold on underground forums.",
       "ongoing": "Y",
       "severity": "high",
-      "sources": [
-        "Risky Business"
-      ]
-    },
-    {
-      "id": "3",
-      "date": "Oct 26",
-      "date_sort": "2026-10-26",
-      "victim": "Dahua surveillance camera operators in Ukraine, including government and military users",
-      "industry": "Government / Critical Infrastructure",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Exploitation of Dahua's Easy4IP cloud remote-access feature via guessable device serial numbers, weak or default passwords, and outdated firmware (CVE-2021-33044, CVE-2021-33045).",
-      "impact": "Hackers gained unauthorized access to internet-connected cameras and video recorders, changed device settings and created unauthorized user accounts; the scale of compromise in Ukraine has not been disclosed.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "The Record",
-        "CERT-UA"
-      ]
-    },
-    {
-      "id": "4",
-      "date": "Oct 26",
-      "date_sort": "2026-10-26",
-      "victim": "Genesys",
-      "industry": "Technology / Cloud AI Platform",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Intruders gained access to internal business systems via a learning management system and a customer relationship management platform.",
-      "impact": "Internal business systems were compromised; the company found no evidence attackers pivoted to its public customer clouds.",
-      "ongoing": "N",
-      "severity": "medium",
       "sources": [
         "Risky Business"
       ]
@@ -78,13 +83,32 @@
       "id": "5",
       "date": "Oct 26",
       "date_sort": "2026-10-26",
-      "victim": "ENGIE (gas supply business, France)",
-      "industry": "Energy",
+      "victim": "Dahua surveillance camera operators in Ukraine, including government and military users",
+      "industry": "Government / Critical Infrastructure",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "Hackers breached an internal platform via an unnamed CRM tool used by business partners to sell energy contracts.",
-      "impact": "ENGIE is notifying customers of its French gas supply business of a security breach involving an internal platform.",
+      "vector": "Attackers exploit Dahua's Easy4IP cloud remote-access feature via guessable device serial numbers, weak or default passwords, and outdated firmware, including CVE-2021-33044 and CVE-2021-33045.",
+      "impact": "Hackers gained unauthorized access to internet-connected cameras and video recorders, changed device settings and created unauthorized user accounts; researchers warn malicious accounts can survive password changes and factory resets without a firmware update.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "The Record",
+        "CERT-UA",
+        "Hunt.io"
+      ]
+    },
+    {
+      "id": "6",
+      "date": "Oct 26",
+      "date_sort": "2026-10-26",
+      "victim": "Genesys",
+      "industry": "Technology / Cloud AI Platform",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Intruders gained access to internal business systems via a learning management system and a customer relationship management platform.",
+      "impact": "Internal business systems were compromised; the company says it found no evidence attackers pivoted to its public customer clouds.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
@@ -92,7 +116,24 @@
       ]
     },
     {
-      "id": "6",
+      "id": "7",
+      "date": "Oct 26",
+      "date_sort": "2026-10-26",
+      "victim": "ENGIE (gas supply business, France)",
+      "industry": "Energy",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Hackers breached an internal platform via an unnamed CRM tool used by business partners to sell energy contracts.",
+      "impact": "ENGIE is notifying affected customers of its French gas supply business about the security breach.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "Risky Business"
+      ]
+    },
+    {
+      "id": "8",
       "date": "Oct 26",
       "date_sort": "2026-10-26",
       "victim": "Initia (cryptocurrency project)",
@@ -109,34 +150,16 @@
       ]
     },
     {
-      "id": "7",
-      "date": "Oct 24",
-      "date_sort": "2026-10-24",
-      "victim": "174 U.S. residents (investment fraud victims)",
-      "industry": "Individuals / Consumer",
-      "attacker": "Criminal gang — financial fraud",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Social engineering via social media, phone calls, texts and dating sites lured victims into fake cryptocurrency investment platforms.",
-      "impact": "At least 174 U.S. residents were defrauded of nearly $37 million; proceeds were laundered through a Bahamas bank, converted to Tether, and distributed to Cambodia-based scam networks. A suspect was extradited from the Netherlands and arraigned; eight co-conspirators have already pleaded guilty.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "CyberScoop",
-        "DOJ"
-      ]
-    },
-    {
-      "id": "8",
+      "id": "9",
       "date": "Oct 24",
       "date_sort": "2026-10-24",
       "victim": "Enterprise GitHub users (dozens of organizations, including private repositories)",
       "industry": "Technology / Software Development",
       "attacker": "Unknown — criminal likely",
       "attacker_origin": "unknown",
-      "motivation": "Unclear",
+      "motivation": "Financial",
       "vector": "Attackers use GitHub tokens stolen via infostealer malware and prior supply-chain leaks to plant a disguised 'sync-check' GitHub Actions workflow that prints repository secrets to a workflow log, then exfiltrates and deletes the log via the GitHub API.",
-      "impact": "More than 13,500 malicious branches were created across over 850 compromised GitHub accounts; cloud credentials from affected organizations were used to enumerate AWS Secrets Manager at roughly a dozen companies.",
+      "impact": "More than 13,500 malicious branches were created across over 850 compromised GitHub accounts; stolen cloud credentials from affected organizations were used to enumerate AWS Secrets Manager at roughly a dozen companies.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -145,7 +168,7 @@
       ]
     },
     {
-      "id": "9",
+      "id": "10",
       "date": "Oct 22",
       "date_sort": "2026-10-22",
       "victim": "eMudhra (certificate authority) and relying organizations",
@@ -154,34 +177,11 @@
       "attacker_origin": "unknown",
       "motivation": "Unclear",
       "vector": "A flaw in eMudhra's April 2025 key-generation ceremony produced critically weak private keys (as little as 3-8 bits of entropy instead of 384) for eight intermediate certificate authority certificates, making the keys trivially recoverable.",
-      "impact": "Six compromised TLS and two code-signing intermediate certificates could have been used to impersonate websites or forge signed code; Chrome, Mozilla, Apple and Microsoft revoked or blocked the affected certificates. No malicious exploitation has been observed yet.",
+      "impact": "Six compromised TLS and two code-signing intermediate certificates could have been used to impersonate websites or forge signed code; Chrome, Mozilla, Apple and Microsoft revoked or blocked the affected certificates, and Go patched its standard library to reject them. No malicious exploitation has been observed yet.",
       "ongoing": "N",
       "severity": "critical",
       "sources": [
         "Cisco Talos",
-        "Palo Alto Networks Unit 42"
-      ]
-    },
-    {
-      "id": "10",
-      "date": "Oct 21",
-      "date_sort": "2026-10-21",
-      "victim": "Government and commercial websites running PHP (global, including European government sites)",
-      "industry": "Multiple / Cross-sector",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Disruption",
-      "vector": "Two unauthenticated remote-code-execution flaws in PHP core (CVE-2026-109618, CVE-2026-109619, dubbed 'PHP2Shell') affect every PHP build since version 5.4 and are exploitable via a plain HTTP request before any application code runs.",
-      "impact": "Roughly 22.6 million internet-facing PHP instances were exposed; several European government websites went offline; scanning and targeted exploitation attempts began within hours of disclosure, though confirmed large-scale compromise has not been established.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "Cisco Talos",
-        "NSA",
-        "CISA",
-        "NYDFS",
-        "Krebs on Security",
-        "Recorded Future",
         "Palo Alto Networks Unit 42"
       ]
     },
@@ -194,8 +194,8 @@
       "attacker": "Criminal gang — ransomware",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Ransomware operators (including groups tracked as Qilin, Inc, and others using Settra ransomware) exploit the PAN-OS GlobalProtect authentication-bypass flaw CVE-2026-0257 for initial VPN access, then move laterally via RDP and SMB and pivot into vCenter/ESXi infrastructure.",
-      "impact": "Multiple organizations have been breached since June 2026; attackers disabled hypervisor security controls, performed offline domain-credential theft from virtual disks, and deployed ransomware.",
+      "vector": "Ransomware operators exploit the PAN-OS GlobalProtect authentication-bypass flaw CVE-2026-0257 for initial VPN access, then move laterally via RDP and SMB and pivot into vCenter/ESXi infrastructure to disable security controls and steal domain credentials.",
+      "impact": "Multiple organizations have been breached since June 2026; attackers have disabled hypervisor security controls, performed offline domain-credential theft from virtual disks, and deployed ransomware.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
@@ -211,7 +211,7 @@
       "attacker": "Criminal gang — financially motivated",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "A suspected Chinese-speaking actor (tracked as TAG-217) used the AI-assisted penetration-testing framework ARTEX to opportunistically test for and exploit weaknesses across multiple institutions.",
+      "vector": "A suspected Chinese-speaking actor (tracked by Recorded Future as TAG-217) used the AI-assisted penetration-testing framework ARTEX to opportunistically test for and exploit weaknesses across multiple institutions.",
       "impact": "Personal data belonging to at least 68,000 people was exposed across seven financial institutions; one breach exposed an outsourced developer's data, while another resulted in theft of customer data.",
       "ongoing": "N",
       "severity": "high",
@@ -229,11 +229,63 @@
       "attacker_origin": "north_korea",
       "motivation": "Financial",
       "vector": "State-directed North Korean IT workers use stolen identities, paid facilitators and 'laptop farms' to obtain remote technology jobs at U.S. companies while concealing their location and nationality.",
-      "impact": "Revenue funds North Korea's weapons programs; the scheme poses an insider-threat and intellectual-property-theft risk to employers, and facilitators have been threatened and extorted.",
+      "impact": "Revenue funds North Korea's weapons programs; the scheme poses an insider-threat and intellectual-property-theft risk to employers, and facilitators have reportedly been threatened and extorted.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
         "FBI/IC3"
+      ]
+    },
+    {
+      "id": "14",
+      "date": "Oct 13",
+      "date_sort": "2026-10-13",
+      "victim": "Sourcenext (Japanese software company) customers",
+      "industry": "Technology / Software",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "An unidentified third party misused the company's member information retrieval API to extract customer records in bulk.",
+      "impact": "More than 22.5 million customer records were compromised, including email addresses, passwords, names, addresses, phone numbers, dates of birth and employment information.",
+      "ongoing": "N",
+      "severity": "critical",
+      "sources": [
+        "Recorded Future"
+      ]
+    },
+    {
+      "id": "15",
+      "date": "Oct 7",
+      "date_sort": "2026-10-07",
+      "victim": "IDCFrontier (Japanese cloud provider) and its downstream customers",
+      "industry": "Technology / Cloud Services",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Not disclosed; the incident affected IDCFrontier's cloud hosting infrastructure.",
+      "impact": "The ransomware attack disrupted services for 495 companies and local governments that rely on IDCFrontier's cloud platform.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "Recorded Future"
+      ]
+    },
+    {
+      "id": "16",
+      "date": "Oct 1",
+      "date_sort": "2026-10-01",
+      "victim": "A water utility, telecommunications provider, regional government body and university in Portuguese- and Spanish-speaking countries across Europe, Africa and Latin America",
+      "industry": "Critical Infrastructure / Multiple",
+      "attacker": "China — state-linked ransomware operator",
+      "attacker_origin": "china",
+      "motivation": "Financial",
+      "vector": "The group exploited on-premises Microsoft SharePoint flaws, including the 2025 ToolShell vulnerabilities, to plant a web shell, then used a tool to disable security software across roughly 40 hosts in about two hours before deploying Warlock ransomware via the domain's SYSVOL share.",
+      "impact": "At least four organizations outside the United States were compromised in the two months before Oct. 1, 2026, disrupting operations at a water utility and a telecommunications provider among the victims.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "CyberScoop",
+        "Microsoft"
       ]
     }
   ]
