@@ -1,26 +1,24 @@
 {
-  "generated_at": "2026-10-28T08:05:19.703012+00:00",
+  "generated_at": "2026-10-28T20:07:40.305169+00:00",
   "period_searched": "October 7-28, 2026",
-  "incident_count": 17,
+  "incident_count": 18,
   "incidents": [
     {
       "id": "1",
       "date": "Oct 28",
       "date_sort": "2026-10-28",
-      "victim": "Organizations running Palo Alto Networks PAN-OS and PHP-based web infrastructure worldwide",
-      "industry": "Multiple / Cross-sector",
+      "victim": "Moldova national government (e-government agency)",
+      "industry": "Government",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
-      "motivation": "Disruption",
-      "vector": "Attackers exploited two critical unauthenticated remote-code-execution flaws in PHP core (CVE-2026-109618, CVE-2026-109619, dubbed 'PHP2Shell') against internet-facing PAN-OS management interfaces, aided by the appliances' lack of address space layout randomization support.",
-      "impact": "Palo Alto Networks confirmed successful exploitation against PAN-OS devices and set the exploit maturity rating to 'attack'; Censys reports more than 10 million of 42 million exposed PHP instances have been patched so far, with millions more on end-of-life branches that will never receive a fix.",
+      "motivation": "Political",
+      "vector": "Attackers exploited an unauthenticated, internet-exposed logging service to extract data from interconnected government systems.",
+      "impact": "Hackers extracted sensitive personal data on roughly 750,000 citizens (about a third of Moldova's population), including family, health, financial, and vehicle-ownership records, forcing officials to shut down 82 digital public services and 30 government networks. The prime minister says authorities are investigating possible foreign state involvement.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
-        "SANS Internet Storm Center",
-        "The Record",
-        "CISA",
-        "Palo Alto Networks Unit 42"
+        "risky.biz",
+        "therecord.media"
       ]
     },
     {
@@ -29,160 +27,53 @@
       "date_sort": "2026-10-28",
       "victim": "University of Copenhagen",
       "industry": "Education",
-      "attacker": "Unknown — criminal likely",
+      "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "Hackers breached a test environment to gain access to university systems.",
+      "vector": "Attackers breached a test environment to access university systems.",
       "impact": "Data belonging to more than 525,000 people was stolen.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
-        "University of Copenhagen",
-        "Risky Business Media"
+        "risky.biz"
       ]
     },
     {
       "id": "3",
       "date": "Oct 28",
       "date_sort": "2026-10-28",
-      "victim": "Keystone (cryptocurrency hardware wallet maker) and its customers",
-      "industry": "Financial technology / Cryptocurrency",
+      "victim": "Keystone (cryptocurrency hardware wallet maker)",
+      "industry": "Cryptocurrency / Hardware",
       "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
+      "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "A hacker stole Keystone's device authentication key, which is written to each wallet during assembly, cannot be changed, and is used to verify device authenticity.",
-      "impact": "Keystone is destroying nearly 19,000 affected devices and has suspended all wallet deliveries, warning the stolen key could be used to produce counterfeit wallets containing backdoors.",
-      "ongoing": "Y",
+      "vector": "A hacker stole the device authentication key used to verify wallet authenticity during manufacturing.",
+      "impact": "Keystone is destroying nearly 19,000 wallet devices and has suspended deliveries, since the stolen key could be used to produce counterfeit devices with backdoors that appear legitimate.",
+      "ongoing": "N",
       "severity": "high",
       "sources": [
-        "Risky Business Media"
+        "risky.biz"
       ]
     },
     {
       "id": "4",
-      "date": "Oct 28",
-      "date_sort": "2026-10-28",
-      "victim": "Andromeda (cloud AI platform) and its customers",
-      "industry": "AI / Cloud infrastructure",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
+      "date": "Oct 27",
+      "date_sort": "2026-10-27",
+      "victim": "Water utility, telecom provider, regional government body, and university (Europe, Africa, Latin America)",
+      "industry": "Critical Infrastructure / Multiple",
+      "attacker": "China — state-linked ransomware group",
+      "attacker_origin": "china",
       "motivation": "Financial",
-      "vector": "Attackers gained access to customer accounts on the Andromeda cloud AI platform as part of a broader, industry-wide campaign targeting AI infrastructure providers.",
-      "impact": "Customer credentials and AI API keys were stolen; compromised accounts and infrastructure access have reportedly been rented out on underground forums.",
-      "ongoing": "Y",
-      "severity": "medium",
+      "vector": "Attackers exploited unpatched on-premises SharePoint ToolShell vulnerabilities for initial access, then used a security-tool-disabling utility across dozens of hosts before spreading ransomware via the domain's SYSVOL replication share.",
+      "impact": "At a critical infrastructure operator, the group disabled endpoint protection on roughly 40 hosts within two hours and deployed ransomware to at least 33 hosts; at least four organizations across Portuguese- and Spanish-speaking countries were compromised over a two-month span.",
+      "ongoing": "N",
+      "severity": "high",
       "sources": [
-        "Risky Business Media"
+        "cyberscoop.com"
       ]
     },
     {
       "id": "5",
-      "date": "Oct 28",
-      "date_sort": "2026-10-28",
-      "victim": "Genesys (AI cloud platform)",
-      "industry": "AI / Cloud infrastructure",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "A hacker gained access to internal business systems via a learning management system and a customer relationship management platform.",
-      "impact": "Genesys said it found no evidence the attacker pivoted to its public customer clouds.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "Risky Business Media"
-      ]
-    },
-    {
-      "id": "6",
-      "date": "Oct 28",
-      "date_sort": "2026-10-28",
-      "victim": "ENGIE gas supply business customers (France)",
-      "industry": "Energy",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Hackers breached an internal CRM platform used by business partners to sell energy contracts.",
-      "impact": "ENGIE is notifying affected customers of its French gas supply business about the security breach.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "Risky Business Media"
-      ]
-    },
-    {
-      "id": "7",
-      "date": "Oct 28",
-      "date_sort": "2026-10-28",
-      "victim": "Initia (crypto project)",
-      "industry": "Cryptocurrency / DeFi",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Threat actors used an infinite mint exploit to create and steal newly minted tokens from the Initia crypto project.",
-      "impact": "Approximately $2.7 million worth of tokens were created and stolen.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "Risky Business Media"
-      ]
-    },
-    {
-      "id": "8",
-      "date": "Oct 28",
-      "date_sort": "2026-10-28",
-      "victim": "Convertr (ecommerce platform) and its merchants",
-      "industry": "E-commerce",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "A suspected Brazilian hacking group breached Convertr via the Plausible open-source analytics platform and deployed a credit-card skimmer through its analytics script.",
-      "impact": "Customer payment card data was likely harvested; the group is a known Magecart-style threat actor active since 2024.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "Risky Business Media"
-      ]
-    },
-    {
-      "id": "9",
-      "date": "Oct 27",
-      "date_sort": "2026-10-27",
-      "victim": "Organizations using Node.js, Python, .NET, PHP (Windows builds) and other software bundling the Brotli library; Adobe Commerce/Magento merchants",
-      "industry": "Multiple / Cross-sector",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Disruption",
-      "vector": "A buffer-overflow flaw in the widely used Brotli decompression library (CVE-2026-111497, 'Node2Shell') enables unauthenticated remote code execution when vulnerable software decompresses attacker-supplied data; separately, CISA confirmed active exploitation of an unrestricted file-upload flaw in Adobe Commerce/Magento (CVE-2026-48356).",
-      "impact": "CISA added both CVEs to its Known Exploited Vulnerabilities catalog; Wiz found 91% of cloud environments contain Brotli-vulnerable resources, prompting emergency patches from Microsoft, Node.js, PHP, and others.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "CISA",
-        "Risky Business Media",
-        "SANS Internet Storm Center",
-        "CyberScoop"
-      ]
-    },
-    {
-      "id": "10",
-      "date": "Oct 27",
-      "date_sort": "2026-10-27",
-      "victim": "Multiple Hive and Nefilim ransomware victims (hospitals, law firms, government entities, businesses — approximately 1,500 organizations worldwide, 2018-2023)",
-      "industry": "Multiple / Cross-sector",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "As an affiliate of the Hive and Nefilim ransomware operations, the defendant deployed ransomware against victims including hospitals, law firms, and a dentist's office, encrypting data and issuing extortion demands.",
-      "impact": "Artem Stryzhak, a Ukrainian national, was sentenced to 70 months in prison; the combined Hive/Nefilim conspiracies caused more than $100 million in losses. Co-conspirator Volodymyr Tymoshchuk remains a fugitive, with an $11 million reward offered for information leading to his arrest.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "U.S. Department of Justice",
-        "CyberScoop"
-      ]
-    },
-    {
-      "id": "11",
       "date": "Oct 26",
       "date_sort": "2026-10-26",
       "victim": "University of New Mexico Health System",
@@ -190,85 +81,184 @@
       "attacker": "Criminal gang — ransomware",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "A ransomware gang calling itself 'BYOD' breached the health system's network; the specific initial access method has not been disclosed.",
-      "impact": "The hospital diverted ambulances for about two hours, suspended outpatient surgeries, and canceled medical school classes for two days; attackers claim to have compromised 36,000 machines and stolen data on students, patients, and employees. A similarly disruptive cyberattack also hit University Hospitals in Ohio around the same time.",
+      "vector": "Ransomware attack on hospital IT systems forced an emergency shutdown of desktops and network access.",
+      "impact": "The state's only burn unit, children's hospital, and Level 1 trauma center diverted ambulances for about two hours and canceled outpatient surgeries, appointments, and classes; a ransomware gang calling itself BYOD claimed to have compromised 36,000 machines and stolen student, patient, and employee data.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
-        "The Record",
-        "Risky Business Media"
+        "risky.biz",
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "6",
+      "date": "Oct 26",
+      "date_sort": "2026-10-26",
+      "victim": "Andromeda (AI cloud platform)",
+      "industry": "Technology / AI Infrastructure",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Threat actors compromised customer accounts and stole AI API keys as part of a broader, industry-wide campaign against AI infrastructure providers.",
+      "impact": "Stolen credentials and API keys were rented out on underground forums, giving buyers unauthorized access to AI infrastructure capacity.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "7",
+      "date": "Oct 26",
+      "date_sort": "2026-10-26",
+      "victim": "LiteLLM (open-source LLM gateway project)",
+      "industry": "Software / AI Infrastructure",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "A threat actor used a master key leaked in May from an experimental LiteLLM Agent Platform project to compromise the project's release pipeline and inject an infostealer into a published package version.",
+      "impact": "Users who installed the affected release were exposed to infostealer malware, continuing a pattern of supply-chain compromises targeting widely used AI developer tooling.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "8",
+      "date": "Oct 26",
+      "date_sort": "2026-10-26",
+      "victim": "Genesys (AI cloud platform)",
+      "industry": "Technology / Customer Experience Software",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "A hacker gained access to internal business systems via a learning management system and a CRM platform.",
+      "impact": "The company found no evidence that attackers pivoted from internal systems into its public customer-facing clouds.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "9",
+      "date": "Oct 26",
+      "date_sort": "2026-10-26",
+      "victim": "ENGIE (gas supply business, France)",
+      "industry": "Energy",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Attackers breached an internal platform reachable through a CRM tool used by business partners to sell energy contracts.",
+      "impact": "ENGIE is notifying customers of its French gas supply business about the security breach.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "10",
+      "date": "Oct 26",
+      "date_sort": "2026-10-26",
+      "victim": "Initia (cryptocurrency/DeFi project)",
+      "industry": "Cryptocurrency",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Threat actors used an infinite-mint exploit to create tokens outside the protocol's intended supply controls.",
+      "impact": "Attackers created and stole approximately $2.7 million worth of tokens from the Initia project.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "11",
+      "date": "Oct 23",
+      "date_sort": "2026-10-23",
+      "victim": "City of Columbia, South Carolina",
+      "industry": "Government",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Ransomware attack against municipal government IT systems.",
+      "impact": "Dozens of resident-facing city systems were knocked offline; the city manager confirmed the ransomware attack and systems remained disrupted into the following week.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "therecord.media",
+        "risky.biz"
       ]
     },
     {
       "id": "12",
       "date": "Oct 23",
       "date_sort": "2026-10-23",
-      "victim": "Government of Moldova",
-      "industry": "Government",
+      "victim": "Vanden Broele (Belgian government software supplier)",
+      "industry": "Government / Software",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "Hackers exploited an unauthenticated, internet-exposed logging service to breach government networks and exfiltrate data before being detected and evicted.",
-      "impact": "Officials shut down 82 public digital services and 30 government networks after attackers stole highly sensitive data on roughly 750,000 citizens — about a third of Moldova's population — including family, financial, health, and identity details; this is the second major breach of Moldovan government systems this year.",
-      "ongoing": "Y",
-      "severity": "critical",
+      "vector": "Attackers gained access to eSignFlow, the company's document-signing platform used by government clients.",
+      "impact": "More than 120 Belgian local authorities were reportedly affected; the company took systems offline to prevent further abuse.",
+      "ongoing": "N",
+      "severity": "high",
       "sources": [
-        "Risky Business Media"
+        "risky.biz"
       ]
     },
     {
       "id": "13",
       "date": "Oct 23",
       "date_sort": "2026-10-23",
-      "victim": "Vanden Broele (Belgian government software supplier) and 120+ Belgian local authorities",
-      "industry": "Government / Software supplier",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Hackers breached Vanden Broele's eSignFlow document-signing platform, a system widely used by Belgian local governments.",
-      "impact": "The company took systems offline to prevent abuse; more than 120 local authorities were reportedly affected.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "VRT News",
-        "Risky Business Media"
-      ]
-    },
-    {
-      "id": "14",
-      "date": "Oct 23",
-      "date_sort": "2026-10-23",
-      "victim": "Warp (cloud platform) and an infrastructure supplier",
-      "industry": "Technology / Cloud",
+      "victim": "Warp (AI-powered terminal/coding platform)",
+      "industry": "Technology",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
       "vector": "Intruders used a swarm of AI agents to breach one of Warp's infrastructure suppliers.",
-      "impact": "Agent trace and telemetry data was stolen for roughly 1% of Warp's customers.",
+      "impact": "Agent trace and telemetry data was stolen for roughly 1% of Warp's customers, according to the company's founder.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
-        "Risky Business Media"
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "14",
+      "date": "Oct 21",
+      "date_sort": "2026-10-21",
+      "victim": "Blast Mail (Laxlight, Japan)",
+      "industry": "Cloud / Email Services",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Attackers breached the infrastructure of Blast Mail, an email service operated by Japanese cloud provider Laxlight.",
+      "impact": "The provider shut down the Blast Mail service entirely shortly after detecting the attack and has not resumed operations.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
       ]
     },
     {
       "id": "15",
-      "date": "Oct 21",
-      "date_sort": "2026-10-21",
-      "victim": "Organizations and users relying on eMudhra-issued TLS and code-signing certificates",
-      "industry": "Internet infrastructure / PKI",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "A flaw in eMudhra's April 2025 key-generation process produced eight intermediate CA private keys with only 3-8 bits of effective entropy instead of 384, making them trivially recoverable and allowing anyone to forge trusted TLS or code-signing certificates.",
-      "impact": "Microsoft, Apple, Google, and Mozilla blocked or revoked the affected eMudhra intermediates; Microsoft shipped an out-of-band Windows update and removed seven certificates from the Windows and Edge trust lists, while many command-line tools and Linux/Python certificate stores remain exposed until updated.",
+      "date": "Oct 19",
+      "date_sort": "2026-10-19",
+      "victim": "40+ port authorities, maritime, and global shipping companies",
+      "industry": "Maritime / Shipping / Logistics",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "A ransomware and data-extortion group pivoted from a compromised maritime IT managed service provider (CyberLogitec) into its downstream customers' networks.",
+      "impact": "More than 40 port authorities and shipping companies, about half of them CyberLogitec customers, were listed on the group's leak site after a ransom deadline expired.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "Cisco Talos",
-        "Microsoft MSRC",
-        "Palo Alto Networks Unit 42",
-        "SANS Internet Storm Center"
+        "risky.biz"
       ]
     },
     {
@@ -280,29 +270,46 @@
       "attacker": "Unknown — criminal likely",
       "attacker_origin": "unknown",
       "motivation": "Financial",
-      "vector": "An unidentified third party misused the company's member-information-retrieval API to extract customer records in bulk.",
-      "impact": "Approximately 22.5 million customer records were compromised, including email addresses, passwords, names, addresses, phone numbers, dates of birth, and employment information.",
+      "vector": "An unidentified third party misused the company's member information retrieval API to bulk-extract customer records.",
+      "impact": "Approximately 22.5 million customer records were compromised, including emails, passwords, names, addresses, phone numbers, dates of birth, and employment information.",
       "ongoing": "N",
       "severity": "critical",
       "sources": [
-        "Recorded Future"
+        "recordedfuture.com"
       ]
     },
     {
       "id": "17",
       "date": "Oct 7",
       "date_sort": "2026-10-07",
-      "victim": "IDCFrontier (Japanese cloud provider)",
-      "industry": "Cloud / Hosting",
+      "victim": "Seven South Korean financial institutions",
+      "industry": "Financial Services",
+      "attacker": "China — financially motivated criminal group",
+      "attacker_origin": "china",
+      "motivation": "Financial",
+      "vector": "A suspected Chinese-speaking actor used the AI-assisted penetration-testing framework ARTEX, routed through residential proxies, to opportunistically test and exploit weaknesses across multiple financial institutions' systems.",
+      "impact": "The personal data of at least 68,000 people was exposed across the breached institutions; one incident exposed an outsourced developer's information and another resulted in theft of customer data.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "recordedfuture.com"
+      ]
+    },
+    {
+      "id": "18",
+      "date": "Oct 7",
+      "date_sort": "2026-10-07",
+      "victim": "IDCFrontier",
+      "industry": "Cloud Services",
       "attacker": "Criminal gang — ransomware",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "A ransomware attack hit IDCFrontier's cloud hosting infrastructure.",
+      "vector": "Ransomware attack on a Japanese cloud hosting provider's infrastructure.",
       "impact": "The attack disrupted services for 495 downstream companies and local governments that relied on IDCFrontier's cloud platform.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
-        "Recorded Future"
+        "recordedfuture.com"
       ]
     }
   ]
