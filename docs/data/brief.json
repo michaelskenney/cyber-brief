@@ -1,19 +1,43 @@
 {
-  "generated_at": "2026-10-29T08:08:49.203883+00:00",
-  "period_searched": "October 7-29, 2026",
-  "incident_count": 26,
+  "generated_at": "2026-10-29T20:10:24.942543+00:00",
+  "period_searched": "October 16-29, 2026",
+  "incident_count": 24,
   "incidents": [
     {
       "id": "1",
+      "date": "Oct 29",
+      "date_sort": "2026-10-29",
+      "victim": "Palo Alto Networks PAN-OS customers (internet-exposed management interfaces)",
+      "industry": "Network security / IT infrastructure",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Attackers chained the critical PHP2Shell remote-code-execution flaws (CVE-2026-109618, CVE-2026-109619) with a Linux kernel privilege-escalation bug to gain root access on PAN-OS management interfaces left exposed to the internet.",
+      "impact": "Unit 42 confirmed active exploitation achieving root access on affected firewalls; over 22.6 million PHP instances worldwide remain potentially exposed, though patched/non-exposed systems are unaffected.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "unit42.paloaltonetworks.com",
+        "cisa.gov",
+        "nsa.gov",
+        "dfs.ny.gov",
+        "krebsonsecurity.com",
+        "isc.sans.edu",
+        "therecord.media",
+        "recordedfuture.com"
+      ]
+    },
+    {
+      "id": "2",
       "date": "Oct 28",
       "date_sort": "2026-10-28",
-      "victim": "Moldovan government services",
+      "victim": "Moldovan government services and citizens",
       "industry": "Government",
       "attacker": "Unknown — possible foreign state involvement under investigation",
       "attacker_origin": "unknown",
-      "motivation": "Political",
-      "vector": "Attackers exploited an unauthenticated, internet-exposed logging service to extract data from interconnected government systems.",
-      "impact": "Hackers made roughly 11 million data-access requests and exfiltrated personal, financial, and government records tied to about 750,000 citizens (a third of Moldova's population), forcing officials to disconnect 82 public digital services and 30 government networks.",
+      "motivation": "Unclear",
+      "vector": "Hackers exploited an unauthenticated, internet-exposed logging service to make roughly 11 million data-access requests, then pivoted into interconnected government systems to extract records.",
+      "impact": "Personal data on about 750,000 citizens (roughly a third of the population) was exposed, including health, financial, and family details; 82 digital services and 30 government networks were taken offline, with repeat intrusion attempts since blocked.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
@@ -22,41 +46,16 @@
       ]
     },
     {
-      "id": "2",
-      "date": "Oct 28",
-      "date_sort": "2026-10-28",
-      "victim": "PHP-based web servers worldwide, incl. Palo Alto Networks PAN-OS management interfaces",
-      "industry": "Internet infrastructure / Multiple sectors",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Unauthenticated remote code execution via two critical PHP core memory-safety flaws (CVE-2026-109618, CVE-2026-109619, \"PHP2Shell\"); technical details leaked ahead of PHP's October 21 emergency patch, giving attackers an early head start.",
-      "impact": "CISA confirmed active exploitation and added both CVEs to its Known Exploited Vulnerabilities catalog with a federal patch deadline; Palo Alto Networks confirmed successful compromises of internet-facing PAN-OS management interfaces, and researchers estimate more than 22 million exposed, potentially vulnerable PHP instances worldwide.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "krebsonsecurity.com",
-        "cisa.gov",
-        "ic3.gov",
-        "nsa.gov",
-        "dfs.ny.gov",
-        "unit42.paloaltonetworks.com",
-        "isc.sans.edu",
-        "therecord.media",
-        "recordedfuture.com"
-      ]
-    },
-    {
       "id": "3",
       "date": "Oct 28",
       "date_sort": "2026-10-28",
-      "victim": "U.S. critical infrastructure operators (telecom, energy, water, transportation, government, defense)",
-      "industry": "Critical infrastructure",
-      "attacker": "China — state-sponsored espionage group",
+      "victim": "U.S. critical infrastructure operators (telecom, energy, water, transportation, defense)",
+      "industry": "Critical infrastructure (multi-sector)",
+      "attacker": "China — state-suspected espionage group",
       "attacker_origin": "china",
       "motivation": "Espionage",
-      "vector": "This group continuously builds and dismantles ephemeral chains of compromised SOHO routers, IoT devices, and enterprise edge infrastructure (Fortinet, Cisco, Ivanti, F5, Palo Alto, and others) to maintain covert, hard-to-trace access.",
-      "impact": "Lumen's Black Lotus Labs has notified hundreds of victims across telecom, government, defense, water, energy, transportation, maritime, rail, and aviation sectors; the group has exploited zero-days in Versa Director, N-Able N-Central, and Cisco SD-WAN products to preserve long-term access.",
+      "vector": "Exploited zero-day and known vulnerabilities in network-edge devices via a constantly rebuilt chain of compromised routers and IoT devices (\"Silent Train\"), reassembled in under two minutes to minimize detectable infrastructure.",
+      "impact": "Sustained covert access to hundreds of victim organizations across telecom, government, defense, water, energy, transportation, maritime, rail, aviation, and emergency-services sectors since late 2023.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
@@ -68,12 +67,12 @@
       "date": "Oct 28",
       "date_sort": "2026-10-28",
       "victim": "Space/satellite, defense/aerospace, and policy-research organizations",
-      "industry": "Defense / Aerospace",
+      "industry": "Defense & aerospace",
       "attacker": "China — state-suspected espionage group",
       "attacker_origin": "china",
       "motivation": "Espionage",
-      "vector": "The group exploited CVE-2026-20127, an authentication-bypass flaw in Cisco SD-WAN Catalyst Controller instances, then deployed a custom malware framework dubbed \"KeyDrift\" that hooks SSL and socket functions inside legitimate controller processes.",
-      "impact": "KeyDrift gave the actor long-term persistence and let it intercept decrypted SD-WAN control-plane traffic to steal IPsec data-plane encryption keys; Cisco Talos assesses the group's infrastructure overlaps with the broader China-linked critical-infrastructure campaign described above.",
+      "vector": "Exploited CVE-2026-20127, an authentication bypass in Cisco SD-WAN Catalyst Controllers, to deploy the custom \"KeyDrift\" malware framework for persistent, in-memory access to the control plane.",
+      "impact": "Gained long-term access allowing interception of decrypted control traffic and theft of encryption keying material at victims whose infrastructure overlaps with the China-linked \"Silent Train\" access network.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -84,17 +83,17 @@
       "id": "5",
       "date": "Oct 28",
       "date_sort": "2026-10-28",
-      "victim": "Japan Airlines / Japan Transocean Air customers",
-      "industry": "Aviation / Travel",
-      "attacker": "Unknown",
+      "victim": "Starlink satellite internet users (100+ countries)",
+      "industry": "Telecommunications / ad-tech",
+      "attacker": "Unknown — surveillance-for-hire suspected",
       "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Hackers accessed reservation data through Amadeus IT Group, the third-party provider running Japan Airlines' flight reservation, ticketing, and check-in systems.",
-      "impact": "92,000 customers had names, reservation codes, and flight details exposed; about 2,000 also had passport numbers, frequent-flyer numbers, emails, and phone numbers stolen. Flight operations and payment-card data were not affected.",
-      "ongoing": "N",
+      "motivation": "Espionage",
+      "vector": "An Israeli ad-tech firm, Discover-Tech, won the top bid for ad placements shown to Starlink users and used that position to serve malicious ads delivering zero-click spyware.",
+      "impact": "Zero-click spyware was delivered via ads to Starlink users across more than 100 countries, including countries where Starlink service is banned or restricted.",
+      "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "therecord.media"
+        "risky.biz"
       ]
     },
     {
@@ -106,9 +105,9 @@
       "attacker": "Hacktivist group — data leak activism",
       "attacker_origin": "unknown",
       "motivation": "Political",
-      "vector": "A hacktivist group calling itself \"Department of Peace\" said it breached an Okta single sign-on service used by DHS to obtain internal personnel data; Okta states its own systems were not compromised.",
-      "impact": "Data on more than 41,000 current and former DHS employees and contractors, including personnel tied to covert operations and the BlueLeaks investigation, was published online by transparency site DDoSecrets.",
-      "ongoing": "Y",
+      "vector": "A hacktivist group calling itself the Department of Peace obtained the data from an Okta single sign-on service used by DHS and passed it to Distributed Denial of Secrets for publication.",
+      "impact": "Internal records on more than 41,000 current and former DHS employees and contractors were published, including staff overseeing covert operations and immigration enforcement; the leak site was later taken offline.",
+      "ongoing": "N",
       "severity": "high",
       "sources": [
         "cyberscoop.com"
@@ -118,31 +117,133 @@
       "id": "7",
       "date": "Oct 28",
       "date_sort": "2026-10-28",
+      "victim": "Japan Airlines / Japan Transocean Air customers",
+      "industry": "Aviation / transportation",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Hackers breached Amadeus IT Group, the third-party provider running Japan Airlines' reservation, ticketing, and check-in systems, and accessed customer reservation data.",
+      "impact": "92,000 customers had names, reservation codes, and flight data exposed; about 2,000 also had passport numbers, frequent-flyer numbers, emails, and phone numbers stolen. Flight operations and card data were not affected.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "therecord.media"
+      ]
+    },
+    {
+      "id": "8",
+      "date": "Oct 28",
+      "date_sort": "2026-10-28",
       "victim": "U.S. and allied businesses defrauded by DPRK IT-worker schemes",
-      "industry": "Multiple / Cross-sector",
+      "industry": "Technology / IT services (global)",
       "attacker": "North Korea — state-sponsored, financially motivated",
       "attacker_origin": "north_korea",
       "motivation": "Financial",
-      "vector": "DPRK IT workers used fraudulent documents, stolen identities, and fabricated personas, aided by cryptocurrency laundering and AI tools, to secure remote employment and then exploited their access.",
-      "impact": "Treasury sanctioned 10 individuals and one entity, including Russia-based facilitators and the First Financial and Technical Development Center, for laundering millions of dollars generated through this fraud; some IT workers also deployed malware and exfiltrated proprietary data from employer networks.",
+      "vector": "North Korean operatives used fraudulent documents, stolen identities, and AI-generated personas to secure remote IT jobs at Western companies, then diverted wages through facilitator-run financial networks.",
+      "impact": "Treasury sanctioned 10 individuals and one entity for laundering proceeds that fund DPRK weapons programs; some IT workers also deployed malware and exfiltrated proprietary data from employer networks.",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "medium",
       "sources": [
         "home.treasury.gov"
       ]
     },
     {
-      "id": "8",
-      "date": "Oct 27",
-      "date_sort": "2026-10-27",
-      "victim": "eMudhra Limited (certificate authority) and downstream TLS / code-signing relying parties",
-      "industry": "PKI / Certificate services",
+      "id": "9",
+      "date": "Oct 28",
+      "date_sort": "2026-10-28",
+      "victim": "University of Copenhagen",
+      "industry": "Education",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "Eight eMudhra intermediate certificate-authority private keys (six TLS, two code-signing) were generated with insufficient cryptographic randomness, allowing the keys to be derived from the public certificates.",
-      "impact": "Anyone holding the derived keys could mint trusted TLS certificates to intercept traffic or sign malware to appear legitimate; Microsoft, Apple, and other vendors removed the affected root and intermediate certificates from their trust stores.",
+      "vector": "Hackers breached a test environment belonging to the university.",
+      "impact": "Personal data of more than 525,000 people was stolen.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "10",
+      "date": "Oct 28",
+      "date_sort": "2026-10-28",
+      "victim": "Keystone (cryptocurrency hardware wallet maker) and its customers",
+      "industry": "Technology / cryptocurrency hardware",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "An attacker stole Keystone's device authentication key, which is written into each wallet during assembly and cannot be changed after the fact.",
+      "impact": "Keystone is destroying nearly 19,000 devices and has suspended all deliveries, warning the stolen key could be used to build counterfeit wallets with hidden backdoors.",
       "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "11",
+      "date": "Oct 28",
+      "date_sort": "2026-10-28",
+      "victim": "Convertr (e-commerce platform) and its customers' shoppers",
+      "industry": "Retail / e-commerce",
+      "attacker": "Criminal gang — payment-card skimming",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "A suspected Brazilian Magecart-style group breached Convertr through the Plausible open-source analytics platform and injected a credit-card skimmer into its analytics script.",
+      "impact": "Shoppers' payment card data was harvested via the skimmer before the compromise was identified by researchers.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "12",
+      "date": "Oct 28",
+      "date_sort": "2026-10-28",
+      "victim": "Bitonic (Dutch cryptocurrency platform) customers",
+      "industry": "Financial services / cryptocurrency",
+      "attacker": "Criminal gang — cryptocurrency theft",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Hackers breached Bitonic's internal systems and modified account login credentials on the backend to take over accounts.",
+      "impact": "Three customer accounts were accessed and emptied of Bitcoin.",
+      "ongoing": "N",
+      "severity": "low",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "13",
+      "date": "Oct 28",
+      "date_sort": "2026-10-28",
+      "victim": "Electrum cryptocurrency wallet users",
+      "industry": "Financial services / cryptocurrency",
+      "attacker": "Criminal gang — cryptocurrency theft",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Malicious Electrum wallet servers exploited a signing bug to trick wallet owners into unknowingly signing fraudulent transactions.",
+      "impact": "At least one user lost funds before Electrum patched the flaw; some malicious servers continue exploiting unpatched clients.",
+      "ongoing": "Y",
+      "severity": "low",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "14",
+      "date": "Oct 27",
+      "date_sort": "2026-10-27",
+      "victim": "eMudhra Limited (certificate authority) and downstream TLS / code-signing relying parties",
+      "industry": "Technology / public key infrastructure",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Eight eMudhra intermediate certificate authority private keys (six TLS, two code-signing) were compromised and recoverable, allowing creation of certificates that would appear trusted.",
+      "impact": "Microsoft blocked the affected CAs via the Windows Disallowed Certificate Trust List and removed seven related root certificates from Windows and Edge, cutting off the keys' ability to impersonate sites or sign malware as trusted software.",
+      "ongoing": "N",
       "severity": "high",
       "sources": [
         "microsoft.com",
@@ -151,16 +252,33 @@
       ]
     },
     {
-      "id": "9",
+      "id": "15",
+      "date": "Oct 27",
+      "date_sort": "2026-10-27",
+      "victim": "ConnectWise Cloud Backup customers (2,250+ Microsoft 365 tenants)",
+      "industry": "IT / managed services",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "The threat actor used compromised ConnectWise Cloud Backup application credentials, accelerated by the AI-enabled ARTEX penetration-testing framework, to attempt sign-ins to Microsoft 365 tenants at up to 2,900 attempts per minute.",
+      "impact": "The group achieved privileged, persistent cloud access at multiple organizations across manufacturing, aerospace, chemicals, energy, defense, and financial services, though most targeting attempts failed.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "darkreading.com"
+      ]
+    },
+    {
+      "id": "16",
       "date": "Oct 27",
       "date_sort": "2026-10-27",
       "victim": "Hospitals, law firms, and businesses in the U.S. and abroad",
-      "industry": "Healthcare / Multiple",
+      "industry": "Healthcare & multiple sectors",
       "attacker": "Criminal gang — ransomware",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "As an affiliate of the Nefilim and Hive ransomware-as-a-service operations, Artem Stryzhak gained network access to victim organizations, exfiltrated data, and deployed ransomware demanding cryptocurrency payment.",
-      "impact": "The Hive conspiracy alone affected roughly 1,500 victims globally, including hospitals unable to treat or admit patients during the COVID-19 pandemic, causing more than $100 million in combined losses; Stryzhak was sentenced to 70 months in prison, while co-conspirator Volodymyr Tymoshchuk remains a fugitive with an $11 million reward for his capture.",
+      "vector": "A ransomware conspiracy involving a Ukrainian national and co-conspirators hacked into hospital, business, and government networks worldwide to deploy ransomware and extort victims.",
+      "impact": "Roughly 1,500 victims worldwide were hit, causing over $100 million in losses; the defendant was sentenced to 70 months in prison, though a co-conspirator remains at large.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -168,136 +286,51 @@
       ]
     },
     {
-      "id": "10",
+      "id": "17",
+      "date": "Oct 27",
+      "date_sort": "2026-10-27",
+      "victim": "Critical infrastructure and manufacturing sites in Spain, France, and U.S. military bases",
+      "industry": "Critical infrastructure / manufacturing",
+      "attacker": "Russia — state-sympathizing hacktivists",
+      "attacker_origin": "russia",
+      "motivation": "Disruption",
+      "vector": "Pro-Russian actors exploited internet-connected industrial control and IoT systems — including refrigeration, HVAC, and manufacturing equipment — to trigger physical malfunctions.",
+      "impact": "Caused a factory fire at a renewable-energy transformer plant in Catalonia, disrupted winery and crematorium equipment in Spain, and affected supermarket refrigeration in France and systems at U.S. military bases; French and U.S. authorities are investigating jointly.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "bloomberg.com"
+      ]
+    },
+    {
+      "id": "18",
       "date": "Oct 26",
       "date_sort": "2026-10-26",
-      "victim": "University of New Mexico Health System",
+      "victim": "University of New Mexico Health Sciences Center",
       "industry": "Healthcare",
       "attacker": "Criminal gang — ransomware",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Ransomware gang BYOD compromised the health system's network, forcing IT to shut down desktops and disconnect devices from hospital Wi-Fi.",
-      "impact": "The attack forced a two-hour ambulance diversion, cancellation of outpatient surgeries and appointments at more than 30 clinics, and campus-wide class cancellations; BYOD claims to have compromised 36,000 machines and stolen student, patient, and employee data. A similar cyberattack disrupted University Hospitals in Ohio the same week.",
+      "vector": "A new ransomware gang calling itself BYOD compromised internal systems at UNM's hospitals, medical school, and research facilities.",
+      "impact": "Ambulances were diverted and outpatient surgeries/appointments canceled for hours; systems were fully restored without paying ransom, though the gang still holds stolen patient and employee data and is attempting to extort individuals directly.",
       "ongoing": "Y",
-      "severity": "critical",
+      "severity": "high",
       "sources": [
         "therecord.media",
         "risky.biz"
       ]
     },
     {
-      "id": "11",
-      "date": "Oct 26",
-      "date_sort": "2026-10-26",
-      "victim": "University of Copenhagen",
-      "industry": "Education",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Hackers breached a test environment at the university.",
-      "impact": "Personal data belonging to more than 525,000 people was stolen.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "12",
-      "date": "Oct 26",
-      "date_sort": "2026-10-26",
-      "victim": "Keystone (cryptocurrency hardware wallet maker) and its customers",
-      "industry": "Financial technology / Cryptocurrency",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "A hacker stole Keystone's device authentication key, which is written into every wallet at assembly and cannot be changed.",
-      "impact": "Keystone will destroy nearly 19,000 devices and has suspended deliveries, warning the stolen key could be used to build counterfeit wallets with hidden backdoors.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "13",
-      "date": "Oct 26",
-      "date_sort": "2026-10-26",
-      "victim": "Organizations across Russia, Belarus, and Kazakhstan",
-      "industry": "Multiple",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "DataSuckers, a Lapsus/ShinyHunters-style group, conducted hacking and data-extortion operations across the former Soviet space.",
-      "impact": "Russian authorities arrested three of the group's four known members, including 19-year-old Denis A. Friedman, who was arraigned in a Moscow court.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "14",
-      "date": "Oct 26",
-      "date_sort": "2026-10-26",
-      "victim": "Convertr (e-commerce platform) and its customers' shoppers",
-      "industry": "Retail / E-commerce",
-      "attacker": "Criminal gang — payment-card skimming",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "A suspected Brazilian hacking group breached e-commerce platform Convertr via the Plausible open-source analytics platform and injected a credit-card skimmer into its analytics script.",
-      "impact": "Payment card data from shoppers on affected Convertr-powered storefronts was harvested by the skimmer; the group has run Magecart-style skimming campaigns since 2024.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "15",
-      "date": "Oct 25",
-      "date_sort": "2026-10-25",
-      "victim": "Ledger Nano X customers who purchased through reseller CryptoBilis",
-      "industry": "Financial technology / Cryptocurrency",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "A Southeast Asian reseller, CryptoBilis, distributed tampered Ledger Nano X hardware wallets containing a hidden spy chip.",
-      "impact": "Ledger told affected customers to discard devices and move funds to new wallet addresses to prevent theft.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "16",
-      "date": "Oct 23",
-      "date_sort": "2026-10-23",
-      "victim": "City of Columbia, South Carolina (municipal government)",
-      "industry": "Government",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Unspecified ransomware intrusion into city government systems.",
-      "impact": "Dozens of resident-facing municipal systems were taken offline, with services continuing to be disrupted days after the attack was confirmed.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "17",
+      "id": "19",
       "date": "Oct 23",
       "date_sort": "2026-10-23",
       "victim": "Vanden Broele (Belgian government software supplier) and 120+ local authorities",
-      "industry": "Government / Software supply chain",
+      "industry": "Government software / public sector",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "Hackers breached Vanden Broele's eSignFlow document-signing platform.",
-      "impact": "More than 120 Belgian local authorities were affected; the company took systems offline to prevent further abuse.",
+      "vector": "Hackers breached Vanden Broele's eSignFlow document-signing platform, used widely by Belgian local governments.",
+      "impact": "More than 120 local authorities were reportedly impacted; the company took systems offline to prevent further abuse.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -305,15 +338,15 @@
       ]
     },
     {
-      "id": "18",
+      "id": "20",
       "date": "Oct 23",
       "date_sort": "2026-10-23",
       "victim": "Warp (cloud/developer platform) and roughly 1% of its customers",
-      "industry": "Technology / SaaS",
+      "industry": "Technology / software",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "Intruders used a swarm of AI agents to breach one of Warp's infrastructure suppliers.",
+      "vector": "Intruders used a swarm of AI agents to breach one of Warp's infrastructure suppliers and pivot into Warp's environment.",
       "impact": "Agent trace and telemetry data belonging to roughly 1% of Warp's customers was stolen.",
       "ongoing": "N",
       "severity": "medium",
@@ -322,51 +355,17 @@
       ]
     },
     {
-      "id": "19",
-      "date": "Oct 22",
-      "date_sort": "2026-10-22",
-      "victim": "ConnectWise Cloud Backup customers (2,250+ Microsoft 365 tenants)",
-      "industry": "IT / Managed services",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "A China-linked group used compromised ConnectWise Cloud Backup application credentials and an AI-driven penetration-testing framework (ARTEX) to automate sign-in attempts against downstream Microsoft 365 tenants at up to 2,900 attempts per minute.",
-      "impact": "Attackers achieved privileged cloud persistence at multiple organizations across manufacturing, aerospace, chemicals, energy, defense, and financial services within hours of initial access; ConnectWise suspended its Cloud Backup, SaaS Security, and Cloud Management services during containment.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "darkreading.com"
-      ]
-    },
-    {
-      "id": "20",
-      "date": "Oct 22",
-      "date_sort": "2026-10-22",
-      "victim": "Accenture (federal contractor) / FBI",
-      "industry": "Government / IT services",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "ShinyHunters exploited an unpatched Oracle PeopleSoft platform; Accenture, which managed the system, had failed to install available security patches.",
-      "impact": "The breach exposed personal and business data of nearly all FBI special agents; the FBI subsequently terminated its contract with Accenture over the failure to secure the breached systems.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
       "id": "21",
-      "date": "Oct 22",
-      "date_sort": "2026-10-22",
-      "victim": "Country-code domain registries for American Samoa (.as), Ghana (.gh), and Sierra Leone (.sl)",
-      "industry": "Internet infrastructure",
+      "date": "Oct 21",
+      "date_sort": "2026-10-21",
+      "victim": "Blast Mail (email service operated by Laxlight)",
+      "industry": "Technology / email services",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "A threat actor hijacked ccTLD registry DNS records, modifying them to pass domain-ownership verification checks and obtain fraudulent HTTPS certificates for specific domains.",
-      "impact": "Google said the threat actor used the hijacked certificates to target some of its services as well as other organizations.",
-      "ongoing": "N",
+      "vector": "Attackers breached Blast Mail, a Japanese email service run by cloud provider Laxlight.",
+      "impact": "The company shut the service down on October 21 shortly after detecting the attack and has not resumed operations.",
+      "ongoing": "Y",
       "severity": "medium",
       "sources": [
         "risky.biz"
@@ -376,81 +375,47 @@
       "id": "22",
       "date": "Oct 21",
       "date_sort": "2026-10-21",
-      "victim": "Blast Mail (email service operated by Laxlight)",
-      "industry": "Technology / Email services",
+      "victim": "DreamHost customers",
+      "industry": "Technology / web hosting",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "Hackers breached Blast Mail, an email service run by Japanese cloud provider Laxlight.",
-      "impact": "The company shut down the service on October 21 and has not resumed operations.",
-      "ongoing": "Y",
-      "severity": "medium",
+      "vector": "An incident impacted DreamHost's FTP/SFTP and webmail services.",
+      "impact": "DreamHost reset all customer passwords and blocked accounts until new passwords are set as a precaution.",
+      "ongoing": "N",
+      "severity": "low",
       "sources": [
         "risky.biz"
       ]
     },
     {
       "id": "23",
-      "date": "Oct 13",
-      "date_sort": "2026-10-13",
-      "victim": "Sourcenext Corp.",
-      "industry": "Software",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "An unidentified third party misused the company's member-information-retrieval API to pull customer records.",
-      "impact": "22,519,960 customer records were compromised, including emails, passwords, names, addresses, phone numbers, dates of birth, and employment information.",
-      "ongoing": "N",
+      "date": "Oct 19",
+      "date_sort": "2026-10-19",
+      "victim": "Federal Bureau of Investigation (FBI)",
+      "industry": "Government / law enforcement",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "The ShinyHunters data-extortion group stole highly sensitive data from FBI systems as part of a broader extortion campaign.",
+      "impact": "Investigators are probing executives at two ransomware-negotiation firms suspected of colluding with ShinyHunters, including one accused of helping run the group's victim-pressure website.",
+      "ongoing": "Y",
       "severity": "critical",
       "sources": [
-        "recordedfuture.com"
+        "krebsonsecurity.com"
       ]
     },
     {
       "id": "24",
-      "date": "Oct 12",
-      "date_sort": "2026-10-12",
-      "victim": "40+ port authorities, maritime, and global sea-shipping companies",
-      "industry": "Maritime / Transportation",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "The n0n ransomware and data-extortion group compromised a maritime IT services provider and pivoted from that access into more than 40 downstream port authority, maritime, and shipping customers.",
-      "impact": "All victims were listed on n0n's dark web leak site; roughly half are known customers of CyberLogitec, a South Korean maritime IT platform provider, highlighting concentrated supply-chain risk across the global shipping sector.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "risky.biz"
-      ]
-    },
-    {
-      "id": "25",
-      "date": "Oct 7",
-      "date_sort": "2026-10-07",
-      "victim": "IDCFrontier (Japanese cloud provider) and 495 downstream companies/local governments",
-      "industry": "Cloud / IT services",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "A ransomware attack on cloud provider IDCFrontier disrupted hosted services relied upon by hundreds of downstream customers.",
-      "impact": "495 companies and local governments experienced service disruption as a result of the single-provider compromise, illustrating the systemic risk of concentrated cloud dependencies.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "recordedfuture.com"
-      ]
-    },
-    {
-      "id": "26",
-      "date": "Oct 7",
-      "date_sort": "2026-10-07",
+      "date": "Oct 16",
+      "date_sort": "2026-10-16",
       "victim": "At least seven South Korean financial institutions",
       "industry": "Financial services",
       "attacker": "Criminal gang — data extortion",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "A suspected Chinese-speaking actor used the AI-powered penetration-testing framework ARTEX, alongside Claude Code, DeepSeek, Grok, and Zhipu AI, to opportunistically probe and compromise multiple financial institutions' systems.",
-      "impact": "Personal data belonging to at least 68,000 people was exposed; the attacker's infrastructure also showed preparations for cryptocurrency-wallet theft and mobile-device exploitation beyond the banking campaign.",
+      "vector": "A suspected Chinese-speaking actor (tracked as TAG-217) used the AI-enabled ARTEX penetration-testing framework to breach multiple South Korean financial institutions, testing infrastructure as early as August 2026.",
+      "impact": "Personal data belonging to at least 68,000 people was exposed; the actor also developed tools to steal cryptocurrency wallet files and expand access to Linux and mobile systems.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
