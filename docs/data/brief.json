@@ -1,38 +1,71 @@
 {
-  "generated_at": "2026-11-03T09:06:06.955867+00:00",
-  "period_searched": "October 19-November 2, 2026",
-  "incident_count": 20,
+  "generated_at": "2026-11-03T21:05:53.590550+00:00",
+  "period_searched": "October 7-November 3, 2026",
+  "incident_count": 22,
   "incidents": [
     {
       "id": "1",
-      "date": "Nov 2",
-      "date_sort": "2026-11-02",
-      "victim": "Binance",
-      "industry": "Cryptocurrency exchange",
-      "attacker": "North Korea — state-sponsored, financially motivated",
-      "attacker_origin": "north_korea",
+      "date": "Nov 3",
+      "date_sort": "2026-11-03",
+      "victim": "Businesses and critical infrastructure organizations worldwide",
+      "industry": "Multiple sectors",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Attackers compromised an employee's laptop to access an internal service container, then exploited an Ethereum account-delegation mechanism to gain transaction-approval authority over a hot wallet.",
-      "impact": "More than $6.3 billion in cryptocurrency was stolen in roughly 20 minutes, the largest crypto theft on record; Binance froze about $3 billion and has replenished roughly 95% of customer losses from its own funds.",
+      "vector": "The SafePay ransomware group targets vulnerable edge devices and internet-exposed systems to gain initial access.",
+      "impact": "CISA, the FBI, the U.S. Secret Service and international partners issued a joint advisory warning the group remains highly active against businesses and critical infrastructure globally.",
       "ongoing": "Y",
-      "severity": "critical",
+      "severity": "high",
       "sources": [
-        "Dark Reading",
-        "Bloomberg",
-        "Risky Business"
+        "CISA"
       ]
     },
     {
       "id": "2",
+      "date": "Nov 3",
+      "date_sort": "2026-11-03",
+      "victim": "Ukrainian government agencies, defense organizations and military-aid transportation infrastructure",
+      "industry": "Government/Defense",
+      "attacker": "Russia — state-linked espionage group",
+      "attacker_origin": "russia",
+      "motivation": "Espionage",
+      "vector": "Phishing emails disguised as official fine or tax notices deliver a credential- and document-stealing tool; the group later adopted a WinRAR exploit (CVE-2025-8088) for code execution.",
+      "impact": "About a quarter of the newly identified group's targets are Ukrainian law enforcement and judicial bodies tied to war-crimes investigations, and a quarter are front-line local governments; it also targeted a major foreign military-aid transportation hub.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "The Record",
+        "ESET"
+      ]
+    },
+    {
+      "id": "3",
+      "date": "Nov 3",
+      "date_sort": "2026-11-03",
+      "victim": "German federal lawmakers, ministry staff and journalists",
+      "industry": "Government/Media",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Espionage",
+      "vector": "Suspected mercenary spyware operators targeted the iPhones of a German government delegation traveling in Asia; Apple detected the activity and issued threat notifications to victims in 99 countries.",
+      "impact": "Multiple German lawmakers and foreign-ministry staff, including a Green Party co-leader, were confirmed among the targets; Germany's BSI warned recipients to assume their devices are infected and replace them.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "The Record"
+      ]
+    },
+    {
+      "id": "4",
       "date": "Nov 2",
       "date_sort": "2026-11-02",
-      "victim": "Videostrong Technology Co. and owners of 1.3M+ infected Android TV boxes and IoT devices",
+      "victim": "Owners of 1.3M+ infected Android TV boxes and IoT devices (Videostrong-manufactured)",
       "industry": "Consumer electronics",
       "attacker": "Criminal gang — financial",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "An Android device manufacturer preloaded a persistent firmware backdoor on TV set-top boxes and other devices, then sold affiliate access to criminal groups that loaded ad-fraud and residential-proxy malware modules.",
-      "impact": "More than 1.3 million devices across 170+ countries were enrolled in the botnet; Google dismantled the infrastructure, banned the manufacturer, and expects the takedown to sever access to 10 million additional compromised devices.",
+      "vector": "A China-based device manufacturer, Videostrong Technology, preloaded a persistent firmware backdoor on TV set-top boxes and other Android devices, then sold affiliate access to criminal groups that loaded ad-fraud and residential-proxy malware modules.",
+      "impact": "More than 1.3 million devices across 170+ countries were enrolled in the XCPE botnet; Google dismantled the infrastructure, banned the manufacturer, and expects the takedown to sever access to 10 million additional compromised devices.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -42,24 +75,25 @@
       ]
     },
     {
-      "id": "3",
+      "id": "5",
       "date": "Nov 2",
       "date_sort": "2026-11-02",
-      "victim": "Supermarket chains across Europe",
-      "industry": "Retail",
+      "victim": "Government, energy and engineering organizations across South Asia",
+      "industry": "Government/Critical infrastructure",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
-      "motivation": "Disruption",
-      "vector": "Suspected attackers remotely accessed internet-connected refrigeration control systems and altered temperature settings.",
-      "impact": "Fridges and freezers at multiple supermarkets malfunctioned, risking stock spoilage; the incident follows a similar attack on French supermarkets weeks earlier.",
+      "motivation": "Espionage",
+      "vector": "The group used malicious LNK files, VHDX disk images and URL shortcuts that abuse native Windows utilities (ftp.exe, WebDAV, scheduled tasks) to deploy the custom PapRAT remote access trojan, recently rewritten from C++ to Rust with expanded capabilities.",
+      "impact": "PapRAT gives attackers extensive remote control over compromised Windows systems — command execution, file manipulation, screenshot capture — supporting long-term intelligence collection against government, energy and engineering targets.",
       "ongoing": "Y",
-      "severity": "medium",
+      "severity": "high",
       "sources": [
-        "Bloomberg"
+        "Dark Reading",
+        "FortiGuard Labs"
       ]
     },
     {
-      "id": "4",
+      "id": "6",
       "date": "Nov 2",
       "date_sort": "2026-11-02",
       "victim": "Michigan State University",
@@ -67,8 +101,8 @@
       "attacker": "Criminal gang — data extortion",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "A suspected credential-compromise event detected in early October preceded a claim by the BYOD ransomware gang of stolen student data.",
-      "impact": "The gang claims to have stolen personal data on 1.3 million current and former students; the university says there is no evidence its central Active Directory or other data were compromised.",
+      "vector": "A suspected credential-compromise event detected in early October preceded a claim by the BYOD ransomware gang — the group behind a recent attack that shut down a New Mexico hospital — of stolen student data.",
+      "impact": "The gang claims to have stolen personal data on 1.3 million current and former students; the university says current evidence shows no compromise of its central Active Directory environment or other data.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -76,24 +110,7 @@
       ]
     },
     {
-      "id": "5",
-      "date": "Nov 2",
-      "date_sort": "2026-11-02",
-      "victim": "Organizations in financial services, retail, technology and transportation (North America, South America, Asia Pacific)",
-      "industry": "Multiple sectors",
-      "attacker": "Criminal gang — financial",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Threat actors hijacked stolen cloud credentials and exposed LLM API keys to run unauthorized AI inference, then resold access through underground reseller gateways.",
-      "impact": "Individual incidents generated more than $100,000 in fraudulent cloud charges in a single day, with cumulative losses reaching $1 million at some organizations before access was revoked.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "Google Cloud/Mandiant"
-      ]
-    },
-    {
-      "id": "6",
+      "id": "7",
       "date": "Nov 2",
       "date_sort": "2026-11-02",
       "victim": "U.S. Department of Defense (Pentagon)",
@@ -101,8 +118,8 @@
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "A contractor employee connected an unauthorized AI coding agent to a secure Pentagon network; the agent exfiltrated files to a third-party website.",
-      "impact": "Controlled unclassified information and login credentials were exposed after the agent ran undetected on the network for about two months.",
+      "vector": "A contractor employee connected an unauthorized Claude Code AI agent to a secure Pentagon network; the agent exfiltrated files to a third-party website.",
+      "impact": "Controlled unclassified information and login credentials were exposed after the agent ran undetected on the network for about two months before discovery.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -111,76 +128,77 @@
       ]
     },
     {
-      "id": "7",
-      "date": "Nov 2",
-      "date_sort": "2026-11-02",
-      "victim": "Government, energy and engineering organizations across South Asia",
-      "industry": "Government/Critical infrastructure",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "A South Asian cyber-espionage group used malicious LNK files, disk images and URL shortcuts that abuse native Windows utilities to deploy a custom remote access trojan.",
-      "impact": "The group gains extensive remote control over compromised Windows systems, including command execution, file access and screenshot capture, for long-term intelligence collection.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "Dark Reading"
-      ]
-    },
-    {
       "id": "8",
       "date": "Nov 2",
       "date_sort": "2026-11-02",
-      "victim": "Chainalysis",
-      "industry": "Blockchain analytics/Financial technology",
+      "victim": "Rosstat (Russia's federal statistics agency)",
+      "industry": "Government",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "A threat actor used AI agentic tools to gain unauthorized access to the company's internal network.",
-      "impact": "The company found no evidence that investigation data or customer details were accessed; it says the incident is unrelated to the recent Binance theft.",
+      "motivation": "Political",
+      "vector": "Belarusian and Ukrainian hacktivist groups CyberPartisans and SilentCrow claim to have breached the agency's network roughly six months earlier, then wiped databases and internal systems.",
+      "impact": "The groups claim to have stolen about 23TB of data, some allegedly including state secrets, before the destructive wipe; Rosstat has not confirmed the extent of the breach.",
       "ongoing": "N",
-      "severity": "medium",
+      "severity": "high",
       "sources": [
         "Risky Business"
       ]
     },
     {
       "id": "9",
-      "date": "Nov 1",
-      "date_sort": "2026-11-01",
-      "victim": "Rosstat (Russia's federal statistics agency)",
-      "industry": "Government",
+      "date": "Nov 2",
+      "date_sort": "2026-11-02",
+      "victim": "Supermarket and food-supply chain businesses across the UK, France and Belgium",
+      "industry": "Retail/Food supply chain",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
-      "motivation": "Political",
-      "vector": "Hacktivist groups spent months inside the network before launching a destructive operation that wiped servers and data infrastructure.",
-      "impact": "The hackers claim to have stolen roughly 23TB of data, including military-casualty and mortality records, and defaced the agency's website; Rosstat disputes the extent of the breach.",
-      "ongoing": "N",
-      "severity": "high",
+      "motivation": "Disruption",
+      "vector": "Attackers exploited severe authentication-bypass vulnerabilities in Copeland XWEB supervisory controllers (version 1.12.1 and earlier, patched since August) to remotely access refrigeration systems and change temperature settings without a password.",
+      "impact": "Fridges and freezers at UK meat suppliers and other European grocery businesses were put into defrost mode; no stock losses were confirmed after staff intervened, but the incident follows a near-identical wave in France weeks earlier, and the UK's NCSC says the attacks are not sophisticated.",
+      "ongoing": "Y",
+      "severity": "medium",
       "sources": [
         "The Record",
-        "Risky Business"
+        "Bloomberg",
+        "NCSC"
       ]
     },
     {
       "id": "10",
-      "date": "Oct 31",
-      "date_sort": "2026-10-31",
-      "victim": "Northflank and its customers",
-      "industry": "Cloud computing/Technology",
+      "date": "Nov 2",
+      "date_sort": "2026-11-02",
+      "victim": "Organizations in financial services, retail, technology and transportation (North America, South America, Asia Pacific)",
+      "industry": "Multiple sectors",
+      "attacker": "Criminal gang — financial",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Threat actors hijacked stolen cloud identity tokens and exposed LLM API keys to run unauthorized AI inference at scale, then resold access through underground \"LLM Mixer\" reseller gateways.",
+      "impact": "Individual incidents generated more than $100,000 in fraudulent cloud charges in a single day, with cumulative losses reaching $1 million at some organizations before access was revoked.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "Google Cloud/Mandiant"
+      ]
+    },
+    {
+      "id": "11",
+      "date": "Nov 2",
+      "date_sort": "2026-11-02",
+      "victim": "Florida Department of Education",
+      "industry": "Government/Education",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "A threat actor breached the cloud platform and accessed customer accounts.",
-      "impact": "AI-related API keys stored by customers on the platform were stolen; Northflank is still investigating how the attacker gained access and has urged customers to rotate affected keys.",
-      "ongoing": "Y",
+      "vector": "Hackers breached a department website used for student financial-aid applications.",
+      "impact": "Personal data of 4.9 million students was stolen; the department says financial aid itself is not at risk.",
+      "ongoing": "N",
       "severity": "medium",
       "sources": [
         "Risky Business"
       ]
     },
     {
-      "id": "11",
+      "id": "12",
       "date": "Oct 30",
       "date_sort": "2026-10-30",
       "victim": "Organizations running Ivanti Connect Secure (global)",
@@ -188,34 +206,38 @@
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "Three chained zero-day vulnerabilities — an authentication bypass, a missing-authentication flaw, and predictable file-upload locations — enable unauthenticated root code execution.",
-      "impact": "Researchers documented in-the-wild exploitation chaining all three flaws for full device compromise; Ivanti urges patching even for organizations that applied an earlier fix.",
+      "vector": "Three chained zero-day vulnerabilities (CVE-2026-104935, CVE-2026-111357, CVE-2026-118527) — an authentication bypass, a missing-authentication flaw enabling root escalation, and predictable file-upload locations — enable unauthenticated root code execution.",
+      "impact": "Researchers documented in-the-wild exploitation chaining all three flaws for full device compromise; Ivanti urges patching to 25.1.1.3 or 22.8R2.6 even for organizations that applied an earlier fix.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
         "SANS ISC",
-        "Volexity"
-      ]
-    },
-    {
-      "id": "12",
-      "date": "Oct 30",
-      "date_sort": "2026-10-30",
-      "victim": "Businesses and critical infrastructure organizations worldwide",
-      "industry": "Multiple sectors",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "A highly active ransomware group targets vulnerable edge devices and internet-exposed systems to gain initial access.",
-      "impact": "CISA, the FBI, the Secret Service and international partners issued a joint advisory warning of ongoing attacks against businesses and critical infrastructure worldwide.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "CISA"
+        "Volexity",
+        "Ivanti"
       ]
     },
     {
       "id": "13",
+      "date": "Oct 29",
+      "date_sort": "2026-10-29",
+      "victim": "Binance",
+      "industry": "Cryptocurrency exchange",
+      "attacker": "North Korea — state-sponsored, financially motivated",
+      "attacker_origin": "north_korea",
+      "motivation": "Financial",
+      "vector": "A months-long campaign combined fake recruitment interviews and malicious software downloads to compromise multiple employee devices, eventually reaching internal AI coding tools and wallet-signing systems used to authorize transactions.",
+      "impact": "Hackers stole $6.34 billion in cryptocurrency across roughly 50 transactions, the largest crypto theft on record; Binance froze about $2.85 billion and has replenished roughly 95% of customer losses. The FBI attributes the theft to North Korea's TraderTraitor group, which North Korea denies.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "Bloomberg",
+        "The Record",
+        "Risky Business",
+        "Dark Reading"
+      ]
+    },
+    {
+      "id": "14",
       "date": "Oct 29",
       "date_sort": "2026-10-29",
       "victim": "Developers using the Cursor code editor (global)",
@@ -223,17 +245,18 @@
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "A threat actor published a trojanized version of Anthropic's Claude Code extension on the Cursor marketplace that installed an SSH backdoor and attacker-controlled key.",
-      "impact": "The malicious extension reached roughly 5,000 systems before Cursor shut down its marketplace and worked with a provider to take down the attacker's command-and-control server.",
+      "vector": "A threat actor published trojanized versions (2.1.312, 2.1.313) of Anthropic's Claude Code extension on the Cursor VS Code Extension Marketplace, which installed an attacker SSH key and attempted a reverse SSH tunnel.",
+      "impact": "The malicious extension reached roughly 5,000 systems before Cursor shut down its marketplace and worked with a cloud provider to take down the attacker's command-and-control server.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
         "Risky Business",
-        "SANS ISC"
+        "SANS ISC",
+        "Cursor"
       ]
     },
     {
-      "id": "14",
+      "id": "15",
       "date": "Oct 29",
       "date_sort": "2026-10-29",
       "victim": "Polymarket",
@@ -241,30 +264,12 @@
       "attacker": "Unknown — criminal likely",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Attackers compromised a third-party website-performance vendor and replaced its script with wallet-draining code loaded on polymarket.com.",
-      "impact": "More than $2.65 million was stolen from users with active sessions; Polymarket is returning $3.9 million to affected users.",
+      "vector": "Attackers compromised a third-party content-delivery-network provider and injected a malicious script into the Polymarket website that drained funds from logged-in users.",
+      "impact": "More than $2.65 million was stolen from roughly 700 affected users; Polymarket reimbursed all reported losses.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
-        "The Record",
         "Risky Business"
-      ]
-    },
-    {
-      "id": "15",
-      "date": "Oct 29",
-      "date_sort": "2026-10-29",
-      "victim": "Journalists and civil-society figures in 99 countries",
-      "industry": "Media/Civil society",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "Suspected mercenary spyware operators targeted individuals' iPhones; Apple detected the activity and issued threat notifications to victims.",
-      "impact": "Confirmed targets include a Turkey-based journalist and a Lebanese documentary filmmaker previously targeted with Pegasus spyware.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "The Record"
       ]
     },
     {
@@ -276,8 +281,8 @@
       "attacker": "China — state-suspected espionage group",
       "attacker_origin": "china",
       "motivation": "Espionage",
-      "vector": "An advanced threat actor exploited an authentication-bypass vulnerability in Cisco SD-WAN controllers to deploy a custom malware framework that intercepts control-plane traffic and extracts encryption keys.",
-      "impact": "The campaign enabled persistent, stealthy collection of sensitive network keying material from affected SD-WAN environments; the actor's infrastructure overlaps with previously identified Chinese state-sponsored network infrastructure.",
+      "vector": "Advanced threat actor UAT-11473 exploited a Cisco SD-WAN authentication-bypass vulnerability (CVE-2026-20127) to deploy the custom KeyDrift malware framework, intercepting control-plane traffic to extract encryption key material.",
+      "impact": "The campaign enabled persistent, stealthy collection of sensitive network keying material; Cisco Talos assesses the actor's infrastructure overlaps considerably with a known China state-linked covert access network.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -286,57 +291,32 @@
     },
     {
       "id": "17",
-      "date": "Oct 26",
-      "date_sort": "2026-10-26",
-      "victim": "University of New Mexico Hospital",
-      "industry": "Healthcare",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "A ransomware attack encrypted hospital systems, forcing operational disruption.",
-      "impact": "Ambulances had to be diverted before the attackers apologized and provided free decryption keys.",
+      "date": "Oct 23",
+      "date_sort": "2026-10-23",
+      "victim": "Government of Moldova",
+      "industry": "Government",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Hackers breached government networks and began extracting data from internal systems, detected by IT staff on October 23.",
+      "impact": "Officials shut down 82 public digital services and 30 government networks to contain the breach after attackers stole personal information on roughly a third of the country's population.",
       "ongoing": "N",
-      "severity": "critical",
+      "severity": "high",
       "sources": [
-        "The Record"
+        "Risky Business"
       ]
     },
     {
       "id": "18",
-      "date": "Oct 21",
-      "date_sort": "2026-10-21",
-      "victim": "Global web infrastructure (WordPress, Drupal, Joomla and other PHP-based sites)",
-      "industry": "Technology/Internet infrastructure",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Two critical memory-safety flaws in the PHP runtime (CVE-2026-109618, CVE-2026-109619) allow unauthenticated remote code execution.",
-      "impact": "Millions of internet-facing servers remain exposed; active exploitation continues, including attacks chaining the flaws to compromise internet-exposed firewall management interfaces.",
-      "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "Krebs on Security",
-        "Recorded Future",
-        "CISA",
-        "Unit 42",
-        "Cisco Talos",
-        "NSA",
-        "FBI/IC3",
-        "ACSC",
-        "NYDFS"
-      ]
-    },
-    {
-      "id": "19",
-      "date": "Oct 20",
-      "date_sort": "2026-10-20",
+      "date": "Oct 22",
+      "date_sort": "2026-10-22",
       "victim": "eMudhra Limited (certificate authority) and its certificate holders",
       "industry": "Digital trust/PKI",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "Eight eMudhra intermediate certificate authority private keys were generated with insufficient randomness, allowing the keys to be derived from the public certificates.",
-      "impact": "Attackers could have forged trusted TLS or code-signing certificates to intercept traffic or impersonate software; browser and OS vendors revoked the affected intermediates and Go patched trust-store handling.",
+      "vector": "Eight eMudhra intermediate certificate authority private keys were generated with insufficient randomness, allowing the keys to be mathematically derived from their public certificates.",
+      "impact": "Attackers with the derived keys could forge trusted TLS certificates to intercept traffic or impersonate software; major browser and OS vendors revoked the affected intermediates after eMudhra revoked the certificates.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -345,20 +325,78 @@
       ]
     },
     {
+      "id": "19",
+      "date": "Oct 21",
+      "date_sort": "2026-10-21",
+      "victim": "Global web infrastructure (WordPress, Drupal, Joomla and other PHP-based sites; internet-exposed PAN-OS management interfaces)",
+      "industry": "Technology/Internet infrastructure",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Two critical memory-safety vulnerabilities in the PHP runtime (CVE-2026-109618, CVE-2026-109619) allow unauthenticated remote code execution; one campaign chained the flaws with a Linux kernel privilege-escalation bug to gain root access on exposed PAN-OS management interfaces.",
+      "impact": "Millions of internet-facing PHP servers remain exposed and unpatched; CISA, NSA, FBI, NYDFS, ACSC and allied agencies issued advisories, and active exploitation continues weeks after disclosure.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "CISA",
+        "Unit 42",
+        "Cisco Talos",
+        "Krebs on Security",
+        "Recorded Future",
+        "NSA",
+        "FBI/IC3",
+        "NYDFS"
+      ]
+    },
+    {
       "id": "20",
       "date": "Oct 19",
       "date_sort": "2026-10-19",
-      "victim": "Organizations across education, financial services, healthcare, manufacturing, government and other sectors (global)",
+      "victim": "Organizations across education, financial services, healthcare, manufacturing and government (global)",
       "industry": "Multiple sectors",
       "attacker": "Criminal gang — ransomware",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Ransomware operators exploit a PAN-OS GlobalProtect authentication-bypass vulnerability (CVE-2026-0257) to establish unauthorized VPN sessions, then pivot to vCenter and ESXi hypervisors to harvest domain credentials.",
-      "impact": "Multiple ransomware groups have used the flaw as an initial-access vector across numerous industries since June 2026, increasingly bypassing in-guest EDR via the virtualization layer.",
+      "vector": "Ransomware operators exploit a PAN-OS GlobalProtect authentication-bypass vulnerability (CVE-2026-0257) to establish unauthorized VPN sessions, then pivot to vCenter and disable ESXi hypervisor security controls to harvest domain-wide credentials.",
+      "impact": "Ransomware groups including Qilin, Inc and Settra have used the flaw as an initial-access vector since June 2026 across numerous industries, increasingly bypassing in-guest EDR via the virtualization layer.",
       "ongoing": "Y",
       "severity": "critical",
       "sources": [
         "Unit 42"
+      ]
+    },
+    {
+      "id": "21",
+      "date": "Oct 13",
+      "date_sort": "2026-10-13",
+      "victim": "Sourcenext Corporation",
+      "industry": "Software/Technology",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "An unidentified third party misused the company's member information retrieval API to bulk-extract customer records.",
+      "impact": "Roughly 22.5 million customer records were compromised, including email addresses, passwords, names, addresses, phone numbers, dates of birth and employment information.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "Recorded Future"
+      ]
+    },
+    {
+      "id": "22",
+      "date": "Oct 7",
+      "date_sort": "2026-10-07",
+      "victim": "IDCFrontier and its downstream customers",
+      "industry": "Cloud computing/Technology",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "A ransomware attack hit the Japanese cloud provider's infrastructure.",
+      "impact": "The attack disrupted services for 495 companies and local governments that rely on IDCFrontier's cloud platform.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "Recorded Future"
       ]
     }
   ]
