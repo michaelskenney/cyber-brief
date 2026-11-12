@@ -1,9 +1,10 @@
 {
-  "generated_at": "2026-11-11T21:08:32.670260+00:00",
-  "period_searched": "October 11 - November 11, 2026",
-  "incident_count": 37,
+  "generated_at": "2026-11-12T09:06:14.746456+00:00",
+  "period_searched": "October 11 - November 12, 2026",
+  "incident_count": 40,
   "incidents": [
     {
+      "id": "1",
       "date": "Nov 11",
       "date_sort": "2026-11-11",
       "victim": "Government ministries and law enforcement agencies in one Middle Eastern and four Southeast Asian countries",
@@ -17,10 +18,10 @@
       "severity": "high",
       "sources": [
         "unit42.paloaltonetworks.com"
-      ],
-      "id": "1"
+      ]
     },
     {
+      "id": "2",
       "date": "Nov 11",
       "date_sort": "2026-11-11",
       "victim": "Poland's ePUAP government services platform",
@@ -34,11 +35,44 @@
       "severity": "low",
       "sources": [
         "therecord.media"
-      ],
-      "id": "2"
+      ]
     },
     {
       "id": "3",
+      "date": "Nov 11",
+      "date_sort": "2026-11-11",
+      "victim": "46 confirmed organizations running internet-exposed Flowise/AWS cloud infrastructure (at least 20 still exposed)",
+      "industry": "Technology / Cloud & AI infrastructure",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Attackers scanned for exposed Amazon DynamoDB instances and unpatched Flowise GenAI development deployments (roughly 90% of ~3,000 scanned were vulnerable to CVE-2024-58351), then followed a repeatable staged playbook: enumerating privileges, hunting credentials, and exploiting cloud metadata services across multiple providers to escalate access.",
+      "impact": "Dubbed \"Greeter\" for the benign log messages attackers left to mask their trail, the campaign was confirmed against 46 real-world victims via honeypots, with an estimated 20+ still exposed; it ran simultaneously across several AWS regions, pointing to a well-resourced, coordinated operation targeting cloud credentials for lateral movement.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "darkreading.com"
+      ]
+    },
+    {
+      "id": "4",
+      "date": "Nov 11",
+      "date_sort": "2026-11-11",
+      "victim": "Compromised Linux web servers globally, concentrated in education/research (30.7%) and technology/telecom (22.9%) sectors",
+      "industry": "Education / Technology (multiple sectors)",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Unclear",
+      "vector": "After exploiting an internet-facing web application vulnerability (mostly PHP applications and cPanel hosting), attackers deploy the open-source GSocket remote access tool, which connects outbound only to a shared public relay network so there is no attacker-owned IP address or domain for defenders to block.",
+      "impact": "Microsoft Defender for Endpoint telemetry shows GSocket-related detections grew 356% from March to August 2026; because GSocket persists independently of the exploited application, patching the original vulnerability alone does not remove the attacker's access, letting intrusions outlast remediation.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "microsoft.com"
+      ]
+    },
+    {
+      "id": "5",
       "date": "Nov 10",
       "date_sort": "2026-11-10",
       "victim": "European supermarkets, food producers and medical facilities (~700 French stores; 10+ EU countries)",
@@ -57,7 +91,7 @@
       ]
     },
     {
-      "id": "4",
+      "id": "6",
       "date": "Nov 9-10",
       "date_sort": "2026-11-10",
       "victim": "Vanderbilt University",
@@ -76,7 +110,7 @@
       ]
     },
     {
-      "id": "5",
+      "id": "7",
       "date": "Nov 10",
       "date_sort": "2026-11-10",
       "victim": "Government of Kazakhstan and a Romanian government agency",
@@ -93,7 +127,24 @@
       ]
     },
     {
-      "id": "6",
+      "id": "8",
+      "date": "Nov 10",
+      "date_sort": "2026-11-10",
+      "victim": "Four unnamed organizations with compromised VPN appliances (SonicWall, Palo Alto Networks, Fortinet) across the US and Europe",
+      "industry": "Multiple sectors (VPN-exposed enterprises)",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Using existing root-level access to compromised VPN appliances, including exploitation of a Palo Alto Networks GlobalProtect authentication-bypass flaw (CVE-2026-0257), attackers moved to the VMware ESXi hypervisor layer and deployed a new post-exploitation implant (\"GhostFrame\") via a modified boot script that repeatedly re-disables the ESXi firewall and unsigned-binary protections.",
+      "impact": "GhostFrame gave operators centralized control of compromised ESXi hosts — harvesting Windows credentials from hosted VMs, enabling remote VM console access, and proxying further network access; four victims targeted between August and October 2026 were subsequently listed on the Settra ransomware leak site.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "recordedfuture.com"
+      ]
+    },
+    {
+      "id": "9",
       "date": "Nov 10",
       "date_sort": "2026-11-10",
       "victim": "Keplr crypto wallet users (44,000+ wallets)",
@@ -110,7 +161,7 @@
       ]
     },
     {
-      "id": "7",
+      "id": "10",
       "date": "Nov 10",
       "date_sort": "2026-11-10",
       "victim": "Qubole data lake platform and downstream customers",
@@ -127,7 +178,7 @@
       ]
     },
     {
-      "id": "8",
+      "id": "11",
       "date": "Nov 10",
       "date_sort": "2026-11-10",
       "victim": "Arcadia (Japan disaster alert service)",
@@ -144,7 +195,7 @@
       ]
     },
     {
-      "id": "9",
+      "id": "12",
       "date": "Nov 10",
       "date_sort": "2026-11-10",
       "victim": "NEAR AI",
@@ -161,7 +212,7 @@
       ]
     },
     {
-      "id": "10",
+      "id": "13",
       "date": "Nov 10",
       "date_sort": "2026-11-10",
       "victim": "Who Gives A Crap",
@@ -178,7 +229,7 @@
       ]
     },
     {
-      "id": "11",
+      "id": "14",
       "date": "Nov 10",
       "date_sort": "2026-11-10",
       "victim": "Shoppers and impersonated retail brands (US, UK, Australia, Canada, Germany)",
@@ -195,7 +246,7 @@
       ]
     },
     {
-      "id": "12",
+      "id": "15",
       "date": "Nov 9",
       "date_sort": "2026-11-09",
       "victim": "Philippines Securities and Exchange Commission",
@@ -212,7 +263,7 @@
       ]
     },
     {
-      "id": "13",
+      "id": "16",
       "date": "Nov 9",
       "date_sort": "2026-11-09",
       "victim": "Ethereum Swarm project and its users",
@@ -229,7 +280,7 @@
       ]
     },
     {
-      "id": "14",
+      "id": "17",
       "date": "Nov 9",
       "date_sort": "2026-11-09",
       "victim": "Fireworks AI and downstream customers including Notion",
@@ -247,7 +298,7 @@
       ]
     },
     {
-      "id": "15",
+      "id": "18",
       "date": "Nov 9",
       "date_sort": "2026-11-09",
       "victim": "Rosstat (Russian Federal State Statistics Service)",
@@ -264,7 +315,7 @@
       ]
     },
     {
-      "id": "16",
+      "id": "19",
       "date": "Nov 9",
       "date_sort": "2026-11-09",
       "victim": "Doctor Anywhere",
@@ -281,7 +332,7 @@
       ]
     },
     {
-      "id": "17",
+      "id": "20",
       "date": "Nov 9",
       "date_sort": "2026-11-09",
       "victim": "Technical University of Munich",
@@ -298,7 +349,7 @@
       ]
     },
     {
-      "id": "18",
+      "id": "21",
       "date": "Nov 9",
       "date_sort": "2026-11-09",
       "victim": "Maersk (claimed)",
@@ -315,7 +366,7 @@
       ]
     },
     {
-      "id": "19",
+      "id": "22",
       "date": "Nov 9",
       "date_sort": "2026-11-09",
       "victim": "Swarovski (claimed)",
@@ -332,7 +383,7 @@
       ]
     },
     {
-      "id": "20",
+      "id": "23",
       "date": "Nov 9",
       "date_sort": "2026-11-09",
       "victim": "Li Auto electric vehicle owners in Russia",
@@ -349,7 +400,7 @@
       ]
     },
     {
-      "id": "21",
+      "id": "24",
       "date": "Nov 9",
       "date_sort": "2026-11-09",
       "victim": "34 French sports federations and organizations",
@@ -366,7 +417,7 @@
       ]
     },
     {
-      "id": "22",
+      "id": "25",
       "date": "Nov 8",
       "date_sort": "2026-11-08",
       "victim": "ESTT and other Russian cloud/VPS providers",
@@ -383,7 +434,7 @@
       ]
     },
     {
-      "id": "23",
+      "id": "26",
       "date": "Nov 8",
       "date_sort": "2026-11-08",
       "victim": "LNBits self-hosted wallet operators",
@@ -400,7 +451,7 @@
       ]
     },
     {
-      "id": "24",
+      "id": "27",
       "date": "Nov 7",
       "date_sort": "2026-11-07",
       "victim": "Mittwald CM Service and 56 customer hosting projects",
@@ -417,7 +468,7 @@
       ]
     },
     {
-      "id": "25",
+      "id": "28",
       "date": "Nov 6-9",
       "date_sort": "2026-11-06",
       "victim": "18 EU politicians, law enforcement leaders and 3 German journalists",
@@ -434,7 +485,7 @@
       ]
     },
     {
-      "id": "26",
+      "id": "29",
       "date": "Nov 6",
       "date_sort": "2026-11-06",
       "victim": "WorkOS",
@@ -451,7 +502,7 @@
       ]
     },
     {
-      "id": "27",
+      "id": "30",
       "date": "Nov 6",
       "date_sort": "2026-11-06",
       "victim": "MEXC Global (FinCEN action protecting US financial system)",
@@ -468,6 +519,7 @@
       ]
     },
     {
+      "id": "31",
       "date": "Nov 6",
       "date_sort": "2026-11-06",
       "victim": "Gopax (South Korean cryptocurrency exchange)",
@@ -481,11 +533,10 @@
       "severity": "low",
       "sources": [
         "risky.biz"
-      ],
-      "id": "28"
+      ]
     },
     {
-      "id": "29",
+      "id": "32",
       "date": "Early Nov",
       "date_sort": "2026-11-05",
       "victim": "Binance",
@@ -503,7 +554,7 @@
       ]
     },
     {
-      "id": "30",
+      "id": "33",
       "date": "Nov 5",
       "date_sort": "2026-11-05",
       "victim": "US and global victims of cyber-enabled investment and romance scams",
@@ -520,7 +571,7 @@
       ]
     },
     {
-      "id": "31",
+      "id": "34",
       "date": "Early Nov",
       "date_sort": "2026-11-05",
       "victim": "Financial institutions in Southeast Asia",
@@ -538,7 +589,7 @@
       ]
     },
     {
-      "id": "32",
+      "id": "35",
       "date": "Early Nov",
       "date_sort": "2026-11-05",
       "victim": "French bank (unnamed)",
@@ -555,7 +606,7 @@
       ]
     },
     {
-      "id": "33",
+      "id": "36",
       "date": "Early Nov",
       "date_sort": "2026-11-05",
       "victim": "Thai political opposition",
@@ -572,7 +623,7 @@
       ]
     },
     {
-      "id": "34",
+      "id": "37",
       "date": "Nov 3",
       "date_sort": "2026-11-03",
       "victim": "Gnosis Pay",
@@ -589,7 +640,7 @@
       ]
     },
     {
-      "id": "35",
+      "id": "38",
       "date": "Oct 28",
       "date_sort": "2026-10-28",
       "victim": "US businesses unknowingly employing North Korean IT workers",
@@ -606,6 +657,7 @@
       ]
     },
     {
+      "id": "39",
       "date": "Oct 23",
       "date_sort": "2026-10-23",
       "victim": "Government of Moldova",
@@ -619,10 +671,10 @@
       "severity": "critical",
       "sources": [
         "risky.biz"
-      ],
-      "id": "36"
+      ]
     },
     {
+      "id": "40",
       "date": "Oct 10-11",
       "date_sort": "2026-10-11",
       "victim": "ConnectWise and 2,250+ downstream Microsoft 365/Azure customer environments",
@@ -636,8 +688,7 @@
       "severity": "critical",
       "sources": [
         "darkreading.com"
-      ],
-      "id": "37"
+      ]
     }
   ]
 }
