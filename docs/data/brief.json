@@ -1,284 +1,513 @@
 {
-  "generated_at": "2026-11-15T09:06:59.142718+00:00",
-  "period_searched": "November 11-15, 2026",
-  "incident_count": 16,
+  "generated_at": "2026-11-15T21:06:42.761656+00:00",
+  "period_searched": "October 29 - November 15, 2026",
+  "incident_count": 29,
   "incidents": [
     {
       "id": "1",
       "date": "Nov 13",
       "date_sort": "2026-11-13",
-      "victim": "Telecom carriers across Asia (primarily Taiwan)",
-      "industry": "Telecommunications",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Exploited SS7 and Diameter signaling protocol flaws in hacked telco infrastructure to plant backdoors and run malicious commands.",
-      "impact": "Enabled tracking of subscriber locations and interception of calls and SMS, with covert surveillance of political figures and government officials across six countries.",
+      "victim": "ConnectWise ScreenConnect customers (MSPs and managed endpoints)",
+      "industry": "Managed IT Services",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "A threat actor exploited an authentication flaw in a ScreenConnect RMM+ extension (an unconfigured, empty access key) to issue remote commands and install an unauthorized client that deployed the SCKit worm.",
+      "impact": "SCKit established rogue remote-access channels on MSP-managed endpoints and used a component called RelayTrap to target connecting IT technicians; ConnectWise is investigating roughly 400 compromised customer and partner environments.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "risky.biz"
+        "Microsoft Security Blog",
+        "SANS Internet Storm Center",
+        "Risky Business"
       ]
     },
     {
       "id": "2",
       "date": "Nov 13",
       "date_sort": "2026-11-13",
-      "victim": "Poland e-government portal (ePUAP)",
-      "industry": "Government",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Disruption",
-      "vector": "Cyberattack against the national ePUAP e-government platform; initial access method still under investigation.",
-      "impact": "Poland temporarily suspended the ePUAP portal used for government digital services; officials say evidence points to a foreign adversary.",
+      "victim": "Microsoft 365 tenants downstream of ConnectWise (2,250+ organizations)",
+      "industry": "Multiple (Cloud/SaaS tenants)",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "After compromising ConnectWise application credentials, the group tracked as Storm-0940 used the ARTEX AI-driven penetration-testing framework to accelerate automated sign-in attempts against thousands of downstream Microsoft 365 tenants.",
+      "impact": "Follow-on activity included abuse of Microsoft Graph, application credentials, and privilege changes across more than 2,250 affected tenants.",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "critical",
       "sources": [
-        "risky.biz"
+        "Cisco Talos",
+        "Microsoft Threat Intelligence"
       ]
     },
     {
       "id": "3",
       "date": "Nov 13",
       "date_sort": "2026-11-13",
-      "victim": "Port of Santos",
-      "industry": "Transportation / Maritime logistics",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "criminal",
-      "motivation": "Disruption",
-      "vector": "Attackers accessed port equipment left exposed online, triggering a power outage that cascaded into a wider network compromise.",
-      "impact": "Brazil's largest port ran on manual procedures for five days; internet and phone systems have since been partially restored.",
+      "victim": "Government ministries, telecom, defense, pharmaceutical, and financial organizations (200+ orgs, 14 countries)",
+      "industry": "Multiple (Government, Telecom, Defense, Financial)",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "The actor, tracked as VAPOR PANDA, used the open-source ARTEX AI penetration-testing framework to automate reconnaissance, credential spraying, and exploitation at machine speed across hundreds of targets simultaneously.",
+      "impact": "CrowdStrike confirmed post-compromise activity at nine organizations and additional credential-scanning or password-spraying against at least 12 others; the FBI separately issued a flash alert warning ARTEX is being used to breach government agencies and critical sectors worldwide, with some intrusions reaching privileged access in under three hours.",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "critical",
       "sources": [
-        "risky.biz"
+        "The Record",
+        "Cisco Talos",
+        "FBI"
       ]
     },
     {
       "id": "4",
       "date": "Nov 13",
       "date_sort": "2026-11-13",
-      "victim": "City of Osaka and ~400 Arara email-service customers (incl. Sega)",
-      "industry": "Government / Technology services",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
+      "victim": "University of Texas at Arlington",
+      "industry": "Higher Education",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Hackers compromised the Arara email distribution platform used by TKC Corporation and other vendors to send mass phishing emails impersonating financial institutions.",
-      "impact": "Exposed more than 77 million email addresses across nearly 400 organizations, including 1 million tied to Osaka's administrative services platform.",
+      "vector": "Ransomware intrusion claimed by the Qilin ransomware-as-a-service affiliate program; initial access method not disclosed.",
+      "impact": "Personal information of students and employees was stolen; the university's MachForms portal remains offline while the scope of the data theft is assessed.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "therecord.media"
+        "The Record"
       ]
     },
     {
       "id": "5",
       "date": "Nov 13",
       "date_sort": "2026-11-13",
-      "victim": "University of Texas at Arlington",
-      "industry": "Education",
+      "victim": "U.S. Department of War and Defense Industrial Base (historical Gootloader victims)",
+      "industry": "Government / Defense",
       "attacker": "Criminal gang — ransomware",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "A ransomware affiliate breached university systems and claimed the attack.",
-      "impact": "Personal information of students and employees was stolen; the MachForms portal remains offline during the investigation.",
-      "ongoing": "Y",
+      "vector": "Gootloader malware, spread since 2018 via compromised and malicious websites, infected devices and was sold as botnet access to ransomware affiliates.",
+      "impact": "A DOJ-led Operation Endgame action dismantled 235 servers and 257 domains tied to Gootloader, StealC, and CastleRAT; at least 44 U.S. ransomware victims traced to Gootloader infections suffered a combined $28.8 million in losses, including attacks on the Department of War and the Defense Industrial Base.",
+      "ongoing": "N",
       "severity": "high",
       "sources": [
-        "therecord.media"
+        "The Record",
+        "U.S. Department of Justice"
       ]
     },
     {
       "id": "6",
       "date": "Nov 13",
       "date_sort": "2026-11-13",
-      "victim": "ActiveCloud",
-      "industry": "Cloud hosting services",
+      "victim": "City of Osaka and ~400 Arara email-service customers (incl. TKC Corporation, Sega)",
+      "industry": "Government / Multiple",
       "attacker": "Unknown — criminal likely",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Ransomware attack encrypted parts of the Belarusian cloud provider's infrastructure; initial access method not disclosed.",
-      "impact": "Disrupted cloud hosting, corporate email, and customer support for businesses across Belarus for several days; no evidence of data theft found.",
+      "vector": "Hackers compromised the Arara email distribution service used by TKC Corporation's administrative services platform, then used the access to send malicious emails impersonating financial institutions.",
+      "impact": "More than 1 million Osaka resident email addresses were exposed; the underlying Arara breach exposed roughly 77 million email addresses across nearly 400 customers nationwide, part of a broader wave of cyberattacks battering Japanese organizations.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "therecord.media"
+        "The Record"
       ]
     },
     {
       "id": "7",
       "date": "Nov 13",
       "date_sort": "2026-11-13",
-      "victim": "ConnectWise ScreenConnect customers (managed service providers)",
-      "industry": "IT / Managed services",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Threat actors abused compromised ScreenConnect sessions to silently install unauthorized remote-access clients and deploy the SCKit worm, which hijacks technician sessions to spread to downstream customer endpoints.",
-      "impact": "ConnectWise is investigating roughly 400 compromised MSP environments; the worm grants attackers remote administration of affected endpoints.",
+      "victim": "ActiveCloud, ESTT, and Beget (Belarusian and Russian cloud hosting providers)",
+      "industry": "Cloud Hosting / IT Services",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Disruption",
+      "vector": "A series of ransomware and destructive wiper attacks against cloud infrastructure management systems at three regional hosting providers within two weeks.",
+      "impact": "ActiveCloud's hosting, email, and virtual server platforms were disrupted for days; Beget lost some customer VM backups after hackers wiped data; no confirmed link between the three incidents or a common attacker has been established.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "microsoft.com",
-        "isc.sans.edu"
+        "The Record"
       ]
     },
     {
       "id": "8",
       "date": "Nov 13",
       "date_sort": "2026-11-13",
-      "victim": "Government agencies and critical-sector organizations worldwide",
-      "industry": "Multiple / Critical infrastructure",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Open-source AI framework Artex automates reconnaissance through data exfiltration, letting low-skilled operators chain full intrusion phases in hours.",
-      "impact": "FBI warns the tool is being used by criminals and nation-states to breach government and critical-infrastructure networks at 'machine speed'; it keeps spreading via forks despite the original repository's removal.",
-      "ongoing": "Y",
-      "severity": "high",
+      "victim": "Railway.com",
+      "industry": "Cloud / Software Development Platform",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Hackers stole and decrypted customer environment variables for roughly 100,000 customers (about 1.85% of its customer base), then used the stolen credentials and tokens to run up AI inference costs.",
+      "impact": "Attackers incurred approximately $740,000 in unauthorized AI usage charges; Railway is working with AI providers to refund the costs or cover them directly.",
+      "ongoing": "N",
+      "severity": "medium",
       "sources": [
-        "therecord.media",
-        "blog.talosintelligence.com"
+        "Risky Business"
       ]
     },
     {
       "id": "9",
-      "date": "Nov 12",
-      "date_sort": "2026-11-12",
-      "victim": "Binance",
-      "industry": "Cryptocurrency exchange",
-      "attacker": "North Korea — state-sponsored, financially motivated",
-      "attacker_origin": "north_korea",
+      "date": "Nov 13",
+      "date_sort": "2026-11-13",
+      "victim": "Qubole",
+      "industry": "Data Analytics / Cloud Platform",
+      "attacker": "Criminal gang — data extortion",
+      "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Hackers exploited an Ethereum smart-account (EIP-7702) feature to install a malicious 'sweeper' that drained treasury wallets within minutes of gaining authorization.",
-      "impact": "Roughly $6.3 billion in cryptocurrency was stolen from at least 11 Binance wallets; DOJ and partners have frozen $2.7 billion and obtained court authorization to seize $1.2 billion of it.",
+      "vector": "A months-long intrusion into the Qubole data lake platform by the n0n data extortion group; specific technical access method not disclosed.",
+      "impact": "The group claims to have stolen nearly 1 petabyte of data spanning all Qubole customers; Qubole declined private negotiation before n0n went public with the claim.",
       "ongoing": "Y",
-      "severity": "critical",
+      "severity": "high",
       "sources": [
-        "cyberscoop.com",
-        "darkreading.com",
-        "risky.biz"
+        "Risky Business"
       ]
     },
     {
       "id": "10",
-      "date": "Nov 12",
-      "date_sort": "2026-11-12",
-      "victim": "Semiconductor manufacturers, U.S. defense-policy organizations, and civil society groups",
-      "industry": "Defense / Semiconductor / Civil society",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Chinese-speaking attackers paired an open-source AI penetration-testing framework with Chinese large language models to autonomously plan and execute intrusions against assigned targets.",
-      "impact": "Ten of 19 targeted organizations were compromised, yielding stolen credentials, over a million exposed personal records, military/government identities, and persistent admin access.",
-      "ongoing": "Y",
-      "severity": "critical",
+      "date": "Nov 13",
+      "date_sort": "2026-11-13",
+      "victim": "AllUnited",
+      "industry": "Sports / Community Management Software",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Not disclosed.",
+      "impact": "More than 350 sports clubs and communities using the AllUnited app had customer data stolen.",
+      "ongoing": "N",
+      "severity": "medium",
       "sources": [
-        "unit42.paloaltonetworks.com"
+        "Risky Business"
       ]
     },
     {
       "id": "11",
-      "date": "Nov 12",
-      "date_sort": "2026-11-12",
-      "victim": "European supermarket chains and food retailers (France and 10+ countries)",
-      "industry": "Retail / Food",
-      "attacker": "Iran — IRGC (Islamic Revolutionary Guard Corps)",
-      "attacker_origin": "iran",
-      "motivation": "Disruption",
-      "vector": "Attackers gained unauthorized access to internet-exposed refrigeration controllers and forced units into defrost mode, raising temperatures as high as 50°C (122°F).",
-      "impact": "French officials attributed the attacks to an IRGC cyber unit; hundreds of supermarkets lost inventory, some units caught fire, and medical-facility refrigeration was also affected.",
-      "ongoing": "Y",
-      "severity": "high",
+      "date": "Nov 13",
+      "date_sort": "2026-11-13",
+      "victim": "York University",
+      "industry": "Higher Education",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Not disclosed.",
+      "impact": "Hackers stole troves of student information dating back more than a decade.",
+      "ongoing": "N",
+      "severity": "medium",
       "sources": [
-        "unit42.paloaltonetworks.com",
-        "risky.biz"
+        "The Record"
       ]
     },
     {
       "id": "12",
       "date": "Nov 12",
       "date_sort": "2026-11-12",
-      "victim": "Global ransomware victims infected via the Gootloader/StealC/CastleRAT botnet",
-      "industry": "Multiple",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Malware distributed through compromised websites sold initial access to ransomware affiliates, while parallel infrastructure ran credential theft and command-and-control.",
-      "impact": "International law enforcement dismantled more than 235 servers and 257 domains; DOJ says this malware enabled at least 44 U.S. ransomware attacks costing $29 million since 2018.",
-      "ongoing": "N",
-      "severity": "high",
+      "victim": "Semiconductor manufacturers, defense-policy organizations, and civil society groups (19 organizations)",
+      "industry": "Semiconductor / Defense / Civil Society",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "Chinese-speaking attackers (tracked as CL-STA-1238) paired the open-source Cairn AI agent framework with Zhipu GLM and DeepSeek models to autonomously plan and execute 25 intrusion operations, exploiting weak or default passwords and application flaws with minimal human supervision.",
+      "impact": "Confirmed unauthorized access or data theft at 10 of 19 targeted organizations, including harvested credentials, exposure of more than one million member records at a U.S. teachers' union, creation of persistent admin accounts at a semiconductor company, and modification of a live industry standards-ballot document.",
+      "ongoing": "Y",
+      "severity": "critical",
       "sources": [
-        "justice.gov",
-        "therecord.media"
+        "Unit 42 (Palo Alto Networks)"
       ]
     },
     {
       "id": "13",
       "date": "Nov 12",
       "date_sort": "2026-11-12",
-      "victim": "18 EU politicians, law enforcement officials, and journalists",
-      "industry": "Government",
-      "attacker": "Russia — state-linked hacktivist proxies",
-      "attacker_origin": "russia",
-      "motivation": "Political",
-      "vector": "Pro-Kremlin hacktivist group published personal information it gathered on high-profile targets.",
-      "impact": "Exposed personal data of senior EU and national officials, including Europol's cybercrime chief and journalists who cover Russian influence operations.",
-      "ongoing": "N",
-      "severity": "medium",
+      "victim": "Cryptocurrency and Web3 companies (global)",
+      "industry": "Cryptocurrency / Web3",
+      "attacker": "North Korea — state-sponsored, financially motivated",
+      "attacker_origin": "north_korea",
+      "motivation": "Financial",
+      "vector": "North Korean operators (publicly known as Sapphire Sleet, BlueNoroff, APT38, and Stardust Chollima) hijack Telegram, LinkedIn, Slack, and Discord accounts to lure targets into fake video calls on typo-squatted Zoom/Teams clones, then use recorded victim webcam footage to impersonate them in follow-on attacks.",
+      "impact": "The scheme drained more than $400 million from crypto and Web3 firms over 18 months; the FBI seized infrastructure containing more than 900 secretly recorded victim videos, and DOJ obtained court authorization to seize $1.2 billion of the funds stolen from Binance.",
+      "ongoing": "Y",
+      "severity": "critical",
       "sources": [
-        "risky.biz"
+        "CyberScoop",
+        "FBI"
       ]
     },
     {
       "id": "14",
       "date": "Nov 12",
       "date_sort": "2026-11-12",
-      "victim": "Ukrainian manufacturing company (transportation sector)",
-      "industry": "Manufacturing / Transportation",
-      "attacker": "Belarus — state-linked, Russia-aligned group",
-      "attacker_origin": "russia",
-      "motivation": "Disruption",
-      "vector": "State-linked hackers deployed destructive data-wiping malware after gaining access to the victim's network.",
-      "impact": "First known destructive wiping attack by this Belarusian state-linked group, disrupting a company with a key role in Ukraine's transportation sector.",
+      "victim": "Apify",
+      "industry": "AI / Developer Tools Marketplace",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Hackers accessed customer accounts, suspected via abuse of OAuth connections.",
+      "impact": "The AI tools marketplace revoked affected OAuth connections and rotated internal secrets as a precaution following the breach.",
       "ongoing": "N",
-      "severity": "high",
+      "severity": "medium",
       "sources": [
-        "risky.biz"
+        "Risky Business"
       ]
     },
     {
       "id": "15",
-      "date": "Nov 12",
-      "date_sort": "2026-11-12",
-      "victim": "Li Auto EV owners in Russia",
-      "industry": "Automotive",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Attackers hijacked master user accounts on EVs tied to Chinese eSIMs used for vehicle registration, locking owners out of their cars.",
-      "impact": "At least 20 confirmed owners lost control of their vehicles and were extorted to regain access; the true number of affected cars is likely higher.",
-      "ongoing": "Y",
-      "severity": "medium",
+      "date": "Nov 11",
+      "date_sort": "2026-11-11",
+      "victim": "Financial Security Institute (FSEC), South Korea",
+      "industry": "Financial Regulation",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Hackers breached the agency's website used by financial institutions to submit security assessments.",
+      "impact": "Personal data was stolen from South Korea's financial-sector security regulator.",
+      "ongoing": "N",
+      "severity": "high",
       "sources": [
-        "risky.biz"
+        "Risky Business"
       ]
     },
     {
       "id": "16",
-      "date": "Nov 12",
-      "date_sort": "2026-11-12",
-      "victim": "Independent game developers on Steam",
-      "industry": "Gaming / Software",
+      "date": "Nov 11",
+      "date_sort": "2026-11-11",
+      "victim": "European supermarket chains and medical facilities (France and 10+ countries)",
+      "industry": "Retail / Grocery",
+      "attacker": "Iran — IRGC (Islamic Revolutionary Guard Corps)",
+      "attacker_origin": "iran",
+      "motivation": "Disruption",
+      "vector": "Attackers exploited default credentials and vulnerable software on internet-exposed refrigeration controllers to remotely force units into defrost mode.",
+      "impact": "Roughly 700 French supermarkets lost inventory in an October wave, with a second wave in early November hitting 100+ locations across 10+ additional countries; temperatures were raised as high as 50°C, causing fires in some cases, and medical facility refrigeration was also affected. French authorities publicly attributed the campaign to IRGC's Shahid Kaveh unit.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "Unit 42 (Palo Alto Networks)",
+        "CyberScoop",
+        "Risky Business"
+      ]
+    },
+    {
+      "id": "17",
+      "date": "Nov 11",
+      "date_sort": "2026-11-11",
+      "victim": "Vanderbilt University",
+      "industry": "Higher Education",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Ransomware attack claimed by the BYOD ransomware gang; initial access method not disclosed.",
+      "impact": "The university says full restoration of normal operations across all systems will take multiple weeks; payroll, payment, admissions, course registration, and public-safety systems are being prioritized while the scope of any data theft is investigated.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "The Record"
+      ]
+    },
+    {
+      "id": "18",
+      "date": "Nov 10",
+      "date_sort": "2026-11-10",
+      "victim": "Poland e-government portal (ePUAP)",
+      "industry": "Government",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Disruption",
+      "vector": "Not disclosed; government IT teams are investigating.",
+      "impact": "Poland suspended its ePUAP e-government portal after detecting a cyberattack; the digital affairs minister said evidence points to a foreign adversary.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "Risky Business"
+      ]
+    },
+    {
+      "id": "19",
+      "date": "Nov 10",
+      "date_sort": "2026-11-10",
+      "victim": "Organizations with exposed VPN appliances (U.S. and Europe, Settra ransomware victims)",
+      "industry": "Multiple",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "The group tracked as TAG-218 exploited a GlobalProtect VPN authentication-bypass flaw (CVE-2026-0257) and other VPN appliance weaknesses to gain access, then deployed the previously undocumented GhostFrame post-exploitation framework against VMware ESXi hosts to harvest credentials and pivot.",
+      "impact": "GhostFrame gave attackers hypervisor-level control over victim virtual machines; four victims were subsequently published on the Settra ransomware leak site.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "Recorded Future (Insikt Group)"
+      ]
+    },
+    {
+      "id": "20",
+      "date": "Nov 10",
+      "date_sort": "2026-11-10",
+      "victim": "A historic New Jersey township",
+      "industry": "Local Government",
+      "attacker": "Criminal gang — business email compromise",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Business email compromise; township staff were tricked into wiring funds for a land purchase to a fraudulent account.",
+      "impact": "The township lost $26 million; the incident occurred in September but was not disclosed publicly until after a committee election in November.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "Risky Business",
+        "Wall Street Journal"
+      ]
+    },
+    {
+      "id": "21",
+      "date": "Nov 10",
+      "date_sort": "2026-11-10",
+      "victim": "Baker Tilly",
+      "industry": "Accounting / Professional Services",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Hackers breached a third-party platform used by the firm.",
+      "impact": "One of the world's largest accounting firms (ninth by revenue) is notifying clients that customer data was stolen in a September breach.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "Risky Business"
+      ]
+    },
+    {
+      "id": "22",
+      "date": "Nov 9",
+      "date_sort": "2026-11-09",
+      "victim": "18 EU politicians, law enforcement officials, and journalists",
+      "industry": "Government",
+      "attacker": "Russia — state-linked hacktivist proxies",
+      "attacker_origin": "russia",
+      "motivation": "Political",
+      "vector": "Doxxing campaign; technical access method not disclosed.",
+      "impact": "Pro-Kremlin hacktivist group NoName057(16) published personal information on senior EU officials, including Italy's foreign minister, Europol and Eurojust leadership, and journalists who had investigated Russian influence operations.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "Risky Business"
+      ]
+    },
+    {
+      "id": "23",
+      "date": "Nov 9",
+      "date_sort": "2026-11-09",
+      "victim": "Unnamed Romanian government organization",
+      "industry": "Government",
+      "attacker": "Russia — FSB intelligence service",
+      "attacker_origin": "russia",
+      "motivation": "Espionage",
+      "vector": "Not disclosed; consistent with Turla's historical use of compromised infrastructure and custom backdoors.",
+      "impact": "Romania's intelligence service (SRI) confirmed a Turla intrusion at one government organization in late 2025, corroborating prior ESET reporting.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "Risky Business",
+        "ESET"
+      ]
+    },
+    {
+      "id": "24",
+      "date": "Nov 8",
+      "date_sort": "2026-11-08",
+      "victim": "Port of Santos, Brazil",
+      "industry": "Maritime / Critical Infrastructure",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Disruption",
+      "vector": "Hackers accessed equipment left exposed to the internet, triggering a power outage before expanding across the port's IT network.",
+      "impact": "Brazil's largest port operated on manual procedures for five days; internet and telephone connectivity have since been restored. The same port authority refused a $26 million ransom demand from the n0n extortion group in a separate October incident.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "Risky Business"
+      ]
+    },
+    {
+      "id": "25",
+      "date": "Nov 6",
+      "date_sort": "2026-11-06",
+      "victim": "Palo Alto Networks customers with internet-exposed PAN-OS management interfaces",
+      "industry": "Multiple",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Attackers chained the PHP2Shell PHP remote-code-execution vulnerabilities (CVE-2026-109618 and CVE-2026-109619) with a Linux kernel privilege-escalation flaw against internet-facing PAN-OS management interfaces.",
+      "impact": "Unit 42 confirmed active exploitation gaining root access; only about 0.02% of Palo Alto Networks' installed base had internet-facing management interfaces exposed, and each affected customer was individually notified. Customers who had already patched were not affected.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "Unit 42 (Palo Alto Networks)"
+      ]
+    },
+    {
+      "id": "26",
+      "date": "Nov 6",
+      "date_sort": "2026-11-06",
+      "victim": "Unocoin",
+      "industry": "Cryptocurrency Exchange",
       "attacker": "Unknown — criminal likely",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Extortionists email small developers threatening to use AI tools to clone and publicly release their unreleased or demo games.",
-      "impact": "Ransom demands have ranged from hundreds to thousands of dollars; the campaign has driven many developers to pull demos from Steam.",
+      "vector": "Not disclosed; discovered when addresses associated with the platform began showing $0 balances.",
+      "impact": "India's oldest cryptocurrency exchange suspended operations after more than 81,000 associated wallet addresses were drained; the total amount stolen had not been disclosed nearly a week after the hack.",
       "ongoing": "Y",
-      "severity": "low",
+      "severity": "high",
       "sources": [
-        "risky.biz"
+        "Risky Business"
+      ]
+    },
+    {
+      "id": "27",
+      "date": "Nov 4",
+      "date_sort": "2026-11-04",
+      "victim": "Taiwan Ministry of Foreign Affairs",
+      "industry": "Government",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Espionage",
+      "vector": "Not disclosed.",
+      "impact": "More than 72,000 passport scans were stolen from the ministry.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "Risky Business",
+        "Taiwan News"
+      ]
+    },
+    {
+      "id": "28",
+      "date": "Nov 4",
+      "date_sort": "2026-11-04",
+      "victim": "Li Auto EV owners in Russia",
+      "industry": "Automotive / Consumer",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Attackers took over master user accounts for Li Auto smart EVs, most linked to Chinese eSIMs provided by importers, to lock legitimate owners out of their vehicles.",
+      "impact": "At least 20 confirmed owners were locked out of their cars and extorted to regain control; the actual number of affected vehicles is believed to be higher.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "Risky Business"
+      ]
+    },
+    {
+      "id": "29",
+      "date": "Oct 29",
+      "date_sort": "2026-10-29",
+      "victim": "Binance",
+      "industry": "Cryptocurrency Exchange",
+      "attacker": "North Korea — state-sponsored, financially motivated",
+      "attacker_origin": "north_korea",
+      "motivation": "Financial",
+      "vector": "Attackers compromised three Binance developers (one via a trojanized Homebrew download, others via fake job-interview coding assignments) to obtain wallet-signing privileges, then used a sweeper exploiting Ethereum's EIP-7702 smart-account authorization feature to drain hot wallets.",
+      "impact": "Approximately $6.34 billion in cryptocurrency was transferred to attacker-controlled addresses before Binance could fully revoke on-chain authorizations; Binance and law enforcement have since frozen or recovered roughly $2.85-2.9 billion, and DOJ obtained court authorization to seize $1.2 billion of the stolen funds. The FBI attributed the theft to North Korea's TraderTraitor group.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "Dark Reading",
+        "Risky Business",
+        "CyberScoop"
       ]
     }
   ]
