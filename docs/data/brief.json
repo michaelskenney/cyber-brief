@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-11-18T21:08:02.440039+00:00",
-  "period_searched": "November 4-18, 2026",
-  "incident_count": 29,
+  "generated_at": "2026-11-19T09:05:44.256139+00:00",
+  "period_searched": "November 12-18, 2026",
+  "incident_count": 17,
   "incidents": [
     {
       "id": "1",
       "date": "Nov 18",
       "date_sort": "2026-11-18",
-      "victim": "Equinor (Norwegian energy company)",
+      "victim": "Equinor (Norwegian state-controlled energy company)",
       "industry": "Energy / Oil & gas",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "Intrusion method not yet disclosed; Equinor says the attack did not involve a computer virus.",
-      "impact": "Internal IT systems, including corporate email, were disrupted; oil and gas production was not affected and no evidence of data theft has been found so far. Restoration timeline is unknown.",
+      "vector": "Intrusion method not disclosed; Equinor says the attack did not involve a computer virus.",
+      "impact": "Internal IT systems, including corporate email, were disrupted; oil and gas production was not affected and no evidence of data theft has been found so far.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
@@ -22,6 +22,23 @@
     },
     {
       "id": "2",
+      "date": "Nov 18",
+      "date_sort": "2026-11-18",
+      "victim": "RIKEN (Japan's Fugaku and Rikyu supercomputers)",
+      "industry": "Scientific research / High-performance computing",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Attackers gained unauthorized access to two of Japan's national supercomputers, Fugaku and Rikyu, operated by research institute RIKEN.",
+      "impact": "Stolen data included registered-user details, research data taken from home directories, and SSH keys used to connect the supercomputers to outside services.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "Risky Business"
+      ]
+    },
+    {
+      "id": "3",
       "date": "Nov 18",
       "date_sort": "2026-11-18",
       "victim": "Unnamed Silicon Valley technology and defense company (and its employees)",
@@ -35,23 +52,6 @@
       "severity": "high",
       "sources": [
         "DOJ"
-      ]
-    },
-    {
-      "id": "3",
-      "date": "Nov 18",
-      "date_sort": "2026-11-18",
-      "victim": "RIKEN (Japan's Fugaku and Rikyu supercomputers)",
-      "industry": "Scientific research / High-performance computing",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Attackers gained unauthorized access to two of Japan's national supercomputers, Fugaku and Rikyu, operated by research institute Riken.",
-      "impact": "Stolen data included registered-user details, research data taken from home directories, and SSH keys used to connect the supercomputers to outside services.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "Risky Business"
       ]
     },
     {
@@ -75,30 +75,13 @@
       "id": "5",
       "date": "Nov 18",
       "date_sort": "2026-11-18",
-      "victim": "Infoblox (via a third-party SharePoint-migration vendor)",
-      "industry": "Cybersecurity / Network services",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Hackers breached a technology vendor that provides SharePoint data-migration services and used that access to steal Infoblox customer data.",
-      "impact": "Customer data was stolen from Infoblox's environment; the number of affected customers and whether extortion is involved have not been disclosed.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "Risky Business"
-      ]
-    },
-    {
-      "id": "6",
-      "date": "Nov 18",
-      "date_sort": "2026-11-18",
       "victim": "Coles Group (Australian retailer)",
       "industry": "Retail",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "Details of the intrusion method were not disclosed.",
-      "impact": "Coles disclosed a security breach and said no data has been confirmed stolen so far, though it cautioned that could change as the investigation continues.",
+      "vector": "Details of the intrusion method have not been disclosed.",
+      "impact": "Coles says no customer data has been confirmed stolen so far, though the company cautions this assessment could change as the investigation continues.",
       "ongoing": "Y",
       "severity": "low",
       "sources": [
@@ -106,89 +89,107 @@
       ]
     },
     {
-      "id": "7",
+      "id": "6",
       "date": "Nov 17",
       "date_sort": "2026-11-17",
-      "victim": "Two unnamed US-based organizations (government officials, defense contractors, NGOs)",
-      "industry": "Government, defense, NGO",
+      "victim": "Two US-based organizations (defense-adjacent technology and NGO sectors)",
+      "industry": "Technology / Defense / NGO",
       "attacker": "Russia — FSB intelligence service",
       "attacker_origin": "russia",
       "motivation": "Espionage",
-      "vector": "Stolen Google Workspace Super Admin credentials plus an MFA-fatigue attack enabled mass data exfiltration and log tampering; a second case used phishing to compromise a federated SSO account and steal tokens and files.",
-      "impact": "Mass email and cloud-storage exfiltration, long-term persistence via rogue MFA enrollment, and downstream targeting using stolen organizational data; new phishing operations tied to the same actor were observed as recently as November 2026.",
+      "vector": "Phishing and stolen Super Admin credentials combined with an MFA push-notification fatigue attack gave access to a cloud productivity environment; stolen data and impersonation of victim employees were then used to socially engineer a second organization via encrypted messaging.",
+      "impact": "Full employee directories, email archives, and cloud-drive files were exfiltrated from both victims; the group registered rogue MFA devices and passkeys to maintain access for several months and deleted Alert Center logs to cover its tracks.",
       "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "Google Threat Intelligence Group / Mandiant"
+        "Google Threat Intelligence Group",
+        "Dark Reading"
+      ]
+    },
+    {
+      "id": "7",
+      "date": "Nov 17",
+      "date_sort": "2026-11-17",
+      "victim": "US hospitals, schools, and healthcare providers (multiple states)",
+      "industry": "Healthcare / Education",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "The \"8-Digits Team,\" affiliated with the INC and Lynx ransomware operations, gained network access, exfiltrated data, and deployed ransomware before demanding payment.",
+      "impact": "The group claimed to hold more than 50 terabytes of data, including over 70 million confidential health records, and made more than $500 million in ransom demands; a Kazakh national has been extradited from Italy to face charges.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "CyberScoop",
+        "DOJ"
       ]
     },
     {
       "id": "8",
       "date": "Nov 17",
       "date_sort": "2026-11-17",
-      "victim": "Fireworks AI (cascading to Cursor, Uber, Notion)",
-      "industry": "AI infrastructure / Technology",
+      "victim": "Uber (approx. 150,000 individuals); also Cursor and Notion customers",
+      "industry": "Technology / Transportation",
       "attacker": "Unknown — criminal likely",
-      "attacker_origin": "unknown",
+      "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "A stolen access key issued to AI platform Fireworks was used to breach its infrastructure, then session-record data containing unredacted credentials was used to pivot into Cursor's extension marketplace and an Uber cloud environment.",
-      "impact": "Attackers tampered with Cursor's VS Code extension cache to push a malicious Claude Code extension with an SSH backdoor to roughly 5,000 systems, and accessed driver's license data and other PII for 149,346 people via a third-party cloud environment tied to Uber; Notion was also affected. Mandiant has linked the incident to a broader pattern of 2026 \"LLMjacking\" breaches.",
-      "ongoing": "N",
+      "vector": "A financially motivated group breached AI infrastructure provider Fireworks using a leaked access key, then used stolen credentials to compromise downstream customers, including Cursor's VS Code extension marketplace and a cloud storage bucket used by a third-party service provider to Uber.",
+      "impact": "Uber confirmed the names and driver's-license data of 149,346 people were accessed; Cursor said up to 5,000 users may have downloaded a trojanized Claude Code extension; Notion also disclosed exposure.",
+      "ongoing": "Y",
       "severity": "high",
       "sources": [
-        "Dark Reading",
-        "Risky Business",
-        "SANS ISC",
-        "The Record"
+        "The Record",
+        "Dark Reading"
       ]
     },
     {
       "id": "9",
       "date": "Nov 17",
       "date_sort": "2026-11-17",
-      "victim": "Indian defense contractors and military personnel (potentially broader defense sector)",
-      "industry": "Defense / Aerospace",
-      "attacker": "Pakistan — state-suspected espionage group",
+      "victim": "Fandango (movie ticketing platform)",
+      "industry": "Retail / Entertainment",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Hackers placed malicious code on the site's ticketing checkout page to skim payment data.",
+      "impact": "Payment card numbers, CVV codes, and expiration dates were stolen from customers; Fandango notified state regulators of the October breach.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "Risky Business",
+        "The Record"
+      ]
+    },
+    {
+      "id": "10",
+      "date": "Nov 17",
+      "date_sort": "2026-11-17",
+      "victim": "Indian defense contractors, military personnel, and potentially defense-sector workers globally",
+      "industry": "Defense",
+      "attacker": "Pakistan-aligned state-linked espionage group",
       "attacker_origin": "unknown",
       "motivation": "Espionage",
-      "vector": "Fake recruiter websites impersonating major defense firms (Airbus, BAE Systems, Lockheed Martin, Northrop Grumman and others) lured job-seeking defense and military personnel into downloading a trojanized app outside official app stores.",
-      "impact": "Deployed GravityRAT spyware to steal contacts, call logs, texts, and WhatsApp messages; the campaign has been active for roughly 12 months and remains ongoing, with tactics that could extend to defense personnel outside India.",
+      "vector": "Fake job-recruitment websites impersonating defense contractors (Airbus, BAE Systems, Lockheed Martin, and others) lure victims into downloading a trojanized mobile app that installs GravityRAT spyware.",
+      "impact": "GravityRAT collects contact directories, call logs, texts, and WhatsApp messages from infected devices; the campaign has been active for roughly 12 months.",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "medium",
       "sources": [
         "CyberScoop"
       ]
     },
     {
-      "id": "10",
-      "date": "Nov 16",
-      "date_sort": "2026-11-16",
-      "victim": "US hospitals, healthcare entities, and schools (6+ states)",
-      "industry": "Healthcare, Education",
-      "attacker": "Criminal gang — data extortion",
+      "id": "11",
+      "date": "Nov 17",
+      "date_sort": "2026-11-17",
+      "victim": "Li Auto electric-vehicle owners in Russia",
+      "industry": "Automotive",
+      "attacker": "Unknown — criminal likely",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Gained network access and exfiltrated large volumes of data, then extorted victims for payment without deploying encryption.",
-      "impact": "More than 50TB of data stolen, including over 70 million confidential health records, with over $500 million in ransom demands; a Kazakh national affiliated with the operation (the \"8-Digits Team,\" tied to the INC and Lynx ransomware groups) was extradited from Italy and appeared in US court on Nov 16.",
+      "vector": "Attackers compromised master car accounts registered through Chinese eSIM services used by car importers, then locked owners out of their vehicles.",
+      "impact": "At least 20 confirmed owners had their cars hijacked and held for extortion; the true number of affected vehicles is believed to be higher.",
       "ongoing": "Y",
-      "severity": "critical",
-      "sources": [
-        "DOJ"
-      ]
-    },
-    {
-      "id": "11",
-      "date": "Nov 16",
-      "date_sort": "2026-11-16",
-      "victim": "City of Osaka, Japan",
-      "industry": "Municipal government",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Hack of a third-party email service provider used by the city.",
-      "impact": "Personal data of 1 million citizens stolen.",
-      "ongoing": "N",
-      "severity": "critical",
+      "severity": "medium",
       "sources": [
         "Risky Business"
       ]
@@ -197,21 +198,18 @@
       "id": "12",
       "date": "Nov 16",
       "date_sort": "2026-11-16",
-      "victim": "178+ organizations' websites, including CNN, Zoom, Salesforce, GitLab, Equifax, HSBC, BBC, NPR, and Fox News",
-      "industry": "Media, Technology, Financial services",
+      "victim": "178+ organizations using Optimizely, including CNN, BBC, Zoom, HSBC, Equifax, Salesforce, and GitLab",
+      "industry": "Cross-sector / Web services",
       "attacker": "Unknown — criminal likely",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Exploited a vulnerability in the Optimizely Web Experimentation platform to inject malicious JavaScript (Magecart-style) into a customizable project field, served to site visitors from the vendor's own legitimate CDN and certificate; the payload evolved through the day, adding a crypto-address swapper, card skimmer, cookie/screenshot stealer, and iOS exploit kits (Coruna, DarkSword).",
-      "impact": "Report URI identified malicious code on 178 affected sites; only about 15% had content security policies that fully blocked the payload, while 68 had none at all. An estimated $7,500 in cryptocurrency was confirmed stolen, with unknown further losses from card skimming and iOS infections. Optimizely patched the vulnerability and removed the injected code within a day.",
+      "vector": "An attacker exploited a vulnerability in Optimizely's web-experimentation platform to inject malicious JavaScript into the \"Project JavaScript\" field of customer accounts, which was then served from Optimizely's own legitimate CDN.",
+      "impact": "The malware swapped cryptocurrency wallet addresses, skimmed payment card data from checkout forms, stole cookies and screenshots, and delivered the Coruna and DarkSword iOS exploit kits to visiting iPhones and iPads; researchers traced roughly $7,500 in stolen cryptocurrency.",
       "ongoing": "N",
-      "severity": "high",
+      "severity": "critical",
       "sources": [
-        "Unit 42 (Palo Alto Networks)",
         "Krebs on Security",
         "Dark Reading",
-        "The Record",
-        "Risky Business",
         "SANS ISC"
       ]
     },
@@ -219,51 +217,49 @@
       "id": "13",
       "date": "Nov 16",
       "date_sort": "2026-11-16",
-      "victim": "French media, entertainment, and education-sector websites",
-      "industry": "Media, entertainment, education",
-      "attacker": "Russia — unattributed hacking group (Russian-speaking)",
-      "attacker_origin": "russia",
-      "motivation": "Unclear",
-      "vector": "A system the researchers call \"exploit_agent\" chains multiple AI agents to compare vendor code before and after a patch ships, infer the underlying flaw, draft a working exploit, and execute it without human involvement.",
-      "impact": "Assessed by Google as the first cyberattack run end-to-end by AI with no human in the loop at any stage; victim data found on the attacker's staging server pointed to targeting of French websites, and associated scripts included a tool that erased rival attackers' webshells, though the scale of confirmed compromise was not established.",
-      "ongoing": "Y",
+      "victim": "700+ French retail stores, supermarkets, butchers, and a slaughterhouse",
+      "industry": "Retail / Food & grocery",
+      "attacker": "Iran — IRGC (Islamic Revolutionary Guard Corps)",
+      "attacker_origin": "iran",
+      "motivation": "Disruption",
+      "vector": "French officials attributed the attack to the IRGC's Shahid Kaveh Cyber-Electronic Command, which compromised commercial refrigeration controllers.",
+      "impact": "Refrigeration systems failed at hundreds of stores, spoiling stock and causing tens of millions of euros in losses; France is pushing the EU to sanction Iran over the campaign.",
+      "ongoing": "N",
       "severity": "high",
       "sources": [
-        "CyberScoop",
-        "Google Threat Intelligence Group / Mandiant"
+        "Risky Business"
       ]
     },
     {
       "id": "14",
       "date": "Nov 16",
       "date_sort": "2026-11-16",
-      "victim": "Semiconductor manufacturers, US defense-policy organizations, and civil-society groups (19 targeted, 10 breached)",
-      "industry": "Semiconductor manufacturing, defense, civil society",
+      "victim": "Government entities across Southeast Asia, South America, and Europe",
+      "industry": "Government",
       "attacker": "China — state-suspected espionage group",
       "attacker_origin": "china",
       "motivation": "Espionage",
-      "vector": "Attackers directed the autonomous AI pentesting framework Cairn, paired with Chinese LLMs, to independently plan, scan, and exploit known weaknesses — weak or default credentials, authentication bypasses, and exposed APIs.",
-      "impact": "Across 25 autonomous operations run in August-September 2026, the campaign achieved unauthorized access at 10 organizations, exposing over 1 million personal records at one victim, obtaining military and government identities, creating persistent admin accounts, and modifying a live industry standards-ballot document.",
-      "ongoing": "N",
-      "severity": "high",
+      "vector": "Spear-phishing and custom loaders deliver the PerfectPioneer and KUKURAT remote access trojans, which use HTTP/3 (QUIC) for covert command-and-control.",
+      "impact": "The group has conducted stealthy, long-term data collection and exfiltration against government targets since at least 2023, using a built-in operational safety switch and synthetic traffic generation to evade detection.",
+      "ongoing": "Y",
+      "severity": "medium",
       "sources": [
-        "Dark Reading",
-        "Google Threat Intelligence Group / Mandiant"
+        "Unit 42"
       ]
     },
     {
       "id": "15",
       "date": "Nov 16",
       "date_sort": "2026-11-16",
-      "victim": "Quantum Systems (German drone maker)",
-      "industry": "Defense / UAV manufacturing",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Disruption",
-      "vector": "Supply-chain attack planted a malicious update inside the company's drone flight-planning software.",
-      "impact": "The company shut down its IT network and German defense forces grounded drones supplied to Ukraine's military as a precaution; the malicious file never reached the drones themselves.",
+      "victim": "Telecommunications carriers across Asia",
+      "industry": "Telecommunications",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "The group hacks telco infrastructure and plants backdoors that run malicious SS7 and Diameter signaling commands.",
+      "impact": "Enables collection of device data, subscriber location tracking, and interception of calls and SMS traffic on selected targets; active since early 2025.",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "medium",
       "sources": [
         "Risky Business"
       ]
@@ -272,236 +268,32 @@
       "id": "16",
       "date": "Nov 16",
       "date_sort": "2026-11-16",
-      "victim": "Maileva (La Poste subsidiary, France)",
-      "industry": "Postal / Logistics",
+      "victim": "Barracuda Networks (cloud environment)",
+      "industry": "Cybersecurity",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "Breach of Maileva's systems; details of the intrusion method were not disclosed.",
-      "impact": "Data of 22 million users stolen, mostly corporate paycheck and invoice recipients.",
+      "vector": "An attacker used a cloud access key Barracuda had issued to a third-party AI service provider — and forgot to revoke — to access its cloud environment, then deployed the ARTEX AI penetration-testing framework to escalate access.",
+      "impact": "The intruder had access to Barracuda's cloud environment for nearly two days before being detected and removed.",
       "ongoing": "N",
-      "severity": "high",
+      "severity": "medium",
       "sources": [
         "Risky Business"
       ]
     },
     {
       "id": "17",
-      "date": "Nov 16",
-      "date_sort": "2026-11-16",
-      "victim": "CSCTelecom (Latvian branch)",
-      "industry": "Telecommunications",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Misconfigured, publicly exposed database left accessible online.",
-      "impact": "More than 125 million SMS messages exposed online.",
+      "date": "Nov 12",
+      "date_sort": "2026-11-12",
+      "victim": "Binance cryptocurrency exchange",
+      "industry": "Cryptocurrency / Financial services",
+      "attacker": "North Korea — state-sponsored, financially motivated",
+      "attacker_origin": "north_korea",
+      "motivation": "Financial",
+      "vector": "Attackers stole tokens across 11 different cryptocurrencies from Binance, in activity blockchain-analysis firms and the FBI attributed to the North Korean group tracked as TraderTraitor.",
+      "impact": "Approximately $6.3 billion was stolen, the largest cryptocurrency theft on record; Binance got about $2.8 billion of the stolen stablecoins frozen, leaving roughly $3.25 billion unrecoverable, mostly in Bitcoin and Ethereum.",
       "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "Risky Business"
-      ]
-    },
-    {
-      "id": "18",
-      "date": "Nov 16",
-      "date_sort": "2026-11-16",
-      "victim": "City of Mobile, Alabama",
-      "industry": "Municipal government",
-      "attacker": "Criminal gang — financially motivated",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Business email compromise impersonating a contractor tricked city staff into redirecting payments to attacker-controlled bank accounts.",
-      "impact": "$14.7 million paid out over roughly five months before the fraud was discovered.",
-      "ongoing": "N",
-      "severity": "high",
-      "sources": [
-        "Risky Business"
-      ]
-    },
-    {
-      "id": "19",
-      "date": "Nov 16",
-      "date_sort": "2026-11-16",
-      "victim": "Check Point Security Gateway customers (unspecified number)",
-      "industry": "Technology / Network security",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Disruption",
-      "vector": "Chained a Check Point Security Gateway remote-code-execution flaw (PHP2Shell, CVE-2026-109618/CVE-2026-109619) with a DynamicCLI privilege-escalation bug (CVE-2026-123039) to deploy a webshell, then a proxy, a wiper, and other components.",
-      "impact": "Active exploitation ongoing since late October 2026 against gateways that had not yet applied the available patch.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "SANS ISC"
-      ]
-    },
-    {
-      "id": "20",
-      "date": "Nov 16",
-      "date_sort": "2026-11-16",
-      "victim": "Lithuanian Customs agency",
-      "industry": "Government",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Details of the intrusion method were not disclosed.",
-      "impact": "Some of the agency's digital platforms were shut down following the incident.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "Risky Business"
-      ]
-    },
-    {
-      "id": "21",
-      "date": "Nov 16",
-      "date_sort": "2026-11-16",
-      "victim": "Taiwan Semiconductor Manufacturing Co. (TSMC) employees",
-      "industry": "Semiconductors",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Data taken from a cloud service provider used by TSMC rather than TSMC's own network.",
-      "impact": "Personal data of 46,000 employees leaked after a failed $200,000 bitcoin extortion demand.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "Risky Business"
-      ]
-    },
-    {
-      "id": "22",
-      "date": "Nov 16",
-      "date_sort": "2026-11-16",
-      "victim": "Trezor customers (via unauthorized reseller)",
-      "industry": "Cryptocurrency hardware",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Malicious hardware implants planted in devices sold through an unauthorized reseller between August and September 2026.",
-      "impact": "A firmware update bricked affected devices; Trezor cut 80% of its supplier network in response.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "Risky Business"
-      ]
-    },
-    {
-      "id": "23",
-      "date": "Nov 16",
-      "date_sort": "2026-11-16",
-      "victim": "Expedia",
-      "industry": "Travel",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Accessed via a breach at a third-party data platform provider.",
-      "impact": "Data leaked publicly after Expedia refused to pay the attackers' ransom demand.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "Risky Business"
-      ]
-    },
-    {
-      "id": "24",
-      "date": "Nov 16",
-      "date_sort": "2026-11-16",
-      "victim": "Arcus cryptocurrency exchange",
-      "industry": "Cryptocurrency",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Exploited a flaw in the exchange's user-accounting system to make unauthorized withdrawals.",
-      "impact": "$2.23 million stolen; an additional $3 million in attempted theft was blocked by a rate limiter.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "Risky Business"
-      ]
-    },
-    {
-      "id": "25",
-      "date": "Nov 16",
-      "date_sort": "2026-11-16",
-      "victim": "ActiveCloud (Belarusian cloud provider) and three Russian cloud providers",
-      "industry": "Cloud / Hosting",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Disruption",
-      "vector": "Ransomware attack took down services at ActiveCloud; three other Russian cloud providers were separately hit by similar unexplained attacks over the preceding month.",
-      "impact": "Web hosting and email were restored, but other services remained down nearly a week after the attack; no ransomware group has claimed credit.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "Risky Business"
-      ]
-    },
-    {
-      "id": "26",
-      "date": "Nov 16",
-      "date_sort": "2026-11-16",
-      "victim": "Caribbean Airlines passengers",
-      "industry": "Aviation / Travel",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Upstream breach of Spanish reservation platform Amadeus exposed passenger data.",
-      "impact": "Passenger personal data exposed.",
-      "ongoing": "N",
-      "severity": "low",
-      "sources": [
-        "Risky Business"
-      ]
-    },
-    {
-      "id": "27",
-      "date": "Nov 16",
-      "date_sort": "2026-11-16",
-      "victim": "macOS users (broad consumer targeting)",
-      "industry": "Cross-sector / Consumer",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "ClickFix-style social-engineering campaign tricks macOS users into pasting a malicious command into Terminal, which downloads additional malware.",
-      "impact": "Delivers a cryptocurrency wallet-draining infostealer dubbed \"DownTheDRAIN\"; Apple has blocked some observed samples.",
-      "ongoing": "Y",
-      "severity": "low",
-      "sources": [
-        "SANS ISC"
-      ]
-    },
-    {
-      "id": "28",
-      "date": "Nov 13",
-      "date_sort": "2026-11-13",
-      "victim": "Organizations worldwide, multiple sectors",
-      "industry": "Cross-sector",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Financial",
-      "vector": "Phishing emails impersonating Microsoft 365 service-health alerts exploited a real Nov 12 Exchange Online outage, creating urgency to drive victims to a credential-phishing redirect chain.",
-      "impact": "Likely credential-phishing campaign; Microsoft states it has no confirmed evidence of credential capture, malware delivery, or post-compromise activity to date.",
-      "ongoing": "Y",
-      "severity": "low",
-      "sources": [
-        "Microsoft"
-      ]
-    },
-    {
-      "id": "29",
-      "date": "Nov 4",
-      "date_sort": "2026-11-04",
-      "victim": "Barracuda Networks",
-      "industry": "Cybersecurity vendor",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "An un-revoked cloud access key issued to a third-party AI provider was used to access its cloud environment, then the attacker deployed the ARTEX AI pentesting framework to escalate access across 10 cloud environments, including infrastructure managing its XDR platform, while searching for cryptocurrency-wallet seed phrases, private keys, and Kubernetes secrets.",
-      "impact": "No evidence of access to XDR customer credentials; affected customers were told to reissue credentials as a precaution; the intrusion lasted almost two days and was discovered after an engineer noticed unusual activity on a personal account.",
-      "ongoing": "N",
-      "severity": "medium",
+      "severity": "critical",
       "sources": [
         "Risky Business"
       ]
