@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-11-20T21:07:38.605207+00:00",
-  "period_searched": "November 2-20, 2026",
-  "incident_count": 19,
+  "generated_at": "2026-11-21T09:05:56.407952+00:00",
+  "period_searched": "November 10-20, 2026",
+  "incident_count": 22,
   "incidents": [
     {
       "id": "1",
       "date": "Nov 20",
       "date_sort": "2026-11-20",
-      "victim": "40+ Irish credit unions (and possibly UK members)",
-      "industry": "Financial services / credit unions",
-      "attacker": "Unknown — criminal likely",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "Hackers exploited a vulnerability in the systems of software supplier Wellington IT, which provides mobile banking apps to credit unions in Ireland and Northern Ireland.",
-      "impact": "Payment details of credit union members were accessed in early October but went unnoticed for six weeks; more than 40 breach notifications have been filed with Ireland's Data Protection Commission, with no confirmed fraud yet.",
+      "victim": "West Virginia Legislature",
+      "industry": "Government",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Cyberattack beginning Nov. 19 impacted IT systems and the legislature's website; the intrusion method and whether ransomware was involved have not been disclosed.",
+      "impact": "The Legislature's website and certain IT systems were taken offline as a precaution while outside cybersecurity specialists investigate. No other West Virginia state agencies were affected.",
       "ongoing": "Y",
-      "severity": "high",
+      "severity": "medium",
       "sources": [
         "therecord.media"
       ]
@@ -24,13 +24,13 @@
       "id": "2",
       "date": "Nov 20",
       "date_sort": "2026-11-20",
-      "victim": "University in East Asia",
-      "industry": "Education / Research",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Attackers operating in Simplified Chinese on China Standard Time used the open-source autonomous AI penetration-testing tool Cairn to discover and exploit an unpatched zero-day path-traversal flaw in an open-source medical imaging application.",
-      "impact": "Amazon's Threat Intelligence team found the operator's exposed Cairn server and confirmed the AI agents achieved unauthorized shell access to a university server with minimal human direction after thousands of failed credential and exploit attempts.",
+      "victim": "The Container Store",
+      "industry": "Retail",
+      "attacker": "Criminal gang — ransomware",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Cyberattack claimed by the extortion group 'n0n,' which listed the retailer on its dark-web leak site; the group has been observed using AI coding agents to write and debug its attack scripts.",
+      "impact": "Online ordering and in-store transaction systems were disrupted over the prior weekend, forcing roughly 100 U.S. stores onto alternative transaction procedures. Systems were restored by Nov. 20; no evidence yet that customer financial data was stolen.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -39,33 +39,88 @@
     },
     {
       "id": "3",
-      "date": "Nov 19",
-      "date_sort": "2026-11-19",
-      "victim": "Organizations running VMware vCenter Server (unnamed)",
-      "industry": "Technology / IT infrastructure",
+      "date": "Nov 20",
+      "date_sort": "2026-11-20",
+      "victim": "Universities in East Asia (unnamed)",
+      "industry": "Education",
       "attacker": "China — state-suspected espionage group",
       "attacker_origin": "china",
       "motivation": "Espionage",
-      "vector": "The group, already inside victim networks via a BeyondTrust Remote Support zero-day, used a custom Golang tool (\"BONESAW\") to exploit a new vCenter zero-day (CVE-2026-123890), hijacking SAML tokens to forge SSO administrator access.",
-      "impact": "Mandiant/GTIG confirmed the vCenter zero-day is being actively exploited for credential theft, data exfiltration, and full environment compromise; CISA added it to the Known Exploited Vulnerabilities catalog and Broadcom has released patches with no workaround.",
-      "ongoing": "Y",
-      "severity": "critical",
+      "vector": "Chinese-speaking operators used the autonomous AI penetration-testing framework Cairn to discover and exploit an unpatched path-traversal zero-day in an open-source medical imaging AI application, gaining shell access to university networks.",
+      "impact": "Two East Asian universities were breached. Amazon Threat Intelligence discovered the attacker's exposed Cairn server, had the underlying open-source flaw fixed, and worked with a government partner to notify the affected institutions.",
+      "ongoing": "N",
+      "severity": "high",
       "sources": [
-        "cloud.google.com",
-        "cisa.gov"
+        "therecord.media",
+        "Amazon Threat Intelligence"
       ]
     },
     {
       "id": "4",
+      "date": "Nov 20",
+      "date_sort": "2026-11-20",
+      "victim": "40+ Irish credit unions (via Wellington IT)",
+      "industry": "Financial Services",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Financial",
+      "vector": "Attackers exploited a vulnerability in the mobile banking app platform of shared IT supplier Wellington IT, exposing payee/payment details for credit union members who used the affected apps.",
+      "impact": "More than 40 Irish credit unions (and potentially U.K. members) had payment details exposed. The vulnerability was patched Oct. 6, but the breach went unreported to affected credit unions until Nov. 16 — a six-week delay regulators called 'simply not acceptable.' No evidence yet that member funds were accessed.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "therecord.media",
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "5",
       "date": "Nov 19",
       "date_sort": "2026-11-19",
-      "victim": "European Commission (personnel systems)",
-      "industry": "Government / EU institution",
+      "victim": "Multiple organizations (VMware vCenter / BeyondTrust users)",
+      "industry": "Technology / Critical Infrastructure",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "Exploited a VMware vCenter authentication-bypass zero-day (CVE-2026-123890) via a chained intrusion that began with a separate BeyondTrust Remote Support zero-day, pivoting through unmonitored internal Linux appliances to deploy custom malware and tooling (BONESAW, SAWSNAKE, SLIMSAVAGE/CAGEMATCH webshells).",
+      "impact": "Attackers achieved full administrative compromise of victims' vCenter and ESXi environments — exfiltrating directory databases, forging SAML admin tokens, and bypassing MFA. Exploitation began as early as September 2026, months before public disclosure and patch availability.",
+      "ongoing": "Y",
+      "severity": "critical",
+      "sources": [
+        "cloud.google.com (Mandiant/GTIG)",
+        "darkreading.com",
+        "isc.sans.edu"
+      ]
+    },
+    {
+      "id": "6",
+      "date": "Nov 19",
+      "date_sort": "2026-11-19",
+      "victim": "Equinor and Skagerak Energi (Norwegian energy companies)",
+      "industry": "Energy",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "An \"AI-generated cyber campaign\" using the publicly available AI hacking platform ARTEX disrupted the Commission's HR systems, first detected October 22.",
-      "impact": "Payroll, leave requests, medical reimbursements, and translation services were taken offline for more than 10 days as a protective measure; no evidence of a broad staff data breach or ransom demand has been found, and the investigation remains open.",
+      "vector": "Breaches affecting internal IT systems disclosed on consecutive days (Nov. 17 and Nov. 18); neither company has disclosed the intrusion method, and no link between the two incidents has been confirmed.",
+      "impact": "Equinor's email and internal IT systems were disrupted with no confirmed data theft or production impact; Skagerak Energi reported a similar IT-systems breach. The incidents prompted heightened alert across Norway's energy sector following an unprecedented national cyber-risk warning from NSM.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "darkreading.com",
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "7",
+      "date": "Nov 19",
+      "date_sort": "2026-11-19",
+      "victim": "European Commission",
+      "industry": "Government",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Disruption",
+      "vector": "Attackers used the open-source ARTEX AI hacking platform to compromise the Commission's internal HR platform, Sysper, first detected Oct. 22.",
+      "impact": "The Sysper platform — used for payroll, leave requests, medical reimbursements, and translation services — was disrupted for more than 10 days. No broad staff data breach has been confirmed and no ransom demand was received; this is the Commission's third disclosed cyber incident in 2026.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -73,101 +128,50 @@
       ]
     },
     {
-      "id": "5",
+      "id": "8",
       "date": "Nov 19",
       "date_sort": "2026-11-19",
-      "victim": "Equinor and Skagerak Energi (Norwegian energy companies)",
-      "industry": "Energy / Oil, gas and power utilities",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Two Norwegian energy companies disclosed cyberattacks on consecutive days affecting internal IT systems; Equinor's email system went down and both companies say production and operations were not disrupted.",
-      "impact": "No evidence of data theft has been confirmed by either company; other Norwegian energy firms including Aker BP and Statkraft raised alert levels, and Norway's national security authority had already warned of a \"high\" cyber risk to businesses.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "darkreading.com"
-      ]
-    },
-    {
-      "id": "6",
-      "date": "Nov 19",
-      "date_sort": "2026-11-19",
-      "victim": "Rocket Mortgage LLC and Mr. Cooper (Nationstar Mortgage)",
-      "industry": "Financial services / mortgage lending",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Repeated failures to implement multi-factor authentication and to report prior cybersecurity incidents to regulators within required timeframes, discovered across multiple incidents tied to both companies.",
-      "impact": "NY DFS fined Rocket Mortgage and Mr. Cooper a combined $6.75 million for MFA and late-incident-reporting failures under the state's Cybersecurity Regulation (23 NYCRR Part 500).",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "dfs.ny.gov"
-      ]
-    },
-    {
-      "id": "7",
-      "date": "Nov 19",
-      "date_sort": "2026-11-19",
-      "victim": "American and European victims of Southeast Asian scam compounds",
-      "industry": "Financial services / consumers",
-      "attacker": "Criminal gang — financial fraud",
+      "victim": "Mr. Cooper (Nationstar Mortgage, now part of Rocket Mortgage)",
+      "industry": "Financial Services / Mortgage Servicing",
+      "attacker": "Criminal gang — data extortion",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "Scam-compound operators in Cambodia ran virtual-currency investment fraud schemes against Americans, protected by armed groups that provide security to the scam-center networks.",
-      "impact": "Treasury's OFAC sanctioned scam-center operator Zhao Hui and two affiliated companies for facilitating cyber-enabled investment fraud targeting U.S. citizens.",
-      "ongoing": "Y",
-      "severity": "medium",
+      "vector": "Threat actors impersonated Mr. Cooper employees in phone calls to the company's IT help desk to obtain temporary passwords, bypassing multi-factor authentication to access internal information systems.",
+      "impact": "Large volumes of private customer information were stolen in the November 2023 breach. NYDFS's investigation found Mr. Cooper had not completed a cybersecurity risk assessment in nearly four years. Rocket Mortgage, which acquired Mr. Cooper, will pay $6.75 million combined in penalties for this breach plus related MFA and incident-reporting failures.",
+      "ongoing": "N",
+      "severity": "high",
       "sources": [
-        "home.treasury.gov"
-      ]
-    },
-    {
-      "id": "8",
-      "date": "Nov 18",
-      "date_sort": "2026-11-18",
-      "victim": "Cryptocurrency holders, gaming platform users, and VoIP software users in Europe",
-      "industry": "Consumer / Cryptocurrency and gaming",
-      "attacker": "North Korea — state-sponsored, financially motivated",
-      "attacker_origin": "north_korea",
-      "motivation": "Financial",
-      "vector": "Trojanized installers disguised as messaging and VoIP software, along with decoy financial documents, delivered a Go-based remote access trojan, a Python infostealer, and a cryptocurrency clipboard hijacker.",
-      "impact": "Cisco Talos assessed with low confidence the campaign is linked to North Korean actors based on tooling overlap; the RAT uses Solana blockchain transaction memos to resiliently host its command-and-control addresses.",
-      "ongoing": "Y",
-      "severity": "medium",
-      "sources": [
-        "blog.talosintelligence.com"
+        "dfs.ny.gov"
       ]
     },
     {
       "id": "9",
       "date": "Nov 18",
       "date_sort": "2026-11-18",
-      "victim": "Employees of a Silicon Valley technology and defense company (reportedly Palantir)",
-      "industry": "Defense / Technology",
-      "attacker": "Russia — state-linked intelligence operative",
-      "attacker_origin": "russia",
-      "motivation": "Espionage",
-      "vector": "A Russian national entered the U.S. illegally, used fraudulent identification and electronic tracking devices, and conducted in-person surveillance and stalking of company employees near their offices and homes.",
-      "impact": "DOJ indicted Igor D'iu for acting as an unregistered Russian agent targeting a company supplying technology used by Ukraine; he faces up to 10 years in prison.",
+      "victim": "KPMG Canada",
+      "industry": "Professional Services / Accounting",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Not disclosed by the company.",
+      "impact": "KPMG's Canadian practice is notifying clients of a security breach; the firm has not disclosed what data was affected or how the intrusion occurred.",
       "ongoing": "N",
-      "severity": "high",
+      "severity": "medium",
       "sources": [
-        "justice.gov"
+        "risky.biz"
       ]
     },
     {
       "id": "10",
       "date": "Nov 18",
       "date_sort": "2026-11-18",
-      "victim": "RIKEN (Japan) — Fugaku and Rikyu supercomputers",
-      "industry": "Research / Critical infrastructure",
+      "victim": "Rakuten Securities",
+      "industry": "Financial Services",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
-      "motivation": "IP theft",
-      "vector": "Hackers gained unauthorized access to two of Japan's national supercomputers.",
-      "impact": "Stolen data included registered-user details, research data from home directories, and SSH keys used to connect the supercomputers to outside services.",
+      "motivation": "Unclear",
+      "vector": "Hackers accessed a test environment belonging to Rakuten's securities division.",
+      "impact": "Data on more than 15 million customer accounts was stolen, including sensitive personal information for over 4.4 million accounts; passwords, PINs, and other authentication data were not among the stolen data.",
       "ongoing": "N",
       "severity": "high",
       "sources": [
@@ -178,13 +182,13 @@
       "id": "11",
       "date": "Nov 18",
       "date_sort": "2026-11-18",
-      "victim": "Infoblox customers",
-      "industry": "Technology / Cybersecurity",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
+      "victim": "BundID (German e-government platform)",
+      "industry": "Government",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
       "motivation": "Unclear",
-      "vector": "Hackers breached a third-party vendor that provides SharePoint data-migration services to Infoblox and stole customer data from it.",
-      "impact": "Cybersecurity firm Infoblox is notifying customers of the breach; the number of affected customers and whether extortion was involved have not been disclosed.",
+      "vector": "Brute-force attack against user accounts on Germany's e-government identity platform over the preceding weekend.",
+      "impact": "At least 10,000 user accounts were compromised; officials locked the affected accounts and are notifying owners.",
       "ongoing": "N",
       "severity": "medium",
       "sources": [
@@ -195,15 +199,15 @@
       "id": "12",
       "date": "Nov 18",
       "date_sort": "2026-11-18",
-      "victim": "Fandango customers",
-      "industry": "Entertainment / Ticketing",
+      "victim": "Ethiopian Airlines (ShebaMiles loyalty program)",
+      "industry": "Aviation / Transportation",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
-      "motivation": "Unclear",
-      "vector": "Security breach of the ticketing platform's official website.",
-      "impact": "Fandango notified customers and authorities of the October breach; scope of exposed data was not disclosed.",
+      "motivation": "Financial",
+      "vector": "Not disclosed.",
+      "impact": "Hackers breached the ShebaMiles loyalty program and stole customer data; the scope of the stolen data has not been detailed.",
       "ongoing": "N",
-      "severity": "low",
+      "severity": "medium",
       "sources": [
         "risky.biz"
       ]
@@ -212,13 +216,13 @@
       "id": "13",
       "date": "Nov 18",
       "date_sort": "2026-11-18",
-      "victim": "Coles (Australian retailer)",
-      "industry": "Retail",
+      "victim": "Chargemap",
+      "industry": "Transportation / EV Charging",
       "attacker": "Unknown",
       "attacker_origin": "unknown",
       "motivation": "Unclear",
-      "vector": "Security breach disclosed by the Australian retail chain.",
-      "impact": "Coles says no data has been confirmed stolen so far, though the company noted this could change as its investigation continues.",
+      "vector": "Not disclosed.",
+      "impact": "Chargemap, an EV charging-station locator app, is notifying customers of a data breach; further details have not been released.",
       "ongoing": "N",
       "severity": "low",
       "sources": [
@@ -229,13 +233,118 @@
       "id": "14",
       "date": "Nov 18",
       "date_sort": "2026-11-18",
-      "victim": "At least 12 Dutch websites (sports and recreation sector)",
-      "industry": "Media / Sports and recreation",
-      "attacker": "Criminal gang — ad fraud",
+      "victim": "NVIDIA",
+      "industry": "Technology / Semiconductors",
+      "attacker": "Criminal gang — ransomware",
       "attacker_origin": "criminal",
       "motivation": "Financial",
-      "vector": "A malicious advertising partner served ads containing code designed to collect identifying data from older iPhone models.",
-      "impact": "Affected sites warned users directly; most of the impacted properties are sports and recreation-related.",
+      "vector": "Unconfirmed claim: the 'Gentlemen' ransomware cartel listed NVIDIA on its dark-web leak site.",
+      "impact": "NVIDIA has not confirmed any security breach or data theft; the extortion claim remains unverified as of this report.",
+      "ongoing": "Y",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "15",
+      "date": "Nov 18",
+      "date_sort": "2026-11-18",
+      "victim": "Multiple telecommunications carriers (Asia)",
+      "industry": "Telecommunications",
+      "attacker": "China — state-suspected espionage group",
+      "attacker_origin": "china",
+      "motivation": "Espionage",
+      "vector": "A newly tracked group, dubbed 'SilentAir' by telco security firm ENEA, hacks telecom infrastructure and plants backdoors that abuse the SS7 and Diameter signaling protocols.",
+      "impact": "Active since early 2025, the group has used telecom-protocol backdoors to collect device data, track subscriber locations, and intercept calls and SMS traffic of carefully selected targets across Asia; full victim scope has not been disclosed.",
+      "ongoing": "Y",
+      "severity": "high",
+      "sources": [
+        "risky.biz (ENEA)"
+      ]
+    },
+    {
+      "id": "16",
+      "date": "Nov 17",
+      "date_sort": "2026-11-17",
+      "victim": "700+ French retail stores, food factories, and a slaughterhouse",
+      "industry": "Retail / Food & Grocery",
+      "attacker": "Iran — IRGC (Islamic Revolutionary Guard Corps)",
+      "attacker_origin": "iran",
+      "motivation": "Disruption",
+      "vector": "French officials, in a joint five-agency report, attributed the October hacking of commercial refrigeration systems to the Shahid Kaveh unit within the IRGC's Cyber-Electronic Command.",
+      "impact": "The attack disabled refrigeration systems at more than 700 French retail locations in October, causing tens of millions of euros in losses; it follows a related August incident that disabled freezers at U.S. military commissaries.",
+      "ongoing": "N",
+      "severity": "critical",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "17",
+      "date": "Nov 17",
+      "date_sort": "2026-11-17",
+      "victim": "EU politicians and law enforcement officials (18 individuals)",
+      "industry": "Government",
+      "attacker": "Russia — state-linked hacktivist proxies",
+      "attacker_origin": "russia",
+      "motivation": "Political",
+      "vector": "A pro-Kremlin hacktivist collective published personal information gathered on high-profile EU officials, including a foreign minister, Europol and Eurojust leadership, and journalists covering Russian influence operations.",
+      "impact": "Personal details of 18 senior EU officials and three journalists were published online, raising safety and harassment concerns; no system compromise beyond the doxxing has been reported.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "18",
+      "date": "Nov 16",
+      "date_sort": "2026-11-16",
+      "victim": "178+ websites including BBC, CNN, Zoom, Equifax, Ledger, HSBC, GitLab (via Optimizely)",
+      "industry": "Technology / Multiple Sectors",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Financial",
+      "vector": "Attacker exploited a vulnerability in Optimizely's Web Experimentation platform to inject malicious JavaScript into customers' project code, served from Optimizely's legitimate CDN under its own certificate.",
+      "impact": "For roughly 16 hours, visitors to at least 178 top websites were served malware that swapped cryptocurrency wallet addresses, skimmed payment card data at checkout, and attempted to deliver iOS/iPadOS zero-click exploit kits (Coruna, DarkSword). Optimizely patched the flaw and remediated affected accounts by Nov. 17.",
+      "ongoing": "N",
+      "severity": "high",
+      "sources": [
+        "krebsonsecurity.com",
+        "unit42.paloaltonetworks.com",
+        "blog.talosintelligence.com",
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "19",
+      "date": "Nov 16",
+      "date_sort": "2026-11-16",
+      "victim": "N-able",
+      "industry": "IT / Managed Services Software",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "Hackers breached N-able's cloud platform, accessing its Mail Assure and SpamExperts servers.",
+      "impact": "N-able found no evidence that customer data was stolen and is rebuilding the affected services.",
+      "ongoing": "N",
+      "severity": "medium",
+      "sources": [
+        "risky.biz"
+      ]
+    },
+    {
+      "id": "20",
+      "date": "Nov 15",
+      "date_sort": "2026-11-15",
+      "victim": "CodinGame",
+      "industry": "Technology / EdTech",
+      "attacker": "Unknown",
+      "attacker_origin": "unknown",
+      "motivation": "Unclear",
+      "vector": "An attacker exploited a data analysis tool to access the AI coding platform's internal network and copy data from its databases.",
+      "impact": "Stolen data includes user details and platform activity records; CodinGame has notified affected members.",
       "ongoing": "N",
       "severity": "low",
       "sources": [
@@ -243,90 +352,37 @@
       ]
     },
     {
-      "id": "15",
-      "date": "Nov 17",
-      "date_sort": "2026-11-17",
-      "victim": "178+ organizations including CNN, BBC, Zoom, HSBC, Equifax, Salesforce, GitLab, and NPR",
-      "industry": "Technology / Multiple sectors (media, finance, tech)",
-      "attacker": "Criminal gang — data extortion",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "A hacker exploited a vulnerability in the Optimizely web-experimentation platform to inject malicious JavaScript into customer accounts, which was then served from Optimizely's own CDN under its legitimate certificate.",
-      "impact": "For about 16 hours, the injected script swapped cryptocurrency wallet addresses, skimmed payment card data, and attempted to deliver mobile exploit kits to visitors of at least 178 high-profile websites before Optimizely patched the flaw and removed the code.",
-      "ongoing": "N",
-      "severity": "critical",
-      "sources": [
-        "risky.biz",
-        "unit42.paloaltonetworks.com",
-        "isc.sans.edu"
-      ]
-    },
-    {
-      "id": "16",
-      "date": "Nov 16",
-      "date_sort": "2026-11-16",
-      "victim": "Southeast Asian government entities (unnamed)",
-      "industry": "Government",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Espionage",
-      "vector": "A cyberespionage campaign active since mid-2025 deploys custom remote access trojans via phishing and DLL sideloading, using covert HTTP/3 (QUIC) channels for command-and-control to evade network inspection.",
-      "impact": "Unit 42 observed the group steadily refining two custom RAT families over nine months to maintain high-stealth, long-term intelligence collection access inside targeted government networks.",
-      "ongoing": "Y",
-      "severity": "high",
-      "sources": [
-        "unit42.paloaltonetworks.com"
-      ]
-    },
-    {
-      "id": "17",
-      "date": "Nov 15",
-      "date_sort": "2026-11-15",
-      "victim": "The Container Store",
-      "industry": "Retail",
-      "attacker": "Criminal gang — ransomware",
-      "attacker_origin": "criminal",
-      "motivation": "Financial",
-      "vector": "A ransomware and data-extortion group claimed the attack, which forced the retailer to shut down online ordering and use alternative in-store transaction processing.",
-      "impact": "Systems and the website were restored within the week; the company says no evidence yet shows customer financial data was stolen, and has not addressed the extortion group's leak-site claims.",
-      "ongoing": "N",
-      "severity": "medium",
-      "sources": [
-        "therecord.media"
-      ]
-    },
-    {
-      "id": "18",
+      "id": "21",
       "date": "Nov 12",
       "date_sort": "2026-11-12",
-      "victim": "Semiconductor manufacturers, U.S. defense-policy organizations, and civil society groups (19 organizations)",
-      "industry": "Semiconductor / Defense / Civil society",
-      "attacker": "China — state-suspected espionage group",
-      "attacker_origin": "china",
-      "motivation": "Espionage",
-      "vector": "Chinese-speaking attackers paired the open-source Cairn AI penetration-testing framework with Chinese AI models to autonomously plan and execute 25 intrusion operations against 19 organizations.",
-      "impact": "Unit 42 assessed with moderate confidence this is China-nexus intelligence collection; attackers gained unauthorized access or data at 10 of the targets, exposing over one million personal records at one organization, retrieving military and government identities, and modifying a live industry standards-ballot document.",
-      "ongoing": "N",
+      "victim": "Unnamed cryptocurrency exchange/platform",
+      "industry": "Financial Services / Cryptocurrency",
+      "attacker": "North Korea — state-sponsored, financially motivated",
+      "attacker_origin": "north_korea",
+      "motivation": "Financial",
+      "vector": "Attackers stole tokens across 11 different cryptocurrencies; blockchain-analysis firms and the FBI attributed the theft to the North Korean group TraderTraitor. The initial-access method has not been disclosed.",
+      "impact": "The theft is the largest cryptocurrency heist on record, dwarfing the $1.46 billion Bybit hack. Binance helped freeze roughly $2.8 billion of the stolen stablecoins, but about $3.25 billion in Bitcoin and Ethereum remains unrecovered.",
+      "ongoing": "Y",
       "severity": "critical",
       "sources": [
-        "unit42.paloaltonetworks.com"
+        "risky.biz"
       ]
     },
     {
-      "id": "19",
-      "date": "Nov 1-2",
-      "date_sort": "2026-11-02",
-      "victim": "Supermarkets and medical facilities across France and 10+ other European countries",
-      "industry": "Retail / Food and grocery, Healthcare",
-      "attacker": "Unknown",
-      "attacker_origin": "unknown",
-      "motivation": "Disruption",
-      "vector": "Unidentified threat actors gained unauthorized access to refrigeration controllers and set them to defrost mode, raising unit temperatures as high as 50°C (122°F).",
-      "impact": "A first wave hit roughly 700 French supermarkets overnight Oct. 11-12; a second wave overnight Nov. 1-2 expanded to 100-115 retail locations across 10+ additional countries and also affected medical-facility refrigeration, spoiling food inventory ahead of the holiday season with no confirmed blood-product losses.",
-      "ongoing": "Y",
+      "id": "22",
+      "date": "Early Nov",
+      "date_sort": "2026-11-10",
+      "victim": "Barracuda Networks",
+      "industry": "Cybersecurity / IT",
+      "attacker": "Unknown — criminal likely",
+      "attacker_origin": "criminal",
+      "motivation": "Unclear",
+      "vector": "Attacker used a cloud access key Barracuda had issued to a third-party AI service provider and failed to revoke, then deployed the ARTEX AI penetration-testing framework to escalate access across Barracuda's internal network and other cloud environments.",
+      "impact": "The threat actor accessed Barracuda's cloud environment for nearly two days before being discovered and evicted.",
+      "ongoing": "N",
       "severity": "high",
       "sources": [
-        "unit42.paloaltonetworks.com"
+        "risky.biz"
       ]
     }
   ]
